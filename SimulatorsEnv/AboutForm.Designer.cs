@@ -38,6 +38,8 @@
             this.bAddTFunction = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -116,7 +118,7 @@
             // bAddTFunction
             // 
             this.bAddTFunction.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.bAddTFunction.Location = new System.Drawing.Point(230, 222);
+            this.bAddTFunction.Location = new System.Drawing.Point(267, 279);
             this.bAddTFunction.Name = "bAddTFunction";
             this.bAddTFunction.Size = new System.Drawing.Size(90, 30);
             this.bAddTFunction.TabIndex = 8;
@@ -143,12 +145,32 @@
             this.label9.TabIndex = 10;
             this.label9.Text = "(C) 2025 - 2026 Marco Dzurilla";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(128, 200);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(86, 13);
+            this.label10.TabIndex = 11;
+            this.label10.Text = "Finite Automaton";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(128, 225);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(111, 13);
+            this.label11.TabIndex = 12;
+            this.label11.Text = "Pushdown Automaton";
+            // 
             // AboutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(332, 264);
+            this.ClientSize = new System.Drawing.Size(369, 321);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.bAddTFunction);
@@ -166,11 +188,14 @@
             this.MinimizeBox = false;
             this.Name = "AboutForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Label label11;
+
+        private System.Windows.Forms.Label label10;
 
         private System.Windows.Forms.Label label9;
 
