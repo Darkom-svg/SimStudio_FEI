@@ -1,0 +1,79 @@
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\Components\bin\Release\Components.dll
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\Components\bin\Release\Components.pdb
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\Components\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\Components\obj\Release\Components.csproj.GenerateResource.Cache
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\Components\obj\Release\Components.dll
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\Components\obj\Release\Components.pdb
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\Components\obj\Release\DusanRodina.SimStudio.Components.InputOutputTape.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\Components\obj\Release\DusanRodina.SimStudio.Components.RegisterEditForm.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\Components\obj\Release\DusanRodina.SimStudio.Components.Dialogs.FindForm.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\Components\obj\Release\DusanRodina.SimStudio.Components.Dialogs.ReplaceForm.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\Components\obj\Release\DusanRodina.SimStudio.Components.Properties.Resources.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\Components\obj\Release\DusanRodina.SimStudio.Components.RegisterList.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\Components\obj\Release\DusanRodina.SimStudio.Components.SyntaxTextBox.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\Components\bin\Release\Components.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\Components\bin\Release\Components.pdb
+D:\Development\Visual Studio 2008\Projects\Simulators\Components\bin\Release\en\Components.resources.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\Components\obj\Release\ResolveAssemblyReference.cache
+D:\Development\Visual Studio 2008\Projects\Simulators\Components\obj\Release\DusanRodina.SimStudio.Components.InputOutputTape.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\Components\obj\Release\DusanRodina.SimStudio.Components.RegisterEditForm.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\Components\obj\Release\DusanRodina.SimStudio.Components.Dialogs.FindForm.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\Components\obj\Release\DusanRodina.SimStudio.Components.Dialogs.ReplaceForm.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\Components\obj\Release\DusanRodina.SimStudio.Components.Properties.Resources.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\Components\obj\Release\DusanRodina.SimStudio.Components.RegisterList.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\Components\obj\Release\DusanRodina.SimStudio.Components.SyntaxTextBox.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\Components\obj\Release\DusanRodina.SimStudio.Components.InputOutputTape.en.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\Components\obj\Release\Components.csproj.GenerateResource.Cache
+D:\Development\Visual Studio 2008\Projects\Simulators\Components\obj\Release\en\Components.resources.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\Components\obj\Release\Components.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\Components\obj\Release\Components.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\Components\bin\Release\Components.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\Components\bin\Release\Components.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\Components\bin\Release\en\Components.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\Components\obj\Release\ResolveAssemblyReference.cache
+C:\Development\Visual Studio 2008\Projects\Simulators\Components\obj\Release\DusanRodina.SimStudio.Components.InputOutputTape.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\Components\obj\Release\DusanRodina.SimStudio.Components.RegisterEditForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\Components\obj\Release\DusanRodina.SimStudio.Components.Dialogs.FindForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\Components\obj\Release\DusanRodina.SimStudio.Components.Dialogs.ReplaceForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\Components\obj\Release\DusanRodina.SimStudio.Components.Properties.Resources.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\Components\obj\Release\DusanRodina.SimStudio.Components.RegisterList.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\Components\obj\Release\DusanRodina.SimStudio.Components.SyntaxTextBox.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\Components\obj\Release\DusanRodina.SimStudio.Components.InputOutputTape.en.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\Components\obj\Release\Components.csproj.GenerateResource.Cache
+C:\Development\Visual Studio 2008\Projects\Simulators\Components\obj\Release\en\Components.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\Components\obj\Release\Components.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\Components\obj\Release\Components.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\Components\bin\Release\Components.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\Components\bin\Release\Components.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\Components\bin\Release\en\Components.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\Components\obj\Release\Components.csprojResolveAssemblyReference.cache
+D:\SimStudio_v20100505\SimStudio_v20100505\Components\obj\Release\DusanRodina.SimStudio.Components.InputOutputTape.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\Components\obj\Release\DusanRodina.SimStudio.Components.RegisterEditForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\Components\obj\Release\DusanRodina.SimStudio.Components.Dialogs.FindForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\Components\obj\Release\DusanRodina.SimStudio.Components.Dialogs.ReplaceForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\Components\obj\Release\DusanRodina.SimStudio.Components.Properties.Resources.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\Components\obj\Release\DusanRodina.SimStudio.Components.RegisterList.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\Components\obj\Release\DusanRodina.SimStudio.Components.SyntaxTextBox.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\Components\obj\Release\DusanRodina.SimStudio.Components.InputOutputTape.en.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\Components\obj\Release\Components.csproj.GenerateResource.Cache
+D:\SimStudio_v20100505\SimStudio_v20100505\Components\obj\Release\en\Components.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\Components\obj\Release\Components.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\Components\obj\Release\Components.pdb
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Components\bin\Release\Components.dll
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Components\bin\Release\Components.pdb
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Components\bin\Release\en\Components.resources.dll
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\Components.dll
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\en\Components.resources.dll
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Components\obj\Release\Components.csprojResolveAssemblyReference.cache
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Components\obj\Release\DusanRodina.SimStudio.Components.InputOutputTape.resources
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Components\obj\Release\DusanRodina.SimStudio.Components.RegisterEditForm.resources
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Components\obj\Release\DusanRodina.SimStudio.Components.Dialogs.FindForm.resources
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Components\obj\Release\DusanRodina.SimStudio.Components.Dialogs.ReplaceForm.resources
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Components\obj\Release\DusanRodina.SimStudio.Components.Properties.Resources.resources
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Components\obj\Release\DusanRodina.SimStudio.Components.RegisterList.resources
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Components\obj\Release\DusanRodina.SimStudio.Components.SyntaxTextBox.resources
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Components\obj\Release\DusanRodina.SimStudio.Components.InputOutputTape.en.resources
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Components\obj\Release\Components.csproj.GenerateResource.Cache
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Components\obj\Release\Components.csproj.CoreCompileInputs.cache
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Components\obj\Release\en\Components.resources.dll
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Components\obj\Release\Components.dll

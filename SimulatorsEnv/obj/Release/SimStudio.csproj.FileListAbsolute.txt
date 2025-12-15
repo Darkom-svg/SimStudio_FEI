@@ -1,0 +1,290 @@
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\SimStudio.exe
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\SimStudio.pdb
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Release\ResolveAssemblyReference.cache
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Release\DusanRodina.SimStudio.AboutForm.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Release\DusanRodina.SimStudio.SimulatorsForm.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Release\DusanRodina.SimStudio.Properties.Resources.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Release\SimStudio.csproj.GenerateResource.Cache
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Release\SimStudio.exe
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Release\SimStudio.pdb
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\new.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\open.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\pause.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\RAM.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\Read.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\ReadOff.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\ReadP.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\ReadPOff.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\run.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\save.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\stop.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\Write.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\WriteOff.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\RAM.ico
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\new.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\open.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\save.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\pause.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\run.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\stop.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\small_copy.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\small_cut.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\small_paste.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\Turing.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\AbacusMachineSimulator.exe
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\RandomAccessMachineSimulator.exe
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\TuringMachineSimulator.exe
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Components.dll
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\RandomAccessMachineSimulator.pdb
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\AbacusMachineSimulator.pdb
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Components.pdb
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\TuringMachineSimulator.pdb
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\en\TuringMachineSimulator.resources.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\new.png
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\open.png
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\pause.png
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\RAM.png
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\Read.png
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\ReadOff.png
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\ReadP.png
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\ReadPOff.png
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\run.png
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\save.png
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\stop.png
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\Write.png
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\WriteOff.png
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\RAM.ico
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\new.png
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\open.png
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\save.png
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\pause.png
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\run.png
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\stop.png
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\small_copy.png
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\small_cut.png
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\small_paste.png
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\Turing.png
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\SimStudio.exe
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\SimStudio.pdb
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\AbacusMachineSimulator.exe
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\RandomAccessMachineSimulator.exe
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\TuringMachineSimulator.exe
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Components.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\RandomAccessMachineSimulator.pdb
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\AbacusMachineSimulator.pdb
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Components.pdb
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\TuringMachineSimulator.pdb
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\en\RandomAccessMachineSimulator.resources.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\en\Components.resources.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\en\TuringMachineSimulator.resources.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Release\ResolveAssemblyReference.cache
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Release\DusanRodina.SimStudio.AboutForm.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Release\DusanRodina.SimStudio.SimulatorsForm.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Release\DusanRodina.SimStudio.Properties.Resources.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Release\SimStudio.csproj.GenerateResource.Cache
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Release\SimStudio.exe
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Release\SimStudio.pdb
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Release\DusanRodina.SimStudio.MainForm.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\TuringCore.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\TuringCore.pdb
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\en\TuringCore.resources.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\FiniteAutomaton.exe
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\FiniteAutomaton.pdb
+D:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\en\FiniteAutomaton.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\new.png
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\open.png
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\pause.png
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\RAM.png
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\Read.png
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\ReadOff.png
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\ReadP.png
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\ReadPOff.png
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\run.png
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\save.png
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\stop.png
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\Write.png
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\graphics\WriteOff.png
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\RAM.ico
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\new.png
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\open.png
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\save.png
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\pause.png
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\run.png
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\stop.png
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\small_copy.png
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\small_cut.png
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\small_paste.png
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Resources\Turing.png
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\SimStudio.exe
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\SimStudio.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\AbacusMachineSimulator.exe
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\FiniteAutomaton.exe
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\RandomAccessMachineSimulator.exe
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\TuringMachineSimulator.exe
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\TuringCore.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Components.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\RandomAccessMachineSimulator.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\TuringCore.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\AbacusMachineSimulator.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\FiniteAutomaton.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\Components.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\TuringMachineSimulator.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\en\RandomAccessMachineSimulator.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\en\TuringCore.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\en\FiniteAutomaton.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\en\Components.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\en\TuringMachineSimulator.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Release\ResolveAssemblyReference.cache
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Release\DusanRodina.SimStudio.AboutForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Release\DusanRodina.SimStudio.SimulatorsForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Release\DusanRodina.SimStudio.Properties.Resources.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Release\DusanRodina.SimStudio.MainForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Release\SimStudio.csproj.GenerateResource.Cache
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Release\SimStudio.exe
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Release\SimStudio.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\PushdownAutomaton.exe
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\PushdownAutomaton.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Release\en\PushdownAutomaton.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\Resources\InitialFinalState.png
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\graphics\new.png
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\graphics\open.png
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\graphics\pause.png
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\graphics\RAM.png
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\graphics\Read.png
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\graphics\ReadOff.png
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\graphics\ReadP.png
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\graphics\ReadPOff.png
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\graphics\run.png
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\graphics\save.png
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\graphics\stop.png
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\graphics\Write.png
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\graphics\WriteOff.png
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\RAM.ico
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\Resources\new.png
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\Resources\open.png
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\Resources\save.png
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\Resources\pause.png
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\Resources\run.png
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\Resources\stop.png
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\Resources\small_copy.png
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\Resources\small_cut.png
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\Resources\small_paste.png
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\Resources\Turing.png
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\SimStudio.exe
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\SimStudio.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\AbacusMachineSimulator.exe
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\FiniteAutomaton.exe
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\PushdownAutomaton.exe
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\RandomAccessMachineSimulator.exe
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\TuringMachineSimulator.exe
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\Components.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\TuringCore.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\AbacusMachineSimulator.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\FiniteAutomaton.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\FiniteAutomaton.exe.config
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\PushdownAutomaton.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\PushdownAutomaton.exe.config
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\RandomAccessMachineSimulator.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\TuringMachineSimulator.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\Components.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\TuringCore.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\TuringCore.dll.config
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\en\FiniteAutomaton.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\en\PushdownAutomaton.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\en\RandomAccessMachineSimulator.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\en\TuringMachineSimulator.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\en\Components.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\bin\Release\en\TuringCore.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\obj\Release\SimStudio.csprojResolveAssemblyReference.cache
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\obj\Release\DusanRodina.SimStudio.AboutForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\obj\Release\DusanRodina.SimStudio.SimulatorsForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\obj\Release\DusanRodina.SimStudio.Properties.Resources.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\obj\Release\DusanRodina.SimStudio.MainForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\obj\Release\SimStudio.csproj.GenerateResource.Cache
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\obj\Release\SimStudio.exe
+D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\obj\Release\SimStudio.pdb
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\Resources\InitialFinalState.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\graphics\new.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\graphics\open.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\graphics\pause.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\graphics\RAM.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\graphics\Read.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\graphics\ReadOff.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\graphics\ReadP.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\graphics\ReadPOff.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\graphics\run.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\graphics\save.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\graphics\stop.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\graphics\Write.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\graphics\WriteOff.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\RAM.ico
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\Resources\new.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\Resources\open.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\Resources\save.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\Resources\pause.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\Resources\run.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\Resources\stop.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\Resources\small_copy.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\Resources\small_cut.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\Resources\small_paste.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\Resources\Turing.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\SimStudio.exe
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\SimStudio.pdb
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\AbacusMachineSimulator.exe
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\Components.dll
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\FiniteAutomaton.exe
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\PushdownAutomaton.exe
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\RandomAccessMachineSimulator.exe
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\TuringMachineSimulator.exe
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\TuringCore.dll
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\AbacusMachineSimulator.pdb
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\Components.pdb
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\FiniteAutomaton.pdb
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\FiniteAutomaton.exe.config
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\PushdownAutomaton.pdb
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\PushdownAutomaton.exe.config
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\RandomAccessMachineSimulator.pdb
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\TuringMachineSimulator.pdb
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\TuringMachineSimulator.exe.config
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\TuringCore.pdb
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\TuringCore.dll.config
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\en\Components.resources.dll
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\en\FiniteAutomaton.resources.dll
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\en\PushdownAutomaton.resources.dll
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\en\RandomAccessMachineSimulator.resources.dll
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\en\TuringMachineSimulator.resources.dll
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\bin\Release\en\TuringCore.resources.dll
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\Resources\InitialFinalState.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\graphics\new.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\graphics\open.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\graphics\pause.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\graphics\RAM.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\graphics\Read.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\graphics\ReadOff.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\graphics\ReadP.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\graphics\ReadPOff.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\graphics\run.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\graphics\save.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\graphics\stop.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\graphics\Write.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\graphics\WriteOff.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\RAM.ico
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\Resources\new.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\Resources\open.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\Resources\save.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\Resources\pause.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\Resources\run.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\Resources\stop.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\Resources\small_copy.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\Resources\small_cut.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\Resources\small_paste.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\Resources\Turing.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\SimStudio.exe
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\obj\Release\SimStudio.csprojResolveAssemblyReference.cache
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\obj\Release\DusanRodina.SimStudio.AboutForm.resources
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\obj\Release\DusanRodina.SimStudio.SimulatorsForm.resources
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\obj\Release\DusanRodina.SimStudio.Properties.Resources.resources
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\obj\Release\DusanRodina.SimStudio.MainForm.resources
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\obj\Release\SimStudio.csproj.GenerateResource.Cache
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\obj\Release\SimStudio.csproj.CoreCompileInputs.cache
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\obj\Release\SimStudio.exe

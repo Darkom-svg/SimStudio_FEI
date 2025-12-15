@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sk" lang="sk">
+<head>
+<title>Formálna špecifikácia</title>
+<style>
+body { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; }
+h1 {
+font-family: Arial, Helvetica, sans-serif; font-size: 30px;
+font-weight: bold; border-bottom-style: dotted;
+border-bottom-width: 3px; border-bottom-color: #000066;
+color: #000066; padding-bottom: 5px; margin-bottom: 10px;
+}
+h2 {
+font-family: Arial, Helvetica, sans-serif; font-size: 16px;
+font-weight: bold;
+color: #000066; margin-bottom: 5px;
+}
+</style>
+</head>
+<body>
+<h1>Formálna špecifikácia</h1>
+<div>
+Turingov stroj <strong>T = (K, Σ, Γ, δ, q0, F)</strong>
+</div>
+<div>
+<strong>K</strong> = {q0, q1, q2, qf}
+</div>
+<div>
+<strong>Σ</strong> = {Blue, Yellow, Red, Green, farba}
+</div>
+<div>
+<strong>Γ</strong> = {Blue, Yellow, Red, Green, farba, Blank}
+</div>
+<div>
+<strong>q0</strong>  počiatočný stav
+</div>
+<div>
+<strong>F</strong> = {qf}
+</div>
+<div>
+<h2>Prechodová funkcia δ</h2>
+<div>
+<strong>δ(</strong>q0, farba) = (q0, farba, L)
+</div>
+<div>
+<strong>δ(</strong>q0, Blank) = (q1, Blank, R)
+</div>
+<div>
+<strong>δ(</strong>q1, Blue) = (q1, Yellow, R)
+</div>
+<div>
+<strong>δ(</strong>q1, Yellow) = (q1, Blue, R)
+</div>
+<div>
+<strong>δ(</strong>q1, Red) = (q1, Green, R)
+</div>
+<div>
+<strong>δ(</strong>q1, Green) = (q1, Red, R)
+</div>
+<div>
+<strong>δ(</strong>q1, farba) = (q2, farba, R)
+</div>
+<div>
+<strong>δ(</strong>q2, Blank) = (qf, Blank, R)
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,86 @@
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.AddValueForm.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.ClearForm.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.CopyForm.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.MoveForm.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.SubstractValueForm.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.AbacusMachineForm.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.AboutForm.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Properties.Resources.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\AbacusMachineSimulator.csproj.GenerateResource.Cache
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\AbacusMachineSimulator.exe
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\AbacusMachineSimulator.pdb
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\bin\Debug\AbacusMachineSimulator.exe
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\bin\Debug\AbacusMachineSimulator.pdb
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\bin\Debug\Components.dll
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\bin\Debug\Components.pdb
+D:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\bin\Debug\AbacusMachineSimulator.exe
+D:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\bin\Debug\AbacusMachineSimulator.pdb
+D:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\bin\Debug\Components.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\ResolveAssemblyReference.cache
+D:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.AddValueForm.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.ClearForm.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.CopyForm.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.MoveForm.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.SubstractValueForm.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.AbacusMachineForm.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.AboutForm.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Properties.Resources.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\AbacusMachineSimulator.csproj.GenerateResource.Cache
+D:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\AbacusMachineSimulator.exe
+D:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\AbacusMachineSimulator.pdb
+D:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\bin\Debug\Components.pdb
+D:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\bin\Debug\en\Components.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\bin\Debug\AbacusMachineSimulator.exe
+C:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\bin\Debug\AbacusMachineSimulator.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\bin\Debug\Components.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\bin\Debug\Components.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\bin\Debug\en\Components.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\ResolveAssemblyReference.cache
+C:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.AddValueForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.ClearForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.CopyForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.MoveForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.SubstractValueForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.AbacusMachineForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.AboutForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Properties.Resources.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\AbacusMachineSimulator.csproj.GenerateResource.Cache
+C:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\AbacusMachineSimulator.exe
+C:\Development\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\AbacusMachineSimulator.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\AbacusMachine\bin\Debug\AbacusMachineSimulator.exe
+D:\SimStudio_v20100505\SimStudio_v20100505\AbacusMachine\bin\Debug\AbacusMachineSimulator.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\AbacusMachine\bin\Debug\Components.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\AbacusMachine\bin\Debug\Components.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\AbacusMachine\bin\Debug\en\Components.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\AbacusMachine\obj\Debug\AbacusMachineSimulator.csprojResolveAssemblyReference.cache
+D:\SimStudio_v20100505\SimStudio_v20100505\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.AddValueForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.ClearForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.CopyForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.MoveForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.SubstractValueForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.AbacusMachineForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.AboutForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Properties.Resources.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\AbacusMachine\obj\Debug\AbacusMachineSimulator.csproj.GenerateResource.Cache
+D:\SimStudio_v20100505\SimStudio_v20100505\AbacusMachine\obj\Debug\AbacusMachineSimulator.exe
+D:\SimStudio_v20100505\SimStudio_v20100505\AbacusMachine\obj\Debug\AbacusMachineSimulator.pdb
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\AbacusMachine\bin\Debug\AbacusMachineSimulator.exe
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\AbacusMachine\bin\Debug\AbacusMachineSimulator.pdb
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\AbacusMachine\bin\Debug\Components.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\AbacusMachine\bin\Debug\Components.pdb
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\AbacusMachine\bin\Debug\en\Components.resources.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\AbacusMachineSimulator.csproj.AssemblyReference.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.AddValueForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.ClearForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.CopyForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.MoveForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.SubstractValueForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.AbacusMachineForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.AboutForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Properties.Resources.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\AbacusMachineSimulator.csproj.GenerateResource.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\AbacusMachineSimulator.csproj.CoreCompileInputs.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\AbacusMa.5B4D85DF.Up2Date
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\AbacusMachineSimulator.exe
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\AbacusMachineSimulator.pdb

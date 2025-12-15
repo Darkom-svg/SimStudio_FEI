@@ -1,0 +1,10 @@
+ADD=10
+while(GZERO)
+{
+	SUB =1
+	STORE 1
+	LOAD 2
+	ADD =1
+	STORE 2
+	LOAD 1
+}

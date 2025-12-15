@@ -1,0 +1,15 @@
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Debug\Components.dll
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Debug\RAMSimulator.pdb
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Debug\AbacusMachine.pdb
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Debug\TuringMachine.pdb
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Debug\Components.pdb
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Debug\SimulatorsEnv.csproj.GenerateResource.Cache
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Debug\en\TuringMachine.resources.dll
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Debug\DusanRodina.SimStudio.AboutForm.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Debug\DusanRodina.SimStudio.SimulatorsForm.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Debug\DusanRodina.SimStudio.Properties.Resources.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Debug\SimStudio.exe
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\bin\Debug\SimStudio.pdb
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Debug\SimStudio.exe
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\SimulatorsEnv\obj\Debug\SimStudio.pdb

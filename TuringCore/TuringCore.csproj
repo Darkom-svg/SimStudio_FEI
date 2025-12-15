@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{292F715D-6E58-44E5-9574-5740CBCDAD2A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TuringCore</RootNamespace>
+    <AssemblyName>TuringCore</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>embedded</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Components\Dialogs\NewStateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Components\Dialogs\NewStateForm.Designer.cs">
+      <DependentUpon>NewStateForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\InfiniteTapeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\InfiniteTapeControl.Designer.cs">
+      <DependentUpon>InfiniteTapeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\StateDiagramControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Components\StateDiagramControl.Designer.cs">
+      <DependentUpon>StateDiagramControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Components\TransitionEventArgs.cs" />
+    <Compile Include="Diagramming\DiagramStyle.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Simulation\AcceptanceStatus.cs" />
+    <Compile Include="Simulation\AcceptType.cs" />
+    <Compile Include="Simulation\InfiniteTape.cs" />
+    <Compile Include="Simulation\LogItem.cs" />
+    <Compile Include="Simulation\TMError.cs" />
+    <Compile Include="Simulation\Transition.cs" />
+    <Compile Include="Simulation\TuringMachineLog.cs" />
+    <Compile Include="Simulation\TuringMachineParser.cs" />
+    <Compile Include="Simulation\TuringThread.cs" />
+    <Compile Include="Simulation\VirtualTuringMachine.cs" />
+    <Compile Include="Simulation\WildCard.cs" />
+    <Compile Include="Diagramming\InsertingTransition.cs" />
+    <Compile Include="Diagramming\State.cs" />
+    <Compile Include="Diagramming\StateDiagram.cs" />
+    <Compile Include="Diagramming\StateType.cs" />
+    <Compile Include="Diagramming\Transition.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Components\Components.csproj">
+      <Project>{9C562E36-F43A-4AA0-A518-75CD00A30A6D}</Project>
+      <Name>Components</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\CurrentState.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\FinalState.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\InitialState.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Components\Dialogs\NewStateForm.en.resx">
+      <DependentUpon>NewStateForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\Dialogs\NewStateForm.resx">
+      <DependentUpon>NewStateForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\InfiniteTapeControl.resx">
+      <DependentUpon>InfiniteTapeControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Components\StateDiagramControl.resx">
+      <DependentUpon>StateDiagramControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\NormalState.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\InitialFinalState.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

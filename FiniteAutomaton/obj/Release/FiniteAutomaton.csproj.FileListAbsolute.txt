@@ -1,0 +1,97 @@
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Release\FiniteAutomaton.exe
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Release\FiniteAutomaton.pdb
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Release\ResolveAssemblyReference.cache
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Release\FiniteAutomaton.Properties.Resources.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Release\FiniteAutomaton.csproj.GenerateResource.Cache
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Release\FiniteAutomaton.exe
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Release\FiniteAutomaton.pdb
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Release\FiniteAutomaton.SimulatorForm.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Release\Components.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Release\Components.pdb
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Release\en\Components.resources.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Release\en\FiniteAutomaton.resources.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Release\TuringCore.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Release\TuringCore.pdb
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Release\en\TuringCore.resources.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Release\en\FiniteAutomaton.resources.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Release\DusanRodina.FiniteAutomaton.FiniteAutomatonForm.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Release\DusanRodina.FiniteAutomaton.FiniteAutomatonForm.en.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Release\FiniteAutomaton.exe.config
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Release\FiniteAutomaton.exe.config
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Release\FiniteAutomaton.exe
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Release\FiniteAutomaton.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Release\en\FiniteAutomaton.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Release\Components.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Release\TuringCore.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Release\Components.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Release\TuringCore.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Release\en\Components.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Release\en\TuringCore.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Release\ResolveAssemblyReference.cache
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Release\DusanRodina.FiniteAutomaton.Dialogs.AboutForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Release\DusanRodina.FiniteAutomaton.Dialogs.AddTFunctionForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Release\DusanRodina.FiniteAutomaton.Dialogs.SettingsForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Release\DusanRodina.FiniteAutomaton.Dialogs.TapeStatisticsForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Release\FiniteAutomaton.Properties.Resources.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Release\DusanRodina.FiniteAutomaton.FiniteAutomatonForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Release\DusanRodina.FiniteAutomaton.Dialogs.AddTFunctionForm.en.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Release\DusanRodina.FiniteAutomaton.FiniteAutomatonForm.en.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Release\FiniteAutomaton.csproj.GenerateResource.Cache
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Release\en\FiniteAutomaton.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Release\FiniteAutomaton.exe
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Release\FiniteAutomaton.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Release\Resources\InitialFinalState.png
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\bin\Release\Resources\InitialFinalState.png
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\bin\Release\FiniteAutomaton.exe.config
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\bin\Release\FiniteAutomaton.exe
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\bin\Release\FiniteAutomaton.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\bin\Release\en\FiniteAutomaton.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\bin\Release\Components.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\bin\Release\TuringCore.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\bin\Release\Components.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\bin\Release\TuringCore.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\bin\Release\TuringCore.dll.config
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\bin\Release\en\Components.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\bin\Release\en\TuringCore.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\obj\Release\FiniteAutomaton.csprojResolveAssemblyReference.cache
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\obj\Release\DusanRodina.FiniteAutomaton.Dialogs.AboutForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\obj\Release\DusanRodina.FiniteAutomaton.Dialogs.AddTFunctionForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\obj\Release\DusanRodina.FiniteAutomaton.Dialogs.SettingsForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\obj\Release\DusanRodina.FiniteAutomaton.Dialogs.TapeStatisticsForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\obj\Release\FiniteAutomaton.Properties.Resources.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\obj\Release\DusanRodina.FiniteAutomaton.FiniteAutomatonForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\obj\Release\DusanRodina.FiniteAutomaton.Dialogs.AddTFunctionForm.en.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\obj\Release\DusanRodina.FiniteAutomaton.FiniteAutomatonForm.en.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\obj\Release\FiniteAutomaton.csproj.GenerateResource.Cache
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\obj\Release\en\FiniteAutomaton.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\obj\Release\FiniteAutomaton.exe
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\obj\Release\FiniteAutomaton.pdb
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\bin\Release\Resources\InitialFinalState.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\bin\Release\FiniteAutomaton.exe.config
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\bin\Release\FiniteAutomaton.exe
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\bin\Release\FiniteAutomaton.pdb
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\bin\Release\en\FiniteAutomaton.resources.dll
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\bin\Release\Components.dll
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\bin\Release\TuringCore.dll
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\bin\Release\Components.pdb
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\bin\Release\TuringCore.pdb
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\bin\Release\TuringCore.dll.config
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\bin\Release\en\Components.resources.dll
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\bin\Release\en\TuringCore.resources.dll
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\Resources\InitialFinalState.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\FiniteAutomaton.exe.config
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\FiniteAutomaton.exe
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\en\FiniteAutomaton.resources.dll
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\obj\Release\FiniteAutomaton.csprojResolveAssemblyReference.cache
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\obj\Release\DusanRodina.FiniteAutomaton.Dialogs.AboutForm.resources
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\obj\Release\DusanRodina.FiniteAutomaton.Dialogs.AddTFunctionForm.resources
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\obj\Release\DusanRodina.FiniteAutomaton.Dialogs.SettingsForm.resources
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\obj\Release\DusanRodina.FiniteAutomaton.Dialogs.TapeStatisticsForm.resources
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\obj\Release\FiniteAutomaton.Properties.Resources.resources
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\obj\Release\DusanRodina.FiniteAutomaton.FiniteAutomatonForm.resources
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\obj\Release\DusanRodina.FiniteAutomaton.Dialogs.AddTFunctionForm.en.resources
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\obj\Release\DusanRodina.FiniteAutomaton.FiniteAutomatonForm.en.resources
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\obj\Release\FiniteAutomaton.csproj.GenerateResource.Cache
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\obj\Release\FiniteAutomaton.csproj.CoreCompileInputs.cache
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\obj\Release\en\FiniteAutomaton.resources.dll
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\obj\Release\FiniteAutomaton.exe

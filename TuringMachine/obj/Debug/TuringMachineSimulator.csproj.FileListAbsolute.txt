@@ -1,0 +1,166 @@
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\DusanRodina.TuringMachine.TuringMachineForm.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\DusanRodina.TuringMachine.Properties.Resources.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\DusanRodina.TuringMachine.TuringMachineForm.en.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\TuringMachineSimulator.csproj.GenerateResource.Cache
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\TuringMachineSimulator.exe
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\TuringMachineSimulator.pdb
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\new.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\open.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\save.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\pause.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\run.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\stop.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\small_copy.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\small_cut.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\small_paste.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\Turing.png
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\TuringMachineSimulator.exe
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\TuringMachineSimulator.pdb
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\en\TuringMachineSimulator.resources.dll
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Components.dll
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Components.pdb
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\en\TuringMachineSimulator.resources.dll
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\DusanRodina.TuringMachine.Components.InfiniteTapeControl.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\DusanRodina.TuringMachine.Dialogs.AboutForm.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\DusanRodina.TuringMachine.Dialogs.AddTFunctionForm.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\DusanRodina.TuringMachine.Dialogs.NewStateForm.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\DusanRodina.TuringMachine.Dialogs.SettingsForm.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\DusanRodina.TuringMachine.Dialogs.TapeStatisticsForm.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\DusanRodina.TuringMachine.Dialogs.AddTFunctionForm.en.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\DusanRodina.TuringMachine.Dialogs.NewStateForm.en.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\ResolveAssemblyReference.cache
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\TuringMachineSimulator.csproj.GenerateResource.Cache
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\TuringMachineSimulator.exe
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\TuringMachineSimulator.pdb
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\new.png
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\open.png
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\save.png
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\pause.png
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\run.png
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\stop.png
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\small_copy.png
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\small_cut.png
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\small_paste.png
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\Turing.png
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\TuringMachineSimulator.exe
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\TuringMachineSimulator.pdb
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\en\TuringMachineSimulator.resources.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Components.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\en\TuringMachineSimulator.resources.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Components.pdb
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\en\Components.resources.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\TuringCore.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\TuringCore.pdb
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\en\TuringCore.resources.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.Dialogs.AboutForm.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.Dialogs.AddTFunctionForm.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.Dialogs.SettingsForm.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.Dialogs.TapeStatisticsForm.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.TuringMachineForm.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.Properties.Resources.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.Dialogs.AddTFunctionForm.en.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.TuringMachineForm.en.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\new.png
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\open.png
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\save.png
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\pause.png
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\run.png
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\stop.png
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\small_copy.png
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\small_cut.png
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\small_paste.png
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Resources\Turing.png
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\TuringMachineSimulator.exe
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\TuringMachineSimulator.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\en\TuringMachineSimulator.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Components.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\TuringCore.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\Components.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\TuringCore.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\en\Components.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\bin\Debug\en\TuringCore.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\ResolveAssemblyReference.cache
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.Dialogs.AboutForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.Dialogs.AddTFunctionForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.Dialogs.SettingsForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.Dialogs.TapeStatisticsForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.TuringMachineForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.Properties.Resources.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.Dialogs.AddTFunctionForm.en.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.TuringMachineForm.en.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\TuringMachineSimulator.csproj.GenerateResource.Cache
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\en\TuringMachineSimulator.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\TuringMachineSimulator.exe
+C:\Development\Visual Studio 2008\Projects\Simulators\TuringMachine\obj\Debug\TuringMachineSimulator.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\bin\Debug\Resources\InitialFinalState.png
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\bin\Debug\Resources\new.png
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\bin\Debug\Resources\open.png
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\bin\Debug\Resources\save.png
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\bin\Debug\Resources\pause.png
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\bin\Debug\Resources\run.png
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\bin\Debug\Resources\stop.png
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\bin\Debug\Resources\small_copy.png
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\bin\Debug\Resources\small_cut.png
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\bin\Debug\Resources\small_paste.png
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\bin\Debug\Resources\Turing.png
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\bin\Debug\TuringMachineSimulator.exe
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\bin\Debug\TuringMachineSimulator.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\bin\Debug\en\TuringMachineSimulator.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\bin\Debug\Components.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\bin\Debug\TuringCore.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\bin\Debug\Components.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\bin\Debug\TuringCore.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\bin\Debug\TuringCore.dll.config
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\bin\Debug\en\Components.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\bin\Debug\en\TuringCore.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\obj\Debug\TuringMachineSimulator.csprojResolveAssemblyReference.cache
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.Dialogs.AboutForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.Dialogs.AddTFunctionForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.Dialogs.SettingsForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.Dialogs.TapeStatisticsForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.TuringMachineForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.Properties.Resources.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.Dialogs.AddTFunctionForm.en.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.TuringMachineForm.en.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\obj\Debug\TuringMachineSimulator.csproj.GenerateResource.Cache
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\obj\Debug\en\TuringMachineSimulator.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\obj\Debug\TuringMachineSimulator.exe
+D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\obj\Debug\TuringMachineSimulator.pdb
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\Resources\InitialFinalState.png
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\Resources\new.png
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\Resources\open.png
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\Resources\save.png
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\Resources\pause.png
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\Resources\run.png
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\Resources\stop.png
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\Resources\small_copy.png
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\Resources\small_cut.png
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\Resources\small_paste.png
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\Resources\Turing.png
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\TuringMachineSimulator.exe.config
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\TuringMachineSimulator.exe
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\TuringMachineSimulator.pdb
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\en\TuringMachineSimulator.resources.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\Components.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\TuringCore.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\Components.pdb
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\TuringCore.pdb
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\TuringCore.dll.config
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\en\Components.resources.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\en\TuringCore.resources.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Debug\TuringMachineSimulator.csproj.AssemblyReference.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.Dialogs.AboutForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.Dialogs.AddTFunctionForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.Dialogs.SettingsForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.Dialogs.TapeStatisticsForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.TuringMachineForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.Properties.Resources.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.Dialogs.AddTFunctionForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Debug\DusanRodina.TuringMachineSimulator.TuringMachineForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Debug\TuringMachineSimulator.csproj.GenerateResource.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Debug\TuringMachineSimulator.csproj.CoreCompileInputs.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Debug\en\TuringMachineSimulator.resources.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Debug\TuringMa.539EA5B3.Up2Date
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Debug\TuringMachineSimulator.exe
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Debug\TuringMachineSimulator.pdb

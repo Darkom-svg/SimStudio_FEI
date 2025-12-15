@@ -1,0 +1,99 @@
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Debug\FiniteAutomaton.exe.config
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Debug\FiniteAutomaton.exe
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Debug\FiniteAutomaton.pdb
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Debug\en\FiniteAutomaton.resources.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Debug\Components.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Debug\TuringCore.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Debug\Components.pdb
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Debug\TuringCore.pdb
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Debug\en\Components.resources.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Debug\en\TuringCore.resources.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Debug\ResolveAssemblyReference.cache
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Debug\FiniteAutomaton.Properties.Resources.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Debug\FiniteAutomaton.SimulatorForm.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Debug\DusanRodina.FiniteAutomaton.FiniteAutomatonForm.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Debug\DusanRodina.FiniteAutomaton.FiniteAutomatonForm.en.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Debug\FiniteAutomaton.csproj.GenerateResource.Cache
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Debug\en\FiniteAutomaton.resources.dll
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Debug\FiniteAutomaton.exe
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Debug\FiniteAutomaton.pdb
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Debug\DusanRodina.FiniteAutomaton.Dialogs.AboutForm.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Debug\DusanRodina.FiniteAutomaton.Dialogs.AddTFunctionForm.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Debug\DusanRodina.FiniteAutomaton.Dialogs.SettingsForm.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Debug\DusanRodina.FiniteAutomaton.Dialogs.TapeStatisticsForm.resources
+D:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Debug\DusanRodina.FiniteAutomaton.Dialogs.AddTFunctionForm.en.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Debug\FiniteAutomaton.exe.config
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Debug\FiniteAutomaton.exe
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Debug\FiniteAutomaton.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Debug\en\FiniteAutomaton.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Debug\Components.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Debug\TuringCore.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Debug\Components.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Debug\TuringCore.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Debug\en\Components.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\bin\Debug\en\TuringCore.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Debug\ResolveAssemblyReference.cache
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Debug\DusanRodina.FiniteAutomaton.Dialogs.AboutForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Debug\DusanRodina.FiniteAutomaton.Dialogs.AddTFunctionForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Debug\DusanRodina.FiniteAutomaton.Dialogs.SettingsForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Debug\DusanRodina.FiniteAutomaton.Dialogs.TapeStatisticsForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Debug\FiniteAutomaton.Properties.Resources.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Debug\DusanRodina.FiniteAutomaton.FiniteAutomatonForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Debug\DusanRodina.FiniteAutomaton.Dialogs.AddTFunctionForm.en.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Debug\DusanRodina.FiniteAutomaton.FiniteAutomatonForm.en.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Debug\FiniteAutomaton.csproj.GenerateResource.Cache
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Debug\en\FiniteAutomaton.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Debug\FiniteAutomaton.exe
+C:\Development\Visual Studio 2008\Projects\Simulators\FiniteAutomaton\obj\Debug\FiniteAutomaton.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\bin\Debug\Resources\InitialFinalState.png
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\bin\Debug\FiniteAutomaton.exe.config
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\bin\Debug\FiniteAutomaton.exe
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\bin\Debug\FiniteAutomaton.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\bin\Debug\en\FiniteAutomaton.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\bin\Debug\Components.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\bin\Debug\TuringCore.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\bin\Debug\Components.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\bin\Debug\TuringCore.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\bin\Debug\TuringCore.dll.config
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\bin\Debug\en\Components.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\bin\Debug\en\TuringCore.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\obj\Debug\FiniteAutomaton.csprojResolveAssemblyReference.cache
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\obj\Debug\DusanRodina.FiniteAutomaton.Dialogs.AboutForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\obj\Debug\DusanRodina.FiniteAutomaton.Dialogs.AddTFunctionForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\obj\Debug\DusanRodina.FiniteAutomaton.Dialogs.SettingsForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\obj\Debug\DusanRodina.FiniteAutomaton.Dialogs.TapeStatisticsForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\obj\Debug\FiniteAutomaton.Properties.Resources.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\obj\Debug\DusanRodina.FiniteAutomaton.FiniteAutomatonForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\obj\Debug\DusanRodina.FiniteAutomaton.Dialogs.AddTFunctionForm.en.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\obj\Debug\DusanRodina.FiniteAutomaton.FiniteAutomatonForm.en.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\obj\Debug\FiniteAutomaton.csproj.GenerateResource.Cache
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\obj\Debug\en\FiniteAutomaton.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\obj\Debug\FiniteAutomaton.exe
+D:\SimStudio_v20100505\SimStudio_v20100505\FiniteAutomaton\obj\Debug\FiniteAutomaton.pdb
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\bin\Debug\Resources\InitialFinalState.png
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\bin\Debug\FiniteAutomaton.exe.config
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\bin\Debug\FiniteAutomaton.exe
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\bin\Debug\FiniteAutomaton.pdb
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\bin\Debug\en\FiniteAutomaton.resources.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\bin\Debug\Components.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\bin\Debug\TuringCore.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\bin\Debug\Components.pdb
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\bin\Debug\TuringCore.pdb
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\bin\Debug\TuringCore.dll.config
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\bin\Debug\en\Components.resources.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\bin\Debug\en\TuringCore.resources.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Debug\FiniteAutomaton.csproj.AssemblyReference.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Debug\DusanRodina.FiniteAutomaton.Dialogs.AboutForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Debug\DusanRodina.FiniteAutomaton.Dialogs.AddTFunctionForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Debug\DusanRodina.FiniteAutomaton.Dialogs.SettingsForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Debug\DusanRodina.FiniteAutomaton.Dialogs.TapeStatisticsForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Debug\FiniteAutomaton.Properties.Resources.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Debug\DusanRodina.FiniteAutomaton.FiniteAutomatonForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Debug\DusanRodina.FiniteAutomaton.Dialogs.AddTFunctionForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Debug\DusanRodina.FiniteAutomaton.FiniteAutomatonForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Debug\FiniteAutomaton.csproj.GenerateResource.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Debug\FiniteAutomaton.csproj.CoreCompileInputs.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Debug\en\FiniteAutomaton.resources.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Debug\FiniteAu.1278EA6E.Up2Date
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Debug\FiniteAutomaton.exe
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Debug\FiniteAutomaton.pdb

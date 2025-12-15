@@ -1,0 +1,12 @@
+//Priklad na vypocet suctu cisel v registroch R0 a R1
+//Vysledok sa ulozi do registra R2
+
+//#0 a = 14
+//#1 b = 22
+//Kopírovanie registra R0 do registra 2 (cez pomocný register R4)
+(s0a2a4)0 (s4a0)4
+//Kopírovanie registra R1 do registra 3 (cez pomocný register R5)
+(s1a3a5)1 (s5a1)5
+//Presunie register R3 do registra 2
+(s3a2)3
+

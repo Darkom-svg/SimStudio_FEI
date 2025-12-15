@@ -1,0 +1,282 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D9DF7681-B36E-404D-A164-EFCDED0C4B4D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DusanRodina.RandomAccessMachine</RootNamespace>
+    <AssemblyName>RandomAccessMachineSimulator</AssemblyName>
+    <ApplicationIcon>RAM.ico</ApplicationIcon>
+    <ManifestCertificateThumbprint>002F5EFB7F969E4E473A4B42AEF3426FBBCE9C1B</ManifestCertificateThumbprint>
+    <ManifestKeyFile>RAMSimulator_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>false</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <PublishUrl>C:\Users\Dušan\Documents\ram\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetZone>LocalIntranet</TargetZone>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <ApplicationRevision>2</ApplicationRevision>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>embedded</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConsoleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConsoleForm.Designer.cs">
+      <DependentUpon>ConsoleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Conversion\ArithmeticFormulaConvertor.cs" />
+    <Compile Include="Conversion\CConvertor.cs" />
+    <Compile Include="Conversion\Convertor.cs" />
+    <Compile Include="Conversion\ICBlock.cs" />
+    <Compile Include="Conversion\ICCommand.cs" />
+    <Compile Include="Conversion\ICCommandTypes.cs" />
+    <Compile Include="Conversion\ICVariable.cs" />
+    <Compile Include="Conversion\IntermediateCode.cs" />
+    <Compile Include="Conversion\LogicFormulaConvertor.cs" />
+    <Compile Include="Dialogs\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\CConversionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\CConversionForm.Designer.cs">
+      <DependentUpon>CConversionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ComplexityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ComplexityForm.Designer.cs">
+      <DependentUpon>ComplexityForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\InstructionSetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\InstructionSetForm.Designer.cs">
+      <DependentUpon>InstructionSetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\RAMTypeSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\RAMTypeSelectionForm.Designer.cs">
+      <DependentUpon>RAMTypeSelectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Simulation\CompilerException.cs" />
+    <Compile Include="Simulation\InvalidInstructionException.cs" />
+    <Compile Include="StackForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StackForm.Designer.cs">
+      <DependentUpon>StackForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RAMSimulatorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RAMSimulatorForm.Designer.cs">
+      <DependentUpon>RAMSimulatorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Simulation\InstructionType.cs" />
+    <Compile Include="Simulation\Label.cs" />
+    <Compile Include="Simulation\LabeledRAMInstruction.cs" />
+    <Compile Include="Simulation\OperationType.cs" />
+    <Compile Include="Simulation\RAMInstruction.cs" />
+    <Compile Include="Simulation\RAMRegister.cs" />
+    <Compile Include="Simulation\RAMScreen.cs" />
+    <Compile Include="Simulation\RegisterMemory.cs" />
+    <Compile Include="Simulation\RegisterType.cs" />
+    <Compile Include="ScreenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScreenForm.Designer.cs">
+      <DependentUpon>ScreenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dialogs\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\CConversionForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CConversionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAMSimulatorForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RAMSimulatorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScreenForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ScreenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Simulation\Compiler.cs" />
+    <Compile Include="Simulation\Simulator.cs" />
+    <Compile Include="Utils\StringUtils.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Components\Components.csproj">
+      <Project>{9C562E36-F43A-4AA0-A518-75CD00A30A6D}</Project>
+      <Name>Components</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="graphics\new.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="graphics\open.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="graphics\pause.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="graphics\RAM.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="graphics\Read.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="graphics\ReadOff.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="graphics\ReadP.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="graphics\ReadPOff.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="graphics\run.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="graphics\save.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="graphics\stop.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="graphics\Write.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="graphics\WriteOff.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\close.png" />
+    <EmbeddedResource Include="ConsoleForm.en.resx">
+      <DependentUpon>ConsoleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConsoleForm.resx">
+      <DependentUpon>ConsoleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ComplexityForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ComplexityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\InstructionSetForm.resx">
+      <DependentUpon>InstructionSetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\RAMTypeSelectionForm.resx">
+      <DependentUpon>RAMTypeSelectionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAMSimulatorForm.en.resx">
+      <DependentUpon>RAMSimulatorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScreenForm.en.resx">
+      <DependentUpon>ScreenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StackForm.resx">
+      <DependentUpon>StackForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RAM.ico" />
+    <BaseApplicationManifest Include="Properties\app.manifest" />
+    <None Include="Resources\RAM.png">
+    </None>
+    <None Include="Resources\small_paste.png">
+    </None>
+    <None Include="Resources\small_cut.png">
+    </None>
+    <None Include="Resources\small_copy.png">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

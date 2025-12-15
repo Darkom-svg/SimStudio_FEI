@@ -1,0 +1,77 @@
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\obj\Release\ResolveAssemblyReference.cache
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\obj\Release\PushdownAutomaton.Properties.Resources.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\obj\Release\PushdownAutomaton.csproj.GenerateResource.Cache
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\obj\Release\DusanRodina.PushdownAutomaton.Dialogs.AboutForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\obj\Release\DusanRodina.PushdownAutomaton.Dialogs.AddTFunctionForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\obj\Release\DusanRodina.PushdownAutomaton.Dialogs.SettingsForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\obj\Release\DusanRodina.PushdownAutomaton.Dialogs.TapeStatisticsForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\obj\Release\DusanRodina.PushdownAutomaton.Dialogs.AddTFunctionForm.en.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\obj\Release\DusanRodina.PushdownAutomaton.PushdownAutomatonForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\obj\Release\DusanRodina.PushdownAutomaton.PushdownAutomatonForm.en.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\bin\Release\PushdownAutomaton.exe.config
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\bin\Release\PushdownAutomaton.exe
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\bin\Release\PushdownAutomaton.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\bin\Release\en\PushdownAutomaton.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\bin\Release\Components.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\bin\Release\TuringCore.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\bin\Release\Components.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\bin\Release\TuringCore.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\bin\Release\en\Components.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\bin\Release\en\TuringCore.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\obj\Release\en\PushdownAutomaton.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\obj\Release\PushdownAutomaton.exe
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\obj\Release\PushdownAutomaton.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\bin\Release\Resources\InitialFinalState.png
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\bin\Release\Resources\InitialFinalState.png
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\bin\Release\PushdownAutomaton.exe.config
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\bin\Release\PushdownAutomaton.exe
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\bin\Release\PushdownAutomaton.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\bin\Release\en\PushdownAutomaton.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\bin\Release\Components.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\bin\Release\TuringCore.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\bin\Release\Components.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\bin\Release\TuringCore.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\bin\Release\TuringCore.dll.config
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\bin\Release\en\Components.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\bin\Release\en\TuringCore.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\obj\Release\DusanRodina.PushdownAutomaton.Dialogs.AboutForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\obj\Release\DusanRodina.PushdownAutomaton.Dialogs.AddTFunctionForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\obj\Release\DusanRodina.PushdownAutomaton.Dialogs.SettingsForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\obj\Release\DusanRodina.PushdownAutomaton.Dialogs.TapeStatisticsForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\obj\Release\DusanRodina.PushdownAutomaton.PushdownAutomatonForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\obj\Release\PushdownAutomaton.Properties.Resources.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\obj\Release\DusanRodina.PushdownAutomaton.Dialogs.AddTFunctionForm.en.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\obj\Release\DusanRodina.PushdownAutomaton.PushdownAutomatonForm.en.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\obj\Release\PushdownAutomaton.csproj.GenerateResource.Cache
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\obj\Release\en\PushdownAutomaton.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\obj\Release\PushdownAutomaton.exe
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\obj\Release\PushdownAutomaton.pdb
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton\bin\Release\Resources\InitialFinalState.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton\bin\Release\PushdownAutomaton.exe.config
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton\bin\Release\PushdownAutomaton.exe
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton\bin\Release\PushdownAutomaton.pdb
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton\bin\Release\en\PushdownAutomaton.resources.dll
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton\bin\Release\Components.dll
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton\bin\Release\TuringCore.dll
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton\bin\Release\Components.pdb
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton\bin\Release\TuringCore.pdb
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton\bin\Release\TuringCore.dll.config
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton\bin\Release\en\Components.resources.dll
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton\bin\Release\en\TuringCore.resources.dll
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\Resources\InitialFinalState.png
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\PushdownAutomaton.exe.config
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\PushdownAutomaton.exe
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Release\en\PushdownAutomaton.resources.dll
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton\obj\Release\PushdownAutomaton.csprojResolveAssemblyReference.cache
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton\obj\Release\DusanRodina.PushdownAutomaton.Dialogs.AboutForm.resources
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton\obj\Release\DusanRodina.PushdownAutomaton.Dialogs.AddTFunctionForm.resources
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton\obj\Release\DusanRodina.PushdownAutomaton.Dialogs.SettingsForm.resources
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton\obj\Release\DusanRodina.PushdownAutomaton.Dialogs.TapeStatisticsForm.resources
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton\obj\Release\DusanRodina.PushdownAutomaton.PushdownAutomatonForm.resources
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton\obj\Release\PushdownAutomaton.Properties.Resources.resources
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton\obj\Release\DusanRodina.PushdownAutomaton.Dialogs.AddTFunctionForm.en.resources
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton\obj\Release\DusanRodina.PushdownAutomaton.PushdownAutomatonForm.en.resources
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton\obj\Release\PushdownAutomaton.csproj.GenerateResource.Cache
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton\obj\Release\PushdownAutomaton.csproj.CoreCompileInputs.cache
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton\obj\Release\en\PushdownAutomaton.resources.dll
+C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton\obj\Release\PushdownAutomaton.exe

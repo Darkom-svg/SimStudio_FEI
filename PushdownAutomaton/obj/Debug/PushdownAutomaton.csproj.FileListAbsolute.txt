@@ -1,0 +1,75 @@
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\bin\Debug\PushdownAutomaton.exe.config
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\bin\Debug\PushdownAutomaton.exe
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\bin\Debug\PushdownAutomaton.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\bin\Debug\en\PushdownAutomaton.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\bin\Debug\Components.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\bin\Debug\TuringCore.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\bin\Debug\Components.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\bin\Debug\TuringCore.pdb
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\bin\Debug\en\Components.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\bin\Debug\en\TuringCore.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\obj\Debug\ResolveAssemblyReference.cache
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\obj\Debug\DusanRodina.PushdownAutomaton.Dialogs.AboutForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\obj\Debug\DusanRodina.PushdownAutomaton.Dialogs.AddTFunctionForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\obj\Debug\DusanRodina.PushdownAutomaton.Dialogs.SettingsForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\obj\Debug\DusanRodina.PushdownAutomaton.Dialogs.TapeStatisticsForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\obj\Debug\DusanRodina.PushdownAutomaton.PushdownAutomatonForm.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\obj\Debug\PushdownAutomaton.Properties.Resources.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\obj\Debug\DusanRodina.PushdownAutomaton.Dialogs.AddTFunctionForm.en.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\obj\Debug\DusanRodina.PushdownAutomaton.PushdownAutomatonForm.en.resources
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\obj\Debug\PushdownAutomaton.csproj.GenerateResource.Cache
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\obj\Debug\en\PushdownAutomaton.resources.dll
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\obj\Debug\PushdownAutomaton.exe
+C:\Development\Visual Studio 2008\Projects\Simulators\PushdownAutomaton\obj\Debug\PushdownAutomaton.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\bin\Debug\Resources\InitialFinalState.png
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\bin\Debug\PushdownAutomaton.exe.config
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\bin\Debug\PushdownAutomaton.exe
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\bin\Debug\PushdownAutomaton.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\bin\Debug\en\PushdownAutomaton.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\bin\Debug\Components.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\bin\Debug\TuringCore.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\bin\Debug\Components.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\bin\Debug\TuringCore.pdb
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\bin\Debug\TuringCore.dll.config
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\bin\Debug\en\Components.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\bin\Debug\en\TuringCore.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\obj\Debug\PushdownAutomaton.csprojResolveAssemblyReference.cache
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\obj\Debug\DusanRodina.PushdownAutomaton.Dialogs.AboutForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\obj\Debug\DusanRodina.PushdownAutomaton.Dialogs.AddTFunctionForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\obj\Debug\DusanRodina.PushdownAutomaton.Dialogs.SettingsForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\obj\Debug\DusanRodina.PushdownAutomaton.Dialogs.TapeStatisticsForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\obj\Debug\DusanRodina.PushdownAutomaton.PushdownAutomatonForm.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\obj\Debug\PushdownAutomaton.Properties.Resources.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\obj\Debug\DusanRodina.PushdownAutomaton.Dialogs.AddTFunctionForm.en.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\obj\Debug\DusanRodina.PushdownAutomaton.PushdownAutomatonForm.en.resources
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\obj\Debug\PushdownAutomaton.csproj.GenerateResource.Cache
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\obj\Debug\en\PushdownAutomaton.resources.dll
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\obj\Debug\PushdownAutomaton.exe
+D:\SimStudio_v20100505\SimStudio_v20100505\PushdownAutomaton\obj\Debug\PushdownAutomaton.pdb
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\bin\Debug\Resources\InitialFinalState.png
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\bin\Debug\PushdownAutomaton.exe.config
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\bin\Debug\PushdownAutomaton.exe
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\bin\Debug\PushdownAutomaton.pdb
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\bin\Debug\en\PushdownAutomaton.resources.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\bin\Debug\Components.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\bin\Debug\TuringCore.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\bin\Debug\Components.pdb
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\bin\Debug\TuringCore.pdb
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\bin\Debug\TuringCore.dll.config
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\bin\Debug\en\Components.resources.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\bin\Debug\en\TuringCore.resources.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Debug\PushdownAutomaton.csproj.AssemblyReference.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Debug\DusanRodina.PushdownAutomaton.Dialogs.AboutForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Debug\DusanRodina.PushdownAutomaton.Dialogs.AddTFunctionForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Debug\DusanRodina.PushdownAutomaton.Dialogs.SettingsForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Debug\DusanRodina.PushdownAutomaton.Dialogs.TapeStatisticsForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Debug\DusanRodina.PushdownAutomaton.PushdownAutomatonForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Debug\PushdownAutomaton.Properties.Resources.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Debug\DusanRodina.PushdownAutomaton.Dialogs.AddTFunctionForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Debug\DusanRodina.PushdownAutomaton.PushdownAutomatonForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Debug\PushdownAutomaton.csproj.GenerateResource.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Debug\PushdownAutomaton.csproj.CoreCompileInputs.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Debug\en\PushdownAutomaton.resources.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Debug\Pushdown.43007AFF.Up2Date
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Debug\PushdownAutomaton.exe
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Debug\PushdownAutomaton.pdb

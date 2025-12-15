@@ -1,0 +1,16 @@
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\bin\Debug\Components.dll
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\bin\Debug\Components.pdb
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\AbacusMachine.csproj.GenerateResource.Cache
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.AddValueForm.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.ClearForm.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.CopyForm.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.MoveForm.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Dialogs.SubstractValueForm.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.AbacusMachineForm.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.AboutForm.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\DusanRodina.AbacusMachine.Properties.Resources.resources
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\bin\Debug\AbacusMachineSimulator.exe
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\bin\Debug\AbacusMachineSimulator.pdb
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\AbacusMachineSimulator.exe
+C:\Users\Dušan\Documents\Visual Studio 2008\Projects\Simulators\AbacusMachine\obj\Debug\AbacusMachineSimulator.pdb

@@ -1,0 +1,32 @@
+//#screen 9x9,1000 
+//#1 x
+//#2 y
+//#3 poz1
+//#4 poz2
+//#5 i
+//#6 offset
+//#7 tmp
+
+load =81
+store 5
+start:
+load 5
+sub =1
+store 5
+
+div =2
+mult =2
+sub 5
+jzero draw_point
+jump not_draw
+draw_point:
+load 5
+add =1000
+store 6
+load =1
+store *6
+
+not_draw:
+load 5
+jgzero start
+halt

@@ -1,0 +1,162 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="15.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5289B780-BCA0-4475-8F4D-6E17BF3358EC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DusanRodina.SimStudio</RootNamespace>
+    <AssemblyName>SimStudio</AssemblyName>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <StartupObject>DusanRodina.SimStudio.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>embedded</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SimStudio.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AppColors.cs" />
+    <Compile Include="MachineType.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SimulatorsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SimulatorsForm.Designer.cs">
+      <DependentUpon>SimulatorsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimulatorsForm.resx">
+      <DependentUpon>SimulatorsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimStudio.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Abacus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RAM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SimStudio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Turing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AbacusMachine\AbacusMachineSimulator.csproj">
+      <Project>{2EE94A38-B6C9-4701-B3D9-4D4288013472}</Project>
+      <Name>AbacusMachineSimulator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Components\Components.csproj">
+      <Project>{9c562e36-f43a-4aa0-a518-75cd00a30a6d}</Project>
+      <Name>Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FiniteAutomaton\FiniteAutomaton.csproj">
+      <Project>{648D0A1E-4C9E-4794-9D75-C132D2BA20B9}</Project>
+      <Name>FiniteAutomaton</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PushdownAutomaton\PushdownAutomaton.csproj">
+      <Project>{B17BB48C-C195-45A3-B926-CB4A61CE99B8}</Project>
+      <Name>PushdownAutomaton</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RAMSimulator\RandomAccessMachineSimulator.csproj">
+      <Project>{D9DF7681-B36E-404D-A164-EFCDED0C4B4D}</Project>
+      <Name>RandomAccessMachineSimulator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TuringMachine\TuringMachineSimulator.csproj">
+      <Project>{7CE993DA-D4B5-4BFF-9DCC-4AA5842189E8}</Project>
+      <Name>TuringMachineSimulator</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\small_open.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\small_open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Background2.jpg" />
+    <Content Include="Resources\Fei_logo1.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
