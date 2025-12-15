@@ -54,16 +54,13 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.pushDownAutomatonButton2 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pIcon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // bTuring
@@ -319,23 +316,10 @@
             this.pushDownAutomatonButton2.UseVisualStyleBackColor = true;
             this.pushDownAutomatonButton2.Click += new System.EventHandler(this.pushDownAutomatonButton2_Click);
             // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(121, 380);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(231, 33);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "SimStudio - FEI STU";
-            // 
             // pictureBox5
             // 
             this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Image = global::DusanRodina.SimStudio.Properties.Resources.Fei_logo;
             this.pictureBox5.Location = new System.Drawing.Point(476, 3);
             this.pictureBox5.MaximumSize = new System.Drawing.Size(480, 240);
             this.pictureBox5.MinimumSize = new System.Drawing.Size(240, 120);
@@ -345,29 +329,15 @@
             this.pictureBox5.TabIndex = 22;
             this.pictureBox5.TabStop = false;
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox5, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(-8, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(946, 529);
-            this.tableLayoutPanel1.TabIndex = 24;
-            // 
             // SimulatorsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BackgroundImage = global::DusanRodina.SimStudio.Properties.Resources.Background2;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(938, 521);
             this.ControlBox = false;
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pushDownAutomatonButton2);
@@ -383,7 +353,6 @@
             this.Controls.Add(this.bRAM);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.bTuring);
-            this.Controls.Add(this.tableLayoutPanel1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(15, 15);
@@ -396,14 +365,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
         }
-
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-
-        private System.Windows.Forms.Label label5;
 
         private System.Windows.Forms.PictureBox pictureBox5;
 
