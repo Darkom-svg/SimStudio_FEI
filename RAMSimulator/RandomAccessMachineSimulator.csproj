@@ -188,9 +188,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="graphics\pause.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="graphics\RAM.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -204,12 +201,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="graphics\ReadPOff.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="graphics\run.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="graphics\stop.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="graphics\Write.png">

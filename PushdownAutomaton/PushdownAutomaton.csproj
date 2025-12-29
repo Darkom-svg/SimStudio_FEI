@@ -157,11 +157,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\copy.png" />
+    <Content Include="Resources\next.png" />
     <Content Include="Resources\open.png" />
     <Content Include="Resources\save.png" />
     <Content Include="Resources\small_cut.png" />
     <Content Include="Resources\small_new.png" />
     <Content Include="Resources\small_paste.png" />
+    <Content Include="Resources\Turing.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1709,7 +1709,7 @@
     <value>Zadajte text, ktorý chcete nájsť </value>
   </data>
   <data name="miAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>138, 22</value>
   </data>
   <data name="miAbout.Text" xml:space="preserve">
     <value>O programe</value>
@@ -1820,7 +1820,7 @@
     <value>Magenta</value>
   </data>
   <data name="runToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 22</value>
+    <value>64, 22</value>
   </data>
   <data name="runToolStripButton.Text" xml:space="preserve">
     <value>Spustiť</value>
@@ -1832,7 +1832,7 @@
     <value>Magenta</value>
   </data>
   <data name="breakToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 22</value>
+    <value>68, 22</value>
   </data>
   <data name="breakToolStripButton.Text" xml:space="preserve">
     <value>Prerušiť</value>
@@ -1874,7 +1874,7 @@
     <value>3, 27</value>
   </data>
   <data name="mainToolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>371, 25</value>
+    <value>382, 25</value>
   </data>
   <data name="mainToolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>

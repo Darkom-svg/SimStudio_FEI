@@ -206,14 +206,11 @@ D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\obj\Debug\SimStudio.csp
 D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\obj\Debug\SimStudio.exe
 D:\SimStudio_v20100505\SimStudio_v20100505\SimulatorsEnv\obj\Debug\SimStudio.pdb
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\Resources\InitialFinalState.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\graphics\pause.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\graphics\RAM.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\graphics\Read.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\graphics\ReadOff.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\graphics\ReadP.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\graphics\ReadPOff.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\graphics\run.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\graphics\stop.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\graphics\Write.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\graphics\WriteOff.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\Resources\pause.png

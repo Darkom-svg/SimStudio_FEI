@@ -140,20 +140,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\pause.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\run.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\stop.png" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="Resources\new.png" />
+    <Content Include="Resources\next.png" />
+    <Content Include="Resources\pause.png" />
+    <Content Include="Resources\run.png" />
     <Content Include="Resources\small_copy.png" />
     <Content Include="Resources\open.png" />
     <Content Include="Resources\save.png" />
     <Content Include="Resources\small_cut.png" />
     <Content Include="Resources\small_paste.png" />
+    <Content Include="Resources\stop.png" />
+    <Content Include="Resources\Turing.png" />
     <Content Include="Resources\_new.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

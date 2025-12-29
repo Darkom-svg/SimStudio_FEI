@@ -37,6 +37,9 @@
             this.okButton = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.pIcon = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pIcon)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,9 +58,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(68, 74);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 13);
+            this.label2.Size = new System.Drawing.Size(117, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Verzia 1.0 (6.12.2007)";
+            this.label2.Text = "Verzia 3.0 (15.12.2025)";
             // 
             // label4
             // 
@@ -71,16 +74,16 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(68, 132);
+            this.label5.Location = new System.Drawing.Point(68, 136);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 13);
+            this.label5.Size = new System.Drawing.Size(106, 13);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Súčasti Sim Studia:";
+            this.label5.Text = "Sim Studio obsahuje:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(127, 154);
+            this.label6.Location = new System.Drawing.Point(127, 155);
             this.label6.Margin = new System.Windows.Forms.Padding(3);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(81, 13);
@@ -90,7 +93,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(127, 173);
+            this.label7.Location = new System.Drawing.Point(127, 180);
             this.label7.Margin = new System.Windows.Forms.Padding(3);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(129, 13);
@@ -100,7 +103,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(127, 192);
+            this.label8.Location = new System.Drawing.Point(127, 205);
             this.label8.Margin = new System.Windows.Forms.Padding(3);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(87, 13);
@@ -110,7 +113,7 @@
             // okButton
             // 
             this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.okButton.Location = new System.Drawing.Point(230, 241);
+            this.okButton.Location = new System.Drawing.Point(267, 279);
             this.okButton.Name = "okButton";
             this.okButton.Size = new System.Drawing.Size(90, 30);
             this.okButton.TabIndex = 8;
@@ -138,11 +141,41 @@
             this.pIcon.TabIndex = 10;
             this.pIcon.TabStop = false;
             // 
-            // frmAbout
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(127, 255);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(111, 13);
+            this.label11.TabIndex = 14;
+            this.label11.Text = "Pushdown Automaton";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(127, 230);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(86, 13);
+            this.label10.TabIndex = 13;
+            this.label10.Text = "Finite Automaton";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(68, 111);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(150, 13);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "(C) 2025 - 2026 Marco Dzurilla";
+            // 
+            // AboutForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(332, 283);
+            this.ClientSize = new System.Drawing.Size(369, 321);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.pIcon);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.okButton);
@@ -156,15 +189,19 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmAbout";
+            this.Name = "AboutForm";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "O programe Sim Studio: Abacus Machine";
             ((System.ComponentModel.ISupportInitialize)(this.pIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
+
+        private System.Windows.Forms.Label label3;
+
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
 
         #endregion
 

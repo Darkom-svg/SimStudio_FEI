@@ -1003,7 +1003,7 @@ namespace DusanRodina.TuringMachineSimulator {
 			// 
 			// stepToolStripButton
 			// 
-			this.stepToolStripButton.Image = global::DusanRodina.TuringMachineSimulator.Properties.Resources.run;
+			this.stepToolStripButton.Image = global::DusanRodina.TuringMachineSimulator.Properties.Resources.next;
 			resources.ApplyResources(this.stepToolStripButton, "stepToolStripButton");
 			this.stepToolStripButton.Name = "stepToolStripButton";
 			this.stepToolStripButton.Click += new System.EventHandler(this.stepToolStripButton_Click);
@@ -1192,7 +1192,7 @@ namespace DusanRodina.TuringMachineSimulator {
 		private ToolStripButton breakToolStripButton;
 		private ToolStripButton stopToolStripButton;
 		private ToolStripSeparator toolStripSeparator4;
-		private ToolStripButton stepToolStripButton;
+		private System.Windows.Forms.ToolStripButton stepToolStripButton;
 		private ToolStripPanel toolStripPanel1;
 		private Panel speedPanel;
 		private ToolStripSeparator toolStripSeparator5;

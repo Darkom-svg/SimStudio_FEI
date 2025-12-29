@@ -138,14 +138,11 @@ D:\SimStudio_v20100505\SimStudio_v20100505\RAMSimulator\obj\Debug\RandomAccessMa
 D:\SimStudio_v20100505\SimStudio_v20100505\RAMSimulator\obj\Debug\en\RandomAccessMachineSimulator.resources.dll
 D:\SimStudio_v20100505\SimStudio_v20100505\RAMSimulator\obj\Debug\RandomAccessMachineSimulator.exe
 D:\SimStudio_v20100505\SimStudio_v20100505\RAMSimulator\obj\Debug\RandomAccessMachineSimulator.pdb
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\RAMSimulator\bin\Debug\graphics\pause.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\RAMSimulator\bin\Debug\graphics\RAM.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\RAMSimulator\bin\Debug\graphics\Read.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\RAMSimulator\bin\Debug\graphics\ReadOff.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\RAMSimulator\bin\Debug\graphics\ReadP.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\RAMSimulator\bin\Debug\graphics\ReadPOff.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\RAMSimulator\bin\Debug\graphics\run.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\RAMSimulator\bin\Debug\graphics\stop.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\RAMSimulator\bin\Debug\graphics\Write.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\RAMSimulator\bin\Debug\graphics\WriteOff.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\RAMSimulator\bin\Debug\RandomAccessMachineSimulator.exe

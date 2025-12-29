@@ -661,7 +661,7 @@ namespace DusanRodina.AbacusMachine {
 			// 
 			// stepToolStripButton
 			// 
-			this.stepToolStripButton.Image = global::DusanRodina.AbacusMachine.Properties.Resources.run;
+			this.stepToolStripButton.Image = global::DusanRodina.AbacusMachine.Properties.Resources.next;
 			this.stepToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.stepToolStripButton.Name = "stepToolStripButton";
 			this.stepToolStripButton.Size = new System.Drawing.Size(51, 22);

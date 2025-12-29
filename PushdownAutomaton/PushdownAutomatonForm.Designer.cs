@@ -1027,7 +1027,7 @@ namespace DusanRodina.PushdownAutomaton {
 	        // 
 	        // stepToolStripButton
 	        // 
-	        this.stepToolStripButton.Image = global::PushdownAutomaton.Properties.Resources.run;
+	        this.stepToolStripButton.Image = global::PushdownAutomaton.Properties.Resources.next;
 	        resources.ApplyResources(this.stepToolStripButton, "stepToolStripButton");
 	        this.stepToolStripButton.Name = "stepToolStripButton";
 	        this.stepToolStripButton.Click += new System.EventHandler(this.stepToolStripButton_Click);
@@ -1207,7 +1207,7 @@ namespace DusanRodina.PushdownAutomaton {
         private ToolStripButton breakToolStripButton;
         private ToolStripButton stopToolStripButton;
         private ToolStripSeparator toolStripSeparator4;
-        private ToolStripButton stepToolStripButton;
+        private System.Windows.Forms.ToolStripButton stepToolStripButton;
         private Panel speedPanel;
         private TrackBar tbSpeed;
         private Label label3;

@@ -178,11 +178,15 @@
   <ItemGroup>
     <Content Include="Abacus.ico" />
     <Content Include="Resources\copy.png" />
+    <Content Include="Resources\next.png" />
     <Content Include="Resources\open.png" />
+    <Content Include="Resources\pause.png" />
+    <Content Include="Resources\run.png" />
     <Content Include="Resources\save.png" />
     <Content Include="Resources\small_cut.png" />
     <Content Include="Resources\small_new.png" />
     <Content Include="Resources\small_paste.png" />
+    <Content Include="Resources\stop.png" />
     <None Include="Resources\Abacus.png" />
   </ItemGroup>
   <ItemGroup>

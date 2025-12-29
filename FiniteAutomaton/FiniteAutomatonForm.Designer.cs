@@ -994,7 +994,7 @@ namespace DusanRodina.FiniteAutomaton {
 	        // 
 	        // stepToolStripButton
 	        // 
-	        this.stepToolStripButton.Image = global::FiniteAutomaton.Properties.Resources.run;
+	        this.stepToolStripButton.Image = global::FiniteAutomaton.Properties.Resources.next;
 	        resources.ApplyResources(this.stepToolStripButton, "stepToolStripButton");
 	        this.stepToolStripButton.Name = "stepToolStripButton";
 	        this.stepToolStripButton.Click += new System.EventHandler(this.stepToolStripButton_Click);
