@@ -1482,7 +1482,7 @@
     <value>Tvar prechodovej funkcie</value>
   </data>
   <data name="miTransitions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>132, 22</value>
   </data>
   <data name="miTransitions.Text" xml:space="preserve">
     <value>Prechody</value>
@@ -1557,16 +1557,16 @@
     <value>Štatistiky pásky</value>
   </data>
   <data name="miTape.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>132, 22</value>
   </data>
   <data name="miTape.Text" xml:space="preserve">
     <value>Páska</value>
   </data>
   <data name="toolStripMenuItem14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 6</value>
+    <value>129, 6</value>
   </data>
   <data name="miSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>132, 22</value>
   </data>
   <data name="miSettings.Text" xml:space="preserve">
     <value>Nastavenia</value>
@@ -1694,7 +1694,7 @@
     <value>Zadajte text, ktorý chcete nájsť </value>
   </data>
   <data name="miAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>138, 22</value>
   </data>
   <data name="miAbout.Text" xml:space="preserve">
     <value>O programe</value>
@@ -1805,7 +1805,7 @@
     <value>Magenta</value>
   </data>
   <data name="runToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 22</value>
+    <value>64, 22</value>
   </data>
   <data name="runToolStripButton.Text" xml:space="preserve">
     <value>Spustiť</value>
@@ -1817,7 +1817,7 @@
     <value>Magenta</value>
   </data>
   <data name="breakToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>63, 22</value>
+    <value>68, 22</value>
   </data>
   <data name="breakToolStripButton.Text" xml:space="preserve">
     <value>Prerušiť</value>
@@ -1853,7 +1853,7 @@
     <value>3, 27</value>
   </data>
   <data name="mainToolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>271, 25</value>
+    <value>277, 25</value>
   </data>
   <data name="mainToolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
