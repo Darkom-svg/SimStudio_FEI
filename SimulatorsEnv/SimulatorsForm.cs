@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace DusanRodina.SimStudio {
 	public partial class SimulatorsForm : Form
@@ -28,6 +29,10 @@ namespace DusanRodina.SimStudio {
             AbacusMachine.AbacusMachineForm frm = new AbacusMachine.AbacusMachineForm();
             frm.MdiParent = this.MdiParent;
             frm.Show();
+        }
+        private void bTrainer_Click(object sender, EventArgs e)
+        {
+            return;
         }
 
         private void oProgrameToolStripMenuItem_Click(object sender, EventArgs e)
@@ -58,11 +63,7 @@ namespace DusanRodina.SimStudio {
         {
             this.Close();
         }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void SimulatorsForm_Load(object sender, EventArgs e)
         {
@@ -83,7 +84,10 @@ namespace DusanRodina.SimStudio {
             frm.Show();
         }
 
-
-
+        private void label8_Click(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+        
     }
 }
