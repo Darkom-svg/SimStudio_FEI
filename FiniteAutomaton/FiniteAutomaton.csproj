@@ -140,22 +140,21 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\new.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\open.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\pause.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\run.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\save.png" />
+    <None Include="Resources\stop.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\stop.png" />
+    <Content Include="Resources\small_copy.png" />
+    <Content Include="Resources\open.png" />
+    <Content Include="Resources\save.png" />
+    <Content Include="Resources\small_cut.png" />
+    <Content Include="Resources\small_paste.png" />
+    <Content Include="Resources\_new.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

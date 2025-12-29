@@ -155,21 +155,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\new.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\open.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\save.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="Resources\copy.png" />
+    <Content Include="Resources\open.png" />
     <Content Include="Resources\pause.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -180,22 +167,11 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\save.png" />
+    <Content Include="Resources\small_cut.png" />
+    <Content Include="Resources\small_new.png" />
+    <Content Include="Resources\small_paste.png" />
     <Content Include="Resources\stop.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\small_copy.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\small_cut.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\small_paste.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

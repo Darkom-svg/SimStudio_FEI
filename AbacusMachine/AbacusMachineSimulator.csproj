@@ -155,9 +155,6 @@
     <Compile Include="Simulation\VirtualAbacusMachine.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\new.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\open.png" />
   </ItemGroup>
   <ItemGroup>
@@ -173,9 +170,6 @@
     <None Include="Resources\stop.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\small_copy.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\small_cut.png" />
   </ItemGroup>
   <ItemGroup>
@@ -183,6 +177,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Abacus.ico" />
+    <Content Include="Resources\copy.png" />
+    <Content Include="Resources\open.png" />
+    <Content Include="Resources\save.png" />
+    <Content Include="Resources\small_cut.png" />
+    <Content Include="Resources\small_new.png" />
+    <Content Include="Resources\small_paste.png" />
     <None Include="Resources\Abacus.png" />
   </ItemGroup>
   <ItemGroup>

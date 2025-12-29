@@ -162,10 +162,12 @@ namespace DusanRodina.TuringMachineSimulator {
 			this.stepToolStripButton = new System.Windows.Forms.ToolStripButton();
 			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripPanel1 = new System.Windows.Forms.ToolStripPanel();
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
 			this.splitContainer1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pFunctions)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
 			this.splitContainer2.Panel1.SuspendLayout();
 			this.splitContainer2.Panel2.SuspendLayout();
 			this.splitContainer2.SuspendLayout();
@@ -444,9 +446,7 @@ namespace DusanRodina.TuringMachineSimulator {
 			// 
 			// formalSpecificationMenu
 			// 
-			this.formalSpecificationMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.formalSpecSaveAs,
-            this.formalSpecPrint});
+			this.formalSpecificationMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.formalSpecSaveAs, this.formalSpecPrint });
 			this.formalSpecificationMenu.Name = "formalSpecificationMenu";
 			resources.ApplyResources(this.formalSpecificationMenu, "formalSpecificationMenu");
 			// 
@@ -467,9 +467,7 @@ namespace DusanRodina.TuringMachineSimulator {
 			resources.ApplyResources(this.cmbTape, "cmbTape");
 			this.cmbTape.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbTape.FormattingEnabled = true;
-			this.cmbTape.Items.AddRange(new object[] {
-            resources.GetString("cmbTape.Items"),
-            resources.GetString("cmbTape.Items1")});
+			this.cmbTape.Items.AddRange(new object[] { resources.GetString("cmbTape.Items"), resources.GetString("cmbTape.Items1") });
 			this.cmbTape.Name = "cmbTape";
 			this.cmbTape.SelectedIndexChanged += new System.EventHandler(this.cmbTape_SelectedIndexChanged);
 			// 
@@ -503,9 +501,7 @@ namespace DusanRodina.TuringMachineSimulator {
 			// statusStrip
 			// 
 			this.statusStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
-			this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.lblStatus,
-            this.lblStepCount});
+			this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.lblStatus, this.lblStepCount });
 			resources.ApplyResources(this.statusStrip, "statusStrip");
 			this.statusStrip.Name = "statusStrip";
 			// 
@@ -528,25 +524,12 @@ namespace DusanRodina.TuringMachineSimulator {
 			// menuStrip1
 			// 
 			resources.ApplyResources(this.menuStrip1, "menuStrip1");
-			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miFile,
-            this.miEdit,
-            this.miMachine,
-            this.miSimulation,
-            this.txtFind,
-            this.pomocníkToolStripMenuItem});
+			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miFile, this.miEdit, this.miMachine, this.miSimulation, this.txtFind, this.pomocníkToolStripMenuItem });
 			this.menuStrip1.Name = "menuStrip1";
 			// 
 			// miFile
 			// 
-			this.miFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miNewFile,
-            this.miOpenFile,
-            this.toolStripMenuItem1,
-            this.miSaveFile,
-            this.miSaveAsFile,
-            this.toolStripMenuItem2,
-            this.miExit});
+			this.miFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miNewFile, this.miOpenFile, this.toolStripMenuItem1, this.miSaveFile, this.miSaveAsFile, this.toolStripMenuItem2, this.miExit });
 			this.miFile.MergeAction = System.Windows.Forms.MergeAction.Insert;
 			this.miFile.MergeIndex = 1;
 			this.miFile.Name = "miFile";
@@ -554,12 +537,14 @@ namespace DusanRodina.TuringMachineSimulator {
 			// 
 			// miNewFile
 			// 
+			this.miNewFile.Image = global::DusanRodina.TuringMachineSimulator.Properties.Resources.small_new;
 			resources.ApplyResources(this.miNewFile, "miNewFile");
 			this.miNewFile.Name = "miNewFile";
 			this.miNewFile.Click += new System.EventHandler(this.miNewFile_Click);
 			// 
 			// miOpenFile
 			// 
+			this.miOpenFile.Image = global::DusanRodina.TuringMachineSimulator.Properties.Resources.open;
 			resources.ApplyResources(this.miOpenFile, "miOpenFile");
 			this.miOpenFile.Name = "miOpenFile";
 			this.miOpenFile.Click += new System.EventHandler(this.miOpenFile_Click);
@@ -571,6 +556,7 @@ namespace DusanRodina.TuringMachineSimulator {
 			// 
 			// miSaveFile
 			// 
+			this.miSaveFile.Image = global::DusanRodina.TuringMachineSimulator.Properties.Resources.save;
 			resources.ApplyResources(this.miSaveFile, "miSaveFile");
 			this.miSaveFile.Name = "miSaveFile";
 			this.miSaveFile.Click += new System.EventHandler(this.miSaveFile_Click);
@@ -594,16 +580,7 @@ namespace DusanRodina.TuringMachineSimulator {
 			// 
 			// miEdit
 			// 
-			this.miEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miCut,
-            this.miCopy,
-            this.miPaste,
-            this.miDelete,
-            this.toolStripMenuItem10,
-            this.miSelectAll,
-            this.toolStripMenuItem4,
-            this.miFind,
-            this.miReplace});
+			this.miEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miCut, this.miCopy, this.miPaste, this.miDelete, this.toolStripMenuItem10, this.miSelectAll, this.toolStripMenuItem4, this.miFind, this.miReplace });
 			this.miEdit.MergeAction = System.Windows.Forms.MergeAction.Insert;
 			this.miEdit.MergeIndex = 2;
 			this.miEdit.Name = "miEdit";
@@ -611,18 +588,21 @@ namespace DusanRodina.TuringMachineSimulator {
 			// 
 			// miCut
 			// 
+			this.miCut.Image = global::DusanRodina.TuringMachineSimulator.Properties.Resources.small_cut;
 			resources.ApplyResources(this.miCut, "miCut");
 			this.miCut.Name = "miCut";
 			this.miCut.Click += new System.EventHandler(this.miCut_Click);
 			// 
 			// miCopy
 			// 
+			this.miCopy.Image = global::DusanRodina.TuringMachineSimulator.Properties.Resources.copy;
 			resources.ApplyResources(this.miCopy, "miCopy");
 			this.miCopy.Name = "miCopy";
 			this.miCopy.Click += new System.EventHandler(this.miCopy_Click);
 			// 
 			// miPaste
 			// 
+			this.miPaste.Image = global::DusanRodina.TuringMachineSimulator.Properties.Resources.small_paste;
 			resources.ApplyResources(this.miPaste, "miPaste");
 			this.miPaste.Name = "miPaste";
 			this.miPaste.Click += new System.EventHandler(this.miPaste_Click);
@@ -663,11 +643,7 @@ namespace DusanRodina.TuringMachineSimulator {
 			// 
 			// miMachine
 			// 
-			this.miMachine.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miTransitions,
-            this.miTape,
-            this.toolStripMenuItem14,
-            this.miSettings});
+			this.miMachine.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miTransitions, this.miTape, this.toolStripMenuItem14, this.miSettings });
 			this.miMachine.MergeAction = System.Windows.Forms.MergeAction.Insert;
 			this.miMachine.MergeIndex = 3;
 			this.miMachine.Name = "miMachine";
@@ -675,10 +651,7 @@ namespace DusanRodina.TuringMachineSimulator {
 			// 
 			// miTransitions
 			// 
-			this.miTransitions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miAddTransition,
-            this.toolStripMenuItem12,
-            this.miTransitionFormat});
+			this.miTransitions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miAddTransition, this.toolStripMenuItem12, this.miTransitionFormat });
 			this.miTransitions.Name = "miTransitions";
 			resources.ApplyResources(this.miTransitions, "miTransitions");
 			// 
@@ -695,19 +668,7 @@ namespace DusanRodina.TuringMachineSimulator {
 			// 
 			// miTransitionFormat
 			// 
-			this.miTransitionFormat.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miTFormat10,
-            this.toolStripSeparator2,
-            this.miTFormat1,
-            this.miTFormat2,
-            this.miTFormat3,
-            this.toolStripMenuItem13,
-            this.miTFormat4,
-            this.miTFormat5,
-            this.miTFormat6,
-            this.miTFormat7,
-            this.miTFormat8,
-            this.miTFormat9});
+			this.miTransitionFormat.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miTFormat10, this.toolStripSeparator2, this.miTFormat1, this.miTFormat2, this.miTFormat3, this.toolStripMenuItem13, this.miTFormat4, this.miTFormat5, this.miTFormat6, this.miTFormat7, this.miTFormat8, this.miTFormat9 });
 			this.miTransitionFormat.Name = "miTransitionFormat";
 			resources.ApplyResources(this.miTransitionFormat, "miTransitionFormat");
 			// 
@@ -785,16 +746,7 @@ namespace DusanRodina.TuringMachineSimulator {
 			// 
 			// miTape
 			// 
-			this.miTape.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miInsertSymbols,
-            this.toolStripSeparator1,
-            this.miCompressTape,
-            this.miClearTape,
-            this.toolStripMenuItem5,
-            this.miExportTape,
-            this.miImportTape,
-            this.toolStripMenuItem6,
-            this.miTapeStatistics});
+			this.miTape.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miInsertSymbols, this.toolStripSeparator1, this.miCompressTape, this.miClearTape, this.toolStripMenuItem5, this.miExportTape, this.miImportTape, this.toolStripMenuItem6, this.miTapeStatistics });
 			this.miTape.Name = "miTape";
 			resources.ApplyResources(this.miTape, "miTape");
 			// 
@@ -862,17 +814,7 @@ namespace DusanRodina.TuringMachineSimulator {
 			// 
 			// miSimulation
 			// 
-			this.miSimulation.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miRun,
-            this.miPause,
-            this.miStep,
-            this.miStop,
-            this.toolStripMenuItem9,
-            this.miBreaks,
-            this.toolStripMenuItem11,
-            this.miAllowNondeterminism,
-            this.miWriteLog,
-            this.miStoreOriginalTape});
+			this.miSimulation.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miRun, this.miPause, this.miStep, this.miStop, this.toolStripMenuItem9, this.miBreaks, this.toolStripMenuItem11, this.miAllowNondeterminism, this.miWriteLog, this.miStoreOriginalTape });
 			this.miSimulation.MergeAction = System.Windows.Forms.MergeAction.Insert;
 			this.miSimulation.MergeIndex = 4;
 			this.miSimulation.Name = "miSimulation";
@@ -954,8 +896,7 @@ namespace DusanRodina.TuringMachineSimulator {
 			// 
 			// pomocníkToolStripMenuItem
 			// 
-			this.pomocníkToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miAbout});
+			this.pomocníkToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miAbout });
 			this.pomocníkToolStripMenuItem.MergeAction = System.Windows.Forms.MergeAction.MatchOnly;
 			this.pomocníkToolStripMenuItem.MergeIndex = 10;
 			this.pomocníkToolStripMenuItem.Name = "pomocníkToolStripMenuItem";
@@ -1002,23 +943,13 @@ namespace DusanRodina.TuringMachineSimulator {
 			// mainToolStrip
 			// 
 			resources.ApplyResources(this.mainToolStrip, "mainToolStrip");
-			this.mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.newStripButton,
-            this.openToolStripButton,
-            this.saveToolStripButton,
-            this.toolStripSeparator3,
-            this.runToolStripButton,
-            this.breakToolStripButton,
-            this.stopToolStripButton,
-            this.toolStripSeparator4,
-            this.stepToolStripButton,
-            this.toolStripSeparator5});
+			this.mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.newStripButton, this.openToolStripButton, this.saveToolStripButton, this.toolStripSeparator3, this.runToolStripButton, this.breakToolStripButton, this.stopToolStripButton, this.toolStripSeparator4, this.stepToolStripButton, this.toolStripSeparator5 });
 			this.mainToolStrip.Name = "mainToolStrip";
 			// 
 			// newStripButton
 			// 
 			this.newStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.newStripButton.Image = global::DusanRodina.TuringMachineSimulator.Properties.Resources.NewFile;
+			this.newStripButton.Image = global::DusanRodina.TuringMachineSimulator.Properties.Resources.small_new;
 			resources.ApplyResources(this.newStripButton, "newStripButton");
 			this.newStripButton.Name = "newStripButton";
 			this.newStripButton.Click += new System.EventHandler(this.newStripButton_Click);
@@ -1026,7 +957,7 @@ namespace DusanRodina.TuringMachineSimulator {
 			// openToolStripButton
 			// 
 			this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.openToolStripButton.Image = global::DusanRodina.TuringMachineSimulator.Properties.Resources.OpenFile;
+			this.openToolStripButton.Image = global::DusanRodina.TuringMachineSimulator.Properties.Resources.open;
 			resources.ApplyResources(this.openToolStripButton, "openToolStripButton");
 			this.openToolStripButton.Name = "openToolStripButton";
 			this.openToolStripButton.Click += new System.EventHandler(this.openToolStripButton_Click);
@@ -1034,7 +965,7 @@ namespace DusanRodina.TuringMachineSimulator {
 			// saveToolStripButton
 			// 
 			this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.saveToolStripButton.Image = global::DusanRodina.TuringMachineSimulator.Properties.Resources.SaveFile;
+			this.saveToolStripButton.Image = global::DusanRodina.TuringMachineSimulator.Properties.Resources.save;
 			resources.ApplyResources(this.saveToolStripButton, "saveToolStripButton");
 			this.saveToolStripButton.Name = "saveToolStripButton";
 			this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
@@ -1107,12 +1038,14 @@ namespace DusanRodina.TuringMachineSimulator {
 			this.splitContainer1.Panel1.PerformLayout();
 			this.splitContainer1.Panel2.ResumeLayout(false);
 			this.splitContainer1.Panel2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
 			this.splitContainer1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.pFunctions)).EndInit();
 			this.splitContainer2.Panel1.ResumeLayout(false);
 			this.splitContainer2.Panel1.PerformLayout();
 			this.splitContainer2.Panel2.ResumeLayout(false);
 			this.splitContainer2.Panel2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
 			this.splitContainer2.ResumeLayout(false);
 			this.speedPanel.ResumeLayout(false);
 			this.speedPanel.PerformLayout();
@@ -1137,7 +1070,6 @@ namespace DusanRodina.TuringMachineSimulator {
 			this.toolStripPanel1.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
-
 		}
 
 		#endregion
@@ -1246,15 +1178,15 @@ namespace DusanRodina.TuringMachineSimulator {
 		private ToolStripMenuItem formalSpecSaveAs;
 		private ToolStripMenuItem formalSpecPrint;
 		private SplitContainer splitContainer2;
-		private Label label7;
+		private System.Windows.Forms.Label label7;
 		private ListBox lstErrors;
 		private TuringCore.Components.InfiniteTapeControl infiniteTapeControl;
 		private HScrollBar sbxThreads;
 		private DusanRodina.TuringCore.Components.StateDiagramControl stateDiagramControl;
 		private ToolStrip mainToolStrip;
-		private ToolStripButton newStripButton;
-		private ToolStripButton openToolStripButton;
-		private ToolStripButton saveToolStripButton;
+		private System.Windows.Forms.ToolStripButton newStripButton;
+		private System.Windows.Forms.ToolStripButton openToolStripButton;
+		private System.Windows.Forms.ToolStripButton saveToolStripButton;
 		private ToolStripSeparator toolStripSeparator3;
 		private ToolStripButton runToolStripButton;
 		private ToolStripButton breakToolStripButton;

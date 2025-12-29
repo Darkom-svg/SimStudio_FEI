@@ -188,12 +188,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="graphics\new.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="graphics\open.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="graphics\pause.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -215,9 +209,6 @@
     <Content Include="graphics\run.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="graphics\save.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="graphics\stop.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -227,6 +218,12 @@
     <Content Include="graphics\WriteOff.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\copy.png" />
+    <Content Include="Resources\open.png" />
+    <Content Include="Resources\save.png" />
+    <Content Include="Resources\small_cut1.png" />
+    <Content Include="Resources\small_new.png" />
+    <Content Include="Resources\small_paste1.png" />
     <None Include="Resources\close.png" />
     <EmbeddedResource Include="ConsoleForm.en.resx">
       <DependentUpon>ConsoleForm.cs</DependentUpon>

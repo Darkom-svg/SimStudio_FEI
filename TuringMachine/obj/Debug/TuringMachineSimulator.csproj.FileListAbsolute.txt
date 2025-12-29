@@ -128,15 +128,9 @@ D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\obj\Debug\en\TuringMach
 D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\obj\Debug\TuringMachineSimulator.exe
 D:\SimStudio_v20100505\SimStudio_v20100505\TuringMachine\obj\Debug\TuringMachineSimulator.pdb
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\Resources\InitialFinalState.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\Resources\new.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\Resources\open.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\Resources\save.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\Resources\pause.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\Resources\run.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\Resources\stop.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\Resources\small_copy.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\Resources\small_cut.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\Resources\small_paste.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\Resources\Turing.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\TuringMachineSimulator.exe.config
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\TuringMachine\bin\Debug\TuringMachineSimulator.exe

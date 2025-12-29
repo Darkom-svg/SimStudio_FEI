@@ -206,7 +206,7 @@ namespace DusanRodina.RandomAccessMachine {
 			// 
 			// miNew
 			// 
-			this.miNew.Image = global::DusanRodina.RandomAccessMachine.Properties.Resources._new;
+			this.miNew.Image = global::DusanRodina.RandomAccessMachine.Properties.Resources.small_new;
 			resources.ApplyResources(this.miNew, "miNew");
 			this.miNew.Name = "miNew";
 			this.miNew.Click += new System.EventHandler(this.miNew_Click);
@@ -273,7 +273,7 @@ namespace DusanRodina.RandomAccessMachine {
 			// 
 			// miCopy
 			// 
-			this.miCopy.Image = global::DusanRodina.RandomAccessMachine.Properties.Resources.small_copy;
+			this.miCopy.Image = global::DusanRodina.RandomAccessMachine.Properties.Resources.copy;
 			resources.ApplyResources(this.miCopy, "miCopy");
 			this.miCopy.Name = "miCopy";
 			this.miCopy.Click += new System.EventHandler(this.miCopy_Click);
@@ -631,7 +631,7 @@ namespace DusanRodina.RandomAccessMachine {
 			// newStripButton
 			// 
 			this.newStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.newStripButton.Image = global::DusanRodina.RandomAccessMachine.Properties.Resources._new;
+			this.newStripButton.Image = global::DusanRodina.RandomAccessMachine.Properties.Resources.small_new;
 			resources.ApplyResources(this.newStripButton, "newStripButton");
 			this.newStripButton.Name = "newStripButton";
 			this.newStripButton.Click += new System.EventHandler(this.newStripButton_Click);

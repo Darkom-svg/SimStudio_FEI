@@ -141,7 +141,7 @@ namespace DusanRodina.AbacusMachine {
 			// 
 			// miNewFile
 			// 
-			this.miNewFile.Image = global::DusanRodina.AbacusMachine.Properties.Resources._new;
+			this.miNewFile.Image = global::DusanRodina.AbacusMachine.Properties.Resources.small_new;
 			this.miNewFile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 			this.miNewFile.Name = "miNewFile";
 			this.miNewFile.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
@@ -213,7 +213,7 @@ namespace DusanRodina.AbacusMachine {
 			// 
 			// miCut
 			// 
-			this.miCut.Image = global::DusanRodina.AbacusMachine.Properties.Resources.small_cut1;
+			this.miCut.Image = global::DusanRodina.AbacusMachine.Properties.Resources.small_cut;
 			this.miCut.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 			this.miCut.Name = "miCut";
 			this.miCut.Size = new System.Drawing.Size(194, 22);
@@ -222,7 +222,7 @@ namespace DusanRodina.AbacusMachine {
 			// 
 			// miCopy
 			// 
-			this.miCopy.Image = global::DusanRodina.AbacusMachine.Properties.Resources.small_copy1;
+			this.miCopy.Image = global::DusanRodina.AbacusMachine.Properties.Resources.copy;
 			this.miCopy.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 			this.miCopy.Name = "miCopy";
 			this.miCopy.Size = new System.Drawing.Size(194, 22);
@@ -231,7 +231,7 @@ namespace DusanRodina.AbacusMachine {
 			// 
 			// miPaste
 			// 
-			this.miPaste.Image = global::DusanRodina.AbacusMachine.Properties.Resources.small_paste1;
+			this.miPaste.Image = global::DusanRodina.AbacusMachine.Properties.Resources.small_paste;
 			this.miPaste.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 			this.miPaste.Name = "miPaste";
 			this.miPaste.Size = new System.Drawing.Size(194, 22);
@@ -588,7 +588,7 @@ namespace DusanRodina.AbacusMachine {
 			// newStripButton
 			// 
 			this.newStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.newStripButton.Image = global::DusanRodina.AbacusMachine.Properties.Resources._new;
+			this.newStripButton.Image = global::DusanRodina.AbacusMachine.Properties.Resources.small_new;
 			this.newStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 			this.newStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.newStripButton.Name = "newStripButton";
