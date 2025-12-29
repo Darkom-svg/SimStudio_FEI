@@ -1,0 +1,195 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5289B780-BCA0-4475-8F4D-6E17BF3358EC}|SimulatorsEnv\\SimStudio.csproj|c:\\users\\dzuri\\onedrive\\po\u010D\u00EDta\u010D\\bak\u00E1rska pr\u00E1ca\\simstudio_v20170922oprava-20251215t152322z-3-001\\simstudio_v20170922oprava\\simstudio\\simulatorsenv\\properties\\settings.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5289B780-BCA0-4475-8F4D-6E17BF3358EC}|SimulatorsEnv\\SimStudio.csproj|solutionrelative:simulatorsenv\\properties\\settings.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5289B780-BCA0-4475-8F4D-6E17BF3358EC}|SimulatorsEnv\\SimStudio.csproj|c:\\users\\dzuri\\onedrive\\po\u010D\u00EDta\u010D\\bak\u00E1rska pr\u00E1ca\\simstudio_v20170922oprava-20251215t152322z-3-001\\simstudio_v20170922oprava\\simstudio\\simulatorsenv\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5289B780-BCA0-4475-8F4D-6E17BF3358EC}|SimulatorsEnv\\SimStudio.csproj|solutionrelative:simulatorsenv\\properties\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5289B780-BCA0-4475-8F4D-6E17BF3358EC}|SimulatorsEnv\\SimStudio.csproj|c:\\users\\dzuri\\onedrive\\po\u010D\u00EDta\u010D\\bak\u00E1rska pr\u00E1ca\\simstudio_v20170922oprava-20251215t152322z-3-001\\simstudio_v20170922oprava\\simstudio\\simulatorsenv\\aboutform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5289B780-BCA0-4475-8F4D-6E17BF3358EC}|SimulatorsEnv\\SimStudio.csproj|solutionrelative:simulatorsenv\\aboutform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5289B780-BCA0-4475-8F4D-6E17BF3358EC}|SimulatorsEnv\\SimStudio.csproj|C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\simulatorsenv\\aboutform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5289B780-BCA0-4475-8F4D-6E17BF3358EC}|SimulatorsEnv\\SimStudio.csproj|solutionrelative:simulatorsenv\\aboutform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5289B780-BCA0-4475-8F4D-6E17BF3358EC}|SimulatorsEnv\\SimStudio.csproj|C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\simulatorsenv\\aboutform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5289B780-BCA0-4475-8F4D-6E17BF3358EC}|SimulatorsEnv\\SimStudio.csproj|solutionrelative:simulatorsenv\\aboutform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5289B780-BCA0-4475-8F4D-6E17BF3358EC}|SimulatorsEnv\\SimStudio.csproj|C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\simulatorsenv\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5289B780-BCA0-4475-8F4D-6E17BF3358EC}|SimulatorsEnv\\SimStudio.csproj|solutionrelative:simulatorsenv\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5289B780-BCA0-4475-8F4D-6E17BF3358EC}|SimulatorsEnv\\SimStudio.csproj|C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\simulatorsenv\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5289B780-BCA0-4475-8F4D-6E17BF3358EC}|SimulatorsEnv\\SimStudio.csproj|solutionrelative:simulatorsenv\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5289B780-BCA0-4475-8F4D-6E17BF3358EC}|SimulatorsEnv\\SimStudio.csproj|C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\simulatorsenv\\simulatorsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{5289B780-BCA0-4475-8F4D-6E17BF3358EC}|SimulatorsEnv\\SimStudio.csproj|solutionrelative:simulatorsenv\\simulatorsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5289B780-BCA0-4475-8F4D-6E17BF3358EC}|SimulatorsEnv\\SimStudio.csproj|C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\simulatorsenv\\simulatorsform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5289B780-BCA0-4475-8F4D-6E17BF3358EC}|SimulatorsEnv\\SimStudio.csproj|solutionrelative:simulatorsenv\\simulatorsform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5289B780-BCA0-4475-8F4D-6E17BF3358EC}|SimulatorsEnv\\SimStudio.csproj|C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\simulatorsenv\\simstudio.ico||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{5289B780-BCA0-4475-8F4D-6E17BF3358EC}|SimulatorsEnv\\SimStudio.csproj|solutionrelative:simulatorsenv\\simstudio.ico||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5289B780-BCA0-4475-8F4D-6E17BF3358EC}|SimulatorsEnv\\SimStudio.csproj|C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\simulatorsenv\\simulatorsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5289B780-BCA0-4475-8F4D-6E17BF3358EC}|SimulatorsEnv\\SimStudio.csproj|solutionrelative:simulatorsenv\\simulatorsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Settings.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\SimulatorsEnv\\Properties\\Settings.Designer.cs",
+              "RelativeDocumentMoniker": "SimulatorsEnv\\Properties\\Settings.Designer.cs",
+              "ToolTip": "C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\SimulatorsEnv\\Properties\\Settings.Designer.cs",
+              "RelativeToolTip": "SimulatorsEnv\\Properties\\Settings.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T10:51:59.594Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AssemblyInfo.cs",
+              "DocumentMoniker": "C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\SimulatorsEnv\\Properties\\AssemblyInfo.cs",
+              "RelativeDocumentMoniker": "SimulatorsEnv\\Properties\\AssemblyInfo.cs",
+              "ToolTip": "C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\SimulatorsEnv\\Properties\\AssemblyInfo.cs",
+              "RelativeToolTip": "SimulatorsEnv\\Properties\\AssemblyInfo.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T10:51:47.493Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AboutForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\SimulatorsEnv\\AboutForm.Designer.cs",
+              "RelativeDocumentMoniker": "SimulatorsEnv\\AboutForm.Designer.cs",
+              "ToolTip": "C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\SimulatorsEnv\\AboutForm.Designer.cs",
+              "RelativeToolTip": "SimulatorsEnv\\AboutForm.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-29T10:51:15.377Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\SimulatorsEnv\\MainForm.cs",
+              "RelativeDocumentMoniker": "SimulatorsEnv\\MainForm.cs",
+              "ToolTip": "C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\SimulatorsEnv\\MainForm.cs",
+              "RelativeToolTip": "SimulatorsEnv\\MainForm.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAgwB4AAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2025-12-29T10:51:15.437Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AboutForm.cs",
+              "DocumentMoniker": "C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\SimulatorsEnv\\AboutForm.cs",
+              "RelativeDocumentMoniker": "SimulatorsEnv\\AboutForm.cs",
+              "ToolTip": "C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\SimulatorsEnv\\AboutForm.cs",
+              "RelativeToolTip": "SimulatorsEnv\\AboutForm.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2025-12-29T10:51:15.438Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AboutForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\SimulatorsEnv\\AboutForm.cs",
+              "RelativeDocumentMoniker": "SimulatorsEnv\\AboutForm.cs",
+              "ToolTip": "C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\SimulatorsEnv\\AboutForm.cs [Design]",
+              "RelativeToolTip": "SimulatorsEnv\\AboutForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2025-12-29T10:51:15.438Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SimulatorsForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\SimulatorsEnv\\SimulatorsForm.Designer.cs",
+              "RelativeDocumentMoniker": "SimulatorsEnv\\SimulatorsForm.Designer.cs",
+              "ToolTip": "C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\SimulatorsEnv\\SimulatorsForm.Designer.cs",
+              "RelativeToolTip": "SimulatorsEnv\\SimulatorsForm.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001384|",
+              "WhenOpened": "2025-12-29T10:51:15.439Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SimStudio.ico - Icon [48x48, 32 bit, BMP]",
+              "DocumentMoniker": "C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\SimulatorsEnv\\SimStudio.ico",
+              "RelativeDocumentMoniker": "SimulatorsEnv\\SimStudio.ico",
+              "ToolTip": "C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\SimulatorsEnv\\SimStudio.ico - Icon [48x48, 32 bit, BMP]",
+              "RelativeToolTip": "SimulatorsEnv\\SimStudio.ico - Icon [48x48, 32 bit, BMP]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001525|",
+              "WhenOpened": "2025-12-29T10:51:15.439Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "SimulatorsForm.cs",
+              "DocumentMoniker": "C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\SimulatorsEnv\\SimulatorsForm.cs",
+              "RelativeDocumentMoniker": "SimulatorsEnv\\SimulatorsForm.cs",
+              "ToolTip": "C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\SimulatorsEnv\\SimulatorsForm.cs",
+              "RelativeToolTip": "SimulatorsEnv\\SimulatorsForm.cs",
+              "ViewState": "AQIAADAAAAAAAAAAAAAhwEQAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2025-12-29T10:51:15.44Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SimulatorsForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\SimulatorsEnv\\SimulatorsForm.cs",
+              "RelativeDocumentMoniker": "SimulatorsEnv\\SimulatorsForm.cs",
+              "ToolTip": "C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\SimulatorsEnv\\SimulatorsForm.cs [Design]",
+              "RelativeToolTip": "SimulatorsEnv\\SimulatorsForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2025-12-29T10:51:15.44Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MainForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\SimulatorsEnv\\MainForm.cs",
+              "RelativeDocumentMoniker": "SimulatorsEnv\\MainForm.cs",
+              "ToolTip": "C:\\Users\\dzuri\\OneDrive\\Po\u010D\u00EDta\u010D\\Bak\u00E1rska pr\u00E1ca\\SimStudio_v20170922oprava-20251215T152322Z-3-001\\SimStudio_v20170922oprava\\SimStudio\\SimulatorsEnv\\MainForm.cs [Design]",
+              "RelativeToolTip": "SimulatorsEnv\\MainForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003525|",
+              "WhenOpened": "2025-12-29T10:51:15.441Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
