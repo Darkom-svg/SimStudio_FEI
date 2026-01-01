@@ -32,7 +32,9 @@ namespace DusanRodina.SimStudio {
         }
         private void bTrainer_Click(object sender, EventArgs e)
         {
-            return;
+            TrainingSimulator.MainTrainingForm frm = new TrainingSimulator.MainTrainingForm();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
         }
 
         private void oProgrameToolStripMenuItem_Click(object sender, EventArgs e)
@@ -83,11 +85,7 @@ namespace DusanRodina.SimStudio {
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-            throw new System.NotImplementedException();
-        }
+        
         
     }
 }

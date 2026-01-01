@@ -1,0 +1,16 @@
+﻿/AbacusMachine/bin/
+/AbacusMachine/obj/
+/FiniteAutomaton/bin/
+/FiniteAutomaton/obj/
+/PushdownAutomaton/bin/
+/PushdownAutomaton/obj/
+/RAMSimulator/bin/
+/RAMSimulator/obj/
+/TuringCore/bin/
+/TuringCore/obj/
+/TuringMachine/bin/
+/TuringMachine/obj/
+/SimulatorsEnv/bin/
+/SimulatorsEnv/obj/
+/TrainingSimulator/bin/
+/TrainingSimulator/obj/

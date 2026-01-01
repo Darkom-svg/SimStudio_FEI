@@ -136,6 +136,10 @@
       <Project>{D9DF7681-B36E-404D-A164-EFCDED0C4B4D}</Project>
       <Name>RandomAccessMachineSimulator</Name>
     </ProjectReference>
+    <ProjectReference Include="..\TrainingSimulator\TrainingSimulator.csproj">
+      <Project>{8d92ba2f-0f1d-4891-bfe7-2a5494718131}</Project>
+      <Name>TrainingSimulator</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TuringMachine\TuringMachineSimulator.csproj">
       <Project>{7CE993DA-D4B5-4BFF-9DCC-4AA5842189E8}</Project>
       <Name>TuringMachineSimulator</Name>
