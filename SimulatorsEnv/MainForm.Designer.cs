@@ -81,7 +81,7 @@ namespace DusanRodina.SimStudio {
             // openFileToolStripMenuItem
             // 
             this.openFileToolStripMenuItem.Image = global::DusanRodina.SimStudio.Properties.Resources.small_open;
-            this.openFileToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.openFileToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.SizeToFit;;
             this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
             this.openFileToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.openFileToolStripMenuItem.Text = "Otvoriť";
@@ -173,7 +173,7 @@ namespace DusanRodina.SimStudio {
             // openToolStripButton
             // 
             this.openToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripButton.Image")));
-            this.openToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.openToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.SizeToFit;
             this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.openToolStripButton.Name = "openToolStripButton";
             this.openToolStripButton.Size = new System.Drawing.Size(65, 22);

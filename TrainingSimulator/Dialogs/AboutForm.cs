@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace DusanRodina.FiniteAutomaton.Dialogs {
+namespace DusanRodina.TrainingSimulator.Dialogs {
 	public partial class AboutForm : Form
     {
         public AboutForm()
@@ -13,6 +13,6 @@ namespace DusanRodina.FiniteAutomaton.Dialogs {
         {
             this.Close();
         }
-
+        
     }
 }

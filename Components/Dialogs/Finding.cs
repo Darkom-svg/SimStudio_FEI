@@ -7,18 +7,18 @@ namespace DusanRodina.SimStudio.Components.Dialogs {
             string txt = textBox.Text;            
             int i;
 
-            //Ignorova ve¾kos písmen
+            //Ignorovaï¿½ veï¿½kosï¿½ pï¿½smen
             if (ignoreCase)
             {
                 txt = txt.ToLower();
                 find = find.ToLower();
             }
 
-            //Vyh¾adávanie nadol
+            //Vyhï¿½adï¿½vanie nadol
             if (direction==0)
             {
                 i = textBox.SelectionStart + textBox.SelectionLength;
-                //Iba celé slová
+                //Iba celï¿½ slovï¿½
                 if (wholeWords)
                 {
                     i--;
@@ -32,11 +32,11 @@ namespace DusanRodina.SimStudio.Components.Dialogs {
                     i = txt.IndexOf(find, i);
                 }
             }
-            //Vyh¾adávanie nahor
+            //Vyhï¿½adï¿½vanie nahor
             else
             {
                 i = textBox.SelectionStart;
-                //Iba celé slová
+                //Iba celï¿½ slovï¿½
                 if (wholeWords)
                 {
                     i++;
@@ -53,7 +53,7 @@ namespace DusanRodina.SimStudio.Components.Dialogs {
 
             if (i == -1)
             {
-                MessageBox.Show("H¾adanı vıraz '" + find + "' sa nenašiel.");
+                MessageBox.Show("Hï¿½adanï¿½ vï¿½raz '" + find + "' sa nenaï¿½iel.");
                 return false;
             }
             else

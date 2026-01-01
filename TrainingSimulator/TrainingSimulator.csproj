@@ -12,6 +12,7 @@
         <FileAlignment>512</FileAlignment>
         <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
         <Deterministic>true</Deterministic>
+        <ApplicationIcon>Trainer.ico</ApplicationIcon>
     </PropertyGroup>
     <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
         <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,12 +49,6 @@
     <ItemGroup>
         <Compile Include="Dialogs\AboutForm.cs" />
         <Compile Include="Dialogs\AboutForm.Designer.cs" />
-        <Compile Include="Dialogs\AddTFunctionForm.cs" />
-        <Compile Include="Dialogs\AddTFunctionForm.Designer.cs" />
-        <Compile Include="Dialogs\SettingsForm.cs" />
-        <Compile Include="Dialogs\SettingsForm.Designer.cs" />
-        <Compile Include="Dialogs\TapeStatisticsForm.cs" />
-        <Compile Include="Dialogs\TapeStatisticsForm.Designer.cs" />
         <Compile Include="MainTrainingForm.cs">
             <SubType>Form</SubType>
         </Compile>
@@ -63,10 +58,6 @@
         <Compile Include="Program.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
         <EmbeddedResource Include="Dialogs\AboutForm.resx" />
-        <EmbeddedResource Include="Dialogs\AddTFunctionForm.en.resx" />
-        <EmbeddedResource Include="Dialogs\AddTFunctionForm.resx" />
-        <EmbeddedResource Include="Dialogs\SettingsForm.resx" />
-        <EmbeddedResource Include="Dialogs\TapeStatisticsForm.resx" />
         <EmbeddedResource Include="MainTrainingForm.resx">
           <DependentUpon>MainTrainingForm.cs</DependentUpon>
         </EmbeddedResource>
@@ -91,6 +82,17 @@
     </ItemGroup>
     <ItemGroup>
         <None Include="App.config"/>
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\Components\Components.csproj">
+        <Project>{9c562e36-f43a-4aa0-a518-75cd00a30a6d}</Project>
+        <Name>Components</Name>
+      </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="Resources\small_open.png" />
+      <Content Include="Resources\small_Trainer.png" />
+      <Content Include="Trainer.ico" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
 </Project>

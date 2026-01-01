@@ -154,6 +154,11 @@
   <ItemGroup>
     <Content Include="Resources\Background2.jpg" />
     <Content Include="Resources\Fei_logo1.png" />
+    <Content Include="Resources\small_Trainer1.png" />
+    <Content Include="Resources\Trainer.ico" />
+    <Content Include="Resources\Trainer.png" />
+    <Content Include="Resources\Trainer1.ico" />
+    <Content Include="Resources\Trainer2.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

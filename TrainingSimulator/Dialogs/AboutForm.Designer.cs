@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.FiniteAutomaton.Dialogs {
+﻿namespace DusanRodina.TrainingSimulator.Dialogs {
 	partial class AboutForm
     {
         /// <summary>
@@ -38,7 +38,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pIcon)).BeginInit();
             this.SuspendLayout();
@@ -71,24 +70,25 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label9.Location = new System.Drawing.Point(66, 32);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(194, 25);
+            this.label9.Size = new System.Drawing.Size(106, 25);
             this.label9.TabIndex = 9;
-            this.label9.Text = "Konečný automat";
+            this.label9.Text = "Trenažér";
             // 
             // pIcon
             // 
             this.pIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pIcon.Image = global::FiniteAutomaton.Properties.Resources.Turing;
+            this.pIcon.Image = global::TrainingSimulator.Properties.Resources.small_Trainer;
             this.pIcon.Location = new System.Drawing.Point(12, 12);
             this.pIcon.Name = "pIcon";
-            this.pIcon.Size = new System.Drawing.Size(48, 48);
+            this.pIcon.Size = new System.Drawing.Size(48, 45);
+            this.pIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pIcon.TabIndex = 11;
             this.pIcon.TabStop = false;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(72, 111);
+            this.label3.Location = new System.Drawing.Point(72, 95);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(150, 13);
             this.label3.TabIndex = 24;
@@ -97,7 +97,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(131, 255);
+            this.label11.Location = new System.Drawing.Point(131, 239);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(111, 13);
             this.label11.TabIndex = 23;
@@ -106,7 +106,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(131, 230);
+            this.label10.Location = new System.Drawing.Point(131, 214);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(86, 13);
             this.label10.TabIndex = 22;
@@ -115,7 +115,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(131, 205);
+            this.label8.Location = new System.Drawing.Point(131, 189);
             this.label8.Margin = new System.Windows.Forms.Padding(3);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(87, 13);
@@ -125,7 +125,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(131, 180);
+            this.label7.Location = new System.Drawing.Point(131, 164);
             this.label7.Margin = new System.Windows.Forms.Padding(3);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(129, 13);
@@ -135,7 +135,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(131, 155);
+            this.label6.Location = new System.Drawing.Point(131, 139);
             this.label6.Margin = new System.Windows.Forms.Padding(3);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(81, 13);
@@ -145,20 +145,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(72, 136);
+            this.label5.Location = new System.Drawing.Point(72, 120);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(106, 13);
             this.label5.TabIndex = 18;
             this.label5.Text = "Sim Studio obsahuje:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(72, 92);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 13);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "(C) 2007  Dušan Rodina";
             // 
             // label2
             // 
@@ -171,10 +162,9 @@
             // 
             // AboutForm
             // 
-            this.AcceptButton = this.okButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.okButton;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(369, 321);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label11);
@@ -183,19 +173,18 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pIcon);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Location = new System.Drawing.Point(15, 15);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AboutForm";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "O programe Sim Studio: Konečný automat";
             ((System.ComponentModel.ISupportInitialize)(this.pIcon)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -208,7 +197,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
 
         #endregion

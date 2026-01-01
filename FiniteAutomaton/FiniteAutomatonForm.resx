@@ -1705,6 +1705,12 @@
   <data name="helpToolStripMenuItem.Text" xml:space="preserve">
     <value>Pomocník</value>
   </data>
+  <data name="mToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 23</value>
+  </data>
+  <data name="mToolStripMenuItem.Text" xml:space="preserve">
+    <value>m</value>
+  </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -2986,6 +2992,12 @@
     <value>miAbout</value>
   </data>
   <data name="&gt;&gt;miAbout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;mToolStripMenuItem.Name" xml:space="preserve">
+    <value>mToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;mToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;kopírovaťToolStripMenuItem.Name" xml:space="preserve">
