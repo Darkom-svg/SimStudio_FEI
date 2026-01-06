@@ -1218,10 +1218,10 @@
     <value>0, 506</value>
   </metadata>
   <data name="lblStatus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>261, 17</value>
+    <value>226, 17</value>
   </data>
   <data name="lblStatus.Text" xml:space="preserve">
-    <value>Turingov stroj, Copyright (C) 2008 Dušan Rodina</value>
+    <value>Turingov stroj, Copyright (C) 2026 FEI STU</value>
   </data>
   <data name="lblStepCount.Size" type="System.Drawing.Size, System.Drawing">
     <value>155, 17</value>
@@ -1874,7 +1874,7 @@
     <value>3, 27</value>
   </data>
   <data name="mainToolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>382, 25</value>
+    <value>283, 25</value>
   </data>
   <data name="mainToolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>

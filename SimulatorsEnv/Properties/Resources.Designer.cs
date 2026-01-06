@@ -82,9 +82,9 @@ namespace DusanRodina.SimStudio.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Fei_logo1 {
+        internal static System.Drawing.Bitmap FEI_LOGO {
             get {
-                object obj = ResourceManager.GetObject("Fei_logo1", resourceCulture);
+                object obj = ResourceManager.GetObject("FEI_LOGO", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

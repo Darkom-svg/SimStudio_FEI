@@ -158,7 +158,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(117, 13);
             this.label2.TabIndex = 16;
-            this.label2.Text = "Verzia 3.0 (15.12.2025)";
+            this.label2.Text = "Verzia 1.0 (01.01.2026)";
             // 
             // AboutForm
             // 
