@@ -80,8 +80,6 @@ namespace DusanRodina.SimStudio {
             // 
             // openFileToolStripMenuItem
             // 
-            this.openFileToolStripMenuItem.Image = global::DusanRodina.SimStudio.Properties.Resources.small_open;
-            this.openFileToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.SizeToFit;;
             this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
             this.openFileToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.openFileToolStripMenuItem.Text = "Otvoriť";
@@ -94,7 +92,6 @@ namespace DusanRodina.SimStudio {
             // 
             // finiteAutomatonToolStripMenuItem1
             // 
-            this.finiteAutomatonToolStripMenuItem1.Image = global::DusanRodina.SimStudio.Properties.Resources.Turing;
             this.finiteAutomatonToolStripMenuItem1.Name = "finiteAutomatonToolStripMenuItem1";
             this.finiteAutomatonToolStripMenuItem1.Size = new System.Drawing.Size(189, 22);
             this.finiteAutomatonToolStripMenuItem1.Text = "Konečný automat";
@@ -102,7 +99,6 @@ namespace DusanRodina.SimStudio {
             // 
             // pushdownAutomatonToolStripMenuItem
             // 
-            this.pushdownAutomatonToolStripMenuItem.Image = global::DusanRodina.SimStudio.Properties.Resources.Turing;
             this.pushdownAutomatonToolStripMenuItem.Name = "pushdownAutomatonToolStripMenuItem";
             this.pushdownAutomatonToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.pushdownAutomatonToolStripMenuItem.Text = "Zásobníkový automat";
@@ -110,7 +106,6 @@ namespace DusanRodina.SimStudio {
             // 
             // turingMachineToolStripMenuItem1
             // 
-            this.turingMachineToolStripMenuItem1.Image = global::DusanRodina.SimStudio.Properties.Resources.Turing;
             this.turingMachineToolStripMenuItem1.Name = "turingMachineToolStripMenuItem1";
             this.turingMachineToolStripMenuItem1.Size = new System.Drawing.Size(189, 22);
             this.turingMachineToolStripMenuItem1.Text = "Turingov stroj";
@@ -118,7 +113,6 @@ namespace DusanRodina.SimStudio {
             // 
             // rAMSimulatorToolStripMenuItem
             // 
-            this.rAMSimulatorToolStripMenuItem.Image = global::DusanRodina.SimStudio.Properties.Resources.RAM;
             this.rAMSimulatorToolStripMenuItem.Name = "rAMSimulatorToolStripMenuItem";
             this.rAMSimulatorToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.rAMSimulatorToolStripMenuItem.Text = "RAM";
@@ -126,7 +120,6 @@ namespace DusanRodina.SimStudio {
             // 
             // abacusMachineToolStripMenuItem1
             // 
-            this.abacusMachineToolStripMenuItem1.Image = global::DusanRodina.SimStudio.Properties.Resources.Abacus;
             this.abacusMachineToolStripMenuItem1.Name = "abacusMachineToolStripMenuItem1";
             this.abacusMachineToolStripMenuItem1.Size = new System.Drawing.Size(189, 22);
             this.abacusMachineToolStripMenuItem1.Text = "Počítadlový stroj";
@@ -173,7 +166,6 @@ namespace DusanRodina.SimStudio {
             // openToolStripButton
             // 
             this.openToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripButton.Image")));
-            this.openToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.SizeToFit;
             this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.openToolStripButton.Name = "openToolStripButton";
             this.openToolStripButton.Size = new System.Drawing.Size(65, 22);
@@ -265,7 +257,7 @@ namespace DusanRodina.SimStudio {
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 561);
+            this.ClientSize = new System.Drawing.Size(984, 611);
             this.Controls.Add(this.topToolStripPanel);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
