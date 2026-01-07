@@ -11,6 +11,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using System.Xml;
+using DusanRodina.TrainingSimulator;
 
 namespace DusanRodina.SimStudio {
 	public partial class MainForm : Form, IMainForm {
@@ -72,6 +73,15 @@ namespace DusanRodina.SimStudio {
 					ToolStripManager.RevertMerge(mainToolStrip);
 					ToolStripManager.Merge(controls[0] as ToolStrip, mainToolStrip);
 				}
+				
+				ToolStripManager.RevertMerge(statusStrip);
+				var statusStrips = ActiveMdiChild.Controls.Find("statusStrip", true);
+				if (statusStrips.Length > 0 && statusStrips[0] is StatusStrip childStatusStrip)
+				{
+					childStatusStrip.Visible = false;
+					ToolStripManager.Merge(childStatusStrip, statusStrip);
+				}
+				
 			}
 		}
 
@@ -227,6 +237,13 @@ namespace DusanRodina.SimStudio {
 
 		private void openFileToolStripMenuItem_Click(object sender, EventArgs e) {
 			OpenFile();
+		}
+
+		private void trianerToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			TrainingSimulator.MainTrainingForm frm = new DusanRodina.TrainingSimulator.MainTrainingForm();
+			frm.MdiParent = this;
+			frm.Show();
 		}
 	}
 }

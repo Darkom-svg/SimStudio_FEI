@@ -30,8 +30,6 @@ namespace DusanRodina.TrainingSimulator
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainTrainingForm));
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.miFile = new System.Windows.Forms.ToolStripMenuItem();
             this.miNewFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -44,25 +42,11 @@ namespace DusanRodina.TrainingSimulator
             this.txtFind = new System.Windows.Forms.ToolStripTextBox();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.statusStrip.SuspendLayout();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
+            this.statusStrip.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // statusStrip
-            // 
-            this.statusStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.lblStatus });
-            this.statusStrip.Location = new System.Drawing.Point(0, 428);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(800, 22);
-            this.statusStrip.TabIndex = 15;
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.Margin = new System.Windows.Forms.Padding(0, 3, 10, 2);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(196, 17);
-            this.lblStatus.Text = "Trenažér, Copyright (C) 2026 FEI STU";
             // 
             // menuStrip1
             // 
@@ -150,9 +134,27 @@ namespace DusanRodina.TrainingSimulator
             // 
             this.miAbout.MergeAction = System.Windows.Forms.MergeAction.Replace;
             this.miAbout.Name = "miAbout";
-            this.miAbout.Size = new System.Drawing.Size(152, 22);
+            this.miAbout.Size = new System.Drawing.Size(138, 22);
             this.miAbout.Text = "O programe";
             this.miAbout.Click += new System.EventHandler(this.miAbout_Click);
+            // 
+            // statusStrip
+            // 
+            this.statusStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.lblStatus });
+            this.statusStrip.Location = new System.Drawing.Point(0, 428);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(800, 22);
+            this.statusStrip.TabIndex = 17;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Margin = new System.Windows.Forms.Padding(0, 3, 10, 2);
+            this.lblStatus.MergeAction = System.Windows.Forms.MergeAction.Replace;
+            this.lblStatus.MergeIndex = 0;
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(196, 17);
+            this.lblStatus.Text = "Trenážér, Copyright (C) 2026 FEI STU";
             // 
             // MainTrainingForm
             // 
@@ -164,10 +166,10 @@ namespace DusanRodina.TrainingSimulator
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainTrainingForm";
             this.Text = "Trenažér";
-            this.statusStrip.ResumeLayout(false);
-            this.statusStrip.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
         }

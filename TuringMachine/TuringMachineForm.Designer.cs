@@ -508,12 +508,16 @@ namespace DusanRodina.TuringMachineSimulator {
 			// lblStatus
 			// 
 			this.lblStatus.Margin = new System.Windows.Forms.Padding(0, 3, 10, 2);
+			this.lblStatus.MergeAction = System.Windows.Forms.MergeAction.Replace;
+			this.lblStatus.MergeIndex = 0;
 			this.lblStatus.Name = "lblStatus";
 			resources.ApplyResources(this.lblStatus, "lblStatus");
 			// 
 			// lblStepCount
 			// 
 			this.lblStepCount.Margin = new System.Windows.Forms.Padding(10, 3, 0, 2);
+			this.lblStepCount.MergeAction = System.Windows.Forms.MergeAction.Insert;
+			this.lblStepCount.MergeIndex = 1;
 			this.lblStepCount.Name = "lblStepCount";
 			resources.ApplyResources(this.lblStepCount, "lblStepCount");
 			// 

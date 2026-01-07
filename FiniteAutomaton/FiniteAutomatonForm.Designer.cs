@@ -504,12 +504,16 @@ namespace DusanRodina.FiniteAutomaton {
 	        // 
 	        // statusLabel
 	        // 
+	        this.statusLabel.MergeAction = MergeAction.Replace;
+	        this.statusLabel.MergeIndex  = 0;
 	        this.statusLabel.Margin = new System.Windows.Forms.Padding(0, 3, 10, 2);
 	        this.statusLabel.Name = "statusLabel";
 	        resources.ApplyResources(this.statusLabel, "statusLabel");
 	        // 
 	        // lblStepCount
 	        // 
+	        this.lblStepCount.MergeAction = MergeAction.Insert;
+	        this.lblStepCount.MergeIndex  = 1;
 	        this.lblStepCount.Margin = new System.Windows.Forms.Padding(10, 3, 0, 2);
 	        this.lblStepCount.Name = "lblStepCount";
 	        resources.ApplyResources(this.lblStepCount, "lblStepCount");

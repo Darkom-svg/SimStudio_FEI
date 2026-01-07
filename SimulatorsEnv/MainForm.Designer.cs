@@ -39,6 +39,7 @@ namespace DusanRodina.SimStudio {
             this.turingMachineToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.rAMSimulatorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.abacusMachineToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.trianerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.placeholderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,9 +57,12 @@ namespace DusanRodina.SimStudio {
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.topToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.mainToolStrip = new System.Windows.Forms.ToolStrip();
+            this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
             this.topToolStripPanel.SuspendLayout();
             this.mainToolStrip.SuspendLayout();
+            this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -72,7 +76,7 @@ namespace DusanRodina.SimStudio {
             // 
             // simulatorsToolStripMenuItem1
             // 
-            this.simulatorsToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.openFileToolStripMenuItem, this.toolStripMenuItem1, this.finiteAutomatonToolStripMenuItem1, this.pushdownAutomatonToolStripMenuItem, this.turingMachineToolStripMenuItem1, this.rAMSimulatorToolStripMenuItem, this.abacusMachineToolStripMenuItem1 });
+            this.simulatorsToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.openFileToolStripMenuItem, this.toolStripMenuItem1, this.finiteAutomatonToolStripMenuItem1, this.pushdownAutomatonToolStripMenuItem, this.turingMachineToolStripMenuItem1, this.rAMSimulatorToolStripMenuItem, this.abacusMachineToolStripMenuItem1, this.trianerToolStripMenuItem });
             this.simulatorsToolStripMenuItem1.Name = "simulatorsToolStripMenuItem1";
             this.simulatorsToolStripMenuItem1.Size = new System.Drawing.Size(76, 20);
             this.simulatorsToolStripMenuItem1.Text = "Simulátory";
@@ -81,7 +85,6 @@ namespace DusanRodina.SimStudio {
             // openFileToolStripMenuItem
             // 
             this.openFileToolStripMenuItem.Image = global::DusanRodina.SimStudio.Properties.Resources.small_open;
-            this.openFileToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.SizeToFit;;
             this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
             this.openFileToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.openFileToolStripMenuItem.Text = "Otvoriť";
@@ -132,6 +135,14 @@ namespace DusanRodina.SimStudio {
             this.abacusMachineToolStripMenuItem1.Text = "Počítadlový stroj";
             this.abacusMachineToolStripMenuItem1.Click += new System.EventHandler(this.abacusMachineToolStripMenuItem_Click);
             // 
+            // trianerToolStripMenuItem
+            // 
+            this.trianerToolStripMenuItem.Image = global::DusanRodina.SimStudio.Properties.Resources.Trainer;
+            this.trianerToolStripMenuItem.Name = "trianerToolStripMenuItem";
+            this.trianerToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.trianerToolStripMenuItem.Text = "Trenažér";
+            this.trianerToolStripMenuItem.Click += new System.EventHandler(this.trianerToolStripMenuItem_Click);
+            // 
             // placeholderToolStripMenuItem
             // 
             this.placeholderToolStripMenuItem.MergeIndex = 1;
@@ -173,7 +184,6 @@ namespace DusanRodina.SimStudio {
             // openToolStripButton
             // 
             this.openToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripButton.Image")));
-            this.openToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.SizeToFit;
             this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.openToolStripButton.Name = "openToolStripButton";
             this.openToolStripButton.Size = new System.Drawing.Size(65, 22);
@@ -261,11 +271,28 @@ namespace DusanRodina.SimStudio {
             this.mainToolStrip.Size = new System.Drawing.Size(83, 25);
             this.mainToolStrip.TabIndex = 5;
             // 
+            // statusStrip
+            // 
+            this.statusStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.statusLabel });
+            this.statusStrip.Location = new System.Drawing.Point(0, 589);
+            this.statusStrip.Name = "statusStrip";
+            this.statusStrip.Size = new System.Drawing.Size(984, 22);
+            this.statusStrip.TabIndex = 25;
+            // 
+            // statusLabel
+            // 
+            this.statusLabel.Margin = new System.Windows.Forms.Padding(0, 3, 10, 2);
+            this.statusLabel.Name = "statusLabel";
+            this.statusLabel.Size = new System.Drawing.Size(210, 17);
+            this.statusLabel.Text = "Sim Studio, Copyright (C) 2026 FEI STU";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 561);
+            this.ClientSize = new System.Drawing.Size(984, 611);
+            this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.topToolStripPanel);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -282,9 +309,16 @@ namespace DusanRodina.SimStudio {
             this.topToolStripPanel.PerformLayout();
             this.mainToolStrip.ResumeLayout(false);
             this.mainToolStrip.PerformLayout();
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.ToolStripMenuItem trianerToolStripMenuItem;
+
+        private System.Windows.Forms.StatusStrip statusStrip;
+        private System.Windows.Forms.ToolStripStatusLabel statusLabel;
 
         #endregion
 

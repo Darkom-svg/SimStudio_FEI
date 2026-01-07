@@ -75,8 +75,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.statusStrip = new System.Windows.Forms.StatusStrip();
-            this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -98,7 +96,6 @@
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // miFile
@@ -635,22 +632,6 @@
             this.panel8.Size = new System.Drawing.Size(200, 100);
             this.panel8.TabIndex = 23;
             // 
-            // statusStrip
-            // 
-            this.statusStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
-            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.statusLabel });
-            this.statusStrip.Location = new System.Drawing.Point(0, 562);
-            this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(984, 22);
-            this.statusStrip.TabIndex = 24;
-            // 
-            // statusLabel
-            // 
-            this.statusLabel.Margin = new System.Windows.Forms.Padding(0, 3, 10, 2);
-            this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(210, 17);
-            this.statusLabel.Text = "Sim Studio, Copyright (C) 2026 FEI STU";
-            // 
             // SimulatorsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -659,7 +640,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(984, 584);
             this.ControlBox = false;
-            this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.splitContainer1);
             this.DoubleBuffered = true;
@@ -697,14 +677,8 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            this.statusStrip.ResumeLayout(false);
-            this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
         }
-
-        private System.Windows.Forms.StatusStrip statusStrip;
-        private System.Windows.Forms.ToolStripStatusLabel statusLabel;
 
         private DusanRodina.SimStudio.RoundedPanel roundedPanel1;
 

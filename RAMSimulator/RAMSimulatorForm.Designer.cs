@@ -159,12 +159,15 @@ namespace DusanRodina.RandomAccessMachine {
 	        // 
 	        // statusStrip
 	        // 
+	        
 	        this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.lblStatus });
 	        resources.ApplyResources(this.statusStrip, "statusStrip");
 	        this.statusStrip.Name = "statusStrip";
 	        // 
 	        // lblStatus
 	        // 
+	        this.lblStatus.MergeAction = MergeAction.Replace;
+	        this.lblStatus.MergeIndex  = 0;
 	        this.lblStatus.Name = "lblStatus";
 	        resources.ApplyResources(this.lblStatus, "lblStatus");
 	        // 
