@@ -34,6 +34,9 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="Microsoft.VisualBasic.Compatibility">
+          <HintPath>..\..\..\..\..\..\..\..\..\WINDOWS\assembly\GAC_MSIL\Microsoft.VisualBasic.Compatibility\8.0.0.0__b03f5f7f11d50a3a\Microsoft.VisualBasic.Compatibility.dll</HintPath>
+        </Reference>
         <Reference Include="System"/>
         <Reference Include="System.Core"/>
         <Reference Include="System.Xml.Linq"/>
@@ -84,14 +87,39 @@
         <None Include="App.config"/>
     </ItemGroup>
     <ItemGroup>
+      <ProjectReference Include="..\AbacusMachine\AbacusMachineSimulator.csproj">
+        <Project>{2ee94a38-b6c9-4701-b3d9-4d4288013472}</Project>
+        <Name>AbacusMachineSimulator</Name>
+      </ProjectReference>
       <ProjectReference Include="..\Components\Components.csproj">
         <Project>{9c562e36-f43a-4aa0-a518-75cd00a30a6d}</Project>
         <Name>Components</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\FiniteAutomaton\FiniteAutomaton.csproj">
+        <Project>{648d0a1e-4c9e-4794-9d75-c132d2ba20b9}</Project>
+        <Name>FiniteAutomaton</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\PushdownAutomaton\PushdownAutomaton.csproj">
+        <Project>{b17bb48c-c195-45a3-b926-cb4a61ce99b8}</Project>
+        <Name>PushdownAutomaton</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\RAMSimulator\RandomAccessMachineSimulator.csproj">
+        <Project>{d9df7681-b36e-404d-a164-efcded0c4b4d}</Project>
+        <Name>RandomAccessMachineSimulator</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\TuringCore\TuringCore.csproj">
+        <Project>{292f715d-6e58-44e5-9574-5740cbcdad2a}</Project>
+        <Name>TuringCore</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\TuringMachine\TuringMachineSimulator.csproj">
+        <Project>{7ce993da-d4b5-4bff-9dcc-4aa5842189e8}</Project>
+        <Name>TuringMachineSimulator</Name>
       </ProjectReference>
     </ItemGroup>
     <ItemGroup>
       <Content Include="Resources\small_open.png" />
       <Content Include="Resources\small_Trainer.png" />
+      <Content Include="Resources\Turing.png" />
       <Content Include="Trainer.ico" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>

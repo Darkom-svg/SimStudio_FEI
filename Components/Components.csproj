@@ -80,6 +80,7 @@
     <Compile Include="Registers\BreakPoint.cs" />
     <Compile Include="Registers\InfiniteRegisters.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoundedPanel.cs" />
     <EmbeddedResource Include="Controls\InputOutputTape.en.resx">
       <DependentUpon>InputOutputTape.cs</DependentUpon>
     </EmbeddedResource>

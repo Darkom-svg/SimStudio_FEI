@@ -35,4 +35,5 @@ namespace DusanRodina.TrainingSimulator {
             dlg.ShowDialog(this);
         } 
     }
+    
 }
