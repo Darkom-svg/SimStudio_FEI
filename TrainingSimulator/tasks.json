@@ -1,0 +1,27 @@
+﻿[
+  {
+    "id": "tm_m1",
+    "title": "Posun v smere",
+    "category": "TM",
+    "mode": "Modules",
+    "difficulty": "Ľahká",
+    "testSuiteId": "tm_m1"
+  },
+  {
+    "id": "tm_m2",
+    "title": "Nahradenie symbolu",
+    "category": "TM",
+    "mode": "Modules",
+    "difficulty": "Ľahká",
+    "testSuiteId": "tm_m2"
+  },
+  
+  {
+    "id": "pda_bal",
+    "title": "Vyvážené zátvorky",
+    "category": "PDA",
+    "mode": "Basics",
+    "difficulty": "Ľahká",
+    "testSuiteId": "pda_bal_tests"
+  }
+]
