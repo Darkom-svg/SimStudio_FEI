@@ -1,4 +1,4 @@
-namespace DusanRodina.TrainingSimulator
+namespace TrainingSimulator
 {
     partial class MainTrainingForm
     {
@@ -50,6 +50,7 @@ namespace DusanRodina.TrainingSimulator
             this.roundedPanel1 = new DusanRodina.SimStudio.Components.RoundedPanel();
             this.label7 = new System.Windows.Forms.Label();
             this.roundedPanel2 = new DusanRodina.SimStudio.Components.RoundedPanel();
+            this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.FaTrain = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -57,6 +58,7 @@ namespace DusanRodina.TrainingSimulator
             this.roundedPanel3 = new DusanRodina.SimStudio.Components.RoundedPanel();
             this.label8 = new System.Windows.Forms.Label();
             this.roundedPanel4 = new DusanRodina.SimStudio.Components.RoundedPanel();
+            this.label11 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.PdaTrain = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -64,14 +66,12 @@ namespace DusanRodina.TrainingSimulator
             this.roundedPanel5 = new DusanRodina.SimStudio.Components.RoundedPanel();
             this.label9 = new System.Windows.Forms.Label();
             this.roundedPanel6 = new DusanRodina.SimStudio.Components.RoundedPanel();
+            this.label12 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.roundedPanel7 = new DusanRodina.SimStudio.Components.RoundedPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             TuringTrain = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.miniToolStrip.SuspendLayout();
@@ -272,7 +272,6 @@ namespace DusanRodina.TrainingSimulator
             this.roundedPanel1.Name = "roundedPanel1";
             this.roundedPanel1.Size = new System.Drawing.Size(370, 67);
             this.roundedPanel1.TabIndex = 0;
-            this.roundedPanel1.Visible = false;
             // 
             // label7
             // 
@@ -296,6 +295,18 @@ namespace DusanRodina.TrainingSimulator
             this.roundedPanel2.Name = "roundedPanel2";
             this.roundedPanel2.Size = new System.Drawing.Size(86, 67);
             this.roundedPanel2.TabIndex = 20;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label10.AutoSize = true;
+            this.label10.BackColor = System.Drawing.Color.Transparent;
+            this.label10.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label10.Location = new System.Drawing.Point(16, 17);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(55, 33);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "0 %";
             // 
             // label2
             // 
@@ -377,6 +388,18 @@ namespace DusanRodina.TrainingSimulator
             this.roundedPanel4.Size = new System.Drawing.Size(86, 67);
             this.roundedPanel4.TabIndex = 20;
             // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label11.Location = new System.Drawing.Point(16, 17);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(55, 33);
+            this.label11.TabIndex = 23;
+            this.label11.Text = "0 %";
+            // 
             // label3
             // 
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -456,6 +479,18 @@ namespace DusanRodina.TrainingSimulator
             this.roundedPanel6.Size = new System.Drawing.Size(86, 67);
             this.roundedPanel6.TabIndex = 20;
             // 
+            // label12
+            // 
+            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label12.Location = new System.Drawing.Point(14, 16);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(69, 33);
+            this.label12.TabIndex = 23;
+            this.label12.Text = "99 %";
+            // 
             // label5
             // 
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -511,42 +546,6 @@ namespace DusanRodina.TrainingSimulator
             this.flowLayoutPanel2.Size = new System.Drawing.Size(408, 431);
             this.flowLayoutPanel2.TabIndex = 0;
             this.flowLayoutPanel2.WrapContents = false;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label10.Location = new System.Drawing.Point(16, 17);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(55, 33);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "0 %";
-            // 
-            // label11
-            // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label11.Location = new System.Drawing.Point(16, 17);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(55, 33);
-            this.label11.TabIndex = 23;
-            this.label11.Text = "0 %";
-            // 
-            // label12
-            // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label12.Location = new System.Drawing.Point(14, 16);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(69, 33);
-            this.label12.TabIndex = 23;
-            this.label12.Text = "99 %";
             // 
             // MainTrainingForm
             // 

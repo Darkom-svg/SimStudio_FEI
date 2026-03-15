@@ -12,6 +12,7 @@ using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using System.Xml;
 using DusanRodina.TrainingSimulator;
+using TrainingSimulator;
 
 namespace DusanRodina.SimStudio {
 	public partial class MainForm : Form, IMainForm {
@@ -241,7 +242,7 @@ namespace DusanRodina.SimStudio {
 
 		private void trianerToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			TrainingSimulator.MainTrainingForm frm = new DusanRodina.TrainingSimulator.MainTrainingForm();
+			MainTrainingForm frm = new MainTrainingForm();
 			frm.MdiParent = this;
 			frm.Show();
 		}

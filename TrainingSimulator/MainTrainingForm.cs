@@ -1,16 +1,15 @@
-using DusanRodina.TrainingSimulator.Dialogs;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Windows.Forms;
 using System.Text.Json;
+using System.Windows.Forms;
 using DusanRodina.SimStudio.Components;
+using DusanRodina.TrainingSimulator.Dialogs;
 
-
-namespace DusanRodina.TrainingSimulator {
+namespace TrainingSimulator {
     public partial class MainTrainingForm : Form
     {
         private List<TaskDef> _allTasks = new List<TaskDef>();        
@@ -41,7 +40,7 @@ namespace DusanRodina.TrainingSimulator {
                 _allTasks = new List<TaskDef>();
             }
             
-            ShowCategory("TM");            
+            ShowCategory("FA");            
         }
         
         public sealed class TaskDef
@@ -51,7 +50,6 @@ namespace DusanRodina.TrainingSimulator {
             public string Category { get; set; } = "";   
             public string Mode { get; set; } = "";
             public string Difficulty { get; set; } = "";
-            public string TestSuiteId { get; set; } = "";
         }
 
           public static class TaskStore
@@ -145,7 +143,8 @@ namespace DusanRodina.TrainingSimulator {
         
         private void OpenTask(TaskDef task)
         {
-            throw new System.NotImplementedException();
+            TrainingForm frm = new TrainingForm(task);
+            frm.ShowDialog(this);
         }
 
         
@@ -159,7 +158,7 @@ namespace DusanRodina.TrainingSimulator {
         
         private void miAbout_Click(object sender, EventArgs e)
         {
-            AboutForm dlg = new TrainingSimulator.Dialogs.AboutForm();
+            AboutForm dlg = new DusanRodina.TrainingSimulator.Dialogs.AboutForm();
             dlg.ShowDialog(this);
         }
 
@@ -181,5 +180,6 @@ namespace DusanRodina.TrainingSimulator {
         }
         
     }
-    
+
+
 }

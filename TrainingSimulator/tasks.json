@@ -1,27 +1,38 @@
 ﻿[
   {
-    "id": "tm_m1",
+    "id": "TM1",
     "title": "Posun v smere",
     "category": "TM",
     "mode": "Modules",
-    "difficulty": "Ľahká",
-    "testSuiteId": "tm_m1"
+    "difficulty": "Ľahká"
   },
   {
-    "id": "tm_m2",
+    "id": "TM2",
     "title": "Nahradenie symbolu",
     "category": "TM",
     "mode": "Modules",
-    "difficulty": "Ľahká",
-    "testSuiteId": "tm_m2"
+    "difficulty": "Ľahká"
   },
   
   {
-    "id": "pda_bal",
+    "id": "PDA1",
     "title": "Vyvážené zátvorky",
     "category": "PDA",
     "mode": "Basics",
-    "difficulty": "Ľahká",
-    "testSuiteId": "pda_bal_tests"
+    "difficulty": "Ľahká"
+  },
+  {
+    "id": "FA1",
+    "title": "príklad 1",
+    "category": "FA",
+    "mode": "Basics",
+    "difficulty": "Ľahká"
+  },
+  {
+    "id": "FA2",
+    "title": "príklad 2",
+    "category": "FA",
+    "mode": "Basics",
+    "difficulty": "Ľahká"
   }
 ]

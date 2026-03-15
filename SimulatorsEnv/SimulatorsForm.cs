@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Drawing;
+using TrainingSimulator;
 
 namespace DusanRodina.SimStudio {
 	public partial class SimulatorsForm : Form
@@ -32,7 +33,7 @@ namespace DusanRodina.SimStudio {
         }
         private void bTrainer_Click(object sender, EventArgs e)
         {
-            TrainingSimulator.MainTrainingForm frm = new TrainingSimulator.MainTrainingForm();
+            MainTrainingForm frm = new MainTrainingForm();
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
