@@ -93,10 +93,47 @@ namespace TrainingSimulator
             this.stepToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.tcMain = new System.Windows.Forms.TabControl();
+            this.taskSpecificationTab = new System.Windows.Forms.TabPage();
+            this.functionsTab = new System.Windows.Forms.TabPage();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.bAddTFunction = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtCode = new DusanRodina.SimStudio.Components.SyntaxTextBox();
+            this.statesTab = new System.Windows.Forms.TabPage();
+            this.stateDiagramControl = new DusanRodina.TuringCore.Components.StateDiagramControl();
+            this.logTab = new System.Windows.Forms.TabPage();
+            this.formalSpecificationTab = new System.Windows.Forms.TabPage();
+            this.formalSpecifiaction = new System.Windows.Forms.WebBrowser();
+            this.testsTab = new System.Windows.Forms.TabPage();
+            this.lstErrors = new System.Windows.Forms.ListBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.speedPanel = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tbSpeed = new System.Windows.Forms.TrackBar();
+            this.label3 = new System.Windows.Forms.Label();
             this.toolStripPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.mainToolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            this.tcMain.SuspendLayout();
+            this.functionsTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            this.statesTab.SuspendLayout();
+            this.formalSpecificationTab.SuspendLayout();
+            this.speedPanel.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbSpeed)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStripPanel1
@@ -465,7 +502,7 @@ namespace TrainingSimulator
             // 
             this.miAbout.MergeAction = System.Windows.Forms.MergeAction.Replace;
             this.miAbout.Name = "miAbout";
-            this.miAbout.Size = new System.Drawing.Size(152, 22);
+            this.miAbout.Size = new System.Drawing.Size(138, 22);
             this.miAbout.Text = "O programe";
             this.miAbout.Click += new System.EventHandler(this.miAbout_Click);
             // 
@@ -538,16 +575,275 @@ namespace TrainingSimulator
             this.statusLabel.Size = new System.Drawing.Size(196, 17);
             this.statusLabel.Text = "Trenažér, Copyright (C) 2026 FEI STU";
             // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 52);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.tcMain);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.lstErrors);
+            this.splitContainer2.Panel2.Controls.Add(this.label7);
+            this.splitContainer2.Panel2Collapsed = true;
+            this.splitContainer2.Panel2MinSize = 0;
+            this.splitContainer2.Size = new System.Drawing.Size(800, 376);
+            this.splitContainer2.SplitterDistance = 266;
+            this.splitContainer2.TabIndex = 14;
+            // 
+            // tcMain
+            // 
+            this.tcMain.Controls.Add(this.taskSpecificationTab);
+            this.tcMain.Controls.Add(this.functionsTab);
+            this.tcMain.Controls.Add(this.statesTab);
+            this.tcMain.Controls.Add(this.logTab);
+            this.tcMain.Controls.Add(this.formalSpecificationTab);
+            this.tcMain.Controls.Add(this.testsTab);
+            this.tcMain.Location = new System.Drawing.Point(3, 3);
+            this.tcMain.Name = "tcMain";
+            this.tcMain.SelectedIndex = 0;
+            this.tcMain.Size = new System.Drawing.Size(794, 370);
+            this.tcMain.TabIndex = 0;
+            this.tcMain.SelectedIndexChanged += new System.EventHandler(this.tcMain_SelectedIndexChanged);
+            // 
+            // taskSpecificationTab
+            // 
+            this.taskSpecificationTab.Location = new System.Drawing.Point(4, 22);
+            this.taskSpecificationTab.Name = "taskSpecificationTab";
+            this.taskSpecificationTab.Size = new System.Drawing.Size(786, 344);
+            this.taskSpecificationTab.TabIndex = 5;
+            this.taskSpecificationTab.Text = "Zadanie";
+            this.taskSpecificationTab.UseVisualStyleBackColor = true;
+            // 
+            // functionsTab
+            // 
+            this.functionsTab.Controls.Add(this.splitContainer1);
+            this.functionsTab.Location = new System.Drawing.Point(4, 22);
+            this.functionsTab.Name = "functionsTab";
+            this.functionsTab.Padding = new System.Windows.Forms.Padding(3);
+            this.functionsTab.Size = new System.Drawing.Size(786, 344);
+            this.functionsTab.TabIndex = 0;
+            this.functionsTab.Text = "Prechodové funkcie";
+            this.functionsTab.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.bAddTFunction);
+            this.splitContainer1.Panel1.Controls.Add(this.label5);
+            this.splitContainer1.Panel1.Controls.Add(this.txtCode);
+            this.splitContainer1.Size = new System.Drawing.Size(780, 338);
+            this.splitContainer1.SplitterDistance = 508;
+            this.splitContainer1.TabIndex = 0;
+            // 
+            // bAddTFunction
+            // 
+            this.bAddTFunction.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.bAddTFunction.Location = new System.Drawing.Point(2, 3);
+            this.bAddTFunction.Name = "bAddTFunction";
+            this.bAddTFunction.Size = new System.Drawing.Size(90, 30);
+            this.bAddTFunction.TabIndex = 5;
+            this.bAddTFunction.Text = "Pridať &prechod";
+            this.bAddTFunction.UseVisualStyleBackColor = true;
+            this.bAddTFunction.Click += new System.EventHandler(this.bAddTFunction_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label5.Location = new System.Drawing.Point(98, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(199, 13);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Pridá nový prechod prechodovej funkcie";
+            // 
+            // txtCode
+            // 
+            this.txtCode.HideSelection = true;
+            this.txtCode.Location = new System.Drawing.Point(3, 39);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.SelectedText = "";
+            this.txtCode.SelectionLength = 0;
+            this.txtCode.SelectionStart = 0;
+            this.txtCode.Size = new System.Drawing.Size(502, 296);
+            this.txtCode.TabIndex = 0;
+            // 
+            // statesTab
+            // 
+            this.statesTab.Controls.Add(this.stateDiagramControl);
+            this.statesTab.Location = new System.Drawing.Point(4, 22);
+            this.statesTab.Name = "statesTab";
+            this.statesTab.Padding = new System.Windows.Forms.Padding(3);
+            this.statesTab.Size = new System.Drawing.Size(786, 344);
+            this.statesTab.TabIndex = 1;
+            this.statesTab.Text = "Stavový diagram";
+            this.statesTab.UseVisualStyleBackColor = true;
+            // 
+            // stateDiagramControl
+            // 
+            this.stateDiagramControl.AutoScroll = true;
+            this.stateDiagramControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.stateDiagramControl.Location = new System.Drawing.Point(3, 3);
+            this.stateDiagramControl.Name = "stateDiagramControl";
+            this.stateDiagramControl.Size = new System.Drawing.Size(780, 338);
+            this.stateDiagramControl.TabIndex = 0;
+            this.stateDiagramControl.TuringMachine = null;
+            // 
+            // logTab
+            // 
+            this.logTab.Location = new System.Drawing.Point(4, 22);
+            this.logTab.Name = "logTab";
+            this.logTab.Padding = new System.Windows.Forms.Padding(3);
+            this.logTab.Size = new System.Drawing.Size(786, 344);
+            this.logTab.TabIndex = 3;
+            this.logTab.Text = "Záznam priebehu";
+            this.logTab.UseVisualStyleBackColor = true;
+            // 
+            // formalSpecificationTab
+            // 
+            this.formalSpecificationTab.Controls.Add(this.formalSpecifiaction);
+            this.formalSpecificationTab.Location = new System.Drawing.Point(4, 22);
+            this.formalSpecificationTab.Name = "formalSpecificationTab";
+            this.formalSpecificationTab.Size = new System.Drawing.Size(786, 344);
+            this.formalSpecificationTab.TabIndex = 4;
+            this.formalSpecificationTab.Text = "Formálna špecifikácia";
+            this.formalSpecificationTab.UseVisualStyleBackColor = true;
+            // 
+            // formalSpecifiaction
+            // 
+            this.formalSpecifiaction.AllowWebBrowserDrop = false;
+            this.formalSpecifiaction.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.formalSpecifiaction.Location = new System.Drawing.Point(0, 0);
+            this.formalSpecifiaction.MinimumSize = new System.Drawing.Size(20, 20);
+            this.formalSpecifiaction.Name = "formalSpecifiaction";
+            this.formalSpecifiaction.Size = new System.Drawing.Size(786, 344);
+            this.formalSpecifiaction.TabIndex = 1;
+            this.formalSpecifiaction.WebBrowserShortcutsEnabled = false;
+            // 
+            // testsTab
+            // 
+            this.testsTab.Location = new System.Drawing.Point(4, 22);
+            this.testsTab.Name = "testsTab";
+            this.testsTab.Size = new System.Drawing.Size(786, 344);
+            this.testsTab.TabIndex = 6;
+            this.testsTab.Text = "Testy";
+            this.testsTab.UseVisualStyleBackColor = true;
+            // 
+            // lstErrors
+            // 
+            this.lstErrors.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstErrors.FormattingEnabled = true;
+            this.lstErrors.IntegralHeight = false;
+            this.lstErrors.Location = new System.Drawing.Point(0, 17);
+            this.lstErrors.Name = "lstErrors";
+            this.lstErrors.Size = new System.Drawing.Size(150, 29);
+            this.lstErrors.TabIndex = 16;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label7.Location = new System.Drawing.Point(0, 0);
+            this.label7.Name = "label7";
+            this.label7.Padding = new System.Windows.Forms.Padding(2);
+            this.label7.Size = new System.Drawing.Size(78, 17);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Zoznam chýb:";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // speedPanel
+            // 
+            this.speedPanel.BackColor = System.Drawing.Color.White;
+            this.speedPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.speedPanel.Controls.Add(this.panel1);
+            this.speedPanel.Controls.Add(this.tbSpeed);
+            this.speedPanel.Controls.Add(this.label3);
+            this.speedPanel.Location = new System.Drawing.Point(597, 431);
+            this.speedPanel.Name = "speedPanel";
+            this.speedPanel.Size = new System.Drawing.Size(200, 37);
+            this.speedPanel.TabIndex = 23;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.trackBar1);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(-1, -1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(200, 37);
+            this.panel1.TabIndex = 24;
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.trackBar1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.trackBar1.Location = new System.Drawing.Point(61, 3);
+            this.trackBar1.Maximum = 20;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(134, 45);
+            this.trackBar1.TabIndex = 16;
+            this.trackBar1.Value = 19;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(3, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Rýchlosť:";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // tbSpeed
+            // 
+            this.tbSpeed.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbSpeed.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.tbSpeed.Location = new System.Drawing.Point(61, 3);
+            this.tbSpeed.Maximum = 20;
+            this.tbSpeed.Name = "tbSpeed";
+            this.tbSpeed.Size = new System.Drawing.Size(134, 45);
+            this.tbSpeed.TabIndex = 16;
+            this.tbSpeed.Value = 19;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label3.Location = new System.Drawing.Point(3, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Rýchlosť:";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // TrainingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.speedPanel);
+            this.Controls.Add(this.splitContainer2);
             this.Controls.Add(this.toolStripPanel1);
             this.Controls.Add(this.statusStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TrainingForm";
             this.Text = "TrainingForm";
+            this.Load += new System.EventHandler(this.frmTuringMachine_Load);
             this.toolStripPanel1.ResumeLayout(false);
             this.toolStripPanel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -556,9 +852,64 @@ namespace TrainingSimulator
             this.mainToolStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            this.splitContainer2.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            this.tcMain.ResumeLayout(false);
+            this.functionsTab.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            this.statesTab.ResumeLayout(false);
+            this.formalSpecificationTab.ResumeLayout(false);
+            this.speedPanel.ResumeLayout(false);
+            this.speedPanel.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbSpeed)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.WebBrowser formalSpecifiaction;
+
+        private System.Windows.Forms.ListBox lstErrors;
+        private System.Windows.Forms.Label label7;
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Label label1;
+
+        private System.Windows.Forms.Panel speedPanel;
+        private System.Windows.Forms.TrackBar tbSpeed;
+        private System.Windows.Forms.Label label3;
+
+        private System.Windows.Forms.Button bAddTFunction;
+        private System.Windows.Forms.Label label5;
+
+        private System.Windows.Forms.SplitContainer splitContainer1;
+
+        private DusanRodina.SimStudio.Components.SyntaxTextBox txtCode;
+
+        private DusanRodina.TuringCore.Components.StateDiagramControl stateDiagramControl;
+
+        private System.Windows.Forms.TabPage testsTab;
+
+        private System.Windows.Forms.TabPage taskSpecificationTab;
+
+        private System.Windows.Forms.TabPage functionsTab;
+
+        private System.Windows.Forms.TabPage logTab;
+
+        private System.Windows.Forms.TabControl tcMain;
+        private System.Windows.Forms.TabPage formalSpecificationTab;
+        private System.Windows.Forms.TabPage statesTab;
+
+        private System.Windows.Forms.SplitContainer splitContainer2;
 
         private System.Windows.Forms.ToolStripPanel toolStripPanel1;
         private System.Windows.Forms.MenuStrip menuStrip1;

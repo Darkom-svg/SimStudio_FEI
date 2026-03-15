@@ -21,10 +21,10 @@
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Components_002FDialogs_002FReplaceForm/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Components_002FProperties_002FResources/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=FiniteAutomaton_002FDialogs_002FAboutForm/@EntryIndexedValue">False</s:Boolean>
-	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=FiniteAutomaton_002FDialogs_002FAddTFunctionForm/@EntryIndexedValue">True</s:Boolean>
-	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=FiniteAutomaton_002FDialogs_002FSettingsForm/@EntryIndexedValue">True</s:Boolean>
-	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=FiniteAutomaton_002FDialogs_002FTapeStatisticsForm/@EntryIndexedValue">True</s:Boolean>
-	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=FiniteAutomaton_002FFiniteAutomatonForm/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=FiniteAutomaton_002FDialogs_002FAddTFunctionForm/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=FiniteAutomaton_002FDialogs_002FSettingsForm/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=FiniteAutomaton_002FDialogs_002FTapeStatisticsForm/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=FiniteAutomaton_002FFiniteAutomatonForm/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=FiniteAutomaton_002FProperties_002FResources/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Miscellaneous_0020Files_002FRogirip/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Miscellaneous_0020Files_002FRogirip/@EntryIndexRemoved">True</s:Boolean>
@@ -50,17 +50,18 @@
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=SimStudio_002FMainForm/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=SimStudio_002FProperties_002FResources/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=SimStudio_002FSimulatorsForm/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=TrainingSimulator_002FDialogs_002FAboutForm/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=TrainingSimulator_002FDialogs_002FAddTFunctionForm/@EntryIndexedValue">False</s:Boolean>
-	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=TrainingSimulator_002FDialogs_002FAddTFunctionForm/@EntryIndexRemoved">True</s:Boolean>
+	
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=TrainingSimulator_002FDialogs_002FSettingsForm/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=TrainingSimulator_002FDialogs_002FSettingsForm/@EntryIndexRemoved">True</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=TrainingSimulator_002FDialogs_002FTapeStatisticsForm/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=TrainingSimulator_002FDialogs_002FTapeStatisticsForm/@EntryIndexRemoved">True</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=TrainingSimulator_002FMainTrainerForm/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=TrainingSimulator_002FMainTrainerForm/@EntryIndexRemoved">True</s:Boolean>
-	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=TrainingSimulator_002FMainTrainingForm/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=TrainingSimulator_002FMainTrainingForm/@EntryIndexedValue">False</s:Boolean>
 	
-	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=TrainingSimulator_002FProperties_002FResources/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=TrainingSimulator_002FProperties_002FResources/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=TrainingSimulator_002FTrainingForm/@EntryIndexedValue">True</s:Boolean>
 	
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=TuringCore_002FComponents_002FDialogs_002FNewStateForm/@EntryIndexedValue">True</s:Boolean>

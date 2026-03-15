@@ -48,10 +48,6 @@ namespace DusanRodina.FiniteAutomaton {
 	        this.label6 = new System.Windows.Forms.Label();
 	        this.sbyFunctions = new System.Windows.Forms.VScrollBar();
 	        this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-	        this.speedPanel = new System.Windows.Forms.Panel();
-	        this.tbSpeed = new System.Windows.Forms.TrackBar();
-	        this.label3 = new System.Windows.Forms.Label();
-	        this.infiniteTapeControl = new DusanRodina.TuringCore.Components.InfiniteTapeControl();
 	        this.tcMain = new System.Windows.Forms.TabControl();
 	        this.functionsTab = new System.Windows.Forms.TabPage();
 	        this.statesTab = new System.Windows.Forms.TabPage();
@@ -72,6 +68,10 @@ namespace DusanRodina.FiniteAutomaton {
 	        this.formalSpecificationMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
 	        this.formalSpecSaveAs = new System.Windows.Forms.ToolStripMenuItem();
 	        this.formalSpecPrint = new System.Windows.Forms.ToolStripMenuItem();
+	        this.speedPanel = new System.Windows.Forms.Panel();
+	        this.tbSpeed = new System.Windows.Forms.TrackBar();
+	        this.label3 = new System.Windows.Forms.Label();
+	        this.infiniteTapeControl = new DusanRodina.TuringCore.Components.InfiniteTapeControl();
 	        this.cmbTape = new System.Windows.Forms.ComboBox();
 	        this.label1 = new System.Windows.Forms.Label();
 	        this.label2 = new System.Windows.Forms.Label();
@@ -168,8 +168,6 @@ namespace DusanRodina.FiniteAutomaton {
 	        this.splitContainer2.Panel1.SuspendLayout();
 	        this.splitContainer2.Panel2.SuspendLayout();
 	        this.splitContainer2.SuspendLayout();
-	        this.speedPanel.SuspendLayout();
-	        ((System.ComponentModel.ISupportInitialize)(this.tbSpeed)).BeginInit();
 	        this.tcMain.SuspendLayout();
 	        this.functionsTab.SuspendLayout();
 	        this.statesTab.SuspendLayout();
@@ -179,6 +177,8 @@ namespace DusanRodina.FiniteAutomaton {
 	        ((System.ComponentModel.ISupportInitialize)(this.pLog)).BeginInit();
 	        this.formalSpecificationTab.SuspendLayout();
 	        this.formalSpecificationMenu.SuspendLayout();
+	        this.speedPanel.SuspendLayout();
+	        ((System.ComponentModel.ISupportInitialize)(this.tbSpeed)).BeginInit();
 	        this.statusStrip.SuspendLayout();
 	        this.menuStrip1.SuspendLayout();
 	        this.toolStripPanel1.SuspendLayout();
@@ -252,9 +252,9 @@ namespace DusanRodina.FiniteAutomaton {
 	        // splitContainer2.Panel1
 	        // 
 	        this.splitContainer2.Panel1.BackColor = System.Drawing.SystemColors.Control;
+	        this.splitContainer2.Panel1.Controls.Add(this.tcMain);
 	        this.splitContainer2.Panel1.Controls.Add(this.speedPanel);
 	        this.splitContainer2.Panel1.Controls.Add(this.infiniteTapeControl);
-	        this.splitContainer2.Panel1.Controls.Add(this.tcMain);
 	        this.splitContainer2.Panel1.Controls.Add(this.cmbTape);
 	        this.splitContainer2.Panel1.Controls.Add(this.label1);
 	        this.splitContainer2.Panel1.Controls.Add(this.label2);
@@ -266,46 +266,6 @@ namespace DusanRodina.FiniteAutomaton {
 	        this.splitContainer2.Panel2.Controls.Add(this.lstErrors);
 	        this.splitContainer2.Panel2.Controls.Add(this.label7);
 	        this.splitContainer2.Panel2Collapsed = true;
-	        // 
-	        // speedPanel
-	        // 
-	        this.speedPanel.BackColor = System.Drawing.Color.White;
-	        this.speedPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-	        this.speedPanel.Controls.Add(this.tbSpeed);
-	        this.speedPanel.Controls.Add(this.label3);
-	        resources.ApplyResources(this.speedPanel, "speedPanel");
-	        this.speedPanel.Name = "speedPanel";
-	        // 
-	        // tbSpeed
-	        // 
-	        resources.ApplyResources(this.tbSpeed, "tbSpeed");
-	        this.tbSpeed.Maximum = 20;
-	        this.tbSpeed.Name = "tbSpeed";
-	        this.tbSpeed.Value = 19;
-	        this.tbSpeed.Scroll += new System.EventHandler(this.tbSpeed_Scroll);
-	        // 
-	        // label3
-	        // 
-	        resources.ApplyResources(this.label3, "label3");
-	        this.label3.BackColor = System.Drawing.Color.Transparent;
-	        this.label3.Name = "label3";
-	        // 
-	        // infiniteTapeControl
-	        // 
-	        this.infiniteTapeControl.AcceptStatus = DusanRodina.TuringCore.Simulation.AcceptanceStatus.None;
-	        this.infiniteTapeControl.AllowBlanks = false;
-	        resources.ApplyResources(this.infiniteTapeControl, "infiniteTapeControl");
-	        this.infiniteTapeControl.ChangesAllowed = true;
-	        this.infiniteTapeControl.CurrentSymbols = ((System.Collections.Generic.List<string>)(resources.GetObject("infiniteTapeControl.CurrentSymbols")));
-	        this.infiniteTapeControl.EditedCell = -2147483648;
-	        this.infiniteTapeControl.EditedTape = -1;
-	        this.infiniteTapeControl.HeadPositions.Add(0);
-	        this.infiniteTapeControl.IsInfinite = false;
-	        this.infiniteTapeControl.Name = "infiniteTapeControl";
-	        this.infiniteTapeControl.TapeChanged += new System.EventHandler(this.infiniteTapeControl_TapeChanged);
-	        this.infiniteTapeControl.HeadPositionChanged += new System.EventHandler(this.infiniteTapeControl_HeadPositionChanged);
-	        this.infiniteTapeControl.TapeCannotBeChanged += new System.EventHandler(this.infiniteTapeControl_TapeCannotBeChanged);
-	        this.infiniteTapeControl.Load += new System.EventHandler(this.infiniteTapeControl_Load);
 	        // 
 	        // tcMain
 	        // 
@@ -459,6 +419,46 @@ namespace DusanRodina.FiniteAutomaton {
 	        resources.ApplyResources(this.formalSpecPrint, "formalSpecPrint");
 	        this.formalSpecPrint.Click += new System.EventHandler(this.formalSpecPrint_Click);
 	        // 
+	        // speedPanel
+	        // 
+	        this.speedPanel.BackColor = System.Drawing.Color.White;
+	        this.speedPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+	        this.speedPanel.Controls.Add(this.tbSpeed);
+	        this.speedPanel.Controls.Add(this.label3);
+	        resources.ApplyResources(this.speedPanel, "speedPanel");
+	        this.speedPanel.Name = "speedPanel";
+	        // 
+	        // tbSpeed
+	        // 
+	        resources.ApplyResources(this.tbSpeed, "tbSpeed");
+	        this.tbSpeed.Maximum = 20;
+	        this.tbSpeed.Name = "tbSpeed";
+	        this.tbSpeed.Value = 19;
+	        this.tbSpeed.Scroll += new System.EventHandler(this.tbSpeed_Scroll);
+	        // 
+	        // label3
+	        // 
+	        resources.ApplyResources(this.label3, "label3");
+	        this.label3.BackColor = System.Drawing.Color.Transparent;
+	        this.label3.Name = "label3";
+	        // 
+	        // infiniteTapeControl
+	        // 
+	        this.infiniteTapeControl.AcceptStatus = DusanRodina.TuringCore.Simulation.AcceptanceStatus.None;
+	        this.infiniteTapeControl.AllowBlanks = false;
+	        resources.ApplyResources(this.infiniteTapeControl, "infiniteTapeControl");
+	        this.infiniteTapeControl.ChangesAllowed = true;
+	        this.infiniteTapeControl.CurrentSymbols = ((System.Collections.Generic.List<string>)(resources.GetObject("infiniteTapeControl.CurrentSymbols")));
+	        this.infiniteTapeControl.EditedCell = -2147483648;
+	        this.infiniteTapeControl.EditedTape = -1;
+	        this.infiniteTapeControl.HeadPositions.Add(0);
+	        this.infiniteTapeControl.IsInfinite = false;
+	        this.infiniteTapeControl.Name = "infiniteTapeControl";
+	        this.infiniteTapeControl.TapeChanged += new System.EventHandler(this.infiniteTapeControl_TapeChanged);
+	        this.infiniteTapeControl.HeadPositionChanged += new System.EventHandler(this.infiniteTapeControl_HeadPositionChanged);
+	        this.infiniteTapeControl.TapeCannotBeChanged += new System.EventHandler(this.infiniteTapeControl_TapeCannotBeChanged);
+	        this.infiniteTapeControl.Load += new System.EventHandler(this.infiniteTapeControl_Load);
+	        // 
 	        // cmbTape
 	        // 
 	        resources.ApplyResources(this.cmbTape, "cmbTape");
@@ -504,17 +504,17 @@ namespace DusanRodina.FiniteAutomaton {
 	        // 
 	        // statusLabel
 	        // 
-	        this.statusLabel.MergeAction = MergeAction.Replace;
-	        this.statusLabel.MergeIndex  = 0;
 	        this.statusLabel.Margin = new System.Windows.Forms.Padding(0, 3, 10, 2);
+	        this.statusLabel.MergeAction = System.Windows.Forms.MergeAction.Replace;
+	        this.statusLabel.MergeIndex = 0;
 	        this.statusLabel.Name = "statusLabel";
 	        resources.ApplyResources(this.statusLabel, "statusLabel");
 	        // 
 	        // lblStepCount
 	        // 
-	        this.lblStepCount.MergeAction = MergeAction.Insert;
-	        this.lblStepCount.MergeIndex  = 1;
 	        this.lblStepCount.Margin = new System.Windows.Forms.Padding(10, 3, 0, 2);
+	        this.lblStepCount.MergeAction = System.Windows.Forms.MergeAction.Insert;
+	        this.lblStepCount.MergeIndex = 1;
 	        this.lblStepCount.Name = "lblStepCount";
 	        resources.ApplyResources(this.lblStepCount, "lblStepCount");
 	        // 
@@ -1028,9 +1028,6 @@ namespace DusanRodina.FiniteAutomaton {
 	        this.splitContainer2.Panel2.PerformLayout();
 	        ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
 	        this.splitContainer2.ResumeLayout(false);
-	        this.speedPanel.ResumeLayout(false);
-	        this.speedPanel.PerformLayout();
-	        ((System.ComponentModel.ISupportInitialize)(this.tbSpeed)).EndInit();
 	        this.tcMain.ResumeLayout(false);
 	        this.functionsTab.ResumeLayout(false);
 	        this.statesTab.ResumeLayout(false);
@@ -1041,6 +1038,9 @@ namespace DusanRodina.FiniteAutomaton {
 	        ((System.ComponentModel.ISupportInitialize)(this.pLog)).EndInit();
 	        this.formalSpecificationTab.ResumeLayout(false);
 	        this.formalSpecificationMenu.ResumeLayout(false);
+	        this.speedPanel.ResumeLayout(false);
+	        this.speedPanel.PerformLayout();
+	        ((System.ComponentModel.ISupportInitialize)(this.tbSpeed)).EndInit();
 	        this.statusStrip.ResumeLayout(false);
 	        this.statusStrip.PerformLayout();
 	        this.menuStrip1.ResumeLayout(false);
@@ -1142,21 +1142,21 @@ namespace DusanRodina.FiniteAutomaton {
         private ToolStripSeparator toolStripMenuItem14;
         private ToolStripMenuItem miTFormat10;
         private ToolStripSeparator toolStripSeparator2;
-        private SplitContainer splitContainer1;
-        private Button bAddTFunction;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Button bAddTFunction;
         private DusanRodina.SimStudio.Components.SyntaxTextBox txtCode;
         private Label label5;
-        private PictureBox pFunctions;
+        private System.Windows.Forms.PictureBox pFunctions;
         private Label label6;
-        private VScrollBar sbyFunctions;
+        private System.Windows.Forms.VScrollBar sbyFunctions;
         private TabPage formalSpecificationTab;
         private WebBrowser formalSpecifiaction;
         private ContextMenuStrip formalSpecificationMenu;
         private ToolStripMenuItem formalSpecSaveAs;
         private ToolStripMenuItem formalSpecPrint;
-        private SplitContainer splitContainer2;
+        private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.Label label7;
-        private ListBox lstErrors;        
+        private System.Windows.Forms.ListBox lstErrors;        
         private HScrollBar sbxThreads;
         private DusanRodina.TuringCore.Components.StateDiagramControl stateDiagramControl;
         private DusanRodina.TuringCore.Components.InfiniteTapeControl infiniteTapeControl;
@@ -1170,7 +1170,7 @@ namespace DusanRodina.FiniteAutomaton {
         private ToolStripButton breakToolStripButton;
         private ToolStripButton stopToolStripButton;
         private ToolStripSeparator toolStripSeparator4;
-        private ToolStripButton stepToolStripButton;
+        private System.Windows.Forms.ToolStripButton stepToolStripButton;
         private System.Windows.Forms.Panel speedPanel;
         private TrackBar tbSpeed;
         private Label label3;

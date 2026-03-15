@@ -274,3 +274,5 @@ C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\System.Buffers.xml
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\tasks.json
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\en\TrainingSimulator.resources.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\TrainingForm.resx
