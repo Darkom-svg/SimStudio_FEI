@@ -115,6 +115,7 @@ namespace TrainingSimulator
             this.label1 = new System.Windows.Forms.Label();
             this.tbSpeed = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
+            this.taskSpecification = new System.Windows.Forms.WebBrowser();
             this.toolStripPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.mainToolStrip.SuspendLayout();
@@ -124,6 +125,7 @@ namespace TrainingSimulator
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.tcMain.SuspendLayout();
+            this.taskSpecificationTab.SuspendLayout();
             this.functionsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -613,6 +615,7 @@ namespace TrainingSimulator
             // 
             // taskSpecificationTab
             // 
+            this.taskSpecificationTab.Controls.Add(this.taskSpecification);
             this.taskSpecificationTab.Location = new System.Drawing.Point(4, 22);
             this.taskSpecificationTab.Name = "taskSpecificationTab";
             this.taskSpecificationTab.Size = new System.Drawing.Size(786, 344);
@@ -831,6 +834,17 @@ namespace TrainingSimulator
             this.label3.Text = "Rýchlosť:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // taskSpecification
+            // 
+            this.taskSpecification.AllowWebBrowserDrop = false;
+            this.taskSpecification.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.taskSpecification.Location = new System.Drawing.Point(0, 0);
+            this.taskSpecification.MinimumSize = new System.Drawing.Size(20, 20);
+            this.taskSpecification.Name = "taskSpecification";
+            this.taskSpecification.Size = new System.Drawing.Size(786, 344);
+            this.taskSpecification.TabIndex = 2;
+            this.taskSpecification.WebBrowserShortcutsEnabled = false;
+            // 
             // TrainingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -858,6 +872,7 @@ namespace TrainingSimulator
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.tcMain.ResumeLayout(false);
+            this.taskSpecificationTab.ResumeLayout(false);
             this.functionsTab.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
@@ -874,6 +889,8 @@ namespace TrainingSimulator
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.WebBrowser taskSpecification;
 
         private System.Windows.Forms.WebBrowser formalSpecifiaction;
 

@@ -10,7 +10,6 @@ using DusanRodina.FiniteAutomaton.Dialogs;
 using DusanRodina.SimStudio.Components;
 using AboutForm = DusanRodina.TrainingSimulator.Dialogs.AboutForm;
 
-
 namespace TrainingSimulator
 {
     public partial class TrainingForm : Form
@@ -25,6 +24,8 @@ namespace TrainingSimulator
         string WildCardFormat;
         // Vytvorí formálnu špecifikáciu
         private string tmpFormalSpecFileName = null;
+        // Vytvorí špecifikáciu zadania
+        private string tmpTaskSpecFileName = null;
         
         public TrainingForm(MainTrainingForm.TaskDef task)
         {
@@ -33,6 +34,7 @@ namespace TrainingSimulator
             this.Text = "Trenažér (" + _task.Id + ")";
             appTitle = "Trenažér (" + _task.Id + ")";
             TrainerForm_Load(this, null);
+            CreateTaskSpecification();
         }
 
         private void TrainerForm_Load(object sender, EventArgs e)
@@ -276,6 +278,11 @@ namespace TrainingSimulator
                 //Vytvorí formálnu špecifikáciu
                 CreateFormalSpecification();
             }
+            else if (tcMain.SelectedTab == taskSpecificationTab)
+            {
+                //Vytvorí formálnu špecifikáciu
+                CreateTaskSpecification();
+            }
         }
         
 
@@ -464,6 +471,121 @@ namespace TrainingSimulator
             formalSpecifiaction.Navigate(tmpFormalSpecFileName);            
         }
 
+        private void CreateTaskSpecification()
+        {
+            if (tmpTaskSpecFileName != null)
+            {
+                File.Delete(tmpTaskSpecFileName);
+            }
+
+            string tmpDirPath = new FileInfo(Application.ExecutablePath).Directory.FullName + "\\tmp\\";
+            tmpTaskSpecFileName = tmpDirPath + (new Random()).Next(1000000) + ".html";
+            StringBuilder sb = new StringBuilder();
+
+            if (!Directory.Exists(tmpDirPath))
+            {
+                Directory.CreateDirectory(tmpDirPath);
+            }
+            
+            string mathJaxUrl = new Uri(
+                Path.Combine(Application.StartupPath, "MathJax", "MathJax.js")
+            ).AbsoluteUri;
+
+            sb.AppendLine("<!DOCTYPE html>");
+            sb.AppendLine("<html>");
+
+            //Hlavicka
+            sb.AppendLine("<head>");
+                sb.AppendLine("<meta http-equiv='X-UA-Compatible' content='IE=edge' />");
+                sb.AppendLine("<meta charset='utf-8' />");
+                sb.AppendLine("<title>" + _task.Title + "</title>");
+                
+                sb.AppendLine("<style>");
+                sb.AppendLine("body { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; }");
+                sb.AppendLine("h1 {");
+                sb.AppendLine("font-family: Arial, Helvetica, sans-serif; font-size: 30px;");
+                sb.AppendLine("font-weight: bold; border-bottom-style: dotted;");
+                sb.AppendLine("border-bottom-width: 3px; border-bottom-color: #000066;");
+                sb.AppendLine("color: #000066; padding-bottom: 5px; margin-bottom: 10px;");
+                sb.AppendLine("}");
+                sb.AppendLine("h2 {");
+                sb.AppendLine("font-family: Arial, Helvetica, sans-serif; font-size: 16px;");
+                sb.AppendLine("font-weight: bold;");                
+                sb.AppendLine("color: #000066; margin-bottom: 5px;");
+                sb.AppendLine("}");
+                sb.AppendLine("</style>");
+                
+                sb.AppendLine("<script type='text/x-mathjax-config'>");
+                sb.AppendLine("MathJax.Hub.Config({");
+                sb.AppendLine("  tex2jax: {");
+                sb.AppendLine("    inlineMath: [['$','$'], ['\\\\(','\\\\)']],");
+                sb.AppendLine("    displayMath: [['$$','$$'], ['\\\\[','\\\\]']],");
+                sb.AppendLine("    processEscapes: true");
+                sb.AppendLine("  },");
+                sb.AppendLine("  messageStyle: 'none'");
+                sb.AppendLine("});");
+                sb.AppendLine("</script>");
+
+                sb.AppendLine("<script type='text/javascript' async ");
+                sb.AppendLine("src='https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'>");
+                sb.AppendLine("</script>");
+                
+            sb.AppendLine("</head>");
+            
+            //Telo
+            sb.AppendLine("<body>");
+                //Nadpis
+                sb.AppendLine("<h1>" + _task.Title + "</h1>");
+                //Parametre zadania
+                sb.AppendLine("<h2>Parametre zadania</h2>");
+                // Typ zadania
+                sb.AppendLine("<div>");
+                if (_task.Category.Equals("FA"))
+                {
+                    sb.AppendLine("<strong>Typ zadania:</strong> Konečný automat");
+                }
+                else if (_task.Category.Equals("PDA"))
+                {
+                    sb.AppendLine("<strong>Typ zadania:</strong> Zásobníkový automat");
+                } else if (_task.Category.Equals("TM"))
+                {
+                    sb.AppendLine("<strong>Typ zadania:</strong> Túringov stroj");
+                }
+                else
+                {
+                    sb.AppendLine("<strong>Typ zadania:</strong> Neznámy");
+                }
+                sb.AppendLine("</div>");
+
+                // ID zadania
+                sb.AppendLine("<div>");
+                sb.AppendLine("<strong>Id zadania:</strong> " + _task.Id);
+                sb.AppendLine("</div>");
+                // Obtiažnosť zadania
+                sb.AppendLine("<div>");
+                sb.AppendLine("<strong>Obtiažnosť zadania:</strong> " + _task.Difficulty);
+                sb.AppendLine("</div>");           
+                
+                // Popis zadania
+                sb.AppendLine("<h2>Popis zadania</h2>");
+                sb.AppendLine("<div id='math'>");
+                sb.AppendLine((_task.Specification ?? "")
+                    .Replace("&", "&amp;")
+                    .Replace("<", "&lt;")
+                    .Replace(">", "&gt;")
+                    .Replace("\n", "<br>"));
+                sb.AppendLine("</div>");
+                
+            sb.AppendLine("</body>");
+            sb.AppendLine("</html>");
+
+            System.IO.TextWriter tw = new System.IO.StreamWriter(
+                new FileStream(tmpTaskSpecFileName, FileMode.Create, FileAccess.Write), Encoding.UTF8);
+            tw.Write(sb.ToString());
+            tw.Close();
+
+            taskSpecification.Navigate(tmpTaskSpecFileName);            
+        }
         
         private void miAbout_Click(object sender, EventArgs e)
         {

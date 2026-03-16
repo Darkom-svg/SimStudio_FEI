@@ -50,6 +50,7 @@ namespace TrainingSimulator {
             public string Category { get; set; } = "";   
             public string Mode { get; set; } = "";
             public string Difficulty { get; set; } = "";
+            public string Specification { get; set; } = "";
         }
 
           public static class TaskStore
