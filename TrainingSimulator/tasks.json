@@ -4,14 +4,16 @@
     "title": "Posun v smere",
     "category": "TM",
     "mode": "Modules",
-    "difficulty": "Ľahká"
+    "difficulty": "Ľahká",
+    "specification" : ""
   },
   {
     "id": "TM2",
     "title": "Nahradenie symbolu",
     "category": "TM",
     "mode": "Modules",
-    "difficulty": "Ľahká"
+    "difficulty": "Ľahká",
+    "specification" : ""
   },
   
   {
@@ -19,20 +21,23 @@
     "title": "Vyvážené zátvorky",
     "category": "PDA",
     "mode": "Basics",
-    "difficulty": "Ľahká"
+    "difficulty": "Ľahká",
+    "specification" : ""
   },
   {
     "id": "FA1",
-    "title": "príklad 1",
+    "title": "Príklad 1",
     "category": "FA",
     "mode": "Basics",
-    "difficulty": "Ľahká"
+    "difficulty": "Ľahká",
+    "specification": "Navrhnite konečný automat nad abecedou $\\Sigma = \\{a,b\\}$, ktorý prijíma práve tie slová $w$, pre ktoré platí:\n$$\n\\#w_a + \\#w_b = 2k + 2, \\quad k \\geq 0$$\nPríklady prijatých slov: $ab$, $aa$, $bbbb$, $abab$.\nPríklady neprijatých slov: $\\varepsilon$, $a$, $b$, $aba$."
   },
   {
     "id": "FA2",
-    "title": "príklad 2",
+    "title": "Príklad 2",
     "category": "FA",
     "mode": "Basics",
-    "difficulty": "Ľahká"
+    "difficulty": "Ľahká",    
+    "specification" : ""
   }
 ]
