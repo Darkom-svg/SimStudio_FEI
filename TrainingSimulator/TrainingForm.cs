@@ -8,6 +8,7 @@ using System.Text;
 using DusanRodina.FiniteAutomaton;
 using DusanRodina.FiniteAutomaton.Dialogs;
 using DusanRodina.SimStudio.Components;
+using DusanRodina.SimStudio.Components.Dialogs;
 using AboutForm = DusanRodina.TrainingSimulator.Dialogs.AboutForm;
 
 namespace TrainingSimulator
@@ -260,6 +261,22 @@ namespace TrainingSimulator
                 // pFunctions.Refresh();
             }
         }
+        private void UpdateStateDiagram()
+        {
+            //Načíta prechodové funkcie z kódu
+            ParseTFunctions(txtCode.Text);
+
+            if (_task.Category.Equals("FA"))
+            {
+                TuringMachine.StateDiagram.UpdateForFA(TuringMachine);
+            } else if (_task.Category.Equals("PDA")) 
+            {
+                TuringMachine.StateDiagram.UpdateForPA(TuringMachine);
+            } else if (_task.Category.Equals("TM")) 
+            {
+                TuringMachine.StateDiagram.UpdateForTM(TuringMachine);
+            }
+        }       
         
         private void tcMain_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -269,7 +286,7 @@ namespace TrainingSimulator
             }
             else if (tcMain.SelectedTab == statesTab)
             {                                
-                //UpdateStateDiagram();
+                UpdateStateDiagram();
             }
             else if (tcMain.SelectedTab == formalSpecificationTab)
             {
@@ -486,10 +503,6 @@ namespace TrainingSimulator
             {
                 Directory.CreateDirectory(tmpDirPath);
             }
-            
-            string mathJaxUrl = new Uri(
-                Path.Combine(Application.StartupPath, "MathJax", "MathJax.js")
-            ).AbsoluteUri;
 
             sb.AppendLine("<!DOCTYPE html>");
             sb.AppendLine("<html>");
@@ -592,5 +605,50 @@ namespace TrainingSimulator
             AboutForm dlg = new AboutForm();
             dlg.ShowDialog(this);        
         }
+
+        private void miExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void miCut_Click(object sender, EventArgs e)
+        {
+            this.txtCode.Cut();
+        }
+
+        private void miCopy_Click(object sender, EventArgs e)
+        {
+            this.txtCode.Copy();
+        }
+
+        private void miPaste_Click(object sender, EventArgs e)
+        {
+            this.txtCode.Paste();
+        }
+
+        private void miDelete_Click(object sender, EventArgs e)
+        {
+            this.txtCode.Delete();
+        }
+
+        private void miSelectAll_Click(object sender, EventArgs e)
+        {
+            this.txtCode.SelectAll();
+        }
+        
+        private void miReplace_Click(object sender, EventArgs e)
+        {
+            ReplaceForm frm = new ReplaceForm();
+            frm.textBox = txtCode;
+            frm.Show(this);
+        }
+
+        private void miFind_Click(object sender, EventArgs e)
+        {
+            FindForm frm = new FindForm();
+            frm.textBox = txtCode;
+            frm.Show(this);
+        }
+        
     }
 }

@@ -96,6 +96,7 @@ namespace TrainingSimulator
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.tcMain = new System.Windows.Forms.TabControl();
             this.taskSpecificationTab = new System.Windows.Forms.TabPage();
+            this.taskSpecification = new System.Windows.Forms.WebBrowser();
             this.functionsTab = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.bAddTFunction = new System.Windows.Forms.Button();
@@ -115,7 +116,6 @@ namespace TrainingSimulator
             this.label1 = new System.Windows.Forms.Label();
             this.tbSpeed = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
-            this.taskSpecification = new System.Windows.Forms.WebBrowser();
             this.toolStripPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.mainToolStrip.SuspendLayout();
@@ -175,6 +175,7 @@ namespace TrainingSimulator
             this.miCut.Name = "miCut";
             this.miCut.Size = new System.Drawing.Size(194, 22);
             this.miCut.Text = "Vystrihnúť";
+            this.miCut.Click += new System.EventHandler(this.miCut_Click);
             // 
             // miCopy
             // 
@@ -183,6 +184,7 @@ namespace TrainingSimulator
             this.miCopy.Name = "miCopy";
             this.miCopy.Size = new System.Drawing.Size(194, 22);
             this.miCopy.Text = "Kopírovať";
+            this.miCopy.Click += new System.EventHandler(this.miCopy_Click);
             // 
             // miPaste
             // 
@@ -191,12 +193,14 @@ namespace TrainingSimulator
             this.miPaste.Name = "miPaste";
             this.miPaste.Size = new System.Drawing.Size(194, 22);
             this.miPaste.Text = "Prilepiť";
+            this.miPaste.Click += new System.EventHandler(this.miPaste_Click);
             // 
             // miDelete
             // 
             this.miDelete.Name = "miDelete";
             this.miDelete.Size = new System.Drawing.Size(194, 22);
             this.miDelete.Text = "Zmazať";
+            this.miDelete.Click += new System.EventHandler(this.miDelete_Click);
             // 
             // toolStripMenuItem10
             // 
@@ -209,6 +213,7 @@ namespace TrainingSimulator
             this.miSelectAll.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
             this.miSelectAll.Size = new System.Drawing.Size(194, 22);
             this.miSelectAll.Text = "Označiť všetko";
+            this.miSelectAll.Click += new System.EventHandler(this.miSelectAll_Click);
             // 
             // toolStripMenuItem4
             // 
@@ -221,6 +226,7 @@ namespace TrainingSimulator
             this.miFind.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
             this.miFind.Size = new System.Drawing.Size(194, 22);
             this.miFind.Text = "Hľadať";
+            this.miFind.Click += new System.EventHandler(this.miFind_Click);
             // 
             // miReplace
             // 
@@ -228,6 +234,7 @@ namespace TrainingSimulator
             this.miReplace.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
             this.miReplace.Size = new System.Drawing.Size(194, 22);
             this.miReplace.Text = "Nahradiť";
+            this.miReplace.Click += new System.EventHandler(this.miReplace_Click);
             // 
             // miMachine
             // 
@@ -600,6 +607,7 @@ namespace TrainingSimulator
             // 
             // tcMain
             // 
+            this.tcMain.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.tcMain.Controls.Add(this.taskSpecificationTab);
             this.tcMain.Controls.Add(this.functionsTab);
             this.tcMain.Controls.Add(this.statesTab);
@@ -623,6 +631,17 @@ namespace TrainingSimulator
             this.taskSpecificationTab.Text = "Zadanie";
             this.taskSpecificationTab.UseVisualStyleBackColor = true;
             // 
+            // taskSpecification
+            // 
+            this.taskSpecification.AllowWebBrowserDrop = false;
+            this.taskSpecification.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.taskSpecification.Location = new System.Drawing.Point(0, 0);
+            this.taskSpecification.MinimumSize = new System.Drawing.Size(20, 20);
+            this.taskSpecification.Name = "taskSpecification";
+            this.taskSpecification.Size = new System.Drawing.Size(786, 344);
+            this.taskSpecification.TabIndex = 2;
+            this.taskSpecification.WebBrowserShortcutsEnabled = false;
+            // 
             // functionsTab
             // 
             this.functionsTab.Controls.Add(this.splitContainer1);
@@ -636,7 +655,7 @@ namespace TrainingSimulator
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainer1.Location = new System.Drawing.Point(3, 3);
             this.splitContainer1.Name = "splitContainer1";
             // 
@@ -672,6 +691,7 @@ namespace TrainingSimulator
             // 
             // txtCode
             // 
+            this.txtCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCode.HideSelection = true;
             this.txtCode.Location = new System.Drawing.Point(3, 39);
             this.txtCode.Name = "txtCode";
@@ -833,17 +853,6 @@ namespace TrainingSimulator
             this.label3.TabIndex = 17;
             this.label3.Text = "Rýchlosť:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // taskSpecification
-            // 
-            this.taskSpecification.AllowWebBrowserDrop = false;
-            this.taskSpecification.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.taskSpecification.Location = new System.Drawing.Point(0, 0);
-            this.taskSpecification.MinimumSize = new System.Drawing.Size(20, 20);
-            this.taskSpecification.Name = "taskSpecification";
-            this.taskSpecification.Size = new System.Drawing.Size(786, 344);
-            this.taskSpecification.TabIndex = 2;
-            this.taskSpecification.WebBrowserShortcutsEnabled = false;
             // 
             // TrainingForm
             // 
