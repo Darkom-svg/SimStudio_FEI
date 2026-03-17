@@ -39,10 +39,10 @@
             this.cmbNewState = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtComment = new System.Windows.Forms.TextBox();
-            this.readStackTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.writeStackTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.readStackTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -107,11 +107,6 @@
             resources.ApplyResources(this.txtComment, "txtComment");
             this.txtComment.Name = "txtComment";
             // 
-            // readStackTextBox
-            // 
-            resources.ApplyResources(this.readStackTextBox, "readStackTextBox");
-            this.readStackTextBox.Name = "readStackTextBox";
-            // 
             // label5
             // 
             resources.ApplyResources(this.label5, "label5");
@@ -126,6 +121,11 @@
             // 
             resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
+            // 
+            // readStackTextBox
+            // 
+            resources.ApplyResources(this.readStackTextBox, "readStackTextBox");
+            this.readStackTextBox.Name = "readStackTextBox";
             // 
             // AddTFunctionForm
             // 
@@ -157,7 +157,6 @@
             this.Load += new System.EventHandler(this.frmAddTFunction_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

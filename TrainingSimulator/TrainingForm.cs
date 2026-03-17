@@ -10,6 +10,7 @@ using DusanRodina.FiniteAutomaton.Dialogs;
 using DusanRodina.SimStudio.Components;
 using DusanRodina.SimStudio.Components.Dialogs;
 using AboutForm = DusanRodina.TrainingSimulator.Dialogs.AboutForm;
+using AddTFunctionForm = TrainingSimulator.Dialogs.AddTFunctionForm;
 
 namespace TrainingSimulator
 {
@@ -648,6 +649,25 @@ namespace TrainingSimulator
             FindForm frm = new FindForm();
             frm.textBox = txtCode;
             frm.Show(this);
+        }
+
+        private void miAddTransition_Click(object sender, EventArgs e)
+        {
+            AddTransition(new Transition());
+        }
+        
+        private void miSettings_Click(object sender, EventArgs e)
+        {             
+            SettingsForm frm = new SettingsForm();
+            frm.initialState = TuringMachine.StartState;
+            frm.finalStates = new List<string>(TuringMachine.FinalStates);
+            frm.ShowDialog(this);
+            if (frm.OKPressed)
+            {
+                TuringMachine.StartState = frm.initialState;
+                TuringMachine.FinalStates = frm.finalStates;
+                UpdateStateDiagram();
+            }
         }
         
     }

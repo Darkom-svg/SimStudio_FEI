@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.FiniteAutomaton.Dialogs {
+﻿namespace TrainingSimulator.Dialogs {
 	partial class AddTFunctionForm
     {
         /// <summary>
@@ -105,10 +105,9 @@
             // 
             // AddTFunctionForm
             // 
-            this.AcceptButton = this.bAdd;
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.cancelButton;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.txtComment);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cmbNewState);
@@ -129,7 +128,6 @@
             this.Load += new System.EventHandler(this.frmAddTFunction_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion
