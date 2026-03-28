@@ -12,8 +12,9 @@ using DusanRodina.TrainingSimulator.Dialogs;
 namespace TrainingSimulator {
     public partial class MainTrainingForm : Form
     {
-        private List<TaskDef> _allTasks = new List<TaskDef>();        
+        private List<TaskDef> _allTasks = new List<TaskDef>();
         private string AppTitle;
+
         public MainTrainingForm()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace TrainingSimulator {
                 flowLayoutPanel2.WrapContents = false;
                 flowLayoutPanel2.FlowDirection = FlowDirection.TopDown;
             }
-            
+
             try
             {
                 _allTasks = TaskStore.Load();
@@ -39,21 +40,21 @@ namespace TrainingSimulator {
 
                 _allTasks = new List<TaskDef>();
             }
-            
-            ShowCategory("FA");            
+
+            ShowCategory("FA");
         }
-        
+
         public sealed class TaskDef
         {
             public string Id { get; set; } = "";
             public string Title { get; set; } = "";
-            public string Category { get; set; } = "";   
+            public string Category { get; set; } = "";
             public string Mode { get; set; } = "";
             public string Difficulty { get; set; } = "";
             public string Specification { get; set; } = "";
         }
 
-          public static class TaskStore
+        public static class TaskStore
         {
             public static List<TaskDef> Load(string fileName = "tasks.json")
             {
@@ -71,7 +72,33 @@ namespace TrainingSimulator {
                 return JsonSerializer.Deserialize<List<TaskDef>>(json, opts) ?? new List<TaskDef>();
             }
         }
-          
+
+        private TaskDef RandomTask(string category)
+        {
+            var randTask = new TaskDef();
+            randTask.Id = category + "_Random";
+            randTask.Category = category;
+            randTask.Title = "Nahodná konfigurácia";
+            randTask.Difficulty = "stredná";
+            String randSpecification = "";
+                
+            if (category.Equals("FA"))
+            {
+                Random rnd = new Random();
+                int i = rnd.Next(1, 6);
+                int j = rnd.Next(1, 6);
+                int k = rnd.Next(1, 6);
+                int x = rnd.Next(1, 6);
+                int y = rnd.Next(1, 6);
+                randSpecification =
+                    "Navrhnite konečný automat nad abecedou $\\Sigma = \\{a,b,c\\}$, ktorý prijíma práve tie slová $w$, pre ktoré platí:\n$$\n" +
+                    i + "\\#_aw + " + j + "\\#_bw + " + k + "\\#_cw = " + x + "n + " + y +", \\quad n \\geq 0$$";
+            }
+
+            randTask.Specification = randSpecification;
+            return randTask;
+        }
+
         private void ShowCategory(string category)
         {
             if (flowLayoutPanel2 == null) return;
@@ -87,6 +114,11 @@ namespace TrainingSimulator {
 
                 foreach (var task in tasks)
                     flowLayoutPanel2.Controls.Add(CreateTaskCard(task));
+                // Todo: Aj pre ostatné automaty
+                if (category.Equals("FA"))
+                {
+                    flowLayoutPanel2.Controls.Add(CreateTaskCard(RandomTask(category)));
+                }
             }
             finally {
                 flowLayoutPanel2.ResumeLayout(true);
