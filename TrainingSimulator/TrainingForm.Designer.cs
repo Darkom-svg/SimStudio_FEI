@@ -249,7 +249,7 @@ namespace TrainingSimulator
             // 
             this.miTransitions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miAddTransition, this.toolStripMenuItem12, this.miTransitionFormat });
             this.miTransitions.Name = "miTransitions";
-            this.miTransitions.Size = new System.Drawing.Size(152, 22);
+            this.miTransitions.Size = new System.Drawing.Size(132, 22);
             this.miTransitions.Text = "Prechody";
             // 
             // miAddTransition
@@ -347,7 +347,7 @@ namespace TrainingSimulator
             // 
             this.miTape.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miInsertSymbols, this.toolStripSeparator1, this.miClearTape, this.toolStripMenuItem5, this.miExportTape, this.miImportTape, this.toolStripMenuItem6, this.miTapeStatistics });
             this.miTape.Name = "miTape";
-            this.miTape.Size = new System.Drawing.Size(152, 22);
+            this.miTape.Size = new System.Drawing.Size(132, 22);
             this.miTape.Text = "Páska";
             this.miTape.Visible = false;
             // 
@@ -409,12 +409,12 @@ namespace TrainingSimulator
             // toolStripMenuItem14
             // 
             this.toolStripMenuItem14.Name = "toolStripMenuItem14";
-            this.toolStripMenuItem14.Size = new System.Drawing.Size(149, 6);
+            this.toolStripMenuItem14.Size = new System.Drawing.Size(129, 6);
             // 
             // miSettings
             // 
             this.miSettings.Name = "miSettings";
-            this.miSettings.Size = new System.Drawing.Size(152, 22);
+            this.miSettings.Size = new System.Drawing.Size(132, 22);
             this.miSettings.Text = "Nastavenia";
             this.miSettings.Click += new System.EventHandler(this.miSettings_Click);
             // 
@@ -515,7 +515,7 @@ namespace TrainingSimulator
             // 
             this.miAbout.MergeAction = System.Windows.Forms.MergeAction.Replace;
             this.miAbout.Name = "miAbout";
-            this.miAbout.Size = new System.Drawing.Size(152, 22);
+            this.miAbout.Size = new System.Drawing.Size(138, 22);
             this.miAbout.Text = "O programe";
             this.miAbout.Click += new System.EventHandler(this.miAbout_Click);
             // 
@@ -902,7 +902,7 @@ namespace TrainingSimulator
             this.ResumeLayout(false);
             this.PerformLayout();
         }
-
+        
         private System.Windows.Forms.WebBrowser taskSpecification;
 
         private System.Windows.Forms.WebBrowser formalSpecifiaction;

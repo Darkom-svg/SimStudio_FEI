@@ -16,14 +16,14 @@ namespace TrainingSimulator
 {
     public partial class TrainingForm : Form
     {
-        private MainTrainingForm.TaskDef _task;
-        string appTitle;
+        private MainTrainingForm.TaskDef task;
+        private string appTitle;
         private VirtualTuringMachine turingMachine = new VirtualTuringMachine() { AcceptType = AcceptType.FinalStateReachedAndWholeTapeRead };
-        bool CodeChanged = false;        
+        bool codeChanged = false;        
         //Formát prechodovej funkcie
-        string TransitionFormat;
+        string transitionFormat;
         //Formát 
-        string WildCardFormat;
+        string wildCardFormat;
         // Vytvorí formálnu špecifikáciu
         private string tmpFormalSpecFileName = null;
         // Vytvorí špecifikáciu zadania
@@ -32,9 +32,9 @@ namespace TrainingSimulator
         public TrainingForm(MainTrainingForm.TaskDef task)
         {
             InitializeComponent();
-            _task = task;
-            this.Text = "Trenažér (" + _task.Id + ")";
-            appTitle = "Trenažér (" + _task.Id + ")";
+            this.task = task;
+            this.Text = "Trenažér (" + this.task.Id + ")";
+            appTitle = "Trenažér (" + this.task.Id + ")";
             TrainerForm_Load(this, null);
             CreateTaskSpecification();
         }
@@ -42,24 +42,24 @@ namespace TrainingSimulator
         private void TrainerForm_Load(object sender, EventArgs e)
         {
             
-            if (_task.Category.Equals("FA"))
+            if (task.Category.Equals("FA"))
             {
-                TransitionFormat = "\\sδ\\s(\\a,\\a)\\s=\\s(\\a)\\s";
-                WildCardFormat = "\\a=\\s{\\m,\\n}\\s";
+                transitionFormat = "\\sδ\\s(\\a,\\a)\\s=\\s(\\a)\\s";
+                wildCardFormat = "\\a=\\s{\\m,\\n}\\s";
                 this.Text = "FA";
             }
             
-            if (_task.Category.Equals("PDA"))
+            if (task.Category.Equals("PDA"))
             {
-                TransitionFormat = "\\sδ\\s(\\a,\\a,\\a)\\s=\\s(\\a,\\a)\\s";
-                WildCardFormat = "\\a=\\s{\\m,\\n}\\s";    
+                transitionFormat = "\\sδ\\s(\\a,\\a,\\a)\\s=\\s(\\a,\\a)\\s";
+                wildCardFormat = "\\a=\\s{\\m,\\n}\\s";    
                 this.Text = "PDA";
             }
             
-            if (_task.Category.Equals("TM"))
+            if (task.Category.Equals("TM"))
             {
-                TransitionFormat = "\\sδ\\s(\\a,\\a)\\s=\\s(\\a,\\a,\\a)\\s";
-		        WildCardFormat = "\\a=\\s{\\m,\\n}\\s";
+                transitionFormat = "\\sδ\\s(\\a,\\a)\\s=\\s(\\a,\\a,\\a)\\s";
+		        wildCardFormat = "\\a=\\s{\\m,\\n}\\s";
                 this.Text = "TM";
             }
 
@@ -75,12 +75,11 @@ namespace TrainingSimulator
         System.Timers.Timer timMachine = new System.Timers.Timer();
         bool pause = false;
         bool prgStop = true;
-        bool prgReset = true; //Resetovať stroj pri najbližšom štarte
 
         AcceptanceStatus tapeAcceptance = AcceptanceStatus.None;
 
         public bool PrgStop {
-            get { return prgStop; }
+            get => prgStop;
             set {
                 prgStop = value;
                 if (prgStop) {
@@ -90,16 +89,11 @@ namespace TrainingSimulator
             }
         }
 
-        public bool PrgReset {
-            get { return prgReset; }
-            set {
-                prgReset = value;
-            }
-        }
-        
+        public bool PrgReset { get; set; } = true;
+
         public VirtualTuringMachine TuringMachine
         {
-            get { return turingMachine; }
+            get => turingMachine;
             set
             {                
                 turingMachine = value;
@@ -160,7 +154,7 @@ namespace TrainingSimulator
             {
                 Transition tf = dlg.tfunction;
                 txtCode.Text += Environment.NewLine;
-                txtCode.Text += WriteTransition(tf, TransitionFormat);
+                txtCode.Text += WriteTransition(tf, transitionFormat);
                 if (tf.Comment.Trim() != "") txtCode.Text += " //" + tf.Comment;
                 txtCode.Text += Environment.NewLine;
                 ParseTFunctions(txtCode.Text);
@@ -217,10 +211,10 @@ namespace TrainingSimulator
         
         private bool ParseTFunctions(string sourceCodeText)
         {
-            FiniteAutomatonParser parser = new FiniteAutomatonParser(TuringMachine, TransitionFormat, WildCardFormat);
+            FiniteAutomatonParser parser = new FiniteAutomatonParser(TuringMachine, transitionFormat, wildCardFormat);
             bool retval = parser.ParseTFunctions(sourceCodeText);
 
-            CodeChanged = false;
+            codeChanged = false;
             UpdateErrors(parser.Errors);
             Functions_SetScrollbar();
 
@@ -249,8 +243,7 @@ namespace TrainingSimulator
             }
             else
             {
-                int max;
-                max = TuringMachine.TFunctionCount; //-(int)Math.Floor((double)pFunctions.Height / 20);
+                var max = TuringMachine.TFunctionCount; //-(int)Math.Floor((double)pFunctions.Height / 20);
                 if (max < 0)
                     max = 0;
 
@@ -267,13 +260,13 @@ namespace TrainingSimulator
             //Načíta prechodové funkcie z kódu
             ParseTFunctions(txtCode.Text);
 
-            if (_task.Category.Equals("FA"))
+            if (task.Category.Equals("FA"))
             {
                 TuringMachine.StateDiagram.UpdateForFA(TuringMachine);
-            } else if (_task.Category.Equals("PDA")) 
+            } else if (task.Category.Equals("PDA")) 
             {
                 TuringMachine.StateDiagram.UpdateForPA(TuringMachine);
-            } else if (_task.Category.Equals("TM")) 
+            } else if (task.Category.Equals("TM")) 
             {
                 TuringMachine.StateDiagram.UpdateForTM(TuringMachine);
             }
@@ -343,7 +336,7 @@ namespace TrainingSimulator
             sb.AppendLine("</head>");
             
             //Telo
-            if (_task.Category.Equals("FA"))
+            if (task.Category.Equals("FA"))
             {
                 sb.AppendLine("<body>");
                 //Nadpis
@@ -384,7 +377,7 @@ namespace TrainingSimulator
                 
                 sb.AppendLine("</body>");
             }
-            else if (_task.Category.Equals("PDA"))
+            else if (task.Category.Equals("PDA"))
             {
                 // Todo
                 // sb.AppendLine("<body>");
@@ -434,7 +427,7 @@ namespace TrainingSimulator
 				            //
                 // sb.AppendLine("</body>");
             }
-            else if (_task.Category.Equals("TM"))
+            else if (task.Category.Equals("TM"))
             {
                 sb.AppendLine("<body>");
                 //Nadpis
@@ -512,7 +505,7 @@ namespace TrainingSimulator
             sb.AppendLine("<head>");
                 sb.AppendLine("<meta http-equiv='X-UA-Compatible' content='IE=edge' />");
                 sb.AppendLine("<meta charset='utf-8' />");
-                sb.AppendLine("<title>" + _task.Title + "</title>");
+                sb.AppendLine("<title>" + task.Title + "</title>");
                 
                 sb.AppendLine("<style>");
                 sb.AppendLine("body { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; }");
@@ -549,19 +542,19 @@ namespace TrainingSimulator
             //Telo
             sb.AppendLine("<body>");
                 //Nadpis
-                sb.AppendLine("<h1>" + _task.Title + "</h1>");
+                sb.AppendLine("<h1>" + task.Title + "</h1>");
                 //Parametre zadania
                 sb.AppendLine("<h2>Parametre zadania</h2>");
                 // Typ zadania
                 sb.AppendLine("<div>");
-                if (_task.Category.Equals("FA"))
+                if (task.Category.Equals("FA"))
                 {
                     sb.AppendLine("<strong>Typ zadania:</strong> Konečný automat");
                 }
-                else if (_task.Category.Equals("PDA"))
+                else if (task.Category.Equals("PDA"))
                 {
                     sb.AppendLine("<strong>Typ zadania:</strong> Zásobníkový automat");
-                } else if (_task.Category.Equals("TM"))
+                } else if (task.Category.Equals("TM"))
                 {
                     sb.AppendLine("<strong>Typ zadania:</strong> Túringov stroj");
                 }
@@ -573,17 +566,17 @@ namespace TrainingSimulator
 
                 // ID zadania
                 sb.AppendLine("<div>");
-                sb.AppendLine("<strong>Id zadania:</strong> " + _task.Id);
+                sb.AppendLine("<strong>Id zadania:</strong> " + task.Id);
                 sb.AppendLine("</div>");
                 // Obtiažnosť zadania
                 sb.AppendLine("<div>");
-                sb.AppendLine("<strong>Obtiažnosť zadania:</strong> " + _task.Difficulty);
+                sb.AppendLine("<strong>Obtiažnosť zadania:</strong> " + task.Difficulty);
                 sb.AppendLine("</div>");           
                 
                 // Popis zadania
                 sb.AppendLine("<h2>Popis zadania</h2>");
                 sb.AppendLine("<div id='math'>");
-                sb.AppendLine((_task.Specification ?? "")
+                sb.AppendLine((task.Specification ?? "")
                     .Replace("&", "&amp;")
                     .Replace("<", "&lt;")
                     .Replace(">", "&gt;")
@@ -669,6 +662,6 @@ namespace TrainingSimulator
                 UpdateStateDiagram();
             }
         }
-        
+
     }
 }
