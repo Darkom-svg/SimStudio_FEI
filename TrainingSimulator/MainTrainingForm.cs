@@ -12,13 +12,12 @@ using DusanRodina.TrainingSimulator.Dialogs;
 namespace TrainingSimulator {
     public partial class MainTrainingForm : Form
     {
-        private List<TaskDef> _allTasks = new List<TaskDef>();
-        private string AppTitle;
+        private List<TaskDef> allTasks;
 
         public MainTrainingForm()
         {
             InitializeComponent();
-            AppTitle = this.Text;
+            var appTitle = Text;
             if (flowLayoutPanel2 != null)
             {
                 flowLayoutPanel2.AutoScroll = true;
@@ -28,17 +27,17 @@ namespace TrainingSimulator {
 
             try
             {
-                _allTasks = TaskStore.Load();
+                allTasks = TaskStore.Load();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
                     "Nepodarilo sa načítať tasks.json.\n\n" + ex.Message,
-                    AppTitle,
+                    appTitle,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
 
-                _allTasks = new List<TaskDef>();
+                allTasks = new List<TaskDef>();
             }
 
             ShowCategory("FA");
@@ -52,6 +51,8 @@ namespace TrainingSimulator {
             public string Mode { get; set; } = "";
             public string Difficulty { get; set; } = "";
             public string Specification { get; set; } = "";
+            public List<string> Formula { get; set; } = new List<string>();
+
         }
 
         public static class TaskStore
@@ -75,27 +76,38 @@ namespace TrainingSimulator {
 
         private TaskDef RandomTask(string category)
         {
-            var randTask = new TaskDef();
-            randTask.Id = category + "_Random";
-            randTask.Category = category;
-            randTask.Title = "Nahodná konfigurácia";
-            randTask.Difficulty = "stredná";
-            String randSpecification = "";
-                
+            var randTask = new TaskDef
+            {
+                Id = category + "_Random",
+                Category = category,
+                Title = "Nahodná konfigurácia",
+                Difficulty = "stredná"
+            };
+
             if (category.Equals("FA"))
             {
                 Random rnd = new Random();
-                int i = rnd.Next(1, 6);
-                int j = rnd.Next(1, 6);
-                int k = rnd.Next(1, 6);
-                int x = rnd.Next(1, 6);
-                int y = rnd.Next(1, 6);
-                randSpecification =
-                    "Navrhnite konečný automat nad abecedou $\\Sigma = \\{a,b,c\\}$, ktorý prijíma práve tie slová $w$, pre ktoré platí:\n$$\n" +
-                    i + "\\#_aw + " + j + "\\#_bw + " + k + "\\#_cw = " + x + "n + " + y +", \\quad n \\geq 0$$";
-            }
+                int i = new List<int> {1,-1}[rnd.Next(0, 2)] * rnd.Next(1, 6);
+                String j = new List<String> {"+","-"}[rnd.Next(0, 2)] + rnd.Next(1, 6);
+                String k = new List<String> {"+","-"}[rnd.Next(0, 2)] + rnd.Next(1, 6);
+                String x = rnd.Next(1, 6).ToString();
+                String y = rnd.Next(1, 6).ToString();
 
-            randTask.Specification = randSpecification;
+                randTask.Specification =
+                    "Navrhnite konečný automat nad abecedou $\\Sigma = \\{a,b,c\\}$, ktorý prijíma práve tie slová $w$, pre ktoré platí:\n$$\n" +
+                    $"{i}\\#_aw {j}\\#_bw {k}\\#_cw = {x}n + {y}, \\quad n \\geq 0$$";
+                
+                randTask.Formula = new List<string>
+                {
+                    $"{i}a",
+                    $"{j}b",
+                    $"{k}c",
+                    "=",
+                    x,
+                    y
+                };
+            }
+            
             return randTask;
         }
 
@@ -107,7 +119,7 @@ namespace TrainingSimulator {
             try {
                 flowLayoutPanel2.Controls.Clear();
 
-                var tasks = _allTasks
+                var tasks = allTasks
                     .Where(t => string.Equals(t.Category, category, StringComparison.OrdinalIgnoreCase))
                     .OrderBy(t => t.Id)
                     .ThenBy(t => t.Title);
@@ -127,24 +139,22 @@ namespace TrainingSimulator {
 
         private Control CreateTaskCard(TaskDef task)
         {
-            int cardWidth = Math.Max(260, flowLayoutPanel2.ClientSize.Width - 25);
-
-            var card = new RoundedPanel()
+            var card = new RoundedPanel
             {
-                Padding = new System.Windows.Forms.Padding(3, 3, 3, 3),
-                Margin = new System.Windows.Forms.Padding(0, 0, 0, 12),
+                Padding = new Padding(3, 3, 3, 3),
+                Margin = new Padding(0, 0, 0, 12),
                 CornerRadius = 6,
-                BackColor = System.Drawing.Color.Gainsboro,
+                BackColor = Color.Gainsboro,
                 AutoSize = true,
-                MinimumSize = new System.Drawing.Size(400, 60),
-                MaximumSize = new System.Drawing.Size(800, 120)
+                MinimumSize = new Size(400, 60),
+                MaximumSize = new Size(800, 120)
             };
 
             var lblTitle = new Label
             {
                 Text = task.Title,
-                Location = new System.Drawing.Point(15, 10),
-                Size = new System.Drawing.Size(200, 22),
+                Location = new Point(15, 10),
+                Size = new Size(200, 22),
                 Font = new Font("Calibri", 14F, FontStyle.Bold),
                 AutoEllipsis = true
             };
@@ -152,16 +162,16 @@ namespace TrainingSimulator {
             var lblMeta = new Label
             {
                 Text = $"Obtiažnosť: {task.Difficulty}",
-                Location = new System.Drawing.Point(15, 40),
-                Size = new System.Drawing.Size(200, 22),
+                Location = new Point(15, 40),
+                Size = new Size(200, 22),
                 AutoEllipsis = true
             };
 
             var btnOpen = new Button
             {
-                Anchor = System.Windows.Forms.AnchorStyles.Left,
-                Location = new System.Drawing.Point(260, 40),
-                Size = new System.Drawing.Size(110, 22),
+                Anchor = AnchorStyles.Left,
+                Location = new Point(260, 40),
+                Size = new Size(110, 22),
                 Text = "Začať",
                 UseVisualStyleBackColor = true,
             };
@@ -185,13 +195,13 @@ namespace TrainingSimulator {
         {
             base.OnActivated(e);
             if (MdiParent != null) menuStrip1.Visible = false;
-            var ico = new ComponentResourceManager(this.GetType()).GetObject("$this.Icon") as Icon;
-            if (ico != null) this.Icon = ico;
+            var ico = new ComponentResourceManager(GetType()).GetObject("$this.Icon") as Icon;
+            if (ico != null) Icon = ico;
         }
         
         private void miAbout_Click(object sender, EventArgs e)
         {
-            AboutForm dlg = new DusanRodina.TrainingSimulator.Dialogs.AboutForm();
+            AboutForm dlg = new AboutForm();
             dlg.ShowDialog(this);
         }
 
