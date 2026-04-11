@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using DusanRodina.TuringCore.Simulation;
 using System.Text;
 using DusanRodina.FiniteAutomaton;
-using DusanRodina.FiniteAutomaton.Dialogs;
+using TrainingSimulator.Dialogs;
 using DusanRodina.SimStudio.Components;
 using DusanRodina.SimStudio.Components.Dialogs;
+using FiniteAutomaton;
+using TrainingSimulator.IO.Jff;
 using AboutForm = DusanRodina.TrainingSimulator.Dialogs.AboutForm;
 using AddTFunctionForm = TrainingSimulator.Dialogs.AddTFunctionForm;
 
@@ -28,6 +31,7 @@ namespace TrainingSimulator
         private string tmpFormalSpecFileName = null;
         // Vytvorí špecifikáciu zadania
         private string tmpTaskSpecFileName = null;
+        string openFileName = null;
         
         public TrainingForm(MainTrainingForm.TaskDef task)
         {
@@ -663,5 +667,60 @@ namespace TrainingSimulator
             }
         }
 
+        private void saveToolStripButton_Click(object sender, EventArgs e)
+        {
+            Save();           
+        }
+
+        private void miSaveFile_Click(object sender, EventArgs e)
+        {
+            Save();
+        }
+
+        private void miSaveAsFile_Click(object sender, EventArgs e)
+        {
+            SaveAs();            
+        }        
+        private void Save()
+        {
+            if (openFileName == null) SaveAs();
+            else File_Save(openFileName);
+        }
+
+        private void SaveAs()
+        {
+            saveFileDialog1.ShowDialog(this);
+        }
+        
+        private void File_Save(string fileName)
+        {                        
+            if (!Functions.IsEmpty(fileName))
+            {                
+                if (!fileName.EndsWith(".fa")) fileName += ".fa";
+                TuringMachine.Save(fileName, txtCode.Text);
+                
+                openFileName = fileName;
+                this.Text = openFileName.Substring(openFileName.LastIndexOf("\\") + 1) + " - " + appTitle;
+            }
+        }
+        
+        private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            if (saveFileDialog1.FilterIndex == 1)
+                File_Save(saveFileDialog1.FileName);
+            else if (saveFileDialog1.FilterIndex == 2)
+                File_SaveJff(saveFileDialog1.FileName);
+        }
+        
+        private void File_SaveJff(string fileName)
+        {
+            if (!Functions.IsEmpty(fileName))
+            {
+                if (!fileName.EndsWith(".jff")) fileName += ".jff";
+                JffWriter writer = new JffWriter(TuringMachine, fileName);
+                writer.Save(); 
+            }
+        }
+        
     }
 }

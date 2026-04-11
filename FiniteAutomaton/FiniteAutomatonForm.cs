@@ -13,6 +13,7 @@ using System.IO;
 using System.Resources;
 using System.Text;
 using System.Windows.Forms;
+using FiniteAutomaton;
 
 namespace DusanRodina.FiniteAutomaton {
 	public partial class FiniteAutomatonForm : Form

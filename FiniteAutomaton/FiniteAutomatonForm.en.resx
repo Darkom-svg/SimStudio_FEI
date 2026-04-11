@@ -379,10 +379,10 @@
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 6</value>
   </data>
-  <data name="miExit.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="miExitmiExitmiExit.Size" type="System.Drawing.Size, System.Drawing">
     <value>146, 22</value>
   </data>
-  <data name="miExit.Text" xml:space="preserve">
+  <data name="miExitmiExitmiExit.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
   <data name="miEdit.Size" type="System.Drawing.Size, System.Drawing">

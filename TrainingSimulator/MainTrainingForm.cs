@@ -80,7 +80,7 @@ namespace TrainingSimulator {
             {
                 Id = category + "_Random",
                 Category = category,
-                Title = "Nahodná konfigurácia",
+                Title = "Nahodný príklad",
                 Difficulty = "stredná"
             };
 

@@ -34,6 +34,11 @@ namespace TrainingSimulator
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrainingForm));
             this.toolStripPanel1 = new System.Windows.Forms.ToolStripPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.miFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.miSaveFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.miSaveAsFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.miExit = new System.Windows.Forms.ToolStripMenuItem();
             this.miEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.miCut = new System.Windows.Forms.ToolStripMenuItem();
             this.miCopy = new System.Windows.Forms.ToolStripMenuItem();
@@ -86,6 +91,8 @@ namespace TrainingSimulator
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.mainToolStrip = new System.Windows.Forms.ToolStrip();
+            this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.runToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.breakToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.stopToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -107,7 +114,6 @@ namespace TrainingSimulator
             this.logTab = new System.Windows.Forms.TabPage();
             this.formalSpecificationTab = new System.Windows.Forms.TabPage();
             this.formalSpecifiaction = new System.Windows.Forms.WebBrowser();
-            this.testsTab = new System.Windows.Forms.TabPage();
             this.lstErrors = new System.Windows.Forms.ListBox();
             this.label7 = new System.Windows.Forms.Label();
             this.speedPanel = new System.Windows.Forms.Panel();
@@ -116,6 +122,7 @@ namespace TrainingSimulator
             this.label1 = new System.Windows.Forms.Label();
             this.tbSpeed = new System.Windows.Forms.TrackBar();
             this.label3 = new System.Windows.Forms.Label();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.toolStripPanel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.mainToolStrip.SuspendLayout();
@@ -152,12 +159,48 @@ namespace TrainingSimulator
             // menuStrip1
             // 
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miEdit, this.miMachine, this.miSimulation, this.txtFind, this.helpToolStripMenuItem });
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miFile, this.miEdit, this.miMachine, this.miSimulation, this.txtFind, this.helpToolStripMenuItem });
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 27);
             this.menuStrip1.TabIndex = 13;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // miFile
+            // 
+            this.miFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miSaveFile, this.miSaveAsFile, this.toolStripSeparator5, this.miExit });
+            this.miFile.MergeAction = System.Windows.Forms.MergeAction.Insert;
+            this.miFile.Name = "miFile";
+            this.miFile.Size = new System.Drawing.Size(50, 23);
+            this.miFile.Text = "Súbor";
+            // 
+            // miSaveFile
+            // 
+            this.miSaveFile.Image = ((System.Drawing.Image)(resources.GetObject("miSaveFile.Image")));
+            this.miSaveFile.Name = "miSaveFile";
+            this.miSaveFile.Size = new System.Drawing.Size(127, 22);
+            this.miSaveFile.Text = "Uložiť";
+            this.miSaveFile.Click += new System.EventHandler(this.miSaveFile_Click);
+            // 
+            // miSaveAsFile
+            // 
+            this.miSaveAsFile.Image = ((System.Drawing.Image)(resources.GetObject("miSaveAsFile.Image")));
+            this.miSaveAsFile.Name = "miSaveAsFile";
+            this.miSaveAsFile.Size = new System.Drawing.Size(127, 22);
+            this.miSaveAsFile.Text = "Uložiť ako";
+            this.miSaveAsFile.Click += new System.EventHandler(this.miSaveAsFile_Click);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(124, 6);
+            // 
+            // miExit
+            // 
+            this.miExit.Name = "miExit";
+            this.miExit.Size = new System.Drawing.Size(127, 22);
+            this.miExit.Text = "Skončiť";
+            this.miExit.Click += new System.EventHandler(this.miExit_Click);
             // 
             // miEdit
             // 
@@ -522,12 +565,27 @@ namespace TrainingSimulator
             // mainToolStrip
             // 
             this.mainToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.runToolStripButton, this.breakToolStripButton, this.stopToolStripButton, this.toolStripSeparator4, this.stepToolStripButton });
+            this.mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.saveToolStripButton, this.toolStripSeparator3, this.runToolStripButton, this.breakToolStripButton, this.stopToolStripButton, this.toolStripSeparator4, this.stepToolStripButton });
             this.mainToolStrip.Location = new System.Drawing.Point(3, 27);
             this.mainToolStrip.Name = "mainToolStrip";
-            this.mainToolStrip.Size = new System.Drawing.Size(202, 25);
+            this.mainToolStrip.Size = new System.Drawing.Size(231, 25);
             this.mainToolStrip.TabIndex = 22;
             this.mainToolStrip.Text = "toolStrip1";
+            // 
+            // saveToolStripButton
+            // 
+            this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.saveToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripButton.Image")));
+            this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveToolStripButton.Name = "saveToolStripButton";
+            this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
+            this.saveToolStripButton.Text = "Uložiť";
+            this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
             // runToolStripButton
             // 
@@ -617,7 +675,6 @@ namespace TrainingSimulator
             this.tcMain.Controls.Add(this.statesTab);
             this.tcMain.Controls.Add(this.logTab);
             this.tcMain.Controls.Add(this.formalSpecificationTab);
-            this.tcMain.Controls.Add(this.testsTab);
             this.tcMain.Location = new System.Drawing.Point(3, 3);
             this.tcMain.Name = "tcMain";
             this.tcMain.SelectedIndex = 0;
@@ -757,15 +814,6 @@ namespace TrainingSimulator
             this.formalSpecifiaction.TabIndex = 1;
             this.formalSpecifiaction.WebBrowserShortcutsEnabled = false;
             // 
-            // testsTab
-            // 
-            this.testsTab.Location = new System.Drawing.Point(4, 22);
-            this.testsTab.Name = "testsTab";
-            this.testsTab.Size = new System.Drawing.Size(786, 344);
-            this.testsTab.TabIndex = 6;
-            this.testsTab.Text = "Testy";
-            this.testsTab.UseVisualStyleBackColor = true;
-            // 
             // lstErrors
             // 
             this.lstErrors.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -858,6 +906,12 @@ namespace TrainingSimulator
             this.label3.Text = "Rýchlosť:";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.DefaultExt = "tm";
+            this.saveFileDialog1.Filter = "Súbor konečného automatu|*.fa| Súbor JFLAP|*.jff";
+            this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
+            // 
             // TrainingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -902,7 +956,20 @@ namespace TrainingSimulator
             this.ResumeLayout(false);
             this.PerformLayout();
         }
-        
+
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripMenuItem miExit;
+
+        private System.Windows.Forms.ToolStripMenuItem miSaveFile;
+        private System.Windows.Forms.ToolStripMenuItem miSaveAsFile;
+
+        private System.Windows.Forms.ToolStripMenuItem miFile;
+
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton saveToolStripButton;
+
         private System.Windows.Forms.WebBrowser taskSpecification;
 
         private System.Windows.Forms.WebBrowser formalSpecifiaction;
@@ -926,8 +993,6 @@ namespace TrainingSimulator
         private DusanRodina.SimStudio.Components.SyntaxTextBox txtCode;
 
         private DusanRodina.TuringCore.Components.StateDiagramControl stateDiagramControl;
-
-        private System.Windows.Forms.TabPage testsTab;
 
         private System.Windows.Forms.TabPage taskSpecificationTab;
 

@@ -90,7 +90,7 @@ namespace DusanRodina.FiniteAutomaton {
 	        this.miSaveFile = new System.Windows.Forms.ToolStripMenuItem();
 	        this.miSaveAsFile = new System.Windows.Forms.ToolStripMenuItem();
 	        this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-	        this.miExit = new System.Windows.Forms.ToolStripMenuItem();
+	        this.miExitmiExitmiExit = new System.Windows.Forms.ToolStripMenuItem();
 	        this.miEdit = new System.Windows.Forms.ToolStripMenuItem();
 	        this.miCut = new System.Windows.Forms.ToolStripMenuItem();
 	        this.miCopy = new System.Windows.Forms.ToolStripMenuItem();
@@ -530,7 +530,7 @@ namespace DusanRodina.FiniteAutomaton {
 	        // 
 	        // miFile
 	        // 
-	        this.miFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miNewFile, this.miOpenFile, this.toolStripMenuItem1, this.miSaveFile, this.miSaveAsFile, this.toolStripMenuItem2, this.miExit });
+	        this.miFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miNewFile, this.miOpenFile, this.toolStripMenuItem1, this.miSaveFile, this.miSaveAsFile, this.toolStripMenuItem2, this.miExitmiExitmiExit });
 	        this.miFile.MergeAction = System.Windows.Forms.MergeAction.Insert;
 	        this.miFile.MergeIndex = 1;
 	        this.miFile.Name = "miFile";
@@ -573,11 +573,11 @@ namespace DusanRodina.FiniteAutomaton {
 	        this.toolStripMenuItem2.Name = "toolStripMenuItem2";
 	        resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
 	        // 
-	        // miExit
+	        // miExitmiExitmiExit
 	        // 
-	        this.miExit.Name = "miExit";
-	        resources.ApplyResources(this.miExit, "miExit");
-	        this.miExit.Click += new System.EventHandler(this.miExit_Click);
+	        this.miExitmiExitmiExit.Name = "miExitmiExitmiExit";
+	        resources.ApplyResources(this.miExitmiExitmiExit, "miExitmiExitmiExit");
+	        this.miExitmiExitmiExit.Click += new System.EventHandler(this.miExit_Click);
 	        // 
 	        // miEdit
 	        // 
@@ -1072,7 +1072,7 @@ namespace DusanRodina.FiniteAutomaton {
         private System.Windows.Forms.ToolStripMenuItem miSaveFile;
         private System.Windows.Forms.ToolStripMenuItem miSaveAsFile;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem miExit;
+        private System.Windows.Forms.ToolStripMenuItem miExitmiExitmiExit;
         private System.Windows.Forms.ToolStripMenuItem miEdit;
         private System.Windows.Forms.ToolStripMenuItem miCut;
         private System.Windows.Forms.ToolStripMenuItem kopírovaťToolStripMenuItem;
@@ -1160,7 +1160,7 @@ namespace DusanRodina.FiniteAutomaton {
         private HScrollBar sbxThreads;
         private DusanRodina.TuringCore.Components.StateDiagramControl stateDiagramControl;
         private DusanRodina.TuringCore.Components.InfiniteTapeControl infiniteTapeControl;
-        private ToolStripPanel toolStripPanel1;
+        private System.Windows.Forms.ToolStripPanel toolStripPanel1;
         private System.Windows.Forms.ToolStrip mainToolStrip;
         private System.Windows.Forms.ToolStripButton newStripButton;
         private System.Windows.Forms.ToolStripButton openToolStripButton;

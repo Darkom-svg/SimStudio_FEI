@@ -1,8 +1,8 @@
-﻿using DusanRodina.TuringCore.Simulation;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using DusanRodina.TuringCore.Simulation;
 
-namespace DusanRodina.FiniteAutomaton {
+namespace FiniteAutomaton {
 	public class FiniteAutomatonParser
     {
         //Formát prechodovej funkcie
