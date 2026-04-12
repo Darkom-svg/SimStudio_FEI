@@ -87,15 +87,17 @@ namespace TrainingSimulator {
             if (category.Equals("FA"))
             {
                 Random rnd = new Random();
-                int i = new List<int> {1,-1}[rnd.Next(0, 2)] * rnd.Next(1, 6);
-                String j = new List<String> {"+","-"}[rnd.Next(0, 2)] + rnd.Next(1, 6);
-                String k = new List<String> {"+","-"}[rnd.Next(0, 2)] + rnd.Next(1, 6);
-                String x = rnd.Next(1, 6).ToString();
-                String y = rnd.Next(1, 6).ToString();
+                int modulo = rnd.Next(2, 6);
+                int i = new List<int> {1,-1}[rnd.Next(0, 2)] * rnd.Next(1, modulo);
+                String j = new List<String> {"+","-"}[rnd.Next(0, 2)] + rnd.Next(1, modulo);
+                String k = new List<String> {"+","-"}[rnd.Next(0, 2)] + rnd.Next(1, modulo);
+                String y = rnd.Next(1, modulo).ToString();
 
-                randTask.Specification =
-                    "Navrhnite konečný automat nad abecedou $\\Sigma = \\{a,b,c\\}$, ktorý prijíma práve tie slová $w$, pre ktoré platí:\n$$\n" +
-                    $"{i}\\#_aw {j}\\#_bw {k}\\#_cw = {x}n + {y}, \\quad n \\geq 0$$";
+                randTask.Specification = $@"
+                Navrhnite deterministický konečný automat, príp. jeho stavový diagram, ktorý rozpoznáva jazyk $L_A$
+
+                $$L_A = \{{ w \in \{{a,b,c\}}^* \mid {i}\#_a w {j}\#_b w {k}\#_c w = {modulo}n + {y},\; n \in \mathbb{{Z}} \}}$$
+                ";
                 
                 randTask.Formula = new List<string>
                 {
@@ -103,7 +105,7 @@ namespace TrainingSimulator {
                     $"{j}b",
                     $"{k}c",
                     "=",
-                    x,
+                    $"{modulo}",
                     y
                 };
             }
