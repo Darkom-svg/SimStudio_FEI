@@ -93,11 +93,8 @@ namespace TrainingSimulator
             this.mainToolStrip = new System.Windows.Forms.ToolStrip();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.runToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.breakToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.stopToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.checkToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.stepToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
@@ -110,6 +107,7 @@ namespace TrainingSimulator
             this.label5 = new System.Windows.Forms.Label();
             this.txtCode = new DusanRodina.SimStudio.Components.SyntaxTextBox();
             this.statesTab = new System.Windows.Forms.TabPage();
+            this.bAddState = new System.Windows.Forms.Button();
             this.stateDiagramControl = new DusanRodina.TuringCore.Components.StateDiagramControl();
             this.logTab = new System.Windows.Forms.TabPage();
             this.formalSpecificationTab = new System.Windows.Forms.TabPage();
@@ -565,10 +563,10 @@ namespace TrainingSimulator
             // mainToolStrip
             // 
             this.mainToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.saveToolStripButton, this.toolStripSeparator3, this.runToolStripButton, this.breakToolStripButton, this.stopToolStripButton, this.toolStripSeparator4, this.stepToolStripButton });
+            this.mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.saveToolStripButton, this.toolStripSeparator3, this.checkToolStripButton, this.toolStripSeparator4 });
             this.mainToolStrip.Location = new System.Drawing.Point(3, 27);
             this.mainToolStrip.Name = "mainToolStrip";
-            this.mainToolStrip.Size = new System.Drawing.Size(231, 25);
+            this.mainToolStrip.Size = new System.Drawing.Size(150, 25);
             this.mainToolStrip.TabIndex = 22;
             this.mainToolStrip.Text = "toolStrip1";
             // 
@@ -587,46 +585,20 @@ namespace TrainingSimulator
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
-            // runToolStripButton
+            // checkToolStripButton
             // 
-            this.runToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("runToolStripButton.Image")));
-            this.runToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.runToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.runToolStripButton.Name = "runToolStripButton";
-            this.runToolStripButton.Size = new System.Drawing.Size(64, 22);
-            this.runToolStripButton.Text = "Spustiť";
-            // 
-            // breakToolStripButton
-            // 
-            this.breakToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("breakToolStripButton.Image")));
-            this.breakToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.breakToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.breakToolStripButton.Name = "breakToolStripButton";
-            this.breakToolStripButton.Size = new System.Drawing.Size(68, 22);
-            this.breakToolStripButton.Text = "Prerušiť";
-            this.breakToolStripButton.Visible = false;
-            // 
-            // stopToolStripButton
-            // 
-            this.stopToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("stopToolStripButton.Image")));
-            this.stopToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.stopToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.stopToolStripButton.Name = "stopToolStripButton";
-            this.stopToolStripButton.Size = new System.Drawing.Size(69, 22);
-            this.stopToolStripButton.Text = "Zastaviť";
+            this.checkToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("checkToolStripButton.Image")));
+            this.checkToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.checkToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.checkToolStripButton.Name = "checkToolStripButton";
+            this.checkToolStripButton.Size = new System.Drawing.Size(103, 22);
+            this.checkToolStripButton.Text = "Overiť riešenie";
+            this.checkToolStripButton.Click += new System.EventHandler(this.checkToolStripButton_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
-            // 
-            // stepToolStripButton
-            // 
-            this.stepToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("stepToolStripButton.Image")));
-            this.stepToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.stepToolStripButton.Name = "stepToolStripButton";
-            this.stepToolStripButton.Size = new System.Drawing.Size(51, 22);
-            this.stepToolStripButton.Text = "Krok";
             // 
             // statusStrip
             // 
@@ -764,6 +736,7 @@ namespace TrainingSimulator
             // 
             // statesTab
             // 
+            this.statesTab.Controls.Add(this.bAddState);
             this.statesTab.Controls.Add(this.stateDiagramControl);
             this.statesTab.Location = new System.Drawing.Point(4, 22);
             this.statesTab.Name = "statesTab";
@@ -773,13 +746,25 @@ namespace TrainingSimulator
             this.statesTab.Text = "Stavový diagram";
             this.statesTab.UseVisualStyleBackColor = true;
             // 
+            // bAddState
+            // 
+            this.bAddState.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.bAddState.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.bAddState.Location = new System.Drawing.Point(669, 6);
+            this.bAddState.Name = "bAddState";
+            this.bAddState.Size = new System.Drawing.Size(111, 27);
+            this.bAddState.TabIndex = 2;
+            this.bAddState.Text = "Pridať &stav";
+            this.bAddState.UseVisualStyleBackColor = true;
+            this.bAddState.Click += new System.EventHandler(this.bAddState_Click);
+            // 
             // stateDiagramControl
             // 
+            this.stateDiagramControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
             this.stateDiagramControl.AutoScroll = true;
-            this.stateDiagramControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.stateDiagramControl.Location = new System.Drawing.Point(3, 3);
+            this.stateDiagramControl.Location = new System.Drawing.Point(0, 0);
             this.stateDiagramControl.Name = "stateDiagramControl";
-            this.stateDiagramControl.Size = new System.Drawing.Size(780, 338);
+            this.stateDiagramControl.Size = new System.Drawing.Size(663, 341);
             this.stateDiagramControl.TabIndex = 0;
             this.stateDiagramControl.TuringMachine = null;
             // 
@@ -957,6 +942,8 @@ namespace TrainingSimulator
             this.PerformLayout();
         }
 
+        private System.Windows.Forms.Button bAddState;
+
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
 
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
@@ -1060,11 +1047,8 @@ namespace TrainingSimulator
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem miAbout;
         private System.Windows.Forms.ToolStrip mainToolStrip;
-        private System.Windows.Forms.ToolStripButton runToolStripButton;
-        private System.Windows.Forms.ToolStripButton breakToolStripButton;
-        private System.Windows.Forms.ToolStripButton stopToolStripButton;
+        private System.Windows.Forms.ToolStripButton checkToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripButton stepToolStripButton;
         private System.Windows.Forms.StatusStrip statusStrip;
         private System.Windows.Forms.ToolStripStatusLabel statusLabel;
 
