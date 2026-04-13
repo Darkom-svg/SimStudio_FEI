@@ -297,10 +297,23 @@ namespace DusanRodina.TuringCore.Diagramming {
         public void DrawState(Graphics g, Point offset, bool hover, bool active)
         {
             g.InterpolationMode = InterpolationMode.HighQualityBicubic;
-
+            Rectangle rect;
+            Rectangle rect2 ;
+            
             //Vykreslenie stavu
-            Rectangle rect = new Rectangle(position.X - 25 - offset.X, position.Y - 25 - offset.Y, 50, 50);
-            Rectangle rect2 = rect;
+            if (this.type == StateType.Start || this.type == StateType.StartFinal)
+            {
+                rect = new Rectangle(position.X - 25 - offset.X, position.Y - 25 - offset.Y, 75, 50);
+                rect2 = new Rectangle(position.X - 25 - offset.X, position.Y - 25 - offset.Y, 50, 50);
+                rect2.Offset(24, 0); 
+            }
+            else
+            {
+                rect = new Rectangle(position.X - 25 - offset.X, position.Y - 25 - offset.Y, 50, 50);
+                rect2 = rect;
+                
+            }
+            
             Font fnt = new Font("Arial", 14);
             StringFormat sf = new StringFormat();
             sf.Alignment = StringAlignment.Center;
@@ -312,7 +325,8 @@ namespace DusanRodina.TuringCore.Diagramming {
             if (active)
             {
                 //Zvýraznenie
-                rect2 = rect; rect2.Inflate(30, 30);
+                 
+                rect2.Inflate(30, 30);
                 g.DrawImage(global::TuringCore.Properties.Resources.CurrentState, rect2);
 
                 //LinearGradientBrush stateBrush = null;
@@ -336,13 +350,13 @@ namespace DusanRodina.TuringCore.Diagramming {
                     g.DrawImage(global::TuringCore.Properties.Resources.InitialFinalState, rect);
                     break;
             }
-
-            g.DrawString(name, fnt, Brushes.Black, rect, sf);
+            
+            g.DrawString(name, fnt, Brushes.Black, rect2, sf);
 
             //Hover
             if (hover)
             {
-                g.DrawEllipse(new Pen(Color.FromArgb(70, Color.Black), 5), rect);
+                g.DrawEllipse(new Pen(Color.FromArgb(70, Color.Black), 5), rect2);
             }
 
 

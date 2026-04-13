@@ -778,7 +778,7 @@ namespace TrainingSimulator
             }
             
             var formula = ParseFormula(task.Formula);
-            string[] words = GenerateWords(6);
+            string[] words = GenerateWords(9);
 
             foreach (var word in words)
             {

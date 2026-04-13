@@ -928,8 +928,8 @@ namespace DusanRodina.FiniteAutomaton {
 	        // 
 	        // toolStripPanel1
 	        // 
-	        this.toolStripPanel1.Controls.Add(this.menuStrip1);
 	        this.toolStripPanel1.Controls.Add(this.mainToolStrip);
+	        this.toolStripPanel1.Controls.Add(this.menuStrip1);
 	        resources.ApplyResources(this.toolStripPanel1, "toolStripPanel1");
 	        this.toolStripPanel1.Name = "toolStripPanel1";
 	        this.toolStripPanel1.Orientation = System.Windows.Forms.Orientation.Horizontal;
