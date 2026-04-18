@@ -6,7 +6,7 @@
     "mode": "Modules",
     "difficulty": "Ľahká",
     "specification" : "",
-    "formula" : [""]
+    "formula" : ""
   },
   {
     "id": "TM2",
@@ -15,7 +15,7 @@
     "mode": "Modules",
     "difficulty": "Ľahká",
     "specification" : "",
-    "formula" : [""]
+    "formula" : ""
   },
   
   {
@@ -25,24 +25,15 @@
     "mode": "Basics",
     "difficulty": "Ľahká",
     "specification" : "",
-    "formula" : [""]
+    "formula" : ""
   },
   {
     "id": "FA1",
-    "title": "Príklad 1",
+    "title": "Párne 0 a 1",
     "category": "FA",
     "mode": "Basics",
     "difficulty": "Ľahká",
-    "specification": "Navrhnite konečný automat nad abecedou $\\Sigma = \\{a,b\\}$, ktorý prijíma práve tie slová $w$, pre ktoré platí:\n$$\n\\#w_a + \\#w_b = 2k + 2, \\quad k \\geq 0$$\nPríklady prijatých slov: $ab$, $aa$, $bbbb$, $abab$.\nPríklady neprijatých slov: $\\varepsilon$, $a$, $b$, $aba$.",
-    "formula" : [""]
-  },
-  {
-    "id": "FA2",
-    "title": "Príklad 2",
-    "category": "FA",
-    "mode": "Basics",
-    "difficulty": "Ľahká",    
-    "specification" : "",
-    "formula" : ["1a","2b","-1c","=","4","2"]
+    "specification": "Navrhnite deterministický konečný automat, príp. jeho stavový diagram, ktorý rozpoznáva jazyk $L_A$\n\n$$L_A = \\{{ w \\in \\{{0,1\\}}^* \\mid \\#_0 w +\\#_1 w = 2n,\\; n \\in \\mathbb{{Z}} \\}}$$\n",
+    "formula" : "1#0+1#1=2n"
   }
 ]

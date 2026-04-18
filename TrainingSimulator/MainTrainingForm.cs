@@ -51,7 +51,7 @@ namespace TrainingSimulator {
             public string Mode { get; set; } = "";
             public string Difficulty { get; set; } = "";
             public string Specification { get; set; } = "";
-            public List<string> Formula { get; set; } = new List<string>();
+            public string Formula { get; set; } = "";
 
         }
 
@@ -100,15 +100,7 @@ namespace TrainingSimulator {
                 $$L_A = \{{ w \in \{{a,b,c\}}^* \mid {i}\#_a w {j}\#_b w {k}\#_c w = {modulo}n + {y},\; n \in \mathbb{{Z}} \}}$$
                 ";
                 
-                randTask.Formula = new List<string>
-                {
-                    $"{i}a",
-                    $"{j}b",
-                    $"{k}c",
-                    "=",
-                    $"{modulo}",
-                    y
-                };
+                randTask.Formula = $"{i}#a{j}#b{k}#c={modulo}n+{y}";
             }
             
             return randTask;

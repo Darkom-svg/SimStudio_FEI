@@ -139,6 +139,11 @@ namespace DusanRodina.TuringCore.Diagramming {
             xc = this.position.X - offset.X;
             yc = this.position.Y - offset.Y;
 
+            if (this.type == StateType.Start || this.type == StateType.StartFinal)
+            {
+                xc += 25;
+            }
+
             int direction = 1;
             int textOffset = 0;
 
@@ -191,6 +196,12 @@ namespace DusanRodina.TuringCore.Diagramming {
                     //Vypočítanie súradníc
                     x1 = this.to[i].State.position.X - offset.X;
                     y1 = this.to[i].State.position.Y - offset.Y;
+
+                    if (this.to[i].State.Type == StateType.Start || this.to[i].State.Type == StateType.StartFinal)
+                    {
+                        x1 += 25;
+                    }
+
                     angle = Math.Atan2((x1 - xc), (y1 - yc));
 
                     d = (Math.Sqrt(Math.Pow(x1 - xc, 2) + Math.Pow(y1 - yc, 2)) - 25);
@@ -260,21 +271,6 @@ namespace DusanRodina.TuringCore.Diagramming {
                 //g.ResetTransform();
 
             }
-        }
-
-        private void DrawArrow(Graphics g, Pen penTo, int x1, int y1, double angle)
-        {
-            int x_offset, y_offset;
-            double a1, a2;
-            //Šípka
-            a1 = Math.PI / 2 * 3 - (angle + Math.PI / 11);
-            a2 = Math.PI / 2 * 3 - (angle - Math.PI / 11);
-            y_offset = (int)(Math.Sin(a1) * 10);
-            x_offset = (int)(Math.Cos(a1) * 10);
-            g.DrawLine(penTo, x1, y1, x1 + x_offset, y1 + y_offset);
-            y_offset = (int)(Math.Sin(a2) * 10);
-            x_offset = (int)(Math.Cos(a2) * 10);
-            g.DrawLine(penTo, x1, y1, x1 + x_offset, y1 + y_offset);
         }
 
         private void AddArrow(GraphicsPath gp, int x1, int y1, double angle)
@@ -358,9 +354,6 @@ namespace DusanRodina.TuringCore.Diagramming {
             {
                 g.DrawEllipse(new Pen(Color.FromArgb(70, Color.Black), 5), rect2);
             }
-
-
-
         }
 
         public void RemoveAllTransitions()

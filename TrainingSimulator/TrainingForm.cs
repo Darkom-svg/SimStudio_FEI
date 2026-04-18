@@ -129,17 +129,17 @@ namespace TrainingSimulator
             //cmbTape.SelectedIndex = 0;            
             //infiniteTapeControl.Tapes = TuringMachine.OriginalTapes;
 
-            AddSpeedPanel();
+            //AddSpeedPanel();
         }
 
-        private void AddSpeedPanel()
-        {
-            ToolStripControlHost host = new ToolStripControlHost(speedPanel);
-            host.Alignment = ToolStripItemAlignment.Right;
-            host.Width = 200;
-            host.AutoSize = false;
-            mainToolStrip.Items.Add(host);
-        }
+        // private void AddSpeedPanel()
+        // {
+        //     ToolStripControlHost host = new ToolStripControlHost(speedPanel);
+        //     host.Alignment = ToolStripItemAlignment.Right;
+        //     host.Width = 200;
+        //     host.AutoSize = false;
+        //     mainToolStrip.Items.Add(host);
+        // }
         
         
         
@@ -766,8 +766,22 @@ namespace TrainingSimulator
                     Message = "Riešenie obsahuje syntaktické chyby v prechodových funkciách."
                 };
             }
-            
-            string formalError = ValidateDeterministicFA();
+
+            ParsedFormula formula;
+            try
+            {
+                formula = ParseFormula(task.Formula);
+            }
+            catch (Exception ex)
+            {
+                return new FaCheckResult
+                {
+                    IsCorrect = false,
+                    Message = "Zadanie obsahuje neplatnú formulu: " + ex.Message
+                };
+            }
+
+            string formalError = ValidateDeterministicFA(formula);
             if (formalError != null)
             {
                 return new FaCheckResult
@@ -776,9 +790,8 @@ namespace TrainingSimulator
                     Message = formalError
                 };
             }
-            
-            var formula = ParseFormula(task.Formula);
-            string[] words = GenerateWords(9);
+
+            string[] words = GenerateWords(6, formula);
 
             foreach (var word in words)
             {
@@ -792,9 +805,9 @@ namespace TrainingSimulator
                     return new FaCheckResult
                     {
                         IsCorrect = false,
-                        Message = $"Automat nie je správny. Líši sa na slove '{shownWord}'. \n" +
-                                  $"Očakávané: {(expected ? "prijať" : "odmietnuť")}, \n" +
-                                  $"študentov automat: {(actual ? "prijať" : "odmietnuť")}."
+                        Message = $"Automat nie je správny. Líši sa na slove '{shownWord}'.\n" +
+                                  $"Očakávané: {(expected ? "prijať" : "odmietnuť")}.\n" +
+                                  $"Študentov automat: {(actual ? "prijať" : "odmietnuť")}."
                     };
                 }
             }
@@ -806,7 +819,7 @@ namespace TrainingSimulator
             };
         }
         
-        private string ValidateDeterministicFA()
+        private string ValidateDeterministicFA(ParsedFormula formula)
         {
             var usedStates = TuringMachine.GetUsedStates();
             if (usedStates == null || usedStates.Length == 0)
@@ -835,12 +848,20 @@ namespace TrainingSimulator
             }
 
             var seen = new HashSet<string>();
+            var allowedSymbols = new HashSet<char>(formula.Coefficients.Keys);
 
             for (int i = 0; i < TuringMachine.TFunctionCount; i++)
             {
                 var tf = TuringMachine.TFunction(i);
 
-                if (tf.ReadSymbol != "a" && tf.ReadSymbol != "b" && tf.ReadSymbol != "c")
+                if (string.IsNullOrEmpty(tf.ReadSymbol) || tf.ReadSymbol.Length != 1)
+                {
+                    return $"Automat používa neplatný symbol '{tf.ReadSymbol}'.";
+                }
+
+                char symbol = tf.ReadSymbol[0];
+
+                if (!allowedSymbols.Contains(symbol))
                 {
                     return $"Automat používa nepovolený symbol '{tf.ReadSymbol}'.";
                 }
@@ -854,16 +875,12 @@ namespace TrainingSimulator
 
             return null;
         }
-        private FaFormula ParseFormula(List<string> formula)
+        
+        private sealed class ParsedFormula
         {
-            return new FaFormula
-            {
-                A = ParseCoefficient(formula[0], 'a'),
-                B = ParseCoefficient(formula[1], 'b'),
-                C = ParseCoefficient(formula[2], 'c'),
-                Modulo = int.Parse(formula[4]),
-                Offset = int.Parse(formula[5])
-            };
+            public Dictionary<char, int> Coefficients { get; } = new Dictionary<char, int>();
+            public int Modulo { get; set; }
+            public int Offset { get; set; }
         }
         private sealed class FaFormula
         {
@@ -873,39 +890,99 @@ namespace TrainingSimulator
             public int Modulo;
             public int Offset;
         }
-        private int ParseCoefficient(string token, char variable)
+        
+        private ParsedFormula ParseFormula(string formulaText)
         {
-            token = token.Trim();
+            formulaText = formulaText.Replace(" ", "");
 
-            if (!token.EndsWith(variable.ToString()))
-                throw new Exception($"Neplatný token formule: {token}");
+            var parts = formulaText.Split('=');
 
-            string num = token.Substring(0, token.Length - 1);
+            string left = parts[0];
+            string right = parts[1];
 
-            if (num == "") return 1;
-            if (num == "+") return 1;
-            if (num == "-") return -1;
+            var result = new ParsedFormula();
 
-            return int.Parse(num);
+            int i = 0;
+
+            while (i < left.Length)
+            {
+                int sign = 1;
+
+                if (left[i] == '+')
+                {
+                    i++;
+                }
+                else if (left[i] == '-')
+                {
+                    sign = -1;
+                    i++;
+                }
+
+                int start = i;
+                while (i < left.Length && char.IsDigit(left[i]))
+                    i++;
+
+                int coefficient = (start == i)
+                    ? 1
+                    : int.Parse(left.Substring(start, i - start));
+
+                i++; // preskočí '#'
+
+                char symbol = left[i];
+                i++;
+
+                if (result.Coefficients.ContainsKey(symbol))
+                    result.Coefficients[symbol] += sign * coefficient;
+                else
+                    result.Coefficients[symbol] = sign * coefficient;
+            }
+
+            int nPos = right.IndexOf('n');
+
+            result.Modulo = int.Parse(right.Substring(0, nPos));
+
+            if (nPos == right.Length - 1)
+            {
+                result.Offset = 0;
+            }
+            else
+            {
+                string offsetText = right.Substring(nPos + 1);
+
+                if (offsetText.StartsWith("+"))
+                    offsetText = offsetText.Substring(1);
+
+                result.Offset = int.Parse(offsetText);
+            }
+
+            return result;
         }
-        private bool AcceptsByFormula(string word, FaFormula formula)
+        
+        private bool AcceptsByFormula(string word, ParsedFormula formula)
         {
-            int countA = 0;
-            int countB = 0;
-            int countC = 0;
+            var counts = new Dictionary<char, int>();
+
+            foreach (char symbol in formula.Coefficients.Keys)
+                counts[symbol] = 0;
 
             foreach (char ch in word)
             {
-                if (ch == 'a') countA++;
-                else if (ch == 'b') countB++;
-                else if (ch == 'c') countC++;
-                else return false;
+                if (!counts.ContainsKey(ch))
+                    return false;
+
+                counts[ch]++;
             }
 
-            int lhs = formula.A * countA + formula.B * countB + formula.C * countC;
+            int lhs = 0;
+
+            foreach (var pair in formula.Coefficients)
+            {
+                lhs += pair.Value * counts[pair.Key];
+            }
 
             return (lhs - formula.Offset) % formula.Modulo == 0;
         }
+        
         private bool AcceptsByAutomaton(string word)
         {
             string currentState = TuringMachine.StartState;
@@ -936,23 +1013,25 @@ namespace TrainingSimulator
 
             return TuringMachine.IsFinalState(currentState);
         }
-        private string[] GenerateWords(int maxLength)
+        private string[] GenerateWords(int maxLength, ParsedFormula formula)
         {
             var result = new List<string>();
-            GenerateWordsRecursive("", maxLength, result);
+            var alphabet = new List<char>(formula.Coefficients.Keys);
+            GenerateWordsRecursive("", maxLength, result, alphabet);
             return result.ToArray();
         }
 
-        private void GenerateWordsRecursive(string current, int remaining, List<string> result)
+        private void GenerateWordsRecursive(string current, int remaining, List<string> result, List<char> alphabet)
         {
             result.Add(current);
 
             if (remaining == 0)
                 return;
 
-            GenerateWordsRecursive(current + "a", remaining - 1, result);
-            GenerateWordsRecursive(current + "b", remaining - 1, result);
-            GenerateWordsRecursive(current + "c", remaining - 1, result);
+            foreach (char symbol in alphabet)
+            {
+                GenerateWordsRecursive(current + symbol, remaining - 1, result, alphabet);
+            }
         }
     }
 }
