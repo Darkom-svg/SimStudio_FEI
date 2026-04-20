@@ -105,7 +105,9 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SimStudio.ico" />
+    <EmbeddedResource Include="SimStudio.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Abacus.png" />
@@ -148,9 +150,6 @@
       <Project>{7CE993DA-D4B5-4BFF-9DCC-4AA5842189E8}</Project>
       <Name>TuringMachineSimulator</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\small_open.bmp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\small_open.png" />

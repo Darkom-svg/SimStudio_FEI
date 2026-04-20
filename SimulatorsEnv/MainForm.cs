@@ -238,7 +238,7 @@ namespace FEI.SimStudio {
 			OpenFile();
 		}
 
-		private void trianerToolStripMenuItem_Click(object sender, EventArgs e)
+		private void trainerToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			MainTrainingForm frm = new MainTrainingForm();
 			frm.MdiParent = this;

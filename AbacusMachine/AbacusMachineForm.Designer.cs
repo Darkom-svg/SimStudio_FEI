@@ -35,7 +35,7 @@ namespace FEI.AbacusMachine {
         /// </summary>
         private void InitializeComponent()
         {
-	        InfiniteRegisters infiniteRegisters1 = new InfiniteRegisters();
+	        FEI.SimStudio.Components.Registers.InfiniteRegisters infiniteRegisters1 = new FEI.SimStudio.Components.Registers.InfiniteRegisters();
 	        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AbacusMachineForm));
 	        this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 	        this.miFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,7 +79,7 @@ namespace FEI.AbacusMachine {
 	        this.speedPanel = new System.Windows.Forms.Panel();
 	        this.tbSpeed = new System.Windows.Forms.TrackBar();
 	        this.label3 = new System.Windows.Forms.Label();
-	        this.txtCode = new SyntaxTextBox();
+	        this.txtCode = new FEI.SimStudio.Components.Controls.SyntaxTextBox();
 	        this.tabSimulation = new System.Windows.Forms.TabPage();
 	        this.pSimulation = new System.Windows.Forms.PictureBox();
 	        this.verticalScroll = new System.Windows.Forms.VScrollBar();
@@ -97,7 +97,7 @@ namespace FEI.AbacusMachine {
 	        this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
 	        this.stepToolStripButton = new System.Windows.Forms.ToolStripButton();
 	        this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-	        this.lstRegisters = new RegisterList();
+	        this.lstRegisters = new FEI.SimStudio.Components.Controls.RegisterList.RegisterList();
 	        this.statusStrip = new System.Windows.Forms.StatusStrip();
 	        this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
 	        this.menuStrip1.SuspendLayout();
@@ -120,9 +120,9 @@ namespace FEI.AbacusMachine {
 	        // 
 	        this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
 	        this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miFile, this.miEdit, this.autokódToolStripMenuItem, this.miSimulation, this.miTools, this.miHelp });
-	        this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+	        this.menuStrip1.Location = new System.Drawing.Point(0, 27);
 	        this.menuStrip1.Name = "menuStrip1";
-	        this.menuStrip1.Size = new System.Drawing.Size(852, 24);
+	        this.menuStrip1.Size = new System.Drawing.Size(1136, 28);
 	        this.menuStrip1.TabIndex = 23;
 	        // 
 	        // miFile
@@ -131,7 +131,7 @@ namespace FEI.AbacusMachine {
 	        this.miFile.MergeAction = System.Windows.Forms.MergeAction.Insert;
 	        this.miFile.MergeIndex = 1;
 	        this.miFile.Name = "miFile";
-	        this.miFile.Size = new System.Drawing.Size(50, 20);
+	        this.miFile.Size = new System.Drawing.Size(60, 24);
 	        this.miFile.Text = "Súbor";
 	        // 
 	        // miNewFile
@@ -140,7 +140,7 @@ namespace FEI.AbacusMachine {
 	        this.miNewFile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 	        this.miNewFile.Name = "miNewFile";
 	        this.miNewFile.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-	        this.miNewFile.Size = new System.Drawing.Size(155, 22);
+	        this.miNewFile.Size = new System.Drawing.Size(179, 24);
 	        this.miNewFile.Text = "Nový";
 	        this.miNewFile.Click += new System.EventHandler(this.miNewFile_Click);
 	        // 
@@ -150,14 +150,14 @@ namespace FEI.AbacusMachine {
 	        this.miOpenFile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 	        this.miOpenFile.Name = "miOpenFile";
 	        this.miOpenFile.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-	        this.miOpenFile.Size = new System.Drawing.Size(155, 22);
+	        this.miOpenFile.Size = new System.Drawing.Size(179, 24);
 	        this.miOpenFile.Text = "Otvoriť";
 	        this.miOpenFile.Click += new System.EventHandler(this.miOpenFile_Click);
 	        // 
 	        // toolStripMenuItem2
 	        // 
 	        this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-	        this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 6);
+	        this.toolStripMenuItem2.Size = new System.Drawing.Size(176, 6);
 	        // 
 	        // miSaveFile
 	        // 
@@ -165,26 +165,26 @@ namespace FEI.AbacusMachine {
 	        this.miSaveFile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 	        this.miSaveFile.Name = "miSaveFile";
 	        this.miSaveFile.ShortcutKeyDisplayString = "Ctrl+S";
-	        this.miSaveFile.Size = new System.Drawing.Size(155, 22);
+	        this.miSaveFile.Size = new System.Drawing.Size(179, 24);
 	        this.miSaveFile.Text = "Uložiť";
 	        this.miSaveFile.Click += new System.EventHandler(this.miSaveFile_Click);
 	        // 
 	        // miSaveAsFile
 	        // 
 	        this.miSaveAsFile.Name = "miSaveAsFile";
-	        this.miSaveAsFile.Size = new System.Drawing.Size(155, 22);
+	        this.miSaveAsFile.Size = new System.Drawing.Size(179, 24);
 	        this.miSaveAsFile.Text = "Uložiť ako...";
 	        this.miSaveAsFile.Click += new System.EventHandler(this.miSaveAsFile_Click);
 	        // 
 	        // toolStripMenuItem1
 	        // 
 	        this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-	        this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 6);
+	        this.toolStripMenuItem1.Size = new System.Drawing.Size(176, 6);
 	        // 
 	        // miExit
 	        // 
 	        this.miExit.Name = "miExit";
-	        this.miExit.Size = new System.Drawing.Size(155, 22);
+	        this.miExit.Size = new System.Drawing.Size(179, 24);
 	        this.miExit.Text = "Skončiť";
 	        this.miExit.Click += new System.EventHandler(this.miExit_Click);
 	        // 
@@ -194,7 +194,7 @@ namespace FEI.AbacusMachine {
 	        this.miEdit.MergeAction = System.Windows.Forms.MergeAction.Insert;
 	        this.miEdit.MergeIndex = 2;
 	        this.miEdit.Name = "miEdit";
-	        this.miEdit.Size = new System.Drawing.Size(56, 20);
+	        this.miEdit.Size = new System.Drawing.Size(67, 24);
 	        this.miEdit.Text = "Úpravy";
 	        // 
 	        // miCut
@@ -202,7 +202,7 @@ namespace FEI.AbacusMachine {
 	        this.miCut.Image = global::FEI.AbacusMachine.Properties.Resources.small_cut;
 	        this.miCut.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 	        this.miCut.Name = "miCut";
-	        this.miCut.Size = new System.Drawing.Size(194, 22);
+	        this.miCut.Size = new System.Drawing.Size(228, 24);
 	        this.miCut.Text = "Vystrihnúť";
 	        this.miCut.Click += new System.EventHandler(this.miCut_Click);
 	        // 
@@ -211,7 +211,7 @@ namespace FEI.AbacusMachine {
 	        this.miCopy.Image = global::FEI.AbacusMachine.Properties.Resources.copy;
 	        this.miCopy.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 	        this.miCopy.Name = "miCopy";
-	        this.miCopy.Size = new System.Drawing.Size(194, 22);
+	        this.miCopy.Size = new System.Drawing.Size(228, 24);
 	        this.miCopy.Text = "Kopírovať";
 	        this.miCopy.Click += new System.EventHandler(this.miCopy_Click);
 	        // 
@@ -220,47 +220,47 @@ namespace FEI.AbacusMachine {
 	        this.miPaste.Image = global::FEI.AbacusMachine.Properties.Resources.small_paste;
 	        this.miPaste.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 	        this.miPaste.Name = "miPaste";
-	        this.miPaste.Size = new System.Drawing.Size(194, 22);
+	        this.miPaste.Size = new System.Drawing.Size(228, 24);
 	        this.miPaste.Text = "Prilepiť";
 	        this.miPaste.Click += new System.EventHandler(this.miPaste_Click);
 	        // 
 	        // miDelete
 	        // 
 	        this.miDelete.Name = "miDelete";
-	        this.miDelete.Size = new System.Drawing.Size(194, 22);
+	        this.miDelete.Size = new System.Drawing.Size(228, 24);
 	        this.miDelete.Text = "Zmazať";
 	        this.miDelete.Click += new System.EventHandler(this.miDelete_Click);
 	        // 
 	        // toolStripMenuItem4
 	        // 
 	        this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-	        this.toolStripMenuItem4.Size = new System.Drawing.Size(191, 6);
+	        this.toolStripMenuItem4.Size = new System.Drawing.Size(225, 6);
 	        // 
 	        // miSelectAll
 	        // 
 	        this.miSelectAll.Name = "miSelectAll";
 	        this.miSelectAll.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-	        this.miSelectAll.Size = new System.Drawing.Size(194, 22);
+	        this.miSelectAll.Size = new System.Drawing.Size(228, 24);
 	        this.miSelectAll.Text = "Označiť všetko";
 	        this.miSelectAll.Click += new System.EventHandler(this.miSelectAll_Click);
 	        // 
 	        // toolStripMenuItem3
 	        // 
 	        this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-	        this.toolStripMenuItem3.Size = new System.Drawing.Size(191, 6);
+	        this.toolStripMenuItem3.Size = new System.Drawing.Size(225, 6);
 	        // 
 	        // miFind
 	        // 
 	        this.miFind.Name = "miFind";
 	        this.miFind.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F)));
-	        this.miFind.Size = new System.Drawing.Size(194, 22);
+	        this.miFind.Size = new System.Drawing.Size(228, 24);
 	        this.miFind.Text = "Hľadať";
 	        this.miFind.Click += new System.EventHandler(this.miFind_Click);
 	        // 
 	        // miReplace
 	        // 
 	        this.miReplace.Name = "miReplace";
-	        this.miReplace.Size = new System.Drawing.Size(194, 22);
+	        this.miReplace.Size = new System.Drawing.Size(228, 24);
 	        this.miReplace.Text = "Nahradiť";
 	        this.miReplace.Click += new System.EventHandler(this.miReplace_Click);
 	        // 
@@ -270,14 +270,14 @@ namespace FEI.AbacusMachine {
 	        this.autokódToolStripMenuItem.MergeAction = System.Windows.Forms.MergeAction.Insert;
 	        this.autokódToolStripMenuItem.MergeIndex = 3;
 	        this.autokódToolStripMenuItem.Name = "autokódToolStripMenuItem";
-	        this.autokódToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+	        this.autokódToolStripMenuItem.Size = new System.Drawing.Size(78, 24);
 	        this.autokódToolStripMenuItem.Text = "Autokód";
 	        // 
 	        // miAddValue
 	        // 
 	        this.miAddValue.Name = "miAddValue";
 	        this.miAddValue.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F1)));
-	        this.miAddValue.Size = new System.Drawing.Size(281, 22);
+	        this.miAddValue.Size = new System.Drawing.Size(343, 24);
 	        this.miAddValue.Text = "Pripočítať hodnotu";
 	        this.miAddValue.Click += new System.EventHandler(this.miAddValue_Click);
 	        // 
@@ -285,20 +285,20 @@ namespace FEI.AbacusMachine {
 	        // 
 	        this.miSubstractValue.Name = "miSubstractValue";
 	        this.miSubstractValue.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F2)));
-	        this.miSubstractValue.Size = new System.Drawing.Size(281, 22);
+	        this.miSubstractValue.Size = new System.Drawing.Size(343, 24);
 	        this.miSubstractValue.Text = "Odpočítať hodnotu";
 	        this.miSubstractValue.Click += new System.EventHandler(this.miSubstractValue_Click);
 	        // 
 	        // toolStripMenuItem6
 	        // 
 	        this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-	        this.toolStripMenuItem6.Size = new System.Drawing.Size(278, 6);
+	        this.toolStripMenuItem6.Size = new System.Drawing.Size(340, 6);
 	        // 
 	        // miCopyRegister
 	        // 
 	        this.miCopyRegister.Name = "miCopyRegister";
 	        this.miCopyRegister.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F3)));
-	        this.miCopyRegister.Size = new System.Drawing.Size(281, 22);
+	        this.miCopyRegister.Size = new System.Drawing.Size(343, 24);
 	        this.miCopyRegister.Text = "Kopírovať z registra do registra";
 	        this.miCopyRegister.Click += new System.EventHandler(this.miCopyRegister_Click);
 	        // 
@@ -306,7 +306,7 @@ namespace FEI.AbacusMachine {
 	        // 
 	        this.miMoveRegister.Name = "miMoveRegister";
 	        this.miMoveRegister.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F4)));
-	        this.miMoveRegister.Size = new System.Drawing.Size(281, 22);
+	        this.miMoveRegister.Size = new System.Drawing.Size(343, 24);
 	        this.miMoveRegister.Text = "Presunúť z registra do registra";
 	        this.miMoveRegister.Click += new System.EventHandler(this.miMoveRegister_Click);
 	        // 
@@ -314,7 +314,7 @@ namespace FEI.AbacusMachine {
 	        // 
 	        this.miClearRegister.Name = "miClearRegister";
 	        this.miClearRegister.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.F5)));
-	        this.miClearRegister.Size = new System.Drawing.Size(281, 22);
+	        this.miClearRegister.Size = new System.Drawing.Size(343, 24);
 	        this.miClearRegister.Text = "Vynulovať register";
 	        this.miClearRegister.Click += new System.EventHandler(this.miClearRegister_Click);
 	        // 
@@ -324,7 +324,7 @@ namespace FEI.AbacusMachine {
 	        this.miSimulation.MergeAction = System.Windows.Forms.MergeAction.Insert;
 	        this.miSimulation.MergeIndex = 4;
 	        this.miSimulation.Name = "miSimulation";
-	        this.miSimulation.Size = new System.Drawing.Size(70, 20);
+	        this.miSimulation.Size = new System.Drawing.Size(85, 24);
 	        this.miSimulation.Text = "Simulácia";
 	        // 
 	        // miRun
@@ -333,7 +333,7 @@ namespace FEI.AbacusMachine {
 	        this.miRun.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 	        this.miRun.Name = "miRun";
 	        this.miRun.ShortcutKeyDisplayString = "F5";
-	        this.miRun.Size = new System.Drawing.Size(130, 22);
+	        this.miRun.Size = new System.Drawing.Size(149, 24);
 	        this.miRun.Text = "Spustiť";
 	        this.miRun.Click += new System.EventHandler(this.miRun_Click);
 	        // 
@@ -342,14 +342,14 @@ namespace FEI.AbacusMachine {
 	        this.miPause.Image = global::FEI.AbacusMachine.Properties.Resources.pause;
 	        this.miPause.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 	        this.miPause.Name = "miPause";
-	        this.miPause.Size = new System.Drawing.Size(130, 22);
+	        this.miPause.Size = new System.Drawing.Size(149, 24);
 	        this.miPause.Text = "Pauza";
 	        this.miPause.Click += new System.EventHandler(this.miPause_Click);
 	        // 
 	        // miStep
 	        // 
 	        this.miStep.Name = "miStep";
-	        this.miStep.Size = new System.Drawing.Size(130, 22);
+	        this.miStep.Size = new System.Drawing.Size(149, 24);
 	        this.miStep.Text = "Krok";
 	        this.miStep.Click += new System.EventHandler(this.miStep_Click);
 	        // 
@@ -358,27 +358,27 @@ namespace FEI.AbacusMachine {
 	        this.miStop.Image = global::FEI.AbacusMachine.Properties.Resources.stop;
 	        this.miStop.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 	        this.miStop.Name = "miStop";
-	        this.miStop.Size = new System.Drawing.Size(130, 22);
+	        this.miStop.Size = new System.Drawing.Size(149, 24);
 	        this.miStop.Text = "Zastaviť";
 	        this.miStop.Click += new System.EventHandler(this.miStop_Click);
 	        // 
 	        // toolStripMenuItem5
 	        // 
 	        this.toolStripMenuItem5.Name = "toolStripMenuItem5";
-	        this.toolStripMenuItem5.Size = new System.Drawing.Size(127, 6);
+	        this.toolStripMenuItem5.Size = new System.Drawing.Size(146, 6);
 	        this.toolStripMenuItem5.Visible = false;
 	        // 
 	        // miBreaks
 	        // 
 	        this.miBreaks.Name = "miBreaks";
-	        this.miBreaks.Size = new System.Drawing.Size(130, 22);
+	        this.miBreaks.Size = new System.Drawing.Size(149, 24);
 	        this.miBreaks.Text = "Prerušenia";
 	        this.miBreaks.Visible = false;
 	        // 
 	        // resetToolStripMenuItem
 	        // 
 	        this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
-	        this.resetToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
+	        this.resetToolStripMenuItem.Size = new System.Drawing.Size(149, 24);
 	        this.resetToolStripMenuItem.Text = "Reset";
 	        this.resetToolStripMenuItem.Click += new System.EventHandler(this.resetToolStripMenuItem_Click);
 	        // 
@@ -387,7 +387,7 @@ namespace FEI.AbacusMachine {
 	        this.miTools.MergeAction = System.Windows.Forms.MergeAction.Insert;
 	        this.miTools.MergeIndex = 5;
 	        this.miTools.Name = "miTools";
-	        this.miTools.Size = new System.Drawing.Size(63, 20);
+	        this.miTools.Size = new System.Drawing.Size(77, 24);
 	        this.miTools.Text = "Nástroje";
 	        this.miTools.Visible = false;
 	        // 
@@ -397,14 +397,14 @@ namespace FEI.AbacusMachine {
 	        this.miHelp.MergeAction = System.Windows.Forms.MergeAction.MatchOnly;
 	        this.miHelp.MergeIndex = 10;
 	        this.miHelp.Name = "miHelp";
-	        this.miHelp.Size = new System.Drawing.Size(73, 20);
+	        this.miHelp.Size = new System.Drawing.Size(85, 24);
 	        this.miHelp.Text = "Pomocník";
 	        // 
 	        // miAbout
 	        // 
 	        this.miAbout.MergeAction = System.Windows.Forms.MergeAction.Replace;
 	        this.miAbout.Name = "miAbout";
-	        this.miAbout.Size = new System.Drawing.Size(138, 22);
+	        this.miAbout.Size = new System.Drawing.Size(159, 24);
 	        this.miAbout.Text = "O programe";
 	        this.miAbout.Click += new System.EventHandler(this.miAbout_Click);
 	        // 
@@ -413,10 +413,11 @@ namespace FEI.AbacusMachine {
 	        this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 	        this.tabControl1.Controls.Add(this.tabCode);
 	        this.tabControl1.Controls.Add(this.tabSimulation);
-	        this.tabControl1.Location = new System.Drawing.Point(3, 3);
+	        this.tabControl1.Location = new System.Drawing.Point(4, 4);
+	        this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
 	        this.tabControl1.Name = "tabControl1";
 	        this.tabControl1.SelectedIndex = 0;
-	        this.tabControl1.Size = new System.Drawing.Size(561, 433);
+	        this.tabControl1.Size = new System.Drawing.Size(748, 540);
 	        this.tabControl1.TabIndex = 12;
 	        this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
 	        // 
@@ -424,10 +425,11 @@ namespace FEI.AbacusMachine {
 	        // 
 	        this.tabCode.Controls.Add(this.speedPanel);
 	        this.tabCode.Controls.Add(this.txtCode);
-	        this.tabCode.Location = new System.Drawing.Point(4, 22);
+	        this.tabCode.Location = new System.Drawing.Point(4, 25);
+	        this.tabCode.Margin = new System.Windows.Forms.Padding(4);
 	        this.tabCode.Name = "tabCode";
-	        this.tabCode.Padding = new System.Windows.Forms.Padding(3);
-	        this.tabCode.Size = new System.Drawing.Size(553, 407);
+	        this.tabCode.Padding = new System.Windows.Forms.Padding(4);
+	        this.tabCode.Size = new System.Drawing.Size(740, 511);
 	        this.tabCode.TabIndex = 0;
 	        this.tabCode.Text = "Zdrojový kód";
 	        this.tabCode.UseVisualStyleBackColor = true;
@@ -438,19 +440,21 @@ namespace FEI.AbacusMachine {
 	        this.speedPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 	        this.speedPanel.Controls.Add(this.tbSpeed);
 	        this.speedPanel.Controls.Add(this.label3);
-	        this.speedPanel.Location = new System.Drawing.Point(294, 56);
+	        this.speedPanel.Location = new System.Drawing.Point(392, 69);
+	        this.speedPanel.Margin = new System.Windows.Forms.Padding(4);
 	        this.speedPanel.Name = "speedPanel";
-	        this.speedPanel.Size = new System.Drawing.Size(200, 37);
+	        this.speedPanel.Size = new System.Drawing.Size(266, 45);
 	        this.speedPanel.TabIndex = 23;
 	        // 
 	        // tbSpeed
 	        // 
 	        this.tbSpeed.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 	        this.tbSpeed.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-	        this.tbSpeed.Location = new System.Drawing.Point(61, 3);
+	        this.tbSpeed.Location = new System.Drawing.Point(81, 4);
+	        this.tbSpeed.Margin = new System.Windows.Forms.Padding(4);
 	        this.tbSpeed.Maximum = 20;
 	        this.tbSpeed.Name = "tbSpeed";
-	        this.tbSpeed.Size = new System.Drawing.Size(134, 45);
+	        this.tbSpeed.Size = new System.Drawing.Size(179, 56);
 	        this.tbSpeed.TabIndex = 16;
 	        this.tbSpeed.Value = 19;
 	        this.tbSpeed.Scroll += new System.EventHandler(this.tbSpeed_Scroll);
@@ -460,9 +464,10 @@ namespace FEI.AbacusMachine {
 	        this.label3.AutoSize = true;
 	        this.label3.BackColor = System.Drawing.Color.Transparent;
 	        this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-	        this.label3.Location = new System.Drawing.Point(3, 12);
+	        this.label3.Location = new System.Drawing.Point(4, 15);
+	        this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
 	        this.label3.Name = "label3";
-	        this.label3.Size = new System.Drawing.Size(52, 13);
+	        this.label3.Size = new System.Drawing.Size(67, 17);
 	        this.label3.TabIndex = 17;
 	        this.label3.Text = "Rýchlosť:";
 	        this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -472,23 +477,25 @@ namespace FEI.AbacusMachine {
 	        this.txtCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
 	        this.txtCode.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
 	        this.txtCode.HideSelection = true;
-	        this.txtCode.Location = new System.Drawing.Point(6, 6);
+	        this.txtCode.Location = new System.Drawing.Point(8, 7);
+	        this.txtCode.Margin = new System.Windows.Forms.Padding(4);
 	        this.txtCode.Name = "txtCode";
 	        this.txtCode.SelectedText = "";
 	        this.txtCode.SelectionLength = 0;
 	        this.txtCode.SelectionStart = 0;
-	        this.txtCode.Size = new System.Drawing.Size(541, 395);
+	        this.txtCode.Size = new System.Drawing.Size(721, 489);
 	        this.txtCode.TabIndex = 1;
-	        this.txtCode.TextChanged += new SyntaxTextBox.TextChangedEventHandler(this.txtCode_TextChanged);
+	        this.txtCode.TextChanged += new FEI.SimStudio.Components.Controls.SyntaxTextBox.TextChangedEventHandler(this.txtCode_TextChanged);
 	        // 
 	        // tabSimulation
 	        // 
 	        this.tabSimulation.Controls.Add(this.pSimulation);
 	        this.tabSimulation.Controls.Add(this.verticalScroll);
-	        this.tabSimulation.Location = new System.Drawing.Point(4, 22);
+	        this.tabSimulation.Location = new System.Drawing.Point(4, 25);
+	        this.tabSimulation.Margin = new System.Windows.Forms.Padding(4);
 	        this.tabSimulation.Name = "tabSimulation";
-	        this.tabSimulation.Padding = new System.Windows.Forms.Padding(3);
-	        this.tabSimulation.Size = new System.Drawing.Size(553, 407);
+	        this.tabSimulation.Padding = new System.Windows.Forms.Padding(4);
+	        this.tabSimulation.Size = new System.Drawing.Size(740, 511);
 	        this.tabSimulation.TabIndex = 1;
 	        this.tabSimulation.Text = "Simulácia";
 	        this.tabSimulation.UseVisualStyleBackColor = true;
@@ -496,9 +503,10 @@ namespace FEI.AbacusMachine {
 	        // pSimulation
 	        // 
 	        this.pSimulation.Dock = System.Windows.Forms.DockStyle.Fill;
-	        this.pSimulation.Location = new System.Drawing.Point(3, 3);
+	        this.pSimulation.Location = new System.Drawing.Point(4, 4);
+	        this.pSimulation.Margin = new System.Windows.Forms.Padding(4);
 	        this.pSimulation.Name = "pSimulation";
-	        this.pSimulation.Size = new System.Drawing.Size(530, 401);
+	        this.pSimulation.Size = new System.Drawing.Size(715, 503);
 	        this.pSimulation.TabIndex = 0;
 	        this.pSimulation.TabStop = false;
 	        this.pSimulation.Paint += new System.Windows.Forms.PaintEventHandler(this.pSimulation_Paint);
@@ -507,9 +515,9 @@ namespace FEI.AbacusMachine {
 	        // verticalScroll
 	        // 
 	        this.verticalScroll.Dock = System.Windows.Forms.DockStyle.Right;
-	        this.verticalScroll.Location = new System.Drawing.Point(533, 3);
+	        this.verticalScroll.Location = new System.Drawing.Point(719, 4);
 	        this.verticalScroll.Name = "verticalScroll";
-	        this.verticalScroll.Size = new System.Drawing.Size(17, 401);
+	        this.verticalScroll.Size = new System.Drawing.Size(17, 503);
 	        this.verticalScroll.TabIndex = 2;
 	        this.verticalScroll.Scroll += new System.Windows.Forms.ScrollEventHandler(this.verticalScroll_Scroll);
 	        this.verticalScroll.ValueChanged += new System.EventHandler(this.verticalScroll_ValueChanged);
@@ -524,22 +532,22 @@ namespace FEI.AbacusMachine {
 	        // 
 	        // toolStripPanel1
 	        // 
-	        this.toolStripPanel1.Controls.Add(this.menuStrip1);
 	        this.toolStripPanel1.Controls.Add(this.mainToolStrip);
+	        this.toolStripPanel1.Controls.Add(this.menuStrip1);
 	        this.toolStripPanel1.Dock = System.Windows.Forms.DockStyle.Top;
 	        this.toolStripPanel1.Location = new System.Drawing.Point(0, 0);
 	        this.toolStripPanel1.Name = "toolStripPanel1";
 	        this.toolStripPanel1.Orientation = System.Windows.Forms.Orientation.Horizontal;
 	        this.toolStripPanel1.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-	        this.toolStripPanel1.Size = new System.Drawing.Size(852, 49);
+	        this.toolStripPanel1.Size = new System.Drawing.Size(1136, 55);
 	        // 
 	        // mainToolStrip
 	        // 
 	        this.mainToolStrip.Dock = System.Windows.Forms.DockStyle.None;
 	        this.mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.newStripButton, this.openToolStripButton, this.saveToolStripButton, this.toolStripSeparator3, this.runToolStripButton, this.breakToolStripButton, this.stopToolStripButton, this.toolStripSeparator4, this.stepToolStripButton });
-	        this.mainToolStrip.Location = new System.Drawing.Point(3, 24);
+	        this.mainToolStrip.Location = new System.Drawing.Point(3, 0);
 	        this.mainToolStrip.Name = "mainToolStrip";
-	        this.mainToolStrip.Size = new System.Drawing.Size(277, 25);
+	        this.mainToolStrip.Size = new System.Drawing.Size(311, 27);
 	        this.mainToolStrip.TabIndex = 23;
 	        this.mainToolStrip.Text = "toolStrip1";
 	        // 
@@ -550,7 +558,7 @@ namespace FEI.AbacusMachine {
 	        this.newStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 	        this.newStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 	        this.newStripButton.Name = "newStripButton";
-	        this.newStripButton.Size = new System.Drawing.Size(23, 22);
+	        this.newStripButton.Size = new System.Drawing.Size(23, 24);
 	        this.newStripButton.Text = "Nový";
 	        this.newStripButton.Click += new System.EventHandler(this.newStripButton_Click);
 	        // 
@@ -561,7 +569,7 @@ namespace FEI.AbacusMachine {
 	        this.openToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 	        this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 	        this.openToolStripButton.Name = "openToolStripButton";
-	        this.openToolStripButton.Size = new System.Drawing.Size(23, 22);
+	        this.openToolStripButton.Size = new System.Drawing.Size(23, 24);
 	        this.openToolStripButton.Text = "Otvoriť";
 	        this.openToolStripButton.Click += new System.EventHandler(this.openToolStripButton_Click);
 	        // 
@@ -571,14 +579,14 @@ namespace FEI.AbacusMachine {
 	        this.saveToolStripButton.Image = global::FEI.AbacusMachine.Properties.Resources.save;
 	        this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 	        this.saveToolStripButton.Name = "saveToolStripButton";
-	        this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
+	        this.saveToolStripButton.Size = new System.Drawing.Size(23, 24);
 	        this.saveToolStripButton.Text = "Uložiť";
 	        this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
 	        // 
 	        // toolStripSeparator3
 	        // 
 	        this.toolStripSeparator3.Name = "toolStripSeparator3";
-	        this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+	        this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
 	        // 
 	        // runToolStripButton
 	        // 
@@ -586,7 +594,7 @@ namespace FEI.AbacusMachine {
 	        this.runToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 	        this.runToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 	        this.runToolStripButton.Name = "runToolStripButton";
-	        this.runToolStripButton.Size = new System.Drawing.Size(64, 22);
+	        this.runToolStripButton.Size = new System.Drawing.Size(76, 24);
 	        this.runToolStripButton.Text = "Spustiť";
 	        this.runToolStripButton.Click += new System.EventHandler(this.runToolStripButton_Click);
 	        // 
@@ -596,7 +604,7 @@ namespace FEI.AbacusMachine {
 	        this.breakToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 	        this.breakToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 	        this.breakToolStripButton.Name = "breakToolStripButton";
-	        this.breakToolStripButton.Size = new System.Drawing.Size(68, 22);
+	        this.breakToolStripButton.Size = new System.Drawing.Size(80, 24);
 	        this.breakToolStripButton.Text = "Prerušiť";
 	        this.breakToolStripButton.Visible = false;
 	        this.breakToolStripButton.Click += new System.EventHandler(this.breakToolStripButton_Click);
@@ -608,28 +616,29 @@ namespace FEI.AbacusMachine {
 	        this.stopToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 	        this.stopToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 	        this.stopToolStripButton.Name = "stopToolStripButton";
-	        this.stopToolStripButton.Size = new System.Drawing.Size(69, 22);
+	        this.stopToolStripButton.Size = new System.Drawing.Size(83, 24);
 	        this.stopToolStripButton.Text = "Zastaviť";
 	        this.stopToolStripButton.Click += new System.EventHandler(this.stopToolStripButton_Click);
 	        // 
 	        // toolStripSeparator4
 	        // 
 	        this.toolStripSeparator4.Name = "toolStripSeparator4";
-	        this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+	        this.toolStripSeparator4.Size = new System.Drawing.Size(6, 27);
 	        // 
 	        // stepToolStripButton
 	        // 
 	        this.stepToolStripButton.Image = global::FEI.AbacusMachine.Properties.Resources.next;
 	        this.stepToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 	        this.stepToolStripButton.Name = "stepToolStripButton";
-	        this.stepToolStripButton.Size = new System.Drawing.Size(51, 22);
+	        this.stepToolStripButton.Size = new System.Drawing.Size(59, 24);
 	        this.stepToolStripButton.Text = "Krok";
 	        this.stepToolStripButton.Click += new System.EventHandler(this.stepToolStripButton_Click);
 	        // 
 	        // splitContainer1
 	        // 
 	        this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-	        this.splitContainer1.Location = new System.Drawing.Point(0, 49);
+	        this.splitContainer1.Location = new System.Drawing.Point(0, 55);
+	        this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
 	        this.splitContainer1.Name = "splitContainer1";
 	        // 
 	        // splitContainer1.Panel1
@@ -639,33 +648,36 @@ namespace FEI.AbacusMachine {
 	        // splitContainer1.Panel2
 	        // 
 	        this.splitContainer1.Panel2.Controls.Add(this.lstRegisters);
-	        this.splitContainer1.Size = new System.Drawing.Size(852, 440);
-	        this.splitContainer1.SplitterDistance = 567;
+	        this.splitContainer1.Size = new System.Drawing.Size(1136, 549);
+	        this.splitContainer1.SplitterDistance = 756;
+	        this.splitContainer1.SplitterWidth = 5;
 	        this.splitContainer1.TabIndex = 2;
 	        // 
 	        // lstRegisters
 	        // 
 	        this.lstRegisters.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-	        this.lstRegisters.Location = new System.Drawing.Point(3, 3);
+	        this.lstRegisters.Location = new System.Drawing.Point(4, 4);
+	        this.lstRegisters.Margin = new System.Windows.Forms.Padding(5);
 	        this.lstRegisters.MaximalCount = 10000;
 	        this.lstRegisters.Name = "lstRegisters";
 	        this.lstRegisters.Reading = false;
 	        this.lstRegisters.ReadingPos = 0;
 	        this.lstRegisters.Regs = infiniteRegisters1;
 	        this.lstRegisters.ScrollValue = 0;
-	        this.lstRegisters.Size = new System.Drawing.Size(275, 429);
+	        this.lstRegisters.Size = new System.Drawing.Size(349, 535);
 	        this.lstRegisters.TabIndex = 2;
 	        this.lstRegisters.Writing = false;
 	        this.lstRegisters.WritingPos = 0;
-	        this.lstRegisters.RegisterChanged += new RegisterList.RegisterChangedEventHandler(this.lstRegisters_RegisterChanged);
+	        this.lstRegisters.RegisterChanged += new FEI.SimStudio.Components.Controls.RegisterList.RegisterList.RegisterChangedEventHandler(this.lstRegisters_RegisterChanged);
 	        // 
 	        // statusStrip
 	        // 
 	        this.statusStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
 	        this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.lblStatus });
-	        this.statusStrip.Location = new System.Drawing.Point(0, 489);
+	        this.statusStrip.Location = new System.Drawing.Point(0, 604);
 	        this.statusStrip.Name = "statusStrip";
-	        this.statusStrip.Size = new System.Drawing.Size(852, 22);
+	        this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+	        this.statusStrip.Size = new System.Drawing.Size(1136, 25);
 	        this.statusStrip.TabIndex = 12;
 	        // 
 	        // lblStatus
@@ -674,20 +686,21 @@ namespace FEI.AbacusMachine {
 	        this.lblStatus.MergeAction = System.Windows.Forms.MergeAction.Replace;
 	        this.lblStatus.MergeIndex = 0;
 	        this.lblStatus.Name = "lblStatus";
-	        this.lblStatus.Size = new System.Drawing.Size(241, 17);
+	        this.lblStatus.Size = new System.Drawing.Size(302, 20);
 	        this.lblStatus.Text = "Počítadlový stroj, Copyright (C) 2026 FEI STU";
 	        // 
 	        // AbacusMachineForm
 	        // 
-	        this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+	        this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
 	        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-	        this.ClientSize = new System.Drawing.Size(852, 511);
+	        this.ClientSize = new System.Drawing.Size(1136, 629);
 	        this.Controls.Add(this.splitContainer1);
 	        this.Controls.Add(this.toolStripPanel1);
 	        this.Controls.Add(this.statusStrip);
 	        this.DoubleBuffered = true;
 	        this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 	        this.MainMenuStrip = this.menuStrip1;
+	        this.Margin = new System.Windows.Forms.Padding(4);
 	        this.Name = "AbacusMachineForm";
 	        this.Text = "Počítadlový stroj";
 	        this.Load += new System.EventHandler(this.AbacusMachineForm_Load);
@@ -766,7 +779,7 @@ namespace FEI.AbacusMachine {
         private ToolStripMenuItem resetToolStripMenuItem;
         private VScrollBar verticalScroll;
         private System.Windows.Forms.ToolStripPanel toolStripPanel1;
-        private ToolStrip mainToolStrip;
+        private System.Windows.Forms.ToolStrip mainToolStrip;
         private ToolStripButton newStripButton;
         private ToolStripButton openToolStripButton;
         private ToolStripButton saveToolStripButton;
