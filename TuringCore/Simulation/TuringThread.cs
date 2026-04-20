@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DusanRodina.TuringCore.Simulation {
+namespace FEI.TuringCore.Simulation {
 	//Vlákno turingovho stroja
 	//Nedeterministické stroje budú mať viac vlákien
 	public class TuringThread

@@ -1,4 +1,4 @@
-﻿namespace TrainingSimulator.Dialogs {
+﻿namespace FEI.TrainingSimulator.Dialogs {
 	partial class AddTFunctionForm
     {
         /// <summary>

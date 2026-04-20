@@ -1,10 +1,10 @@
-﻿using DusanRodina.SimStudio.Components;
-using DusanRodina.SimStudio.Components.Registers;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using FEI.SimStudio.Components;
+using FEI.SimStudio.Components.Registers;
 
-namespace DusanRodina.RandomAccessMachine.Simulation {
+namespace FEI.RandomAccessMachine.Simulation {
 	public class Simulator
 	{
 		public Form frm;

@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace DusanRodina.TuringMachineSimulator {
+namespace FEI.TuringMachineSimulator {
 	static class Program
 	{
 		/// <summary>

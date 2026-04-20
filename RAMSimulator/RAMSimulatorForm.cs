@@ -1,17 +1,19 @@
-﻿using DusanRodina.RandomAccessMachine.Dialogs;
-using DusanRodina.RandomAccessMachine.Simulation;
-using DusanRodina.SimStudio.Components;
-using DusanRodina.SimStudio.Components.Dialogs;
-using DusanRodina.SimStudio.Components.Registers;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Text;
 using System.Windows.Forms;
+using FEI.SimStudio.Components;
+using FEI.RandomAccessMachine.Dialogs;
+using FEI.RandomAccessMachine.Simulation;
+using FEI.SimStudio.Components.Controls;
+using FEI.SimStudio.Components.Controls.RegisterList;
+using FEI.SimStudio.Components.Dialogs;
+using FEI.SimStudio.Components.Registers;
 
-namespace DusanRodina.RandomAccessMachine {
+namespace FEI.RandomAccessMachine {
 	public partial class RAMSimulatorForm : Form {
 		const string AppTitle = "Random Access Machine (RAM)";
 

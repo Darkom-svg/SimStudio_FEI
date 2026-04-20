@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace DusanRodina.AbacusMachine {
+namespace FEI.AbacusMachine {
 	static class Program
     {
         /// <summary>

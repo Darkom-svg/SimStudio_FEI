@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.RandomAccessMachine {
+﻿namespace FEI.RandomAccessMachine {
 	partial class ScreenForm
     {
         /// <summary>

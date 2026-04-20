@@ -59,14 +59,6 @@ D:\SimStudio_v20100505\SimStudio_v20100505\Components\obj\Debug\en\Components.re
 D:\SimStudio_v20100505\SimStudio_v20100505\Components\obj\Debug\Components.dll
 D:\SimStudio_v20100505\SimStudio_v20100505\Components\obj\Debug\Components.pdb
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\Components\obj\Debug\Components.csproj.AssemblyReference.cache
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\Components\obj\Debug\DusanRodina.SimStudio.Components.InputOutputTape.resources
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\Components\obj\Debug\DusanRodina.SimStudio.Components.RegisterEditForm.resources
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\Components\obj\Debug\DusanRodina.SimStudio.Components.Dialogs.FindForm.resources
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\Components\obj\Debug\DusanRodina.SimStudio.Components.Dialogs.ReplaceForm.resources
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\Components\obj\Debug\DusanRodina.SimStudio.Components.Properties.Resources.resources
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\Components\obj\Debug\DusanRodina.SimStudio.Components.RegisterList.resources
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\Components\obj\Debug\DusanRodina.SimStudio.Components.SyntaxTextBox.resources
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\Components\obj\Debug\DusanRodina.SimStudio.Components.InputOutputTape.en.resources
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\Components\obj\Debug\Components.csproj.GenerateResource.cache
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\Components\obj\Debug\Components.csproj.CoreCompileInputs.cache
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\Components\obj\Debug\en\Components.resources.dll
@@ -75,3 +67,11 @@ C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\Components\bin\Debug\Components.dll
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\Components\bin\Debug\Components.pdb
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\Components\bin\Debug\en\Components.resources.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\Components\obj\Debug\FEI.SimStudio.Components.Controls.InputOutputTape.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\Components\obj\Debug\FEI.SimStudio.Components.Controls.RegisterList.RegisterEditForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\Components\obj\Debug\FEI.SimStudio.Components.Dialogs.FindForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\Components\obj\Debug\FEI.SimStudio.Components.Dialogs.ReplaceForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\Components\obj\Debug\FEI.SimStudio.Components.Properties.Resources.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\Components\obj\Debug\FEI.SimStudio.Components.Controls.RegisterList.RegisterList.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\Components\obj\Debug\FEI.SimStudio.Components.Controls.SyntaxTextBox.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava-20251215T152322Z-3-001\SimStudio_v20170922oprava\SimStudio\Components\obj\Debug\FEI.SimStudio.Components.Controls.InputOutputTape.en.resources

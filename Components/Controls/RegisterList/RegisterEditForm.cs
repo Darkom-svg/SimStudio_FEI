@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace DusanRodina.SimStudio.Components {
+namespace FEI.SimStudio.Components.Controls.RegisterList {
 	public partial class RegisterEditForm : Form
     {
         public string regName = "";

@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.RandomAccessMachine.Simulation {
+﻿namespace FEI.RandomAccessMachine.Simulation {
 	//Register
 	public class RAMRegister
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DusanRodina.RandomAccessMachine.Simulation {
+namespace FEI.RandomAccessMachine.Simulation {
 	public class CompilerException : Exception
     {
         private int lineNumber;

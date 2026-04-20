@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace DusanRodina.TuringCore.Dialogs {
+namespace FEI.TuringCore.Components.Dialogs {
 	public partial class NewStateForm : Form
     {
         public NewStateForm()

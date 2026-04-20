@@ -1,7 +1,7 @@
 ﻿using System.Xml;
-using DusanRodina.TuringCore.Simulation;
+using FEI.TuringCore.Simulation;
 
-namespace TrainingSimulator.IO.Jff {
+namespace FEI.TrainingSimulator.IO.Jff {
 	public class JffWriter
     {
         private string fileName;

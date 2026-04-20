@@ -1,11 +1,11 @@
-﻿using DusanRodina.TuringCore.Dialogs;
-using DusanRodina.TuringCore.Simulation;
-using System;
+﻿using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using FEI.TuringCore.Components.Dialogs;
+using FEI.TuringCore.Simulation;
 
-namespace DusanRodina.TuringCore.Components {
+namespace FEI.TuringCore.Components {
 	public partial class StateDiagramControl : UserControl
     {
         private VirtualTuringMachine turingMachine;

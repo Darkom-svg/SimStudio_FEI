@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.TuringCore.Simulation {
+﻿namespace FEI.TuringCore.Simulation {
 	public class TMError
     {
         private string name;         // Nazov chyby

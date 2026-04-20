@@ -1,10 +1,4 @@
-﻿using DusanRodina.FiniteAutomaton.Dialogs;
-using DusanRodina.FiniteAutomaton.IO.Jff;
-using DusanRodina.SimStudio.Components;
-using DusanRodina.SimStudio.Components.Dialogs;
-using DusanRodina.TuringCore.Components;
-using DusanRodina.TuringCore.Simulation;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -13,9 +7,17 @@ using System.IO;
 using System.Resources;
 using System.Text;
 using System.Windows.Forms;
-using FiniteAutomaton;
+using FEI.SimStudio.Components;
+using FEI.FiniteAutomaton.Dialogs;
+using FEI.FiniteAutomaton.IO.Jff;
+using FEI.SimStudio.Components;
+using FEI.SimStudio.Components.Controls;
+using FEI.SimStudio.Components.Dialogs;
+using FEI.SimStudio.Components.Registers;
+using FEI.TuringCore.Components;
+using FEI.TuringCore.Simulation;
 
-namespace DusanRodina.FiniteAutomaton {
+namespace FEI.FiniteAutomaton {
 	public partial class FiniteAutomatonForm : Form
     {
         ResourceManager resMan = new ResourceManager(typeof(FiniteAutomatonForm).FullName,
@@ -710,7 +712,7 @@ namespace DusanRodina.FiniteAutomaton {
                     if (TuringMachine.Thread(a).Tapes.Count > 0)
                     {
                         int first = 0;
-                        DusanRodina.TuringCore.Components.InfiniteTapeControl.DrawTape(g, rect, TuringMachine.Thread(a).Tapes[0],
+                        InfiniteTapeControl.DrawTape(g, rect, TuringMachine.Thread(a).Tapes[0],
                             AcceptanceStatus.None, sbxThreads.Value, int.MinValue, false,
                             out first);
 

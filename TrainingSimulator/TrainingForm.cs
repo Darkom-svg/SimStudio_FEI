@@ -3,19 +3,19 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
-using System.Windows.Forms;
-using DusanRodina.TuringCore.Simulation;
 using System.Text;
-using DusanRodina.FiniteAutomaton;
-using TrainingSimulator.Dialogs;
-using DusanRodina.SimStudio.Components;
-using DusanRodina.SimStudio.Components.Dialogs;
-using FiniteAutomaton;
-using TrainingSimulator.IO.Jff;
-using AboutForm = DusanRodina.TrainingSimulator.Dialogs.AboutForm;
-using AddTFunctionForm = TrainingSimulator.Dialogs.AddTFunctionForm;
+using System.Windows.Forms;
+using FEI.FiniteAutomaton;
+using FEI.SimStudio.Components.Controls;
+using FEI.SimStudio.Components.Dialogs;
+using FEI.SimStudio.Components.Registers;
+using FEI.TrainingSimulator.Dialogs;
+using FEI.TrainingSimulator.IO.Jff;
+using FEI.TuringCore.Simulation;
+using AboutForm = FEI.TrainingSimulator.Dialogs.AboutForm;
+using AddTFunctionForm = FEI.TrainingSimulator.Dialogs.AddTFunctionForm;
 
-namespace TrainingSimulator
+namespace FEI.TrainingSimulator
 {
     public partial class TrainingForm : Form
     {

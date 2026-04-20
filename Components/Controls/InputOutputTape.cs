@@ -5,8 +5,9 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Resources;
 using System.Windows.Forms;
+using FEI.SimStudio.Components.Registers;
 
-namespace DusanRodina.SimStudio.Components {
+namespace FEI.SimStudio.Components.Controls {
 	[Serializable]
 	public partial class InputOutputTape : UserControl
 	{

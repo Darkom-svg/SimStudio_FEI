@@ -1,4 +1,6 @@
-namespace TrainingSimulator
+using FEI.SimStudio.Components;
+
+namespace FEI.TrainingSimulator
 {
     partial class MainTrainingForm
     {
@@ -47,30 +49,30 @@ namespace TrainingSimulator
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.roundedPanel1 = new DusanRodina.SimStudio.Components.RoundedPanel();
+            this.roundedPanel1 = new RoundedPanel();
             this.label7 = new System.Windows.Forms.Label();
-            this.roundedPanel2 = new DusanRodina.SimStudio.Components.RoundedPanel();
+            this.roundedPanel2 = new RoundedPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.FaTrain = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.roundedPanel3 = new DusanRodina.SimStudio.Components.RoundedPanel();
+            this.roundedPanel3 = new RoundedPanel();
             this.label8 = new System.Windows.Forms.Label();
-            this.roundedPanel4 = new DusanRodina.SimStudio.Components.RoundedPanel();
+            this.roundedPanel4 = new RoundedPanel();
             this.label11 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.PdaTrain = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.roundedPanel5 = new DusanRodina.SimStudio.Components.RoundedPanel();
+            this.roundedPanel5 = new RoundedPanel();
             this.label9 = new System.Windows.Forms.Label();
-            this.roundedPanel6 = new DusanRodina.SimStudio.Components.RoundedPanel();
+            this.roundedPanel6 = new RoundedPanel();
             this.label12 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.roundedPanel7 = new DusanRodina.SimStudio.Components.RoundedPanel();
+            this.roundedPanel7 = new RoundedPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             TuringTrain = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
@@ -342,7 +344,7 @@ namespace TrainingSimulator
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::TrainingSimulator.Properties.Resources.Turing;
+            this.pictureBox1.Image = global::FEI.TrainingSimulator.Properties.Resources.Turing;
             this.pictureBox1.Location = new System.Drawing.Point(8, 11);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(48, 48);
@@ -434,7 +436,7 @@ namespace TrainingSimulator
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::TrainingSimulator.Properties.Resources.Turing;
+            this.pictureBox2.Image = global::FEI.TrainingSimulator.Properties.Resources.Turing;
             this.pictureBox2.Location = new System.Drawing.Point(8, 11);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(48, 48);
@@ -514,7 +516,7 @@ namespace TrainingSimulator
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::TrainingSimulator.Properties.Resources.Turing;
+            this.pictureBox3.Image = global::FEI.TrainingSimulator.Properties.Resources.Turing;
             this.pictureBox3.Location = new System.Drawing.Point(8, 11);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(48, 48);
@@ -599,16 +601,16 @@ namespace TrainingSimulator
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
 
-        private DusanRodina.SimStudio.Components.RoundedPanel roundedPanel7;
+        private RoundedPanel roundedPanel7;
 
-        private DusanRodina.SimStudio.Components.RoundedPanel roundedPanel5;
-        private DusanRodina.SimStudio.Components.RoundedPanel roundedPanel6;
+        private RoundedPanel roundedPanel5;
+        private RoundedPanel roundedPanel6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox3;
 
-        private DusanRodina.SimStudio.Components.RoundedPanel roundedPanel3;
-        private DusanRodina.SimStudio.Components.RoundedPanel roundedPanel4;
+        private RoundedPanel roundedPanel3;
+        private RoundedPanel roundedPanel4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button FaTrain;
         private System.Windows.Forms.Label label4;
@@ -618,7 +620,7 @@ namespace TrainingSimulator
         private System.Windows.Forms.Button PdaTrain;
         private System.Windows.Forms.ProgressBar progressBar2;
 
-        private DusanRodina.SimStudio.Components.RoundedPanel roundedPanel2;
+        private RoundedPanel roundedPanel2;
 
         private System.Windows.Forms.Button finiteAutomatonButton;
 
@@ -626,7 +628,7 @@ namespace TrainingSimulator
 
         private System.Windows.Forms.PictureBox pictureBox1;
 
-        private DusanRodina.SimStudio.Components.RoundedPanel roundedPanel1;
+        private RoundedPanel roundedPanel1;
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
 

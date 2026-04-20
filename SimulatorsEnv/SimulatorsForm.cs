@@ -1,9 +1,14 @@
 ﻿using System;
 using System.Windows.Forms;
-using System.Drawing;
+using FEI.AbacusMachine;
+using FEI.FiniteAutomaton;
+using FEI.PushdownAutomaton;
+using FEI.RandomAccessMachine;
+using FEI.TrainingSimulator;
+using FEI.TuringMachineSimulator;
 using TrainingSimulator;
 
-namespace DusanRodina.SimStudio {
+namespace FEI.SimStudio {
 	public partial class SimulatorsForm : Form
     {
         public SimulatorsForm()
@@ -13,21 +18,21 @@ namespace DusanRodina.SimStudio {
 
         private void bTuring_Click(object sender, EventArgs e)
         {
-            TuringMachineSimulator.TuringMachineForm frm = new TuringMachineSimulator.TuringMachineForm();
+            TuringMachineForm frm = new TuringMachineForm();
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void bRAM_Click(object sender, EventArgs e)
         {
-            RandomAccessMachine.RAMSimulatorForm frm = new RandomAccessMachine.RAMSimulatorForm();
+            RAMSimulatorForm frm = new RAMSimulatorForm();
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void bAbacusMachine_Click(object sender, EventArgs e)
         {
-            AbacusMachine.AbacusMachineForm frm = new AbacusMachine.AbacusMachineForm();
+            AbacusMachineForm frm = new AbacusMachineForm();
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
@@ -46,19 +51,19 @@ namespace DusanRodina.SimStudio {
 
         private void miNewTM_Click(object sender, EventArgs e)
         {
-            TuringMachineSimulator.TuringMachineForm frm = new TuringMachineSimulator.TuringMachineForm();
+            TuringMachineForm frm = new TuringMachineForm();
             frm.Show();
         }
 
         private void miNewRAM_Click(object sender, EventArgs e)
         {
-            RandomAccessMachine.RAMSimulatorForm frm = new RandomAccessMachine.RAMSimulatorForm();
+            RAMSimulatorForm frm = new RAMSimulatorForm();
             frm.Show();
         }
 
         private void miNewAM_Click(object sender, EventArgs e)
         {
-            AbacusMachine.AbacusMachineForm frm = new AbacusMachine.AbacusMachineForm();
+            AbacusMachineForm frm = new AbacusMachineForm();
             frm.Show();
         }
 
@@ -75,14 +80,14 @@ namespace DusanRodina.SimStudio {
 
         private void finiteAutomatonButton_Click(object sender, EventArgs e)
         {
-            FiniteAutomaton.FiniteAutomatonForm frm = new DusanRodina.FiniteAutomaton.FiniteAutomatonForm();
+            FiniteAutomatonForm frm = new FiniteAutomatonForm();
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
 
         private void pushDownAutomatonButton2_Click(object sender, EventArgs e)
         {
-            PushdownAutomaton.PushdownAutomatonForm frm = new DusanRodina.PushdownAutomaton.PushdownAutomatonForm();
+            PushdownAutomatonForm frm = new PushdownAutomatonForm();
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace DusanRodina.FiniteAutomaton.Dialogs {
+namespace FEI.FiniteAutomaton.Dialogs {
 	public partial class SettingsForm : Form
     {
         public bool OKPressed = false;

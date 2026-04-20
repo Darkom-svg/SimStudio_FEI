@@ -1,11 +1,12 @@
-﻿using DusanRodina.TuringCore.Diagramming;
-using DusanRodina.TuringCore.Simulation;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Xml;
+using FEI.TuringCore.Diagramming;
+using FEI.TuringCore.Simulation;
+using Transition = FEI.TuringCore.Simulation.Transition;
 
-namespace DusanRodina.TuringMachineSimulator.IO.Jff {
+namespace FEI.TuringMachineSimulator.IO.Jff {
 	public class JffReader
     {
         private string fileName;
@@ -33,7 +34,7 @@ namespace DusanRodina.TuringMachineSimulator.IO.Jff {
                     bool elementCompleted = false;
                     
                     State curState = new State();
-                    var curTransition = new DusanRodina.TuringCore.Simulation.Transition();
+                    var curTransition = new Transition();
                     InfiniteTape currentTape = new InfiniteTape();
 
                     result.Reset();
@@ -71,7 +72,7 @@ namespace DusanRodina.TuringMachineSimulator.IO.Jff {
                                 }
                                 else if (curElement == ".transition" || curElement == ".automaton.transition")
                                 {
-                                    curTransition = new DusanRodina.TuringCore.Simulation.Transition();
+                                    curTransition = new Transition();
                                 }
                                 else if (curElement == ".state.final" || curElement == ".automaton.state.final")
                                 {
@@ -164,13 +165,13 @@ namespace DusanRodina.TuringMachineSimulator.IO.Jff {
                                             switch (xr.Value.Trim().ToUpper())
                                             {
                                                 case "L":
-                                                    curTransition.Step = DusanRodina.TuringCore.Simulation.Transition.Steps.Left;
+                                                    curTransition.Step = Transition.Steps.Left;
                                                     break;
                                                 case "R":
-                                                    curTransition.Step = DusanRodina.TuringCore.Simulation.Transition.Steps.Right;
+                                                    curTransition.Step = Transition.Steps.Right;
                                                     break;
                                                 case "0":
-                                                    curTransition.Step = DusanRodina.TuringCore.Simulation.Transition.Steps.NoMove;
+                                                    curTransition.Step = Transition.Steps.NoMove;
                                                     break;
                                             }
                                             break;

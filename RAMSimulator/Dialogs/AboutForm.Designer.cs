@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.RandomAccessMachine.Dialogs {
+﻿namespace FEI.RandomAccessMachine.Dialogs {
 	partial class AboutForm
     {
         /// <summary>
@@ -76,7 +76,7 @@
             // 
             // pIcon
             // 
-            this.pIcon.BackgroundImage = global::DusanRodina.RandomAccessMachine.Properties.Resources.RAM;
+            this.pIcon.BackgroundImage = global::FEI.RandomAccessMachine.Properties.Resources.RAM;
             this.pIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pIcon.Location = new System.Drawing.Point(12, 12);
             this.pIcon.Name = "pIcon";

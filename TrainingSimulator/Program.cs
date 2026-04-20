@@ -1,10 +1,7 @@
-using DusanRodina.TrainingSimulator;
 using System;
-using System.Globalization;
-using System.Threading;
 using System.Windows.Forms;
 
-namespace TrainingSimulator {
+namespace FEI.TrainingSimulator {
     static class Program
     {
         /// <summary>

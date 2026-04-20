@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.RandomAccessMachine.Simulation {
+﻿namespace FEI.RandomAccessMachine.Simulation {
 	//Typ registra
 	public enum RegisterType
     {

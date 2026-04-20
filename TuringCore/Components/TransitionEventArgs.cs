@@ -1,6 +1,6 @@
-﻿using DusanRodina.TuringCore.Simulation;
+﻿using FEI.TuringCore.Simulation;
 
-namespace DusanRodina.TuringCore.Components {
+namespace FEI.TuringCore.Components {
 	public class TransitionEventArgs
     {
         private Transition transition;

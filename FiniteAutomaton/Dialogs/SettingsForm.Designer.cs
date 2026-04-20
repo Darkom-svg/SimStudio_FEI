@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.FiniteAutomaton.Dialogs {
+﻿namespace FEI.FiniteAutomaton.Dialogs {
 	partial class SettingsForm
     {
         /// <summary>

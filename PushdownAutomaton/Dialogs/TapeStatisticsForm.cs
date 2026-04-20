@@ -1,9 +1,9 @@
-﻿using DusanRodina.TuringCore.Simulation;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using FEI.TuringCore.Simulation;
 
-namespace DusanRodina.PushdownAutomaton.Dialogs {
+namespace FEI.PushdownAutomaton.Dialogs {
 	public partial class TapeStatisticsForm : Form
     {
         public VirtualTuringMachine tm;

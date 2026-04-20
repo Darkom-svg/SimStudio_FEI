@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace DusanRodina.TuringCore.Diagramming {
+namespace FEI.TuringCore.Diagramming {
 	//Vkladaný (nedokončený) prechod
 	public class InsertingTransition
     {

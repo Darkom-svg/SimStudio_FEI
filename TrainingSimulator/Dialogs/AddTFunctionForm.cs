@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
-using DusanRodina.TuringCore.Simulation;
+using FEI.TuringCore.Simulation;
 
-namespace TrainingSimulator.Dialogs {
+namespace FEI.TrainingSimulator.Dialogs {
 	public partial class AddTFunctionForm : Form
     {
         public VirtualTuringMachine TM;

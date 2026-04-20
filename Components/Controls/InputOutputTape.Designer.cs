@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.SimStudio.Components {
+﻿namespace FEI.SimStudio.Components.Controls {
 	partial class InputOutputTape
 	{
 		/// <summary> 

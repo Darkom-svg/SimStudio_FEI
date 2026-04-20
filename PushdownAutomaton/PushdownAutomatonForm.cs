@@ -1,10 +1,4 @@
-﻿using DusanRodina.PushdownAutomaton.Dialogs;
-using DusanRodina.PushdownAutomaton.IO.Jff;
-using DusanRodina.SimStudio.Components;
-using DusanRodina.SimStudio.Components.Dialogs;
-using DusanRodina.TuringCore.Components;
-using DusanRodina.TuringCore.Simulation;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -13,8 +7,16 @@ using System.IO;
 using System.Resources;
 using System.Text;
 using System.Windows.Forms;
+using FEI.PushdownAutomaton.Dialogs;
+using FEI.PushdownAutomaton.IO.Jff;
+using FEI.SimStudio.Components;
+using FEI.SimStudio.Components.Controls;
+using FEI.SimStudio.Components.Dialogs;
+using FEI.SimStudio.Components.Registers;
+using FEI.TuringCore.Components;
+using FEI.TuringCore.Simulation;
 
-namespace DusanRodina.PushdownAutomaton {
+namespace FEI.PushdownAutomaton {
 	public partial class PushdownAutomatonForm : Form
 	{
 		ResourceManager resMan = new ResourceManager(typeof(PushdownAutomatonForm).FullName,
@@ -767,7 +769,7 @@ namespace DusanRodina.PushdownAutomaton {
 					if (PushdownAutomaton.Thread(a).Tapes.Count > 0)
 					{
 						int first = 0;
-						DusanRodina.TuringCore.Components.InfiniteTapeControl.DrawTape(g, rect, PushdownAutomaton.Thread(a).Tapes[0],
+						InfiniteTapeControl.DrawTape(g, rect, PushdownAutomaton.Thread(a).Tapes[0],
 							AcceptanceStatus.None, sbxThreads.Value, int.MinValue, false,
 							out first);
 

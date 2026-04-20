@@ -1,8 +1,8 @@
-﻿using DusanRodina.SimStudio.Components;
-using System;
+﻿using System;
 using System.Windows.Forms;
+using FEI.SimStudio.Components.Registers;
 
-namespace DusanRodina.AbacusMachine.Dialogs {
+namespace FEI.AbacusMachine.Dialogs {
 	public partial class MoveForm : Form
     {
         public bool OKPressed = false;

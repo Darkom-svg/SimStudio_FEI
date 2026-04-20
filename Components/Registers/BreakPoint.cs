@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.SimStudio.Components.Registers {
+﻿namespace FEI.SimStudio.Components.Registers {
 	//Bod prerušenia
 	public class BreakPoint
     {

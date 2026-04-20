@@ -1,8 +1,7 @@
-﻿using DusanRodina.PushdownAutomaton;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
-namespace PushdownAutomaton {
+namespace FEI.PushdownAutomaton {
 	static class Program
     {
         /// <summary>

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DusanRodina.RandomAccessMachine.Conversion {
+namespace FEI.RandomAccessMachine.Conversion {
 	//Príkaz medzikódu
 	public class ICCommand
     {

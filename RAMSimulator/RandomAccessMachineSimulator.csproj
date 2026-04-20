@@ -7,7 +7,7 @@
     <ProjectGuid>{D9DF7681-B36E-404D-A164-EFCDED0C4B4D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DusanRodina.RandomAccessMachine</RootNamespace>
+    <RootNamespace>FEI.RandomAccessMachine</RootNamespace>
     <AssemblyName>RandomAccessMachineSimulator</AssemblyName>
     <ApplicationIcon>RAM.ico</ApplicationIcon>
     <ManifestCertificateThumbprint>002F5EFB7F969E4E473A4B42AEF3426FBBCE9C1B</ManifestCertificateThumbprint>

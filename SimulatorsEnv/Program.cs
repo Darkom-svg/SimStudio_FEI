@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace DusanRodina.SimStudio {
+namespace FEI.SimStudio {
 	static class Program
     {
         /// <summary>

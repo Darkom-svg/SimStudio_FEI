@@ -7,7 +7,7 @@
     <ProjectGuid>{7CE993DA-D4B5-4BFF-9DCC-4AA5842189E8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DusanRodina.TuringMachineSimulator</RootNamespace>
+    <RootNamespace>FEI.TuringMachineSimulator</RootNamespace>
     <AssemblyName>TuringMachineSimulator</AssemblyName>
     <ApplicationIcon>Turing.ico</ApplicationIcon>
     <StartupObject>

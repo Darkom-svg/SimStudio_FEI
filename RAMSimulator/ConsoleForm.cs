@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Windows.Forms;
+using FEI.RandomAccessMachine.Simulation;
 
-namespace DusanRodina.RandomAccessMachine {
+namespace FEI.RandomAccessMachine {
 	public partial class ConsoleForm : Form
     {
-        public DusanRodina.RandomAccessMachine.Simulation.Simulator simulator = null;
+        public Simulator simulator = null;
 
         public ConsoleForm()
         {

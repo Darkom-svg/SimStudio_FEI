@@ -1,10 +1,11 @@
-﻿using DusanRodina.RandomAccessMachine.Conversion;
-using DusanRodina.SimStudio.Components;
-using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using FEI.SimStudio.Components;
+using FEI.RandomAccessMachine.Conversion;
+using FEI.SimStudio.Components.Controls;
 
-namespace DusanRodina.RandomAccessMachine.Dialogs {
+namespace FEI.RandomAccessMachine.Dialogs {
 	public partial class CConversionForm : Form
     {
         public string resCode = "";

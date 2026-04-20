@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.FiniteAutomaton.Dialogs {
+﻿namespace FEI.FiniteAutomaton.Dialogs {
 	partial class AboutForm
     {
         /// <summary>
@@ -78,7 +78,7 @@
             // pIcon
             // 
             this.pIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pIcon.Image = global::FiniteAutomaton.Properties.Resources.Turing;
+            this.pIcon.Image = global::FEI.FiniteAutomaton.Properties.Resources.Turing;
             this.pIcon.Location = new System.Drawing.Point(12, 12);
             this.pIcon.Name = "pIcon";
             this.pIcon.Size = new System.Drawing.Size(48, 48);

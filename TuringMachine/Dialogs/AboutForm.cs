@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace DusanRodina.TuringMachineSimulator.Dialogs {
+namespace FEI.TuringMachineSimulator.Dialogs {
 	public partial class AboutForm : Form
     {
         public AboutForm()

@@ -1,10 +1,10 @@
-﻿using DusanRodina.SimStudio.Components.Registers;
-using System;
+﻿using System;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using FEI.SimStudio.Components.Registers;
 
-namespace DusanRodina.SimStudio.Components {
+namespace FEI.SimStudio.Components.Controls.RegisterList {
 	public partial class RegisterList : UserControl
     {        
         //Registre

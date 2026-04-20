@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.RandomAccessMachine.Simulation {
+﻿namespace FEI.RandomAccessMachine.Simulation {
 	//Obrazovka
 	public class RAMScreen
     {

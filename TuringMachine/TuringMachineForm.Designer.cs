@@ -1,6 +1,10 @@
 ﻿using System.IO;
 using System.Windows.Forms;
-namespace DusanRodina.TuringMachineSimulator {
+using FEI.SimStudio.Components.Controls;
+using FEI.TuringCore.Components;
+using FEI.TuringCore.Simulation;
+
+namespace FEI.TuringMachineSimulator {
 	partial class TuringMachineForm
 	{
 		/// <summary>
@@ -42,7 +46,7 @@ namespace DusanRodina.TuringMachineSimulator {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TuringMachineForm));
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.bAddTFunction = new System.Windows.Forms.Button();
-			this.txtCode = new DusanRodina.SimStudio.Components.SyntaxTextBox();
+			this.txtCode = new SyntaxTextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.pFunctions = new System.Windows.Forms.PictureBox();
 			this.label6 = new System.Windows.Forms.Label();
@@ -51,11 +55,11 @@ namespace DusanRodina.TuringMachineSimulator {
 			this.speedPanel = new System.Windows.Forms.Panel();
 			this.tbSpeed = new System.Windows.Forms.TrackBar();
 			this.label3 = new System.Windows.Forms.Label();
-			this.infiniteTapeControl = new DusanRodina.TuringCore.Components.InfiniteTapeControl();
+			this.infiniteTapeControl = new InfiniteTapeControl();
 			this.tcMain = new System.Windows.Forms.TabControl();
 			this.functionsTab = new System.Windows.Forms.TabPage();
 			this.statesTab = new System.Windows.Forms.TabPage();
-			this.stateDiagramControl = new DusanRodina.TuringCore.Components.StateDiagramControl();
+			this.stateDiagramControl = new StateDiagramControl();
 			this.bAddState = new System.Windows.Forms.Button();
 			this.processTab = new System.Windows.Forms.TabPage();
 			this.sbxThreads = new System.Windows.Forms.HScrollBar();
@@ -220,7 +224,7 @@ namespace DusanRodina.TuringMachineSimulator {
 			this.txtCode.SelectedText = "";
 			this.txtCode.SelectionLength = 0;
 			this.txtCode.SelectionStart = 0;
-			this.txtCode.TextChanged += new DusanRodina.SimStudio.Components.SyntaxTextBox.TextChangedEventHandler(this.txtCode_TextChanged);
+			this.txtCode.TextChanged += new SyntaxTextBox.TextChangedEventHandler(this.txtCode_TextChanged);
 			// 
 			// label5
 			// 
@@ -296,7 +300,7 @@ namespace DusanRodina.TuringMachineSimulator {
 			// 
 			// infiniteTapeControl
 			// 
-			this.infiniteTapeControl.AcceptStatus = DusanRodina.TuringCore.Simulation.AcceptanceStatus.None;
+			this.infiniteTapeControl.AcceptStatus = AcceptanceStatus.None;
 			this.infiniteTapeControl.AllowBlanks = true;
 			resources.ApplyResources(this.infiniteTapeControl, "infiniteTapeControl");
 			this.infiniteTapeControl.ChangesAllowed = true;
@@ -342,8 +346,8 @@ namespace DusanRodina.TuringMachineSimulator {
 			resources.ApplyResources(this.stateDiagramControl, "stateDiagramControl");
 			this.stateDiagramControl.Name = "stateDiagramControl";
 			this.stateDiagramControl.TuringMachine = null;
-			this.stateDiagramControl.TransitionAdded += new DusanRodina.TuringCore.Components.StateDiagramControl.TransitionEventHandler(this.stateDiagramControl_TransitionAdded);
-			this.stateDiagramControl.DiagramChanged += new DusanRodina.TuringCore.Components.StateDiagramControl.DiagramChangedEventHandler(this.stateDiagramControl_DiagramChanged);
+			this.stateDiagramControl.TransitionAdded += new StateDiagramControl.TransitionEventHandler(this.stateDiagramControl_TransitionAdded);
+			this.stateDiagramControl.DiagramChanged += new StateDiagramControl.DiagramChangedEventHandler(this.stateDiagramControl_DiagramChanged);
 			// 
 			// bAddState
 			// 
@@ -541,14 +545,14 @@ namespace DusanRodina.TuringMachineSimulator {
 			// 
 			// miNewFile
 			// 
-			this.miNewFile.Image = global::DusanRodina.TuringMachineSimulator.Properties.Resources.small_new;
+			this.miNewFile.Image = global::FEI.TuringMachineSimulator.Properties.Resources.small_new;
 			resources.ApplyResources(this.miNewFile, "miNewFile");
 			this.miNewFile.Name = "miNewFile";
 			this.miNewFile.Click += new System.EventHandler(this.miNewFile_Click);
 			// 
 			// miOpenFile
 			// 
-			this.miOpenFile.Image = global::DusanRodina.TuringMachineSimulator.Properties.Resources.open;
+			this.miOpenFile.Image = global::FEI.TuringMachineSimulator.Properties.Resources.open;
 			resources.ApplyResources(this.miOpenFile, "miOpenFile");
 			this.miOpenFile.Name = "miOpenFile";
 			this.miOpenFile.Click += new System.EventHandler(this.miOpenFile_Click);
@@ -560,7 +564,7 @@ namespace DusanRodina.TuringMachineSimulator {
 			// 
 			// miSaveFile
 			// 
-			this.miSaveFile.Image = global::DusanRodina.TuringMachineSimulator.Properties.Resources.save;
+			this.miSaveFile.Image = global::FEI.TuringMachineSimulator.Properties.Resources.save;
 			resources.ApplyResources(this.miSaveFile, "miSaveFile");
 			this.miSaveFile.Name = "miSaveFile";
 			this.miSaveFile.Click += new System.EventHandler(this.miSaveFile_Click);
@@ -592,21 +596,21 @@ namespace DusanRodina.TuringMachineSimulator {
 			// 
 			// miCut
 			// 
-			this.miCut.Image = global::DusanRodina.TuringMachineSimulator.Properties.Resources.small_cut;
+			this.miCut.Image = global::FEI.TuringMachineSimulator.Properties.Resources.small_cut;
 			resources.ApplyResources(this.miCut, "miCut");
 			this.miCut.Name = "miCut";
 			this.miCut.Click += new System.EventHandler(this.miCut_Click);
 			// 
 			// miCopy
 			// 
-			this.miCopy.Image = global::DusanRodina.TuringMachineSimulator.Properties.Resources.copy;
+			this.miCopy.Image = global::FEI.TuringMachineSimulator.Properties.Resources.copy;
 			resources.ApplyResources(this.miCopy, "miCopy");
 			this.miCopy.Name = "miCopy";
 			this.miCopy.Click += new System.EventHandler(this.miCopy_Click);
 			// 
 			// miPaste
 			// 
-			this.miPaste.Image = global::DusanRodina.TuringMachineSimulator.Properties.Resources.small_paste;
+			this.miPaste.Image = global::FEI.TuringMachineSimulator.Properties.Resources.small_paste;
 			resources.ApplyResources(this.miPaste, "miPaste");
 			this.miPaste.Name = "miPaste";
 			this.miPaste.Click += new System.EventHandler(this.miPaste_Click);
@@ -953,7 +957,7 @@ namespace DusanRodina.TuringMachineSimulator {
 			// newStripButton
 			// 
 			this.newStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.newStripButton.Image = global::DusanRodina.TuringMachineSimulator.Properties.Resources.small_new;
+			this.newStripButton.Image = global::FEI.TuringMachineSimulator.Properties.Resources.small_new;
 			resources.ApplyResources(this.newStripButton, "newStripButton");
 			this.newStripButton.Name = "newStripButton";
 			this.newStripButton.Click += new System.EventHandler(this.newStripButton_Click);
@@ -961,7 +965,7 @@ namespace DusanRodina.TuringMachineSimulator {
 			// openToolStripButton
 			// 
 			this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.openToolStripButton.Image = global::DusanRodina.TuringMachineSimulator.Properties.Resources.open;
+			this.openToolStripButton.Image = global::FEI.TuringMachineSimulator.Properties.Resources.open;
 			resources.ApplyResources(this.openToolStripButton, "openToolStripButton");
 			this.openToolStripButton.Name = "openToolStripButton";
 			this.openToolStripButton.Click += new System.EventHandler(this.openToolStripButton_Click);
@@ -969,7 +973,7 @@ namespace DusanRodina.TuringMachineSimulator {
 			// saveToolStripButton
 			// 
 			this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.saveToolStripButton.Image = global::DusanRodina.TuringMachineSimulator.Properties.Resources.save;
+			this.saveToolStripButton.Image = global::FEI.TuringMachineSimulator.Properties.Resources.save;
 			resources.ApplyResources(this.saveToolStripButton, "saveToolStripButton");
 			this.saveToolStripButton.Name = "saveToolStripButton";
 			this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
@@ -981,14 +985,14 @@ namespace DusanRodina.TuringMachineSimulator {
 			// 
 			// runToolStripButton
 			// 
-			this.runToolStripButton.Image = global::DusanRodina.TuringMachineSimulator.Properties.Resources.run;
+			this.runToolStripButton.Image = global::FEI.TuringMachineSimulator.Properties.Resources.run;
 			resources.ApplyResources(this.runToolStripButton, "runToolStripButton");
 			this.runToolStripButton.Name = "runToolStripButton";
 			this.runToolStripButton.Click += new System.EventHandler(this.runToolStripButton_Click);
 			// 
 			// breakToolStripButton
 			// 
-			this.breakToolStripButton.Image = global::DusanRodina.TuringMachineSimulator.Properties.Resources.pause;
+			this.breakToolStripButton.Image = global::FEI.TuringMachineSimulator.Properties.Resources.pause;
 			resources.ApplyResources(this.breakToolStripButton, "breakToolStripButton");
 			this.breakToolStripButton.Name = "breakToolStripButton";
 			this.breakToolStripButton.Click += new System.EventHandler(this.breakToolStripButton_Click);
@@ -996,7 +1000,7 @@ namespace DusanRodina.TuringMachineSimulator {
 			// stopToolStripButton
 			// 
 			resources.ApplyResources(this.stopToolStripButton, "stopToolStripButton");
-			this.stopToolStripButton.Image = global::DusanRodina.TuringMachineSimulator.Properties.Resources.stop;
+			this.stopToolStripButton.Image = global::FEI.TuringMachineSimulator.Properties.Resources.stop;
 			this.stopToolStripButton.Name = "stopToolStripButton";
 			this.stopToolStripButton.Click += new System.EventHandler(this.stopToolStripButton_Click);
 			// 
@@ -1007,7 +1011,7 @@ namespace DusanRodina.TuringMachineSimulator {
 			// 
 			// stepToolStripButton
 			// 
-			this.stepToolStripButton.Image = global::DusanRodina.TuringMachineSimulator.Properties.Resources.next;
+			this.stepToolStripButton.Image = global::FEI.TuringMachineSimulator.Properties.Resources.next;
 			resources.ApplyResources(this.stepToolStripButton, "stepToolStripButton");
 			this.stepToolStripButton.Name = "stepToolStripButton";
 			this.stepToolStripButton.Click += new System.EventHandler(this.stepToolStripButton_Click);
@@ -1171,7 +1175,7 @@ namespace DusanRodina.TuringMachineSimulator {
 		private ToolStripSeparator toolStripSeparator2;
 		private SplitContainer splitContainer1;
 		private Button bAddTFunction;
-		private DusanRodina.SimStudio.Components.SyntaxTextBox txtCode;
+		private SyntaxTextBox txtCode;
 		private Label label5;
 		private PictureBox pFunctions;
 		private Label label6;
@@ -1184,9 +1188,9 @@ namespace DusanRodina.TuringMachineSimulator {
 		private SplitContainer splitContainer2;
 		private System.Windows.Forms.Label label7;
 		private ListBox lstErrors;
-		private TuringCore.Components.InfiniteTapeControl infiniteTapeControl;
+		private InfiniteTapeControl infiniteTapeControl;
 		private HScrollBar sbxThreads;
-		private DusanRodina.TuringCore.Components.StateDiagramControl stateDiagramControl;
+		private StateDiagramControl stateDiagramControl;
 		private ToolStrip mainToolStrip;
 		private System.Windows.Forms.ToolStripButton newStripButton;
 		private System.Windows.Forms.ToolStripButton openToolStripButton;

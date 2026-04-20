@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.SimStudio.Components {
+﻿namespace FEI.SimStudio.Components.Controls {
 	partial class SyntaxTextBox
     {
         //UserControl overrides dispose to clean up the component list.
@@ -21,7 +21,7 @@
         [System.Diagnostics.DebuggerStepThrough()]
         private void InitializeComponent()
         {
-            this.txtbox = new Components.SyntaxTextBox.RTBox();
+            this.txtbox = new SyntaxTextBox.RTBox();
             this.SuspendLayout();
             // 
             // txtbox

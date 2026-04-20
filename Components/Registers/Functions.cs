@@ -1,7 +1,7 @@
 ﻿using System.Drawing;
 using System.Drawing.Drawing2D;
 
-namespace DusanRodina.SimStudio.Components {
+namespace FEI.SimStudio.Components.Registers {
 	public static class Functions
 	{
 		public static Color OddLineColor = Color.FromArgb(20, Color.Black);

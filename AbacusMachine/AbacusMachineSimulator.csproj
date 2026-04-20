@@ -7,7 +7,7 @@
     <ProjectGuid>{2EE94A38-B6C9-4701-B3D9-4D4288013472}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DusanRodina.AbacusMachine</RootNamespace>
+    <RootNamespace>FEI.AbacusMachine</RootNamespace>
     <AssemblyName>AbacusMachineSimulator</AssemblyName>
     <ApplicationIcon>Abacus.ico</ApplicationIcon>
     <FileUpgradeFlags>

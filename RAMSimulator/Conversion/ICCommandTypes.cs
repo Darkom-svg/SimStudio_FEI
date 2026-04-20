@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.RandomAccessMachine.Conversion {
+﻿namespace FEI.RandomAccessMachine.Conversion {
 	//Typy príkazov
 	public enum ICCommandTypes
     {

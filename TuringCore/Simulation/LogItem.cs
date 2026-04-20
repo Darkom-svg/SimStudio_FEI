@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DusanRodina.TuringCore.Simulation {
+namespace FEI.TuringCore.Simulation {
 	//Položka logu
 	public class LogItem
     {

@@ -937,7 +937,7 @@
     <value>lstRegs</value>
   </data>
   <data name="&gt;&gt;lstRegs.Type" xml:space="preserve">
-    <value>DusanRodina.SimStudio.Components.RegisterList, Components, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>FEI.SimStudio.Components.RegisterList, Components, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;lstRegs.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -961,7 +961,7 @@
     <value>ftInputTape</value>
   </data>
   <data name="&gt;&gt;ftInputTape.Type" xml:space="preserve">
-    <value>DusanRodina.SimStudio.Components.InputOutputTape, Components, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>FEI.SimStudio.Components.InputOutputTape, Components, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ftInputTape.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -985,7 +985,7 @@
     <value>ftOutputTape</value>
   </data>
   <data name="&gt;&gt;ftOutputTape.Type" xml:space="preserve">
-    <value>DusanRodina.SimStudio.Components.InputOutputTape, Components, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>FEI.SimStudio.Components.InputOutputTape, Components, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;ftOutputTape.Parent" xml:space="preserve">
     <value>panel1</value>
@@ -1012,7 +1012,7 @@
     <value>txtProgram</value>
   </data>
   <data name="&gt;&gt;txtProgram.Type" xml:space="preserve">
-    <value>DusanRodina.SimStudio.Components.SyntaxTextBox, Components, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>FEI.SimStudio.Components.SyntaxTextBox, Components, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;txtProgram.Parent" xml:space="preserve">
     <value>panel1</value>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace DusanRodina.RandomAccessMachine.Dialogs {
+namespace FEI.RandomAccessMachine.Dialogs {
 	public partial class AboutForm : Form
     {
         public AboutForm()

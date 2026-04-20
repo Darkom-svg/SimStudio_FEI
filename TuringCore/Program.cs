@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TuringCore {
+namespace FEI.TuringCore {
 	static class Program
     {
         /// <summary>

@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.PushdownAutomaton.Dialogs {
+﻿namespace FEI.PushdownAutomaton.Dialogs {
 	partial class TapeStatisticsForm
     {
         /// <summary>

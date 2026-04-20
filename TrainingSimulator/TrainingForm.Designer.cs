@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel;
+using FEI.SimStudio.Components.Controls;
+using FEI.TuringCore.Components;
 
-namespace TrainingSimulator
+namespace FEI.TrainingSimulator
 {
     partial class TrainingForm
     {
@@ -108,10 +110,10 @@ namespace TrainingSimulator
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.bAddTFunction = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtCode = new DusanRodina.SimStudio.Components.SyntaxTextBox();
+            this.txtCode = new SyntaxTextBox();
             this.statesTab = new System.Windows.Forms.TabPage();
             this.bAddState = new System.Windows.Forms.Button();
-            this.stateDiagramControl = new DusanRodina.TuringCore.Components.StateDiagramControl();
+            this.stateDiagramControl = new StateDiagramControl();
             this.logTab = new System.Windows.Forms.TabPage();
             this.formalSpecificationTab = new System.Windows.Forms.TabPage();
             this.formalSpecifiaction = new System.Windows.Forms.WebBrowser();
@@ -913,9 +915,9 @@ namespace TrainingSimulator
 
         private System.Windows.Forms.SplitContainer splitContainer1;
 
-        private DusanRodina.SimStudio.Components.SyntaxTextBox txtCode;
+        private SyntaxTextBox txtCode;
 
-        private DusanRodina.TuringCore.Components.StateDiagramControl stateDiagramControl;
+        private StateDiagramControl stateDiagramControl;
 
         private System.Windows.Forms.TabPage taskSpecificationTab;
 

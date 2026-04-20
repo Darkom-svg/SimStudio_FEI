@@ -1,4 +1,6 @@
-﻿namespace DusanRodina.RandomAccessMachine.Dialogs {
+﻿using FEI.SimStudio.Components.Controls;
+
+namespace FEI.RandomAccessMachine.Dialogs {
 	partial class CConversionForm
     {
         /// <summary>
@@ -27,7 +29,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtCode = new DusanRodina.SimStudio.Components.SyntaxTextBox();
+            this.txtCode = new SyntaxTextBox();
             this.okButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -76,7 +78,7 @@
 
         #endregion
 
-        private DusanRodina.SimStudio.Components.SyntaxTextBox txtCode;
+        private SyntaxTextBox txtCode;
         private System.Windows.Forms.Button okButton;
     }
 }

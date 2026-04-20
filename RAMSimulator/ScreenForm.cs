@@ -2,11 +2,12 @@
 using System.Drawing;
 using System.Resources;
 using System.Windows.Forms;
+using FEI.RandomAccessMachine.Simulation;
 
-namespace DusanRodina.RandomAccessMachine {
+namespace FEI.RandomAccessMachine {
 	public partial class ScreenForm : Form
 	{
-		public DusanRodina.RandomAccessMachine.Simulation.Simulator simulator = null;
+		public Simulator simulator = null;
 		private Bitmap screen = null;
 
 		ResourceManager resMan = new ResourceManager(typeof(ScreenForm).FullName,

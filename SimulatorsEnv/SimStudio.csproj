@@ -7,7 +7,7 @@
     <ProjectGuid>{5289B780-BCA0-4475-8F4D-6E17BF3358EC}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DusanRodina.SimStudio</RootNamespace>
+    <RootNamespace>FEI.SimStudio</RootNamespace>
     <AssemblyName>SimStudio</AssemblyName>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -15,7 +15,7 @@
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
-    <StartupObject>DusanRodina.SimStudio.Program</StartupObject>
+    <StartupObject>FEI.SimStudio.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

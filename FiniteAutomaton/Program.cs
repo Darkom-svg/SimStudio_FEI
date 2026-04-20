@@ -1,8 +1,7 @@
-﻿using DusanRodina.FiniteAutomaton;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
-namespace FiniteAutomaton {
+namespace FEI.FiniteAutomaton {
 	static class Program
     {
         /// <summary>

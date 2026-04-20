@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using FEI.SimStudio.Components.Registers;
 
-namespace DusanRodina.SimStudio.Components {
+namespace FEI.SimStudio.Components {
 	public class InfiniteInteger
     {
         private bool positive = true;

@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.TuringCore.Simulation {
+﻿namespace FEI.TuringCore.Simulation {
 	//Prechodová funkcia
 	public class Transition
     {

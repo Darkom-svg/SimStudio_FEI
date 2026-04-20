@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.AbacusMachine.Simulation {
+﻿namespace FEI.AbacusMachine.Simulation {
 	public struct Instruction
     {
         public AMOperation operation;

@@ -1,7 +1,8 @@
-﻿using DusanRodina.SimStudio.Components;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using FEI.SimStudio.Components;
+using FEI.SimStudio.Components.Registers;
 
-namespace DusanRodina.RandomAccessMachine.Conversion {
+namespace FEI.RandomAccessMachine.Conversion {
 	//Prechodný kód
 	public class IntermediateCode
     {

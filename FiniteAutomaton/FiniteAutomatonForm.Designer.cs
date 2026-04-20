@@ -1,6 +1,10 @@
 ﻿using System.IO;
 using System.Windows.Forms;
-namespace DusanRodina.FiniteAutomaton {
+using FEI.SimStudio.Components.Controls;
+using FEI.TuringCore.Components;
+using FEI.TuringCore.Simulation;
+
+namespace FEI.FiniteAutomaton {
 	partial class FiniteAutomatonForm
     {
         /// <summary>
@@ -42,7 +46,7 @@ namespace DusanRodina.FiniteAutomaton {
 	        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FiniteAutomatonForm));
 	        this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 	        this.bAddTFunction = new System.Windows.Forms.Button();
-	        this.txtCode = new DusanRodina.SimStudio.Components.SyntaxTextBox();
+	        this.txtCode = new SyntaxTextBox();
 	        this.label5 = new System.Windows.Forms.Label();
 	        this.pFunctions = new System.Windows.Forms.PictureBox();
 	        this.label6 = new System.Windows.Forms.Label();
@@ -51,7 +55,7 @@ namespace DusanRodina.FiniteAutomaton {
 	        this.tcMain = new System.Windows.Forms.TabControl();
 	        this.functionsTab = new System.Windows.Forms.TabPage();
 	        this.statesTab = new System.Windows.Forms.TabPage();
-	        this.stateDiagramControl = new DusanRodina.TuringCore.Components.StateDiagramControl();
+	        this.stateDiagramControl = new StateDiagramControl();
 	        this.bAddState = new System.Windows.Forms.Button();
 	        this.processTab = new System.Windows.Forms.TabPage();
 	        this.sbxThreads = new System.Windows.Forms.HScrollBar();
@@ -71,7 +75,7 @@ namespace DusanRodina.FiniteAutomaton {
 	        this.speedPanel = new System.Windows.Forms.Panel();
 	        this.tbSpeed = new System.Windows.Forms.TrackBar();
 	        this.label3 = new System.Windows.Forms.Label();
-	        this.infiniteTapeControl = new DusanRodina.TuringCore.Components.InfiniteTapeControl();
+	        this.infiniteTapeControl = new InfiniteTapeControl();
 	        this.cmbTape = new System.Windows.Forms.ComboBox();
 	        this.label1 = new System.Windows.Forms.Label();
 	        this.label2 = new System.Windows.Forms.Label();
@@ -217,7 +221,7 @@ namespace DusanRodina.FiniteAutomaton {
 	        this.txtCode.SelectedText = "";
 	        this.txtCode.SelectionLength = 0;
 	        this.txtCode.SelectionStart = 0;
-	        this.txtCode.TextChanged += new DusanRodina.SimStudio.Components.SyntaxTextBox.TextChangedEventHandler(this.txtCode_TextChanged);
+	        this.txtCode.TextChanged += new SyntaxTextBox.TextChangedEventHandler(this.txtCode_TextChanged);
 	        // 
 	        // label5
 	        // 
@@ -299,8 +303,8 @@ namespace DusanRodina.FiniteAutomaton {
 	        resources.ApplyResources(this.stateDiagramControl, "stateDiagramControl");
 	        this.stateDiagramControl.Name = "stateDiagramControl";
 	        this.stateDiagramControl.TuringMachine = null;
-	        this.stateDiagramControl.TransitionAdded += new DusanRodina.TuringCore.Components.StateDiagramControl.TransitionEventHandler(this.stateDiagramControl_TransitionAdded);
-	        this.stateDiagramControl.DiagramChanged += new DusanRodina.TuringCore.Components.StateDiagramControl.DiagramChangedEventHandler(this.stateDiagramControl_DiagramChanged);
+	        this.stateDiagramControl.TransitionAdded += new StateDiagramControl.TransitionEventHandler(this.stateDiagramControl_TransitionAdded);
+	        this.stateDiagramControl.DiagramChanged += new StateDiagramControl.DiagramChangedEventHandler(this.stateDiagramControl_DiagramChanged);
 	        // 
 	        // bAddState
 	        // 
@@ -444,7 +448,7 @@ namespace DusanRodina.FiniteAutomaton {
 	        // 
 	        // infiniteTapeControl
 	        // 
-	        this.infiniteTapeControl.AcceptStatus = DusanRodina.TuringCore.Simulation.AcceptanceStatus.None;
+	        this.infiniteTapeControl.AcceptStatus = AcceptanceStatus.None;
 	        this.infiniteTapeControl.AllowBlanks = false;
 	        resources.ApplyResources(this.infiniteTapeControl, "infiniteTapeControl");
 	        this.infiniteTapeControl.ChangesAllowed = true;
@@ -538,14 +542,14 @@ namespace DusanRodina.FiniteAutomaton {
 	        // 
 	        // miNewFile
 	        // 
-	        this.miNewFile.Image = global::FiniteAutomaton.Properties.Resources._new;
+	        this.miNewFile.Image = global::FEI.FiniteAutomaton.Properties.Resources._new;
 	        resources.ApplyResources(this.miNewFile, "miNewFile");
 	        this.miNewFile.Name = "miNewFile";
 	        this.miNewFile.Click += new System.EventHandler(this.miNewFile_Click);
 	        // 
 	        // miOpenFile
 	        // 
-	        this.miOpenFile.Image = global::FiniteAutomaton.Properties.Resources.open;
+	        this.miOpenFile.Image = global::FEI.FiniteAutomaton.Properties.Resources.open;
 	        resources.ApplyResources(this.miOpenFile, "miOpenFile");
 	        this.miOpenFile.Name = "miOpenFile";
 	        this.miOpenFile.Click += new System.EventHandler(this.miOpenFile_Click);
@@ -557,7 +561,7 @@ namespace DusanRodina.FiniteAutomaton {
 	        // 
 	        // miSaveFile
 	        // 
-	        this.miSaveFile.Image = global::FiniteAutomaton.Properties.Resources.save;
+	        this.miSaveFile.Image = global::FEI.FiniteAutomaton.Properties.Resources.save;
 	        resources.ApplyResources(this.miSaveFile, "miSaveFile");
 	        this.miSaveFile.Name = "miSaveFile";
 	        this.miSaveFile.Click += new System.EventHandler(this.miSaveFile_Click);
@@ -589,21 +593,21 @@ namespace DusanRodina.FiniteAutomaton {
 	        // 
 	        // miCut
 	        // 
-	        this.miCut.Image = global::FiniteAutomaton.Properties.Resources.small_cut;
+	        this.miCut.Image = global::FEI.FiniteAutomaton.Properties.Resources.small_cut;
 	        resources.ApplyResources(this.miCut, "miCut");
 	        this.miCut.Name = "miCut";
 	        this.miCut.Click += new System.EventHandler(this.miCut_Click);
 	        // 
 	        // miCopy
 	        // 
-	        this.miCopy.Image = global::FiniteAutomaton.Properties.Resources.small_copy;
+	        this.miCopy.Image = global::FEI.FiniteAutomaton.Properties.Resources.small_copy;
 	        resources.ApplyResources(this.miCopy, "miCopy");
 	        this.miCopy.Name = "miCopy";
 	        this.miCopy.Click += new System.EventHandler(this.miCopy_Click);
 	        // 
 	        // miPaste
 	        // 
-	        this.miPaste.Image = global::FiniteAutomaton.Properties.Resources.small_paste;
+	        this.miPaste.Image = global::FEI.FiniteAutomaton.Properties.Resources.small_paste;
 	        resources.ApplyResources(this.miPaste, "miPaste");
 	        this.miPaste.Name = "miPaste";
 	        this.miPaste.Click += new System.EventHandler(this.miPaste_Click);
@@ -944,7 +948,7 @@ namespace DusanRodina.FiniteAutomaton {
 	        // newStripButton
 	        // 
 	        this.newStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-	        this.newStripButton.Image = global::FiniteAutomaton.Properties.Resources._new;
+	        this.newStripButton.Image = global::FEI.FiniteAutomaton.Properties.Resources._new;
 	        resources.ApplyResources(this.newStripButton, "newStripButton");
 	        this.newStripButton.Name = "newStripButton";
 	        this.newStripButton.Click += new System.EventHandler(this.newStripButton_Click);
@@ -952,7 +956,7 @@ namespace DusanRodina.FiniteAutomaton {
 	        // openToolStripButton
 	        // 
 	        this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-	        this.openToolStripButton.Image = global::FiniteAutomaton.Properties.Resources.open;
+	        this.openToolStripButton.Image = global::FEI.FiniteAutomaton.Properties.Resources.open;
 	        resources.ApplyResources(this.openToolStripButton, "openToolStripButton");
 	        this.openToolStripButton.Name = "openToolStripButton";
 	        this.openToolStripButton.Click += new System.EventHandler(this.openToolStripButton_Click);
@@ -960,7 +964,7 @@ namespace DusanRodina.FiniteAutomaton {
 	        // saveToolStripButton
 	        // 
 	        this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-	        this.saveToolStripButton.Image = global::FiniteAutomaton.Properties.Resources.save;
+	        this.saveToolStripButton.Image = global::FEI.FiniteAutomaton.Properties.Resources.save;
 	        resources.ApplyResources(this.saveToolStripButton, "saveToolStripButton");
 	        this.saveToolStripButton.Name = "saveToolStripButton";
 	        this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
@@ -972,21 +976,21 @@ namespace DusanRodina.FiniteAutomaton {
 	        // 
 	        // runToolStripButton
 	        // 
-	        this.runToolStripButton.Image = global::FiniteAutomaton.Properties.Resources.run;
+	        this.runToolStripButton.Image = global::FEI.FiniteAutomaton.Properties.Resources.run;
 	        resources.ApplyResources(this.runToolStripButton, "runToolStripButton");
 	        this.runToolStripButton.Name = "runToolStripButton";
 	        this.runToolStripButton.Click += new System.EventHandler(this.runToolStripButton_Click);
 	        // 
 	        // breakToolStripButton
 	        // 
-	        this.breakToolStripButton.Image = global::FiniteAutomaton.Properties.Resources.pause;
+	        this.breakToolStripButton.Image = global::FEI.FiniteAutomaton.Properties.Resources.pause;
 	        resources.ApplyResources(this.breakToolStripButton, "breakToolStripButton");
 	        this.breakToolStripButton.Name = "breakToolStripButton";
 	        this.breakToolStripButton.Click += new System.EventHandler(this.breakToolStripButton_Click);
 	        // 
 	        // stopToolStripButton
 	        // 
-	        this.stopToolStripButton.Image = global::FiniteAutomaton.Properties.Resources.stop;
+	        this.stopToolStripButton.Image = global::FEI.FiniteAutomaton.Properties.Resources.stop;
 	        resources.ApplyResources(this.stopToolStripButton, "stopToolStripButton");
 	        this.stopToolStripButton.Name = "stopToolStripButton";
 	        this.stopToolStripButton.Click += new System.EventHandler(this.stopToolStripButton_Click);
@@ -998,7 +1002,7 @@ namespace DusanRodina.FiniteAutomaton {
 	        // 
 	        // stepToolStripButton
 	        // 
-	        this.stepToolStripButton.Image = global::FiniteAutomaton.Properties.Resources.next;
+	        this.stepToolStripButton.Image = global::FEI.FiniteAutomaton.Properties.Resources.next;
 	        resources.ApplyResources(this.stepToolStripButton, "stepToolStripButton");
 	        this.stepToolStripButton.Name = "stepToolStripButton";
 	        this.stepToolStripButton.Click += new System.EventHandler(this.stepToolStripButton_Click);
@@ -1144,7 +1148,7 @@ namespace DusanRodina.FiniteAutomaton {
         private ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Button bAddTFunction;
-        private DusanRodina.SimStudio.Components.SyntaxTextBox txtCode;
+        private SyntaxTextBox txtCode;
         private Label label5;
         private System.Windows.Forms.PictureBox pFunctions;
         private Label label6;
@@ -1158,8 +1162,8 @@ namespace DusanRodina.FiniteAutomaton {
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ListBox lstErrors;        
         private HScrollBar sbxThreads;
-        private DusanRodina.TuringCore.Components.StateDiagramControl stateDiagramControl;
-        private DusanRodina.TuringCore.Components.InfiniteTapeControl infiniteTapeControl;
+        private StateDiagramControl stateDiagramControl;
+        private InfiniteTapeControl infiniteTapeControl;
         private System.Windows.Forms.ToolStripPanel toolStripPanel1;
         private System.Windows.Forms.ToolStrip mainToolStrip;
         private System.Windows.Forms.ToolStripButton newStripButton;

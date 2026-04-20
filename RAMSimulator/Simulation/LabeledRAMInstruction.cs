@@ -1,6 +1,6 @@
-﻿using DusanRodina.SimStudio.Components;
+﻿using FEI.SimStudio.Components;
 
-namespace DusanRodina.RandomAccessMachine.Simulation {
+namespace FEI.RandomAccessMachine.Simulation {
 	public class LabeledRAMInstruction : RAMInstruction
     {
         public string Label;

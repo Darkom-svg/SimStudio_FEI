@@ -6,10 +6,10 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Windows.Forms;
-using DusanRodina.SimStudio.Components;
-using DusanRodina.TrainingSimulator.Dialogs;
+using FEI.SimStudio.Components;
+using FEI.TrainingSimulator.Dialogs;
 
-namespace TrainingSimulator {
+namespace FEI.TrainingSimulator {
     public partial class MainTrainingForm : Form
     {
         private List<TaskDef> allTasks;

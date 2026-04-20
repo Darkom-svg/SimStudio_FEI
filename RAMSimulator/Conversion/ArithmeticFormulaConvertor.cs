@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DusanRodina.RandomAccessMachine.Conversion {
+namespace FEI.RandomAccessMachine.Conversion {
 	//Konvertor aritmetických vzorcov do RAM kódu
 	public class ArithmeticFormulaConvertor
     {

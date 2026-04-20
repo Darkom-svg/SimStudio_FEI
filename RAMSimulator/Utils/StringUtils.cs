@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.RandomAccessMachine.Utils {
+﻿namespace FEI.RandomAccessMachine.Utils {
 	public static class StringUtils
     {
         public static string RemoveSpaces(string text)

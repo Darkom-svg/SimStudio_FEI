@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DusanRodina.SimStudio.Components.Registers {
+namespace FEI.SimStudio.Components.Registers {
 	//Body prerušenia
 	public class RegisterBreakPointList
     {        

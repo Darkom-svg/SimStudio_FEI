@@ -1,8 +1,8 @@
-﻿using DusanRodina.RandomAccessMachine.Simulation;
-using System;
+﻿using System;
 using System.Windows.Forms;
+using FEI.RandomAccessMachine.Simulation;
 
-namespace DusanRodina.RandomAccessMachine {
+namespace FEI.RandomAccessMachine {
 	public partial class StackForm : Form
     {
         public Simulator simulator = null;

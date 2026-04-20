@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace DusanRodina.RandomAccessMachine {
+namespace FEI.RandomAccessMachine {
 	static class Program
     {
         /// <summary>

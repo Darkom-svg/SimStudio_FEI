@@ -1,10 +1,10 @@
-﻿using DusanRodina.TuringCore.Simulation;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using FEI.TuringCore.Simulation;
 
-namespace DusanRodina.TuringCore.Diagramming {
+namespace FEI.TuringCore.Diagramming {
 	public class StateDiagram
     {                     
         //Ohraničenie diagramu

@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.SimStudio.Components.Registers {
+﻿namespace FEI.SimStudio.Components.Registers {
 	public class RegisterCell 
     {
         private InfiniteInteger value = InfiniteInteger.zero;

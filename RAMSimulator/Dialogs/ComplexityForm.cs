@@ -1,8 +1,8 @@
-﻿using DusanRodina.RandomAccessMachine.Simulation;
-using System;
+﻿using System;
 using System.Windows.Forms;
+using FEI.RandomAccessMachine.Simulation;
 
-namespace DusanRodina.RandomAccessMachine.Dialogs {
+namespace FEI.RandomAccessMachine.Dialogs {
 	public partial class ComplexityForm : Form
     {
         public Simulator RAMSim;

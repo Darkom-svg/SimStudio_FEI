@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.AbacusMachine {
+﻿namespace FEI.AbacusMachine {
 	partial class AboutForm
     {
         /// <summary>
@@ -133,7 +133,7 @@
             // 
             // pIcon
             // 
-            this.pIcon.BackgroundImage = global::DusanRodina.AbacusMachine.Properties.Resources.Abacus;
+            this.pIcon.BackgroundImage = global::FEI.AbacusMachine.Properties.Resources.Abacus;
             this.pIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pIcon.Location = new System.Drawing.Point(12, 12);
             this.pIcon.Name = "pIcon";

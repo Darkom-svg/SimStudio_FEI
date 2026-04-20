@@ -1,5 +1,7 @@
 using System.Windows.Forms;
-namespace DusanRodina.SimStudio.Components.Dialogs {
+using FEI.SimStudio.Components.Controls;
+
+namespace FEI.SimStudio.Components.Dialogs {
 	public static class Finding
     {
         public static bool Find(SyntaxTextBox textBox, string find, bool ignoreCase, bool wholeWords, int direction)

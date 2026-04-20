@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Windows.Forms;
+using FEI.SimStudio.Components.Controls;
 
-namespace DusanRodina.SimStudio.Components.Dialogs {
+namespace FEI.SimStudio.Components.Dialogs {
 	public partial class ReplaceForm : Form
     {
         //Textbox, v ktorom sa bude vyhľadávať
-        public Components.SyntaxTextBox textBox = null;
+        public SyntaxTextBox textBox = null;
 
         public ReplaceForm()
         {

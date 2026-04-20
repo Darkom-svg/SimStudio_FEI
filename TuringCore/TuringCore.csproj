@@ -8,7 +8,7 @@
     <ProjectGuid>{292F715D-6E58-44E5-9574-5740CBCDAD2A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TuringCore</RootNamespace>
+    <RootNamespace>FEI.TuringCore</RootNamespace>
     <AssemblyName>TuringCore</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

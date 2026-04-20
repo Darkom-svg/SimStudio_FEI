@@ -1,10 +1,10 @@
-﻿using DusanRodina.RandomAccessMachine.Simulation;
-using DusanRodina.SimStudio.Components;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using FEI.SimStudio.Components;
+using FEI.RandomAccessMachine.Simulation;
 
-namespace DusanRodina.RandomAccessMachine.Dialogs {
+namespace FEI.RandomAccessMachine.Dialogs {
 	public partial class InstructionSetForm : Form
     {
         private List<InstructionType> allowedInstructions = new List<InstructionType>();

@@ -1,14 +1,18 @@
-﻿using DusanRodina.AbacusMachine.Simulation;
-using DusanRodina.SimStudio.Components;
-using DusanRodina.SimStudio.Components.Dialogs;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Text;
 using System.Windows.Forms;
+using FEI.AbacusMachine.Dialogs;
+using FEI.AbacusMachine.Simulation;
+using FEI.SimStudio.Components;
+using FEI.SimStudio.Components.Controls;
+using FEI.SimStudio.Components.Controls.RegisterList;
+using FEI.SimStudio.Components.Dialogs;
+using FEI.SimStudio.Components.Registers;
 
-namespace DusanRodina.AbacusMachine {
+namespace FEI.AbacusMachine {
 	public partial class AbacusMachineForm : Form
 	{
 		public static string AppTitle = "Počítadlový stroj (Abacus Machine)";
@@ -325,7 +329,7 @@ namespace DusanRodina.AbacusMachine {
 
 		private void miAddValue_Click(object sender, EventArgs e)
 		{
-			Dialogs.AddValueForm dlg = new AbacusMachine.Dialogs.AddValueForm();
+			Dialogs.AddValueForm dlg = new AddValueForm();
 			dlg.ShowDialog(this);
 
 			if (dlg.OKPressed)
@@ -350,7 +354,7 @@ namespace DusanRodina.AbacusMachine {
 
 		private void miSubstractValue_Click(object sender, EventArgs e)
 		{
-			Dialogs.SubstractValueForm dlg = new AbacusMachine.Dialogs.SubstractValueForm();
+			Dialogs.SubstractValueForm dlg = new SubstractValueForm();
 			dlg.ShowDialog(this);
 
 			if (dlg.OKPressed)
@@ -375,7 +379,7 @@ namespace DusanRodina.AbacusMachine {
 
 		private void miCopyRegister_Click(object sender, EventArgs e)
 		{
-			Dialogs.CopyForm dlg = new AbacusMachine.Dialogs.CopyForm();
+			Dialogs.CopyForm dlg = new CopyForm();
 			dlg.ShowDialog(this);
 
 			if (dlg.OKPressed)
@@ -404,7 +408,7 @@ namespace DusanRodina.AbacusMachine {
 
 		private void miMoveRegister_Click(object sender, EventArgs e)
 		{
-			Dialogs.MoveForm dlg = new AbacusMachine.Dialogs.MoveForm();
+			Dialogs.MoveForm dlg = new MoveForm();
 			dlg.ShowDialog(this);
 
 			if (dlg.OKPressed)
@@ -424,7 +428,7 @@ namespace DusanRodina.AbacusMachine {
 
 		private void miClearRegister_Click(object sender, EventArgs e)
 		{
-			Dialogs.ClearForm dlg = new AbacusMachine.Dialogs.ClearForm();
+			Dialogs.ClearForm dlg = new ClearForm();
 			dlg.ShowDialog(this);
 
 			if (dlg.OKPressed)

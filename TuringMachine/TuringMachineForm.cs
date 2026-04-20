@@ -1,10 +1,4 @@
-﻿using DusanRodina.SimStudio.Components;
-using DusanRodina.SimStudio.Components.Dialogs;
-using DusanRodina.TuringCore.Components;
-using DusanRodina.TuringCore.Simulation;
-using DusanRodina.TuringMachineSimulator.Dialogs;
-using DusanRodina.TuringMachineSimulator.IO.Jff;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -13,8 +7,16 @@ using System.IO;
 using System.Resources;
 using System.Text;
 using System.Windows.Forms;
+using FEI.SimStudio.Components;
+using FEI.SimStudio.Components.Controls;
+using FEI.SimStudio.Components.Dialogs;
+using FEI.SimStudio.Components.Registers;
+using FEI.TuringCore.Components;
+using FEI.TuringCore.Simulation;
+using FEI.TuringMachineSimulator.Dialogs;
+using FEI.TuringMachineSimulator.IO.Jff;
 
-namespace DusanRodina.TuringMachineSimulator {
+namespace FEI.TuringMachineSimulator {
 	public partial class TuringMachineForm : Form {
 		ResourceManager resMan = new ResourceManager(typeof(TuringMachineForm).FullName,
 			 System.Reflection.Assembly.GetExecutingAssembly());
@@ -38,7 +40,7 @@ namespace DusanRodina.TuringMachineSimulator {
 				miTFormat7, miTFormat8, miTFormat9,
 				miTFormat10});
 
-			int TFindex = Properties.Settings.Default.TransitionFormat;
+			int TFindex = FEI.TuringMachineSimulator.Properties.Settings.Default.TransitionFormat;
 			miTFormatMenuItems[TFindex].PerformClick();
 		}
 
@@ -609,7 +611,7 @@ namespace DusanRodina.TuringMachineSimulator {
 				if (rect.IntersectsWith(windowRect)) {
 					if (TuringMachine.Thread(a).Tapes.Count > 0) {
 						int first = 0;
-						DusanRodina.TuringCore.Components.InfiniteTapeControl.DrawTape(g, rect, TuringMachine.Thread(a).Tapes[0],
+						InfiniteTapeControl.DrawTape(g, rect, TuringMachine.Thread(a).Tapes[0],
 							AcceptanceStatus.None, sbxThreads.Value, int.MinValue, true,
 							out first);
 
@@ -1187,8 +1189,8 @@ namespace DusanRodina.TuringMachineSimulator {
 			var miTFormat = (ToolStripMenuItem) sender;
 			TransitionFormat = format;
 
-			Properties.Settings.Default.TransitionFormat = miTFormatMenuItems.IndexOf(miTFormat);
-			Properties.Settings.Default.Save();
+			FEI.TuringMachineSimulator.Properties.Settings.Default.TransitionFormat = miTFormatMenuItems.IndexOf(miTFormat);
+			FEI.TuringMachineSimulator.Properties.Settings.Default.Save();
 
 			foreach (var miTFitem in miTFormatMenuItems)
 				miTFitem.Checked = false;

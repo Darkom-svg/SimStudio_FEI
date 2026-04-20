@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace DusanRodina.PushdownAutomaton.Dialogs {
+namespace FEI.PushdownAutomaton.Dialogs {
 	public partial class AboutForm : Form
     {
         public AboutForm()

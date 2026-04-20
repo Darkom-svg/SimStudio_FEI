@@ -1,5 +1,9 @@
 ﻿using System.Windows.Forms;
-namespace DusanRodina.AbacusMachine {
+using FEI.SimStudio.Components.Controls;
+using FEI.SimStudio.Components.Controls.RegisterList;
+using FEI.SimStudio.Components.Registers;
+
+namespace FEI.AbacusMachine {
 	partial class AbacusMachineForm
     {
         /// <summary>
@@ -31,7 +35,7 @@ namespace DusanRodina.AbacusMachine {
         /// </summary>
         private void InitializeComponent()
         {
-	        DusanRodina.SimStudio.Components.Registers.InfiniteRegisters infiniteRegisters1 = new DusanRodina.SimStudio.Components.Registers.InfiniteRegisters();
+	        InfiniteRegisters infiniteRegisters1 = new InfiniteRegisters();
 	        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AbacusMachineForm));
 	        this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 	        this.miFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,7 +79,7 @@ namespace DusanRodina.AbacusMachine {
 	        this.speedPanel = new System.Windows.Forms.Panel();
 	        this.tbSpeed = new System.Windows.Forms.TrackBar();
 	        this.label3 = new System.Windows.Forms.Label();
-	        this.txtCode = new DusanRodina.SimStudio.Components.SyntaxTextBox();
+	        this.txtCode = new SyntaxTextBox();
 	        this.tabSimulation = new System.Windows.Forms.TabPage();
 	        this.pSimulation = new System.Windows.Forms.PictureBox();
 	        this.verticalScroll = new System.Windows.Forms.VScrollBar();
@@ -93,7 +97,7 @@ namespace DusanRodina.AbacusMachine {
 	        this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
 	        this.stepToolStripButton = new System.Windows.Forms.ToolStripButton();
 	        this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-	        this.lstRegisters = new DusanRodina.SimStudio.Components.RegisterList();
+	        this.lstRegisters = new RegisterList();
 	        this.statusStrip = new System.Windows.Forms.StatusStrip();
 	        this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
 	        this.menuStrip1.SuspendLayout();
@@ -132,7 +136,7 @@ namespace DusanRodina.AbacusMachine {
 	        // 
 	        // miNewFile
 	        // 
-	        this.miNewFile.Image = global::DusanRodina.AbacusMachine.Properties.Resources.small_new;
+	        this.miNewFile.Image = global::FEI.AbacusMachine.Properties.Resources.small_new;
 	        this.miNewFile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 	        this.miNewFile.Name = "miNewFile";
 	        this.miNewFile.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
@@ -142,7 +146,7 @@ namespace DusanRodina.AbacusMachine {
 	        // 
 	        // miOpenFile
 	        // 
-	        this.miOpenFile.Image = global::DusanRodina.AbacusMachine.Properties.Resources.open;
+	        this.miOpenFile.Image = global::FEI.AbacusMachine.Properties.Resources.open;
 	        this.miOpenFile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 	        this.miOpenFile.Name = "miOpenFile";
 	        this.miOpenFile.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
@@ -157,7 +161,7 @@ namespace DusanRodina.AbacusMachine {
 	        // 
 	        // miSaveFile
 	        // 
-	        this.miSaveFile.Image = global::DusanRodina.AbacusMachine.Properties.Resources.save;
+	        this.miSaveFile.Image = global::FEI.AbacusMachine.Properties.Resources.save;
 	        this.miSaveFile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 	        this.miSaveFile.Name = "miSaveFile";
 	        this.miSaveFile.ShortcutKeyDisplayString = "Ctrl+S";
@@ -195,7 +199,7 @@ namespace DusanRodina.AbacusMachine {
 	        // 
 	        // miCut
 	        // 
-	        this.miCut.Image = global::DusanRodina.AbacusMachine.Properties.Resources.small_cut;
+	        this.miCut.Image = global::FEI.AbacusMachine.Properties.Resources.small_cut;
 	        this.miCut.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 	        this.miCut.Name = "miCut";
 	        this.miCut.Size = new System.Drawing.Size(194, 22);
@@ -204,7 +208,7 @@ namespace DusanRodina.AbacusMachine {
 	        // 
 	        // miCopy
 	        // 
-	        this.miCopy.Image = global::DusanRodina.AbacusMachine.Properties.Resources.copy;
+	        this.miCopy.Image = global::FEI.AbacusMachine.Properties.Resources.copy;
 	        this.miCopy.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 	        this.miCopy.Name = "miCopy";
 	        this.miCopy.Size = new System.Drawing.Size(194, 22);
@@ -213,7 +217,7 @@ namespace DusanRodina.AbacusMachine {
 	        // 
 	        // miPaste
 	        // 
-	        this.miPaste.Image = global::DusanRodina.AbacusMachine.Properties.Resources.small_paste;
+	        this.miPaste.Image = global::FEI.AbacusMachine.Properties.Resources.small_paste;
 	        this.miPaste.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 	        this.miPaste.Name = "miPaste";
 	        this.miPaste.Size = new System.Drawing.Size(194, 22);
@@ -325,7 +329,7 @@ namespace DusanRodina.AbacusMachine {
 	        // 
 	        // miRun
 	        // 
-	        this.miRun.Image = global::DusanRodina.AbacusMachine.Properties.Resources.run;
+	        this.miRun.Image = global::FEI.AbacusMachine.Properties.Resources.run;
 	        this.miRun.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 	        this.miRun.Name = "miRun";
 	        this.miRun.ShortcutKeyDisplayString = "F5";
@@ -335,7 +339,7 @@ namespace DusanRodina.AbacusMachine {
 	        // 
 	        // miPause
 	        // 
-	        this.miPause.Image = global::DusanRodina.AbacusMachine.Properties.Resources.pause;
+	        this.miPause.Image = global::FEI.AbacusMachine.Properties.Resources.pause;
 	        this.miPause.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 	        this.miPause.Name = "miPause";
 	        this.miPause.Size = new System.Drawing.Size(130, 22);
@@ -351,7 +355,7 @@ namespace DusanRodina.AbacusMachine {
 	        // 
 	        // miStop
 	        // 
-	        this.miStop.Image = global::DusanRodina.AbacusMachine.Properties.Resources.stop;
+	        this.miStop.Image = global::FEI.AbacusMachine.Properties.Resources.stop;
 	        this.miStop.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 	        this.miStop.Name = "miStop";
 	        this.miStop.Size = new System.Drawing.Size(130, 22);
@@ -475,7 +479,7 @@ namespace DusanRodina.AbacusMachine {
 	        this.txtCode.SelectionStart = 0;
 	        this.txtCode.Size = new System.Drawing.Size(541, 395);
 	        this.txtCode.TabIndex = 1;
-	        this.txtCode.TextChanged += new DusanRodina.SimStudio.Components.SyntaxTextBox.TextChangedEventHandler(this.txtCode_TextChanged);
+	        this.txtCode.TextChanged += new SyntaxTextBox.TextChangedEventHandler(this.txtCode_TextChanged);
 	        // 
 	        // tabSimulation
 	        // 
@@ -542,7 +546,7 @@ namespace DusanRodina.AbacusMachine {
 	        // newStripButton
 	        // 
 	        this.newStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-	        this.newStripButton.Image = global::DusanRodina.AbacusMachine.Properties.Resources.small_new;
+	        this.newStripButton.Image = global::FEI.AbacusMachine.Properties.Resources.small_new;
 	        this.newStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 	        this.newStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 	        this.newStripButton.Name = "newStripButton";
@@ -553,7 +557,7 @@ namespace DusanRodina.AbacusMachine {
 	        // openToolStripButton
 	        // 
 	        this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-	        this.openToolStripButton.Image = global::DusanRodina.AbacusMachine.Properties.Resources.open;
+	        this.openToolStripButton.Image = global::FEI.AbacusMachine.Properties.Resources.open;
 	        this.openToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 	        this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 	        this.openToolStripButton.Name = "openToolStripButton";
@@ -564,7 +568,7 @@ namespace DusanRodina.AbacusMachine {
 	        // saveToolStripButton
 	        // 
 	        this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-	        this.saveToolStripButton.Image = global::DusanRodina.AbacusMachine.Properties.Resources.save;
+	        this.saveToolStripButton.Image = global::FEI.AbacusMachine.Properties.Resources.save;
 	        this.saveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 	        this.saveToolStripButton.Name = "saveToolStripButton";
 	        this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
@@ -578,7 +582,7 @@ namespace DusanRodina.AbacusMachine {
 	        // 
 	        // runToolStripButton
 	        // 
-	        this.runToolStripButton.Image = global::DusanRodina.AbacusMachine.Properties.Resources.run;
+	        this.runToolStripButton.Image = global::FEI.AbacusMachine.Properties.Resources.run;
 	        this.runToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 	        this.runToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 	        this.runToolStripButton.Name = "runToolStripButton";
@@ -588,7 +592,7 @@ namespace DusanRodina.AbacusMachine {
 	        // 
 	        // breakToolStripButton
 	        // 
-	        this.breakToolStripButton.Image = global::DusanRodina.AbacusMachine.Properties.Resources.pause;
+	        this.breakToolStripButton.Image = global::FEI.AbacusMachine.Properties.Resources.pause;
 	        this.breakToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 	        this.breakToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 	        this.breakToolStripButton.Name = "breakToolStripButton";
@@ -600,7 +604,7 @@ namespace DusanRodina.AbacusMachine {
 	        // stopToolStripButton
 	        // 
 	        this.stopToolStripButton.Enabled = false;
-	        this.stopToolStripButton.Image = global::DusanRodina.AbacusMachine.Properties.Resources.stop;
+	        this.stopToolStripButton.Image = global::FEI.AbacusMachine.Properties.Resources.stop;
 	        this.stopToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 	        this.stopToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 	        this.stopToolStripButton.Name = "stopToolStripButton";
@@ -615,7 +619,7 @@ namespace DusanRodina.AbacusMachine {
 	        // 
 	        // stepToolStripButton
 	        // 
-	        this.stepToolStripButton.Image = global::DusanRodina.AbacusMachine.Properties.Resources.next;
+	        this.stepToolStripButton.Image = global::FEI.AbacusMachine.Properties.Resources.next;
 	        this.stepToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
 	        this.stepToolStripButton.Name = "stepToolStripButton";
 	        this.stepToolStripButton.Size = new System.Drawing.Size(51, 22);
@@ -653,7 +657,7 @@ namespace DusanRodina.AbacusMachine {
 	        this.lstRegisters.TabIndex = 2;
 	        this.lstRegisters.Writing = false;
 	        this.lstRegisters.WritingPos = 0;
-	        this.lstRegisters.RegisterChanged += new DusanRodina.SimStudio.Components.RegisterList.RegisterChangedEventHandler(this.lstRegisters_RegisterChanged);
+	        this.lstRegisters.RegisterChanged += new RegisterList.RegisterChangedEventHandler(this.lstRegisters_RegisterChanged);
 	        // 
 	        // statusStrip
 	        // 
@@ -742,8 +746,8 @@ namespace DusanRodina.AbacusMachine {
         private System.Windows.Forms.ToolStripMenuItem miBreaks;
         private System.Windows.Forms.ToolStripMenuItem miTools;
         private System.Windows.Forms.ToolStripMenuItem miOpenFile;
-        private DusanRodina.SimStudio.Components.SyntaxTextBox txtCode;
-        private DusanRodina.SimStudio.Components.RegisterList lstRegisters;
+        private SyntaxTextBox txtCode;
+        private RegisterList lstRegisters;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabCode;
         private System.Windows.Forms.TabPage tabSimulation;

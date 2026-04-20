@@ -1,7 +1,7 @@
-﻿using DusanRodina.TuringCore.Simulation;
-using System.Xml;
+﻿using System.Xml;
+using FEI.TuringCore.Simulation;
 
-namespace DusanRodina.FiniteAutomaton.IO.Jff {
+namespace FEI.FiniteAutomaton.IO.Jff {
 	public class JffWriter
     {
         private string fileName;

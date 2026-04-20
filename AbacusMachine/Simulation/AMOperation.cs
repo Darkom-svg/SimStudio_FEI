@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.AbacusMachine.Simulation {
+﻿namespace FEI.AbacusMachine.Simulation {
 	//Operácia Abacus Machine
 	public enum AMOperation
     {

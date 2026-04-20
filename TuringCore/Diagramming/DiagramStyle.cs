@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.TuringCore.Diagramming {
+﻿namespace FEI.TuringCore.Diagramming {
 	public enum DiagramStyle
     {
         TuringMachine = 0,

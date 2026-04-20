@@ -1,12 +1,12 @@
-﻿using DusanRodina.SimStudio.Components;
-using DusanRodina.TuringCore.Diagramming;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Xml;
+using FEI.SimStudio.Components;
+using FEI.TuringCore.Diagramming;
 
-namespace DusanRodina.TuringCore.Simulation {
+namespace FEI.TuringCore.Simulation {
 
 	//Turingov stroj
 	public class VirtualTuringMachine

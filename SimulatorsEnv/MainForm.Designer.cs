@@ -1,6 +1,4 @@
-﻿using DusanRodina.SimStudio.Properties;
-
-namespace DusanRodina.SimStudio {
+﻿namespace FEI.SimStudio {
 	partial class MainForm
     {
         /// <summary>
@@ -84,7 +82,7 @@ namespace DusanRodina.SimStudio {
             // 
             // openFileToolStripMenuItem
             // 
-            this.openFileToolStripMenuItem.Image = global::DusanRodina.SimStudio.Properties.Resources.small_open;
+            this.openFileToolStripMenuItem.Image = global::FEI.SimStudio.Properties.Resources.small_open;
             this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
             this.openFileToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.openFileToolStripMenuItem.Text = "Otvoriť";
@@ -97,7 +95,7 @@ namespace DusanRodina.SimStudio {
             // 
             // finiteAutomatonToolStripMenuItem1
             // 
-            this.finiteAutomatonToolStripMenuItem1.Image = global::DusanRodina.SimStudio.Properties.Resources.Turing;
+            this.finiteAutomatonToolStripMenuItem1.Image = global::FEI.SimStudio.Properties.Resources.Turing;
             this.finiteAutomatonToolStripMenuItem1.Name = "finiteAutomatonToolStripMenuItem1";
             this.finiteAutomatonToolStripMenuItem1.Size = new System.Drawing.Size(189, 22);
             this.finiteAutomatonToolStripMenuItem1.Text = "Konečný automat";
@@ -105,7 +103,7 @@ namespace DusanRodina.SimStudio {
             // 
             // pushdownAutomatonToolStripMenuItem
             // 
-            this.pushdownAutomatonToolStripMenuItem.Image = global::DusanRodina.SimStudio.Properties.Resources.Turing;
+            this.pushdownAutomatonToolStripMenuItem.Image = global::FEI.SimStudio.Properties.Resources.Turing;
             this.pushdownAutomatonToolStripMenuItem.Name = "pushdownAutomatonToolStripMenuItem";
             this.pushdownAutomatonToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.pushdownAutomatonToolStripMenuItem.Text = "Zásobníkový automat";
@@ -113,7 +111,7 @@ namespace DusanRodina.SimStudio {
             // 
             // turingMachineToolStripMenuItem1
             // 
-            this.turingMachineToolStripMenuItem1.Image = global::DusanRodina.SimStudio.Properties.Resources.Turing;
+            this.turingMachineToolStripMenuItem1.Image = global::FEI.SimStudio.Properties.Resources.Turing;
             this.turingMachineToolStripMenuItem1.Name = "turingMachineToolStripMenuItem1";
             this.turingMachineToolStripMenuItem1.Size = new System.Drawing.Size(189, 22);
             this.turingMachineToolStripMenuItem1.Text = "Turingov stroj";
@@ -121,7 +119,7 @@ namespace DusanRodina.SimStudio {
             // 
             // rAMSimulatorToolStripMenuItem
             // 
-            this.rAMSimulatorToolStripMenuItem.Image = global::DusanRodina.SimStudio.Properties.Resources.RAM;
+            this.rAMSimulatorToolStripMenuItem.Image = global::FEI.SimStudio.Properties.Resources.RAM;
             this.rAMSimulatorToolStripMenuItem.Name = "rAMSimulatorToolStripMenuItem";
             this.rAMSimulatorToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.rAMSimulatorToolStripMenuItem.Text = "RAM";
@@ -129,7 +127,7 @@ namespace DusanRodina.SimStudio {
             // 
             // abacusMachineToolStripMenuItem1
             // 
-            this.abacusMachineToolStripMenuItem1.Image = global::DusanRodina.SimStudio.Properties.Resources.Abacus;
+            this.abacusMachineToolStripMenuItem1.Image = global::FEI.SimStudio.Properties.Resources.Abacus;
             this.abacusMachineToolStripMenuItem1.Name = "abacusMachineToolStripMenuItem1";
             this.abacusMachineToolStripMenuItem1.Size = new System.Drawing.Size(189, 22);
             this.abacusMachineToolStripMenuItem1.Text = "Počítadlový stroj";
@@ -137,7 +135,7 @@ namespace DusanRodina.SimStudio {
             // 
             // trianerToolStripMenuItem
             // 
-            this.trianerToolStripMenuItem.Image = global::DusanRodina.SimStudio.Properties.Resources.Trainer;
+            this.trianerToolStripMenuItem.Image = global::FEI.SimStudio.Properties.Resources.Trainer;
             this.trianerToolStripMenuItem.Name = "trianerToolStripMenuItem";
             this.trianerToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.trianerToolStripMenuItem.Text = "Trenažér";

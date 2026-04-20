@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DusanRodina.SimStudio.Components.Registers {
+namespace FEI.SimStudio.Components.Registers {
 	public class SmallRegisters
     {             
         public Dictionary<long, SmallRegisterCell> regs = new Dictionary<long, SmallRegisterCell>();

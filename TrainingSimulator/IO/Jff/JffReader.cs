@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Xml;
-using DusanRodina.TuringCore.Diagramming;
-using DusanRodina.TuringCore.Simulation;
+using FEI.TuringCore.Diagramming;
+using FEI.TuringCore.Simulation;
+using Transition = FEI.TuringCore.Simulation.Transition;
 
-namespace TrainingSimulator.IO.Jff {
+namespace FEI.TrainingSimulator.IO.Jff {
 	public class JffReader
     {
         private string fileName;
@@ -34,7 +35,7 @@ namespace TrainingSimulator.IO.Jff {
                     bool elementCompleted = false;
                     
                     State curState = new State();
-                    var curTransition = new DusanRodina.TuringCore.Simulation.Transition();
+                    var curTransition = new Transition();
                     InfiniteTape currentTape = new InfiniteTape();
 
                     result.Reset();
@@ -72,7 +73,7 @@ namespace TrainingSimulator.IO.Jff {
                                 }
                                 else if (curElement == ".transition" || curElement == ".automaton.transition")
                                 {
-                                    curTransition = new DusanRodina.TuringCore.Simulation.Transition();
+                                    curTransition = new Transition();
                                 }
                                 else if (curElement == ".state.final" || curElement == ".automaton.state.final")
                                 {

@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.TuringCore.Dialogs {
+﻿namespace FEI.TuringCore.Components.Dialogs {
 	partial class NewStateForm
     {
         /// <summary>

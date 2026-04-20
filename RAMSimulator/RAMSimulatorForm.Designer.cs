@@ -1,5 +1,9 @@
 ﻿using System.Windows.Forms;
-namespace DusanRodina.RandomAccessMachine {
+using FEI.SimStudio.Components.Controls;
+using FEI.SimStudio.Components.Controls.RegisterList;
+using FEI.SimStudio.Components.Registers;
+
+namespace FEI.RandomAccessMachine {
 	partial class RAMSimulatorForm
     {
         /// <summary>
@@ -32,7 +36,7 @@ namespace DusanRodina.RandomAccessMachine {
         private void InitializeComponent()
         {
 	        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RAMSimulatorForm));
-	        DusanRodina.SimStudio.Components.Registers.InfiniteRegisters infiniteRegisters1 = new DusanRodina.SimStudio.Components.Registers.InfiniteRegisters();
+	        InfiniteRegisters infiniteRegisters1 = new InfiniteRegisters();
 	        this.lblInputTape = new System.Windows.Forms.Label();
 	        this.lblOutputTape = new System.Windows.Forms.Label();
 	        this.sbyProgram = new System.Windows.Forms.VScrollBar();
@@ -115,10 +119,10 @@ namespace DusanRodina.RandomAccessMachine {
 	        this.speedPanel = new System.Windows.Forms.Panel();
 	        this.tbSpeed = new System.Windows.Forms.TrackBar();
 	        this.label2 = new System.Windows.Forms.Label();
-	        this.lstRegs = new DusanRodina.SimStudio.Components.RegisterList();
-	        this.ftInputTape = new DusanRodina.SimStudio.Components.InputOutputTape();
-	        this.ftOutputTape = new DusanRodina.SimStudio.Components.InputOutputTape();
-	        this.txtProgram = new DusanRodina.SimStudio.Components.SyntaxTextBox();
+	        this.lstRegs = new RegisterList();
+	        this.ftInputTape = new InputOutputTape();
+	        this.ftOutputTape = new InputOutputTape();
+	        this.txtProgram = new SyntaxTextBox();
 	        this.pProc = new System.Windows.Forms.PictureBox();
 	        this.picProgram = new System.Windows.Forms.PictureBox();
 	        this.label3 = new System.Windows.Forms.Label();
@@ -195,14 +199,14 @@ namespace DusanRodina.RandomAccessMachine {
 	        // 
 	        // miNew
 	        // 
-	        this.miNew.Image = global::DusanRodina.RandomAccessMachine.Properties.Resources.small_new;
+	        this.miNew.Image = global::FEI.RandomAccessMachine.Properties.Resources.small_new;
 	        resources.ApplyResources(this.miNew, "miNew");
 	        this.miNew.Name = "miNew";
 	        this.miNew.Click += new System.EventHandler(this.miNew_Click);
 	        // 
 	        // miOpen
 	        // 
-	        this.miOpen.Image = global::DusanRodina.RandomAccessMachine.Properties.Resources.open;
+	        this.miOpen.Image = global::FEI.RandomAccessMachine.Properties.Resources.open;
 	        resources.ApplyResources(this.miOpen, "miOpen");
 	        this.miOpen.Name = "miOpen";
 	        this.miOpen.Click += new System.EventHandler(this.miOpen_Click);
@@ -214,7 +218,7 @@ namespace DusanRodina.RandomAccessMachine {
 	        // 
 	        // miSave
 	        // 
-	        this.miSave.Image = global::DusanRodina.RandomAccessMachine.Properties.Resources.save;
+	        this.miSave.Image = global::FEI.RandomAccessMachine.Properties.Resources.save;
 	        resources.ApplyResources(this.miSave, "miSave");
 	        this.miSave.Name = "miSave";
 	        this.miSave.Click += new System.EventHandler(this.miSave_Click);
@@ -246,21 +250,21 @@ namespace DusanRodina.RandomAccessMachine {
 	        // 
 	        // miCut
 	        // 
-	        this.miCut.Image = global::DusanRodina.RandomAccessMachine.Properties.Resources.small_cut;
+	        this.miCut.Image = global::FEI.RandomAccessMachine.Properties.Resources.small_cut;
 	        resources.ApplyResources(this.miCut, "miCut");
 	        this.miCut.Name = "miCut";
 	        this.miCut.Click += new System.EventHandler(this.miCut_Click);
 	        // 
 	        // miCopy
 	        // 
-	        this.miCopy.Image = global::DusanRodina.RandomAccessMachine.Properties.Resources.copy;
+	        this.miCopy.Image = global::FEI.RandomAccessMachine.Properties.Resources.copy;
 	        resources.ApplyResources(this.miCopy, "miCopy");
 	        this.miCopy.Name = "miCopy";
 	        this.miCopy.Click += new System.EventHandler(this.miCopy_Click);
 	        // 
 	        // miPaste
 	        // 
-	        this.miPaste.Image = global::DusanRodina.RandomAccessMachine.Properties.Resources.small_paste;
+	        this.miPaste.Image = global::FEI.RandomAccessMachine.Properties.Resources.small_paste;
 	        resources.ApplyResources(this.miPaste, "miPaste");
 	        this.miPaste.Name = "miPaste";
 	        this.miPaste.Click += new System.EventHandler(this.miPaste_Click);
@@ -365,7 +369,7 @@ namespace DusanRodina.RandomAccessMachine {
 	        // 
 	        // miRun
 	        // 
-	        this.miRun.Image = global::DusanRodina.RandomAccessMachine.Properties.Resources.run;
+	        this.miRun.Image = global::FEI.RandomAccessMachine.Properties.Resources.run;
 	        resources.ApplyResources(this.miRun, "miRun");
 	        this.miRun.Name = "miRun";
 	        this.miRun.Click += new System.EventHandler(this.miRun_Click);
@@ -378,7 +382,7 @@ namespace DusanRodina.RandomAccessMachine {
 	        // 
 	        // miPause
 	        // 
-	        this.miPause.Image = global::DusanRodina.RandomAccessMachine.Properties.Resources.pause;
+	        this.miPause.Image = global::FEI.RandomAccessMachine.Properties.Resources.pause;
 	        resources.ApplyResources(this.miPause, "miPause");
 	        this.miPause.Name = "miPause";
 	        this.miPause.Click += new System.EventHandler(this.miPause_Click);
@@ -391,7 +395,7 @@ namespace DusanRodina.RandomAccessMachine {
 	        // 
 	        // miStop
 	        // 
-	        this.miStop.Image = global::DusanRodina.RandomAccessMachine.Properties.Resources.stop;
+	        this.miStop.Image = global::FEI.RandomAccessMachine.Properties.Resources.stop;
 	        resources.ApplyResources(this.miStop, "miStop");
 	        this.miStop.Name = "miStop";
 	        this.miStop.Click += new System.EventHandler(this.miStop_Click);
@@ -566,7 +570,7 @@ namespace DusanRodina.RandomAccessMachine {
 	        // newStripButton
 	        // 
 	        this.newStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-	        this.newStripButton.Image = global::DusanRodina.RandomAccessMachine.Properties.Resources.small_new;
+	        this.newStripButton.Image = global::FEI.RandomAccessMachine.Properties.Resources.small_new;
 	        resources.ApplyResources(this.newStripButton, "newStripButton");
 	        this.newStripButton.Name = "newStripButton";
 	        this.newStripButton.Click += new System.EventHandler(this.newStripButton_Click);
@@ -574,7 +578,7 @@ namespace DusanRodina.RandomAccessMachine {
 	        // openToolStripButton
 	        // 
 	        this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-	        this.openToolStripButton.Image = global::DusanRodina.RandomAccessMachine.Properties.Resources.open;
+	        this.openToolStripButton.Image = global::FEI.RandomAccessMachine.Properties.Resources.open;
 	        resources.ApplyResources(this.openToolStripButton, "openToolStripButton");
 	        this.openToolStripButton.Name = "openToolStripButton";
 	        this.openToolStripButton.Click += new System.EventHandler(this.openToolStripButton_Click);
@@ -582,7 +586,7 @@ namespace DusanRodina.RandomAccessMachine {
 	        // saveToolStripButton
 	        // 
 	        this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-	        this.saveToolStripButton.Image = global::DusanRodina.RandomAccessMachine.Properties.Resources.save;
+	        this.saveToolStripButton.Image = global::FEI.RandomAccessMachine.Properties.Resources.save;
 	        resources.ApplyResources(this.saveToolStripButton, "saveToolStripButton");
 	        this.saveToolStripButton.Name = "saveToolStripButton";
 	        this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
@@ -594,14 +598,14 @@ namespace DusanRodina.RandomAccessMachine {
 	        // 
 	        // runToolStripButton
 	        // 
-	        this.runToolStripButton.Image = global::DusanRodina.RandomAccessMachine.Properties.Resources.run;
+	        this.runToolStripButton.Image = global::FEI.RandomAccessMachine.Properties.Resources.run;
 	        resources.ApplyResources(this.runToolStripButton, "runToolStripButton");
 	        this.runToolStripButton.Name = "runToolStripButton";
 	        this.runToolStripButton.Click += new System.EventHandler(this.runToolStripButton_Click);
 	        // 
 	        // breakToolStripButton
 	        // 
-	        this.breakToolStripButton.Image = global::DusanRodina.RandomAccessMachine.Properties.Resources.pause;
+	        this.breakToolStripButton.Image = global::FEI.RandomAccessMachine.Properties.Resources.pause;
 	        resources.ApplyResources(this.breakToolStripButton, "breakToolStripButton");
 	        this.breakToolStripButton.Name = "breakToolStripButton";
 	        this.breakToolStripButton.Click += new System.EventHandler(this.breakToolStripButton_Click);
@@ -609,7 +613,7 @@ namespace DusanRodina.RandomAccessMachine {
 	        // stopToolStripButton
 	        // 
 	        resources.ApplyResources(this.stopToolStripButton, "stopToolStripButton");
-	        this.stopToolStripButton.Image = global::DusanRodina.RandomAccessMachine.Properties.Resources.stop;
+	        this.stopToolStripButton.Image = global::FEI.RandomAccessMachine.Properties.Resources.stop;
 	        this.stopToolStripButton.Name = "stopToolStripButton";
 	        this.stopToolStripButton.Click += new System.EventHandler(this.stopToolStripButton_Click);
 	        // 
@@ -620,7 +624,7 @@ namespace DusanRodina.RandomAccessMachine {
 	        // 
 	        // stepToolStripButton
 	        // 
-	        this.stepToolStripButton.Image = global::DusanRodina.RandomAccessMachine.Properties.Resources.next;
+	        this.stepToolStripButton.Image = global::FEI.RandomAccessMachine.Properties.Resources.next;
 	        resources.ApplyResources(this.stepToolStripButton, "stepToolStripButton");
 	        this.stepToolStripButton.Name = "stepToolStripButton";
 	        this.stepToolStripButton.Click += new System.EventHandler(this.stepToolStripButton_Click);
@@ -676,7 +680,7 @@ namespace DusanRodina.RandomAccessMachine {
 	        this.lstRegs.Writing = false;
 	        this.lstRegs.WritingPos = 0;
 	        this.lstRegs.ViewPositionChange += new System.EventHandler(this.lstRegs_ViewPositionChange);
-	        this.lstRegs.RegisterChanged += new DusanRodina.SimStudio.Components.RegisterList.RegisterChangedEventHandler(this.lstRegs_RegisterChanged);
+	        this.lstRegs.RegisterChanged += new RegisterList.RegisterChangedEventHandler(this.lstRegs_RegisterChanged);
 	        // 
 	        // ftInputTape
 	        // 
@@ -706,7 +710,7 @@ namespace DusanRodina.RandomAccessMachine {
 	        this.txtProgram.SelectedText = "";
 	        this.txtProgram.SelectionLength = 0;
 	        this.txtProgram.SelectionStart = 0;
-	        this.txtProgram.TextChanged += new DusanRodina.SimStudio.Components.SyntaxTextBox.TextChangedEventHandler(this.txtProgram_TextChanged);
+	        this.txtProgram.TextChanged += new SyntaxTextBox.TextChangedEventHandler(this.txtProgram_TextChanged);
 	        // 
 	        // pProc
 	        // 
@@ -765,7 +769,7 @@ namespace DusanRodina.RandomAccessMachine {
 	        // closeErrorsButton
 	        // 
 	        resources.ApplyResources(this.closeErrorsButton, "closeErrorsButton");
-	        this.closeErrorsButton.Image = global::DusanRodina.RandomAccessMachine.Properties.Resources.close;
+	        this.closeErrorsButton.Image = global::FEI.RandomAccessMachine.Properties.Resources.close;
 	        this.closeErrorsButton.Name = "closeErrorsButton";
 	        this.closeErrorsButton.UseVisualStyleBackColor = true;
 	        this.closeErrorsButton.Click += new System.EventHandler(this.closeErrorsButton_Click);
@@ -809,11 +813,11 @@ namespace DusanRodina.RandomAccessMachine {
 
         #endregion
 
-        private DusanRodina.SimStudio.Components.InputOutputTape ftInputTape;
-        private DusanRodina.SimStudio.Components.InputOutputTape ftOutputTape;
+        private InputOutputTape ftInputTape;
+        private InputOutputTape ftOutputTape;
         private System.Windows.Forms.Label lblInputTape;
         private System.Windows.Forms.Label lblOutputTape;
-        private DusanRodina.SimStudio.Components.SyntaxTextBox txtProgram;
+        private SyntaxTextBox txtProgram;
         private System.Windows.Forms.PictureBox picProgram;
         private System.Windows.Forms.VScrollBar sbyProgram;
         private System.Windows.Forms.PictureBox pProc;
@@ -866,7 +870,7 @@ namespace DusanRodina.RandomAccessMachine {
         private System.Windows.Forms.ToolStripMenuItem miExportOutputTape;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem6;
         private System.Windows.Forms.ToolStripMenuItem miImportInputTape;
-        private DusanRodina.SimStudio.Components.RegisterList lstRegs;
+        private RegisterList lstRegs;
         private System.Windows.Forms.ToolStripMenuItem miHelp;
         private System.Windows.Forms.ToolStripMenuItem miAbout;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;

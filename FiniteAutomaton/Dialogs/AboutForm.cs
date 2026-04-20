@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace DusanRodina.FiniteAutomaton.Dialogs {
+namespace FEI.FiniteAutomaton.Dialogs {
 	public partial class AboutForm : Form
     {
         public AboutForm()

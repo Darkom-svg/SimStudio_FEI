@@ -1,6 +1,6 @@
 ﻿using System.Windows.Forms;
 
-namespace DusanRodina.RandomAccessMachine.Dialogs {
+namespace FEI.RandomAccessMachine.Dialogs {
 	public partial class RAMTypeSelectionForm : Form
     {
         public RAMTypeSelectionForm()

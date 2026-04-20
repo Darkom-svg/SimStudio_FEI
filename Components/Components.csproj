@@ -7,7 +7,7 @@
     <ProjectGuid>{9C562E36-F43A-4AA0-A518-75CD00A30A6D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DusanRodina.SimStudio.Components</RootNamespace>
+    <RootNamespace>FEI.SimStudio.Components</RootNamespace>
     <AssemblyName>Components</AssemblyName>
     <StartupObject>
     </StartupObject>

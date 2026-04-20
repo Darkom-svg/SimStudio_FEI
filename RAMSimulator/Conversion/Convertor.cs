@@ -1,8 +1,9 @@
-﻿using DusanRodina.SimStudio.Components;
-using System;
+﻿using System;
 using System.Windows.Forms;
+using FEI.SimStudio.Components;
+using FEI.SimStudio.Components.Registers;
 
-namespace DusanRodina.RandomAccessMachine.Conversion {
+namespace FEI.RandomAccessMachine.Conversion {
 	public class Convertor
     {
         public string ConvertToRAMCode(IntermediateCode ic)

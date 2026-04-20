@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.SimStudio {
+﻿namespace FEI.SimStudio {
 	partial class AboutForm
     {
         /// <summary>
@@ -128,7 +128,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::DusanRodina.SimStudio.Properties.Resources.SimStudio;
+            this.pictureBox1.BackgroundImage = global::FEI.SimStudio.Properties.Resources.SimStudio;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";

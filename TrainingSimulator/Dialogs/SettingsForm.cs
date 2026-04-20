@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace TrainingSimulator.Dialogs {
+namespace FEI.TrainingSimulator.Dialogs {
 	public partial class SettingsForm : Form
     {
         public bool OKPressed = false;

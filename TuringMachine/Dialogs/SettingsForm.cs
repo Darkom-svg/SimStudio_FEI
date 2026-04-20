@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-namespace DusanRodina.TuringMachineSimulator.Dialogs {
+namespace FEI.TuringMachineSimulator.Dialogs {
 	public partial class SettingsForm : Form
     {
         public bool OKPressed = false;

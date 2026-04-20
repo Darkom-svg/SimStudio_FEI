@@ -1,7 +1,7 @@
-﻿using DusanRodina.SimStudio.Components;
-using DusanRodina.SimStudio.Components.Registers;
+﻿using FEI.SimStudio.Components;
+using FEI.SimStudio.Components.Registers;
 
-namespace DusanRodina.RandomAccessMachine.Simulation {
+namespace FEI.RandomAccessMachine.Simulation {
 	//Inštrukcia RAM Simulátora
 	public class RAMInstruction
     {

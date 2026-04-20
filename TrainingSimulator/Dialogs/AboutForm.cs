@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace DusanRodina.TrainingSimulator.Dialogs {
+namespace FEI.TrainingSimulator.Dialogs {
 	public partial class AboutForm : Form
     {
         public AboutForm()

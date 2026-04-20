@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace DusanRodina.TuringCore.Simulation {
+namespace FEI.TuringCore.Simulation {
 	//Nekonečná páska
 	[Serializable]
 	public class InfiniteTape {

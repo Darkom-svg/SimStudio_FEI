@@ -172,7 +172,7 @@
     <value>txtCode</value>
   </data>
   <data name="&gt;&gt;txtCode.Type" xml:space="preserve">
-    <value>DusanRodina.SimStudio.Components.SyntaxTextBox, Components, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>FEI.SimStudio.Components.SyntaxTextBox, Components, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;txtCode.Parent" xml:space="preserve">
     <value>splitContainer1.Panel1</value>
@@ -456,7 +456,7 @@
     <value>infiniteTapeControl</value>
   </data>
   <data name="&gt;&gt;infiniteTapeControl.Type" xml:space="preserve">
-    <value>DusanRodina.TuringCore.Components.InfiniteTapeControl, TuringCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>FEI.TuringCore.Components.InfiniteTapeControl, TuringCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;infiniteTapeControl.Parent" xml:space="preserve">
     <value>splitContainer2.Panel1</value>
@@ -510,7 +510,7 @@
     <value>stateDiagramControl</value>
   </data>
   <data name="&gt;&gt;stateDiagramControl.Type" xml:space="preserve">
-    <value>DusanRodina.TuringCore.Components.StateDiagramControl, TuringCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+    <value>FEI.TuringCore.Components.StateDiagramControl, TuringCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
   </data>
   <data name="&gt;&gt;stateDiagramControl.Parent" xml:space="preserve">
     <value>statesTab</value>

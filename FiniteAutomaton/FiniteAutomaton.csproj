@@ -8,7 +8,7 @@
     <ProjectGuid>{648D0A1E-4C9E-4794-9D75-C132D2BA20B9}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FiniteAutomaton</RootNamespace>
+    <RootNamespace>FEI.FiniteAutomaton</RootNamespace>
     <AssemblyName>FiniteAutomaton</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

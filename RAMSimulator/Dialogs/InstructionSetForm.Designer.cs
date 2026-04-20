@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.RandomAccessMachine.Dialogs {
+﻿namespace FEI.RandomAccessMachine.Dialogs {
 	partial class InstructionSetForm
     {
         /// <summary>

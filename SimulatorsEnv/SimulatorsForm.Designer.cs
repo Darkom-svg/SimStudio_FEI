@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.SimStudio {
+﻿namespace FEI.SimStudio {
 	public partial class SimulatorsForm
     {
         /// <summary>
@@ -42,27 +42,27 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.roundedPanel6 = new DusanRodina.SimStudio.RoundedPanel();
+            this.roundedPanel6 = new RoundedPanel();
             this.finiteAutomatonButton = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.roundedPanel5 = new DusanRodina.SimStudio.RoundedPanel();
+            this.roundedPanel5 = new RoundedPanel();
             this.pushDownAutomatonButton2 = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.roundedPanel4 = new DusanRodina.SimStudio.RoundedPanel();
+            this.roundedPanel4 = new RoundedPanel();
             this.bTuring = new System.Windows.Forms.Button();
             this.pIcon = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.roundedPanel3 = new DusanRodina.SimStudio.RoundedPanel();
+            this.roundedPanel3 = new RoundedPanel();
             this.bRAM = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.roundedPanel2 = new DusanRodina.SimStudio.RoundedPanel();
+            this.roundedPanel2 = new RoundedPanel();
             this.bAbacusMachine = new System.Windows.Forms.Button();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.roundedPanel1 = new DusanRodina.SimStudio.RoundedPanel();
+            this.roundedPanel1 = new RoundedPanel();
             this.bTrainer = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -257,7 +257,7 @@
             this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox3.Image = global::DusanRodina.SimStudio.Properties.Resources.Turing;
+            this.pictureBox3.Image = global::FEI.SimStudio.Properties.Resources.Turing;
             this.pictureBox3.Location = new System.Drawing.Point(8, 11);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(48, 48);
@@ -309,7 +309,7 @@
             this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox4.Image = global::DusanRodina.SimStudio.Properties.Resources.Turing;
+            this.pictureBox4.Image = global::FEI.SimStudio.Properties.Resources.Turing;
             this.pictureBox4.Location = new System.Drawing.Point(8, 5);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(48, 48);
@@ -361,7 +361,7 @@
             this.pIcon.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pIcon.BackColor = System.Drawing.Color.Transparent;
             this.pIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pIcon.Image = global::DusanRodina.SimStudio.Properties.Resources.Turing;
+            this.pIcon.Image = global::FEI.SimStudio.Properties.Resources.Turing;
             this.pIcon.Location = new System.Drawing.Point(8, 4);
             this.pIcon.Name = "pIcon";
             this.pIcon.Size = new System.Drawing.Size(48, 48);
@@ -413,7 +413,7 @@
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Image = global::DusanRodina.SimStudio.Properties.Resources.RAM;
+            this.pictureBox1.Image = global::FEI.SimStudio.Properties.Resources.RAM;
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(8, 7);
             this.pictureBox1.Name = "pictureBox1";
@@ -467,7 +467,7 @@
             this.pictureBox8.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox8.Image = global::DusanRodina.SimStudio.Properties.Resources.Abacus;
+            this.pictureBox8.Image = global::FEI.SimStudio.Properties.Resources.Abacus;
             this.pictureBox8.Location = new System.Drawing.Point(8, 7);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(48, 48);
@@ -519,7 +519,7 @@
             this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox2.Image = global::DusanRodina.SimStudio.Properties.Resources.small_Trainer;
+            this.pictureBox2.Image = global::FEI.SimStudio.Properties.Resources.small_Trainer;
             this.pictureBox2.Location = new System.Drawing.Point(8, 6);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(48, 48);
@@ -558,7 +558,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox7.Image = global::DusanRodina.SimStudio.Properties.Resources.FEI_LOGO;
+            this.pictureBox7.Image = global::FEI.SimStudio.Properties.Resources.FEI_LOGO;
             this.pictureBox7.Location = new System.Drawing.Point(8, 16);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(8, 16, 8, 0);
             this.pictureBox7.MaximumSize = new System.Drawing.Size(840, 359);
@@ -682,9 +682,9 @@
             this.ResumeLayout(false);
         }
 
-        private DusanRodina.SimStudio.RoundedPanel roundedPanel1;
+        private RoundedPanel roundedPanel1;
 
-        private DusanRodina.SimStudio.RoundedPanel roundedPanel2;
+        private RoundedPanel roundedPanel2;
         private System.Windows.Forms.Button bAbacusMachine;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox8;
@@ -692,19 +692,19 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button bTrainer;
-        private DusanRodina.SimStudio.RoundedPanel roundedPanel3;
+        private RoundedPanel roundedPanel3;
         private System.Windows.Forms.Button bRAM;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
-        private DusanRodina.SimStudio.RoundedPanel roundedPanel4;
+        private RoundedPanel roundedPanel4;
         private System.Windows.Forms.Button bTuring;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pIcon;
-        private DusanRodina.SimStudio.RoundedPanel roundedPanel5;
+        private RoundedPanel roundedPanel5;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button pushDownAutomatonButton2;
-        private DusanRodina.SimStudio.RoundedPanel roundedPanel6;
+        private RoundedPanel roundedPanel6;
         private System.Windows.Forms.Button finiteAutomatonButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox3;

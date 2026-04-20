@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DusanRodina.TuringCore.Simulation {
+namespace FEI.TuringCore.Simulation {
 	public class TuringMachineParser
     {
         #region Properties

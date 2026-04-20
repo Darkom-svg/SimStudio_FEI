@@ -4,9 +4,9 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using FEI.SimStudio.Components.Registers;
 
-
-namespace DusanRodina.SimStudio.Components {
+namespace FEI.SimStudio.Components.Controls {
 	public partial class SyntaxTextBox : UserControl
     {                
         public SyntaxTextBox(): base()

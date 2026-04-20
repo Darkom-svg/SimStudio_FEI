@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.TuringCore.Components {
+﻿namespace FEI.TuringCore.Components {
 	partial class InfiniteTapeControl
     {
         /// <summary> 

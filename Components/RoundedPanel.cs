@@ -2,7 +2,7 @@
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
-namespace DusanRodina.SimStudio.Components
+namespace FEI.SimStudio.Components
 {
     public class RoundedPanel : Panel
     {

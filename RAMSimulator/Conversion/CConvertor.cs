@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DusanRodina.RandomAccessMachine.Conversion {
+namespace FEI.RandomAccessMachine.Conversion {
 	public class CConvertor
     {
         public ICBlock ConvertBlock(IntermediateCode ic, string blockname, string block)

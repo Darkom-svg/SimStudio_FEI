@@ -1,8 +1,8 @@
-﻿using DusanRodina.TuringCore.Simulation;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using FEI.TuringCore.Simulation;
 
-namespace DusanRodina.PushdownAutomaton {
+namespace FEI.PushdownAutomaton {
 	public class PushdownAutomatonParser
     {
         //Formát prechodovej funkcie

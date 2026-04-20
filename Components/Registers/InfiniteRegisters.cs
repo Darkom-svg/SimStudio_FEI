@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DusanRodina.SimStudio.Components.Registers {
+namespace FEI.SimStudio.Components.Registers {
 	public class InfiniteRegisters
     {        
         public Dictionary<InfiniteInteger, RegisterCell> regs = new Dictionary<InfiniteInteger, RegisterCell>();        

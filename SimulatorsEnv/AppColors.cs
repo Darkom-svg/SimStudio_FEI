@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace DusanRodina.SimStudio
+namespace FEI.SimStudio
 {
     internal static class AppColors
     {

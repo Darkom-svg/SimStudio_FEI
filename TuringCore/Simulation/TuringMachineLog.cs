@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DusanRodina.TuringCore.Simulation {
+namespace FEI.TuringCore.Simulation {
 	public class TuringMachineLog
     {       
         private List<LogItem> items = new List<LogItem>();

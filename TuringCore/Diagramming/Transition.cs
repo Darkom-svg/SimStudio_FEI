@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DusanRodina.TuringCore.Diagramming {
+namespace FEI.TuringCore.Diagramming {
 	//Prechod
 	public class Transition
     {

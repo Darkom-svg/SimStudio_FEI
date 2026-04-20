@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.TuringMachineSimulator.Dialogs {
+﻿namespace FEI.TuringMachineSimulator.Dialogs {
 	partial class AboutForm
     {
         /// <summary>
@@ -77,7 +77,7 @@
             // 
             // pIcon
             // 
-            this.pIcon.BackgroundImage = global::DusanRodina.TuringMachineSimulator.Properties.Resources.Turing;
+            this.pIcon.BackgroundImage = global::FEI.TuringMachineSimulator.Properties.Resources.Turing;
             this.pIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pIcon.Location = new System.Drawing.Point(12, 12);
             this.pIcon.Name = "pIcon";

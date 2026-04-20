@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DusanRodina.RandomAccessMachine.Simulation {
+namespace FEI.RandomAccessMachine.Simulation {
 	//Pamäť registrov
 	public class RegisterMemory
     {

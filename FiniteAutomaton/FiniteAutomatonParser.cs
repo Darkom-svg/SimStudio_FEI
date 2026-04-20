@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using DusanRodina.TuringCore.Simulation;
+using FEI.TuringCore.Simulation;
 
-namespace FiniteAutomaton {
+namespace FEI.FiniteAutomaton {
 	public class FiniteAutomatonParser
     {
         //Formát prechodovej funkcie

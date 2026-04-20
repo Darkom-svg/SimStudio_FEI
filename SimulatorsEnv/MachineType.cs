@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.SimStudio {
+﻿namespace FEI.SimStudio {
 	public enum MachineType {
 		None,
 		FiniteAutomaton,

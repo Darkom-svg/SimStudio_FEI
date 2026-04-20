@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 
-namespace DusanRodina.TuringCore.Diagramming {
+namespace FEI.TuringCore.Diagramming {
 	/*
      * Stav stavového diagramu
      */
@@ -323,7 +323,7 @@ namespace DusanRodina.TuringCore.Diagramming {
                 //Zvýraznenie
                  
                 rect2.Inflate(30, 30);
-                g.DrawImage(global::TuringCore.Properties.Resources.CurrentState, rect2);
+                g.DrawImage(global::FEI.TuringCore.Properties.Resources.CurrentState, rect2);
 
                 //LinearGradientBrush stateBrush = null;
                 //g.FillEllipse(new SolidBrush(Color.FromArgb(100,Color.Blue)), rect2);
@@ -334,16 +334,16 @@ namespace DusanRodina.TuringCore.Diagramming {
             switch (this.type)
             {
                 case StateType.Normal:
-                    g.DrawImage(global::TuringCore.Properties.Resources.NormalState, rect);
+                    g.DrawImage(global::FEI.TuringCore.Properties.Resources.NormalState, rect);
                     break;
                 case StateType.Start:
-                    g.DrawImage(global::TuringCore.Properties.Resources.InitialState, rect);
+                    g.DrawImage(global::FEI.TuringCore.Properties.Resources.InitialState, rect);
                     break;
                 case StateType.Final:
-                    g.DrawImage(global::TuringCore.Properties.Resources.FinalState, rect);
+                    g.DrawImage(global::FEI.TuringCore.Properties.Resources.FinalState, rect);
                     break;
                 case StateType.StartFinal:
-                    g.DrawImage(global::TuringCore.Properties.Resources.InitialFinalState, rect);
+                    g.DrawImage(global::FEI.TuringCore.Properties.Resources.InitialFinalState, rect);
                     break;
             }
             

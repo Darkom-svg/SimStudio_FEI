@@ -1,13 +1,13 @@
-﻿using DusanRodina.SimStudio.Components;
-using DusanRodina.TuringCore.Simulation;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using FEI.SimStudio.Components.Registers;
+using FEI.TuringCore.Simulation;
 
-namespace DusanRodina.TuringCore.Components {
+namespace FEI.TuringCore.Components {
 	[Serializable]
 	public partial class InfiniteTapeControl : UserControl
 	{

@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.AbacusMachine.Dialogs {
+﻿namespace FEI.AbacusMachine.Dialogs {
 	partial class MoveForm
     {
         /// <summary>

@@ -1,9 +1,9 @@
-﻿using DusanRodina.SimStudio.Components;
-using DusanRodina.SimStudio.Components.Registers;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using FEI.SimStudio.Components;
+using FEI.SimStudio.Components.Registers;
 
-namespace DusanRodina.AbacusMachine.Simulation {
+namespace FEI.AbacusMachine.Simulation {
 	public class VirtualAbacusMachine
     {        
         public List<Instruction> program = new List<Instruction>();                

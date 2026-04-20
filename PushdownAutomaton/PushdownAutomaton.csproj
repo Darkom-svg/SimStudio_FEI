@@ -8,7 +8,7 @@
     <ProjectGuid>{B17BB48C-C195-45A3-B926-CB4A61CE99B8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PushdownAutomaton</RootNamespace>
+    <RootNamespace>FEI.PushdownAutomaton</RootNamespace>
     <AssemblyName>PushdownAutomaton</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>

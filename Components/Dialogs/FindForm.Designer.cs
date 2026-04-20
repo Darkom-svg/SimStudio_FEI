@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.SimStudio.Components.Dialogs {
+﻿namespace FEI.SimStudio.Components.Dialogs {
 	partial class FindForm
     {
         /// <summary>

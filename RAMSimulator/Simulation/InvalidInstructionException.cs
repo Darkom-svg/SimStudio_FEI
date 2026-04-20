@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DusanRodina.RandomAccessMachine.Simulation {
+namespace FEI.RandomAccessMachine.Simulation {
 	public class InvalidInstructionException : InvalidOperationException
     {
         private InstructionType type;

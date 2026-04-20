@@ -1,4 +1,4 @@
-﻿namespace DusanRodina.TuringMachineSimulator.Dialogs {
+﻿namespace FEI.TuringMachineSimulator.Dialogs {
 	partial class AddTFunctionForm
     {
         /// <summary>

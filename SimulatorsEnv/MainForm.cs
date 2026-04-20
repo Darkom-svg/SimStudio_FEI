@@ -1,20 +1,18 @@
-﻿using DusanRodina.AbacusMachine;
-using DusanRodina.FiniteAutomaton;
-using DusanRodina.PushdownAutomaton;
-using DusanRodina.RandomAccessMachine;
-using DusanRodina.SimStudio.Components;
-using DusanRodina.TuringMachineSimulator;
-using static DusanRodina.SimStudio.AppColors;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using System.Xml;
-using DusanRodina.TrainingSimulator;
-using TrainingSimulator;
+using FEI.AbacusMachine;
+using FEI.FiniteAutomaton;
+using FEI.PushdownAutomaton;
+using FEI.RandomAccessMachine;
+using FEI.SimStudio.Components;
+using FEI.TrainingSimulator;
+using FEI.TuringMachineSimulator;
 
-namespace DusanRodina.SimStudio {
+namespace FEI.SimStudio {
 	public partial class MainForm : Form, IMainForm {
 		public MainForm()
 		{
@@ -37,28 +35,28 @@ namespace DusanRodina.SimStudio {
 
 		private void finiteAutomatonToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			FiniteAutomaton.FiniteAutomatonForm frm = new DusanRodina.FiniteAutomaton.FiniteAutomatonForm();
+			FiniteAutomatonForm frm = new FiniteAutomatonForm();
 			frm.MdiParent = this;
 			frm.Show();
 		}     
 
 		private void turingMachineToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			TuringMachineSimulator.TuringMachineForm frm = new DusanRodina.TuringMachineSimulator.TuringMachineForm();
+			TuringMachineForm frm = new TuringMachineForm();
 			frm.MdiParent = this;
 			frm.Show();
 		}
 
 		private void ramToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			RandomAccessMachine.RAMSimulatorForm frm = new DusanRodina.RandomAccessMachine.RAMSimulatorForm();
+			RAMSimulatorForm frm = new RAMSimulatorForm();
 			frm.MdiParent = this;
 			frm.Show();
 		}
 
 		private void abacusMachineToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			AbacusMachine.AbacusMachineForm frm = new DusanRodina.AbacusMachine.AbacusMachineForm();
+			AbacusMachineForm frm = new AbacusMachineForm();
 			frm.MdiParent = this;
 			frm.Show();            
 		}
@@ -109,7 +107,7 @@ namespace DusanRodina.SimStudio {
 
 		private void pushdownAutomatonToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			PushdownAutomaton.PushdownAutomatonForm frm = new DusanRodina.PushdownAutomaton.PushdownAutomatonForm();
+			PushdownAutomatonForm frm = new PushdownAutomatonForm();
 			frm.MdiParent = this;
 			frm.Show();
 		}
