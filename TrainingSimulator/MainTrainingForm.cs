@@ -181,8 +181,15 @@ namespace FEI.TrainingSimulator {
         
         private void OpenTask(TaskDef task)
         {
-            TrainingForm frm = new TrainingForm(task);
-            frm.ShowDialog(this);
+            if (task.Category.Equals("FA"))
+            {
+                FaTrainingForm frm = new FaTrainingForm(task);
+                frm.ShowDialog(this);
+            }
+            else
+            {
+                throw new System.NotImplementedException();
+            }
         }
 
         

@@ -106,11 +106,11 @@
         </Compile>
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
-        <Compile Include="TrainingForm.cs">
+        <Compile Include="FaTrainingForm.cs">
           <SubType>Form</SubType>
         </Compile>
-        <Compile Include="TrainingForm.Designer.cs">
-          <DependentUpon>TrainingForm.cs</DependentUpon>
+        <Compile Include="FaTrainingForm.Designer.cs">
+          <DependentUpon>FaTrainingForm.cs</DependentUpon>
         </Compile>
         <EmbeddedResource Include="Dialogs\AboutForm.resx" />
         <EmbeddedResource Include="Dialogs\AddTFunctionForm.en.resx">
@@ -137,8 +137,8 @@
             <AutoGen>True</AutoGen>
             <DependentUpon>Resources.resx</DependentUpon>
         </Compile>
-        <EmbeddedResource Include="TrainingForm.resx">
-          <DependentUpon>TrainingForm.cs</DependentUpon>
+        <EmbeddedResource Include="FaTrainingForm.resx">
+          <DependentUpon>FaTrainingForm.cs</DependentUpon>
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </EmbeddedResource>
         <None Include="packages.config" />

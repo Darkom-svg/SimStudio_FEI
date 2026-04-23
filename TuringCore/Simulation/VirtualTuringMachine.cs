@@ -711,7 +711,7 @@ namespace FEI.TuringCore.Simulation {
 						{
 							curState.Type = StateType.Start;
 							this.StartState = curState.Name;
-						}                    
+						}                
 
 
 						//Prázdny element - zmazanie posledného názvu z akt. elementu

@@ -6,6 +6,7 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using FEI.FiniteAutomaton;
+using FEI.SimStudio.Components;
 using FEI.SimStudio.Components.Controls;
 using FEI.SimStudio.Components.Dialogs;
 using FEI.SimStudio.Components.Registers;
@@ -17,7 +18,7 @@ using AddTFunctionForm = FEI.TrainingSimulator.Dialogs.AddTFunctionForm;
 
 namespace FEI.TrainingSimulator
 {
-    public partial class TrainingForm : Form
+    public partial class FaTrainingForm : Form
     {
         private MainTrainingForm.TaskDef task;
         private string appTitle;
@@ -33,7 +34,7 @@ namespace FEI.TrainingSimulator
         private string tmpTaskSpecFileName = null;
         string openFileName = null;
         
-        public TrainingForm(MainTrainingForm.TaskDef task)
+        public FaTrainingForm(MainTrainingForm.TaskDef task)
         {
             InitializeComponent();
             this.task = task;
@@ -1033,5 +1034,60 @@ namespace FEI.TrainingSimulator
                 GenerateWordsRecursive(current + symbol, remaining - 1, result, alphabet);
             }
         }
+
+        private void openToolStripButton_Click(object sender, EventArgs e)
+        {
+            File_Open();
+        }
+
+        private void miOpenFile_Click(object sender, EventArgs e)
+        {
+            File_Open();
+        }
+        
+        private void File_Open() {
+            if (base.MdiParent == null) {
+                this.openFileDialog1.ShowDialog(this);
+                this.OpenFile(this.openFileDialog1.FileName);
+                return;
+            }
+            ((IMainForm)base.MdiParent).OpenFile();
+        }
+        
+        public void OpenFile(string fileName)
+        {
+            this.Text = System.IO.Path.GetFileName(fileName) + " - " + appTitle;
+
+            if (fileName.EndsWith(".fa"))
+            {
+                TuringMachine = new VirtualTuringMachine() { AcceptType = AcceptType.FinalStateReachedAndWholeTapeRead }; 
+                txtCode.Text = TuringMachine.Load(fileName);
+                ParseTFunctions(txtCode.Text);
+                
+                openFileName = fileName;
+                this.Text = openFileName.Substring(openFileName.LastIndexOf("\\") + 1) + " - " + appTitle;
+            }
+            else if (fileName.EndsWith(".jff"))
+            {
+                JffReader reader = new JffReader(fileName);
+                TuringMachine = reader.Read();
+                if (TuringMachine == null)
+                {
+                    TuringMachine = new VirtualTuringMachine();
+                }
+                else
+                {
+                    StringBuilder sb = new StringBuilder();
+                    foreach (var tf in TuringMachine.GetTFunctions())
+                    {
+                        sb.AppendLine(WriteTransition(tf, transitionFormat));
+                    }
+                    txtCode.Text = sb.ToString();
+                }
+            }                       
+            this.Refresh();            
+        }
+
+
     }
 }
