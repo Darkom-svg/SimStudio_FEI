@@ -293,13 +293,6 @@ C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\Si
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\PdaTrainingForm.resx
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\FaTrainingForm.resx
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\SimStudio.ico
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\graphics\RAM.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\graphics\Read.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\graphics\ReadOff.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\graphics\ReadP.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\graphics\ReadPOff.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\graphics\Write.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\graphics\WriteOff.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\SimStudio.exe
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\obj\Release\SimStudio.csproj.AssemblyReference.cache
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\obj\Release\FEI.SimStudio.AboutForm.resources

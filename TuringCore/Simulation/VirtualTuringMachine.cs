@@ -648,7 +648,7 @@ namespace FEI.TuringCore.Simulation {
 			string curElement = "";
 			string subElement = "";
 			bool elementCompleted = false;
-
+			
 			int curCellIndex=0;
 			Diagramming.State curState = new Diagramming.State();
 			Transition curTransition = new Transition();
@@ -656,9 +656,13 @@ namespace FEI.TuringCore.Simulation {
 			InfiniteTape currentTape = new InfiniteTape();
 
 			this.Reset();
+			this.StartState = "";
+			this.FinalStates.Clear();
 			this.ActiveTapes = new List<InfiniteTape>();
 			this.OriginalTapes = new List<InfiniteTape>();
 
+			bool curStateIsFinal = false;
+			bool curStateIsInitial = false;
 			//Zistí, či je typ dokumentu
 			while ((xr.Read()))
 			{
@@ -693,6 +697,8 @@ namespace FEI.TuringCore.Simulation {
 						else if (curElement == ".machine.states.state")
 						{
 							curState = new Diagramming.State();
+							curStateIsFinal = false;
+							curStateIsInitial = false;
 						}
 						else if (curElement == ".machine.transitions.transition")
 						{
@@ -704,14 +710,12 @@ namespace FEI.TuringCore.Simulation {
 						}
 						else if (curElement == ".machine.states.state.final")
 						{
-							curState.Type = StateType.Final;
-							this.FinalStates.Add(curState.Name);
+							curStateIsFinal = true;
 						}
 						else if (curElement == ".machine.states.state.initial")
 						{
-							curState.Type = StateType.Start;
-							this.StartState = curState.Name;
-						}                
+							curStateIsInitial = true;
+						}            
 
 
 						//Prázdny element - zmazanie posledného názvu z akt. elementu
@@ -726,7 +730,32 @@ namespace FEI.TuringCore.Simulation {
 						switch (curElement)
 						{                            
 							case ".machine.states.state":
-								this.stateDiagram.AddState(curState,false);                                
+								if (curStateIsInitial && curStateIsFinal)
+								{
+									curState.Type = StateType.StartFinal;
+								}
+								else if (curStateIsInitial)
+								{
+									curState.Type = StateType.Start;
+								}
+								else if (curStateIsFinal)
+								{
+									curState.Type = StateType.Final;
+								}
+
+								if (curStateIsInitial && !string.IsNullOrWhiteSpace(curState.Name))
+								{
+									this.StartState = curState.Name;
+								}
+
+								if (curStateIsFinal &&
+								    !string.IsNullOrWhiteSpace(curState.Name) &&
+								    !this.FinalStates.Contains(curState.Name))
+								{
+									this.FinalStates.Add(curState.Name);
+								}
+
+								this.stateDiagram.AddState(curState, false);
 								curCellIndex++;
 								break;
 							case ".machine.transitions.transition":

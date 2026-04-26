@@ -193,13 +193,6 @@ C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\RAMSimulator\obj\
 C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\RAMSimulator\obj\Release\RandomAccessMachineSimulator.csproj.CoreCompileInputs.cache
 C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\RAMSimulator\obj\Release\en\RandomAccessMachineSimulator.resources.dll
 C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\RAMSimulator\obj\Release\RandomAccessMachineSimulator.exe
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\graphics\RAM.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\graphics\Read.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\graphics\ReadOff.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\graphics\ReadP.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\graphics\ReadPOff.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\graphics\Write.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\graphics\WriteOff.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\RandomAccessMachineSimulator.exe
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\en\RandomAccessMachineSimulator.resources.dll
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\obj\Release\RandomAccessMachineSimulator.csproj.AssemblyReference.cache

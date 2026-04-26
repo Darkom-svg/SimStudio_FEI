@@ -284,13 +284,6 @@ C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\Si
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\PdaTrainingForm.resx
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\FaTrainingForm.resx
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\SimStudio.ico
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\graphics\RAM.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\graphics\Read.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\graphics\ReadOff.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\graphics\ReadP.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\graphics\ReadPOff.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\graphics\Write.png
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\graphics\WriteOff.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\SimStudio.pdb
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\AbacusMachineSimulator.exe
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\Components.dll
