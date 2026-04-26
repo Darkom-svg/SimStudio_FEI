@@ -60,7 +60,7 @@ namespace FEI.PushdownAutomaton {
 			}
 		}
 
-		internal  string GetUsedStackSymbolsAsString()
+		public string GetUsedStackSymbolsAsString()
 		{
 			// Symboly na páske
 			List<string> retval = new List<string>();

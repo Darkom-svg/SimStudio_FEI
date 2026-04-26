@@ -186,6 +186,11 @@ namespace FEI.TrainingSimulator {
                 FaTrainingForm frm = new FaTrainingForm(task);
                 frm.ShowDialog(this);
             }
+            else if (task.Category.Equals("PDA"))
+            {
+                PdaTrainingForm frm = new PdaTrainingForm(task);
+                frm.ShowDialog(this);
+            }
             else
             {
                 throw new System.NotImplementedException();

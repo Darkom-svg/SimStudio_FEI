@@ -17,16 +17,17 @@
     "specification" : "",
     "formula" : ""
   },
-  
+
   {
     "id": "PDA1",
-    "title": "Vyvážené zátvorky",
+    "title": "Slová tvaru a^n b^n",
     "category": "PDA",
-    "mode": "Basics",
+    "mode": "Regex",
     "difficulty": "Ľahká",
-    "specification" : "",
-    "formula" : ""
+    "specification": "Navrhnite zásobníkový automat (PDA), ktorý rozpoznáva jazyk všetkých slov tvaru $a^n b^n$, kde $n \\geq 1$.\n\n$$L = \\{ a^n b^n \\mid n \\geq 1 \\}$$\n\nTo znamená, že slovo pozostáva z jednej alebo viacerých výskytov symbolu $a$, po ktorých nasleduje rovnaký počet symbolov $b$.",
+    "formula": "a+b+"
   },
+  
   {
     "id": "FA1",
     "title": "Párne 0 a 1",

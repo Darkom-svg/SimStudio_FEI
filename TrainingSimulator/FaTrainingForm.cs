@@ -12,11 +12,11 @@ using FEI.SimStudio.Components.Controls;
 using FEI.SimStudio.Components.Dialogs;
 using FEI.SimStudio.Components.Registers;
 using FEI.TrainingSimulator.Dialogs;
-using FEI.TrainingSimulator.IO.Jff;
 using FEI.TuringCore.Simulation;
 using AboutForm = FEI.TrainingSimulator.Dialogs.AboutForm;
-using AddTFunctionForm = FEI.TrainingSimulator.Dialogs.AddTFunctionForm;
 using System.Text.RegularExpressions;
+using FEI.FiniteAutomaton.Dialogs;
+using FEI.FiniteAutomaton.IO.Jff;
 
 namespace FEI.TrainingSimulator
 {
