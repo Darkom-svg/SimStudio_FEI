@@ -75,3 +75,20 @@ C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton
 C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton\obj\Release\PushdownAutomaton.csproj.CoreCompileInputs.cache
 C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton\obj\Release\en\PushdownAutomaton.resources.dll
 C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\PushdownAutomaton\obj\Release\PushdownAutomaton.exe
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\PushdownAutomaton.exe.config
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\PushdownAutomaton.exe
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\en\PushdownAutomaton.resources.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Release\PushdownAutomaton.csproj.AssemblyReference.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Release\FEI.PushdownAutomaton.Dialogs.AboutForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Release\FEI.PushdownAutomaton.Dialogs.AddTFunctionForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Release\FEI.PushdownAutomaton.Dialogs.SettingsForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Release\FEI.PushdownAutomaton.Dialogs.TapeStatisticsForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Release\FEI.PushdownAutomaton.PushdownAutomatonForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Release\FEI.PushdownAutomaton.Properties.Resources.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Release\FEI.PushdownAutomaton.Dialogs.AddTFunctionForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Release\FEI.PushdownAutomaton.PushdownAutomatonForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Release\PushdownAutomaton.csproj.GenerateResource.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Release\PushdownAutomaton.csproj.CoreCompileInputs.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Release\en\PushdownAutomaton.resources.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Release\Pushdown.43007AFF.Up2Date
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Release\PushdownAutomaton.exe

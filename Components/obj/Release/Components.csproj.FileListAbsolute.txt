@@ -77,3 +77,18 @@ C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Components\obj\Re
 C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Components\obj\Release\Components.csproj.CoreCompileInputs.cache
 C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Components\obj\Release\en\Components.resources.dll
 C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\Components\obj\Release\Components.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\Components.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\en\Components.resources.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Components\obj\Release\Components.csproj.AssemblyReference.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Components\obj\Release\FEI.SimStudio.Components.Controls.InputOutputTape.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Components\obj\Release\FEI.SimStudio.Components.Controls.RegisterList.RegisterEditForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Components\obj\Release\FEI.SimStudio.Components.Dialogs.FindForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Components\obj\Release\FEI.SimStudio.Components.Dialogs.ReplaceForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Components\obj\Release\FEI.SimStudio.Components.Properties.Resources.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Components\obj\Release\FEI.SimStudio.Components.Controls.RegisterList.RegisterList.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Components\obj\Release\FEI.SimStudio.Components.Controls.SyntaxTextBox.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Components\obj\Release\FEI.SimStudio.Components.Controls.InputOutputTape.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Components\obj\Release\Components.csproj.GenerateResource.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Components\obj\Release\Components.csproj.CoreCompileInputs.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Components\obj\Release\en\Components.resources.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Components\obj\Release\Components.dll

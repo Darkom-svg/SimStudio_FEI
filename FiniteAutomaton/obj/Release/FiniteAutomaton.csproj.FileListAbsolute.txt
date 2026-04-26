@@ -95,3 +95,20 @@ C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\o
 C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\obj\Release\FiniteAutomaton.csproj.CoreCompileInputs.cache
 C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\obj\Release\en\FiniteAutomaton.resources.dll
 C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\FiniteAutomaton\obj\Release\FiniteAutomaton.exe
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\FiniteAutomaton.exe.config
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\FiniteAutomaton.exe
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\en\FiniteAutomaton.resources.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Release\FiniteAutomaton.csproj.AssemblyReference.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Release\FEI.FiniteAutomaton.Dialogs.AboutForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Release\FEI.FiniteAutomaton.Dialogs.AddTFunctionForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Release\FEI.FiniteAutomaton.Dialogs.SettingsForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Release\FEI.FiniteAutomaton.Dialogs.TapeStatisticsForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Release\FEI.FiniteAutomaton.Properties.Resources.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Release\FEI.FiniteAutomaton.FiniteAutomatonForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Release\FEI.FiniteAutomaton.Dialogs.AddTFunctionForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Release\FEI.FiniteAutomaton.FiniteAutomatonForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Release\FiniteAutomaton.csproj.GenerateResource.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Release\FiniteAutomaton.csproj.CoreCompileInputs.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Release\en\FiniteAutomaton.resources.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Release\FiniteAu.1278EA6E.Up2Date
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Release\FiniteAutomaton.exe

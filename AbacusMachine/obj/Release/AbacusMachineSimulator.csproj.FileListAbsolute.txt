@@ -83,3 +83,18 @@ C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\AbacusMachine\obj
 C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\AbacusMachine\obj\Release\AbacusMachineSimulator.csproj.GenerateResource.Cache
 C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\AbacusMachine\obj\Release\AbacusMachineSimulator.csproj.CoreCompileInputs.cache
 C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\AbacusMachine\obj\Release\AbacusMachineSimulator.exe
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\Abacus.ico
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\AbacusMachineSimulator.exe
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Release\AbacusMachineSimulator.csproj.AssemblyReference.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Release\FEI.AbacusMachine.Dialogs.AddValueForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Release\FEI.AbacusMachine.Dialogs.ClearForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Release\FEI.AbacusMachine.Dialogs.CopyForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Release\FEI.AbacusMachine.Dialogs.MoveForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Release\FEI.AbacusMachine.Dialogs.SubstractValueForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Release\FEI.AbacusMachine.AbacusMachineForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Release\FEI.AbacusMachine.AboutForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Release\FEI.AbacusMachine.Properties.Resources.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Release\AbacusMachineSimulator.csproj.GenerateResource.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Release\AbacusMachineSimulator.csproj.CoreCompileInputs.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Release\AbacusMa.5B4D85DF.Up2Date
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Release\AbacusMachineSimulator.exe

@@ -158,32 +158,20 @@
     <Content Include="Resources\copy.png" />
     <Content Include="Resources\next.png" />
     <Content Include="Resources\open.png" />
-    <Content Include="Resources\pause.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Resources\pause.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\run.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Resources\run.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\save.png" />
     <Content Include="Resources\small_cut.png" />
     <Content Include="Resources\small_new.png" />
     <Content Include="Resources\small_paste.png" />
-    <Content Include="Resources\stop.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Resources\stop.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\FinalState.png" />
-    <None Include="Resources\InitialState.png" />
-    <None Include="Resources\NormalState.png" />
-    <None Include="Resources\CurrentState.png" />
-    <Content Include="Resources\Turing.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="Resources\Turing.png" />
     <Content Include="Turing.ico" />
   </ItemGroup>
   <ItemGroup>

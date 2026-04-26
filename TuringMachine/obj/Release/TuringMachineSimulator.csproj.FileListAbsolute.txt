@@ -177,3 +177,20 @@ C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\TuringMachine\obj
 C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\TuringMachine\obj\Release\TuringMachineSimulator.csproj.CoreCompileInputs.cache
 C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\TuringMachine\obj\Release\en\TuringMachineSimulator.resources.dll
 C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\TuringMachine\obj\Release\TuringMachineSimulator.exe
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\TuringMachineSimulator.exe.config
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\TuringMachineSimulator.exe
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\en\TuringMachineSimulator.resources.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Release\TuringMachineSimulator.csproj.AssemblyReference.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Release\FEI.TuringMachineSimulator.Dialogs.AboutForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Release\FEI.TuringMachineSimulator.Dialogs.AddTFunctionForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Release\FEI.TuringMachineSimulator.Dialogs.SettingsForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Release\FEI.TuringMachineSimulator.Dialogs.TapeStatisticsForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Release\FEI.TuringMachineSimulator.TuringMachineForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Release\FEI.TuringMachineSimulator.Properties.Resources.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Release\FEI.TuringMachineSimulator.Dialogs.AddTFunctionForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Release\FEI.TuringMachineSimulator.TuringMachineForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Release\TuringMachineSimulator.csproj.GenerateResource.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Release\TuringMachineSimulator.csproj.CoreCompileInputs.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Release\en\TuringMachineSimulator.resources.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Release\TuringMa.539EA5B3.Up2Date
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Release\TuringMachineSimulator.exe

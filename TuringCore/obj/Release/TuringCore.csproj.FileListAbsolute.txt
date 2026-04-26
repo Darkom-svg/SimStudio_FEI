@@ -73,3 +73,17 @@ C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\TuringCore\obj\Re
 C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\TuringCore\obj\Release\TuringCore.csproj.CoreCompileInputs.cache
 C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\TuringCore\obj\Release\en\TuringCore.resources.dll
 C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\TuringCore\obj\Release\TuringCore.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\TuringCore.dll.config
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\TuringCore.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\en\TuringCore.resources.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringCore\obj\Release\TuringCore.csproj.AssemblyReference.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringCore\obj\Release\FEI.TuringCore.Properties.Resources.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringCore\obj\Release\FEI.TuringCore.Components.Dialogs.NewStateForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringCore\obj\Release\FEI.TuringCore.Components.InfiniteTapeControl.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringCore\obj\Release\FEI.TuringCore.Components.StateDiagramControl.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringCore\obj\Release\FEI.TuringCore.Components.Dialogs.NewStateForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringCore\obj\Release\TuringCore.csproj.GenerateResource.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringCore\obj\Release\TuringCore.csproj.CoreCompileInputs.cache
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringCore\obj\Release\en\TuringCore.resources.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringCore\obj\Release\TuringCore.csproj.Up2Date
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringCore\obj\Release\TuringCore.dll

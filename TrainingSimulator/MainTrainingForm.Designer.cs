@@ -49,30 +49,30 @@ namespace FEI.TrainingSimulator
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.roundedPanel1 = new RoundedPanel();
+            this.roundedPanel1 = new FEI.SimStudio.Components.RoundedPanel();
             this.label7 = new System.Windows.Forms.Label();
-            this.roundedPanel2 = new RoundedPanel();
+            this.roundedPanel2 = new FEI.SimStudio.Components.RoundedPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.FaTrain = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.roundedPanel3 = new RoundedPanel();
+            this.roundedPanel3 = new FEI.SimStudio.Components.RoundedPanel();
             this.label8 = new System.Windows.Forms.Label();
-            this.roundedPanel4 = new RoundedPanel();
+            this.roundedPanel4 = new FEI.SimStudio.Components.RoundedPanel();
             this.label11 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.PdaTrain = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.roundedPanel5 = new RoundedPanel();
+            this.roundedPanel5 = new FEI.SimStudio.Components.RoundedPanel();
             this.label9 = new System.Windows.Forms.Label();
-            this.roundedPanel6 = new RoundedPanel();
+            this.roundedPanel6 = new FEI.SimStudio.Components.RoundedPanel();
             this.label12 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.roundedPanel7 = new RoundedPanel();
+            this.roundedPanel7 = new FEI.SimStudio.Components.RoundedPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             TuringTrain = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
@@ -603,13 +603,13 @@ namespace FEI.TrainingSimulator
 
         private RoundedPanel roundedPanel7;
 
-        private RoundedPanel roundedPanel5;
+        private FEI.SimStudio.Components.RoundedPanel roundedPanel5;
         private RoundedPanel roundedPanel6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox3;
 
-        private RoundedPanel roundedPanel3;
+        private FEI.SimStudio.Components.RoundedPanel roundedPanel3;
         private RoundedPanel roundedPanel4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button FaTrain;
