@@ -104,6 +104,12 @@
         <Compile Include="MainTrainingForm.Designer.cs">
             <DependentUpon>MainTrainingForm.cs</DependentUpon>
         </Compile>
+        <Compile Include="PdaTrainingForm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="PdaTrainingForm.Designer.cs">
+          <DependentUpon>PdaTrainingForm.cs</DependentUpon>
+        </Compile>
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="FaTrainingForm.cs">
@@ -127,6 +133,10 @@
         </EmbeddedResource>
         <EmbeddedResource Include="MainTrainingForm.resx">
           <DependentUpon>MainTrainingForm.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="PdaTrainingForm.resx">
+          <DependentUpon>PdaTrainingForm.cs</DependentUpon>
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </EmbeddedResource>
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>
@@ -189,6 +199,7 @@
       <Content Include="Resources\small_open.png" />
       <Content Include="Resources\small_Trainer.png" />
       <Content Include="Resources\Turing.png" />
+      <Content Include="Resources\validated.png" />
       <Content Include="tasks.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </Content>

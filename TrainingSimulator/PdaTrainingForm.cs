@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using FEI.FiniteAutomaton;
@@ -16,11 +15,10 @@ using FEI.TrainingSimulator.IO.Jff;
 using FEI.TuringCore.Simulation;
 using AboutForm = FEI.TrainingSimulator.Dialogs.AboutForm;
 using AddTFunctionForm = FEI.TrainingSimulator.Dialogs.AddTFunctionForm;
-using System.Text.RegularExpressions;
 
 namespace FEI.TrainingSimulator
 {
-    public partial class FaTrainingForm : Form
+    public partial class PdaTrainingForm : Form
     {
         private MainTrainingForm.TaskDef task;
         private string appTitle;
@@ -36,16 +34,41 @@ namespace FEI.TrainingSimulator
         private string tmpTaskSpecFileName = null;
         string openFileName = null;
         
-        public FaTrainingForm(MainTrainingForm.TaskDef task)
+        public PdaTrainingForm(MainTrainingForm.TaskDef task)
         {
             InitializeComponent();
             this.task = task;
             this.Text = "Trenažér (" + this.task.Id + ")";
             appTitle = "Trenažér (" + this.task.Id + ")";
-            transitionFormat = "\\sδ\\s(\\a,\\a)\\s=\\s(\\a)\\s";
-            wildCardFormat = "\\a=\\s{\\m,\\n}\\s";
-            this.Text = "FA";
+            TrainerForm_Load(this, null);
             CreateTaskSpecification();
+        }
+
+        private void TrainerForm_Load(object sender, EventArgs e)
+        {
+            
+            if (task.Category.Equals("FA"))
+            {
+                transitionFormat = "\\sδ\\s(\\a,\\a)\\s=\\s(\\a)\\s";
+                wildCardFormat = "\\a=\\s{\\m,\\n}\\s";
+                this.Text = "FA";
+            }
+            
+            if (task.Category.Equals("PDA"))
+            {
+                transitionFormat = "\\sδ\\s(\\a,\\a,\\a)\\s=\\s(\\a,\\a)\\s";
+                wildCardFormat = "\\a=\\s{\\m,\\n}\\s";    
+                this.Text = "PDA";
+            }
+            
+            if (task.Category.Equals("TM"))
+            {
+                transitionFormat = "\\sδ\\s(\\a,\\a)\\s=\\s(\\a,\\a,\\a)\\s";
+		        wildCardFormat = "\\a=\\s{\\m,\\n}\\s";
+                this.Text = "TM";
+            }
+
+
         }
         
         //Zdržanie pri vykonávaní programu
@@ -59,6 +82,19 @@ namespace FEI.TrainingSimulator
         bool prgStop = true;
 
         AcceptanceStatus tapeAcceptance = AcceptanceStatus.None;
+
+        public bool PrgStop {
+            get => prgStop;
+            set {
+                prgStop = value;
+                if (prgStop) {
+                    //UpdateTapeSettings();
+                    //ToDo
+                }
+            }
+        }
+
+        public bool PrgReset { get; set; } = true;
 
         public VirtualTuringMachine TuringMachine
         {
@@ -113,11 +149,11 @@ namespace FEI.TrainingSimulator
             AddTransition(new Transition());
         }     
         
-        private void AddTransition(Transition defTf)
+        private void AddTransition(Transition def_tf)
         {             
-            AddTFunctionForm dlg = new AddTFunctionForm();
+            AddTFunctionForm dlg = new AddTFunctionForm(); // Todo pre vsetky typy
             dlg.TM = this.TuringMachine;
-            dlg.tfunction = defTf;
+            dlg.tfunction = def_tf;
             dlg.ShowDialog(this);
             if (dlg.OKPressed)
             {
@@ -129,7 +165,7 @@ namespace FEI.TrainingSimulator
                 ParseTFunctions(txtCode.Text);
             }
         }
-
+        //Todo only for FA, change to all types
         private string WriteTransition(Transition tf, string transitionFormat)
         {
             string res="";
@@ -228,7 +264,17 @@ namespace FEI.TrainingSimulator
         {
             //Načíta prechodové funkcie z kódu
             ParseTFunctions(txtCode.Text);
-            TuringMachine.StateDiagram.UpdateForFA(TuringMachine);
+
+            if (task.Category.Equals("FA"))
+            {
+                TuringMachine.StateDiagram.UpdateForFA(TuringMachine);
+            } else if (task.Category.Equals("PDA")) 
+            {
+                TuringMachine.StateDiagram.UpdateForPA(TuringMachine);
+            } else if (task.Category.Equals("TM")) 
+            {
+                TuringMachine.StateDiagram.UpdateForTM(TuringMachine);
+            }
         }       
         
         private void tcMain_SelectedIndexChanged(object sender, EventArgs e)
@@ -295,7 +341,9 @@ namespace FEI.TrainingSimulator
             sb.AppendLine("</head>");
             
             //Telo
-            sb.AppendLine("<body>");
+            if (task.Category.Equals("FA"))
+            {
+                sb.AppendLine("<body>");
                 //Nadpis
                 sb.AppendLine("<h1>Formálna špecifikácia</h1>");
 
@@ -333,10 +381,105 @@ namespace FEI.TrainingSimulator
                 sb.AppendLine("</div>");                
                 
                 sb.AppendLine("</body>");
+            }
+            else if (task.Category.Equals("PDA"))
+            {
+                // Todo
+                // sb.AppendLine("<body>");
+                // //Nadpis
+                // sb.AppendLine("<h1>Formálna špecifikácia</h1>");
+                //
+                // sb.AppendLine("<div>");
+                // sb.AppendLine("Zásobníkový automat <strong>ZA = (K, Σ, Γ, δ, " + PushdownAutomaton.StartState + ", Z, F)</strong>");
+                // sb.AppendLine("</div>");
+                //
+                // // Množina stavov
+                // sb.AppendLine("<div>");
+                // sb.AppendLine("<strong>K</strong> = {" + PushdownAutomaton.GetUsedStatesAsString() + "}");
+                // sb.AppendLine("</div>");
+                // // Vstupná abeceda
+                // sb.AppendLine("<div>");
+                // sb.AppendLine("<strong>Σ</strong> = {" + PushdownAutomaton.GetUsedSymbolsAsString() + "}");
+                // sb.AppendLine("</div>");
+                // // Zásobniková abeceda
+                // sb.AppendLine("<div>");
+                // sb.AppendLine("<strong>Γ</strong> = {" + PushdownAutomaton.GetUsedStackSymbolsAsString() + "}");
+                // sb.AppendLine("</div>");
+                // // Počiatočný stav
+                // sb.AppendLine("<div>");
+                // sb.AppendLine("<strong>" + PushdownAutomaton.StartState + "</strong> - počiatočný stav");
+                // sb.AppendLine("</div>");
+                // // Symbol na dne zasobnika
+                // sb.AppendLine("<div>");
+                // sb.AppendLine("<strong>Z</strong> - symbol na dne zásobníka");
+                // sb.AppendLine("</div>");            
+                // // Množina koncových stavov
+                // sb.AppendLine("<div>");
+                // sb.AppendLine("<strong>F</strong> = {" + String.Join(", ", PushdownAutomaton.FinalStates.ToArray()) + "}");
+                // sb.AppendLine("</div>");
+                //
+                // // Prechodové funkcie
+                // sb.AppendLine("<div>");
+                // sb.AppendLine("<h2>Prechodová funkcia δ</h2>");
+                // foreach (Transition f in PushdownAutomaton.GetTFunctions())
+                // {
+                //     sb.AppendLine("<div>");
+                //     sb.AppendLine("<strong>δ(</strong>" + f.CurrentState + ", " + f.ReadSymbol + ", " + f.StackRead + 
+                //                   ") = (" + f.NewState + ", "  + f.StackWrite + ")");
+                //     sb.AppendLine("</div>");
+                // }
+                // sb.AppendLine("</div>");                
+				            //
+                // sb.AppendLine("</body>");
+            }
+            else if (task.Category.Equals("TM"))
+            {
+                sb.AppendLine("<body>");
+                //Nadpis
+                sb.AppendLine("<h1>Formálna špecifikácia</h1>");
+
+                sb.AppendLine("<div>");
+                sb.AppendLine("Turingov stroj <strong>T = (K, Σ, Γ, δ, " + TuringMachine.StartState + ", F)</strong>");
+                sb.AppendLine("</div>");
+
+                // Množina stavov
+                sb.AppendLine("<div>");
+                sb.AppendLine("<strong>K</strong> = {" + TuringMachine.GetUsedStatesAsString() + "}");
+                sb.AppendLine("</div>");
+                // Vstupná abeceda
+                sb.AppendLine("<div>");
+                sb.AppendLine("<strong>Σ</strong> = {" + TuringMachine.GetUsedSymbolsAsString() + "}");
+                sb.AppendLine("</div>");
+                // Páskova abeceda
+                sb.AppendLine("<div>");
+                sb.AppendLine("<strong>Γ</strong> = {" + TuringMachine.GetUsedSymbolsAsString() + ", Blank}");
+                sb.AppendLine("</div>");
+                // Počiatočný stav
+                sb.AppendLine("<div>");
+                sb.AppendLine("<strong>" + TuringMachine.StartState + "</strong>  počiatočný stav");
+                sb.AppendLine("</div>");
+                // Množina koncových stavov
+                sb.AppendLine("<div>");
+                sb.AppendLine("<strong>F</strong> = {" + String.Join(", ", TuringMachine.FinalStates.ToArray()) + "}");
+                sb.AppendLine("</div>");
+
+                // Prechodové funkcie
+                sb.AppendLine("<div>");
+                sb.AppendLine("<h2>Prechodová funkcia δ</h2>");
+                foreach (Transition f in TuringMachine.GetTFunctions()) {
+                    sb.AppendLine("<div>");
+                    sb.AppendLine("<strong>δ(</strong>" + f.CurrentState + ", " + f.ReadSymbol +
+                                  ") = (" + f.NewState + ", " + f.WriteSymbol + ", " + Transition.StepToString(f.Step) + ")");
+                    sb.AppendLine("</div>");
+                }
+                sb.AppendLine("</div>");
+                sb.AppendLine("</body>");
+            }
             
+
             sb.AppendLine("</html>");
 
-            TextWriter tw = new StreamWriter(
+            System.IO.TextWriter tw = new System.IO.StreamWriter(
                 new FileStream(tmpFormalSpecFileName, FileMode.Create, FileAccess.Write), Encoding.UTF8);
             tw.Write(sb.ToString());
             tw.Close();
@@ -409,7 +552,21 @@ namespace FEI.TrainingSimulator
                 sb.AppendLine("<h2>Parametre zadania</h2>");
                 // Typ zadania
                 sb.AppendLine("<div>");
-                sb.AppendLine("<strong>Typ zadania:</strong> Konečný automat");
+                if (task.Category.Equals("FA"))
+                {
+                    sb.AppendLine("<strong>Typ zadania:</strong> Konečný automat");
+                }
+                else if (task.Category.Equals("PDA"))
+                {
+                    sb.AppendLine("<strong>Typ zadania:</strong> Zásobníkový automat");
+                } else if (task.Category.Equals("TM"))
+                {
+                    sb.AppendLine("<strong>Typ zadania:</strong> Túringov stroj");
+                }
+                else
+                {
+                    sb.AppendLine("<strong>Typ zadania:</strong> Neznámy");
+                }
                 sb.AppendLine("</div>");
 
                 // ID zadania
@@ -434,7 +591,7 @@ namespace FEI.TrainingSimulator
             sb.AppendLine("</body>");
             sb.AppendLine("</html>");
 
-            TextWriter tw = new System.IO.StreamWriter(
+            System.IO.TextWriter tw = new System.IO.StreamWriter(
                 new FileStream(tmpTaskSpecFileName, FileMode.Create, FileAccess.Write), Encoding.UTF8);
             tw.Write(sb.ToString());
             tw.Close();
@@ -576,27 +733,10 @@ namespace FEI.TrainingSimulator
             public bool IsCorrect { get; set; }
             public string Message { get; set; } = "";
         }
-
+        
         private void checkToolStripButton_Click(object sender, EventArgs e)
         {
-            FaCheckResult result;
-
-            if (task.Mode.Equals("Formula", StringComparison.OrdinalIgnoreCase))
-            {
-                result = ValidateFaSolution_Formula();
-            }
-            else if (task.Mode.Equals("Regex", StringComparison.OrdinalIgnoreCase))
-            {
-                result = ValidateFaSolution_Regex();
-            }
-            else
-            {
-                result = new FaCheckResult
-                {
-                    IsCorrect = false,
-                    Message = "Neznámy režim: " + task.Mode + ".\nKontaktujte Vášho prednášajúceho alebo cvičiaceho."
-                };
-            }
+            var result = CheckCurrentFaSolution();
 
             if (result.IsCorrect)
             {
@@ -616,7 +756,7 @@ namespace FEI.TrainingSimulator
             }
         }
         
-        private FaCheckResult ValidateFaSolution_Formula()
+        private FaCheckResult CheckCurrentFaSolution()
         {
             bool parsed = ParseTFunctions(txtCode.Text);
             if (!parsed)
@@ -642,7 +782,7 @@ namespace FEI.TrainingSimulator
                 };
             }
 
-            string formalError = ValidateDeterministicFa(formula);
+            string formalError = ValidateDeterministicFA(formula);
             if (formalError != null)
             {
                 return new FaCheckResult
@@ -652,7 +792,7 @@ namespace FEI.TrainingSimulator
                 };
             }
 
-            string[] words = GenerateWords(10, formula);
+            string[] words = GenerateWords(6, formula);
 
             foreach (var word in words)
             {
@@ -661,16 +801,12 @@ namespace FEI.TrainingSimulator
 
                 if (expected != actual)
                 {
-                    string diffWord;
-                    if (word == "")
-                        diffWord = "ε";
-                    else
-                        diffWord = word;
+                    string shownWord = word == "" ? "ε" : word;
 
                     return new FaCheckResult
                     {
                         IsCorrect = false,
-                        Message = $"Automat nie je správny. Líši sa na slove '{diffWord}'.\n" +
+                        Message = $"Automat nie je správny. Líši sa na slove '{shownWord}'.\n" +
                                   $"Očakávané: {(expected ? "prijať" : "odmietnuť")}.\n" +
                                   $"Študentov automat: {(actual ? "prijať" : "odmietnuť")}."
                     };
@@ -683,95 +819,8 @@ namespace FEI.TrainingSimulator
                 Message = "Riešenie je správne."
             };
         }
-        private FaCheckResult ValidateFaSolution_Regex()
-        {
-            bool parsed = ParseTFunctions(txtCode.Text);
-            if (!parsed)
-            {
-                return new FaCheckResult
-                {
-                    IsCorrect = false,
-                    Message = "Riešenie obsahuje syntaktické chyby v prechodových funkciách."
-                };
-            }
-
-            string regexPattern = task.Formula;
-
-            if (string.IsNullOrWhiteSpace(regexPattern))
-            {
-                return new FaCheckResult
-                {
-                    IsCorrect = false,
-                    Message = "Zadanie neobsahuje regex výraz v poli Formula."
-                };
-            }
-
-            List<char> alphabet;
-            try
-            {
-                alphabet = ExtractAlphabetFromRegex(regexPattern);
-            }
-            catch (Exception ex)
-            {
-                return new FaCheckResult
-                {
-                    IsCorrect = false,
-                    Message = "Nepodarilo sa z regexu získať abecedu: " + ex.Message
-                };
-            }
-
-            string formalError = ValidateDeterministicFa(alphabet);
-            if (formalError != null)
-            {
-                return new FaCheckResult
-                {
-                    IsCorrect = false,
-                    Message = formalError
-                };
-            }
-
-            Regex regex;
-            try
-            {
-                regex = new Regex("^(" + regexPattern + ")$");
-            }
-            catch (Exception ex)
-            {
-                return new FaCheckResult
-                {
-                    IsCorrect = false,
-                    Message = "Zadanie obsahuje neplatný regex: " + ex.Message
-                };
-            }
-
-            string[] words = GenerateWords(10, alphabet);
-
-            foreach (string word in words)
-            {
-                bool expected = regex.IsMatch(word);
-                bool actual = AcceptsByAutomaton(word);
-
-                if (expected != actual)
-                {
-                    string diffWord = word == "" ? "ε" : word;
-
-                    return new FaCheckResult
-                    {
-                        IsCorrect = false,
-                        Message = $"Automat nie je správny. Líši sa na slove '{diffWord}'.\n" +
-                                  $"Očakávané: {(expected ? "prijať" : "odmietnuť")}.\n" +
-                                  $"Študentov automat: {(actual ? "prijať" : "odmietnuť")}."
-                    };
-                }
-            }
-
-            return new FaCheckResult
-            {
-                IsCorrect = true,
-                Message = "Riešenie je správne."
-            };
-        }
-        private string ValidateDeterministicFa(ParsedFormula formula)
+        
+        private string ValidateDeterministicFA(ParsedFormula formula)
         {
             var usedStates = TuringMachine.GetUsedStates();
             if (usedStates == null || usedStates.Length == 0)
@@ -828,63 +877,6 @@ namespace FEI.TrainingSimulator
             return null;
         }
         
-        private string ValidateDeterministicFa(IEnumerable<char> alphabet)
-        {
-            var usedStates = TuringMachine.GetUsedStates();
-            if (usedStates == null || usedStates.Length == 0)
-            {
-                return "Automat neobsahuje žiadne stavy.";
-            }
-
-            if (string.IsNullOrWhiteSpace(TuringMachine.StartState))
-            {
-                return "Automat nemá začiatočný stav.";
-            }
-
-            bool hasFinal = false;
-            foreach (var state in usedStates)
-            {
-                if (TuringMachine.IsFinalState(state))
-                {
-                    hasFinal = true;
-                    break;
-                }
-            }
-
-            if (!hasFinal)
-            {
-                return "Automat nemá žiadny koncový stav.";
-            }
-
-            var seen = new HashSet<string>();
-            var allowedSymbols = new HashSet<char>(alphabet);
-
-            for (int i = 0; i < TuringMachine.TFunctionCount; i++)
-            {
-                var tf = TuringMachine.TFunction(i);
-
-                if (string.IsNullOrEmpty(tf.ReadSymbol) || tf.ReadSymbol.Length != 1)
-                {
-                    return $"Automat používa neplatný symbol '{tf.ReadSymbol}'.";
-                }
-
-                char symbol = tf.ReadSymbol[0];
-
-                if (!allowedSymbols.Contains(symbol))
-                {
-                    return $"Automat používa nepovolený symbol '{tf.ReadSymbol}'.";
-                }
-
-                string key = tf.CurrentState + "|" + tf.ReadSymbol;
-                if (!seen.Add(key))
-                {
-                    return $"Automat nie je deterministický. Zo stavu '{tf.CurrentState}' existuje viac prechodov pre symbol '{tf.ReadSymbol}'.";
-                }
-            }
-
-            return null;
-        }
-        
         private sealed class ParsedFormula
         {
             public Dictionary<char, int> Coefficients { get; } = new Dictionary<char, int>();
@@ -902,13 +894,17 @@ namespace FEI.TrainingSimulator
         
         private ParsedFormula ParseFormula(string formulaText)
         {
+            formulaText = formulaText.Replace(" ", "");
+
             var parts = formulaText.Split('=');
+
             string left = parts[0];
             string right = parts[1];
 
             var result = new ParsedFormula();
 
             int i = 0;
+
             while (i < left.Length)
             {
                 int sign = 1;
@@ -931,7 +927,7 @@ namespace FEI.TrainingSimulator
                     ? 1
                     : int.Parse(left.Substring(start, i - start));
 
-                i++; 
+                i++; // preskočí '#'
 
                 char symbol = left[i];
                 i++;
@@ -961,26 +957,6 @@ namespace FEI.TrainingSimulator
             }
 
             return result;
-        }
-        
-        private List<char> ExtractAlphabetFromRegex(string regexPattern)
-        {
-            var alphabet = new HashSet<char>();
-
-            foreach (char ch in regexPattern)
-            {
-                if (char.IsLetterOrDigit(ch))
-                {
-                    alphabet.Add(ch);
-                }
-            }
-
-            if (alphabet.Count == 0)
-            {
-                throw new Exception("Regex neobsahuje žiadne symboly abecedy.");
-            }
-
-            return alphabet.OrderBy(c => c).ToList();
         }
         
         private bool AcceptsByFormula(string word, ParsedFormula formula)
@@ -1042,13 +1018,6 @@ namespace FEI.TrainingSimulator
         {
             var result = new List<string>();
             var alphabet = new List<char>(formula.Coefficients.Keys);
-            GenerateWordsRecursive("", maxLength, result, alphabet);
-            return result.ToArray();
-        }
-        
-        private string[] GenerateWords(int maxLength, List<char> alphabet)
-        {
-            var result = new List<string>();
             GenerateWordsRecursive("", maxLength, result, alphabet);
             return result.ToArray();
         }

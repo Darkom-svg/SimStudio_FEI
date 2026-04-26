@@ -79,7 +79,7 @@ namespace FEI.TrainingSimulator {
             var randTask = new TaskDef
             {
                 Id = category + "_Random",
-                Mode = "Random",
+                Mode = "Formula",
                 Category = category,
                 Title = "Nahodný príklad",
                 Difficulty = "stredná"

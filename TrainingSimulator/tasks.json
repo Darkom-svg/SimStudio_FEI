@@ -31,9 +31,36 @@
     "id": "FA1",
     "title": "Párne 0 a 1",
     "category": "FA",
-    "mode": "Basics",
+    "mode": "Formula",
     "difficulty": "Ľahká",
     "specification": "Navrhnite deterministický konečný automat, príp. jeho stavový diagram, ktorý rozpoznáva jazyk $L_A$\n\n$$L_A = \\{{ w \\in \\{{0,1\\}}^* \\mid \\#_0 w +\\#_1 w = 2n,\\; n \\in \\mathbb{{Z}} \\}}$$\n",
     "formula" : "1#0+1#1=2n"
+  },
+  {
+    "id": "FA2",
+    "title": "Slová tvaru a*b",
+    "category": "FA",
+    "mode": "Regex",
+    "difficulty": "Ľahká",
+    "specification": "Navrhnite deterministický konečný automat, ktorý rozpoznáva jazyk definovaný regulárnym výrazom.\n\n$$L = \\{ w \\in \\{a,b\\}^* \\mid w \\text{ zodpovedá regulárnemu výrazu } a^*b \\}$$\n\nTo znamená, že slovo pozostáva z ľubovoľného počtu znakov $a$ nasledovaných práve jedným znakom $b$.",
+    "formula": "a*b"
+  },
+  {
+    "id": "FA3",
+    "title": "Podslovo abba",
+    "category": "FA",
+    "mode": "Regex",
+    "difficulty": "Stredná",
+    "specification": "Navrhnite deterministický konečný automat, ktorý rozpoznáva jazyk definovaný regulárnym výrazom.\n\n$$L = \\{ w \\in \\{a,b\\}^* \\mid w \\text{ obsahuje podslovo } abba \\}$$\n\nTo znamená, že slovo môže obsahovať ľubovoľný počet znakov $a$ a $b$, ale niekde v slove sa musí nachádzať súvislá postupnosť znakov $aba$.",
+    "formula": "(a|b)*abba(a|b)*"
+  },
+  {
+    "id": "FA4",
+    "title": "Slová končiace na abb",
+    "category": "FA",
+    "mode": "Regex",
+    "difficulty": "Ťažká",
+    "specification": "Navrhnite deterministický konečný automat, ktorý rozpoznáva jazyk definovaný regulárnym výrazom.\n\n$$L = \\{ w \\in \\{a,b\\}^* \\mid w \\text{ končí postupnosťou znakov } abb \\}$$\n\nTo znamená, že slovo môže mať ľubovoľný začiatok nad abecedou $\\{a,b\\}$, ale jeho posledné tri znaky musia byť práve $abb$.",
+    "formula": "(a|b)*abb"
   }
 ]
