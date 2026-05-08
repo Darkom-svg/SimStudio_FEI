@@ -51,25 +51,16 @@ namespace FEI.TrainingSimulator
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.roundedPanel1 = new FEI.SimStudio.Components.RoundedPanel();
             this.label7 = new System.Windows.Forms.Label();
-            this.roundedPanel2 = new FEI.SimStudio.Components.RoundedPanel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.FaTrain = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.roundedPanel3 = new FEI.SimStudio.Components.RoundedPanel();
             this.label8 = new System.Windows.Forms.Label();
-            this.roundedPanel4 = new FEI.SimStudio.Components.RoundedPanel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.PdaTrain = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.roundedPanel5 = new FEI.SimStudio.Components.RoundedPanel();
             this.label9 = new System.Windows.Forms.Label();
-            this.roundedPanel6 = new FEI.SimStudio.Components.RoundedPanel();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.roundedPanel7 = new FEI.SimStudio.Components.RoundedPanel();
@@ -83,13 +74,10 @@ namespace FEI.TrainingSimulator
             this.splitContainer1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.roundedPanel1.SuspendLayout();
-            this.roundedPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.roundedPanel3.SuspendLayout();
-            this.roundedPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.roundedPanel5.SuspendLayout();
-            this.roundedPanel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.roundedPanel7.SuspendLayout();
             this.SuspendLayout();
@@ -263,14 +251,14 @@ namespace FEI.TrainingSimulator
             // 
             this.roundedPanel1.BackColor = System.Drawing.Color.Gainsboro;
             this.roundedPanel1.Controls.Add(this.label7);
-            this.roundedPanel1.Controls.Add(this.roundedPanel2);
             this.roundedPanel1.Controls.Add(this.FaTrain);
             this.roundedPanel1.Controls.Add(this.label1);
             this.roundedPanel1.Controls.Add(this.pictureBox1);
             this.roundedPanel1.CornerRadius = 5;
             this.roundedPanel1.Location = new System.Drawing.Point(19, 31);
             this.roundedPanel1.Margin = new System.Windows.Forms.Padding(3, 15, 3, 15);
-            this.roundedPanel1.MinimumSize = new System.Drawing.Size(370, 0);
+            this.roundedPanel1.MaximumSize = new System.Drawing.Size(430, 0);
+            this.roundedPanel1.MinimumSize = new System.Drawing.Size(370, 67);
             this.roundedPanel1.Name = "roundedPanel1";
             this.roundedPanel1.Size = new System.Drawing.Size(370, 67);
             this.roundedPanel1.TabIndex = 0;
@@ -286,39 +274,6 @@ namespace FEI.TrainingSimulator
             this.label7.Size = new System.Drawing.Size(164, 26);
             this.label7.TabIndex = 21;
             this.label7.Text = "Konečný automat";
-            // 
-            // roundedPanel2
-            // 
-            this.roundedPanel2.BackColor = System.Drawing.Color.Silver;
-            this.roundedPanel2.Controls.Add(this.label10);
-            this.roundedPanel2.Controls.Add(this.label2);
-            this.roundedPanel2.CornerRadius = 5;
-            this.roundedPanel2.Location = new System.Drawing.Point(284, 0);
-            this.roundedPanel2.Name = "roundedPanel2";
-            this.roundedPanel2.Size = new System.Drawing.Size(86, 67);
-            this.roundedPanel2.TabIndex = 20;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label10.Location = new System.Drawing.Point(16, 17);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(55, 33);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "0 %";
-            // 
-            // label2
-            // 
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(0, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 67);
-            this.label2.TabIndex = 0;
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FaTrain
             // 
@@ -357,14 +312,14 @@ namespace FEI.TrainingSimulator
             // 
             this.roundedPanel3.BackColor = System.Drawing.Color.Gainsboro;
             this.roundedPanel3.Controls.Add(this.label8);
-            this.roundedPanel3.Controls.Add(this.roundedPanel4);
             this.roundedPanel3.Controls.Add(this.PdaTrain);
             this.roundedPanel3.Controls.Add(this.label4);
             this.roundedPanel3.Controls.Add(this.pictureBox2);
             this.roundedPanel3.CornerRadius = 5;
             this.roundedPanel3.Location = new System.Drawing.Point(19, 113);
             this.roundedPanel3.Margin = new System.Windows.Forms.Padding(3, 0, 3, 15);
-            this.roundedPanel3.MinimumSize = new System.Drawing.Size(370, 0);
+            this.roundedPanel3.MaximumSize = new System.Drawing.Size(430, 0);
+            this.roundedPanel3.MinimumSize = new System.Drawing.Size(370, 67);
             this.roundedPanel3.Name = "roundedPanel3";
             this.roundedPanel3.Size = new System.Drawing.Size(370, 67);
             this.roundedPanel3.TabIndex = 21;
@@ -380,39 +335,6 @@ namespace FEI.TrainingSimulator
             this.label8.Size = new System.Drawing.Size(196, 26);
             this.label8.TabIndex = 21;
             this.label8.Text = "Zásobníkový automat";
-            // 
-            // roundedPanel4
-            // 
-            this.roundedPanel4.BackColor = System.Drawing.Color.Silver;
-            this.roundedPanel4.Controls.Add(this.label11);
-            this.roundedPanel4.Controls.Add(this.label3);
-            this.roundedPanel4.CornerRadius = 5;
-            this.roundedPanel4.Location = new System.Drawing.Point(284, 0);
-            this.roundedPanel4.Name = "roundedPanel4";
-            this.roundedPanel4.Size = new System.Drawing.Size(86, 67);
-            this.roundedPanel4.TabIndex = 20;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label11.Location = new System.Drawing.Point(16, 17);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(55, 33);
-            this.label11.TabIndex = 23;
-            this.label11.Text = "0 %";
-            // 
-            // label3
-            // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 67);
-            this.label3.TabIndex = 0;
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PdaTrain
             // 
@@ -451,13 +373,13 @@ namespace FEI.TrainingSimulator
             // 
             this.roundedPanel5.BackColor = System.Drawing.Color.Gainsboro;
             this.roundedPanel5.Controls.Add(this.label9);
-            this.roundedPanel5.Controls.Add(this.roundedPanel6);
             this.roundedPanel5.Controls.Add(TuringTrain);
             this.roundedPanel5.Controls.Add(this.label6);
             this.roundedPanel5.Controls.Add(this.pictureBox3);
             this.roundedPanel5.CornerRadius = 5;
             this.roundedPanel5.Location = new System.Drawing.Point(19, 198);
-            this.roundedPanel5.MinimumSize = new System.Drawing.Size(370, 0);
+            this.roundedPanel5.MaximumSize = new System.Drawing.Size(430, 0);
+            this.roundedPanel5.MinimumSize = new System.Drawing.Size(370, 67);
             this.roundedPanel5.Name = "roundedPanel5";
             this.roundedPanel5.Size = new System.Drawing.Size(370, 67);
             this.roundedPanel5.TabIndex = 22;
@@ -473,39 +395,6 @@ namespace FEI.TrainingSimulator
             this.label9.Size = new System.Drawing.Size(129, 26);
             this.label9.TabIndex = 21;
             this.label9.Text = "Turingov stroj";
-            // 
-            // roundedPanel6
-            // 
-            this.roundedPanel6.BackColor = System.Drawing.Color.Silver;
-            this.roundedPanel6.Controls.Add(this.label12);
-            this.roundedPanel6.Controls.Add(this.label5);
-            this.roundedPanel6.CornerRadius = 5;
-            this.roundedPanel6.Location = new System.Drawing.Point(284, 0);
-            this.roundedPanel6.Name = "roundedPanel6";
-            this.roundedPanel6.Size = new System.Drawing.Size(86, 67);
-            this.roundedPanel6.TabIndex = 20;
-            // 
-            // label12
-            // 
-            this.label12.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.Font = new System.Drawing.Font("Calibri", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label12.Location = new System.Drawing.Point(14, 16);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(69, 33);
-            this.label12.TabIndex = 23;
-            this.label12.Text = "99 %";
-            // 
-            // label5
-            // 
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(0, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(86, 67);
-            this.label5.TabIndex = 0;
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
@@ -578,26 +467,16 @@ namespace FEI.TrainingSimulator
             this.flowLayoutPanel1.ResumeLayout(false);
             this.roundedPanel1.ResumeLayout(false);
             this.roundedPanel1.PerformLayout();
-            this.roundedPanel2.ResumeLayout(false);
-            this.roundedPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.roundedPanel3.ResumeLayout(false);
             this.roundedPanel3.PerformLayout();
-            this.roundedPanel4.ResumeLayout(false);
-            this.roundedPanel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.roundedPanel5.ResumeLayout(false);
             this.roundedPanel5.PerformLayout();
-            this.roundedPanel6.ResumeLayout(false);
-            this.roundedPanel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.roundedPanel7.ResumeLayout(false);
             this.ResumeLayout(false);
         }
-
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label12;
 
         private System.Windows.Forms.Label label9;
 
@@ -610,23 +489,16 @@ namespace FEI.TrainingSimulator
         private RoundedPanel roundedPanel7;
 
         private FEI.SimStudio.Components.RoundedPanel roundedPanel5;
-        private RoundedPanel roundedPanel6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox3;
 
         private FEI.SimStudio.Components.RoundedPanel roundedPanel3;
-        private RoundedPanel roundedPanel4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button FaTrain;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox2;
 
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button PdaTrain;
         private System.Windows.Forms.ProgressBar progressBar2;
-
-        private RoundedPanel roundedPanel2;
 
         private System.Windows.Forms.Button finiteAutomatonButton;
 
@@ -634,7 +506,7 @@ namespace FEI.TrainingSimulator
 
         private System.Windows.Forms.PictureBox pictureBox1;
 
-        private RoundedPanel roundedPanel1;
+        private FEI.SimStudio.Components.RoundedPanel roundedPanel1;
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
 

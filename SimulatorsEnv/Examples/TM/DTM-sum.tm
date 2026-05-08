@@ -3,7 +3,7 @@
 	<meta>
 		<author />
 		<title>2. Sčítanie unárnych čísel</title>
-        <description>Výpočet súčtu dvoch unárnych čísel.</description>
+        <description>Výpočet súčtu dvoch unárnych čísel</description>
 		<created>8. 5. 2026 21:27:53</created>
 		<modified>8. 5. 2026 21:28:09</modified>
 	</meta>

@@ -13,6 +13,8 @@ namespace FEI.SimStudio {
         public SimulatorsForm()
         {
             InitializeComponent();
+            flowLayoutPanel1.Resize += flowLayoutPanel_Resize;
+            ResizeSimulatorCards();
         }
 
         private void bTuring_Click(object sender, EventArgs e)
@@ -96,6 +98,31 @@ namespace FEI.SimStudio {
             ExamplesForm frm = new ExamplesForm();
             frm.MdiParent = this.MdiParent;
             frm.Show();
+        }
+        
+        private void flowLayoutPanel_Resize(object sender, EventArgs e)
+        {
+            ResizeSimulatorCards();
+        }
+
+        private void ResizeSimulatorCards()
+        {
+            if (flowLayoutPanel1 == null)
+                return;
+
+            int width = flowLayoutPanel1.ClientSize.Width
+                        - flowLayoutPanel1.Padding.Left
+                        - flowLayoutPanel1.Padding.Right
+                        - 10;
+
+            foreach (Control control in flowLayoutPanel1.Controls)
+            {
+                if (control is RoundedPanel panel)
+                {
+                    panel.AutoSize = false;
+                    panel.Width = Math.Max(250, width);
+                }
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
@@ -8,11 +9,39 @@ namespace FEI.SimStudio
     {
         public int CornerRadius { get; set; } = 20;
 
+        public RoundedPanel()
+        {
+            this.Resize += (s, e) =>
+            {
+                UpdateRegion();
+                Invalidate();
+            };
+        }
+
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
 
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+
+            using (GraphicsPath path = GetRoundedRectanglePath(ClientRectangle, CornerRadius))
+            using (SolidBrush brush = new SolidBrush(this.BackColor))
+            {
+                e.Graphics.FillPath(brush, path);
+            }
+        }
+
+        protected override void OnSizeChanged(EventArgs e)
+        {
+            base.OnSizeChanged(e);
+            UpdateRegion();
+            Invalidate();
+        }
+
+        private void UpdateRegion()
+        {
+            if (Width <= 0 || Height <= 0)
+                return;
 
             using (GraphicsPath path = GetRoundedRectanglePath(ClientRectangle, CornerRadius))
             {
@@ -23,7 +52,11 @@ namespace FEI.SimStudio
         private GraphicsPath GetRoundedRectanglePath(Rectangle rect, int radius)
         {
             GraphicsPath path = new GraphicsPath();
+
             int d = radius * 2;
+
+            if (d > rect.Width) d = rect.Width;
+            if (d > rect.Height) d = rect.Height;
 
             path.AddArc(rect.X, rect.Y, d, d, 180, 90);
             path.AddArc(rect.Right - d, rect.Y, d, d, 270, 90);
@@ -34,5 +67,4 @@ namespace FEI.SimStudio
             return path;
         }
     }
-
 }

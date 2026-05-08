@@ -60,6 +60,13 @@ namespace FEI.SimStudio {
 			frm.MdiParent = this;
 			frm.Show();            
 		}
+		
+		private void trainerToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			MainTrainingForm frm = new MainTrainingForm();
+			frm.MdiParent = this;
+			frm.Show();
+		}
 
 		private void MainForm_MdiChildActivate(object sender, EventArgs e)
 		{
@@ -184,8 +191,7 @@ namespace FEI.SimStudio {
 						switch (nodeType) {
 							case XmlNodeType.Element: {
 									text = text + "." + xmlTextReader.Name.ToLower().Trim();
-									bool flag = false;
-									if (xmlTextReader.IsEmptyElement | flag) {
+									if (xmlTextReader.IsEmptyElement | false) {
 										text = text.Substring(0, text.LastIndexOf('.'));
 									}
 									break;
@@ -236,13 +242,6 @@ namespace FEI.SimStudio {
 
 		private void openFileToolStripMenuItem_Click(object sender, EventArgs e) {
 			OpenFile();
-		}
-
-		private void trainerToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			MainTrainingForm frm = new MainTrainingForm();
-			frm.MdiParent = this;
-			frm.Show();
 		}
 	}
 }

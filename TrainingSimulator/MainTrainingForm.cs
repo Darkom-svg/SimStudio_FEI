@@ -39,7 +39,8 @@ namespace FEI.TrainingSimulator {
 
                 allTasks = new List<TaskDef>();
             }
-
+            flowLayoutPanel1.Resize += flowLayoutPanel1_Resize;
+            flowLayoutPanel2.Resize += flowLayoutPanel2_Resize;
             ShowCategory("FA");
         }
 
@@ -121,7 +122,6 @@ namespace FEI.TrainingSimulator {
 
                 foreach (var task in tasks)
                     flowLayoutPanel2.Controls.Add(CreateTaskCard(task));
-                // Todo: Aj pre ostatné automaty
                 if (category.Equals("FA"))
                 {
                     flowLayoutPanel2.Controls.Add(CreateTaskCard(RandomTask(category)));
@@ -130,6 +130,7 @@ namespace FEI.TrainingSimulator {
             finally {
                 flowLayoutPanel2.ResumeLayout(true);
             }
+            ResizeCardsInFlowPanel(flowLayoutPanel2);
         }
 
         private Control CreateTaskCard(TaskDef task)
@@ -140,9 +141,9 @@ namespace FEI.TrainingSimulator {
                 Margin = new Padding(0, 0, 0, 12),
                 CornerRadius = 6,
                 BackColor = Color.Gainsboro,
-                AutoSize = true,
-                MinimumSize = new Size(400, 60),
-                MaximumSize = new Size(800, 120)
+                AutoSize = false,
+                MinimumSize = new Size(400, 67),
+                MaximumSize = new Size(1200, 70)
             };
 
             var lblTitle = new Label
@@ -164,7 +165,7 @@ namespace FEI.TrainingSimulator {
 
             var btnOpen = new Button
             {
-                Anchor = AnchorStyles.Left,
+                Anchor = AnchorStyles.Top | AnchorStyles.Right,
                 Location = new Point(260, 40),
                 Size = new Size(110, 22),
                 Text = "Začať",
@@ -229,7 +230,35 @@ namespace FEI.TrainingSimulator {
             
         }
         
+        private void flowLayoutPanel1_Resize(object sender, EventArgs e)
+        {
+            ResizeCardsInFlowPanel(flowLayoutPanel1);
+        }
+        
+        private void flowLayoutPanel2_Resize(object sender, EventArgs e)
+        {
+            ResizeCardsInFlowPanel(flowLayoutPanel2);
+        }
+        
+        private void ResizeCardsInFlowPanel(FlowLayoutPanel flowPanel)
+        {
+            if (flowPanel == null)
+                return;
+
+            int width = flowPanel.ClientSize.Width
+                        - flowPanel.Padding.Left
+                        - flowPanel.Padding.Right
+                        - 25;
+
+            foreach (Control control in flowPanel.Controls)
+            {
+                if (control is RoundedPanel panel)
+                {
+                    panel.AutoSize = false;
+                    panel.Width = Math.Max(250, width);
+                    panel.Invalidate();
+                }
+            }
+        }
     }
-
-
 }

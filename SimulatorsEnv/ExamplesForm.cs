@@ -10,12 +10,13 @@ using System.Xml;
 namespace FEI.SimStudio {
     public partial class ExamplesForm : Form
     {
-        private List<ExampleFile> allExamples = new List<ExampleFile>();
+        private readonly List<ExampleFile> allExamples;
         public static string AppTitle;
+
         public ExamplesForm()
         {
             InitializeComponent();
-             AppTitle = Text;
+            AppTitle = Text;
             if (flowLayoutPanel2 != null)
             {
                 flowLayoutPanel2.AutoScroll = true;
@@ -38,6 +39,8 @@ namespace FEI.SimStudio {
                 allExamples = new List<ExampleFile>();
             }
 
+            flowLayoutPanel1.Resize += flowLayoutPanel1_Resize;
+            flowLayoutPanel2.Resize += flowLayoutPanel2_Resize;
             ShowCategory("FA");
         }
 
@@ -104,7 +107,7 @@ namespace FEI.SimStudio {
                 {
                     title = Path.GetFileNameWithoutExtension(file);
                 }
-                
+
                 try
                 {
                     XmlDocument doc = new XmlDocument();
@@ -156,8 +159,10 @@ namespace FEI.SimStudio {
             {
                 flowLayoutPanel2.ResumeLayout(true);
             }
+            ResizeCardsInFlowPanel(flowLayoutPanel2);
+            
         }
-
+        
         private Control CreateExampleCard(ExampleFile example)
         {
             var card = new RoundedPanel
@@ -166,33 +171,37 @@ namespace FEI.SimStudio {
                 Margin = new Padding(0, 0, 0, 12),
                 CornerRadius = 6,
                 BackColor = Color.Gainsboro,
-                AutoSize = true,
-                MinimumSize = new Size(400, 60),
-                MaximumSize = new Size(800, 120)
+                AutoSize = false,
+                MinimumSize = new Size(400, 67),
+                MaximumSize = new Size(1200, 70)
             };
 
             var lblTitle = new Label
             {
+                Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right,
                 Text = example.Title,
                 Location = new Point(15, 10),
-                Size = new Size(230, 22),
                 Font = new Font("Calibri", 14F, FontStyle.Bold),
                 AutoEllipsis = true,
-                AutoSize = false
+                AutoSize = false,
+                MinimumSize = new Size(230, 22),
+                MaximumSize = new Size(900, 22)
             };
 
             var lblMeta = new Label
             {
+                Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right,
                 Text = example.Description,
                 Location = new Point(15, 40),
-                Size = new Size(230, 45),
                 AutoEllipsis = false,
-                AutoSize = false
+                AutoSize = false,
+                MinimumSize = new Size(230, 45),
+                MaximumSize = new Size(900, 45)
             };
 
             var btnOpen = new Button
             {
-                Anchor = AnchorStyles.Left,
+                Anchor = AnchorStyles.Top | AnchorStyles.Right,
                 Location = new Point(260, 40),
                 Size = new Size(110, 22),
                 Text = "Otvoriť",
@@ -207,7 +216,7 @@ namespace FEI.SimStudio {
             return card;
         }
 
-        
+
         private void OpenExample(ExampleFile example)
         {
             if (!File.Exists(example.FullPath))
@@ -239,7 +248,6 @@ namespace FEI.SimStudio {
                 frm.ShowDialog(this);
             }
         }
-
         
         protected override void OnActivated(EventArgs e)
         {
@@ -248,7 +256,7 @@ namespace FEI.SimStudio {
             var ico = new ComponentResourceManager(GetType()).GetObject("$this.Icon") as Icon;
             if (ico != null) Icon = ico;
         }
-        
+
         private void miAbout_Click(object sender, EventArgs e)
         {
             TrainingSimulator.Dialogs.AboutForm dlg = new TrainingSimulator.Dialogs.AboutForm();
@@ -270,8 +278,36 @@ namespace FEI.SimStudio {
         {
             ShowCategory("TM");
         }
-        
+
+        private void flowLayoutPanel1_Resize(object sender, EventArgs e)
+        {
+            ResizeCardsInFlowPanel(flowLayoutPanel1);
+        }
+
+        private void flowLayoutPanel2_Resize(object sender, EventArgs e)
+        {
+            ResizeCardsInFlowPanel(flowLayoutPanel2);
+        }
+
+        private void ResizeCardsInFlowPanel(FlowLayoutPanel flowPanel)
+        {
+            if (flowPanel == null)
+                return;
+
+            int width = flowPanel.ClientSize.Width
+                        - flowPanel.Padding.Left
+                        - flowPanel.Padding.Right
+                        - 25;
+
+            foreach (Control control in flowPanel.Controls)
+            {
+                if (control is RoundedPanel panel)
+                {
+                    panel.AutoSize = false;
+                    panel.Width = Math.Max(250, width);
+                    panel.Invalidate();
+                }
+            }
+        }
     }
-
-
 }

@@ -240,7 +240,8 @@
             this.roundedPanel6.CornerRadius = 5;
             this.roundedPanel6.Location = new System.Drawing.Point(19, 36);
             this.roundedPanel6.Margin = new System.Windows.Forms.Padding(3, 20, 3, 20);
-            this.roundedPanel6.MinimumSize = new System.Drawing.Size(370, 0);
+            this.roundedPanel6.MaximumSize = new System.Drawing.Size(430, 0);
+            this.roundedPanel6.MinimumSize = new System.Drawing.Size(370, 67);
             this.roundedPanel6.Name = "roundedPanel6";
             this.roundedPanel6.Padding = new System.Windows.Forms.Padding(5);
             this.roundedPanel6.Size = new System.Drawing.Size(370, 67);
@@ -294,7 +295,8 @@
             this.roundedPanel5.CornerRadius = 5;
             this.roundedPanel5.Location = new System.Drawing.Point(19, 123);
             this.roundedPanel5.Margin = new System.Windows.Forms.Padding(3, 0, 3, 20);
-            this.roundedPanel5.MinimumSize = new System.Drawing.Size(370, 0);
+            this.roundedPanel5.MaximumSize = new System.Drawing.Size(430, 0);
+            this.roundedPanel5.MinimumSize = new System.Drawing.Size(370, 67);
             this.roundedPanel5.Name = "roundedPanel5";
             this.roundedPanel5.Padding = new System.Windows.Forms.Padding(5);
             this.roundedPanel5.Size = new System.Drawing.Size(370, 67);
@@ -348,7 +350,8 @@
             this.roundedPanel4.CornerRadius = 5;
             this.roundedPanel4.Location = new System.Drawing.Point(19, 210);
             this.roundedPanel4.Margin = new System.Windows.Forms.Padding(3, 0, 3, 20);
-            this.roundedPanel4.MinimumSize = new System.Drawing.Size(370, 0);
+            this.roundedPanel4.MaximumSize = new System.Drawing.Size(430, 0);
+            this.roundedPanel4.MinimumSize = new System.Drawing.Size(370, 67);
             this.roundedPanel4.Name = "roundedPanel4";
             this.roundedPanel4.Padding = new System.Windows.Forms.Padding(5);
             this.roundedPanel4.Size = new System.Drawing.Size(370, 67);
@@ -402,16 +405,17 @@
             this.roundedPanel3.CornerRadius = 5;
             this.roundedPanel3.Location = new System.Drawing.Point(19, 297);
             this.roundedPanel3.Margin = new System.Windows.Forms.Padding(3, 0, 3, 20);
-            this.roundedPanel3.MinimumSize = new System.Drawing.Size(370, 0);
+            this.roundedPanel3.MaximumSize = new System.Drawing.Size(430, 0);
+            this.roundedPanel3.MinimumSize = new System.Drawing.Size(370, 67);
             this.roundedPanel3.Name = "roundedPanel3";
             this.roundedPanel3.Padding = new System.Windows.Forms.Padding(5);
-            this.roundedPanel3.Size = new System.Drawing.Size(370, 64);
+            this.roundedPanel3.Size = new System.Drawing.Size(370, 67);
             this.roundedPanel3.TabIndex = 23;
             // 
             // bRAM
             // 
             this.bRAM.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.bRAM.Location = new System.Drawing.Point(75, 34);
+            this.bRAM.Location = new System.Drawing.Point(75, 35);
             this.bRAM.Name = "bRAM";
             this.bRAM.Size = new System.Drawing.Size(110, 22);
             this.bRAM.TabIndex = 4;
@@ -426,7 +430,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Image = global::FEI.SimStudio.Properties.Resources.RAM;
             this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(6, 4);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(55, 55);
@@ -440,7 +444,7 @@
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(74, 8);
+            this.label3.Location = new System.Drawing.Point(74, 9);
             this.label3.MaximumSize = new System.Drawing.Size(0, 40);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(286, 26);
@@ -456,9 +460,10 @@
             this.roundedPanel2.Controls.Add(this.pictureBox8);
             this.roundedPanel2.Controls.Add(this.label8);
             this.roundedPanel2.CornerRadius = 5;
-            this.roundedPanel2.Location = new System.Drawing.Point(19, 381);
+            this.roundedPanel2.Location = new System.Drawing.Point(19, 384);
             this.roundedPanel2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 20);
-            this.roundedPanel2.MinimumSize = new System.Drawing.Size(370, 0);
+            this.roundedPanel2.MaximumSize = new System.Drawing.Size(430, 0);
+            this.roundedPanel2.MinimumSize = new System.Drawing.Size(370, 67);
             this.roundedPanel2.Name = "roundedPanel2";
             this.roundedPanel2.Padding = new System.Windows.Forms.Padding(5);
             this.roundedPanel2.Size = new System.Drawing.Size(370, 67);
@@ -510,12 +515,13 @@
             this.roundedPanel1.Controls.Add(this.pictureBox2);
             this.roundedPanel1.Controls.Add(this.label7);
             this.roundedPanel1.CornerRadius = 5;
-            this.roundedPanel1.Location = new System.Drawing.Point(19, 468);
+            this.roundedPanel1.Location = new System.Drawing.Point(19, 471);
             this.roundedPanel1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 20);
-            this.roundedPanel1.MinimumSize = new System.Drawing.Size(370, 0);
+            this.roundedPanel1.MaximumSize = new System.Drawing.Size(430, 0);
+            this.roundedPanel1.MinimumSize = new System.Drawing.Size(370, 67);
             this.roundedPanel1.Name = "roundedPanel1";
             this.roundedPanel1.Padding = new System.Windows.Forms.Padding(5);
-            this.roundedPanel1.Size = new System.Drawing.Size(370, 66);
+            this.roundedPanel1.Size = new System.Drawing.Size(370, 67);
             this.roundedPanel1.TabIndex = 26;
             // 
             // bTrainer
@@ -564,12 +570,13 @@
             this.roundedPanel7.Controls.Add(this.pictureBox9);
             this.roundedPanel7.Controls.Add(this.label9);
             this.roundedPanel7.CornerRadius = 5;
-            this.roundedPanel7.Location = new System.Drawing.Point(19, 554);
+            this.roundedPanel7.Location = new System.Drawing.Point(19, 558);
             this.roundedPanel7.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.roundedPanel7.MinimumSize = new System.Drawing.Size(370, 0);
+            this.roundedPanel7.MaximumSize = new System.Drawing.Size(430, 0);
+            this.roundedPanel7.MinimumSize = new System.Drawing.Size(370, 67);
             this.roundedPanel7.Name = "roundedPanel7";
             this.roundedPanel7.Padding = new System.Windows.Forms.Padding(5);
-            this.roundedPanel7.Size = new System.Drawing.Size(370, 66);
+            this.roundedPanel7.Size = new System.Drawing.Size(370, 67);
             this.roundedPanel7.TabIndex = 27;
             // 
             // button2

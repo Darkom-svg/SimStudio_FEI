@@ -165,7 +165,7 @@
     <Content Include="Examples\FA\DKA-3kplus1-a.fa">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Examples\FA\DKA-pravejedna0naposlednychdvochmiestach.fa">
+    <Content Include="Examples\FA\DKA-konciace_na_01_alebo_10.fa">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Examples\FA\DKA-aN.fa">
@@ -183,11 +183,7 @@
     <Content Include="Examples\TM\DTM-sum.tm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\Background2.jpg" />
     <Content Include="Resources\FEI_LOGO.png" />
-    <Content Include="Resources\small_Trainer1.png" />
-    <Content Include="Resources\Trainer.ico" />
-    <Content Include="Resources\Trainer1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

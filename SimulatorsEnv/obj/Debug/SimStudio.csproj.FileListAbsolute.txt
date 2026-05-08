@@ -348,9 +348,9 @@ C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\Si
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\graphics\WriteOff.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\obj\Debug\FEI.SimStudio.ExamplesForm.resources
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\Examples\FA\DKA-3kplus1-a.fa
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\Examples\FA\DKA-pravejedna0naposlednychdvochmiestach.fa
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\Examples\FA\DKA-aN.fa
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\Examples\PDA\DZA-aNbN.pa
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\Examples\PDA\DZA-wcwR.pa
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\Examples\TM\DTM-aN_2bN.tm
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\Examples\TM\DTM-sum.tm
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\bin\Debug\Examples\FA\DKA-konciace_na_01_alebo_10.fa
