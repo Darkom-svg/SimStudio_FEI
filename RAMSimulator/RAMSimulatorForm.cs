@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using FEI.SimStudio.Components;
@@ -14,7 +15,7 @@ using FEI.SimStudio.Components.Dialogs;
 using FEI.SimStudio.Components.Registers;
 
 namespace FEI.RandomAccessMachine {
-	public partial class RAMSimulatorForm : Form {
+	public partial class RamSimulatorForm : Form {
 		const string AppTitle = "Random Access Machine (RAM)";
 
 		public string openFileName = null;
@@ -22,7 +23,7 @@ namespace FEI.RandomAccessMachine {
 		public bool fileChanged = false;
 		public bool isFileEmpty = true;
 
-		private bool AutoClearOutput = true;
+		private bool autoClearOutput = true;
 
 		private List<InstructionType> allowedInstructions = new List<InstructionType>()
 			{
@@ -33,24 +34,28 @@ namespace FEI.RandomAccessMachine {
 				InstructionType.Write
 			};
 
-		public RAMSimulatorForm() {
+		public RamSimulatorForm() {
 			try {
-				RAMSim = new Simulator(this);
-				RAMSim.RefreshAnimation += new EventHandler(RAMSim_RefreshAnimation);
-				RAMSim.ProgramFinished += new EventHandler(RAMSim_ProgramFinished);
-				RAMSim.ProgramPaused += new EventHandler(RAMSim_ProgramPaused);
-				RAMSim.OutputTapeChanged += new EventHandler(RAMSim_OutputTapeChanged);
-				RAMSim.ReadingPositionChanged += new EventHandler(RAMSim_ReadingChanged);
-				RAMSim.ReadingStatusChanged += new EventHandler(RAMSim_ReadingChanged);
-				RAMSim.WritingPositionChanged += new EventHandler(RAMSim_WritingChanged);
-				RAMSim.WritingStatusChanged += new EventHandler(RAMSim_WritingChanged);
-				RAMSim.InstructionExecuted += new EventHandler(RAMSim_InstructionExecuted);
-				RAMSim.ConsoleChanged += new EventHandler(RAMSim_ConsoleChanged);
-			} catch { }
+				ramSim = new Simulator(this);
+				ramSim.RefreshAnimation += new EventHandler(RAMSim_RefreshAnimation);
+				ramSim.ProgramFinished += new EventHandler(RAMSim_ProgramFinished);
+				ramSim.ProgramPaused += new EventHandler(RAMSim_ProgramPaused);
+				ramSim.OutputTapeChanged += new EventHandler(RAMSim_OutputTapeChanged);
+				ramSim.ReadingPositionChanged += new EventHandler(RAMSim_ReadingChanged);
+				ramSim.ReadingStatusChanged += new EventHandler(RAMSim_ReadingChanged);
+				ramSim.WritingPositionChanged += new EventHandler(RAMSim_WritingChanged);
+				ramSim.WritingStatusChanged += new EventHandler(RAMSim_WritingChanged);
+				ramSim.InstructionExecuted += new EventHandler(RAMSim_InstructionExecuted);
+				ramSim.ConsoleChanged += new EventHandler(RAMSim_ConsoleChanged);
+			}
+			catch (Exception ex)
+			{
+				throw new InvalidOperationException("Nepodarilo sa inicializovať RAM simulátor.",ex);
+			}
 
 			InitializeComponent();
 
-			lstRegs.Regs = RAMSim.regs;
+			lstRegs.Regs = ramSim.regs;
 			lstRegs.Regs[0] = new RegisterCell(0, "ACC");
 		}
 
@@ -59,32 +64,37 @@ namespace FEI.RandomAccessMachine {
 		Image[] iRead = new Image[4];
 		Image[] iWrite = new Image[2];
 
-		Simulator RAMSim = null;
+		Simulator ramSim = null;
 
-		ComplexityForm ComplexityWindow = null;
-		ScreenForm RamScreen = null;
-		StackForm RamStack = null;
-		ConsoleForm RamConsole = null;
+		ComplexityForm complexityWindow = null;
+		ScreenForm ramScreen = null;
+		StackForm ramStack = null;
+		ConsoleForm ramConsole = null;
 
-		private bool OpenFileOK, SaveFileOK;
+		private bool openFileOk, saveFileOk;
 
 		void RAMSim_RefreshAnimation(object sender, EventArgs e) {
-			try {
-				if (RAMSim.prgPointer < sbyProgram.Value)
-					sbyProgram.Value = RAMSim.prgPointer;
-				if (RAMSim.prgPointer > sbyProgram.Value + (int)Math.Floor((double)picProgram.Height / 20) - 1)
-					sbyProgram.Value = RAMSim.prgPointer - (int)Math.Floor((double)picProgram.Height / 20) + 1;
-			} catch { }
+			try
+			{
+				if (ramSim.prgPointer < sbyProgram.Value)
+					sbyProgram.Value = ramSim.prgPointer;
+				if (ramSim.prgPointer > sbyProgram.Value + (int)Math.Floor((double)picProgram.Height / 20) - 1)
+					sbyProgram.Value = ramSim.prgPointer - (int)Math.Floor((double)picProgram.Height / 20) + 1;
+			}
+			catch (Exception ex)
+			{
+				throw new InvalidOperationException("Chyba pri obnovovaní simulácie RAM.", ex);
+			}
 
-			safeRefresh(picProgram);
-			safeRefresh(lstRegs);
-			safeRefresh(pProc);
+			SafeRefresh(picProgram);
+			SafeRefresh(lstRegs);
+			SafeRefresh(pProc);
 		}
 
 		delegate void SafeRefreshCallback(Control obj);
-		private void safeRefresh(Control obj) {
+		private void SafeRefresh(Control obj) {
 			if (obj.InvokeRequired) {
-				SafeRefreshCallback d = new SafeRefreshCallback(safeRefresh);
+				SafeRefreshCallback d = new SafeRefreshCallback(SafeRefresh);
 				this.Invoke(d, new object[] { obj });
 			} else {
 				obj.Refresh();
@@ -92,9 +102,9 @@ namespace FEI.RandomAccessMachine {
 		}
 
 		delegate void SafeSetTextCallback(Control obj, string text);
-		private void safeSetText(Control obj, string text) {
+		private void SafeSetText(Control obj, string text) {
 			if (obj.InvokeRequired) {
-				SafeSetTextCallback d = new SafeSetTextCallback(safeSetText);
+				SafeSetTextCallback d = new SafeSetTextCallback(SafeSetText);
 				this.Invoke(d, new object[] { obj, text });
 			} else {
 				obj.Text = text;
@@ -102,10 +112,10 @@ namespace FEI.RandomAccessMachine {
 		}
 
 		void RAMSim_InstructionExecuted(object sender, EventArgs e) {
-			if (RAMSim.Speed != 0) {
-				if (ComplexityWindow != null) ComplexityWindow.RefreshValues();
-				if (RamScreen != null) RamScreen.RefreshScreen();
-				if (RamStack != null) RamStack.RefreshStack();
+			if (ramSim.Speed != 0) {
+				if (complexityWindow != null) complexityWindow.RefreshValues();
+				if (ramScreen != null) ramScreen.RefreshScreen();
+				if (ramStack != null) ramStack.RefreshStack();
 			}
 		}
 
@@ -118,35 +128,35 @@ namespace FEI.RandomAccessMachine {
 		}
 
 		void ConsoleChanged() {
-			if (RamConsole != null) RamConsole.RefreshConsole();
+			if (ramConsole != null) ramConsole.RefreshConsole();
 		}
 
 		void RAMSim_ReadingChanged(object sender, EventArgs e) {
-			lstRegs.ReadingPos = (int)Math.Round(RAMSim.CurReadPos);
-			lstRegs.Reading = RAMSim.Reading;
+			lstRegs.ReadingPos = (int)Math.Round(ramSim.CurReadPos);
+			lstRegs.Reading = ramSim.Reading;
 		}
 
 		void RAMSim_WritingChanged(object sender, EventArgs e) {
-			lstRegs.WritingPos = (int)Math.Round(RAMSim.CurWritePos);
-			lstRegs.Writing = RAMSim.Writing;
+			lstRegs.WritingPos = (int)Math.Round(ramSim.CurWritePos);
+			lstRegs.Writing = ramSim.Writing;
 		}
 
 		void RAMSim_OutputTapeChanged(object sender, EventArgs e) {
 			this.ftOutputTape.Tape.Clear();
-			this.ftOutputTape.Tape.AddRange(RAMSim.OutputTape);
+			this.ftOutputTape.Tape.AddRange(ramSim.OutputTape);
 			this.InvokeRefresh(ftOutputTape);
 		}
 
 		void RAMSim_ProgramFinished(object sender, EventArgs e) {
-			if (ComplexityWindow != null) ComplexityWindow.RefreshValues();
-			if (RamScreen != null) RamScreen.RefreshScreen();
-			if (RamStack != null) RamStack.RefreshStack();
-			if (RamConsole != null) RamConsole.RefreshConsole();
+			if (complexityWindow != null) complexityWindow.RefreshValues();
+			if (ramScreen != null) ramScreen.RefreshScreen();
+			if (ramStack != null) ramStack.RefreshStack();
+			if (ramConsole != null) ramConsole.RefreshConsole();
 
 			//Štatistiky vykonaného programu
-			this.lblStatus.Text = "Počet vykonaných inštrucií: " + RAMSim.CycleCount.ToString()
-					+ ", Trvanie: " + new DateTime(DateTime.Now.Ticks - RAMSim.StartTime).ToLongTimeString()
-					+ ", Rýchlosť: " + (RAMSim.CycleCount / (Math.Max((double)(DateTime.Now.Ticks - RAMSim.StartTime) / 10000000, double.Epsilon))).ToString() + " inštrukcií za sekundu";
+			this.lblStatus.Text = "Počet vykonaných inštrucií: " + ramSim.CycleCount.ToString()
+					+ ", Trvanie: " + new DateTime(DateTime.Now.Ticks - ramSim.StartTime).ToLongTimeString()
+					+ ", Rýchlosť: " + (ramSim.CycleCount / (Math.Max((double)(DateTime.Now.Ticks - ramSim.StartTime) / 10000000, double.Epsilon))).ToString() + " inštrukcií za sekundu";
 			this.InvokeRefresh(this);
 
 			stopToolStripButton.Enabled = false;
@@ -156,16 +166,16 @@ namespace FEI.RandomAccessMachine {
 			stepToolStripButton.Enabled = true;
 
 			ftOutputTape.Tape.Clear();
-			ftOutputTape.Tape.AddRange(RAMSim.OutputTape);
+			ftOutputTape.Tape.AddRange(ramSim.OutputTape);
 			ftOutputTape.UpdateScrollbars();
 			ftOutputTape.Refresh();
 		}
 
 		void RAMSim_ProgramPaused(object sender, EventArgs e) {
-			if (ComplexityWindow != null) ComplexityWindow.RefreshValues();
-			if (RamScreen != null) RamScreen.RefreshScreen();
-			if (RamStack != null) RamStack.RefreshStack();
-			if (RamConsole != null) RamConsole.RefreshConsole();
+			if (complexityWindow != null) complexityWindow.RefreshValues();
+			if (ramScreen != null) ramScreen.RefreshScreen();
+			if (ramStack != null) ramStack.RefreshStack();
+			if (ramConsole != null) ramConsole.RefreshConsole();
 
 			//runToolStripButton.Text = "Spustiť";            
 			sbyProgram.Visible = true;
@@ -187,8 +197,10 @@ namespace FEI.RandomAccessMachine {
 			}
 		}
 
-		private void LoadGraphics() {
-			try {
+		private void LoadGraphics()
+		{
+			try
+			{
 				string myPath = Application.ExecutablePath;
 				myPath = myPath.Substring(0, myPath.LastIndexOf('\\'));
 
@@ -201,8 +213,13 @@ namespace FEI.RandomAccessMachine {
 				iRead[3] = Image.FromFile(myPath + "\\graphics\\ReadP.png");
 				iWrite[0] = Image.FromFile(myPath + "\\graphics\\WriteOff.png");
 				iWrite[1] = Image.FromFile(myPath + "\\graphics\\Write.png");
-			} catch { }
+			}
+			catch (FileNotFoundException ex)
+			{
+				throw new FileNotFoundException("Nepodarilo sa načítať grafické súbory RAM simulátora.", ex);
+			}
 		}
+
 		private void DisposeGraphics() {
 			try {
 				iRam.Dispose();
@@ -212,7 +229,10 @@ namespace FEI.RandomAccessMachine {
 				for (int a = 0; a <= iWrite.Length - 1; a++) {
 					iWrite[a].Dispose();
 				}
-			} catch { }
+			} catch (ObjectDisposedException)
+			{
+				
+			}
 		}
 
 		private void txtProgram_TextChanged(object sender, System.EventArgs e) {
@@ -232,7 +252,7 @@ namespace FEI.RandomAccessMachine {
 		private bool Compile(bool showErrors) {
 			try {
 				Compiler compiler = new Compiler(allowedInstructions);
-				compiler.CompileIn(RAMSim, txtProgram.Text);
+				compiler.CompileIn(ramSim, txtProgram.Text);
 				return true;
 			} catch (CompilerException ex) {
 				if (showErrors) {
@@ -246,9 +266,9 @@ namespace FEI.RandomAccessMachine {
 		}
 
 		//Vykreslí tabuľku inštrukcií
-		private void DrawIns(Graphics G) {
-			if (RAMSim.program == null) {
-				DrawInsTable(G);
+		private void DrawIns(Graphics g) {
+			if (ramSim.program == null) {
+				DrawInsTable(g);
 				return;
 			}
 
@@ -256,59 +276,59 @@ namespace FEI.RandomAccessMachine {
 			Font insFont = new Font(picProgram.Font, FontStyle.Bold);
 			Pen skipPen = new Pen(Color.White, 2);
 
-			G.SmoothingMode = SmoothingMode.AntiAlias;
+			g.SmoothingMode = SmoothingMode.AntiAlias;
 
 			for (int a = 0; a <= (int)Math.Floor((double)picProgram.Height / 20); a++) {
 				i = a + sbyProgram.Value;
-				if ((RAMSim.program != null) && i < RAMSim.program.Count) {
+				if ((ramSim.program != null) && i < ramSim.program.Count) {
 					if (i % 2 == 1) {
-						G.FillRectangle(Brushes.LightGray, new Rectangle(0, a * 20, picProgram.Width, 20));
+						g.FillRectangle(Brushes.LightGray, new Rectangle(0, a * 20, picProgram.Width, 20));
 					}
 					//Aktuálna inštrukcia
-					if (Math.Round(RAMSim.CurProgramPos) == i && i == RAMSim.prgPointer) {
-						DrawGRect(G, Color.Yellow, new Rectangle(0, a * 20, picProgram.Width, 20));
+					if (Math.Round(ramSim.CurProgramPos) == i && i == ramSim.prgPointer) {
+						DrawGRect(g, Color.Yellow, new Rectangle(0, a * 20, picProgram.Width, 20));
 					} else {
-						if (i == RAMSim.prgPointer)
-							G.FillRectangle(new SolidBrush(Color.FromArgb(60, Color.Yellow)),
+						if (i == ramSim.prgPointer)
+							g.FillRectangle(new SolidBrush(Color.FromArgb(60, Color.Yellow)),
 								new Rectangle(0, a * 20, picProgram.Width, 20));
 					}
 
 					//Breakpoint
-					if (RAMSim.program[i].Stop) {
-						G.FillRectangle(new SolidBrush(Color.FromArgb(100, Color.DarkRed)), new Rectangle(0, a * 20, picProgram.Width, 20));
-						G.FillEllipse(Brushes.DarkRed, new Rectangle(3, 3 + a * 20, 15, 15));
-						G.DrawEllipse(Pens.Black, new Rectangle(3, 3 + a * 20, 15, 15));
+					if (ramSim.program[i].Stop) {
+						g.FillRectangle(new SolidBrush(Color.FromArgb(100, Color.DarkRed)), new Rectangle(0, a * 20, picProgram.Width, 20));
+						g.FillEllipse(Brushes.DarkRed, new Rectangle(3, 3 + a * 20, 15, 15));
+						g.DrawEllipse(Pens.Black, new Rectangle(3, 3 + a * 20, 15, 15));
 					}
 					//Skip
-					if (RAMSim.program[i].Skip) {
-						G.FillRectangle(new SolidBrush(Color.FromArgb(100, Color.DarkBlue)), new Rectangle(0, a * 20, picProgram.Width, 20));
+					if (ramSim.program[i].Skip) {
+						g.FillRectangle(new SolidBrush(Color.FromArgb(100, Color.DarkBlue)), new Rectangle(0, a * 20, picProgram.Width, 20));
 						//G.FillEllipse(Brushes.DarkBlue, New Rectangle(3, 3 + a * 20, 15, 15))
 						//G.DrawEllipse(Pens.Black, New Rectangle(3, 3 + a * 20, 15, 15))
-						G.DrawLine(skipPen, 5, 5 + a * 20, 15, 15 + a * 20);
-						G.DrawLine(skipPen, 5 + 10, 5 + a * 20, 5, 15 + a * 20);
+						g.DrawLine(skipPen, 5, 5 + a * 20, 15, 15 + a * 20);
+						g.DrawLine(skipPen, 5 + 10, 5 + a * 20, 5, 15 + a * 20);
 					}
 
-					G.DrawString(i.ToString(), this.Font, Brushes.Black, 20, a * 20);
-					G.DrawString(RAMSim.labeledProgram[i].Label, this.Font, Brushes.Black, 50, a * 20);
-					G.DrawString(Compiler.GetCommand(RAMSim.program[i].Command), insFont, Brushes.Black, 110, a * 20);
-					if (RAMSim.labeledProgram[i].OpLabel != "") {
-						G.DrawString(RAMSim.labeledProgram[i].OpLabel, this.Font, Brushes.Blue, 170, a * 20);
+					g.DrawString(i.ToString(), this.Font, Brushes.Black, 20, a * 20);
+					g.DrawString(ramSim.labeledProgram[i].Label, this.Font, Brushes.Black, 50, a * 20);
+					g.DrawString(Compiler.GetCommand(ramSim.program[i].Command), insFont, Brushes.Black, 110, a * 20);
+					if (ramSim.labeledProgram[i].OpLabel != "") {
+						g.DrawString(ramSim.labeledProgram[i].OpLabel, this.Font, Brushes.Blue, 170, a * 20);
 					} else {
-						G.DrawString(Compiler.GetOT(RAMSim.program[i].OperandType) + RAMSim.program[i].Operand.ToString(), this.Font, Brushes.Black, 170, a * 20);
+						g.DrawString(Compiler.GetOT(ramSim.program[i].OperandType) + ramSim.program[i].Operand.ToString(), this.Font, Brushes.Black, 170, a * 20);
 					}
 
 				}
 			}
 
-			DrawInsTable(G);
+			DrawInsTable(g);
 		}
 
 		//Vykreslí okraje tabuľky inštrukcií
-		private void DrawInsTable(Graphics G) {
-			G.DrawLine(Pens.Black, 20, 0, 20, picProgram.Height);
-			G.DrawLine(Pens.Black, 50, 0, 50, picProgram.Height);
-			G.DrawLine(Pens.Black, 110, 0, 110, picProgram.Height);
-			G.DrawRectangle(Pens.Black, 0, 0, picProgram.Width - 1, picProgram.Height - 1);
+		private void DrawInsTable(Graphics g) {
+			g.DrawLine(Pens.Black, 20, 0, 20, picProgram.Height);
+			g.DrawLine(Pens.Black, 50, 0, 50, picProgram.Height);
+			g.DrawLine(Pens.Black, 110, 0, 110, picProgram.Height);
+			g.DrawRectangle(Pens.Black, 0, 0, picProgram.Width - 1, picProgram.Height - 1);
 		}
 
 		private void picProgram_Click(object sender, System.EventArgs e) {
@@ -326,10 +346,10 @@ namespace FEI.RandomAccessMachine {
 			}
 
 
-			if (AutoClearOutput) { RAMSim.OutputTape.Clear(); ftOutputTape.Clear(); }
-			if (RAMSim.RamConsole) ShowConsole();
+			if (autoClearOutput) { ramSim.OutputTape.Clear(); ftOutputTape.Clear(); }
+			if (ramSim.RamConsole) ShowConsole();
 
-			RAMSim.Run();
+			ramSim.Run();
 
 			runToolStripButton.Visible = false;
 			breakToolStripButton.Visible = true;
@@ -338,7 +358,7 @@ namespace FEI.RandomAccessMachine {
 		}
 
 		private void Break() {
-			RAMSim.PrgStop = true;
+			ramSim.PrgStop = true;
 
 			runToolStripButton.Visible = true;
 			breakToolStripButton.Visible = false;
@@ -349,7 +369,7 @@ namespace FEI.RandomAccessMachine {
 		private void bRun_Click(object sender, System.EventArgs e) {
 			UpdateInputTape();
 			
-			if (RAMSim.PrgStop) {
+			if (ramSim.PrgStop) {
 				Run();
 			} else {
 				Break();
@@ -369,7 +389,7 @@ namespace FEI.RandomAccessMachine {
 		}
 
 		private void bStep_Click(object sender, System.EventArgs e) {
-			if (RAMSim.EndOfPrg) {
+			if (ramSim.EndOfPrg) {
 				Reset();
 			}
 
@@ -377,33 +397,33 @@ namespace FEI.RandomAccessMachine {
 			Step();
 
 			ftOutputTape.Tape.Clear();
-			ftOutputTape.Tape.AddRange(RAMSim.OutputTape);
+			ftOutputTape.Tape.AddRange(ramSim.OutputTape);
 			ftOutputTape.UpdateScrollbars();
 			ftOutputTape.Refresh();
 		}
 
 		private void Step() {
-			if (RAMSim.program == null) return;
+			if (ramSim.program == null) return;
 
 			stopToolStripButton.Enabled = true;
-			RAMSim.Step();
+			ramSim.Step();
 			lstRegs.Refresh();
 			picProgram.Refresh();
 		}
 
 		//Vykreslí označenie
-		public void DrawGRect(Graphics G, Color BColor, Rectangle Rect) {
+		public void DrawGRect(Graphics g, Color bColor, Rectangle rect) {
 			Pen pero = new Pen(Color.Black, 2);
 
 			pero.Alignment = PenAlignment.Inset;
-			G.FillRectangle(new LinearGradientBrush(Rect, BColor, Color.White, LinearGradientMode.Vertical), Rect);
-			G.FillRectangle(new LinearGradientBrush(new Rectangle(Rect.X, Rect.Y, Rect.Width, Rect.Height / 2), Color.White, Color.FromArgb(100, Color.White), LinearGradientMode.Vertical), new Rectangle(Rect.X, Rect.Y, Rect.Width, Rect.Height / 2));
-			G.DrawRectangle(pero, Rect);
+			g.FillRectangle(new LinearGradientBrush(rect, bColor, Color.White, LinearGradientMode.Vertical), rect);
+			g.FillRectangle(new LinearGradientBrush(new Rectangle(rect.X, rect.Y, rect.Width, rect.Height / 2), Color.White, Color.FromArgb(100, Color.White), LinearGradientMode.Vertical), new Rectangle(rect.X, rect.Y, rect.Width, rect.Height / 2));
+			g.DrawRectangle(pero, rect);
 			pero.Dispose();
 		}
 
 		private void bReset_Click(object sender, System.EventArgs e) {
-			RAMSim.Stop();
+			ramSim.Stop();
 			stopToolStripButton.Enabled = false;
 			runToolStripButton.Enabled = true;
 			runToolStripButton.Visible = true;
@@ -412,7 +432,7 @@ namespace FEI.RandomAccessMachine {
 		}
 
 		private void Reset() {
-			RAMSim.Reset();
+			ramSim.Reset();
 
 			lstRegs.Refresh();
 			picProgram.Refresh();
@@ -424,21 +444,21 @@ namespace FEI.RandomAccessMachine {
 			stepToolStripButton.Visible = true;
 			breakToolStripButton.Visible = false;
 
-			if (AutoClearOutput) { RAMSim.OutputTape.Clear(); ftOutputTape.Clear(); }
+			if (autoClearOutput) { ramSim.OutputTape.Clear(); ftOutputTape.Clear(); }
 			//ftOutputTape.Clear();
 			//RAMSim.OutputTape.Clear();
 
-			RAMSim.InputTape.AddRange(ftInputTape.Records);
+			ramSim.InputTape.AddRange(ftInputTape.Records);
 		}
 
-		private string OpenTextFile(string FileName) {
-			string functionReturnValue = System.IO.File.ReadAllText(FileName, Encoding.Default);
+		private string OpenTextFile(string fileName) {
+			string functionReturnValue = System.IO.File.ReadAllText(fileName, Encoding.Default);
 			return functionReturnValue;
 		}
 
-		private void SaveTextFile(string FileName, string Text) {
-			System.IO.TextWriter f = System.IO.File.CreateText(FileName);
-			f.Write(Text);
+		private void SaveTextFile(string fileName, string text) {
+			System.IO.TextWriter f = System.IO.File.CreateText(fileName);
+			f.Write(text);
 			f.Close();
 
 			FileChanged = false;
@@ -449,14 +469,14 @@ namespace FEI.RandomAccessMachine {
 		}
 
 		private void SetScrolls() {
-			if (RAMSim == null || RAMSim.program == null || RAMSim.program.Count == 0) {
+			if (ramSim == null || ramSim.program == null || ramSim.program.Count == 0) {
 				sbyProgram.Maximum = 0;
 				return;
 			}
 
 			sbyProgram.LargeChange = (int)Math.Floor((double)picProgram.Height / 20);
-			if (RAMSim != null)
-				sbyProgram.Maximum = RAMSim.program.Count - 1;
+			if (ramSim != null)
+				sbyProgram.Maximum = ramSim.program.Count - 1;
 		}
 
 		private void picProgram_Resize(object sender, System.EventArgs e) {
@@ -479,35 +499,35 @@ namespace FEI.RandomAccessMachine {
 			g.SmoothingMode = SmoothingMode.AntiAlias;
 
 			//Registre: Čítacia hlava
-			i = (int)((RAMSim.CurReadPos - lstRegs.ScrollValue) * 20);
-			if (RAMSim.Reading)
+			i = (int)((ramSim.CurReadPos - lstRegs.ScrollValue) * 20);
+			if (ramSim.Reading)
 				linePen = new Pen(Color.Green, 2);
 			else
 				linePen = Pens.Black;
-			g.DrawLine(linePen, x + iRam.Width, y + (int)iRam.Height / 2, pProc.Width - iRead[BoolValue(RAMSim.Reading)].Width, i + 10);
-			g.DrawImage(iRead[BoolValue(RAMSim.Reading)],
-				pProc.Width - iRead[BoolValue(RAMSim.Reading)].Width, i + (int)(20 - iRead[BoolValue(RAMSim.Reading)].Height) / 2,
-				iRead[BoolValue(RAMSim.Reading)].Width, iRead[BoolValue(RAMSim.Reading)].Height);
+			g.DrawLine(linePen, x + iRam.Width, y + (int)iRam.Height / 2, pProc.Width - iRead[BoolValue(ramSim.Reading)].Width, i + 10);
+			g.DrawImage(iRead[BoolValue(ramSim.Reading)],
+				pProc.Width - iRead[BoolValue(ramSim.Reading)].Width, i + (int)(20 - iRead[BoolValue(ramSim.Reading)].Height) / 2,
+				iRead[BoolValue(ramSim.Reading)].Width, iRead[BoolValue(ramSim.Reading)].Height);
 
 			//Registre: Zapisovacia hlava
-			i = (int)((RAMSim.CurWritePos - lstRegs.ScrollValue) * 20);
-			if (RAMSim.Writing)
+			i = (int)((ramSim.CurWritePos - lstRegs.ScrollValue) * 20);
+			if (ramSim.Writing)
 				linePen = new Pen(Color.Red, 2);
 			else
 				linePen = Pens.Black;
-			g.DrawLine(linePen, x + iRam.Width, y + (int)iRam.Height / 2, pProc.Width - iWrite[BoolValue(RAMSim.Writing)].Width, i + 10);
-			g.DrawImage(iWrite[BoolValue(RAMSim.Writing)], pProc.Width - iWrite[BoolValue(RAMSim.Writing)].Width, i + (int)(20 - iWrite[BoolValue(RAMSim.Writing)].Height) / 2, iWrite[BoolValue(RAMSim.Writing)].Width, iWrite[BoolValue(RAMSim.Writing)].Height);
+			g.DrawLine(linePen, x + iRam.Width, y + (int)iRam.Height / 2, pProc.Width - iWrite[BoolValue(ramSim.Writing)].Width, i + 10);
+			g.DrawImage(iWrite[BoolValue(ramSim.Writing)], pProc.Width - iWrite[BoolValue(ramSim.Writing)].Width, i + (int)(20 - iWrite[BoolValue(ramSim.Writing)].Height) / 2, iWrite[BoolValue(ramSim.Writing)].Width, iWrite[BoolValue(ramSim.Writing)].Height);
 
 			//Program: Čítacia hlava
-			i = (int)((RAMSim.CurProgramPos - sbyProgram.Value) * 20);
-			if (RAMSim.Executing)
+			i = (int)((ramSim.CurProgramPos - sbyProgram.Value) * 20);
+			if (ramSim.Executing)
 				linePen = new Pen(Color.Green, 2);
 			else
 				linePen = Pens.Black;
-			g.DrawLine(linePen, x, y + (int)iRam.Height / 2, iRead[2 + BoolValue(RAMSim.Executing)].Width, i + 10);
-			g.DrawImage(iRead[2 + BoolValue(RAMSim.Executing)],
-				0, i + (int)(20 - iRead[2 + BoolValue(RAMSim.Executing)].Height) / 2,
-				iWrite[BoolValue(RAMSim.Writing)].Width, iRead[2 + BoolValue(RAMSim.Executing)].Height);
+			g.DrawLine(linePen, x, y + (int)iRam.Height / 2, iRead[2 + BoolValue(ramSim.Executing)].Width, i + 10);
+			g.DrawImage(iRead[2 + BoolValue(ramSim.Executing)],
+				0, i + (int)(20 - iRead[2 + BoolValue(ramSim.Executing)].Height) / 2,
+				iWrite[BoolValue(ramSim.Writing)].Width, iRead[2 + BoolValue(ramSim.Executing)].Height);
 		}
 
 		public int BoolValue(bool value) {
@@ -528,15 +548,15 @@ namespace FEI.RandomAccessMachine {
 		}
 
 		private void picProgram_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e) {
-			if (RAMSim.program == null) return;
+			if (ramSim.program == null) return;
 
 			if (e.X < 20) {
 				int i = (int)Math.Floor((double)e.Y / 20) + sbyProgram.Value;
-				if (i < RAMSim.program.Count) {
+				if (i < ramSim.program.Count) {
 					if (e.Button == MouseButtons.Left) {
-						RAMSim.InvertBreakPointAt(i);
+						ramSim.InvertBreakPointAt(i);
 					} else {
-						RAMSim.InvertSkipPointAt(i);
+						ramSim.InvertSkipPointAt(i);
 					}
 					picProgram.Refresh();
 				}
@@ -669,24 +689,23 @@ namespace FEI.RandomAccessMachine {
 
 		private void OpenFile() {
 			if (MdiParent == null) {
-				OpenFileOK = false;
+				openFileOk = false;
 				openFileDialog1.Title = "Otvoriť súbor RAM";
 				openFileDialog1.AddExtension = true;
 				openFileDialog1.DefaultExt = "ram";
 				openFileDialog1.Filter = "Súbor RAM (*.ram)|*.ram|Textový súbor (*.txt)|*.txt|Všetky súbory|*.*";
 				openFileDialog1.ShowDialog(this);
 
-				if (OpenFileOK && openFileDialog1.FileName != "") {
+				if (openFileOk && openFileDialog1.FileName != "") {
 					if (!IsFileEmpty) {
-						RAMSimulatorForm rAMSimulatorForm = new RAMSimulatorForm();
-						rAMSimulatorForm.MdiParent = MdiParent;
-						rAMSimulatorForm.Show();
-						rAMSimulatorForm.File_Open(openFileDialog1.FileName);
-						rAMSimulatorForm.Activate();
+						RamSimulatorForm ramSimulatorForm = new RamSimulatorForm();
+						ramSimulatorForm.MdiParent = MdiParent;
+						ramSimulatorForm.Show();
+						ramSimulatorForm.File_Open(openFileDialog1.FileName);
+						ramSimulatorForm.Activate();
 						return;
 					}
 					File_Open(openFileDialog1.FileName);
-					return;
 				}
 
 			} else {
@@ -726,20 +745,20 @@ namespace FEI.RandomAccessMachine {
 		}
 
 		private void miClearTapes_Click(object sender, EventArgs e) {
-			RAMSim.InputTape.Clear();
-			RAMSim.OutputTape.Clear();
+			ramSim.InputTape.Clear();
+			ramSim.OutputTape.Clear();
 
 			ftInputTape.Clear();
 			ftOutputTape.Clear();
 		}
 
 		private void miClearInputTape_Click(object sender, EventArgs e) {
-			RAMSim.InputTape.Clear();
+			ramSim.InputTape.Clear();
 			ftInputTape.Clear();
 		}
 
 		private void miClearOutputTape_Click(object sender, EventArgs e) {
-			RAMSim.OutputTape.Clear();
+			ramSim.OutputTape.Clear();
 			ftOutputTape.Clear();
 		}
 
@@ -748,7 +767,7 @@ namespace FEI.RandomAccessMachine {
 		}
 
 		private void NewFile() {
-			RAMSimulatorForm frm = new RAMSimulatorForm();
+			RamSimulatorForm frm = new RamSimulatorForm();
 			frm.MdiParent = this.MdiParent;
 			frm.Show();
 		}
@@ -833,14 +852,14 @@ namespace FEI.RandomAccessMachine {
 		}
 
 		private void File_SaveAs() {
-			SaveFileOK = false;
+			saveFileOk = false;
 			saveFileDialog1.Title = "Uložiť súbor RAM";
 			saveFileDialog1.AddExtension = true;
 			saveFileDialog1.DefaultExt = "ram";
 			saveFileDialog1.Filter = "Súbor RAM (*.ram)|*.ram|Všetky súbory|*.*";
 			saveFileDialog1.ShowDialog(this);
 
-			if (SaveFileOK && saveFileDialog1.FileName != "") {
+			if (saveFileOk && saveFileDialog1.FileName != "") {
 				openFileName = saveFileDialog1.FileName;
 				SaveTextFile(saveFileDialog1.FileName, txtProgram.Text);
 			}
@@ -855,9 +874,9 @@ namespace FEI.RandomAccessMachine {
 		}
 
 		private void miComplexity_Click(object sender, EventArgs e) {
-			ComplexityWindow = new ComplexityForm();
-			ComplexityWindow.RAMSim = RAMSim;
-			ComplexityWindow.Show(this);
+			complexityWindow = new ComplexityForm();
+			complexityWindow.RAMSim = ramSim;
+			complexityWindow.Show(this);
 		}
 
 		private void ftInputTape_RecordAdded(object sender, EventArgs e) {
@@ -865,7 +884,7 @@ namespace FEI.RandomAccessMachine {
 		}
 
 		private void UpdateInputTape() {
-			RAMSim.InputTape = new List<string>(ftInputTape.Tape);
+			ramSim.InputTape = new List<string>(ftInputTape.Tape);
 		}
 
 		private void ftInputTape_RecordChanged(object sender, EventArgs e) {
@@ -877,37 +896,37 @@ namespace FEI.RandomAccessMachine {
 		}
 
 		private void miScreen_Click(object sender, EventArgs e) {
-			if (RamScreen == null) {
+			if (ramScreen == null) {
 				miScreen.Checked = true;
-				RamScreen = new ScreenForm();
-				RamScreen.simulator = this.RAMSim;
-				RamScreen.Show(this);
+				ramScreen = new ScreenForm();
+				ramScreen.simulator = this.ramSim;
+				ramScreen.Show(this);
 			} else {
 				miScreen.Checked = false;
-				RamScreen.Close();
-				RamScreen = null;
+				ramScreen.Close();
+				ramScreen = null;
 			}
 		}
 
 		private void openFileDialog1_FileOk(object sender, CancelEventArgs e) {
-			OpenFileOK = true;
+			openFileOk = true;
 		}
 
 		private void saveFileDialog1_FileOk(object sender, CancelEventArgs e) {
-			SaveFileOK = true;
+			saveFileOk = true;
 		}
 
 		private void miRunMaxSpeed_Click(object sender, EventArgs e) {
-			if (RAMSim.RamConsole) ShowConsole();
-			RAMSim.RunAtMaxSpeed();
+			if (ramSim.RamConsole) ShowConsole();
+			ramSim.RunAtMaxSpeed();
 		}
 
 		private void miAutoClearOutput_Click(object sender, EventArgs e) {
-			AutoClearOutput = miAutoClearOutput.Checked;
+			autoClearOutput = miAutoClearOutput.Checked;
 		}
 
 		private void lstRegs_RegisterChanged(object sender, RegisterList.RegisterEventArgs reg) {
-			if (RAMSim.EndOfPrg) {
+			if (ramSim.EndOfPrg) {
 				string[] lines = txtProgram.Text.Split('\n');
 				string regDef = "//#" + reg.index;
 				StringBuilder sb = new StringBuilder(txtProgram.Text.Length + 100);
@@ -928,25 +947,25 @@ namespace FEI.RandomAccessMachine {
 
 				txtProgram.Text = sb.ToString();
 			}
-			RAMSim.regs.SetValue(new InfiniteInteger(reg.index), reg.register.Value);
+			ramSim.regs.SetValue(new InfiniteInteger(reg.index), reg.register.Value);
 		}
 
 		private void miStack_Click(object sender, EventArgs e) {
-			if (RamStack == null) {
+			if (ramStack == null) {
 				miStack.Checked = true;
-				RamStack = new StackForm();
-				RamStack.simulator = this.RAMSim;
-				RamStack.Show(this);
+				ramStack = new StackForm();
+				ramStack.simulator = this.ramSim;
+				ramStack.Show(this);
 			} else {
 				miStack.Checked = false;
-				RamStack.Close();
-				RamStack = null;
+				ramStack.Close();
+				ramStack = null;
 			}
 
 		}
 
 		private void miConsole_Click(object sender, EventArgs e) {
-			if (RamConsole == null) {
+			if (ramConsole == null) {
 				ShowConsole();
 			} else {
 				HideConsole();
@@ -955,15 +974,15 @@ namespace FEI.RandomAccessMachine {
 
 		private void HideConsole() {
 			miConsole.Checked = false;
-			RamConsole.Close();
-			RamConsole = null;
+			ramConsole.Close();
+			ramConsole = null;
 		}
 
 		private void ShowConsole() {
 			miConsole.Checked = true;
-			RamConsole = new ConsoleForm();
-			RamConsole.simulator = this.RAMSim;
-			RamConsole.Show(this);
+			ramConsole = new ConsoleForm();
+			ramConsole.simulator = this.ramSim;
+			ramConsole.Show(this);
 		}
 
 		private void newStripButton_Click(object sender, EventArgs e) {
@@ -995,12 +1014,12 @@ namespace FEI.RandomAccessMachine {
 		}
 
 		private void RAMSimulatorForm_FormClosed(object sender, FormClosedEventArgs e) {
-			RAMSim.Stop();
+			ramSim.Stop();
 		}
 
 
 		private void tbSpeed_Scroll(object sender, EventArgs e) {
-			RAMSim.Speed = (int)Math.Round(1000 - Math.Pow((double)tbSpeed.Value / tbSpeed.Maximum, 2) * 1000);
+			ramSim.Speed = (int)Math.Round(1000 - Math.Pow((double)tbSpeed.Value / tbSpeed.Maximum, 2) * 1000);
 		}
 
 		private void instructionSetToolStripMenuItem_Click(object sender, EventArgs e) {

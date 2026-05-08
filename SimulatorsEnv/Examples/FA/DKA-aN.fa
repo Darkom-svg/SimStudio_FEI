@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<turingmachine>
+	<meta>
+		<author />
+		<title>1. Slová tvaru a^n</title>
+        <description>Rozpoznávanie slov tvaru a^n, kde n ≥ 0</description>
+		<created>8. 5. 2026 20:33:14</created>
+		<modified>8. 5. 2026 20:33:14</modified>
+	</meta>
+	<machine type="TM">
+		<tapes>
+			<tape id="0">
+				<head id="0" position="0" />
+			</tape>
+		</tapes>
+		<states>
+			<state id="1">
+				<name>1</name>
+				<comment />
+				<x>248</x>
+				<y>167</y>
+				<initial />
+				<final />
+			</state>
+		</states>
+		<transitions>
+			<transition>
+				<from>1</from>
+				<to>1</to>
+				<read>a</read>
+				<write>a</write>
+				<move>Right</move>
+				<comment />
+			</transition>
+		</transitions>
+		<code> δ (1,a) = (1) 
+</code>
+	</machine>
+</turingmachine>

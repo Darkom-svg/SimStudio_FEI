@@ -18,7 +18,7 @@ namespace FEI.RandomAccessMachine {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
-            RAMSimulatorForm frm = new RAMSimulatorForm();
+            RamSimulatorForm frm = new RamSimulatorForm();
             frm.Show();
 
             Application.Run();

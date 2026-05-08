@@ -188,13 +188,27 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="graphics\RAM.png" />
-    <Content Include="graphics\Read.png" />
-    <Content Include="graphics\ReadOff.png" />
-    <Content Include="graphics\ReadP.png" />
-    <Content Include="graphics\ReadPOff.png" />
-    <Content Include="graphics\Write.png" />
-    <Content Include="graphics\WriteOff.png" />
+    <Content Include="graphics\RAM.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="graphics\Read.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="graphics\ReadOff.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="graphics\ReadP.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="graphics\ReadPOff.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="graphics\Write.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="graphics\WriteOff.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\copy.png" />
     <Content Include="Resources\open.png" />
     <Content Include="Resources\save.png" />

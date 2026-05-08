@@ -49,7 +49,7 @@ namespace FEI.SimStudio {
 
 		private void ramToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			RAMSimulatorForm frm = new RAMSimulatorForm();
+			RamSimulatorForm frm = new RamSimulatorForm();
 			frm.MdiParent = this;
 			frm.Show();
 		}
@@ -147,7 +147,7 @@ namespace FEI.SimStudio {
 					return;
 				}
 				if (fileName.EndsWith(".ram") || fileName.EndsWith(".txt")) {
-					RAMSimulatorForm rAMSimulatorForm = new RAMSimulatorForm();
+					RamSimulatorForm rAMSimulatorForm = new RamSimulatorForm();
 					rAMSimulatorForm.MdiParent = this;
 					rAMSimulatorForm.Show();
 					rAMSimulatorForm.File_Open(fileName);

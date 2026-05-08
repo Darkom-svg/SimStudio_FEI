@@ -64,6 +64,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ExamplesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExamplesForm.Designer.cs">
+      <DependentUpon>ExamplesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="RoundedPanel.cs" />
     <Compile Include="SimulatorsForm.cs">
       <SubType>Form</SubType>
@@ -76,6 +82,9 @@
     <EmbeddedResource Include="AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExamplesForm.resx">
+      <DependentUpon>ExamplesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SimulatorsForm.resx">
       <DependentUpon>SimulatorsForm.cs</DependentUpon>
@@ -105,9 +114,7 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SimStudio.ico">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
+    <EmbeddedResource Include="SimStudio.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Abacus.png" />
@@ -155,6 +162,27 @@
     <None Include="Resources\small_open.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Examples\FA\DKA-3kplus1-a.fa">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\FA\DKA-pravejedna0naposlednychdvochmiestach.fa">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\FA\DKA-aN.fa">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\PDA\DZA-aNbN.pa">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\PDA\DZA-wcwR.pa">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\TM\DTM-aN_2bN.tm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Examples\TM\DTM-sum.tm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\Background2.jpg" />
     <Content Include="Resources\FEI_LOGO.png" />
     <Content Include="Resources\small_Trainer1.png" />

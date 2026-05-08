@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<turingmachine>
+	<meta>
+		<author />
+		<title>1. Slová tvaru a^n b^n</title>
+        <description>Rozpoznávanie slov tvaru a^n b^n, kde n ≥ 0.</description>
+		<created>8. 5. 2026 21:16:22</created>
+		<modified>8. 5. 2026 21:16:22</modified>
+	</meta>
+	<machine type="TM">
+		<tapes>
+			<tape id="0">
+				<head id="0" position="0" />
+			</tape>
+		</tapes>
+		<states>
+			<state id="0">
+				<name>0</name>
+				<comment />
+				<x>55</x>
+				<y>191</y>
+				<initial />
+				<final />
+			</state>
+			<state id="1">
+				<name>1</name>
+				<comment />
+				<x>181</x>
+				<y>202</y>
+			</state>
+			<state id="2">
+				<name>2</name>
+				<comment />
+				<x>319</x>
+				<y>204</y>
+			</state>
+			<state id="3">
+				<name>3</name>
+				<comment />
+				<x>436</x>
+				<y>199</y>
+				<final />
+			</state>
+		</states>
+		<transitions>
+			<transition>
+				<from>1</from>
+				<to>1</to>
+				<read>a</read>
+				<write>a</write>
+				<move>Right</move>
+				<comment />
+			</transition>
+			<transition>
+				<from>2</from>
+				<to>3</to>
+				<read>Blank</read>
+				<write>Blank</write>
+				<move>Right</move>
+				<comment />
+			</transition>
+			<transition>
+				<from>2</from>
+				<to>2</to>
+				<read>b</read>
+				<write>b</write>
+				<move>Right</move>
+				<comment />
+			</transition>
+			<transition>
+				<from>1</from>
+				<to>2</to>
+				<read>b</read>
+				<write>b</write>
+				<move>Right</move>
+				<comment />
+			</transition>
+			<transition>
+				<from>0</from>
+				<to>1</to>
+				<read>a</read>
+				<write>a</write>
+				<move>Right</move>
+				<comment />
+			</transition>
+		</transitions>
+		<code> δ (1,a,A) = (1,AA) 
+ δ (2,Blank,Z) = (3,Z) 
+ δ (2,b,A) = (2,) 
+ δ (1,b,A) = (2,) 
+ δ (0,a,Z) = (1,AZ) 
+</code>
+	</machine>
+</turingmachine>

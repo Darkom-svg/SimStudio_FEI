@@ -4,7 +4,7 @@ using FEI.SimStudio.Components.Controls.RegisterList;
 using FEI.SimStudio.Components.Registers;
 
 namespace FEI.RandomAccessMachine {
-	partial class RAMSimulatorForm
+	partial class RamSimulatorForm
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,7 @@ namespace FEI.RandomAccessMachine {
         /// </summary>
         private void InitializeComponent()
         {
-	        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RAMSimulatorForm));
+	        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RamSimulatorForm));
 	        InfiniteRegisters infiniteRegisters1 = new InfiniteRegisters();
 	        this.lblInputTape = new System.Windows.Forms.Label();
 	        this.lblOutputTape = new System.Windows.Forms.Label();
@@ -783,7 +783,7 @@ namespace FEI.RandomAccessMachine {
 	        this.Controls.Add(this.toolStripPanel1);
 	        this.DoubleBuffered = true;
 	        this.MainMenuStrip = this.menuStrip1;
-	        this.Name = "RAMSimulatorForm";
+	        this.Name = "RamSimulatorForm";
 	        this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RAMSimulatorForm_FormClosed);
 	        this.Load += new System.EventHandler(this.RAMSimulatorForm_Load);
 	        this.Disposed += new System.EventHandler(this.RAMSimulatorForm_Disposed);

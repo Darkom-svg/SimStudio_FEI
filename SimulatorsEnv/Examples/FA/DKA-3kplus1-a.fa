@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<turingmachine>
+	<meta>
+		<author />
+		<title>2. Slová tvaru #a_w = 3n + 1</title>
+        <description>Rozpoznávanie slov tvaru #a_w = 3n + 1, kde n ≥ 0</description>
+		<created>8. 5. 2026 21:01:07</created>
+		<modified>8. 5. 2026 21:01:07</modified>
+	</meta>
+	<machine type="TM">
+		<tapes>
+			<tape id="0">
+				<head id="0" position="0" />
+			</tape>
+		</tapes>
+		<states>
+			<state id="0">
+				<name>0</name>
+				<comment />
+				<x>173</x>
+				<y>121</y>
+				<initial />
+			</state>
+			<state id="1">
+				<name>1</name>
+				<comment />
+				<x>379</x>
+				<y>115</y>
+				<final />
+			</state>
+			<state id="2">
+				<name>2</name>
+				<comment />
+				<x>288</x>
+				<y>310</y>
+			</state>
+		</states>
+		<transitions>
+			<transition>
+				<from>2</from>
+				<to>0</to>
+				<read>a</read>
+				<write>a</write>
+				<move>Right</move>
+				<comment />
+			</transition>
+			<transition>
+				<from>0</from>
+				<to>0</to>
+				<read>b</read>
+				<write>b</write>
+				<move>Right</move>
+				<comment />
+			</transition>
+			<transition>
+				<from>1</from>
+				<to>1</to>
+				<read>b</read>
+				<write>b</write>
+				<move>Right</move>
+				<comment />
+			</transition>
+			<transition>
+				<from>2</from>
+				<to>2</to>
+				<read>b</read>
+				<write>b</write>
+				<move>Right</move>
+				<comment />
+			</transition>
+			<transition>
+				<from>1</from>
+				<to>2</to>
+				<read>a</read>
+				<write>a</write>
+				<move>Right</move>
+				<comment />
+			</transition>
+			<transition>
+				<from>0</from>
+				<to>1</to>
+				<read>a</read>
+				<write>a</write>
+				<move>Right</move>
+				<comment />
+			</transition>
+		</transitions>
+		<code> δ (2,a) = (0) 
+ δ (0,b) = (0) 
+ δ (1,b) = (1) 
+ δ (2,b) = (2) 
+ δ (1,a) = (2) 
+ δ (0,a) = (1) 
+</code>
+	</machine>
+</turingmachine>

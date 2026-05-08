@@ -197,3 +197,10 @@ C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\Si
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\obj\Debug\RandomAc.7DD33389.Up2Date
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\obj\Debug\RandomAccessMachineSimulator.exe
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\obj\Debug\RandomAccessMachineSimulator.pdb
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\bin\Debug\graphics\RAM.png
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\bin\Debug\graphics\Read.png
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\bin\Debug\graphics\ReadOff.png
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\bin\Debug\graphics\ReadP.png
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\bin\Debug\graphics\ReadPOff.png
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\bin\Debug\graphics\Write.png
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\bin\Debug\graphics\WriteOff.png

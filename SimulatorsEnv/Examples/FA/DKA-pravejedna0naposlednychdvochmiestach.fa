@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<turingmachine>
+	<meta>
+		<author />
+		<title>3. Slová končiace na 01 alebo 10</title>
+        <description>Rozpoznávanie slov nad {0,1}, ktoré končia na 01 alebo 10.</description>
+		<created>8. 5. 2026 21:11:41</created>
+		<modified>8. 5. 2026 21:11:41</modified>
+	</meta>
+	<machine type="TM">
+		<tapes>
+			<tape id="0">
+				<head id="0" position="0" />
+			</tape>
+		</tapes>
+		<states>
+			<state id="0">
+				<name>0</name>
+				<comment />
+				<x>55</x>
+				<y>300</y>
+				<initial />
+			</state>
+			<state id="1">
+				<name>1</name>
+				<comment />
+				<x>225</x>
+				<y>54</y>
+			</state>
+			<state id="2">
+				<name>2</name>
+				<comment />
+				<x>267</x>
+				<y>300</y>
+			</state>
+			<state id="3">
+				<name>3</name>
+				<comment />
+				<x>518</x>
+				<y>45</y>
+				<final />
+			</state>
+			<state id="4">
+				<name>4</name>
+				<comment />
+				<x>508</x>
+				<y>322</y>
+				<final />
+			</state>
+		</states>
+		<transitions>
+			<transition>
+				<from>0</from>
+				<to>2</to>
+				<read>0</read>
+				<write>0</write>
+				<move>Right</move>
+				<comment />
+			</transition>
+			<transition>
+				<from>2</from>
+				<to>2</to>
+				<read>0</read>
+				<write>0</write>
+				<move>Right</move>
+				<comment />
+			</transition>
+			<transition>
+				<from>1</from>
+				<to>1</to>
+				<read>1</read>
+				<write>1</write>
+				<move>Right</move>
+				<comment />
+			</transition>
+			<transition>
+				<from>4</from>
+				<to>2</to>
+				<read>0</read>
+				<write>0</write>
+				<move>Right</move>
+				<comment />
+			</transition>
+			<transition>
+				<from>3</from>
+				<to>1</to>
+				<read>1</read>
+				<write>1</write>
+				<move>Right</move>
+				<comment />
+			</transition>
+			<transition>
+				<from>2</from>
+				<to>3</to>
+				<read>1</read>
+				<write>1</write>
+				<move>Right</move>
+				<comment />
+			</transition>
+			<transition>
+				<from>3</from>
+				<to>4</to>
+				<read>0</read>
+				<write>0</write>
+				<move>Right</move>
+				<comment />
+			</transition>
+			<transition>
+				<from>4</from>
+				<to>3</to>
+				<read>1</read>
+				<write>1</write>
+				<move>Right</move>
+				<comment />
+			</transition>
+			<transition>
+				<from>0</from>
+				<to>1</to>
+				<read>1</read>
+				<write>1</write>
+				<move>Right</move>
+				<comment />
+			</transition>
+			<transition>
+				<from>1</from>
+				<to>4</to>
+				<read>0</read>
+				<write>0</write>
+				<move>Right</move>
+				<comment />
+			</transition>
+		</transitions>
+		<code> δ (0,0) = (2) 
+ δ (2,0) = (2) 
+ δ (1,1) = (1) 
+ δ (4,0) = (2) 
+ δ (3,1) = (1) 
+ δ (2,1) = (3) 
+ δ (3,0) = (4) 
+ δ (4,1) = (3) 
+ δ (0,1) = (1) 
+ δ (1,0) = (4) 
+</code>
+	</machine>
+</turingmachine>

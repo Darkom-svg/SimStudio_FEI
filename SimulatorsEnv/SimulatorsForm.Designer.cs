@@ -581,6 +581,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "Spustiť";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.bExample_Click);
             // 
             // pictureBox9
             // 

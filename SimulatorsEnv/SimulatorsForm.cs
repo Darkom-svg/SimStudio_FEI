@@ -6,7 +6,6 @@ using FEI.PushdownAutomaton;
 using FEI.RandomAccessMachine;
 using FEI.TrainingSimulator;
 using FEI.TuringMachineSimulator;
-using TrainingSimulator;
 
 namespace FEI.SimStudio {
 	public partial class SimulatorsForm : Form
@@ -25,7 +24,7 @@ namespace FEI.SimStudio {
 
         private void bRAM_Click(object sender, EventArgs e)
         {
-            RAMSimulatorForm frm = new RAMSimulatorForm();
+            RamSimulatorForm frm = new RamSimulatorForm();
             frm.MdiParent = this.MdiParent;
             frm.Show();
         }
@@ -57,7 +56,7 @@ namespace FEI.SimStudio {
 
         private void miNewRAM_Click(object sender, EventArgs e)
         {
-            RAMSimulatorForm frm = new RAMSimulatorForm();
+            RamSimulatorForm frm = new RamSimulatorForm();
             frm.Show();
         }
 
@@ -92,6 +91,11 @@ namespace FEI.SimStudio {
             frm.Show();
         }
         
-        
+        private void bExample_Click(object sender, EventArgs e)
+        {
+            ExamplesForm frm = new ExamplesForm();
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+        }
     }
 }
