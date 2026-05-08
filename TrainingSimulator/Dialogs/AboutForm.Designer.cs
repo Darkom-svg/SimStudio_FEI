@@ -77,11 +77,11 @@
             // pIcon
             // 
             this.pIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pIcon.Image = global::FEI.TrainingSimulator.Properties.Resources.small_Trainer;
+            this.pIcon.Image = global::FEI.TrainingSimulator.Properties.Resources.Trainer;
             this.pIcon.Location = new System.Drawing.Point(12, 12);
             this.pIcon.Name = "pIcon";
-            this.pIcon.Size = new System.Drawing.Size(48, 45);
-            this.pIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pIcon.Size = new System.Drawing.Size(55, 55);
+            this.pIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pIcon.TabIndex = 11;
             this.pIcon.TabStop = false;
             // 

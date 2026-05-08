@@ -159,6 +159,7 @@
     <Content Include="Resources\FEI_LOGO.png" />
     <Content Include="Resources\small_Trainer1.png" />
     <Content Include="Resources\Trainer.ico" />
+    <Content Include="Resources\Trainer1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

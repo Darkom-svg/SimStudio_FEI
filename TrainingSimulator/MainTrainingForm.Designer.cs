@@ -345,9 +345,11 @@ namespace FEI.TrainingSimulator
             // pictureBox1
             // 
             this.pictureBox1.Image = global::FEI.TrainingSimulator.Properties.Resources.Turing;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 11);
+            this.pictureBox1.Location = new System.Drawing.Point(8, 6);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox1.Size = new System.Drawing.Size(55, 55);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -437,9 +439,11 @@ namespace FEI.TrainingSimulator
             // pictureBox2
             // 
             this.pictureBox2.Image = global::FEI.TrainingSimulator.Properties.Resources.Turing;
-            this.pictureBox2.Location = new System.Drawing.Point(8, 11);
+            this.pictureBox2.Location = new System.Drawing.Point(8, 6);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox2.Size = new System.Drawing.Size(55, 55);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
@@ -517,9 +521,11 @@ namespace FEI.TrainingSimulator
             // pictureBox3
             // 
             this.pictureBox3.Image = global::FEI.TrainingSimulator.Properties.Resources.Turing;
-            this.pictureBox3.Location = new System.Drawing.Point(8, 11);
+            this.pictureBox3.Location = new System.Drawing.Point(8, 6);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox3.Size = new System.Drawing.Size(55, 55);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 

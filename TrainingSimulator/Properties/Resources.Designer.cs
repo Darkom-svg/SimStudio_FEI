@@ -72,9 +72,9 @@ namespace FEI.TrainingSimulator.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap small_Trainer {
+        internal static System.Drawing.Bitmap Trainer {
             get {
-                object obj = ResourceManager.GetObject("small_Trainer", resourceCulture);
+                object obj = ResourceManager.GetObject("Trainer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

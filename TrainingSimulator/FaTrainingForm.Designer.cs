@@ -707,7 +707,7 @@ namespace FEI.TrainingSimulator
             this.functionsTab.Margin = new System.Windows.Forms.Padding(4);
             this.functionsTab.Name = "functionsTab";
             this.functionsTab.Padding = new System.Windows.Forms.Padding(4);
-            this.functionsTab.Size = new System.Drawing.Size(1156, 425);
+            this.functionsTab.Size = new System.Drawing.Size(1156, 455);
             this.functionsTab.TabIndex = 0;
             this.functionsTab.Text = "Prechodové funkcie";
             this.functionsTab.UseVisualStyleBackColor = true;
@@ -724,7 +724,7 @@ namespace FEI.TrainingSimulator
             this.splitContainer1.Panel1.Controls.Add(this.bAddTFunction);
             this.splitContainer1.Panel1.Controls.Add(this.label5);
             this.splitContainer1.Panel1.Controls.Add(this.txtCode);
-            this.splitContainer1.Size = new System.Drawing.Size(1145, 411);
+            this.splitContainer1.Size = new System.Drawing.Size(1145, 441);
             this.splitContainer1.SplitterDistance = 745;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
@@ -762,7 +762,7 @@ namespace FEI.TrainingSimulator
             this.txtCode.SelectedText = "";
             this.txtCode.SelectionLength = 0;
             this.txtCode.SelectionStart = 0;
-            this.txtCode.Size = new System.Drawing.Size(737, 359);
+            this.txtCode.Size = new System.Drawing.Size(737, 389);
             this.txtCode.TabIndex = 0;
             // 
             // statesTab
@@ -773,7 +773,7 @@ namespace FEI.TrainingSimulator
             this.statesTab.Margin = new System.Windows.Forms.Padding(4);
             this.statesTab.Name = "statesTab";
             this.statesTab.Padding = new System.Windows.Forms.Padding(4);
-            this.statesTab.Size = new System.Drawing.Size(1156, 425);
+            this.statesTab.Size = new System.Drawing.Size(1156, 455);
             this.statesTab.TabIndex = 1;
             this.statesTab.Text = "Stavový diagram";
             this.statesTab.UseVisualStyleBackColor = true;
@@ -798,7 +798,7 @@ namespace FEI.TrainingSimulator
             this.stateDiagramControl.Location = new System.Drawing.Point(5, 7);
             this.stateDiagramControl.Margin = new System.Windows.Forms.Padding(5);
             this.stateDiagramControl.Name = "stateDiagramControl";
-            this.stateDiagramControl.Size = new System.Drawing.Size(989, 414);
+            this.stateDiagramControl.Size = new System.Drawing.Size(989, 444);
             this.stateDiagramControl.TabIndex = 0;
             this.stateDiagramControl.TuringMachine = null;
             // 
@@ -808,7 +808,7 @@ namespace FEI.TrainingSimulator
             this.logTab.Margin = new System.Windows.Forms.Padding(4);
             this.logTab.Name = "logTab";
             this.logTab.Padding = new System.Windows.Forms.Padding(4);
-            this.logTab.Size = new System.Drawing.Size(1156, 425);
+            this.logTab.Size = new System.Drawing.Size(1156, 455);
             this.logTab.TabIndex = 3;
             this.logTab.Text = "Záznam priebehu";
             this.logTab.UseVisualStyleBackColor = true;
@@ -819,7 +819,7 @@ namespace FEI.TrainingSimulator
             this.formalSpecificationTab.Location = new System.Drawing.Point(4, 22);
             this.formalSpecificationTab.Margin = new System.Windows.Forms.Padding(4);
             this.formalSpecificationTab.Name = "formalSpecificationTab";
-            this.formalSpecificationTab.Size = new System.Drawing.Size(1156, 425);
+            this.formalSpecificationTab.Size = new System.Drawing.Size(1156, 455);
             this.formalSpecificationTab.TabIndex = 4;
             this.formalSpecificationTab.Text = "Formálna špecifikácia";
             this.formalSpecificationTab.UseVisualStyleBackColor = true;
@@ -832,7 +832,7 @@ namespace FEI.TrainingSimulator
             this.formalSpecifiaction.Margin = new System.Windows.Forms.Padding(4);
             this.formalSpecifiaction.MinimumSize = new System.Drawing.Size(27, 25);
             this.formalSpecifiaction.Name = "formalSpecifiaction";
-            this.formalSpecifiaction.Size = new System.Drawing.Size(1156, 425);
+            this.formalSpecifiaction.Size = new System.Drawing.Size(1156, 455);
             this.formalSpecifiaction.TabIndex = 1;
             this.formalSpecifiaction.WebBrowserShortcutsEnabled = false;
             // 

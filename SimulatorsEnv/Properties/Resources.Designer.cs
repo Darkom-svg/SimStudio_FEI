@@ -8,6 +8,9 @@
 //------------------------------------------------------------------------------
 
 namespace FEI.SimStudio.Properties {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -112,16 +115,6 @@ namespace FEI.SimStudio.Properties {
         internal static System.Drawing.Bitmap small_open {
             get {
                 object obj = ResourceManager.GetObject("small_open", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap small_Trainer {
-            get {
-                object obj = ResourceManager.GetObject("small_Trainer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

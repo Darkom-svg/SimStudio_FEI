@@ -17,6 +17,7 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
+    <ApplicationIcon>Turing.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -128,6 +129,7 @@
       <DependentUpon>FiniteAutomatonForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FiniteAutomatonParser.cs" />
+    <None Include="Turing.ico" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Components\Components.csproj">

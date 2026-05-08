@@ -59,6 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dialogs\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\AddValueForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,14 +101,12 @@
     <Compile Include="AbacusMachineForm.Designer.cs">
       <DependentUpon>AbacusMachineForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="AboutForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AboutForm.Designer.cs">
-      <DependentUpon>AboutForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dialogs\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\AddValueForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>AddValueForm.cs</DependentUpon>
@@ -126,10 +130,6 @@
     <EmbeddedResource Include="AbacusMachineForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>AbacusMachineForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AboutForm.resx">
-      <DependentUpon>AboutForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

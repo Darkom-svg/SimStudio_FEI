@@ -274,7 +274,7 @@
             // 
             this.statusStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.statusLabel });
-            this.statusStrip.Location = new System.Drawing.Point(0, 727);
+            this.statusStrip.Location = new System.Drawing.Point(0, 828);
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
             this.statusStrip.Size = new System.Drawing.Size(1312, 25);
@@ -291,7 +291,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1312, 752);
+            this.ClientSize = new System.Drawing.Size(1312, 853);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.topToolStripPanel);
             this.Controls.Add(this.menuStrip1);

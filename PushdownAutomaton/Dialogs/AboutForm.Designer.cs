@@ -81,7 +81,8 @@
             this.pIcon.Image = global::FEI.PushdownAutomaton.Properties.Resources.Turing;
             this.pIcon.Location = new System.Drawing.Point(12, 12);
             this.pIcon.Name = "pIcon";
-            this.pIcon.Size = new System.Drawing.Size(48, 48);
+            this.pIcon.Size = new System.Drawing.Size(55, 55);
+            this.pIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pIcon.TabIndex = 11;
             this.pIcon.TabStop = false;
             // 

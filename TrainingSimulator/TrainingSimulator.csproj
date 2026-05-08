@@ -172,7 +172,9 @@
     <ItemGroup>
       <Content Include="Resources\small_open.png" />
       <Content Include="Resources\small_Trainer.png" />
+      <Content Include="Resources\Trainer.png" />
       <Content Include="Resources\Turing.png" />
+      <Content Include="Resources\Turing1.png" />
       <Content Include="Resources\validated.png" />
       <Content Include="Resources\validated1.png" />
       <Content Include="tasks.json">
