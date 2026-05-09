@@ -72,16 +72,6 @@ namespace FEI.SimStudio.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FEI_LOGO {
-            get {
-                object obj = ResourceManager.GetObject("FEI_LOGO", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap RAM {
             get {
                 object obj = ResourceManager.GetObject("RAM", resourceCulture);
@@ -95,6 +85,16 @@ namespace FEI.SimStudio.Properties {
         internal static System.Drawing.Bitmap SimStudio {
             get {
                 object obj = ResourceManager.GetObject("SimStudio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SimStudio_logo {
+            get {
+                object obj = ResourceManager.GetObject("SimStudio_logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

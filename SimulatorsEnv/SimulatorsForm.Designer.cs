@@ -70,9 +70,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
@@ -98,7 +96,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.roundedPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
@@ -195,6 +192,8 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer1.IsSplitterFixed = true;
             this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             // 
@@ -205,9 +204,9 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel1);
-            this.splitContainer1.Size = new System.Drawing.Size(984, 637);
-            this.splitContainer1.SplitterDistance = 415;
+            this.splitContainer1.Panel2.Controls.Add(this.pictureBox7);
+            this.splitContainer1.Size = new System.Drawing.Size(1184, 637);
+            this.splitContainer1.SplitterDistance = 430;
             this.splitContainer1.TabIndex = 22;
             // 
             // flowLayoutPanel1
@@ -225,7 +224,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(16);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(415, 637);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(430, 637);
             this.flowLayoutPanel1.TabIndex = 0;
             this.flowLayoutPanel1.WrapContents = false;
             // 
@@ -616,46 +615,19 @@
             this.label9.TabIndex = 15;
             this.label9.Text = "Riešené príklady";
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.pictureBox7, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 0, 1);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(565, 637);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
             // pictureBox7
             // 
             this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox7.Image = global::FEI.SimStudio.Properties.Resources.FEI_LOGO;
-            this.pictureBox7.Location = new System.Drawing.Point(8, 16);
+            this.pictureBox7.Image = global::FEI.SimStudio.Properties.Resources.SimStudio_logo;
+            this.pictureBox7.Location = new System.Drawing.Point(86, 124);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(8, 16, 8, 0);
-            this.pictureBox7.MaximumSize = new System.Drawing.Size(840, 359);
+            this.pictureBox7.MaximumSize = new System.Drawing.Size(1250, 500);
+            this.pictureBox7.MinimumSize = new System.Drawing.Size(500, 200);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(549, 302);
+            this.pictureBox7.Size = new System.Drawing.Size(600, 240);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 0;
+            this.pictureBox7.TabIndex = 1;
             this.pictureBox7.TabStop = false;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Calibri", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(3, 318);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(559, 319);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Sim Studio - FEI STU";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // panel2
             // 
@@ -709,7 +681,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(984, 637);
+            this.ClientSize = new System.Drawing.Size(1184, 637);
             this.ControlBox = false;
             this.Controls.Add(this.splitContainer1);
             this.DoubleBuffered = true;
@@ -746,8 +718,6 @@
             this.roundedPanel7.ResumeLayout(false);
             this.roundedPanel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
@@ -786,11 +756,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
 
-        private System.Windows.Forms.Label label6;
-
         private System.Windows.Forms.PictureBox pictureBox7;
-
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;

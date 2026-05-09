@@ -69,15 +69,14 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.MdiWindowListItem = this.windowsToolStripMenuItem;
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1312, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1184, 24);
             this.menuStrip1.TabIndex = 1;
             // 
             // simulatorsToolStripMenuItem1
             // 
             this.simulatorsToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.openFileToolStripMenuItem, this.toolStripMenuItem1, this.finiteAutomatonToolStripMenuItem1, this.pushdownAutomatonToolStripMenuItem, this.turingMachineToolStripMenuItem1, this.rAMSimulatorToolStripMenuItem, this.abacusMachineToolStripMenuItem1, this.trianerToolStripMenuItem });
             this.simulatorsToolStripMenuItem1.Name = "simulatorsToolStripMenuItem1";
-            this.simulatorsToolStripMenuItem1.Size = new System.Drawing.Size(92, 24);
+            this.simulatorsToolStripMenuItem1.Size = new System.Drawing.Size(76, 20);
             this.simulatorsToolStripMenuItem1.Text = "Simulátory";
             this.simulatorsToolStripMenuItem1.Paint += new System.Windows.Forms.PaintEventHandler(this.simulatorsToolStripMenuItem_Paint);
             // 
@@ -85,20 +84,20 @@
             // 
             this.openFileToolStripMenuItem.Image = global::FEI.SimStudio.Properties.Resources.small_open;
             this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
-            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(221, 24);
+            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.openFileToolStripMenuItem.Text = "Otvoriť";
             this.openFileToolStripMenuItem.Click += new System.EventHandler(this.openFileToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(218, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(186, 6);
             // 
             // finiteAutomatonToolStripMenuItem1
             // 
             this.finiteAutomatonToolStripMenuItem1.Image = global::FEI.SimStudio.Properties.Resources.Turing;
             this.finiteAutomatonToolStripMenuItem1.Name = "finiteAutomatonToolStripMenuItem1";
-            this.finiteAutomatonToolStripMenuItem1.Size = new System.Drawing.Size(221, 24);
+            this.finiteAutomatonToolStripMenuItem1.Size = new System.Drawing.Size(189, 22);
             this.finiteAutomatonToolStripMenuItem1.Text = "Konečný automat";
             this.finiteAutomatonToolStripMenuItem1.Click += new System.EventHandler(this.finiteAutomatonToolStripMenuItem_Click);
             // 
@@ -106,7 +105,7 @@
             // 
             this.pushdownAutomatonToolStripMenuItem.Image = global::FEI.SimStudio.Properties.Resources.Turing;
             this.pushdownAutomatonToolStripMenuItem.Name = "pushdownAutomatonToolStripMenuItem";
-            this.pushdownAutomatonToolStripMenuItem.Size = new System.Drawing.Size(221, 24);
+            this.pushdownAutomatonToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.pushdownAutomatonToolStripMenuItem.Text = "Zásobníkový automat";
             this.pushdownAutomatonToolStripMenuItem.Click += new System.EventHandler(this.pushdownAutomatonToolStripMenuItem_Click);
             // 
@@ -114,7 +113,7 @@
             // 
             this.turingMachineToolStripMenuItem1.Image = global::FEI.SimStudio.Properties.Resources.Turing;
             this.turingMachineToolStripMenuItem1.Name = "turingMachineToolStripMenuItem1";
-            this.turingMachineToolStripMenuItem1.Size = new System.Drawing.Size(221, 24);
+            this.turingMachineToolStripMenuItem1.Size = new System.Drawing.Size(189, 22);
             this.turingMachineToolStripMenuItem1.Text = "Turingov stroj";
             this.turingMachineToolStripMenuItem1.Click += new System.EventHandler(this.turingMachineToolStripMenuItem_Click);
             // 
@@ -122,7 +121,7 @@
             // 
             this.rAMSimulatorToolStripMenuItem.Image = global::FEI.SimStudio.Properties.Resources.RAM;
             this.rAMSimulatorToolStripMenuItem.Name = "rAMSimulatorToolStripMenuItem";
-            this.rAMSimulatorToolStripMenuItem.Size = new System.Drawing.Size(221, 24);
+            this.rAMSimulatorToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.rAMSimulatorToolStripMenuItem.Text = "RAM";
             this.rAMSimulatorToolStripMenuItem.Click += new System.EventHandler(this.ramToolStripMenuItem_Click);
             // 
@@ -130,7 +129,7 @@
             // 
             this.abacusMachineToolStripMenuItem1.Image = global::FEI.SimStudio.Properties.Resources.Abacus;
             this.abacusMachineToolStripMenuItem1.Name = "abacusMachineToolStripMenuItem1";
-            this.abacusMachineToolStripMenuItem1.Size = new System.Drawing.Size(221, 24);
+            this.abacusMachineToolStripMenuItem1.Size = new System.Drawing.Size(189, 22);
             this.abacusMachineToolStripMenuItem1.Text = "Počítadlový stroj";
             this.abacusMachineToolStripMenuItem1.Click += new System.EventHandler(this.abacusMachineToolStripMenuItem_Click);
             // 
@@ -138,7 +137,7 @@
             // 
             this.trianerToolStripMenuItem.Image = global::FEI.SimStudio.Properties.Resources.Trainer;
             this.trianerToolStripMenuItem.Name = "trianerToolStripMenuItem";
-            this.trianerToolStripMenuItem.Size = new System.Drawing.Size(221, 24);
+            this.trianerToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.trianerToolStripMenuItem.Text = "Trenažér";
             this.trianerToolStripMenuItem.Click += new System.EventHandler(this.trainerToolStripMenuItem_Click);
             // 
@@ -146,7 +145,7 @@
             // 
             this.placeholderToolStripMenuItem.MergeIndex = 1;
             this.placeholderToolStripMenuItem.Name = "placeholderToolStripMenuItem";
-            this.placeholderToolStripMenuItem.Size = new System.Drawing.Size(99, 24);
+            this.placeholderToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.placeholderToolStripMenuItem.Text = "Placeholder";
             this.placeholderToolStripMenuItem.Visible = false;
             // 
@@ -155,7 +154,7 @@
             this.windowsToolStripMenuItem1.MergeAction = System.Windows.Forms.MergeAction.Insert;
             this.windowsToolStripMenuItem1.MergeIndex = 9;
             this.windowsToolStripMenuItem1.Name = "windowsToolStripMenuItem1";
-            this.windowsToolStripMenuItem1.Size = new System.Drawing.Size(55, 24);
+            this.windowsToolStripMenuItem1.Size = new System.Drawing.Size(47, 20);
             this.windowsToolStripMenuItem1.Text = "Okná";
             // 
             // helpToolStripMenuItem1
@@ -163,13 +162,13 @@
             this.helpToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.aboutToolStripMenuItem1 });
             this.helpToolStripMenuItem1.MergeIndex = 10;
             this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(85, 24);
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(73, 20);
             this.helpToolStripMenuItem1.Text = "Pomocník";
             // 
             // aboutToolStripMenuItem1
             // 
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(159, 24);
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(138, 22);
             this.aboutToolStripMenuItem1.Text = "O programe";
             this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -185,14 +184,14 @@
             this.openToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripButton.Image")));
             this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.openToolStripButton.Name = "openToolStripButton";
-            this.openToolStripButton.Size = new System.Drawing.Size(77, 24);
+            this.openToolStripButton.Size = new System.Drawing.Size(65, 22);
             this.openToolStripButton.Text = "Otvoriť";
             this.openToolStripButton.Click += new System.EventHandler(this.openToolStripButton_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // simulatorsToolStripMenuItem
             // 
@@ -255,11 +254,11 @@
             // 
             this.topToolStripPanel.Controls.Add(this.mainToolStrip);
             this.topToolStripPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topToolStripPanel.Location = new System.Drawing.Point(0, 28);
+            this.topToolStripPanel.Location = new System.Drawing.Point(0, 24);
             this.topToolStripPanel.Name = "topToolStripPanel";
             this.topToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
             this.topToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.topToolStripPanel.Size = new System.Drawing.Size(1312, 27);
+            this.topToolStripPanel.Size = new System.Drawing.Size(1184, 25);
             // 
             // mainToolStrip
             // 
@@ -267,38 +266,36 @@
             this.mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.openToolStripButton, this.toolStripSeparator1 });
             this.mainToolStrip.Location = new System.Drawing.Point(3, 0);
             this.mainToolStrip.Name = "mainToolStrip";
-            this.mainToolStrip.Size = new System.Drawing.Size(95, 27);
+            this.mainToolStrip.Size = new System.Drawing.Size(83, 25);
             this.mainToolStrip.TabIndex = 5;
             // 
             // statusStrip
             // 
             this.statusStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.statusLabel });
-            this.statusStrip.Location = new System.Drawing.Point(0, 828);
+            this.statusStrip.Location = new System.Drawing.Point(0, 671);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.statusStrip.Size = new System.Drawing.Size(1312, 25);
+            this.statusStrip.Size = new System.Drawing.Size(1184, 22);
             this.statusStrip.TabIndex = 25;
             // 
             // statusLabel
             // 
             this.statusLabel.Margin = new System.Windows.Forms.Padding(0, 3, 10, 2);
             this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(265, 20);
+            this.statusLabel.Size = new System.Drawing.Size(210, 17);
             this.statusLabel.Text = "Sim Studio, Copyright (C) 2026 FEI STU";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1312, 853);
+            this.ClientSize = new System.Drawing.Size(1184, 693);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.topToolStripPanel);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sim Studio";
