@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using FEI.SimStudio.Components;
 using FEI.FiniteAutomaton.Dialogs;
 using FEI.FiniteAutomaton.IO.Jff;
-using FEI.SimStudio.Components;
 using FEI.SimStudio.Components.Controls;
 using FEI.SimStudio.Components.Dialogs;
 using FEI.SimStudio.Components.Registers;
@@ -29,7 +28,7 @@ namespace FEI.FiniteAutomaton {
         { 
             InitializeComponent();
 
-            AppTitle = this.Text;
+            appTitle = this.Text;
 
             timMachine.SynchronizingObject = this;
             timMachine.Elapsed += new System.Timers.ElapsedEventHandler(timMachine_Elapsed);
@@ -38,7 +37,7 @@ namespace FEI.FiniteAutomaton {
         }
 
 
-        string AppTitle;
+        string appTitle;
         string openFileName = null;
 
         private VirtualTuringMachine turingMachine = new VirtualTuringMachine() { AcceptType = AcceptType.FinalStateReachedAndWholeTapeRead };
@@ -52,12 +51,12 @@ namespace FEI.FiniteAutomaton {
             }
         }
 
-        bool CodeChanged = false;        
+        bool codeChanged = false;        
 
         //Formát prechodovej funkcie
-        string TransitionFormat = "\\sδ\\s(\\a,\\a)\\s=\\s(\\a)\\s";
+        string transitionFormat = "\\sδ\\s(\\a,\\a)\\s=\\s(\\a)\\s";
         //Formát 
-        string WildCardFormat = "\\a=\\s{\\m,\\n}\\s";        
+        string wildCardFormat = "\\a=\\s{\\m,\\n}\\s";        
 
         //Zdržanie pri vykonávaní programu
         int delay = 10;
@@ -181,7 +180,7 @@ namespace FEI.FiniteAutomaton {
 
         private void txtCode_TextChanged(object sender, System.EventArgs e)
         {
-            CodeChanged = true;
+            codeChanged = true;
         }        
 
         //Spustí
@@ -235,10 +234,10 @@ namespace FEI.FiniteAutomaton {
 
         private bool ParseTFunctions(string sourceCodeText)
         {
-            FiniteAutomatonParser parser = new FiniteAutomatonParser(TuringMachine, TransitionFormat, WildCardFormat);
+            FiniteAutomatonParser parser = new FiniteAutomatonParser(TuringMachine, transitionFormat, wildCardFormat);
             bool retval = parser.ParseTFunctions(sourceCodeText);
 
-            CodeChanged = false;
+            codeChanged = false;
             UpdateErrors(parser.Errors);
             Functions_SetScrollbar();
 
@@ -316,9 +315,9 @@ namespace FEI.FiniteAutomaton {
         {
             if (PrgReset) Reset();            
 
-            if (CodeChanged)
+            if (codeChanged)
             {
-                if (ParseTFunctions(txtCode.Text) == false)
+                if (!ParseTFunctions(txtCode.Text))
                 {
                     if (MessageBox.Show("Program obsahuje chyby. Chcete pokračovať?", "Chyba počas prekladu",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.No) return;
@@ -356,7 +355,7 @@ namespace FEI.FiniteAutomaton {
                 }
                 else
                 {
-                    UpdateUIAfterStep();
+                    UpdateUiAfterStep();
                 }
 
                 //Obnovenie komboboxu pások
@@ -367,7 +366,7 @@ namespace FEI.FiniteAutomaton {
             }
         }
 
-        private void UpdateUIAfterStep()
+        private void UpdateUiAfterStep()
         {
             //Obnovenie informácií                    
             infiniteTapeControl.UpdateScrollbars();
@@ -471,7 +470,7 @@ namespace FEI.FiniteAutomaton {
 
         public void OpenFile(string fileName)
         {
-            this.Text = System.IO.Path.GetFileName(fileName) + " - " + AppTitle;
+            this.Text = System.IO.Path.GetFileName(fileName) + " - " + appTitle;
 
             if (fileName.EndsWith(".fa"))
             {
@@ -480,7 +479,7 @@ namespace FEI.FiniteAutomaton {
                 ParseTFunctions(txtCode.Text);
                 
                 openFileName = fileName;
-                this.Text = openFileName.Substring(openFileName.LastIndexOf("\\") + 1) + " - " + AppTitle;
+                this.Text = openFileName.Substring(openFileName.LastIndexOf("\\") + 1) + " - " + appTitle;
             }
             else if (fileName.EndsWith(".jff"))
             {
@@ -495,7 +494,7 @@ namespace FEI.FiniteAutomaton {
                     StringBuilder sb = new StringBuilder();
                     foreach (var tf in TuringMachine.GetTFunctions())
                     {
-                        sb.AppendLine(WriteTransition(tf, TransitionFormat));
+                        sb.AppendLine(WriteTransition(tf, transitionFormat));
                     }
                     txtCode.Text = sb.ToString();
                 }
@@ -514,7 +513,7 @@ namespace FEI.FiniteAutomaton {
                 TuringMachine.Save(fileName, txtCode.Text);
                 
                 openFileName = fileName;
-                this.Text = openFileName.Substring(openFileName.LastIndexOf("\\") + 1) + " - " + AppTitle;
+                this.Text = openFileName.Substring(openFileName.LastIndexOf("\\") + 1) + " - " + appTitle;
             }
         }
 
@@ -642,22 +641,18 @@ namespace FEI.FiniteAutomaton {
 
         #endregion
 
-        private void frmTuring_Closed(object sender, System.EventArgs e)
-        {         
-        }
-
-        public void ExeCommand(string Command, bool IsNewMenu)
+        public void ExeCommand(string command, bool isNewMenu)
         {
             //Parameter
-            string CValue;
-            if (Command.IndexOf('(') > 0)
+            string cValue;
+            if (command.IndexOf('(') > 0)
             {
-                int i = Command.IndexOf('(');
-                CValue = Command.Substring(i + 1, Command.LastIndexOf(')') - i - 1);
-                Command = Command.Substring(0, i);
+                int i = command.IndexOf('(');
+                cValue = command.Substring(i + 1, command.LastIndexOf(')') - i - 1);
+                command = command.Substring(0, i);
             }
 
-            switch (Command)
+            switch (command)
             {                
                 case "TAPE:CLEAR":
                     TuringMachine.OriginalTapes = new List<InfiniteTape>();
@@ -676,16 +671,16 @@ namespace FEI.FiniteAutomaton {
 
         private void lblCurrentState_Click(object sender, System.EventArgs e)
         {
-            if (CodeChanged)
+            if (codeChanged)
                 ParseTFunctions(txtCode.Text);
 
             ContextMenu menu = new ContextMenu();            
             
-            string[] States = TuringMachine.GetUsedStates();
-            for (int a = 0; a <= States.Length - 1; a++)
+            string[] states = TuringMachine.GetUsedStates();
+            for (int a = 0; a <= states.Length - 1; a++)
             {
-                //mState.AddItem("Stav " + States(a), "CHANGESTATE(" + States(a) + ")");
-                menu.MenuItems.Add("Stav " + States[a]);
+                //mState.AddItem("Stav " + states(a), "CHANGESTATE(" + states(a) + ")");
+                menu.MenuItems.Add("Stav " + states[a]);
             }
 
             Point pt = statusStrip.PointToScreen(new Point(0, lblCurrentState.Height));
@@ -808,10 +803,10 @@ namespace FEI.FiniteAutomaton {
 
         private void miTapeStatistics_Click(object sender, EventArgs e)
         {
-            //TapeStatisticsForm dlg = new TapeStatisticsForm();
-            //dlg.tm = TuringMachine;
-            //dlg.tapeIndex = cmbTape.SelectedIndex;
-            //dlg.ShowDialog(this);
+            TapeStatisticsForm dlg = new TapeStatisticsForm();
+            dlg.tm = TuringMachine;
+            dlg.tapeIndex = cmbTape.SelectedIndex;
+            dlg.ShowDialog(this);
         }
 
         private void bAddTFunction_Click(object sender, EventArgs e)
@@ -819,7 +814,7 @@ namespace FEI.FiniteAutomaton {
             AddTransition();
         }        
 
-        private string WriteTransition(Transition tf, string transitionFormat)
+        private string WriteTransition(Transition tf, string tFormat)
         {
             string res="";
             int pos=0;
@@ -841,13 +836,13 @@ namespace FEI.FiniteAutomaton {
                     break;
             }
 
-            transitionFormat=transitionFormat.Replace("\\s", " ");
+            tFormat=tFormat.Replace("\\s", " ");
             
             while(true) {
-                i = transitionFormat.IndexOf("\\a", l);
+                i = tFormat.IndexOf("\\a", l);
                 if (i == -1)
                 {
-                    res += transitionFormat.Substring(l);
+                    res += tFormat.Substring(l);
                     break;
                 }
 
@@ -857,7 +852,7 @@ namespace FEI.FiniteAutomaton {
                 else if (n == 3) arg = tf.WriteSymbol;
                 else if (n == 4) arg = step;
 
-                res += transitionFormat.Substring(l, i - l) + arg;
+                res += tFormat.Substring(l, i - l) + arg;
 
                 l = i + 2;
                 n++;
@@ -902,13 +897,11 @@ namespace FEI.FiniteAutomaton {
             int i=0,a=0;
             int c=0;
             int n = 0;
-            int tapeFrom,tapeTo;
-            tapeFrom = sbxLog.Value - 10;
-            tapeTo= tapeFrom + (pLog.Width -150) /33;
+            var tapeFrom = sbxLog.Value - 10;
+            var tapeTo = tapeFrom + (pLog.Width -150) /33;
 
-            int logFrom, logTo;
-            logFrom = sbyLog.Value;
-            logTo = logFrom + pLog.Height / lineHeight + 1;
+            var logFrom = sbyLog.Value;
+            var logTo = logFrom + pLog.Height / lineHeight + 1;
             if (logTo > TuringMachine.Log.Count) logTo = TuringMachine.Log.Count;
 
             g.SmoothingMode = SmoothingMode.AntiAlias;            
@@ -1306,7 +1299,7 @@ namespace FEI.FiniteAutomaton {
 
         private void miTFormat1_Click(object sender, EventArgs e)
         {
-            TransitionFormat = "\\sf\\s(\\a,\\a)\\s=\\s(\\a)\\s";
+            transitionFormat = "\\sf\\s(\\a,\\a)\\s=\\s(\\a)\\s";
             miTFormat1.Checked = true; miTFormat2.Checked = false; miTFormat3.Checked = false; 
             miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false; 
             miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
@@ -1315,7 +1308,7 @@ namespace FEI.FiniteAutomaton {
 
         private void miTFormat2_Click(object sender, EventArgs e)
         {
-            TransitionFormat = "\\s(\\a,\\a)\\s=\\s(\\a)\\s";
+            transitionFormat = "\\s(\\a,\\a)\\s=\\s(\\a)\\s";
             miTFormat1.Checked = false; miTFormat2.Checked = true; miTFormat3.Checked = false; 
             miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false; 
             miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
@@ -1324,7 +1317,7 @@ namespace FEI.FiniteAutomaton {
 
         private void miTFormat3_Click(object sender, EventArgs e)
         {
-            TransitionFormat = "\\a,\\a,\\a";
+            transitionFormat = "\\a,\\a,\\a";
             miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = true;
             miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
             miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
@@ -1333,7 +1326,7 @@ namespace FEI.FiniteAutomaton {
 
         private void miTFormat4_Click(object sender, EventArgs e)
         {
-            TransitionFormat = "\\s[\\a,\\a]\\s[\\a]\\s";
+            transitionFormat = "\\s[\\a,\\a]\\s[\\a]\\s";
             miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
             miTFormat4.Checked = true; miTFormat5.Checked = false; miTFormat6.Checked = false;
             miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
@@ -1342,7 +1335,7 @@ namespace FEI.FiniteAutomaton {
 
         private void miTFormat5_Click(object sender, EventArgs e)
         {
-            TransitionFormat = "\\s(\\a,\\a)\\s(\\a)\\s";
+            transitionFormat = "\\s(\\a,\\a)\\s(\\a)\\s";
             miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
             miTFormat4.Checked = false; miTFormat5.Checked = true; miTFormat6.Checked = false;
             miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
@@ -1351,7 +1344,7 @@ namespace FEI.FiniteAutomaton {
 
         private void miTFormat6_Click(object sender, EventArgs e)
         {
-            TransitionFormat = "\\s[\\a,\\a]\\s->\\s[\\a]\\s";
+            transitionFormat = "\\s[\\a,\\a]\\s->\\s[\\a]\\s";
             miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
             miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = true;
             miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
@@ -1360,7 +1353,7 @@ namespace FEI.FiniteAutomaton {
 
         private void miTFormat7_Click(object sender, EventArgs e)
         {
-            TransitionFormat = "\\s(\\a,\\a)\\s->\\s(\\a)\\s";
+            transitionFormat = "\\s(\\a,\\a)\\s->\\s(\\a)\\s";
             miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
             miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
             miTFormat7.Checked = true; miTFormat8.Checked = false; miTFormat9.Checked = false;
@@ -1369,7 +1362,7 @@ namespace FEI.FiniteAutomaton {
 
         private void miTFormat8_Click(object sender, EventArgs e)
         {
-            TransitionFormat = "\\a,\\a->\\a";
+            transitionFormat = "\\a,\\a->\\a";
             miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
             miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
             miTFormat7.Checked = false; miTFormat8.Checked = true; miTFormat9.Checked = false;
@@ -1378,7 +1371,7 @@ namespace FEI.FiniteAutomaton {
 
         private void miTFormat9_Click(object sender, EventArgs e)
         {
-            TransitionFormat = "\\a,\\a>\\a";
+            transitionFormat = "\\a,\\a>\\a";
             miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
             miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
             miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = true;
@@ -1387,7 +1380,7 @@ namespace FEI.FiniteAutomaton {
 
         private void miTFormat10_Click(object sender, EventArgs e)
         {            
-            TransitionFormat = "\\sδ\\s(\\a,\\a)\\s=\\s(\\a)\\s";
+            transitionFormat = "\\sδ\\s(\\a,\\a)\\s=\\s(\\a)\\s";
             miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
             miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
             miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = true;
@@ -1557,7 +1550,7 @@ namespace FEI.FiniteAutomaton {
             {
                 Transition tf = dlg.tfunction;
                 txtCode.Text += Environment.NewLine;
-                txtCode.Text += WriteTransition(tf, TransitionFormat);
+                txtCode.Text += WriteTransition(tf, transitionFormat);
                 if (tf.Comment.Trim() != "") txtCode.Text += " //" + tf.Comment;
                 txtCode.Text += Environment.NewLine;
                 ParseTFunctions(txtCode.Text);

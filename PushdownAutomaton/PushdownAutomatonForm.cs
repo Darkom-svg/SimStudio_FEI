@@ -28,7 +28,7 @@ namespace FEI.PushdownAutomaton {
 		{ 
 			InitializeComponent();
 
-			AppTitle = this.Text;
+			appTitle = this.Text;
 
 			timMachine.SynchronizingObject = this;
 			timMachine.Elapsed += new System.Timers.ElapsedEventHandler(timMachine_Elapsed);
@@ -37,7 +37,7 @@ namespace FEI.PushdownAutomaton {
 		}
 
 
-		string AppTitle;
+		string appTitle;
 		string openFileName = null;
 
 		private PushdownAutomaton pushdownAutomaton = new PushdownAutomaton() { AcceptType = AcceptType.FinalStateReachedAndWholeTapeRead };
@@ -51,12 +51,12 @@ namespace FEI.PushdownAutomaton {
 			}
 		}
 
-		bool CodeChanged = false;        
+		bool codeChanged = false;        
 
 		//Formát prechodovej funkcie
-		string TransitionFormat = "\\sδ\\s(\\a,\\a,\\a)\\s=\\s(\\a,\\a)\\s";
+		string transitionFormat = "\\sδ\\s(\\a,\\a,\\a)\\s=\\s(\\a,\\a)\\s";
 		//Formát 
-		string WildCardFormat = "\\a=\\s{\\m,\\n}\\s";        
+		string wildCardFormat = "\\a=\\s{\\m,\\n}\\s";        
 
 		//Zdržanie pri vykonávaní programu
 		int delay = 10;
@@ -182,7 +182,7 @@ namespace FEI.PushdownAutomaton {
 
 		private void txtCode_TextChanged(object sender, System.EventArgs e)
 		{
-			CodeChanged = true;
+			codeChanged = true;
 		}        
 
 		//Spustí
@@ -236,10 +236,10 @@ namespace FEI.PushdownAutomaton {
 
 		private bool ParseTFunctions(string sourceCodeText)
 		{
-			PushdownAutomatonParser parser = new PushdownAutomatonParser(PushdownAutomaton, TransitionFormat, WildCardFormat);
+			PushdownAutomatonParser parser = new PushdownAutomatonParser(PushdownAutomaton, transitionFormat, wildCardFormat);
 			bool retval = parser.ParseTFunctions(sourceCodeText);
 
-			CodeChanged = false;
+			codeChanged = false;
 			UpdateErrors(parser.Errors);
 			Functions_SetScrollbar();
 
@@ -312,7 +312,7 @@ namespace FEI.PushdownAutomaton {
 		//Ďalší krok
 		private void NextStep()
 		{
-			if (CodeChanged)
+			if (codeChanged)
 			{
 				if (ParseTFunctions(txtCode.Text) == false)
 				{
@@ -518,7 +518,7 @@ namespace FEI.PushdownAutomaton {
 		{            
 			if (!string.IsNullOrEmpty(fileName))
 			{
-				this.Text = System.IO.Path.GetFileName(fileName) + " - " + AppTitle;
+				this.Text = System.IO.Path.GetFileName(fileName) + " - " + appTitle;
 
 				PushdownAutomatonForm frm = new PushdownAutomatonForm();
 				frm.MdiParent = this.MdiParent;
@@ -537,7 +537,7 @@ namespace FEI.PushdownAutomaton {
 				ParseTFunctions(txtCode.Text);
 				
 				openFileName = fileName;
-				this.Text = openFileName.Substring(openFileName.LastIndexOf("\\") + 1) + " - " + AppTitle;
+				this.Text = openFileName.Substring(openFileName.LastIndexOf("\\") + 1) + " - " + appTitle;
 			}
 			else if (fileName.EndsWith(".jff"))
 			{
@@ -552,7 +552,7 @@ namespace FEI.PushdownAutomaton {
 					StringBuilder sb = new StringBuilder();
 					foreach (var tf in PushdownAutomaton.GetTFunctions())
 					{
-						sb.AppendLine(WriteTransition(tf, TransitionFormat));
+						sb.AppendLine(WriteTransition(tf, transitionFormat));
 					}
 					txtCode.Text = sb.ToString();
 				}
@@ -571,7 +571,7 @@ namespace FEI.PushdownAutomaton {
 				PushdownAutomaton.Save(fileName, txtCode.Text);
 				
 				openFileName = fileName;
-				this.Text = openFileName.Substring(openFileName.LastIndexOf("\\") + 1) + " - " + AppTitle;
+				this.Text = openFileName.Substring(openFileName.LastIndexOf("\\") + 1) + " - " + appTitle;
 			}
 		}
 
@@ -698,10 +698,7 @@ namespace FEI.PushdownAutomaton {
 		}
 
 		#endregion
-
-		private void frmTuring_Closed(object sender, System.EventArgs e)
-		{         
-		}
+		
 
 		public void ExeCommand(string Command, bool IsNewMenu)
 		{
@@ -733,16 +730,16 @@ namespace FEI.PushdownAutomaton {
 
 		private void lblCurrentState_Click(object sender, System.EventArgs e)
 		{
-			if (CodeChanged)
+			if (codeChanged)
 				ParseTFunctions(txtCode.Text);
 
 			ContextMenu menu = new ContextMenu();            
 			
-			string[] States = PushdownAutomaton.GetUsedStates();
-			for (int a = 0; a <= States.Length - 1; a++)
+			string[] states = PushdownAutomaton.GetUsedStates();
+			for (int a = 0; a <= states.Length - 1; a++)
 			{
-				//mState.AddItem("Stav " + States(a), "CHANGESTATE(" + States(a) + ")");
-				menu.MenuItems.Add("Stav " + States[a]);
+				//mState.AddItem("Stav " + states(a), "CHANGESTATE(" + states(a) + ")");
+				menu.MenuItems.Add("Stav " + states[a]);
 			}
 
 			Point pt = statusStrip.PointToScreen(new Point(0, lblCurrentState.Height));
@@ -865,10 +862,10 @@ namespace FEI.PushdownAutomaton {
 
 		private void miTapeStatistics_Click(object sender, EventArgs e)
 		{
-			//TapeStatisticsForm dlg = new TapeStatisticsForm();
-			//dlg.tm = TuringMachine;
-			//dlg.tapeIndex = cmbTape.SelectedIndex;
-			//dlg.ShowDialog(this);
+			TapeStatisticsForm dlg = new TapeStatisticsForm();
+			dlg.tm = pushdownAutomaton;
+			dlg.tapeIndex = cmbTape.SelectedIndex;
+			dlg.ShowDialog(this);
 		}
 
 		private void bAddTFunction_Click(object sender, EventArgs e)
@@ -955,7 +952,7 @@ namespace FEI.PushdownAutomaton {
 				sf2.LineAlignment = StringAlignment.Center;
 			RectangleF rect;
 			Brush lineBrush = new SolidBrush(Color.FromArgb(30, Color.Black));
-			Color highlightColor=Color.Transparent;
+			Color highlightColor = Color.Transparent;
 			int i=0,a=0;
 			int c=0;
 			int n = 0;
@@ -1384,7 +1381,7 @@ namespace FEI.PushdownAutomaton {
 
 		private void miTFormat1_Click(object sender, EventArgs e)
 		{
-			TransitionFormat = "\\sf\\s(\\a,\\a,\\a)\\s=\\s(\\a,\\a)\\s";
+			transitionFormat = "\\sf\\s(\\a,\\a,\\a)\\s=\\s(\\a,\\a)\\s";
 			miTFormat1.Checked = true; miTFormat2.Checked = false; miTFormat3.Checked = false; 
 			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false; 
 			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
@@ -1393,7 +1390,7 @@ namespace FEI.PushdownAutomaton {
 
 		private void miTFormat2_Click(object sender, EventArgs e)
 		{
-			TransitionFormat = "\\s(\\a,\\a,\\a)\\s=\\s(\\a,\\a)\\s";
+			transitionFormat = "\\s(\\a,\\a,\\a)\\s=\\s(\\a,\\a)\\s";
 			miTFormat1.Checked = false; miTFormat2.Checked = true; miTFormat3.Checked = false; 
 			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false; 
 			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
@@ -1402,7 +1399,7 @@ namespace FEI.PushdownAutomaton {
 
 		private void miTFormat3_Click(object sender, EventArgs e)
 		{
-			TransitionFormat = "\\a,\\a,\\a,\\a,\\a";
+			transitionFormat = "\\a,\\a,\\a,\\a,\\a";
 			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = true;
 			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
 			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
@@ -1411,7 +1408,7 @@ namespace FEI.PushdownAutomaton {
 
 		private void miTFormat4_Click(object sender, EventArgs e)
 		{
-			TransitionFormat = "\\s[\\a,\\a,\\a]\\s[\\a,\\a]\\s";
+			transitionFormat = "\\s[\\a,\\a,\\a]\\s[\\a,\\a]\\s";
 			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
 			miTFormat4.Checked = true; miTFormat5.Checked = false; miTFormat6.Checked = false;
 			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
@@ -1420,7 +1417,7 @@ namespace FEI.PushdownAutomaton {
 
 		private void miTFormat5_Click(object sender, EventArgs e)
 		{
-			TransitionFormat = "\\s(\\a,\\a,\\a)\\s(\\a,\\a)\\s";
+			transitionFormat = "\\s(\\a,\\a,\\a)\\s(\\a,\\a)\\s";
 			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
 			miTFormat4.Checked = false; miTFormat5.Checked = true; miTFormat6.Checked = false;
 			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
@@ -1429,7 +1426,7 @@ namespace FEI.PushdownAutomaton {
 
 		private void miTFormat6_Click(object sender, EventArgs e)
 		{
-			TransitionFormat = "\\s[\\a,\\a,\\a]\\s->\\s[\\a,\\a]\\s";
+			transitionFormat = "\\s[\\a,\\a,\\a]\\s->\\s[\\a,\\a]\\s";
 			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
 			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = true;
 			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
@@ -1438,7 +1435,7 @@ namespace FEI.PushdownAutomaton {
 
 		private void miTFormat7_Click(object sender, EventArgs e)
 		{
-			TransitionFormat = "\\s(\\a,\\a,\\a)\\s->\\s(\\a,\\a)\\s";
+			transitionFormat = "\\s(\\a,\\a,\\a)\\s->\\s(\\a,\\a)\\s";
 			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
 			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
 			miTFormat7.Checked = true; miTFormat8.Checked = false; miTFormat9.Checked = false;
@@ -1447,7 +1444,7 @@ namespace FEI.PushdownAutomaton {
 
 		private void miTFormat8_Click(object sender, EventArgs e)
 		{
-			TransitionFormat = "\\a,\\a,\\a->\\a,\\a";
+			transitionFormat = "\\a,\\a,\\a->\\a,\\a";
 			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
 			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
 			miTFormat7.Checked = false; miTFormat8.Checked = true; miTFormat9.Checked = false;
@@ -1456,7 +1453,7 @@ namespace FEI.PushdownAutomaton {
 
 		private void miTFormat9_Click(object sender, EventArgs e)
 		{
-			TransitionFormat = "\\a,\\a,\\a>\\a,\\a";
+			transitionFormat = "\\a,\\a,\\a>\\a,\\a";
 			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
 			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
 			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = true;
@@ -1465,7 +1462,7 @@ namespace FEI.PushdownAutomaton {
 
 		private void miTFormat10_Click(object sender, EventArgs e)
 		{
-			TransitionFormat = "\\sδ\\s(\\a,\\a,\\a)\\s=\\s(\\a,\\a)\\s";
+			transitionFormat = "\\sδ\\s(\\a,\\a,\\a)\\s=\\s(\\a,\\a)\\s";
 			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
 			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
 			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = true;
@@ -1635,7 +1632,7 @@ namespace FEI.PushdownAutomaton {
 			{
 				Transition tf = dlg.tfunction;
 				txtCode.Text += Environment.NewLine;
-				txtCode.Text += WriteTransition(tf, TransitionFormat);
+				txtCode.Text += WriteTransition(tf, transitionFormat);
 				if (tf.Comment.Trim() != "") txtCode.Text += " //" + tf.Comment;
 				txtCode.Text += Environment.NewLine;
 				ParseTFunctions(txtCode.Text);
