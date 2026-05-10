@@ -111,10 +111,12 @@ namespace FEI.TrainingSimulator
             this.bAddTFunction = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtCode = new FEI.SimStudio.Components.Controls.SyntaxTextBox();
+            this.pTests = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.sbyTests = new System.Windows.Forms.VScrollBar();
             this.statesTab = new System.Windows.Forms.TabPage();
             this.bAddState = new System.Windows.Forms.Button();
             this.stateDiagramControl = new FEI.TuringCore.Components.StateDiagramControl();
-            this.logTab = new System.Windows.Forms.TabPage();
             this.formalSpecificationTab = new System.Windows.Forms.TabPage();
             this.formalSpecifiaction = new System.Windows.Forms.WebBrowser();
             this.lstErrors = new System.Windows.Forms.ListBox();
@@ -134,7 +136,9 @@ namespace FEI.TrainingSimulator
             this.functionsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pTests)).BeginInit();
             this.statesTab.SuspendLayout();
             this.formalSpecificationTab.SuspendLayout();
             this.SuspendLayout();
@@ -667,7 +671,6 @@ namespace FEI.TrainingSimulator
             this.tcMain.Controls.Add(this.taskSpecificationTab);
             this.tcMain.Controls.Add(this.functionsTab);
             this.tcMain.Controls.Add(this.statesTab);
-            this.tcMain.Controls.Add(this.logTab);
             this.tcMain.Controls.Add(this.formalSpecificationTab);
             this.tcMain.Location = new System.Drawing.Point(4, 4);
             this.tcMain.Margin = new System.Windows.Forms.Padding(4);
@@ -724,8 +727,14 @@ namespace FEI.TrainingSimulator
             this.splitContainer1.Panel1.Controls.Add(this.bAddTFunction);
             this.splitContainer1.Panel1.Controls.Add(this.label5);
             this.splitContainer1.Panel1.Controls.Add(this.txtCode);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.pTests);
+            this.splitContainer1.Panel2.Controls.Add(this.label6);
+            this.splitContainer1.Panel2.Controls.Add(this.sbyTests);
             this.splitContainer1.Size = new System.Drawing.Size(1145, 441);
-            this.splitContainer1.SplitterDistance = 745;
+            this.splitContainer1.SplitterDistance = 820;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -762,8 +771,41 @@ namespace FEI.TrainingSimulator
             this.txtCode.SelectedText = "";
             this.txtCode.SelectionLength = 0;
             this.txtCode.SelectionStart = 0;
-            this.txtCode.Size = new System.Drawing.Size(737, 389);
+            this.txtCode.Size = new System.Drawing.Size(812, 389);
             this.txtCode.TabIndex = 0;
+            // 
+            // pTests
+            // 
+            this.pTests.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.pTests.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pTests.Location = new System.Drawing.Point(3, 48);
+            this.pTests.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.pTests.Name = "pTests";
+            this.pTests.Size = new System.Drawing.Size(290, 390);
+            this.pTests.TabIndex = 6;
+            this.pTests.TabStop = false;
+            this.pTests.Paint += new System.Windows.Forms.PaintEventHandler(this.pTests_Paint);
+            this.pTests.Resize += new System.EventHandler(this.pTests_Resize);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label6.Location = new System.Drawing.Point(3, 28);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(80, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Zoznam testov:";
+            // 
+            // sbyTests
+            // 
+            this.sbyTests.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Right)));
+            this.sbyTests.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.sbyTests.Location = new System.Drawing.Point(293, 48);
+            this.sbyTests.Name = "sbyTests";
+            this.sbyTests.Size = new System.Drawing.Size(18, 390);
+            this.sbyTests.TabIndex = 7;
+            this.sbyTests.Scroll += new System.Windows.Forms.ScrollEventHandler(this.sbyTests_Scroll);
             // 
             // statesTab
             // 
@@ -801,17 +843,6 @@ namespace FEI.TrainingSimulator
             this.stateDiagramControl.Size = new System.Drawing.Size(989, 444);
             this.stateDiagramControl.TabIndex = 0;
             this.stateDiagramControl.TuringMachine = null;
-            // 
-            // logTab
-            // 
-            this.logTab.Location = new System.Drawing.Point(4, 22);
-            this.logTab.Margin = new System.Windows.Forms.Padding(4);
-            this.logTab.Name = "logTab";
-            this.logTab.Padding = new System.Windows.Forms.Padding(4);
-            this.logTab.Size = new System.Drawing.Size(1156, 455);
-            this.logTab.TabIndex = 3;
-            this.logTab.Text = "Záznam priebehu";
-            this.logTab.UseVisualStyleBackColor = true;
             // 
             // formalSpecificationTab
             // 
@@ -901,13 +932,20 @@ namespace FEI.TrainingSimulator
             this.functionsTab.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pTests)).EndInit();
             this.statesTab.ResumeLayout(false);
             this.formalSpecificationTab.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pTests;
+        private System.Windows.Forms.VScrollBar sbyTests;
 
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
 
@@ -950,8 +988,6 @@ namespace FEI.TrainingSimulator
         private System.Windows.Forms.TabPage taskSpecificationTab;
 
         private System.Windows.Forms.TabPage functionsTab;
-
-        private System.Windows.Forms.TabPage logTab;
 
         private System.Windows.Forms.TabControl tcMain;
         private System.Windows.Forms.TabPage formalSpecificationTab;

@@ -750,6 +750,33 @@
   <data name="&gt;&gt;logTab.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <metadata name="formalSpecificationMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="formalSpecSaveAs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 22</value>
+  </data>
+  <data name="formalSpecSaveAs.Text" xml:space="preserve">
+    <value>Uložiť ako</value>
+  </data>
+  <data name="formalSpecPrint.Size" type="System.Drawing.Size, System.Drawing">
+    <value>127, 22</value>
+  </data>
+  <data name="formalSpecPrint.Text" xml:space="preserve">
+    <value>Vytlačiť</value>
+  </data>
+  <data name="formalSpecificationMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 48</value>
+  </data>
+  <data name="formalSpecificationMenu.Text" xml:space="preserve">
+    <value>Špecifikácia</value>
+  </data>
+  <data name="&gt;&gt;formalSpecificationMenu.Name" xml:space="preserve">
+    <value>formalSpecificationMenu</value>
+  </data>
+  <data name="&gt;&gt;formalSpecificationMenu.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="formalSpecifiaction.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -1194,10 +1221,10 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;splitContainer2.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 506</value>
+    <value>687, 17</value>
   </metadata>
   <data name="statusLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>247, 17</value>
@@ -1230,16 +1257,16 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;statusStrip.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>132, 6</value>
+    <value>301, 17</value>
   </metadata>
   <data name="openFileDialog1.Filter" xml:space="preserve">
     <value>Súbor konečného automatu|*.fa|JFlap Turingov stroj|*.jff|Všetky súbory|*.*</value>
   </data>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>0, 0</value>
+    <value>192, 17</value>
   </metadata>
   <data name="menuStrip1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
@@ -1687,24 +1714,6 @@
   <data name="helpToolStripMenuItem.Text" xml:space="preserve">
     <value>Pomocník</value>
   </data>
-  <data name="formalSpecSaveAs.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="formalSpecSaveAs.Text" xml:space="preserve">
-    <value>Uložiť ako</value>
-  </data>
-  <data name="formalSpecPrint.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
-  </data>
-  <data name="formalSpecPrint.Text" xml:space="preserve">
-    <value>Vytlačiť</value>
-  </data>
-  <data name="formalSpecificationMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>81, 23</value>
-  </data>
-  <data name="formalSpecificationMenu.Text" xml:space="preserve">
-    <value>Špecifikácia</value>
-  </data>
   <data name="menuStrip1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
@@ -1751,13 +1760,13 @@
     <value>6, 6</value>
   </data>
   <metadata name="saveFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>337, 4</value>
+    <value>434, 17</value>
   </metadata>
   <data name="saveFileDialog1.Filter" xml:space="preserve">
     <value>Súbor konečného automatu|*.fa|Súbor JFLAP|*.jff</value>
   </data>
   <metadata name="mainToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>3, 27</value>
+    <value>566, 17</value>
   </metadata>
   <data name="mainToolStrip.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>None</value>
@@ -1892,7 +1901,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;toolStripPanel1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -2604,6 +2613,18 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Konečný automat</value>
   </data>
+  <data name="&gt;&gt;formalSpecSaveAs.Name" xml:space="preserve">
+    <value>formalSpecSaveAs</value>
+  </data>
+  <data name="&gt;&gt;formalSpecSaveAs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;formalSpecPrint.Name" xml:space="preserve">
+    <value>formalSpecPrint</value>
+  </data>
+  <data name="&gt;&gt;formalSpecPrint.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;statusLabel.Name" xml:space="preserve">
     <value>statusLabel</value>
   </data>
@@ -2976,18 +2997,6 @@
   <data name="&gt;&gt;miAbout.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;formalSpecificationMenu.Name" xml:space="preserve">
-    <value>formalSpecificationMenu</value>
-  </data>
-  <data name="&gt;&gt;formalSpecificationMenu.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;formalSpecSaveAs.Name" xml:space="preserve">
-    <value>formalSpecSaveAs</value>
-  </data>
-  <data name="&gt;&gt;formalSpecSaveAs.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;kopírovaťToolStripMenuItem.Name" xml:space="preserve">
     <value>kopírovaťToolStripMenuItem</value>
   </data>
@@ -3077,12 +3086,6 @@
   </data>
   <data name="&gt;&gt;stepToolStripButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;formalSpecPrint.Name" xml:space="preserve">
-    <value>formalSpecPrint</value>
-  </data>
-  <data name="&gt;&gt;formalSpecPrint.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FiniteAutomatonForm</value>

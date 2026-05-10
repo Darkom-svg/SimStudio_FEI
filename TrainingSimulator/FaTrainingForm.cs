@@ -11,7 +11,6 @@ using FEI.SimStudio.Components;
 using FEI.SimStudio.Components.Controls;
 using FEI.SimStudio.Components.Dialogs;
 using FEI.SimStudio.Components.Registers;
-using FEI.TrainingSimulator.Dialogs;
 using FEI.TuringCore.Simulation;
 using AboutForm = FEI.TrainingSimulator.Dialogs.AboutForm;
 using System.Text.RegularExpressions;
@@ -216,12 +215,11 @@ namespace FEI.TrainingSimulator
                 if (max < 0)
                     max = 0;
 
-                // sbyFunctions.Maximum = max;
-                // sbyFunctions.SmallChange = 1;
-                // sbyFunctions.LargeChange = (int)Math.Floor((double)pFunctions.Height / 20);
-                // sbyFunctions.Visible = true;
-                //
-                // pFunctions.Refresh();
+                sbyTests.Maximum = max;
+                sbyTests.SmallChange = 1;
+                sbyTests.LargeChange = (int)Math.Floor((double)pTests.Height / 20);
+                sbyTests.Visible = true;
+                sbyTests.Refresh();
             }
         }
         private void UpdateStateDiagram()
@@ -233,11 +231,7 @@ namespace FEI.TrainingSimulator
         
         private void tcMain_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tcMain.SelectedTab == logTab)
-            {
-                //Log_SetScrollbars();
-            }
-            else if (tcMain.SelectedTab == statesTab)
+            if (tcMain.SelectedTab == statesTab)
             {                                
                 UpdateStateDiagram();
             }
@@ -651,14 +645,35 @@ namespace FEI.TrainingSimulator
                     Message = formalError
                 };
             }
-
-            string[] words = GenerateWords(10, formula);
+            
+            testedWords.Clear();
+            testedStates.Clear();
+            pTests.Refresh();
+            
+            string[] words = GenerateWords(10, new List<char>(formula.Coefficients.Keys));
 
             foreach (var word in words)
             {
                 bool expected = AcceptsByFormula(word, formula);
                 bool actual = AcceptsByAutomaton(word);
 
+                testedWords.Add(word);
+
+                if (expected != actual)
+                {
+                    testedStates.Add("Chyba");
+                }
+                else if (expected)
+                {
+                    testedStates.Add("Prijať");
+                }
+                else
+                {
+                    testedStates.Add("Odmietnuť");
+                }
+                Tests_SetScrollbar();
+                pTests.Refresh();
+                
                 if (expected != actual)
                 {
                     string diffWord;
@@ -743,13 +758,34 @@ namespace FEI.TrainingSimulator
                     Message = "Zadanie obsahuje neplatný regex: " + ex.Message
                 };
             }
+            
+            testedWords.Clear();
+            testedStates.Clear();
+            pTests.Refresh();
 
             string[] words = GenerateWords(10, alphabet);
-
+            
             foreach (string word in words)
             {
                 bool expected = regex.IsMatch(word);
                 bool actual = AcceptsByAutomaton(word);
+                
+                testedWords.Add(word);
+
+                if (expected != actual)
+                {
+                    testedStates.Add("Chyba");
+                }
+                else if (expected)
+                {
+                    testedStates.Add("Prijať");
+                }
+                else
+                {
+                    testedStates.Add("Odmietnuť");
+                }
+                Tests_SetScrollbar();
+                pTests.Refresh();
 
                 if (expected != actual)
                 {
@@ -764,7 +800,6 @@ namespace FEI.TrainingSimulator
                     };
                 }
             }
-
             return new FaCheckResult
             {
                 IsCorrect = true,
@@ -1038,13 +1073,6 @@ namespace FEI.TrainingSimulator
 
             return TuringMachine.IsFinalState(currentState);
         }
-        private string[] GenerateWords(int maxLength, ParsedFormula formula)
-        {
-            var result = new List<string>();
-            var alphabet = new List<char>(formula.Coefficients.Keys);
-            GenerateWordsRecursive("", maxLength, result, alphabet);
-            return result.ToArray();
-        }
         
         private string[] GenerateWords(int maxLength, List<char> alphabet)
         {
@@ -1119,6 +1147,115 @@ namespace FEI.TrainingSimulator
             this.Refresh();            
         }
 
+        private List<string> testedWords = new List<string>();
+        private List<String> testedStates = new List<String>();
+        private int testsFirstIndex = 0;
+        private void pTests_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
 
+            g.Clear(Color.White);
+
+            int rowHeight = 34;
+            int y = 6;
+
+            int visibleRows = Math.Max(1, pTests.Height / rowHeight);
+
+            for (int i = testsFirstIndex;
+                 i < testedWords.Count && i < testsFirstIndex + visibleRows;
+                 i++)
+            {
+                Rectangle rect = new Rectangle(
+                    6,
+                    y,
+                    pTests.Width - 14,
+                    rowHeight - 6);
+
+                Color borderColor;
+
+                if (testedStates[i] == "Chyba")
+                    borderColor = Color.Red;
+                else
+                    borderColor = Color.Green;
+
+                using (Pen pen = new Pen(borderColor, 2))
+                {
+                    g.DrawRectangle(pen, rect);
+                }
+
+                string wordText;
+
+                if (testedWords[i] == "")
+                    wordText = "ε";
+                else
+                    wordText = testedWords[i];
+
+                // ľavý text
+                g.DrawString(
+                    wordText,
+                    Font,
+                    Brushes.Black,
+                    rect.X + 8,
+                    rect.Y + 7);
+
+                // pravý text
+                SizeF stateSize = g.MeasureString(testedStates[i], Font);
+
+                g.DrawString(
+                    testedStates[i],
+                    Font,
+                    Brushes.Black,
+                    rect.Right - stateSize.Width - 8,
+                    rect.Y + 7);
+
+                y += rowHeight;
+            }
+
+            g.DrawRectangle(Pens.Black, 0, 0, pTests.Width - 1, pTests.Height - 1);
+        }
+        
+        private void sbyTests_Scroll(object sender, ScrollEventArgs e)
+        {
+            testsFirstIndex = sbyTests.Value;
+            pTests.Refresh();
+        }
+        private void pTests_Resize(object sender, System.EventArgs e)
+        {
+            Tests_SetScrollbar();
+        }
+        
+        private void Tests_SetScrollbar()
+        {
+            int rowHeight = 34;
+
+            int visibleRows = Math.Max(1, pTests.Height / rowHeight);
+
+            int count = testedWords.Count;
+
+            if (count <= visibleRows)
+            {
+                sbyTests.Visible = false;
+                sbyTests.Value = 0;
+                testsFirstIndex = 0;
+            }
+            else
+            {
+                sbyTests.Visible = true;
+
+                sbyTests.Minimum = 0;
+                sbyTests.Maximum = count - 1;
+
+                sbyTests.SmallChange = 1;
+                sbyTests.LargeChange = visibleRows;
+
+                if (sbyTests.Value > count - visibleRows)
+                    sbyTests.Value = Math.Max(0, count - visibleRows);
+
+                testsFirstIndex = sbyTests.Value;
+            }
+
+            pTests.Refresh();
+        }
+        
     }
 }
