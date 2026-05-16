@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<tasks>
+    <task>
+        <id>TM1</id>
+        <title>Posun v smere</title>
+        <category>TM</category>
+        <mode>Modules</mode>
+        <difficulty>Ľahká</difficulty>
+        <specification></specification>
+        <verification></verification>
+    </task>
+
+    <task>
+        <id>TM2</id>
+        <title>Nahradenie symbolu</title>
+        <category>TM</category>
+        <mode>Modules</mode>
+        <difficulty>Ľahká</difficulty>
+        <specification></specification>
+        <verification></verification>
+    </task>
+
+    <task>
+        <id>PDA1</id>
+        <title>Slová tvaru a^n b^n</title>
+        <category>PDA</category>
+        <mode>Reference_model</mode>
+        <difficulty>Ľahká</difficulty>
+        <specification><![CDATA[
+Navrhnite zásobníkový automat (PDA), ktorý rozpoznáva jazyk $L_A$
+
+$$L_A = \{ a^n b^n \mid n \geq 0 \}$$
+
+To znamená, že slovo pozostáva z rovnakého počtu symbolov $a$ a $b$, pričom všetky symboly $a$ sú pred symbolmi $b$. Do jazyka patrí aj prázdne slovo $\varepsilon$.
+    ]]></specification>
+        <verification>Reference_models/DPA-aN bN.pa</verification>
+    </task>
+
+    <task>
+        <id>FA1</id>
+        <title>Párne 0 a 1</title>
+        <category>FA</category>
+        <mode>Formula</mode>
+        <difficulty>Ľahká</difficulty>
+        <specification><![CDATA[
+Navrhnite deterministický konečný automat, príp. jeho stavový diagram, ktorý rozpoznáva jazyk $L_A$
+
+$$L_A = \{{ w \in \{{0,1\}}^* \mid \#_0 w +\#_1 w = 2n,\; n \in \mathbb{{Z}} \}}$$
+        ]]></specification>
+        <verification>1#0+1#1=2n</verification>
+    </task>
+
+    <task>
+        <id>FA2</id>
+        <title>Slová tvaru a*b</title>
+        <category>FA</category>
+        <mode>Regex</mode>
+        <difficulty>Ľahká</difficulty>
+        <specification><![CDATA[
+Navrhnite deterministický konečný automat, ktorý rozpoznáva jazyk definovaný regulárnym výrazom.
+
+$$L = \{ w \in \{a,b\}^* \mid w \text{ zodpovedá regulárnemu výrazu } a^*b \}$$
+
+To znamená, že slovo pozostáva z ľubovoľného počtu znakov $a$ nasledovaných práve jedným znakom $b$.
+        ]]></specification>
+        <verification>a*b</verification>
+    </task>
+
+    <task>
+        <id>FA3</id>
+        <title>Podslovo abba</title>
+        <category>FA</category>
+        <mode>Regex</mode>
+        <difficulty>Stredná</difficulty>
+        <specification><![CDATA[
+Navrhnite deterministický konečný automat, ktorý rozpoznáva jazyk definovaný regulárnym výrazom.
+
+$$L = \{ w \in \{a,b\}^* \mid w \text{ obsahuje podslovo } abba \}$$
+
+To znamená, že slovo môže obsahovať ľubovoľný počet znakov $a$ a $b$, ale niekde v slove sa musí nachádzať súvislá postupnosť znakov $abba$.
+        ]]></specification>
+        <verification>(a|b)*abba(a|b)*</verification>
+    </task>
+
+    <task>
+        <id>FA4</id>
+        <title>Slová končiace na abb</title>
+        <category>FA</category>
+        <mode>Regex</mode>
+        <difficulty>Ťažká</difficulty>
+        <specification><![CDATA[
+Navrhnite deterministický konečný automat, ktorý rozpoznáva jazyk definovaný regulárnym výrazom.
+
+$$L = \{ w \in \{a,b\}^* \mid w \text{ končí postupnosťou znakov } abb \}$$
+
+To znamená, že slovo môže mať ľubovoľný začiatok nad abecedou $\{a,b\}$, ale jeho posledné tri znaky musia byť práve $abb$.
+        ]]></specification>
+        <verification>(a|b)*abb</verification>
+    </task>
+</tasks>

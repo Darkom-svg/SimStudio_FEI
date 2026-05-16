@@ -4,7 +4,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text.Json;
+using System.Xml;
 using System.Windows.Forms;
 using FEI.SimStudio.Components;
 using FEI.TrainingSimulator.Dialogs;
@@ -32,7 +32,7 @@ namespace FEI.TrainingSimulator {
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    "Nepodarilo sa načítať tasks.json.\n\n" + ex.Message,
+                    "Nepodarilo sa načítať tasks.xml.\n\n" + ex.Message,
                     appTitle,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -52,27 +52,53 @@ namespace FEI.TrainingSimulator {
             public string Mode { get; set; } = "";
             public string Difficulty { get; set; } = "";
             public string Specification { get; set; } = "";
-            public string Formula { get; set; } = "";
+            public string Verification { get; set; } = "";
 
         }
 
         public static class TaskStore
         {
-            public static List<TaskDef> Load(string fileName = "tasks.json")
+            public static List<TaskDef> Load(string fileName = "tasks.xml")
+    {
+        var baseDir = AppDomain.CurrentDomain.BaseDirectory;
+        var path = Path.Combine(baseDir, fileName);
+
+        if (!File.Exists(path))
+            throw new FileNotFoundException("Nenašiel som " + fileName + " v " + baseDir);
+
+        XmlDocument doc = new XmlDocument();
+        doc.Load(path);
+
+        var result = new List<TaskDef>();
+
+        XmlNodeList taskNodes = doc.SelectNodes("//task");
+
+        foreach (XmlNode taskNode in taskNodes)
+        {
+            result.Add(new TaskDef
             {
-                var baseDir = AppDomain.CurrentDomain.BaseDirectory;
-                var path = Path.Combine(baseDir, fileName);
-                var json = File.ReadAllText(path);
+                Id = ReadNode(taskNode, "id"),
+                Title = ReadNode(taskNode, "title"),
+                Category = ReadNode(taskNode, "category"),
+                Mode = ReadNode(taskNode, "mode"),
+                Difficulty = ReadNode(taskNode, "difficulty"),
+                Specification = ReadNode(taskNode, "specification"),
+                Verification = ReadNode(taskNode, "verification")
+            });
+        }
 
-                var opts = new JsonSerializerOptions
-                {
-                    PropertyNameCaseInsensitive = true,
-                    ReadCommentHandling = JsonCommentHandling.Skip,
-                    AllowTrailingCommas = true
-                };
+        return result;
+    }
 
-                return JsonSerializer.Deserialize<List<TaskDef>>(json, opts) ?? new List<TaskDef>();
-            }
+    private static string ReadNode(XmlNode parent, string name)
+    {
+        XmlNode node = parent.SelectSingleNode(name);
+
+        if (node == null)
+            return "";
+
+        return node.InnerText.Trim();
+    }
         }
 
         private TaskDef RandomTask(string category)
@@ -101,7 +127,7 @@ namespace FEI.TrainingSimulator {
                 $$L_A = \{{ w \in \{{a,b,c\}}^* \mid {i}\#_a w {j}\#_b w {k}\#_c w = {modulo}n + {y},\; n \in \mathbb{{Z}} \}}$$
                 ";
                 
-                randTask.Formula = $"{i}#a{j}#b{k}#c={modulo}n+{y}";
+                randTask.Verification = $"{i}#a{j}#b{k}#c={modulo}n+{y}";
             }
             
             return randTask;

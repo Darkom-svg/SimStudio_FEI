@@ -111,6 +111,9 @@ namespace FEI.TrainingSimulator
             this.bAddTFunction = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.txtCode = new FEI.SimStudio.Components.Controls.SyntaxTextBox();
+            this.pTests = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.sbyTests = new System.Windows.Forms.VScrollBar();
             this.statesTab = new System.Windows.Forms.TabPage();
             this.bAddState = new System.Windows.Forms.Button();
             this.stateDiagramControl = new FEI.TuringCore.Components.StateDiagramControl();
@@ -134,7 +137,9 @@ namespace FEI.TrainingSimulator
             this.functionsTab.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pTests)).BeginInit();
             this.statesTab.SuspendLayout();
             this.formalSpecificationTab.SuspendLayout();
             this.SuspendLayout();
@@ -300,7 +305,7 @@ namespace FEI.TrainingSimulator
             // 
             this.miTransitions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miAddTransition, this.toolStripMenuItem12, this.miTransitionFormat });
             this.miTransitions.Name = "miTransitions";
-            this.miTransitions.Size = new System.Drawing.Size(132, 22);
+            this.miTransitions.Size = new System.Drawing.Size(152, 22);
             this.miTransitions.Text = "Prechody";
             // 
             // miAddTransition
@@ -327,80 +332,88 @@ namespace FEI.TrainingSimulator
             this.miTFormat10.Checked = true;
             this.miTFormat10.CheckState = System.Windows.Forms.CheckState.Checked;
             this.miTFormat10.Name = "miTFormat10";
-            this.miTFormat10.Size = new System.Drawing.Size(146, 22);
+            this.miTFormat10.Size = new System.Drawing.Size(152, 22);
             this.miTFormat10.Text = "δ(q1,a1)=(q2)";
+            this.miTFormat10.Click += new System.EventHandler(this.miTFormat10_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(143, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(149, 6);
             // 
             // miTFormat1
             // 
             this.miTFormat1.Name = "miTFormat1";
-            this.miTFormat1.Size = new System.Drawing.Size(146, 22);
+            this.miTFormat1.Size = new System.Drawing.Size(152, 22);
             this.miTFormat1.Text = "f(q1,a1)=(q2)";
             this.miTFormat1.Click += new System.EventHandler(this.miTFormat1_Click);
             // 
             // miTFormat2
             // 
             this.miTFormat2.Name = "miTFormat2";
-            this.miTFormat2.Size = new System.Drawing.Size(146, 22);
+            this.miTFormat2.Size = new System.Drawing.Size(152, 22);
             this.miTFormat2.Text = "(q1,a1)=(q2)";
-            this.miTFormat2.Click += new System.EventHandler(this.miTFormat9_Click);
+            this.miTFormat2.Click += new System.EventHandler(this.miTFormat2_Click);
             // 
             // miTFormat3
             // 
             this.miTFormat3.Name = "miTFormat3";
-            this.miTFormat3.Size = new System.Drawing.Size(146, 22);
+            this.miTFormat3.Size = new System.Drawing.Size(152, 22);
             this.miTFormat3.Text = "q1,a1,q2";
+            this.miTFormat3.Click += new System.EventHandler(this.miTFormat3_Click);
             // 
             // toolStripMenuItem13
             // 
             this.toolStripMenuItem13.Name = "toolStripMenuItem13";
-            this.toolStripMenuItem13.Size = new System.Drawing.Size(143, 6);
+            this.toolStripMenuItem13.Size = new System.Drawing.Size(149, 6);
             // 
             // miTFormat4
             // 
             this.miTFormat4.Name = "miTFormat4";
-            this.miTFormat4.Size = new System.Drawing.Size(146, 22);
+            this.miTFormat4.Size = new System.Drawing.Size(152, 22);
             this.miTFormat4.Text = "[q1,a1][q2]";
+            this.miTFormat4.Click += new System.EventHandler(this.miTFormat4_Click);
             // 
             // miTFormat5
             // 
             this.miTFormat5.Name = "miTFormat5";
-            this.miTFormat5.Size = new System.Drawing.Size(146, 22);
+            this.miTFormat5.Size = new System.Drawing.Size(152, 22);
             this.miTFormat5.Text = "(q1,a1)(q2)";
+            this.miTFormat5.Click += new System.EventHandler(this.miTFormat5_Click);
             // 
             // miTFormat6
             // 
             this.miTFormat6.Name = "miTFormat6";
-            this.miTFormat6.Size = new System.Drawing.Size(146, 22);
+            this.miTFormat6.Size = new System.Drawing.Size(152, 22);
             this.miTFormat6.Text = "[q1,a1]->[q2]";
+            this.miTFormat6.Click += new System.EventHandler(this.miTFormat6_Click);
             // 
             // miTFormat7
             // 
             this.miTFormat7.Name = "miTFormat7";
-            this.miTFormat7.Size = new System.Drawing.Size(146, 22);
+            this.miTFormat7.Size = new System.Drawing.Size(152, 22);
             this.miTFormat7.Text = "(q1,a1)->(q2)";
+            this.miTFormat7.Click += new System.EventHandler(this.miTFormat7_Click);
             // 
             // miTFormat8
             // 
             this.miTFormat8.Name = "miTFormat8";
-            this.miTFormat8.Size = new System.Drawing.Size(146, 22);
+            this.miTFormat8.Size = new System.Drawing.Size(152, 22);
             this.miTFormat8.Text = "q1,a1->q2";
+            this.miTFormat8.Click += new System.EventHandler(this.miTFormat8_Click);
             // 
             // miTFormat9
             // 
             this.miTFormat9.Name = "miTFormat9";
-            this.miTFormat9.Size = new System.Drawing.Size(146, 22);
+            this.miTFormat9.Size = new System.Drawing.Size(152, 22);
             this.miTFormat9.Text = "q1,a1>q2";
+            this.miTFormat9.Click += new System.EventHandler(this.miTFormat9_Click);
             // 
             // miTape
             // 
             this.miTape.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miInsertSymbols, this.toolStripSeparator1, this.miClearTape, this.toolStripMenuItem5, this.miExportTape, this.miImportTape, this.toolStripMenuItem6, this.miTapeStatistics });
             this.miTape.Name = "miTape";
-            this.miTape.Size = new System.Drawing.Size(132, 22);
+            this.miTape.Size = new System.Drawing.Size(152, 22);
             this.miTape.Text = "Páska";
             this.miTape.Visible = false;
             // 
@@ -462,12 +475,12 @@ namespace FEI.TrainingSimulator
             // toolStripMenuItem14
             // 
             this.toolStripMenuItem14.Name = "toolStripMenuItem14";
-            this.toolStripMenuItem14.Size = new System.Drawing.Size(129, 6);
+            this.toolStripMenuItem14.Size = new System.Drawing.Size(149, 6);
             // 
             // miSettings
             // 
             this.miSettings.Name = "miSettings";
-            this.miSettings.Size = new System.Drawing.Size(132, 22);
+            this.miSettings.Size = new System.Drawing.Size(152, 22);
             this.miSettings.Text = "Nastavenia";
             this.miSettings.Click += new System.EventHandler(this.miSettings_Click);
             // 
@@ -479,6 +492,7 @@ namespace FEI.TrainingSimulator
             this.miSimulation.Name = "miSimulation";
             this.miSimulation.Size = new System.Drawing.Size(70, 23);
             this.miSimulation.Text = "Simulácia";
+            this.miSimulation.Visible = false;
             // 
             // miRun
             // 
@@ -726,8 +740,14 @@ namespace FEI.TrainingSimulator
             this.splitContainer1.Panel1.Controls.Add(this.bAddTFunction);
             this.splitContainer1.Panel1.Controls.Add(this.label5);
             this.splitContainer1.Panel1.Controls.Add(this.txtCode);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.pTests);
+            this.splitContainer1.Panel2.Controls.Add(this.label6);
+            this.splitContainer1.Panel2.Controls.Add(this.sbyTests);
             this.splitContainer1.Size = new System.Drawing.Size(1145, 441);
-            this.splitContainer1.SplitterDistance = 745;
+            this.splitContainer1.SplitterDistance = 820;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -764,8 +784,41 @@ namespace FEI.TrainingSimulator
             this.txtCode.SelectedText = "";
             this.txtCode.SelectionLength = 0;
             this.txtCode.SelectionStart = 0;
-            this.txtCode.Size = new System.Drawing.Size(737, 389);
+            this.txtCode.Size = new System.Drawing.Size(812, 389);
             this.txtCode.TabIndex = 0;
+            // 
+            // pTests
+            // 
+            this.pTests.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.pTests.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.pTests.Location = new System.Drawing.Point(3, 47);
+            this.pTests.Margin = new System.Windows.Forms.Padding(3, 3, 0, 3);
+            this.pTests.Name = "pTests";
+            this.pTests.Size = new System.Drawing.Size(283, 390);
+            this.pTests.TabIndex = 9;
+            this.pTests.TabStop = false;
+            this.pTests.Paint += new System.Windows.Forms.PaintEventHandler(this.pTests_Paint);
+            this.pTests.Resize += new System.EventHandler(this.pTests_Resize);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label6.Location = new System.Drawing.Point(3, 28);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(80, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Zoznam testov:";
+            // 
+            // sbyTests
+            // 
+            this.sbyTests.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Right)));
+            this.sbyTests.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.sbyTests.Location = new System.Drawing.Point(286, 47);
+            this.sbyTests.Name = "sbyTests";
+            this.sbyTests.Size = new System.Drawing.Size(18, 390);
+            this.sbyTests.TabIndex = 10;
+            this.sbyTests.Scroll += new System.Windows.Forms.ScrollEventHandler(this.sbyTests_Scroll);
             // 
             // statesTab
             // 
@@ -903,13 +956,20 @@ namespace FEI.TrainingSimulator
             this.functionsTab.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pTests)).EndInit();
             this.statesTab.ResumeLayout(false);
             this.formalSpecificationTab.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.PictureBox pTests;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.VScrollBar sbyTests;
 
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
 

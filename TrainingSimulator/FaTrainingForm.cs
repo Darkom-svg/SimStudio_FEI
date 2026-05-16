@@ -625,7 +625,7 @@ namespace FEI.TrainingSimulator
             ParsedFormula formula;
             try
             {
-                formula = ParseFormula(task.Formula);
+                formula = ParseFormula(task.Verification);
             }
             catch (Exception ex)
             {
@@ -710,7 +710,7 @@ namespace FEI.TrainingSimulator
                 };
             }
 
-            string regexPattern = task.Formula;
+            string regexPattern = task.Verification;
 
             if (string.IsNullOrWhiteSpace(regexPattern))
             {
@@ -1256,6 +1256,95 @@ namespace FEI.TrainingSimulator
 
             pTests.Refresh();
         }
-        
+
+        private void miTFormat1_Click(object sender, EventArgs e)
+		{
+			transitionFormat = "\\sf\\s(\\a,\\a,\\a)\\s=\\s(\\a,\\a)\\s";
+			miTFormat1.Checked = true; miTFormat2.Checked = false; miTFormat3.Checked = false; 
+			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false; 
+			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
+			miTFormat10.Checked = false;
+		}
+
+		private void miTFormat2_Click(object sender, EventArgs e)
+		{
+			transitionFormat = "\\s(\\a,\\a,\\a)\\s=\\s(\\a,\\a)\\s";
+			miTFormat1.Checked = false; miTFormat2.Checked = true; miTFormat3.Checked = false; 
+			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false; 
+			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
+			miTFormat10.Checked = false;
+		}
+
+		private void miTFormat3_Click(object sender, EventArgs e)
+		{
+			transitionFormat = "\\a,\\a,\\a,\\a,\\a";
+			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = true;
+			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
+			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
+			miTFormat10.Checked = false;
+		}
+
+		private void miTFormat4_Click(object sender, EventArgs e)
+		{
+			transitionFormat = "\\s[\\a,\\a,\\a]\\s[\\a,\\a]\\s";
+			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
+			miTFormat4.Checked = true; miTFormat5.Checked = false; miTFormat6.Checked = false;
+			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
+			miTFormat10.Checked = false;
+		}
+
+		private void miTFormat5_Click(object sender, EventArgs e)
+		{
+			transitionFormat = "\\s(\\a,\\a,\\a)\\s(\\a,\\a)\\s";
+			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
+			miTFormat4.Checked = false; miTFormat5.Checked = true; miTFormat6.Checked = false;
+			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
+			miTFormat10.Checked = false;
+		}
+
+		private void miTFormat6_Click(object sender, EventArgs e)
+		{
+			transitionFormat = "\\s[\\a,\\a,\\a]\\s->\\s[\\a,\\a]\\s";
+			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
+			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = true;
+			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
+			miTFormat10.Checked = false;
+		}
+
+		private void miTFormat7_Click(object sender, EventArgs e)
+		{
+			transitionFormat = "\\s(\\a,\\a,\\a)\\s->\\s(\\a,\\a)\\s";
+			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
+			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
+			miTFormat7.Checked = true; miTFormat8.Checked = false; miTFormat9.Checked = false;
+			miTFormat10.Checked = false;
+		}
+
+		private void miTFormat8_Click(object sender, EventArgs e)
+		{
+			transitionFormat = "\\a,\\a,\\a->\\a,\\a";
+			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
+			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
+			miTFormat7.Checked = false; miTFormat8.Checked = true; miTFormat9.Checked = false;
+			miTFormat10.Checked = false;
+		}
+
+		private void miTFormat9_Click(object sender, EventArgs e)
+		{
+			transitionFormat = "\\a,\\a,\\a>\\a,\\a";
+			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
+			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
+			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = true;
+			miTFormat10.Checked = false;
+		}
+
+		private void miTFormat10_Click(object sender, EventArgs e)
+		{
+			transitionFormat = "\\sδ\\s(\\a,\\a,\\a)\\s=\\s(\\a,\\a)\\s";
+			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
+			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
+			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = true;
+			miTFormat10.Checked = false;
+		}
     }
 }

@@ -668,75 +668,219 @@ namespace FEI.TrainingSimulator
             }
         }
         
+        private PushdownAutomaton.PushdownAutomaton CreateReferencePda()
+        {
+            string path = Path.Combine(
+                AppDomain.CurrentDomain.BaseDirectory,
+                task.Verification);
+
+            if (!File.Exists(path))
+                throw new FileNotFoundException("Referenčný model sa nenašiel: " + path);
+
+            var pda = new PushdownAutomaton.PushdownAutomaton
+            {
+                AcceptType = AcceptType.FinalStateReachedAndWholeTapeRead
+            };
+
+            string code = pda.Load(path);
+
+            var parser = new PushdownAutomatonParser(pda, TransitionFormat, WildCardFormat);
+
+            if (!parser.ParseTFunctions(code))
+                throw new Exception("Referenčný model obsahuje syntaktické chyby.");
+
+            pda.StateDiagram.UpdateForPA(pda);
+
+            return pda;
+        }
+        
+        private PushdownAutomaton.PushdownAutomaton CreateStudentPda()
+        {
+            var pda = new PushdownAutomaton.PushdownAutomaton
+            {
+                AcceptType = AcceptType.FinalStateReachedAndWholeTapeRead
+            };
+
+            var parser = new PushdownAutomatonParser(pda, TransitionFormat, WildCardFormat);
+
+            if (!parser.ParseTFunctions(txtCode.Text))
+                throw new Exception("Riešenie obsahuje syntaktické chyby.");
+
+            pda.StartState = PushdownAutomaton.StartState;
+            pda.FinalStates = new List<string>(PushdownAutomaton.FinalStates);
+
+            pda.StateDiagram.UpdateForPA(pda);
+
+            return pda;
+        }
+        
+        private List<string> GetInputAlphabet(PushdownAutomaton.PushdownAutomaton pda)
+        {
+            var alphabet = new HashSet<string>();
+
+            for (int i = 0; i < pda.TFunctionCount; i++)
+            {
+                string symbol = pda.TFunction(i).ReadSymbol;
+
+                if (!string.IsNullOrEmpty(symbol) && symbol != "Blank")
+                    alphabet.Add(symbol);
+            }
+
+            return alphabet.OrderBy(x => x).ToList();
+        }
+        
+        private List<string> GenerateWords(int maxLength, List<string> alphabet)
+        {
+            var words = new List<string>();
+            GenerateWordsRecursive("", maxLength, alphabet, words);
+            return words;
+        }
+
+        private void GenerateWordsRecursive(
+            string current,
+            int remaining,
+            List<string> alphabet,
+            List<string> words)
+        {
+            words.Add(current);
+
+            if (remaining == 0)
+                return;
+
+            foreach (string symbol in alphabet)
+            {
+                GenerateWordsRecursive(current + symbol, remaining - 1, alphabet, words);
+            }
+        }
+        
+        private bool AcceptsByPda(
+            PushdownAutomaton.PushdownAutomaton pda,
+            string word)
+        {
+            pda.Reset();
+            pda.WriteLog = false;
+            pda.Log.Clear();
+            pda.RemoveAllThreads();
+
+            pda.OriginalTapes = new List<InfiniteTape>();
+
+            InfiniteTape tape = new InfiniteTape();
+
+            for (int i = 0; i < word.Length; i++)
+            {
+                tape.SetCell(i, word[i].ToString());
+            }
+
+            tape.HeadPosition = 0;
+
+            pda.OriginalTapes.Add(tape);
+            pda.ActiveTapes = InfiniteTape.DeepCopyTapes(pda.OriginalTapes);
+            pda.CurrentState = pda.StartState;
+
+            int maxSteps = 200;
+
+            for (int step = 0; step < maxSteps; step++)
+            {
+                if (pda.IsAccepted())
+                    return true;
+
+                pda.NextStep(false);
+
+                pda.Log.Clear();
+
+                if (pda.IsAccepted())
+                    return true;
+
+                if (pda.NoNextStep)
+                    return false;
+            }
+
+            return false;
+        }
+        
         private CheckResult CheckCurrentPdaSolution()
         {
-            bool parsed = ParseTFunctions(txtCode.Text);
-
-            if (!parsed)
+            if (string.IsNullOrWhiteSpace(task.Verification))
             {
                 return new CheckResult
                 {
                     IsCorrect = false,
-                    Message = "Riešenie obsahuje syntaktické chyby v prechodových funkciách."
+                    Message = "Zadanie neobsahuje cestu k referenčnému modelu."
                 };
             }
 
-            if (string.IsNullOrWhiteSpace(task.Formula))
-            {
-                return new CheckResult
-                {
-                    IsCorrect = false,
-                    Message = "Zadanie neobsahuje regulárny výraz v poli formula."
-                };
-            }
-
-            List<char> alphabet;
+            PushdownAutomaton.PushdownAutomaton referenceForAlphabet;
 
             try
             {
-                alphabet = ExtractAlphabetFromRegex(task.Formula);
+                referenceForAlphabet = CreateReferencePda();
             }
             catch (Exception ex)
             {
                 return new CheckResult
                 {
                     IsCorrect = false,
-                    Message = "Nepodarilo sa určiť abecedu zo zadania: " + ex.Message
+                    Message = "Nepodarilo sa pripraviť referenčný model: " + ex.Message
                 };
             }
 
-            string structuralError = ValidatePdaStructure(alphabet);
+            List<string> alphabet = GetInputAlphabet(referenceForAlphabet);
 
-            if (structuralError != null)
+            if (alphabet.Count == 0)
             {
                 return new CheckResult
                 {
                     IsCorrect = false,
-                    Message = structuralError
+                    Message = "Referenčný model nemá vstupnú abecedu."
                 };
             }
 
-            Regex regex;
+            List<string> words = GenerateWords(6, alphabet);
 
-            try
-            {
-                regex = new Regex("^(" + task.Formula + ")$");
-            }
-            catch (Exception ex)
-            {
-                return new CheckResult
-                {
-                    IsCorrect = false,
-                    Message = "Zadanie obsahuje neplatný regulárny výraz: " + ex.Message
-                };
-            }
-
-            string[] words = GenerateWords(6, alphabet);
+            testedWords.Clear();
+            testedStates.Clear();
+            Tests_SetScrollbar();
+            pTests.Refresh();
 
             foreach (string word in words)
             {
-                bool expected = regex.IsMatch(word);
-                bool actual = AcceptsByPda(word);
+                PushdownAutomaton.PushdownAutomaton reference;
+                PushdownAutomaton.PushdownAutomaton student;
+
+                try
+                {
+                    reference = CreateReferencePda();
+                    student = CreateStudentPda();
+                }
+                catch (Exception ex)
+                {
+                    return new CheckResult
+                    {
+                        IsCorrect = false,
+                        Message = ex.Message
+                    };
+                }
+
+                bool expected = AcceptsByPda(reference, word);
+                bool actual = AcceptsByPda(student, word);
+
+                testedWords.Add(word);
+
+                if (expected != actual)
+                {
+                    testedStates.Add("Chyba");
+                }
+                else if (expected)
+                {
+                    testedStates.Add("Prijať");
+                }
+                else
+                {
+                    testedStates.Add("Odmietnuť");
+                }
+
+                Tests_SetScrollbar();
+                pTests.Refresh();
 
                 if (expected != actual)
                 {
@@ -747,8 +891,8 @@ namespace FEI.TrainingSimulator
                         IsCorrect = false,
                         Message =
                             $"Automat nie je správny. Líši sa na slove '{shownWord}'.\n" +
-                            $"Očakávané: {(expected ? "prijať" : "odmietnuť")}.\n" +
-                            $"Študentov PDA: {(actual ? "prijať" : "odmietnuť")}."
+                            $"Referenčný model: {(expected ? "prijať" : "odmietnuť")}.\n" +
+                            $"Študentov PA: {(actual ? "prijať" : "odmietnuť")}."
                     };
                 }
             }
@@ -759,178 +903,7 @@ namespace FEI.TrainingSimulator
                 Message = "Riešenie je správne."
             };
         }
-        private string ValidatePdaStructure(List<char> alphabet)
-        {
-            var usedStates = PushdownAutomaton.GetUsedStates();
-
-            if (usedStates == null || usedStates.Length == 0)
-            {
-                return "PDA neobsahuje žiadne stavy.";
-            }
-
-            if (string.IsNullOrWhiteSpace(PushdownAutomaton.StartState))
-            {
-                return "PDA nemá začiatočný stav.";
-            }
-
-            bool hasFinalState = false;
-
-            foreach (string state in usedStates)
-            {
-                if (PushdownAutomaton.IsFinalState(state))
-                {
-                    hasFinalState = true;
-                    break;
-                }
-            }
-
-            if (!hasFinalState)
-            {
-                return "PDA nemá žiadny koncový stav.";
-            }
-
-            var allowedInputSymbols = new HashSet<char>(alphabet);
-
-            for (int i = 0; i < PushdownAutomaton.TFunctionCount; i++)
-            {
-                var tf = PushdownAutomaton.TFunction(i);
-
-                if (string.IsNullOrWhiteSpace(tf.CurrentState))
-                {
-                    return "Prechod obsahuje prázdny počiatočný stav.";
-                }
-
-                if (string.IsNullOrWhiteSpace(tf.NewState))
-                {
-                    return "Prechod obsahuje prázdny cieľový stav.";
-                }
-
-                if (!string.IsNullOrEmpty(tf.ReadSymbol))
-                {
-                    if (tf.ReadSymbol.Length != 1)
-                    {
-                        return $"Prechod používa neplatný vstupný symbol '{tf.ReadSymbol}'.";
-                    }
-
-                    char inputSymbol = tf.ReadSymbol[0];
-
-                    if (!allowedInputSymbols.Contains(inputSymbol))
-                    {
-                        return $"PDA používa nepovolený vstupný symbol '{tf.ReadSymbol}'.";
-                    }
-                }
-
-                if (string.IsNullOrEmpty(tf.StackRead))
-                {
-                    return "Prechod nemá určený symbol čítaný zo zásobníka.";
-                }
-
-                if (tf.StackRead.Length != 1)
-                {
-                    return $"Prechod používa neplatný symbol čítaný zo zásobníka '{tf.StackRead}'.";
-                }
-
-                if (tf.StackWrite == null)
-                {
-                    return "Prechod nemá určený zápis do zásobníka.";
-                }
-            }
-
-            return null;
-        }
-        private bool AcceptsByPda(string word)
-        {
-            // 1. nastav vstupnú pásku ako pôvodnú pásku
-            PushdownAutomaton.OriginalTapes = new List<InfiniteTape>();
-
-            InfiniteTape inputTape = new InfiniteTape();
-
-            for (int i = 0; i < word.Length; i++)
-            {
-                inputTape.SetCell(i, word[i].ToString());
-            }
-
-            inputTape.HeadPosition = 0;
-
-            PushdownAutomaton.OriginalTapes.Add(inputTape);
-
-            // 2. reset automatu podobne ako vo formulári
-            PushdownAutomaton.Reset();
-
-            PushdownAutomaton.Log.Clear();
-            PushdownAutomaton.CurrentState = PushdownAutomaton.StartState;
-            PushdownAutomaton.RemoveAllThreads();
-
-            PushdownAutomaton.ActiveTapes =
-                InfiniteTape.DeepCopyTapes(PushdownAutomaton.OriginalTapes);
-
-            // 3. simulácia s limitom krokov
-            int maxSteps = 1000;
-
-            for (int step = 0; step < maxSteps; step++)
-            {
-                if (PushdownAutomaton.IsAccepted())
-                {
-                    return true;
-                }
-
-                PushdownAutomaton.NextStep(true);
-
-                if (PushdownAutomaton.NoNextStep)
-                {
-                    break;
-                }
-            }
-
-            return PushdownAutomaton.IsAccepted();
-        }
         
-        private List<char> ExtractAlphabetFromRegex(string regexText)
-        {
-            var alphabet = new HashSet<char>();
-
-            foreach (char ch in regexText)
-            {
-                if (char.IsLetterOrDigit(ch))
-                {
-                    alphabet.Add(ch);
-                }
-            }
-
-            if (alphabet.Count == 0)
-            {
-                throw new Exception("Regex neobsahuje žiadne symboly abecedy.");
-            }
-
-            return alphabet.OrderBy(c => c).ToList();
-        }
-        private string[] GenerateWords(int maxLength, List<char> alphabet)
-        {
-            var result = new List<string>();
-
-            GenerateWordsRecursive("", maxLength, result, alphabet);
-
-            return result.ToArray();
-        }
-
-        private void GenerateWordsRecursive(
-            string current,
-            int remaining,
-            List<string> result,
-            List<char> alphabet)
-        {
-            result.Add(current);
-
-            if (remaining == 0)
-                return;
-
-            foreach (char symbol in alphabet)
-            {
-                GenerateWordsRecursive(current + symbol, remaining - 1, result, alphabet);
-            }
-        }
-        
-
         private void miTFormat1_Click(object sender, EventArgs e)
 		{
 			TransitionFormat = "\\sf\\s(\\a,\\a,\\a)\\s=\\s(\\a,\\a)\\s";
@@ -1021,5 +994,114 @@ namespace FEI.TrainingSimulator
 			miTFormat10.Checked = false;
 		}
         
+        private List<string> testedWords = new List<string>();
+        private List<String> testedStates = new List<String>();
+        private int testsFirstIndex = 0;
+        private void pTests_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+
+            g.Clear(Color.White);
+
+            int rowHeight = 34;
+            int y = 6;
+
+            int visibleRows = Math.Max(1, pTests.Height / rowHeight);
+
+            for (int i = testsFirstIndex;
+                 i < testedWords.Count && i < testsFirstIndex + visibleRows;
+                 i++)
+            {
+                Rectangle rect = new Rectangle(
+                    6,
+                    y,
+                    pTests.Width - 14,
+                    rowHeight - 6);
+
+                Color borderColor;
+
+                if (testedStates[i] == "Chyba")
+                    borderColor = Color.Red;
+                else
+                    borderColor = Color.Green;
+
+                using (Pen pen = new Pen(borderColor, 2))
+                {
+                    g.DrawRectangle(pen, rect);
+                }
+
+                string wordText;
+
+                if (testedWords[i] == "")
+                    wordText = "ε";
+                else
+                    wordText = testedWords[i];
+
+                // ľavý text
+                g.DrawString(
+                    wordText,
+                    Font,
+                    Brushes.Black,
+                    rect.X + 8,
+                    rect.Y + 7);
+
+                // pravý text
+                SizeF stateSize = g.MeasureString(testedStates[i], Font);
+
+                g.DrawString(
+                    testedStates[i],
+                    Font,
+                    Brushes.Black,
+                    rect.Right - stateSize.Width - 8,
+                    rect.Y + 7);
+
+                y += rowHeight;
+            }
+
+            g.DrawRectangle(Pens.Black, 0, 0, pTests.Width - 1, pTests.Height - 1);
+        }
+        
+        private void sbyTests_Scroll(object sender, ScrollEventArgs e)
+        {
+            testsFirstIndex = sbyTests.Value;
+            pTests.Refresh();
+        }
+        private void pTests_Resize(object sender, System.EventArgs e)
+        {
+            Tests_SetScrollbar();
+        }
+        
+        private void Tests_SetScrollbar()
+        {
+            int rowHeight = 34;
+
+            int visibleRows = Math.Max(1, pTests.Height / rowHeight);
+
+            int count = testedWords.Count;
+
+            if (count <= visibleRows)
+            {
+                sbyTests.Visible = false;
+                sbyTests.Value = 0;
+                testsFirstIndex = 0;
+            }
+            else
+            {
+                sbyTests.Visible = true;
+
+                sbyTests.Minimum = 0;
+                sbyTests.Maximum = count - 1;
+
+                sbyTests.SmallChange = 1;
+                sbyTests.LargeChange = visibleRows;
+
+                if (sbyTests.Value > count - visibleRows)
+                    sbyTests.Value = Math.Max(0, count - visibleRows);
+
+                testsFirstIndex = sbyTests.Value;
+            }
+
+            pTests.Refresh();
+        }
     }
 }

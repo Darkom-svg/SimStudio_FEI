@@ -484,7 +484,7 @@
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
 
-        private Components.RoundedPanel roundedPanel7;
+        private FEI.SimStudio.Components.RoundedPanel roundedPanel7;
 
         private FEI.SimStudio.Components.RoundedPanel roundedPanel5;
         private System.Windows.Forms.Label label6;

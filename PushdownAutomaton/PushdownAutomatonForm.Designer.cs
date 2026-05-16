@@ -46,7 +46,7 @@ namespace FEI.PushdownAutomaton {
 	        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PushdownAutomatonForm));
 	        this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 	        this.bAddTFunction = new System.Windows.Forms.Button();
-	        this.txtCode = new SyntaxTextBox();
+	        this.txtCode = new FEI.SimStudio.Components.Controls.SyntaxTextBox();
 	        this.label5 = new System.Windows.Forms.Label();
 	        this.pFunctions = new System.Windows.Forms.PictureBox();
 	        this.label6 = new System.Windows.Forms.Label();
@@ -55,11 +55,11 @@ namespace FEI.PushdownAutomaton {
 	        this.speedPanel = new System.Windows.Forms.Panel();
 	        this.tbSpeed = new System.Windows.Forms.TrackBar();
 	        this.label3 = new System.Windows.Forms.Label();
-	        this.infiniteTapeControl = new InfiniteTapeControl();
+	        this.infiniteTapeControl = new FEI.TuringCore.Components.InfiniteTapeControl();
 	        this.tcMain = new System.Windows.Forms.TabControl();
 	        this.functionsTab = new System.Windows.Forms.TabPage();
 	        this.statesTab = new System.Windows.Forms.TabPage();
-	        this.stateDiagramControl = new StateDiagramControl();
+	        this.stateDiagramControl = new FEI.TuringCore.Components.StateDiagramControl();
 	        this.bAddState = new System.Windows.Forms.Button();
 	        this.processTab = new System.Windows.Forms.TabPage();
 	        this.sbxThreads = new System.Windows.Forms.HScrollBar();
@@ -228,7 +228,7 @@ namespace FEI.PushdownAutomaton {
 	        this.txtCode.SelectedText = "";
 	        this.txtCode.SelectionLength = 0;
 	        this.txtCode.SelectionStart = 0;
-	        this.txtCode.TextChanged += new SyntaxTextBox.TextChangedEventHandler(this.txtCode_TextChanged);
+	        this.txtCode.TextChanged += new FEI.SimStudio.Components.Controls.SyntaxTextBox.TextChangedEventHandler(this.txtCode_TextChanged);
 	        // 
 	        // label5
 	        // 
@@ -304,7 +304,7 @@ namespace FEI.PushdownAutomaton {
 	        // 
 	        // infiniteTapeControl
 	        // 
-	        this.infiniteTapeControl.AcceptStatus = AcceptanceStatus.None;
+	        this.infiniteTapeControl.AcceptStatus = FEI.TuringCore.Simulation.AcceptanceStatus.None;
 	        this.infiniteTapeControl.AllowBlanks = false;
 	        resources.ApplyResources(this.infiniteTapeControl, "infiniteTapeControl");
 	        this.infiniteTapeControl.ChangesAllowed = true;
@@ -351,8 +351,8 @@ namespace FEI.PushdownAutomaton {
 	        resources.ApplyResources(this.stateDiagramControl, "stateDiagramControl");
 	        this.stateDiagramControl.Name = "stateDiagramControl";
 	        this.stateDiagramControl.TuringMachine = null;
-	        this.stateDiagramControl.TransitionAdded += new StateDiagramControl.TransitionEventHandler(this.stateDiagramControl_TransitionAdded);
-	        this.stateDiagramControl.DiagramChanged += new StateDiagramControl.DiagramChangedEventHandler(this.stateDiagramControl_DiagramChanged);
+	        this.stateDiagramControl.TransitionAdded += new FEI.TuringCore.Components.StateDiagramControl.TransitionEventHandler(this.stateDiagramControl_TransitionAdded);
+	        this.stateDiagramControl.DiagramChanged += new FEI.TuringCore.Components.StateDiagramControl.DiagramChangedEventHandler(this.stateDiagramControl_DiagramChanged);
 	        // 
 	        // bAddState
 	        // 
@@ -516,17 +516,17 @@ namespace FEI.PushdownAutomaton {
 	        // 
 	        // lblStatus
 	        // 
-	        this.lblStatus.MergeAction = MergeAction.Replace;
-	        this.lblStatus.MergeIndex  = 0;
 	        this.lblStatus.Margin = new System.Windows.Forms.Padding(0, 3, 10, 2);
+	        this.lblStatus.MergeAction = System.Windows.Forms.MergeAction.Replace;
+	        this.lblStatus.MergeIndex = 0;
 	        this.lblStatus.Name = "lblStatus";
 	        resources.ApplyResources(this.lblStatus, "lblStatus");
 	        // 
 	        // lblStepCount
 	        // 
-	        this.lblStepCount.MergeAction = MergeAction.Insert;
-	        this.lblStepCount.MergeIndex  = 1;
 	        this.lblStepCount.Margin = new System.Windows.Forms.Padding(10, 3, 0, 2);
+	        this.lblStepCount.MergeAction = System.Windows.Forms.MergeAction.Insert;
+	        this.lblStepCount.MergeIndex = 1;
 	        this.lblStepCount.Name = "lblStepCount";
 	        resources.ApplyResources(this.lblStepCount, "lblStepCount");
 	        // 

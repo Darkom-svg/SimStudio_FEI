@@ -46,7 +46,7 @@ namespace FEI.TuringMachineSimulator {
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TuringMachineForm));
 			this.splitContainer1 = new System.Windows.Forms.SplitContainer();
 			this.bAddTFunction = new System.Windows.Forms.Button();
-			this.txtCode = new SyntaxTextBox();
+			this.txtCode = new FEI.SimStudio.Components.Controls.SyntaxTextBox();
 			this.label5 = new System.Windows.Forms.Label();
 			this.pFunctions = new System.Windows.Forms.PictureBox();
 			this.label6 = new System.Windows.Forms.Label();
@@ -55,11 +55,11 @@ namespace FEI.TuringMachineSimulator {
 			this.speedPanel = new System.Windows.Forms.Panel();
 			this.tbSpeed = new System.Windows.Forms.TrackBar();
 			this.label3 = new System.Windows.Forms.Label();
-			this.infiniteTapeControl = new InfiniteTapeControl();
+			this.infiniteTapeControl = new FEI.TuringCore.Components.InfiniteTapeControl();
 			this.tcMain = new System.Windows.Forms.TabControl();
 			this.functionsTab = new System.Windows.Forms.TabPage();
 			this.statesTab = new System.Windows.Forms.TabPage();
-			this.stateDiagramControl = new StateDiagramControl();
+			this.stateDiagramControl = new FEI.TuringCore.Components.StateDiagramControl();
 			this.bAddState = new System.Windows.Forms.Button();
 			this.processTab = new System.Windows.Forms.TabPage();
 			this.sbxThreads = new System.Windows.Forms.HScrollBar();
@@ -224,7 +224,7 @@ namespace FEI.TuringMachineSimulator {
 			this.txtCode.SelectedText = "";
 			this.txtCode.SelectionLength = 0;
 			this.txtCode.SelectionStart = 0;
-			this.txtCode.TextChanged += new SyntaxTextBox.TextChangedEventHandler(this.txtCode_TextChanged);
+			this.txtCode.TextChanged += new FEI.SimStudio.Components.Controls.SyntaxTextBox.TextChangedEventHandler(this.txtCode_TextChanged);
 			// 
 			// label5
 			// 
@@ -300,7 +300,7 @@ namespace FEI.TuringMachineSimulator {
 			// 
 			// infiniteTapeControl
 			// 
-			this.infiniteTapeControl.AcceptStatus = AcceptanceStatus.None;
+			this.infiniteTapeControl.AcceptStatus = FEI.TuringCore.Simulation.AcceptanceStatus.None;
 			this.infiniteTapeControl.AllowBlanks = true;
 			resources.ApplyResources(this.infiniteTapeControl, "infiniteTapeControl");
 			this.infiniteTapeControl.ChangesAllowed = true;
@@ -346,8 +346,8 @@ namespace FEI.TuringMachineSimulator {
 			resources.ApplyResources(this.stateDiagramControl, "stateDiagramControl");
 			this.stateDiagramControl.Name = "stateDiagramControl";
 			this.stateDiagramControl.TuringMachine = null;
-			this.stateDiagramControl.TransitionAdded += new StateDiagramControl.TransitionEventHandler(this.stateDiagramControl_TransitionAdded);
-			this.stateDiagramControl.DiagramChanged += new StateDiagramControl.DiagramChangedEventHandler(this.stateDiagramControl_DiagramChanged);
+			this.stateDiagramControl.TransitionAdded += new FEI.TuringCore.Components.StateDiagramControl.TransitionEventHandler(this.stateDiagramControl_TransitionAdded);
+			this.stateDiagramControl.DiagramChanged += new FEI.TuringCore.Components.StateDiagramControl.DiagramChangedEventHandler(this.stateDiagramControl_DiagramChanged);
 			// 
 			// bAddState
 			// 

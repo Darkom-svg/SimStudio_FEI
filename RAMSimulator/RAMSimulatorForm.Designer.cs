@@ -36,7 +36,7 @@ namespace FEI.RandomAccessMachine {
         private void InitializeComponent()
         {
 	        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RamSimulatorForm));
-	        InfiniteRegisters infiniteRegisters1 = new InfiniteRegisters();
+	        FEI.SimStudio.Components.Registers.InfiniteRegisters infiniteRegisters1 = new FEI.SimStudio.Components.Registers.InfiniteRegisters();
 	        this.lblInputTape = new System.Windows.Forms.Label();
 	        this.lblOutputTape = new System.Windows.Forms.Label();
 	        this.sbyProgram = new System.Windows.Forms.VScrollBar();
@@ -119,10 +119,10 @@ namespace FEI.RandomAccessMachine {
 	        this.speedPanel = new System.Windows.Forms.Panel();
 	        this.tbSpeed = new System.Windows.Forms.TrackBar();
 	        this.label2 = new System.Windows.Forms.Label();
-	        this.lstRegs = new RegisterList();
-	        this.ftInputTape = new InputOutputTape();
-	        this.ftOutputTape = new InputOutputTape();
-	        this.txtProgram = new SyntaxTextBox();
+	        this.lstRegs = new FEI.SimStudio.Components.Controls.RegisterList.RegisterList();
+	        this.ftInputTape = new FEI.SimStudio.Components.Controls.InputOutputTape();
+	        this.ftOutputTape = new FEI.SimStudio.Components.Controls.InputOutputTape();
+	        this.txtProgram = new FEI.SimStudio.Components.Controls.SyntaxTextBox();
 	        this.pProc = new System.Windows.Forms.PictureBox();
 	        this.picProgram = new System.Windows.Forms.PictureBox();
 	        this.label3 = new System.Windows.Forms.Label();
@@ -163,15 +163,14 @@ namespace FEI.RandomAccessMachine {
 	        // 
 	        // statusStrip
 	        // 
-	        
 	        this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.lblStatus });
 	        resources.ApplyResources(this.statusStrip, "statusStrip");
 	        this.statusStrip.Name = "statusStrip";
 	        // 
 	        // lblStatus
 	        // 
-	        this.lblStatus.MergeAction = MergeAction.Replace;
-	        this.lblStatus.MergeIndex  = 0;
+	        this.lblStatus.MergeAction = System.Windows.Forms.MergeAction.Replace;
+	        this.lblStatus.MergeIndex = 0;
 	        this.lblStatus.Name = "lblStatus";
 	        resources.ApplyResources(this.lblStatus, "lblStatus");
 	        // 
@@ -680,7 +679,7 @@ namespace FEI.RandomAccessMachine {
 	        this.lstRegs.Writing = false;
 	        this.lstRegs.WritingPos = 0;
 	        this.lstRegs.ViewPositionChange += new System.EventHandler(this.lstRegs_ViewPositionChange);
-	        this.lstRegs.RegisterChanged += new RegisterList.RegisterChangedEventHandler(this.lstRegs_RegisterChanged);
+	        this.lstRegs.RegisterChanged += new FEI.SimStudio.Components.Controls.RegisterList.RegisterList.RegisterChangedEventHandler(this.lstRegs_RegisterChanged);
 	        // 
 	        // ftInputTape
 	        // 
@@ -710,7 +709,7 @@ namespace FEI.RandomAccessMachine {
 	        this.txtProgram.SelectedText = "";
 	        this.txtProgram.SelectionLength = 0;
 	        this.txtProgram.SelectionStart = 0;
-	        this.txtProgram.TextChanged += new SyntaxTextBox.TextChangedEventHandler(this.txtProgram_TextChanged);
+	        this.txtProgram.TextChanged += new FEI.SimStudio.Components.Controls.SyntaxTextBox.TextChangedEventHandler(this.txtProgram_TextChanged);
 	        // 
 	        // pProc
 	        // 
@@ -774,7 +773,7 @@ namespace FEI.RandomAccessMachine {
 	        this.closeErrorsButton.UseVisualStyleBackColor = true;
 	        this.closeErrorsButton.Click += new System.EventHandler(this.closeErrorsButton_Click);
 	        // 
-	        // RAMSimulatorForm
+	        // RamSimulatorForm
 	        // 
 	        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 	        resources.ApplyResources(this, "$this");
