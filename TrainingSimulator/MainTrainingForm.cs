@@ -13,6 +13,7 @@ namespace FEI.TrainingSimulator {
     public partial class MainTrainingForm : Form
     {
         private List<TaskDef> allTasks;
+        private string currentTaskSetFile = "Tasks/tasks.xml";
 
         public MainTrainingForm()
         {
@@ -27,7 +28,7 @@ namespace FEI.TrainingSimulator {
 
             try
             {
-                allTasks = TaskStore.Load();
+                allTasks = TaskStore.Load(currentTaskSetFile);
             }
             catch (Exception ex)
             {
@@ -58,47 +59,46 @@ namespace FEI.TrainingSimulator {
 
         public static class TaskStore
         {
-            public static List<TaskDef> Load(string fileName = "tasks.xml")
-    {
-        var baseDir = AppDomain.CurrentDomain.BaseDirectory;
-        var path = Path.Combine(baseDir, fileName);
-
-        if (!File.Exists(path))
-            throw new FileNotFoundException("Nenašiel som " + fileName + " v " + baseDir);
-
-        XmlDocument doc = new XmlDocument();
-        doc.Load(path);
-
-        var result = new List<TaskDef>();
-
-        XmlNodeList taskNodes = doc.SelectNodes("//task");
-
-        foreach (XmlNode taskNode in taskNodes)
-        {
-            result.Add(new TaskDef
+            public static List<TaskDef> Load(string fileName)
             {
-                Id = ReadNode(taskNode, "id"),
-                Title = ReadNode(taskNode, "title"),
-                Category = ReadNode(taskNode, "category"),
-                Mode = ReadNode(taskNode, "mode"),
-                Difficulty = ReadNode(taskNode, "difficulty"),
-                Specification = ReadNode(taskNode, "specification"),
-                Verification = ReadNode(taskNode, "verification")
-            });
-        }
+                var baseDir = AppDomain.CurrentDomain.BaseDirectory;
+                var path = Path.Combine(baseDir, fileName);
 
-        return result;
-    }
+                if (!File.Exists(path))
+                    throw new FileNotFoundException("Nenašiel som " + fileName + " v " + baseDir);
 
-    private static string ReadNode(XmlNode parent, string name)
-    {
-        XmlNode node = parent.SelectSingleNode(name);
+                XmlDocument doc = new XmlDocument();
+                doc.Load(path);
 
-        if (node == null)
-            return "";
+                var result = new List<TaskDef>();
 
-        return node.InnerText.Trim();
-    }
+                XmlNodeList taskNodes = doc.SelectNodes("//task");
+
+                foreach (XmlNode taskNode in taskNodes)
+                {
+                    result.Add(new TaskDef
+                    {
+                        Id = ReadNode(taskNode, "id"),
+                        Title = ReadNode(taskNode, "title"),
+                        Category = ReadNode(taskNode, "category"),
+                        Mode = ReadNode(taskNode, "mode"),
+                        Difficulty = ReadNode(taskNode, "difficulty"),
+                        Specification = ReadNode(taskNode, "specification"),
+                        Verification = ReadNode(taskNode, "verification")
+                    });
+                }
+                return result;
+            }
+
+            private static string ReadNode(XmlNode parent, string name)
+            {
+                XmlNode node = parent.SelectSingleNode(name);
+
+                if (node == null)
+                    return "";
+
+                return node.InnerText.Trim();
+            }
         }
 
         private TaskDef RandomTask(string category)
@@ -285,6 +285,59 @@ namespace FEI.TrainingSimulator {
                     panel.Invalidate();
                 }
             }
+        }
+
+        private void sadyToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string tasksDir = Path.Combine(
+                AppDomain.CurrentDomain.BaseDirectory,
+                "Tasks");
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.InitialDirectory = tasksDir;
+
+            if (dialog.ShowDialog(this) != DialogResult.OK)
+                return;
+            
+            string selectedFile = dialog.FileName;
+            string selectedDir = Path.GetDirectoryName(selectedFile);
+            string targetFile = selectedFile;
+            
+            if (selectedDir != null && !selectedDir.Equals(tasksDir, StringComparison.OrdinalIgnoreCase))
+            {
+                DialogResult result = MessageBox.Show(
+                    "Vybraný súbor sa nenachádza v priečinku Tasks.\n\n" +
+                    "Chcete ho skopírovať do priečinka Tasks a používať odtiaľ?",
+                    "Sada príkladov",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    targetFile = Path.Combine(tasksDir, Path.GetFileName(selectedFile));
+                    File.Copy(selectedFile, targetFile, true);
+                }
+            }
+
+            try
+            {
+                currentTaskSetFile = targetFile;
+                allTasks = TaskStore.Load(currentTaskSetFile);
+                ShowCategory("FA");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "Nepodarilo sa načítať vybranú sadu príkladov.\n\n" + ex.Message,
+                    Text,
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        private void pridaťPríkladToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var frm = new AddTaskForm();
+            frm.ShowDialog(this);
         }
     }
 }

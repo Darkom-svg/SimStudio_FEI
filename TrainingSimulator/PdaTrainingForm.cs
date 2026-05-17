@@ -16,6 +16,7 @@ using AboutForm = FEI.TrainingSimulator.Dialogs.AboutForm;
 using System.Text.RegularExpressions;
 using FEI.PushdownAutomaton.Dialogs;
 using FEI.PushdownAutomaton.IO.Jff;
+using FEI.TrainingSimulator.Dialogs;
 
 namespace FEI.TrainingSimulator
 {
@@ -670,28 +671,38 @@ namespace FEI.TrainingSimulator
         
         private PushdownAutomaton.PushdownAutomaton CreateReferencePda()
         {
-            string path = Path.Combine(
-                AppDomain.CurrentDomain.BaseDirectory,
-                task.Verification);
+            if (string.IsNullOrWhiteSpace(task.Verification))
+                throw new Exception("Zadanie neobsahuje referenčný model.");
 
-            if (!File.Exists(path))
-                throw new FileNotFoundException("Referenčný model sa nenašiel: " + path);
+            string tmpFile = Path.Combine(
+                Path.GetTempPath(),
+                "reference_pda_" + Guid.NewGuid().ToString("N") + ".pa");
 
-            var pda = new PushdownAutomaton.PushdownAutomaton
+            try
             {
-                AcceptType = AcceptType.FinalStateReachedAndWholeTapeRead
-            };
+                File.WriteAllText(tmpFile, task.Verification, Encoding.UTF8);
 
-            string code = pda.Load(path);
+                var pda = new PushdownAutomaton.PushdownAutomaton
+                {
+                    AcceptType = AcceptType.FinalStateReachedAndWholeTapeRead
+                };
 
-            var parser = new PushdownAutomatonParser(pda, TransitionFormat, WildCardFormat);
+                string code = pda.Load(tmpFile);
 
-            if (!parser.ParseTFunctions(code))
-                throw new Exception("Referenčný model obsahuje syntaktické chyby.");
+                var parser = new PushdownAutomatonParser(pda, TransitionFormat, WildCardFormat);
 
-            pda.StateDiagram.UpdateForPA(pda);
+                if (!parser.ParseTFunctions(code))
+                    throw new Exception("Referenčný model obsahuje syntaktické chyby.");
 
-            return pda;
+                pda.StateDiagram.UpdateForPA(pda);
+
+                return pda;
+            }
+            finally
+            {
+                if (File.Exists(tmpFile))
+                    File.Delete(tmpFile);
+            }
         }
         
         private PushdownAutomaton.PushdownAutomaton CreateStudentPda()

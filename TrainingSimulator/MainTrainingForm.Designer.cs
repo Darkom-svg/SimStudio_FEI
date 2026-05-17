@@ -45,6 +45,9 @@ namespace FEI.TrainingSimulator
             this.txtFind = new System.Windows.Forms.ToolStripTextBox();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.taskSetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addTaskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miniToolStrip = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -65,6 +68,7 @@ namespace FEI.TrainingSimulator
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.roundedPanel7 = new FEI.SimStudio.Components.RoundedPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             TuringTrain = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.miniToolStrip.SuspendLayout();
@@ -97,11 +101,11 @@ namespace FEI.TrainingSimulator
             // 
             this.menuStrip1.AutoSize = false;
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miFile, this.txtFind, this.helpToolStripMenuItem });
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miFile, this.txtFind, this.helpToolStripMenuItem, this.taskSetToolStripMenuItem });
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.menuStrip1.Size = new System.Drawing.Size(92, 19);
+            this.menuStrip1.Size = new System.Drawing.Size(884, 19);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.TabStop = true;
             this.menuStrip1.Text = "miniToolStrip";
@@ -187,6 +191,27 @@ namespace FEI.TrainingSimulator
             this.miAbout.Size = new System.Drawing.Size(138, 22);
             this.miAbout.Text = "O programe";
             this.miAbout.Click += new System.EventHandler(this.miAbout_Click);
+            // 
+            // taskSetToolStripMenuItem
+            // 
+            this.taskSetToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.setsToolStripMenuItem, this.addTaskToolStripMenuItem });
+            this.taskSetToolStripMenuItem.Name = "taskSetToolStripMenuItem";
+            this.taskSetToolStripMenuItem.Size = new System.Drawing.Size(96, 15);
+            this.taskSetToolStripMenuItem.Text = "Sada príkladov";
+            // 
+            // setsToolStripMenuItem
+            // 
+            this.setsToolStripMenuItem.Name = "setsToolStripMenuItem";
+            this.setsToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.setsToolStripMenuItem.Text = "Sady";
+            this.setsToolStripMenuItem.Click += new System.EventHandler(this.sadyToolStripMenuItem_Click);
+            // 
+            // addTaskToolStripMenuItem
+            // 
+            this.addTaskToolStripMenuItem.Name = "addTaskToolStripMenuItem";
+            this.addTaskToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.addTaskToolStripMenuItem.Text = "Pridať príklad";
+            this.addTaskToolStripMenuItem.Click += new System.EventHandler(this.pridaťPríkladToolStripMenuItem_Click);
             // 
             // miniToolStrip
             // 
@@ -444,14 +469,20 @@ namespace FEI.TrainingSimulator
             this.flowLayoutPanel2.TabIndex = 0;
             this.flowLayoutPanel2.WrapContents = false;
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            this.openFileDialog1.Filter = "XML súbory (*.xml)|*.xml";
+            this.openFileDialog1.Title = "Sada príkladov";
+            // 
             // MainTrainingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(884, 461);
-            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(15, 15);
             this.Name = "MainTrainingForm";
@@ -477,6 +508,13 @@ namespace FEI.TrainingSimulator
             this.roundedPanel7.ResumeLayout(false);
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+
+        private System.Windows.Forms.ToolStripMenuItem setsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem addTaskToolStripMenuItem;
+
+        private System.Windows.Forms.ToolStripMenuItem taskSetToolStripMenuItem;
 
         private System.Windows.Forms.Label label9;
 

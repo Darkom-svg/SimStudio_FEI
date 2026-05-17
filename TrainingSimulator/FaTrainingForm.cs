@@ -583,6 +583,10 @@ namespace FEI.TrainingSimulator
             {
                 result = ValidateFaSolution_Regex();
             }
+            else if (task.Mode.Equals("Reference_model", StringComparison.OrdinalIgnoreCase))
+            {
+                result = ValidateFaSolution_ReferenceModel();
+            }
             else
             {
                 result = new FaCheckResult
@@ -655,7 +659,7 @@ namespace FEI.TrainingSimulator
             foreach (var word in words)
             {
                 bool expected = AcceptsByFormula(word, formula);
-                bool actual = AcceptsByAutomaton(word);
+                bool actual = AcceptsByAutomaton(this.turingMachine, word);
 
                 testedWords.Add(word);
 
@@ -768,7 +772,7 @@ namespace FEI.TrainingSimulator
             foreach (string word in words)
             {
                 bool expected = regex.IsMatch(word);
-                bool actual = AcceptsByAutomaton(word);
+                bool actual = AcceptsByAutomaton(this.turingMachine, word);
                 
                 testedWords.Add(word);
 
@@ -806,6 +810,122 @@ namespace FEI.TrainingSimulator
                 Message = "Riešenie je správne."
             };
         }
+        
+        private VirtualTuringMachine CreateReferenceFa()
+        {
+            if (string.IsNullOrWhiteSpace(task.Verification))
+                throw new Exception("Zadanie neobsahuje referenčný model.");
+
+            string tmpFile = Path.Combine(
+                Path.GetTempPath(),
+                "reference_fa_" + Guid.NewGuid().ToString("N") + ".fa");
+
+            try
+            {
+                File.WriteAllText(tmpFile, task.Verification, Encoding.UTF8);
+
+                var fa = new VirtualTuringMachine
+                {
+                    AcceptType = AcceptType.FinalStateReachedAndWholeTapeRead
+                };
+
+                string code = fa.Load(tmpFile);
+
+                var parser = new FiniteAutomatonParser(
+                    fa,
+                    transitionFormat,
+                    wildCardFormat);
+
+                if (!parser.ParseTFunctions(code))
+                    throw new Exception("Referenčný model obsahuje syntaktické chyby.");
+
+                fa.StateDiagram.UpdateForFA(fa);
+
+                return fa;
+            }
+            finally
+            {
+                if (File.Exists(tmpFile))
+                    File.Delete(tmpFile);
+            }
+        }
+        
+        private FaCheckResult ValidateFaSolution_ReferenceModel()
+        {
+            bool parsed = ParseTFunctions(txtCode.Text);
+
+            if (!parsed)
+            {
+                return new FaCheckResult
+                {
+                    IsCorrect = false,
+                    Message = "Riešenie obsahuje syntaktické chyby v prechodových funkciách."
+                };
+            }
+
+            VirtualTuringMachine reference;
+
+            try
+            {
+                reference = CreateReferenceFa();
+            }
+            catch (Exception ex)
+            {
+                return new FaCheckResult
+                {
+                    IsCorrect = false,
+                    Message = "Nepodarilo sa načítať referenčný model: " + ex.Message
+                };
+            }
+
+            List<char> alphabet = GetAlphabetFromFa(reference);
+
+            testedWords.Clear();
+            testedStates.Clear();
+            Tests_SetScrollbar();
+            pTests.Refresh();
+
+            string[] words = GenerateWords(10, alphabet);
+
+            foreach (string word in words)
+            {
+                bool expected = AcceptsByAutomaton(reference, word);
+                bool actual = AcceptsByAutomaton(this.turingMachine,word);
+
+                testedWords.Add(word);
+
+                if (expected != actual)
+                    testedStates.Add("Chyba");
+                else if (expected)
+                    testedStates.Add("Prijať");
+                else
+                    testedStates.Add("Odmietnuť");
+
+                Tests_SetScrollbar();
+                pTests.Refresh();
+
+                if (expected != actual)
+                {
+                    string shownWord = word == "" ? "ε" : word;
+
+                    return new FaCheckResult
+                    {
+                        IsCorrect = false,
+                        Message =
+                            $"Automat nie je správny. Líši sa na slove '{shownWord}'.\n" +
+                            $"Referenčný model: {(expected ? "prijať" : "odmietnuť")}.\n" +
+                            $"Študentov FA: {(actual ? "prijať" : "odmietnuť")}."
+                    };
+                }
+            }
+
+            return new FaCheckResult
+            {
+                IsCorrect = true,
+                Message = "Riešenie je správne."
+            };
+        }
+        
         private string ValidateDeterministicFa(ParsedFormula formula)
         {
             var usedStates = TuringMachine.GetUsedStates();
@@ -926,14 +1046,6 @@ namespace FEI.TrainingSimulator
             public int Modulo { get; set; }
             public int Offset { get; set; }
         }
-        private sealed class FaFormula
-        {
-            public int A;
-            public int B;
-            public int C;
-            public int Modulo;
-            public int Offset;
-        }
         
         private ParsedFormula ParseFormula(string formulaText)
         {
@@ -1002,8 +1114,77 @@ namespace FEI.TrainingSimulator
         {
             var alphabet = new HashSet<char>();
 
-            foreach (char ch in regexPattern)
+            for (int i = 0; i < regexPattern.Length; i++)
             {
+                char ch = regexPattern[i];
+
+                if (ch == '[')
+                {
+                    int end = regexPattern.IndexOf(']', i);
+
+                    if (end == -1)
+                        throw new Exception("Regex obsahuje neuzavretú množinu [].");
+
+                    string content = regexPattern.Substring(i + 1, end - i - 1);
+
+                    for (int j = 0; j < content.Length; j++)
+                    {
+                        if (j + 2 < content.Length && content[j + 1] == '-')
+                        {
+                            char from = content[j];
+                            char to = content[j + 2];
+
+                            for (char c = from; c <= to; c++)
+                            {
+                                alphabet.Add(c);
+                            }
+
+                            j += 2;
+                        }
+                        else
+                        {
+                            if (char.IsLetterOrDigit(content[j]))
+                            {
+                                alphabet.Add(content[j]);
+                            }
+                        }
+                    }
+
+                    i = end;
+                    continue;
+                }
+
+                if (ch == '\\' && i + 1 < regexPattern.Length)
+                {
+                    char escaped = regexPattern[i + 1];
+
+                    if (escaped == 'd')
+                    {
+                        for (char c = '0'; c <= '9'; c++)
+                            alphabet.Add(c);
+                    }
+                    else if (escaped == 'w')
+                    {
+                        for (char c = 'a'; c <= 'z'; c++)
+                            alphabet.Add(c);
+
+                        for (char c = 'A'; c <= 'Z'; c++)
+                            alphabet.Add(c);
+
+                        for (char c = '0'; c <= '9'; c++)
+                            alphabet.Add(c);
+
+                        alphabet.Add('_');
+                    }
+                    else
+                    {
+                        alphabet.Add(escaped);
+                    }
+
+                    i++;
+                    continue;
+                }
+
                 if (char.IsLetterOrDigit(ch))
                 {
                     alphabet.Add(ch);
@@ -1013,6 +1194,21 @@ namespace FEI.TrainingSimulator
             if (alphabet.Count == 0)
             {
                 throw new Exception("Regex neobsahuje žiadne symboly abecedy.");
+            }
+
+            return alphabet.OrderBy(c => c).ToList();
+        }
+        
+        private List<char> GetAlphabetFromFa(VirtualTuringMachine fa)
+        {
+            var alphabet = new HashSet<char>();
+
+            for (int i = 0; i < fa.TFunctionCount; i++)
+            {
+                var tf = fa.TFunction(i);
+
+                if (!string.IsNullOrEmpty(tf.ReadSymbol) && tf.ReadSymbol.Length == 1)
+                    alphabet.Add(tf.ReadSymbol[0]);
             }
 
             return alphabet.OrderBy(c => c).ToList();
@@ -1043,18 +1239,18 @@ namespace FEI.TrainingSimulator
             return (lhs - formula.Offset) % formula.Modulo == 0;
         }
         
-        private bool AcceptsByAutomaton(string word)
+        private bool AcceptsByAutomaton(VirtualTuringMachine fa, string word)
         {
-            string currentState = TuringMachine.StartState;
+            string currentState = fa.StartState;
 
             foreach (char ch in word)
             {
                 string symbol = ch.ToString();
                 string nextState = null;
 
-                for (int i = 0; i < TuringMachine.TFunctionCount; i++)
+                for (int i = 0; i < fa.TFunctionCount; i++)
                 {
-                    var tf = TuringMachine.TFunction(i);
+                    var tf = fa.TFunction(i);
 
                     if (tf.CurrentState == currentState && tf.ReadSymbol == symbol)
                     {
@@ -1064,14 +1260,12 @@ namespace FEI.TrainingSimulator
                 }
 
                 if (nextState == null)
-                {
                     return false;
-                }
 
                 currentState = nextState;
             }
 
-            return TuringMachine.IsFinalState(currentState);
+            return fa.IsFinalState(currentState);
         }
         
         private string[] GenerateWords(int maxLength, List<char> alphabet)
@@ -1259,7 +1453,7 @@ namespace FEI.TrainingSimulator
 
         private void miTFormat1_Click(object sender, EventArgs e)
 		{
-			transitionFormat = "\\sf\\s(\\a,\\a,\\a)\\s=\\s(\\a,\\a)\\s";
+			transitionFormat = "\\sf\\s(\\a,\\a)\\s=\\s(\\a)\\s";
 			miTFormat1.Checked = true; miTFormat2.Checked = false; miTFormat3.Checked = false; 
 			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false; 
 			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
@@ -1268,7 +1462,7 @@ namespace FEI.TrainingSimulator
 
 		private void miTFormat2_Click(object sender, EventArgs e)
 		{
-			transitionFormat = "\\s(\\a,\\a,\\a)\\s=\\s(\\a,\\a)\\s";
+			transitionFormat = "\\s(\\a,\\a)\\s=\\s(\\a)\\s";
 			miTFormat1.Checked = false; miTFormat2.Checked = true; miTFormat3.Checked = false; 
 			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false; 
 			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
@@ -1277,7 +1471,7 @@ namespace FEI.TrainingSimulator
 
 		private void miTFormat3_Click(object sender, EventArgs e)
 		{
-			transitionFormat = "\\a,\\a,\\a,\\a,\\a";
+			transitionFormat = "\\a,\\a,\\a";
 			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = true;
 			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
 			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
@@ -1286,7 +1480,7 @@ namespace FEI.TrainingSimulator
 
 		private void miTFormat4_Click(object sender, EventArgs e)
 		{
-			transitionFormat = "\\s[\\a,\\a,\\a]\\s[\\a,\\a]\\s";
+			transitionFormat = "\\s[\\a,\\a]\\s[\\a]\\s";
 			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
 			miTFormat4.Checked = true; miTFormat5.Checked = false; miTFormat6.Checked = false;
 			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
@@ -1295,7 +1489,7 @@ namespace FEI.TrainingSimulator
 
 		private void miTFormat5_Click(object sender, EventArgs e)
 		{
-			transitionFormat = "\\s(\\a,\\a,\\a)\\s(\\a,\\a)\\s";
+			transitionFormat = "\\s(\\a,\\a)\\s(\\a)\\s";
 			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
 			miTFormat4.Checked = false; miTFormat5.Checked = true; miTFormat6.Checked = false;
 			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
@@ -1304,7 +1498,7 @@ namespace FEI.TrainingSimulator
 
 		private void miTFormat6_Click(object sender, EventArgs e)
 		{
-			transitionFormat = "\\s[\\a,\\a,\\a]\\s->\\s[\\a,\\a]\\s";
+			transitionFormat = "\\s[\\a,\\a]\\s->\\s[\\a]\\s";
 			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
 			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = true;
 			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
@@ -1313,7 +1507,7 @@ namespace FEI.TrainingSimulator
 
 		private void miTFormat7_Click(object sender, EventArgs e)
 		{
-			transitionFormat = "\\s(\\a,\\a,\\a)\\s->\\s(\\a,\\a)\\s";
+			transitionFormat = "\\s(\\a,\\a)\\s->\\s(\\a)\\s";
 			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
 			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
 			miTFormat7.Checked = true; miTFormat8.Checked = false; miTFormat9.Checked = false;
@@ -1322,7 +1516,7 @@ namespace FEI.TrainingSimulator
 
 		private void miTFormat8_Click(object sender, EventArgs e)
 		{
-			transitionFormat = "\\a,\\a,\\a->\\a,\\a";
+			transitionFormat = "\\a,\\a->\\a";
 			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
 			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
 			miTFormat7.Checked = false; miTFormat8.Checked = true; miTFormat9.Checked = false;
@@ -1331,7 +1525,7 @@ namespace FEI.TrainingSimulator
 
 		private void miTFormat9_Click(object sender, EventArgs e)
 		{
-			transitionFormat = "\\a,\\a,\\a>\\a,\\a";
+			transitionFormat = "\\a,\\a>\\a";
 			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
 			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
 			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = true;
@@ -1340,7 +1534,7 @@ namespace FEI.TrainingSimulator
 
 		private void miTFormat10_Click(object sender, EventArgs e)
 		{
-			transitionFormat = "\\sδ\\s(\\a,\\a,\\a)\\s=\\s(\\a,\\a)\\s";
+			transitionFormat = "\\sδ\\s(\\a,\\a)\\s=\\s(\\a)\\s";
 			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
 			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
 			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = true;

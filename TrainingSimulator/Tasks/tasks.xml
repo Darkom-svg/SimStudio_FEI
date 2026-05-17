@@ -2,7 +2,7 @@
 <tasks>
     <task>
         <id>TM1</id>
-        <title>Posun v smere</title>
+        <title>Test</title>
         <category>TM</category>
         <mode>Modules</mode>
         <difficulty>Ľahká</difficulty>
@@ -33,7 +33,7 @@ $$L_A = \{ a^n b^n \mid n \geq 0 \}$$
 
 To znamená, že slovo pozostáva z rovnakého počtu symbolov $a$ a $b$, pričom všetky symboly $a$ sú pred symbolmi $b$. Do jazyka patrí aj prázdne slovo $\varepsilon$.
     ]]></specification>
-        <verification>Reference_models/DPA-aN bN.pa</verification>
+        <verification>Tasks/Reference_models/DPA-aN bN.pa</verification>
     </task>
 
     <task>
