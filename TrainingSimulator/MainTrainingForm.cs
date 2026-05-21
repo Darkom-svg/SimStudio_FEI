@@ -334,9 +334,9 @@ namespace FEI.TrainingSimulator {
             }
         }
 
-        private void pridaťPríkladToolStripMenuItem_Click(object sender, EventArgs e)
+        private void addTaskToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var frm = new AddTaskForm();
+            var frm = new AddTaskForm(currentTaskSetFile);
             frm.ShowDialog(this);
         }
     }

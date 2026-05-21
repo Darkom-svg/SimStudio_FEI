@@ -8,10 +8,10 @@ namespace FEI.TrainingSimulator.Dialogs
 {
     public partial class AddTaskForm : Form
     {
-        public AddTaskForm()
+        public AddTaskForm(string currentTaskSetFile)
         {
             InitializeComponent();
-
+            txtTaskSetPath.Text = currentTaskSetFile;
             cmbModel.SelectedIndex = 0;
             cmbMode.SelectedIndex = 0;
             comboBox1.SelectedIndex = 0;
@@ -27,12 +27,12 @@ namespace FEI.TrainingSimulator.Dialogs
             {
                 cmbMode.Items.Add("Formula");
                 cmbMode.Items.Add("Regex");
-                cmbMode.Items.Add("Reference_model");
+                cmbMode.Items.Add("Referenčný automat");
                 cmbMode.SelectedIndex = 0;
             }
             else 
             {
-                cmbMode.Items.Add("Reference_model");
+                cmbMode.Items.Add("Referenčný automat");
                 cmbMode.SelectedIndex = 0;
             }
         }
@@ -48,7 +48,7 @@ namespace FEI.TrainingSimulator.Dialogs
 
             formulaPanel.Visible = mode == "Formula";
             regexPanel.Visible = mode == "Regex";
-            referenceModelPanel.Visible = mode == "Reference_model";
+            referenceModelPanel.Visible = mode == "Referenčný automat";
         }
 
         private void taskSetPathButton_Click(object sender, EventArgs e)
@@ -94,7 +94,7 @@ namespace FEI.TrainingSimulator.Dialogs
                     verification = txtFormula.Text.Trim();
                 else if (mode == "Regex")
                     verification = txtRegex.Text.Trim();
-                else if (mode == "Reference_model")
+                else if (mode == "Referenčný automat")
                     verification = File.ReadAllText(txtReferencePath.Text.Trim());
                 
                 string category = "";
@@ -154,7 +154,20 @@ namespace FEI.TrainingSimulator.Dialogs
 
             if (string.IsNullOrWhiteSpace(cmbModel.Text))
                 throw new Exception("Vyberte typ automatu.");
-
+            string category = "";
+            switch (cmbModel.SelectedIndex)
+            {
+                case 0:
+                    category = "FA";
+                    break;
+                case 1:
+                    category = "PDA";
+                    break;
+                case 2:
+                    category = "TM";
+                    break;
+            }
+            
             if (string.IsNullOrWhiteSpace(cmbMode.Text))
                 throw new Exception("Vyberte spôsob overovania.");
 
@@ -169,11 +182,19 @@ namespace FEI.TrainingSimulator.Dialogs
                 verification = txtFormula.Text.Trim();
             else if (cmbMode.Text == "Regex")
                 verification = txtRegex.Text.Trim();
-            else if (cmbMode.Text == "Reference_model")
+            else if (cmbMode.Text == "Referenčný automat")
+            {
+                if (!string.Equals(
+                        Path.GetExtension(txtReferencePath.Text.Trim()),
+                        "."+category,
+                        StringComparison.OrdinalIgnoreCase))
+                {
+                    throw new Exception("Model referenčného riešenia sa nezhoduje s modelom zadania.");
+                }
                 verification = File.ReadAllText(txtReferencePath.Text.Trim());
-
+            }
             if (string.IsNullOrWhiteSpace(verification))
-                throw new Exception("Zadajte hodnotu overovania príkladu.");
+                throw new Exception("Zadajte hodnotu pre overovanie príkladu.");
         }
 
         private void AddTaskToXml(
@@ -216,7 +237,7 @@ namespace FEI.TrainingSimulator.Dialogs
             AddNode(doc, taskNode, "mode", mode);
             AddNode(doc, taskNode, "difficulty", difficulty);
             AddCDataNode(doc, taskNode, "specification", specification);
-            if (mode == "Reference_model")
+            if (mode == "Referenčný automat")
                 AddCDataNode(doc, taskNode, "verification", verification);
             else
                 AddNode(doc, taskNode, "verification", verification);

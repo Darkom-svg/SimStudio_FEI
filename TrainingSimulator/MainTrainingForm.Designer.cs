@@ -211,7 +211,7 @@ namespace FEI.TrainingSimulator
             this.addTaskToolStripMenuItem.Name = "addTaskToolStripMenuItem";
             this.addTaskToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.addTaskToolStripMenuItem.Text = "Pridať príklad";
-            this.addTaskToolStripMenuItem.Click += new System.EventHandler(this.pridaťPríkladToolStripMenuItem_Click);
+            this.addTaskToolStripMenuItem.Click += new System.EventHandler(this.addTaskToolStripMenuItem_Click);
             // 
             // miniToolStrip
             // 

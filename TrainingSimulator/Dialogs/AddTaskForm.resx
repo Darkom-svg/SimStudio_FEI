@@ -229,7 +229,7 @@
     <value>Bottom, Right</value>
   </data>
   <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>402, 527</value>
+    <value>402, 451</value>
   </data>
   <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>101, 28</value>
@@ -256,7 +256,7 @@
     <value>Bottom, Right</value>
   </data>
   <data name="bAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>295, 527</value>
+    <value>295, 451</value>
   </data>
   <data name="bAdd.Size" type="System.Drawing.Size, System.Drawing">
     <value>101, 28</value>
@@ -316,7 +316,7 @@
     <value>False</value>
   </data>
   <data name="txtTaskSetPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>124, 381</value>
+    <value>124, 388</value>
   </data>
   <data name="txtTaskSetPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>298, 20</value>
@@ -343,7 +343,7 @@
     <value>NoControl</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 385</value>
+    <value>13, 392</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 13</value>
@@ -898,7 +898,7 @@
     <value>12, 325</value>
   </data>
   <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>491, 171</value>
+    <value>491, 57</value>
   </data>
   <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>35</value>
@@ -919,7 +919,7 @@
     <value>NoControl</value>
   </data>
   <data name="taskSetPathButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>426, 381</value>
+    <value>426, 388</value>
   </data>
   <data name="taskSetPathButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>76, 21</value>
@@ -1048,7 +1048,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>515, 567</value>
+    <value>515, 491</value>
   </data>
   <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 15</value>
