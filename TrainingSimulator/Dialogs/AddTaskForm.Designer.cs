@@ -27,6 +27,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddTaskForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -46,17 +47,22 @@
             this.cmbMode = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.formulaPanel = new System.Windows.Forms.Panel();
+            this.toolTipLabel1 = new System.Windows.Forms.Label();
             this.txtFormula = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.regexPanel = new System.Windows.Forms.Panel();
+            this.toolTipLabel2 = new System.Windows.Forms.Label();
             this.txtRegex = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.referenceModelPanel = new System.Windows.Forms.Panel();
+            this.toolTipLabel3 = new System.Windows.Forms.Label();
             this.txtReferencePath = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.taskSetPathButton = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipLabel4 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.formulaPanel.SuspendLayout();
             this.regexPanel.SuspendLayout();
@@ -166,10 +172,17 @@
             // 
             // formulaPanel
             // 
+            this.formulaPanel.Controls.Add(this.toolTipLabel1);
             this.formulaPanel.Controls.Add(this.txtFormula);
             this.formulaPanel.Controls.Add(this.label6);
             resources.ApplyResources(this.formulaPanel, "formulaPanel");
             this.formulaPanel.Name = "formulaPanel";
+            // 
+            // toolTipLabel1
+            // 
+            resources.ApplyResources(this.toolTipLabel1, "toolTipLabel1");
+            this.toolTipLabel1.Name = "toolTipLabel1";
+            this.toolTipLabel1.MouseHover += new System.EventHandler(this.toolTipLabel1_MouseHover);
             // 
             // txtFormula
             // 
@@ -183,10 +196,17 @@
             // 
             // regexPanel
             // 
+            this.regexPanel.Controls.Add(this.toolTipLabel2);
             this.regexPanel.Controls.Add(this.txtRegex);
             this.regexPanel.Controls.Add(this.label8);
             resources.ApplyResources(this.regexPanel, "regexPanel");
             this.regexPanel.Name = "regexPanel";
+            // 
+            // toolTipLabel2
+            // 
+            resources.ApplyResources(this.toolTipLabel2, "toolTipLabel2");
+            this.toolTipLabel2.Name = "toolTipLabel2";
+            this.toolTipLabel2.MouseHover += new System.EventHandler(this.toolTipLabel2_MouseHover);
             // 
             // txtRegex
             // 
@@ -200,11 +220,18 @@
             // 
             // referenceModelPanel
             // 
+            this.referenceModelPanel.Controls.Add(this.toolTipLabel3);
             this.referenceModelPanel.Controls.Add(this.txtReferencePath);
             this.referenceModelPanel.Controls.Add(this.label10);
             this.referenceModelPanel.Controls.Add(this.referencePathButton);
             resources.ApplyResources(this.referenceModelPanel, "referenceModelPanel");
             this.referenceModelPanel.Name = "referenceModelPanel";
+            // 
+            // toolTipLabel3
+            // 
+            resources.ApplyResources(this.toolTipLabel3, "toolTipLabel3");
+            this.toolTipLabel3.Name = "toolTipLabel3";
+            this.toolTipLabel3.MouseHover += new System.EventHandler(this.toolTipLabel3_MouseHover);
             // 
             // txtReferencePath
             // 
@@ -235,11 +262,22 @@
             this.comboBox1.Items.AddRange(new object[] { resources.GetString("comboBox1.Items"), resources.GetString("comboBox1.Items1"), resources.GetString("comboBox1.Items2") });
             this.comboBox1.Name = "comboBox1";
             // 
+            // toolTip1
+            // 
+            this.toolTip1.BackColor = System.Drawing.SystemColors.HighlightText;
+            // 
+            // toolTipLabel4
+            // 
+            resources.ApplyResources(this.toolTipLabel4, "toolTipLabel4");
+            this.toolTipLabel4.Name = "toolTipLabel4";
+            this.toolTipLabel4.MouseHover += new System.EventHandler(this.toolTipLabel4_MouseHover);
+            // 
             // AddTaskForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.toolTipLabel4);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -275,6 +313,13 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Label toolTipLabel4;
+
+        private System.Windows.Forms.Label toolTipLabel1;
+        private System.Windows.Forms.Label toolTipLabel2;
+        private System.Windows.Forms.Label toolTipLabel3;
+        private System.Windows.Forms.ToolTip toolTip1;
 
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox comboBox1;

@@ -245,5 +245,25 @@ namespace FEI.TrainingSimulator.Dialogs
         {
             Close();
         }
+
+        private void toolTipLabel1_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Syntax:\nc1#symbol + c2#symbol + ... = kn + q\n\nPríklad:\n1#a+1#b=2n+0",toolTipLabel1);
+        }
+        
+        private void toolTipLabel2_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Podporované:\n*  - opakovanie\n|  - alternatíva\n() - zoskupenie\n[] - množina symbolov\n\nPríklady:\na*b\n(a|b)*abb\n[0-9]+\n(a|b)*abba(a|b)*",toolTipLabel2);
+        }
+        
+        private void toolTipLabel3_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Podporované formáty:\n.fa  - konečný automat\n.pa  - zásobníkový automat\n.tm  - Turingov stroj\n\nFormát musí byť rovnaký, ako model úlohy!",toolTipLabel3);
+        }
+        
+        private void toolTipLabel4_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Na zápis špecifikácie je možné použiť matematické výrazy. Zapisujú sa v MathJax syntaxi, podobnej LaTeXu.\n\nPodporované sú bežné matematické konštrukcie:\n- horné a dolné indexy\n- grécke symboly\n- množiny\n- matematické relácie a operátory\n- blokové výrazy pomocou $$ ... $$",toolTipLabel4);
+        }
     }
 }

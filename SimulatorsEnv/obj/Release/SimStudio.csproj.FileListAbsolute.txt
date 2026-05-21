@@ -289,10 +289,8 @@ C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\obj
 C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\obj\Release\SimStudio.csproj.CoreCompileInputs.cache
 C:\Users\Jakub\Documents\Visual Studio 2017\Projects\SimStudio\SimulatorsEnv\obj\Release\SimStudio.exe
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\Abacus.ico
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\tasks.json
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\PdaTrainingForm.resx
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\FaTrainingForm.resx
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\SimStudio.ico
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\SimStudio.exe
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\obj\Release\SimStudio.csproj.AssemblyReference.cache
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\obj\Release\FEI.SimStudio.AboutForm.resources
@@ -303,3 +301,19 @@ C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\Si
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\obj\Release\SimStudio.csproj.CoreCompileInputs.cache
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\obj\Release\SimStudio.csproj.Up2Date
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\obj\Release\SimStudio.exe
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\graphics\RAM.png
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\graphics\Read.png
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\graphics\ReadOff.png
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\graphics\ReadP.png
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\graphics\ReadPOff.png
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\graphics\Write.png
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\graphics\WriteOff.png
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\Tasks\tasks.xml
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\Examples\FA\DKA-3kplus1-a.fa
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\Examples\FA\DKA-konciace_na_01_alebo_10.fa
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\Examples\FA\DKA-aN.fa
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\Examples\PDA\DZA-aNbN.pa
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\Examples\PDA\DZA-wcwR.pa
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\Examples\TM\DTM-aN_2bN.tm
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\Examples\TM\DTM-sum.tm
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\obj\Release\FEI.SimStudio.ExamplesForm.resources
