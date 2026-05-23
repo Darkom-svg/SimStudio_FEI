@@ -1,5 +1,6 @@
 ﻿using System.Xml;
 using FEI.TuringCore.Simulation;
+using Transition = FEI.TuringCore.Simulation.Transition;
 
 namespace FEI.FiniteAutomaton.IO.Jff {
 	public class JffWriter
@@ -7,15 +8,15 @@ namespace FEI.FiniteAutomaton.IO.Jff {
         private string fileName;
         public string FileName
         {
-            get { return fileName; }
-            set { fileName = value; }
+            get => fileName;
+            set => fileName = value;
         }
 
         private VirtualTuringMachine machine;
         public VirtualTuringMachine Machine
         {
-            get { return machine; }
-            set { machine = value; }
+            get => machine;
+            set => machine = value;
         }
 
         public JffWriter(VirtualTuringMachine machine, string fileName)
@@ -42,34 +43,34 @@ namespace FEI.FiniteAutomaton.IO.Jff {
             //Stavy
             xw.WriteStartElement("automaton");
             xw.WriteComment("The list of states.");
-            for (int i = 0; i < machine.StateDiagram.states.Count; i++)
+            foreach (var state in machine.StateDiagram.states)
             {
                 xw.WriteStartElement("state");
-                xw.WriteAttributeString("id", machine.StateDiagram.states[i].Name);                
-                xw.WriteElementString("label", machine.StateDiagram.states[i].Description);
+                xw.WriteAttributeString("id", state.Name);                
+                xw.WriteElementString("label", state.Description);
 
-                xw.WriteElementString("x", machine.StateDiagram.states[i].Position.X.ToString(System.Globalization.NumberFormatInfo.InvariantInfo));
-                xw.WriteElementString("y", machine.StateDiagram.states[i].Position.Y.ToString(System.Globalization.NumberFormatInfo.InvariantInfo));
+                xw.WriteElementString("x", state.Position.X.ToString(System.Globalization.NumberFormatInfo.InvariantInfo));
+                xw.WriteElementString("y", state.Position.Y.ToString(System.Globalization.NumberFormatInfo.InvariantInfo));
 
                 //Štartovací stav
-                if (machine.StartState == machine.StateDiagram.states[i].Name)
+                if (machine.StartState == state.Name)
                     xw.WriteElementString("initial", "");
 
                 //Koncový stav
-                if (machine.IsFinalState(machine.StateDiagram.states[i].Name))
+                if (machine.IsFinalState(state.Name))
                     xw.WriteElementString("final", "");
                 xw.WriteEndElement();
             }            
 
             //Prechody                
             xw.WriteComment("The list of transitions.");            
-            for (int i = 0; i < machine.TFunctionCount; i++)
+            for (int i = 0; i < machine.FunctionCount; i++)
             {
                 xw.WriteStartElement("transition");
-                xw.WriteElementString("from", machine.TFunction(i).CurrentState);
-                xw.WriteElementString("to", machine.TFunction(i).NewState);
+                xw.WriteElementString("from", machine.Function(i).CurrentState);
+                xw.WriteElementString("to", machine.Function(i).NewState);
 
-                xw.WriteElementString("read", ConvertSymbol(machine.TFunction(i).ReadSymbol));                
+                xw.WriteElementString("read", ConvertSymbol(machine.Function(i).ReadSymbol));                
                 
                 xw.WriteEndElement();
             }
@@ -88,7 +89,7 @@ namespace FEI.FiniteAutomaton.IO.Jff {
                 case Transition.Steps.Right:
                     return "R";
                 case Transition.Steps.NoMove:
-                    return "0";
+                    break;
             }
             return "0";
         }
@@ -97,8 +98,8 @@ namespace FEI.FiniteAutomaton.IO.Jff {
         {
             if (symbol == "Blank")
                 return "";
-            else
-                return symbol;
+            
+            return symbol;
         }
     }
 }

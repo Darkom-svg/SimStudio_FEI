@@ -6,8 +6,8 @@ namespace FEI.TuringCore.Components {
         private Transition transition;
         public Transition Transition
         {
-            get { return transition; }
-            set { transition = value; }
+            get => transition;
+            set => transition = value;
         }
 
         public TransitionEventArgs(Transition transition)

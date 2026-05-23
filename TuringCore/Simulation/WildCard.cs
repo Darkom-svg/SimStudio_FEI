@@ -5,15 +5,15 @@
         private string wildcard;
         public string Wildcard
         {
-            get { return wildcard; }
-            set { wildcard = value; }
+            get => wildcard;
+            set => wildcard = value;
         }
 
         private string[] symbols;
         public string[] Symbols
         {
-            get { return symbols; }
-            set { symbols = value; }
+            get => symbols;
+            set => symbols = value;
         }
 
         public bool ContainsSymbol(string symbol)

@@ -6,8 +6,8 @@ namespace FEI.TuringMachineSimulator.Dialogs {
 	public partial class AddTFunctionForm : Form
     {
         public VirtualTuringMachine TM;
-        public Transition tfunction;        
-        public bool OKPressed = false;        
+        public Transition tFunction;        
+        public bool OKPressed;        
 
         public AddTFunctionForm()
         {
@@ -31,9 +31,9 @@ namespace FEI.TuringMachineSimulator.Dialogs {
                     break;
             }
 
-            tfunction = new Transition(
+            tFunction = new Transition(
                     cmbCurrentState.Text, txtReadSymbol.Text, cmbNewState.Text, txtWriteSymbol.Text, step);
-            tfunction.Comment = this.txtComment.Text;
+            tFunction.Comment = this.txtComment.Text;
             this.Close();
         }
 
@@ -44,10 +44,10 @@ namespace FEI.TuringMachineSimulator.Dialogs {
 
         private void frmAddTFunction_Load(object sender, EventArgs e)
         {
-            cmbCurrentState.Text = tfunction.CurrentState;
-            cmbNewState.Text = tfunction.NewState;
-            txtReadSymbol.Text = tfunction.ReadSymbol;
-            txtWriteSymbol.Text = tfunction.WriteSymbol;
+            cmbCurrentState.Text = tFunction.CurrentState;
+            cmbNewState.Text = tFunction.NewState;
+            txtReadSymbol.Text = tFunction.ReadSymbol;
+            txtWriteSymbol.Text = tFunction.WriteSymbol;
 
             string[] states = TM.GetUsedStates();
             cmbCurrentState.Items.AddRange(states);

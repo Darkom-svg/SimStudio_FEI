@@ -186,7 +186,6 @@ C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\Si
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\obj\Debug\FEI.RandomAccessMachine.ConsoleForm.resources
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\obj\Debug\FEI.RandomAccessMachine.Dialogs.ComplexityForm.resources
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\obj\Debug\FEI.RandomAccessMachine.Dialogs.InstructionSetForm.resources
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\obj\Debug\FEI.RandomAccessMachine.Dialogs.RAMTypeSelectionForm.resources
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\obj\Debug\FEI.RandomAccessMachine.StackForm.resources
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\obj\Debug\FEI.RandomAccessMachine.ConsoleForm.en.resources
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\obj\Debug\FEI.RandomAccessMachine.RAMSimulatorForm.en.resources

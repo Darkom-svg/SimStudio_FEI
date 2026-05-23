@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using FEI.SimStudio.Components;
 using FEI.RandomAccessMachine.Conversion;
 using FEI.SimStudio.Components.Controls;
 
@@ -9,7 +8,7 @@ namespace FEI.RandomAccessMachine.Dialogs {
 	public partial class CConversionForm : Form
     {
         public string resCode = "";
-        public bool OKPressed = false;
+        public bool okPressed;
 
         public CConversionForm()
         {
@@ -42,7 +41,7 @@ namespace FEI.RandomAccessMachine.Dialogs {
 
             string code = convertor.ConvertToRAMCode(ic);
             resCode = code;            
-            OKPressed = true;
+            okPressed = true;
             this.Close();
         }        
 

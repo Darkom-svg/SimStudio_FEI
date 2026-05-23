@@ -1,9 +1,9 @@
 ﻿namespace FEI.SimStudio.Components.Registers {
 	public class RegisterCell 
     {
-        private InfiniteInteger value = InfiniteInteger.zero;
+        private InfiniteInteger value = InfiniteInteger.Zero;
         private string name = null;
-        private InfiniteInteger defValue = InfiniteInteger.zero;
+        private InfiniteInteger defValue = InfiniteInteger.Zero;
 
         public RegisterCell() { }
         public RegisterCell(long value, string name)

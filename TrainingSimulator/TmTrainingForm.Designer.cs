@@ -4,7 +4,7 @@ using FEI.TuringCore.Components;
 
 namespace FEI.TrainingSimulator
 {
-    partial class PdaTrainingForm
+    partial class TmTrainingForm
     {
         /// <summary>
         /// Required designer variable.
@@ -919,12 +919,12 @@ namespace FEI.TrainingSimulator
             // saveFileDialog1
             // 
             this.saveFileDialog1.DefaultExt = "tm";
-            this.saveFileDialog1.Filter = "Súbor zásobníkového automatu|*.pa| Súbor JFLAP|*.jff";
+            this.saveFileDialog1.Filter = "Súbor túringovho stroja|*.tm| Súbor JFLAP|*.jff";
             this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.Filter = "Súbor zásobníkového automatu|*.pa|JFlap Turingov stroj|*.jff|Všetky súbory|*.*";
+            this.openFileDialog1.Filter = "Súbor túringovho stroja|*.tm|JFlap Turingov stroj|*.jff|Všetky súbory|*.*";
             // 
             // PdaTrainingForm
             // 

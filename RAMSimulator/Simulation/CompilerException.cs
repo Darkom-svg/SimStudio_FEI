@@ -6,8 +6,8 @@ namespace FEI.RandomAccessMachine.Simulation {
         private int lineNumber;
         public int LineNumber
         {
-            get { return lineNumber; }
-            set { lineNumber = value; }
+            get => lineNumber;
+            set => lineNumber = value;
         }
 
         public CompilerException(int lineNumber, Exception innerException)

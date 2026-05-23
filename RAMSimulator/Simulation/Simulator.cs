@@ -7,7 +7,7 @@ using FEI.SimStudio.Components.Registers;
 namespace FEI.RandomAccessMachine.Simulation {
 	public class Simulator
 	{
-		public Form frm;
+		private Form frm;
 
 		public bool smallRegsUsed = true;        
 		public InfiniteRegisters regs = new InfiniteRegisters();
@@ -15,7 +15,7 @@ namespace FEI.RandomAccessMachine.Simulation {
 		public Stack<InfiniteInteger> stack = new Stack<InfiniteInteger>();
 		public List<RAMInstruction> program = new List<RAMInstruction>();    //Program počítača RAM
 		public List<LabeledRAMInstruction> labeledProgram = new List<LabeledRAMInstruction>();    //Program počítača RAM
-		public int prgPointer = 0; //Ukazovateľ programu        
+		public int prgPointer; //Ukazovateľ programu        
 
 		//### Pásky ###        
 		public List<String> InputTape = new List<String>(); //Vstupná páska
@@ -28,7 +28,7 @@ namespace FEI.RandomAccessMachine.Simulation {
 		public int Speed = 50; //Doba zdržania pri vykonávaní programu v milisekundách, 0 - real-time        
 
 		//Vykonávanie programu na oddelenom vlákne         
-		System.Threading.Thread PrgThread;
+		System.Threading.Thread prgThread;
 		public bool PrgStop = true;        
 		public bool EndOfPrg = true;
 		public short PrgStatus = 0;        
@@ -82,33 +82,33 @@ namespace FEI.RandomAccessMachine.Simulation {
 		public event EventHandler InstructionExecuted;
 		public event EventHandler ConsoleChanged;
 
-		public Simulator(Form OwnerForm)
+		public Simulator(Form ownerForm)
 		{
-			this.frm = OwnerForm;
+			this.frm = ownerForm;
 		}
 
 		#region Properties
 		public double ReadPos
 		{
-			get { return readPos; }
-			set { readPos = value; }
+			get => readPos;
+			set => readPos = value;
 		}
 
 		public double WritePos
 		{
-			get { return writePos; }
-			set { writePos = value; }
+			get => writePos;
+			set => writePos = value;
 		}
 
 		public double ProgramPos
 		{
-			get { return programPos; }
-			set { programPos = value; }
+			get => programPos;
+			set => programPos = value;
 		}
 
 		public double CurReadPos
 		{
-			get { return curReadPos; }
+			get => curReadPos;
 			set
 			{
 				curReadPos = value;
@@ -120,7 +120,7 @@ namespace FEI.RandomAccessMachine.Simulation {
 
 		public double CurWritePos
 		{
-			get { return curWritePos; }
+			get => curWritePos;
 			set
 			{
 				curWritePos = value;
@@ -132,13 +132,13 @@ namespace FEI.RandomAccessMachine.Simulation {
 
 		public double CurProgramPos
 		{
-			get { return curProgramPos; }
-			set { curProgramPos = value; }
+			get => curProgramPos;
+			set => curProgramPos = value;
 		}
 
 		public bool Reading
 		{
-			get { return reading; }
+			get => reading;
 			set
 			{
 				reading = value;
@@ -150,7 +150,7 @@ namespace FEI.RandomAccessMachine.Simulation {
 
 		public bool Writing
 		{
-			get { return writing; }
+			get => writing;
 			set
 			{
 				writing = value;
@@ -162,8 +162,8 @@ namespace FEI.RandomAccessMachine.Simulation {
 
 		public bool Executing
 		{
-			get { return executing; }
-			set { executing = value; }
+			get => executing;
+			set => executing = value;
 		}
 		#endregion
 
@@ -242,7 +242,7 @@ namespace FEI.RandomAccessMachine.Simulation {
 
 								if (Speed > 0)
 								{
-									if (i >= InfiniteInteger.zero)
+									if (i >= InfiniteInteger.Zero)
 									{
 										WritePos = i.ToInt();
 										Writing = true;
@@ -278,7 +278,7 @@ namespace FEI.RandomAccessMachine.Simulation {
 									if (OutputTapeChanged != null)
 										frm.Invoke(OutputTapeChanged, new object[] { this, new EventArgs() });
 
-									if (i >= InfiniteInteger.zero)
+									if (i >= InfiniteInteger.Zero)
 									{
 										ReadPos = i.ToInt();
 										Reading = true;
@@ -304,7 +304,7 @@ namespace FEI.RandomAccessMachine.Simulation {
 
 							if (Speed > 0)
 							{
-								if (program[prgPointer].GetAddress(ref regs) >= InfiniteInteger.zero)
+								if (program[prgPointer].GetAddress(ref regs) >= InfiniteInteger.Zero)
 								{
 									ReadPos = program[prgPointer].GetAddress(ref regs).ToInt();
 									Reading = true;
@@ -317,7 +317,7 @@ namespace FEI.RandomAccessMachine.Simulation {
 							}                            
 
 							//Uloží hodnotu
-							regs.SetValue(InfiniteInteger.zero, i);
+							regs.SetValue(InfiniteInteger.Zero, i);
 
 							if (Speed > 0)
 							{
@@ -347,7 +347,7 @@ namespace FEI.RandomAccessMachine.Simulation {
 
 							if (Speed > 0)
 							{
-								if (program[prgPointer].GetAddress(ref regs) >= InfiniteInteger.zero)
+								if (program[prgPointer].GetAddress(ref regs) >= InfiniteInteger.Zero)
 								{
 									ReadPos = 0;
 									Reading = true;
@@ -377,7 +377,7 @@ namespace FEI.RandomAccessMachine.Simulation {
 
 							if (Speed > 0)
 							{
-								if (program[prgPointer].GetAddress(ref regs) >= InfiniteInteger.zero)
+								if (program[prgPointer].GetAddress(ref regs) >= InfiniteInteger.Zero)
 								{
 									ReadPos = 0;
 									Reading = true;                                    
@@ -400,7 +400,7 @@ namespace FEI.RandomAccessMachine.Simulation {
 
 							//Uloží hodnotu
 							i = stack.Pop();
-							regs.SetValue(InfiniteInteger.zero, i);
+							regs.SetValue(InfiniteInteger.Zero, i);
 
 							AnimOp();
 							break;
@@ -413,7 +413,7 @@ namespace FEI.RandomAccessMachine.Simulation {
 							//------------------------------------------------
 
 							i = program[prgPointer].GetValue(ref regs);
-							regs.IncrementValue(InfiniteInteger.zero, i);
+							regs.IncrementValue(InfiniteInteger.Zero, i);
 
 							AnimOp();
 							break;
@@ -426,7 +426,7 @@ namespace FEI.RandomAccessMachine.Simulation {
 							//------------------------------------------------
 
 							i = program[prgPointer].GetValue(ref regs);
-							regs.IncrementValue(InfiniteInteger.zero, -i);
+							regs.IncrementValue(InfiniteInteger.Zero, -i);
 
 							AnimOp();
 							break;
@@ -441,7 +441,7 @@ namespace FEI.RandomAccessMachine.Simulation {
 							//long rem;
 							i = program[prgPointer].GetValue(ref regs);
 							//Regs.SetValue(0, Math.DivRem(Regs[0].Value, i, out rem));
-							regs.SetValue(InfiniteInteger.zero, regs[0].Value / i);
+							regs.SetValue(InfiniteInteger.Zero, regs[0].Value / i);
 
 							AnimOp();
 							break;
@@ -454,7 +454,7 @@ namespace FEI.RandomAccessMachine.Simulation {
 							//------------------------------------------------
 
 							i = program[prgPointer].GetValue(ref regs);
-							regs.MultValue(InfiniteInteger.zero, i);
+							regs.MultValue(InfiniteInteger.Zero, i);
 
 							AnimOp();
 							break;
@@ -475,7 +475,7 @@ namespace FEI.RandomAccessMachine.Simulation {
 							instructionCounter[(int)InstructionType.JZero]++;
 							//------------------------------------------------
 
-							if (regs[0].Value == InfiniteInteger.zero)
+							if (regs[0].Value == InfiniteInteger.Zero)
 								prgPointer = (program[prgPointer].Operand).ToInt();
 						   
 							if (Speed > 0)
@@ -489,7 +489,7 @@ namespace FEI.RandomAccessMachine.Simulation {
 									frm.Invoke(RefreshAnimation, new object[] { this, new EventArgs() });
 							}
 
-							if (regs[0].Value == InfiniteInteger.zero)
+							if (regs[0].Value == InfiniteInteger.Zero)
 								prgPointer--;
 							break;
 						case InstructionType.IfBlockBegin: // Podmienka IF(GZERO)
@@ -500,7 +500,7 @@ namespace FEI.RandomAccessMachine.Simulation {
 							instructionCounter[(int)InstructionType.JGZero]++;
 							//------------------------------------------------
 
-							if (regs[0].Value <= InfiniteInteger.zero)
+							if (regs[0].Value <= InfiniteInteger.Zero)
 								prgPointer = (program[prgPointer].Operand - new InfiniteInteger(1)).ToInt();
 
 							if (Speed > 0)
@@ -523,7 +523,7 @@ namespace FEI.RandomAccessMachine.Simulation {
 							instructionCounter[(int)InstructionType.JGZero]++;
 							//------------------------------------------------
 
-							if (regs[0].Value > InfiniteInteger.zero)
+							if (regs[0].Value > InfiniteInteger.Zero)
 								prgPointer = (program[prgPointer].Operand - new InfiniteInteger(1)).ToInt();
 
 							if (Speed > 0)
@@ -656,7 +656,7 @@ namespace FEI.RandomAccessMachine.Simulation {
 							if (ConsoleRead()) return;
 								
 							i = curInstruction.GetAddress(ref regs);
-							if (i != InfiniteInteger.negativeOne)
+							if (i != InfiniteInteger.NegativeOne)
 							{
 								if (InTapePointer > InputTape.Count - 1)
 								{
@@ -673,7 +673,7 @@ namespace FEI.RandomAccessMachine.Simulation {
 							break;
 						case InstructionType.Write: //Zápis na výstupnú pásku                                                        
 							i = curInstruction.GetAddress(ref regs);
-							if (i != InfiniteInteger.negativeOne)
+							if (i != InfiniteInteger.NegativeOne)
 							{
 								// Vypis na konzolu                                
 								WriteToConsole(regs[i].Value.ToString());
@@ -686,7 +686,7 @@ namespace FEI.RandomAccessMachine.Simulation {
 							i = curInstruction.GetValue(ref regs);
 
 							//Uloží hodnotu
-							regs.SetValue(InfiniteInteger.zero, i);
+							regs.SetValue(InfiniteInteger.Zero, i);
 							break;
 						case InstructionType.Store: //Uloženie akumulátora do registra
 							i = curInstruction.GetAddress(ref regs);
@@ -697,45 +697,45 @@ namespace FEI.RandomAccessMachine.Simulation {
 							break;
 						case InstructionType.Pop: //Vloží obsah z vrchu zásobníka do akumulátora                                                        
 							i = stack.Pop();
-							regs.SetValue(InfiniteInteger.zero, i);                            
+							regs.SetValue(InfiniteInteger.Zero, i);                            
 							break;
 						case InstructionType.Add: //Pripočítanie
 							i = curInstruction.GetValue(ref regs);
-							regs.IncrementValue(InfiniteInteger.zero, i);                            
+							regs.IncrementValue(InfiniteInteger.Zero, i);                            
 							break;
 						case InstructionType.Subs:  //Odčítanie
 							i = curInstruction.GetValue(ref regs);
-							regs.IncrementValue(InfiniteInteger.zero, -i); 
+							regs.IncrementValue(InfiniteInteger.Zero, -i); 
 							break;
 						case InstructionType.Div: //Delenie
 							//long rem;
 							i = curInstruction.GetValue(ref regs);
-							regs.SetValue(InfiniteInteger.zero, regs[0].Value / i);
+							regs.SetValue(InfiniteInteger.Zero, regs[0].Value / i);
 							break;
 						case InstructionType.Mult: //Násobenie
 							i = curInstruction.GetValue(ref regs);
-							regs.MultValue(InfiniteInteger.zero, i);
+							regs.MultValue(InfiniteInteger.Zero, i);
 							break;
 						case InstructionType.Jump: //Skok
 						case InstructionType.WhileBlockEnd: // Koniec bloku WHILE(GZERO)
-							prgPointer = (curInstruction.Operand - InfiniteInteger.one).ToInt();
+							prgPointer = (curInstruction.Operand - InfiniteInteger.One).ToInt();
 							break;
 						case InstructionType.JZero: //Skok ak je nula
-							if (regs[0].Value == InfiniteInteger.zero)
+							if (regs[0].Value == InfiniteInteger.Zero)
 								prgPointer =  curInstruction.Operand.ToInt();
 
-							if (regs[0].Value == InfiniteInteger.zero)
+							if (regs[0].Value == InfiniteInteger.Zero)
 								prgPointer--;
 							break;
 						case InstructionType.IfBlockBegin: // Podmienka IF(GZERO)
 						case InstructionType.WhileBlockBegin: // Začiatok bloku WHILE(GZERO)
-							if (regs[0].Value <= InfiniteInteger.zero)
+							if (regs[0].Value <= InfiniteInteger.Zero)
 								prgPointer = (program[prgPointer].Operand - new InfiniteInteger(1)).ToInt();
 							break;
 						case InstructionType.JGZero: //Skok ak je väčšie ako nula
 						case InstructionType.DoWhileBlockEnd: // Koniec bloku DO WHILE(GZERO)
-							if (regs[0].Value > InfiniteInteger.zero)
-								prgPointer = (curInstruction.Operand - InfiniteInteger.one).ToInt();
+							if (regs[0].Value > InfiniteInteger.Zero)
+								prgPointer = (curInstruction.Operand - InfiniteInteger.One).ToInt();
 							break;
 						case InstructionType.Halt: //Ukončenie programu
 							EndOfPrg = true;
@@ -952,8 +952,8 @@ namespace FEI.RandomAccessMachine.Simulation {
 		{
 			if (PrgStop == false) return;
 			if (program == null) return;
-			if ((PrgThread != null))
-				PrgThread.Interrupt();
+			if ((prgThread != null))
+				prgThread.Interrupt();
 			if (EndOfPrg) Reset();
 
 			smallRegsUsed = false;
@@ -961,8 +961,8 @@ namespace FEI.RandomAccessMachine.Simulation {
 			PrgStop = false;                                                
 			StartTime = DateTime.Now.Ticks;            
 
-			PrgThread = new System.Threading.Thread(Execution);
-			PrgThread.Start();
+			prgThread = new System.Threading.Thread(Execution);
+			prgThread.Start();
 		}
 
 		public void Stop()
@@ -998,7 +998,7 @@ namespace FEI.RandomAccessMachine.Simulation {
 		{
 			if (Speed > 0)
 			{
-				if (program[prgPointer].GetAddress(ref regs) >= InfiniteInteger.zero)
+				if (program[prgPointer].GetAddress(ref regs) >= InfiniteInteger.Zero)
 				{
 					ReadPos = program[prgPointer].GetAddress(ref regs).ToInt();
 					Reading = true;
@@ -1153,7 +1153,7 @@ namespace FEI.RandomAccessMachine.Simulation {
 		//Logaritmická zložitosť pre číslo i
 		public static int LogCost(InfiniteInteger i)
 		{
-			if (i != InfiniteInteger.zero)
+			if (i != InfiniteInteger.Zero)
 				return (int)i.AbsoluteValue.ToString().Length + 1;
 			else
 				return 1;
@@ -1182,8 +1182,8 @@ namespace FEI.RandomAccessMachine.Simulation {
 		{
 			if (PrgStop == false) return;
 			if (program == null) return;
-			if ((PrgThread != null))
-				PrgThread.Interrupt();
+			if ((prgThread != null))
+				prgThread.Interrupt();
 			if (EndOfPrg) Reset();
 
 			smallRegsUsed = true;
@@ -1191,8 +1191,8 @@ namespace FEI.RandomAccessMachine.Simulation {
 			PrgStop = false;
 			StartTime = DateTime.Now.Ticks;                       
 
-			PrgThread = new System.Threading.Thread(ExecutionAtMaxSpeed);
-			PrgThread.Start();
+			prgThread = new System.Threading.Thread(ExecutionAtMaxSpeed);
+			prgThread.Start();
 		}
 
 		private void ExecutionAtMaxSpeed()

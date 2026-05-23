@@ -18,10 +18,10 @@ namespace FEI.RandomAccessMachine {
 	public partial class RamSimulatorForm : Form {
 		const string AppTitle = "Random Access Machine (RAM)";
 
-		public string openFileName = null;
+		private string openFileName;
 
-		public bool fileChanged = false;
-		public bool isFileEmpty = true;
+		private bool fileChanged = false;
+		private bool isFileEmpty = true;
 
 		private bool autoClearOutput = true;
 
@@ -182,12 +182,12 @@ namespace FEI.RandomAccessMachine {
 		}
 
 		public bool IsFileEmpty {
-			get { return isFileEmpty; }
-			set { isFileEmpty = value; }
+			get => isFileEmpty;
+			set => isFileEmpty = value;
 		}
 
 		public bool FileChanged {
-			get { return fileChanged; }
+			get => fileChanged;
 			set {
 				fileChanged = value;
 				if (fileChanged)
@@ -488,18 +488,15 @@ namespace FEI.RandomAccessMachine {
 		private void pProc_Paint(object sender, System.Windows.Forms.PaintEventArgs e) {
 			Graphics g = e.Graphics;
 
-			int x;
-			int y;
-			int i;
 			Pen linePen;
-			x = (int)Math.Floor((double)(pProc.Width - iRam.Width) / 2);
-			y = (int)Math.Floor((double)(pProc.Height - iRam.Height) / 2);
+			var x = (int)Math.Floor((double)(pProc.Width - iRam.Width) / 2);
+			var y = (int)Math.Floor((double)(pProc.Height - iRam.Height) / 2);
 			g.DrawImage(iRam, x, y, iRam.Width, iRam.Height);
 
 			g.SmoothingMode = SmoothingMode.AntiAlias;
 
 			//Registre: Čítacia hlava
-			i = (int)((ramSim.CurReadPos - lstRegs.ScrollValue) * 20);
+			var i = (int)((ramSim.CurReadPos - lstRegs.ScrollValue) * 20);
 			if (ramSim.Reading)
 				linePen = new Pen(Color.Green, 2);
 			else
@@ -739,7 +736,7 @@ namespace FEI.RandomAccessMachine {
 		private void miConvertFromC_Click(object sender, EventArgs e) {
 			CConversionForm dlg = new CConversionForm();
 			dlg.ShowDialog(this);
-			if (dlg.OKPressed) {
+			if (dlg.okPressed) {
 				txtProgram.Text = dlg.resCode;
 			}
 		}

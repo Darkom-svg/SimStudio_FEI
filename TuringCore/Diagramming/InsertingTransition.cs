@@ -7,22 +7,22 @@ namespace FEI.TuringCore.Diagramming {
         private State fromState;
         public State FromState
         {
-            get { return fromState; }
-            set { fromState = value; }
+            get => fromState;
+            set => fromState = value;
         }
 
         private Point toPosition;
         public Point ToPosition
         {
-            get { return toPosition; }
-            set { toPosition = value; }
+            get => toPosition;
+            set => toPosition = value;
         }
 
         private State toState;
         public State ToState
         {
-            get { return toState; }
-            set { toState = value; }
+            get => toState;
+            set => toState = value;
         }
     }
 }

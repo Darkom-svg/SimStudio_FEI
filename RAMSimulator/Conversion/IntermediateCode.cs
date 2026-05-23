@@ -6,9 +6,9 @@ namespace FEI.RandomAccessMachine.Conversion {
 	//Prechodný kód
 	public class IntermediateCode
     {
-        public int varcounter = 0;
+        private int varcounter = 0;
         public List<ICVariable> vars = new List<ICVariable>();      //Premenné
-        public List<string> labels = new List<string>();            //Návestia
+        private List<string> labels = new List<string>();            //Návestia
 
         public ICBlock maincode = new ICBlock("main");   //Kód
 
@@ -23,9 +23,9 @@ namespace FEI.RandomAccessMachine.Conversion {
         public ICVariable GetVariable(string name)
         {
             name = name.Trim();
-            for (int i = 0; i < vars.Count; i++)
+            foreach (var variable in vars)
             {
-                if (vars[i].name == name) return vars[i];
+                if (variable.name == name) return variable;
             }
             return null;
         }
@@ -35,9 +35,9 @@ namespace FEI.RandomAccessMachine.Conversion {
         {
             if (Functions.IsNumber(name)) return "=" + name;
 
-            for (int i = 0; i < vars.Count; i++)
+            foreach (var variable in vars)
             {
-                if (vars[i].name == name) return vars[i].index.ToString();
+                if (variable.name == name) return variable.index.ToString();
             }
             return null;
         }
@@ -89,15 +89,16 @@ namespace FEI.RandomAccessMachine.Conversion {
             return name;
         }
 
-        public bool ExistsVariable(string name)
+        private bool ExistsVariable(string name)
         {
-            for (int i = 0; i < this.vars.Count; i++)
+            foreach (var variable in this.vars)
             {
-                if (this.vars[i].name == name)
+                if (variable.name == name)
                 {
                     return true;
                 }
             }
+
             return false;
         }
     }

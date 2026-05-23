@@ -11,16 +11,16 @@ namespace FEI.TuringCore.Components {
         private VirtualTuringMachine turingMachine;
         public VirtualTuringMachine TuringMachine
         {
-            get { return turingMachine; }
-            set { turingMachine = value; }
+            get => turingMachine;
+            set => turingMachine = value;
         }
 
         //Kontextové ponuky
-        ContextMenu contextMenuState;
+        private ContextMenu contextMenuState;
 
         //Editor stavov
-        Point se_StartCursorPos = new Point(0, 0);
-        Point se_StartStatePos = new Point(0, 0);
+        private Point seStartCursorPos = new Point(0, 0);
+        private Point seStartStatePos = new Point(0, 0);
 
         //Posledná pozícia myši
         Point lastHoverPos; 
@@ -171,8 +171,8 @@ namespace FEI.TuringCore.Components {
             turingMachine.StateDiagram.selectedState = turingMachine.StateDiagram.hoverState;
             if (turingMachine.StateDiagram.selectedState != -1)
             {
-                se_StartCursorPos = new Point(e.X + sbxStates.Value, e.Y + sbyStates.Value);
-                se_StartStatePos = turingMachine.StateDiagram.states[turingMachine.StateDiagram.selectedState].Position;
+                seStartCursorPos = new Point(e.X + sbxStates.Value, e.Y + sbyStates.Value);
+                seStartStatePos = turingMachine.StateDiagram.states[turingMachine.StateDiagram.selectedState].Position;
             }
         }
 

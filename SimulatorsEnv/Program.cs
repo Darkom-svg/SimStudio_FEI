@@ -10,7 +10,7 @@ namespace FEI.SimStudio {
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             //System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = false;
             CultureInfo culture_info = new CultureInfo("sk");

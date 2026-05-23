@@ -7,8 +7,8 @@ namespace FEI.TuringCore.Simulation {
 
         public LogItem this[int index]
         {
-            get{return items[index];}
-            set{items[index]=value;}
+            get => items[index];
+            set => items[index]=value;
         }
 
         //Počet záznamov
@@ -28,9 +28,9 @@ namespace FEI.TuringCore.Simulation {
         public int GetFirstNonBlankCell()
         {
             int first = int.MaxValue;
-            for (int i = 0; i < items.Count; i++)
+            foreach (var item in items)
             {
-                int pos = items[i].Itapes[0].GetFirstNonBlankCell();
+                int pos = item.Itapes[0].GetFirstNonBlankCell();
                 if (pos < first) first = pos;
             }
             return first;
@@ -39,9 +39,9 @@ namespace FEI.TuringCore.Simulation {
         public int GetLastNonBlankCell()
         {
             int last = int.MinValue;
-            for (int i = 0; i < items.Count; i++)
+            foreach (var item in items)
             {
-                int pos = items[i].Itapes[0].GetLastNonBlankCell();
+                int pos = item.Itapes[0].GetLastNonBlankCell();
                 if (pos > last) last = pos;
             }
             return last;

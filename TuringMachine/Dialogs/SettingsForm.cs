@@ -5,7 +5,7 @@ using System.Windows.Forms;
 namespace FEI.TuringMachineSimulator.Dialogs {
 	public partial class SettingsForm : Form
     {
-        public bool OKPressed = false;
+        public bool OKPressed;
 
         public string initialState = "";
         public List<string> finalStates = new List<string>();
@@ -21,9 +21,9 @@ namespace FEI.TuringMachineSimulator.Dialogs {
         {
             OKPressed = true;
             finalStates.Clear();
-            for (int a = 0; a < lblFinalStates.Items.Count; a++)
-            {                
-                finalStates.Add((string)lblFinalStates.Items[a]);                
+            foreach (var finalState in lblFinalStates.Items)
+            {
+                finalStates.Add((string)finalState);
             }
             initialState=txtInitialState.Text;
             this.Close();
@@ -50,13 +50,14 @@ namespace FEI.TuringMachineSimulator.Dialogs {
 
         private void frmSettings_Load(object sender, EventArgs e)
         {
-            for (int a = 0; a < finalStates.Count; a++)
+            foreach (var finalState in finalStates)
             {
-                if (!lblFinalStates.Items.Contains(finalStates[a]))
+                if (!lblFinalStates.Items.Contains(finalState))
                 {
-                    lblFinalStates.Items.Add(finalStates[a]);
+                    lblFinalStates.Items.Add(finalState);
                 }
             }
+
             txtInitialState.Text = initialState;
         }
     }

@@ -37,13 +37,14 @@ namespace FEI.FiniteAutomaton {
         }
 
 
-        string appTitle;
-        string openFileName = null;
+        private string appTitle;
+        private string openFileName;
 
         private VirtualTuringMachine turingMachine = new VirtualTuringMachine() { AcceptType = AcceptType.FinalStateReachedAndWholeTapeRead };
-        public VirtualTuringMachine TuringMachine
+
+        private VirtualTuringMachine TuringMachine
         {
-            get { return turingMachine; }
+            get => turingMachine;
             set
             {                
                 turingMachine = value;
@@ -51,29 +52,29 @@ namespace FEI.FiniteAutomaton {
             }
         }
 
-        bool codeChanged = false;        
+        private bool codeChanged;        
 
         //Formát prechodovej funkcie
-        string transitionFormat = "\\sδ\\s(\\a,\\a)\\s=\\s(\\a)\\s";
+        private string transitionFormat = "\\sδ\\s(\\a,\\a)\\s=\\s(\\a)\\s";
         //Formát 
-        string wildCardFormat = "\\a=\\s{\\m,\\n}\\s";        
+        private string wildCardFormat = "\\a=\\s{\\m,\\n}\\s";        
 
         //Zdržanie pri vykonávaní programu
-        int delay = 10;
+        private int delay = 10;
 
         //Vlákno stroja        
-        System.Threading.Thread thRealTime;
+        private System.Threading.Thread thRealTime;
 
-        System.Timers.Timer timMachine = new System.Timers.Timer();
-        bool pause = false;
-        bool prgStop = true;
-        bool prgReset = true; //Resetovať stroj pri najbližšom štarte
+        private System.Timers.Timer timMachine = new System.Timers.Timer();
+        private bool pause = false;
+        private bool prgStop = true;
+        private bool prgReset = true; //Resetovať stroj pri najbližšom štarte
 
-        AcceptanceStatus tapeAcceptance = AcceptanceStatus.None;                
+        private AcceptanceStatus tapeAcceptance = AcceptanceStatus.None;
 
-        public bool PrgStop
+        private bool PrgStop
         {
-            get { return prgStop; }
+            get => prgStop;
             set
             {
                 prgStop = value;
@@ -82,15 +83,12 @@ namespace FEI.FiniteAutomaton {
                     UpdateTapeSettings();
                 }
             }
-        }        
+        }
 
-        public bool PrgReset
+        private bool PrgReset
         {
-            get { return prgReset; }
-            set
-            {
-                prgReset = value;
-            }
+            get => prgReset;
+            set => prgReset = value;
         }
 
         private void frmTuringMachine_Load(object sender, System.EventArgs e)
@@ -232,10 +230,10 @@ namespace FEI.FiniteAutomaton {
             }
         }
 
-        private bool ParseTFunctions(string sourceCodeText)
+        private bool ParseTFunctions(string sourceCode)
         {
             FiniteAutomatonParser parser = new FiniteAutomatonParser(TuringMachine, transitionFormat, wildCardFormat);
-            bool retval = parser.ParseTFunctions(sourceCodeText);
+            bool retval = parser.ParseTFunctions(sourceCode);
 
             codeChanged = false;
             UpdateErrors(parser.Errors);
@@ -547,7 +545,7 @@ namespace FEI.FiniteAutomaton {
             for (int a = 0; a <= (int)Math.Floor((double)pFunctions.Height / 20); a++)
             {
                 i = a + (int)sbyFunctions.Value;
-                if (i > TuringMachine.TFunctionCount - 1) break; 
+                if (i > TuringMachine.FunctionCount - 1) break; 
 
                 rect = new Rectangle(0, a * 20, pFunctions.Width, 20);
                 //Odlíšenie párnych a nepárnych riadkov
@@ -557,9 +555,9 @@ namespace FEI.FiniteAutomaton {
                 }
 
                 //Funkcia, ktorá sa použije v nasledujúcom kroku
-                if (TuringMachine.CurrentState == TuringMachine.TFunction(i).CurrentState)
+                if (TuringMachine.CurrentState == TuringMachine.Function(i).CurrentState)
                 {
-                    if (TuringMachine.CurrentSymbols.Equals(TuringMachine.TFunction(i).ReadSymbol))
+                    if (TuringMachine.CurrentSymbols.Equals(TuringMachine.Function(i).ReadSymbol))
                     {
                         g.FillRectangle(new SolidBrush(Color.FromArgb(100, Color.Green)), rect);
                     }
@@ -570,16 +568,16 @@ namespace FEI.FiniteAutomaton {
                 }
 
                 //Text funkcie - aktuálny stav
-                txt = TuringMachine.TFunction(i).CurrentState + ", " + TuringMachine.TFunction(i).ReadSymbol + " -> ";
+                txt = TuringMachine.Function(i).CurrentState + ", " + TuringMachine.Function(i).ReadSymbol + " -> ";
                 g.DrawString(txt, fntBold, Brushes.Black, (RectangleF)(rect));
 
                 //Text funkcie - koncový stav
-                txt = TuringMachine.TFunction(i).NewState + ", " + TuringMachine.TFunction(i).WriteSymbol + ", ";
-                if (TuringMachine.TFunction(i).Step == Transition.Steps.Left)
+                txt = TuringMachine.Function(i).NewState + ", " + TuringMachine.Function(i).WriteSymbol + ", ";
+                if (TuringMachine.Function(i).Step == Transition.Steps.Left)
                 {
                     txt += " " + resMan.GetString("Left");
                 }
-                else if (TuringMachine.TFunction(i).Step == Transition.Steps.Right)
+                else if (TuringMachine.Function(i).Step == Transition.Steps.Right)
                 {
                     txt += " " + resMan.GetString("Right");
                 }
@@ -597,7 +595,7 @@ namespace FEI.FiniteAutomaton {
                 }
                 else
                 {
-                    txt = Math.Round((double)TuringMachine.TFunction(i).UseCount / sc * 100, 2).ToString() + " %";
+                    txt = Math.Round((double)TuringMachine.Function(i).UseCount / sc * 100, 2).ToString() + " %";
                 }
                 rect2 = rect; rect2.Offset(-25, 0);
                 g.DrawString(txt, fntItalic, new SolidBrush(Color.FromArgb(120, Color.Black)), (RectangleF)(rect2),sfRight);
@@ -616,7 +614,7 @@ namespace FEI.FiniteAutomaton {
             else
             {
                 int max;
-                max = TuringMachine.TFunctionCount; //-(int)Math.Floor((double)pFunctions.Height / 20);
+                max = TuringMachine.FunctionCount; //-(int)Math.Floor((double)pFunctions.Height / 20);
                 if (max < 0)
                     max = 0;
 
@@ -1398,7 +1396,7 @@ namespace FEI.FiniteAutomaton {
             frm.initialState = TuringMachine.StartState;
             frm.finalStates = new List<string>(TuringMachine.FinalStates);
             frm.ShowDialog(this);
-            if (frm.OKPressed)
+            if (frm.okPressed)
             {
                 TuringMachine.StartState = frm.initialState;
                 TuringMachine.FinalStates = frm.finalStates;
@@ -1540,15 +1538,15 @@ namespace FEI.FiniteAutomaton {
             AddTransition(new Transition());
         }
 
-        private void AddTransition(Transition def_tf)
+        private void AddTransition(Transition defTf)
         {             
             AddTFunctionForm dlg = new AddTFunctionForm();
-            dlg.TM = this.TuringMachine;
-            dlg.tfunction = def_tf;
+            dlg.tm = this.TuringMachine;
+            dlg.tFunction = defTf;
             dlg.ShowDialog(this);
-            if (dlg.OKPressed)
+            if (dlg.okPressed)
             {
-                Transition tf = dlg.tfunction;
+                Transition tf = dlg.tFunction;
                 txtCode.Text += Environment.NewLine;
                 txtCode.Text += WriteTransition(tf, transitionFormat);
                 if (tf.Comment.Trim() != "") txtCode.Text += " //" + tf.Comment;

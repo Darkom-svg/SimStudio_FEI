@@ -7,15 +7,15 @@ namespace FEI.PushdownAutomaton.IO.Jff {
         private string fileName;
         public string FileName
         {
-            get { return fileName; }
-            set { fileName = value; }
+            get => fileName;
+            set => fileName = value;
         }
 
         private PushdownAutomaton machine;
         public PushdownAutomaton Machine
         {
-            get { return machine; }
-            set { machine = value; }
+            get => machine;
+            set => machine = value;
         }
 
         public JffWriter(PushdownAutomaton machine, string fileName)
@@ -63,15 +63,15 @@ namespace FEI.PushdownAutomaton.IO.Jff {
 
             //Prechody                
             xw.WriteComment("The list of transitions.");            
-            for (int i = 0; i < machine.TFunctionCount; i++)
+            for (int i = 0; i < machine.FunctionCount; i++)
             {
                 xw.WriteStartElement("transition");
-                xw.WriteElementString("from", machine.TFunction(i).CurrentState);
-                xw.WriteElementString("to", machine.TFunction(i).NewState);
+                xw.WriteElementString("from", machine.Function(i).CurrentState);
+                xw.WriteElementString("to", machine.Function(i).NewState);
 
-                xw.WriteElementString("read", ConvertSymbol(machine.TFunction(i).ReadSymbol));
-                xw.WriteElementString("pop", ConvertSymbol(machine.TFunction(i).StackRead));
-                xw.WriteElementString("push", ConvertSymbol(machine.TFunction(i).StackWrite)); 
+                xw.WriteElementString("read", ConvertSymbol(machine.Function(i).ReadSymbol));
+                xw.WriteElementString("pop", ConvertSymbol(machine.Function(i).StackRead));
+                xw.WriteElementString("push", ConvertSymbol(machine.Function(i).StackWrite)); 
                 
                 xw.WriteEndElement();
             }
@@ -90,7 +90,7 @@ namespace FEI.PushdownAutomaton.IO.Jff {
                 case Transition.Steps.Right:
                     return "R";
                 case Transition.Steps.NoMove:
-                    return "0";
+                    break;
             }
             return "0";
         }
@@ -99,8 +99,8 @@ namespace FEI.PushdownAutomaton.IO.Jff {
         {
             if (symbol == "Blank")
                 return "";
-            else
-                return symbol;
+            
+            return symbol;
         }
     }
 }

@@ -38,12 +38,12 @@ namespace FEI.PushdownAutomaton {
 
 
 		string appTitle;
-		string openFileName = null;
+		string openFileName;
 
 		private PushdownAutomaton pushdownAutomaton = new PushdownAutomaton() { AcceptType = AcceptType.FinalStateReachedAndWholeTapeRead };
 		public PushdownAutomaton PushdownAutomaton
 		{
-			get { return pushdownAutomaton; }
+			get => pushdownAutomaton;
 			set
 			{                
 				pushdownAutomaton = value;
@@ -51,7 +51,7 @@ namespace FEI.PushdownAutomaton {
 			}
 		}
 
-		bool codeChanged = false;        
+		bool codeChanged;        
 
 		//Formát prechodovej funkcie
 		string transitionFormat = "\\sδ\\s(\\a,\\a,\\a)\\s=\\s(\\a,\\a)\\s";
@@ -73,7 +73,7 @@ namespace FEI.PushdownAutomaton {
 
 		public bool PrgStop
 		{
-			get { return prgStop; }
+			get => prgStop;
 			set
 			{
 				prgStop = value;
@@ -86,11 +86,8 @@ namespace FEI.PushdownAutomaton {
 
 		public bool PrgReset
 		{
-			get { return prgReset; }
-			set
-			{
-				prgReset = value;
-			}
+			get => prgReset;
+			set => prgReset = value;
 		}
 
 		private void frmTuringMachine_Load(object sender, System.EventArgs e)
@@ -234,10 +231,10 @@ namespace FEI.PushdownAutomaton {
 			}
 		}
 
-		private bool ParseTFunctions(string sourceCodeText)
+		private bool ParseTFunctions(string sourceCode)
 		{
 			PushdownAutomatonParser parser = new PushdownAutomatonParser(PushdownAutomaton, transitionFormat, wildCardFormat);
-			bool retval = parser.ParseTFunctions(sourceCodeText);
+			bool retval = parser.ParseTFunctions(sourceCode);
 
 			codeChanged = false;
 			UpdateErrors(parser.Errors);
@@ -605,7 +602,7 @@ namespace FEI.PushdownAutomaton {
 			for (int a = 0; a <= (int)Math.Floor((double)pFunctions.Height / 20); a++)
 			{
 				i = a + (int)sbyFunctions.Value;
-				if (i > PushdownAutomaton.TFunctionCount - 1) break; 
+				if (i > PushdownAutomaton.FunctionCount - 1) break; 
 
 				rect = new Rectangle(0, a * 20, pFunctions.Width, 20);
 				//Odlíšenie párnych a nepárnych riadkov
@@ -615,9 +612,9 @@ namespace FEI.PushdownAutomaton {
 				}
 
 				//Funkcia, ktorá sa použije v nasledujúcom kroku
-				if (PushdownAutomaton.CurrentState == PushdownAutomaton.TFunction(i).CurrentState)
+				if (PushdownAutomaton.CurrentState == PushdownAutomaton.Function(i).CurrentState)
 				{
-					if (PushdownAutomaton.CurrentSymbols.Equals(PushdownAutomaton.TFunction(i).ReadSymbol))
+					if (PushdownAutomaton.CurrentSymbols.Equals(PushdownAutomaton.Function(i).ReadSymbol))
 					{
 						g.FillRectangle(new SolidBrush(Color.FromArgb(100, Color.Green)), rect);
 					}
@@ -628,16 +625,16 @@ namespace FEI.PushdownAutomaton {
 				}
 
 				//Text funkcie - aktuálny stav
-				txt = PushdownAutomaton.TFunction(i).CurrentState + ", " + PushdownAutomaton.TFunction(i).ReadSymbol + " -> ";
+				txt = PushdownAutomaton.Function(i).CurrentState + ", " + PushdownAutomaton.Function(i).ReadSymbol + " -> ";
 				g.DrawString(txt, fntBold, Brushes.Black, (RectangleF)(rect));
 
 				//Text funkcie - koncový stav
-				txt = PushdownAutomaton.TFunction(i).NewState + ", " + PushdownAutomaton.TFunction(i).WriteSymbol + ", ";
-				if (PushdownAutomaton.TFunction(i).Step == Transition.Steps.Left)
+				txt = PushdownAutomaton.Function(i).NewState + ", " + PushdownAutomaton.Function(i).WriteSymbol + ", ";
+				if (PushdownAutomaton.Function(i).Step == Transition.Steps.Left)
 				{
 					txt += " " + resMan.GetString("Left");
 				}
-				else if (PushdownAutomaton.TFunction(i).Step == Transition.Steps.Right)
+				else if (PushdownAutomaton.Function(i).Step == Transition.Steps.Right)
 				{
 					txt += " " + resMan.GetString("Right");
 				}
@@ -655,7 +652,7 @@ namespace FEI.PushdownAutomaton {
 				}
 				else
 				{
-					txt = Math.Round((double)PushdownAutomaton.TFunction(i).UseCount / sc * 100, 2).ToString() + " %";
+					txt = Math.Round((double)PushdownAutomaton.Function(i).UseCount / sc * 100, 2).ToString() + " %";
 				}
 				rect2 = rect; rect2.Offset(-25, 0);
 				g.DrawString(txt, fntItalic, new SolidBrush(Color.FromArgb(120, Color.Black)), (RectangleF)(rect2),sfRight);
@@ -674,7 +671,7 @@ namespace FEI.PushdownAutomaton {
 			else
 			{
 				int max;
-				max = PushdownAutomaton.TFunctionCount; //-(int)Math.Floor((double)pFunctions.Height / 20);
+				max = PushdownAutomaton.FunctionCount; //-(int)Math.Floor((double)pFunctions.Height / 20);
 				if (max < 0)
 					max = 0;
 
@@ -1354,7 +1351,7 @@ namespace FEI.PushdownAutomaton {
 			sbyThreads.LargeChange = pThreads.Height;
 		}
 
-		private bool selectIndexNotChanged = false;
+		private bool selectIndexNotChanged;
 		private void cmbTape_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			if (selectIndexNotChanged) return;
@@ -1480,7 +1477,7 @@ namespace FEI.PushdownAutomaton {
 			frm.initialState = PushdownAutomaton.StartState;
 			frm.finalStates = new List<string>(PushdownAutomaton.FinalStates);
 			frm.ShowDialog(this);
-			if (frm.OKPressed)
+			if (frm.okPressed)
 			{
 				PushdownAutomaton.StartState = frm.initialState;
 				PushdownAutomaton.FinalStates = frm.finalStates;
@@ -1622,15 +1619,15 @@ namespace FEI.PushdownAutomaton {
 			AddTransition(new Transition());
 		}
 
-		private void AddTransition(Transition def_tf)
+		private void AddTransition(Transition defTf)
 		{             
 			AddTFunctionForm dlg = new AddTFunctionForm();
-			dlg.TM = this.PushdownAutomaton;
-			dlg.tfunction = def_tf;
+			dlg.tm = this.PushdownAutomaton;
+			dlg.tFunction = defTf;
 			dlg.ShowDialog(this);
-			if (dlg.OKPressed)
+			if (dlg.okPressed)
 			{
-				Transition tf = dlg.tfunction;
+				Transition tf = dlg.tFunction;
 				txtCode.Text += Environment.NewLine;
 				txtCode.Text += WriteTransition(tf, transitionFormat);
 				if (tf.Comment.Trim() != "") txtCode.Text += " //" + tf.Comment;

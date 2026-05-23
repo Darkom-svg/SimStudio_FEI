@@ -12,85 +12,85 @@ namespace FEI.RandomAccessMachine.Simulation {
         public bool Stop;   
         public bool Skip;  
 
-        public RAMInstruction(InstructionType Command, InfiniteInteger Operand, OperationType OperandType)
+        public RAMInstruction(InstructionType command, InfiniteInteger operand, OperationType operandType)
         {
-            this.Command = Command;
-            this.Operand = Operand;
-            this.OperandType = OperandType;            
+            this.Command = command;
+            this.Operand = operand;
+            this.OperandType = operandType;            
 
             this.Stop = false;
             this.Skip = false;
         }
 
-        public InfiniteInteger GetValue(ref InfiniteRegisters Regs)
+        public InfiniteInteger GetValue(ref InfiniteRegisters regs)
         {
             switch (OperandType)
             {
                 case OperationType.Address:
-                    return Regs[Operand].Value;
+                    return regs[Operand].Value;
                 case OperationType.Constant:
                     return Operand;
                 case OperationType.Indirect:
-                    return Regs[Regs[Operand].Value].Value;
+                    return regs[regs[Operand].Value].Value;
                 default:
-                    return InfiniteInteger.zero;
+                    return InfiniteInteger.Zero;
             }
         }
 
-        public long GetValue(ref SmallRegisters Regs)
+        public long GetValue(ref SmallRegisters regs)
         {
             switch (OperandType)
             {
                 case OperationType.Address:
-                    return Regs[Operand.ToLong()].Value;
+                    return regs[Operand.ToLong()].Value;
                 case OperationType.Constant:
                     return Operand.ToLong();
                 case OperationType.Indirect:
-                    return Regs[Regs[Operand.ToLong()].Value].Value;
+                    return regs[regs[Operand.ToLong()].Value].Value;
                 default:
                     return 0;
             }
         }
 
-        public InfiniteInteger GetAddress(ref InfiniteRegisters Regs)
+        public InfiniteInteger GetAddress(ref InfiniteRegisters regs)
         {
             switch (OperandType)
             {
                 case OperationType.Address:
                     return Operand;
                 case OperationType.Indirect:
-                    return Regs[Operand].Value;
+                    return regs[Operand].Value;
                 default:
-                    return InfiniteInteger.negativeOne;
+                    return InfiniteInteger.NegativeOne;
 
             }
         }
 
-        public long GetAddress(ref SmallRegisters Regs)
+        public long GetAddress(ref SmallRegisters regs)
         {
             switch (OperandType)
             {
                 case OperationType.Address:
                     return Operand.ToLong();
                 case OperationType.Indirect:
-                    return Regs[Operand.ToLong()].Value;
+                    return regs[Operand.ToLong()].Value;
                 default:
                     return -1;
 
             }
         }
 
-        public long GetOperandCost(ref InfiniteRegisters Regs)
+        public long GetOperandCost(ref InfiniteRegisters regs)
         {
             switch (OperandType)
             {
                 case OperationType.Constant:
                     return Simulator.LogCost(this.Operand);
                 case OperationType.Address:
-                    return Simulator.LogCost(this.Operand) + Simulator.LogCost(Regs[Operand].Value);
+                    return Simulator.LogCost(this.Operand) + Simulator.LogCost(regs[Operand].Value);
                 case OperationType.Indirect:
-                    return Simulator.LogCost(this.Operand) + Simulator.LogCost(Regs[Operand].Value)
-                        + Simulator.LogCost(Regs[Regs[Operand].Value].Value);
+                    return Simulator.LogCost(this.Operand) + Simulator.LogCost(regs[Operand].Value)
+                        + Simulator.LogCost(regs[regs[Operand].Value].Value);
                 default:
                     return -1;
 

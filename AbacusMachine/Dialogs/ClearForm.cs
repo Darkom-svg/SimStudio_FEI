@@ -5,8 +5,8 @@ using FEI.SimStudio.Components.Registers;
 namespace FEI.AbacusMachine.Dialogs {
 	public partial class ClearForm : Form
     {
-        public bool OKPressed = false;
-        public int regIndex = 0;        
+        public bool okPressed;
+        public int regIndex;        
 
         public ClearForm()
         {
@@ -15,8 +15,8 @@ namespace FEI.AbacusMachine.Dialogs {
 
         public int RegIndex
         {
-            get { return regIndex; }
-            set { regIndex = value; }
+            get => regIndex;
+            set => regIndex = value;
         }        
 
         private void bCancel_Click(object sender, EventArgs e)
@@ -26,7 +26,7 @@ namespace FEI.AbacusMachine.Dialogs {
 
         private void bOK_Click(object sender, EventArgs e)
         {
-            OKPressed = true;
+            okPressed = true;
 
             RegIndex = Functions.ToValue(txtRegIndex.Text);            
 

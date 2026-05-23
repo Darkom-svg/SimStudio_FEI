@@ -28,22 +28,18 @@ namespace FEI.TuringCore.Simulation {
 
 		#region Properties
 		public int HeadPosition {
-			get { return headPosition; }
-			set {
-				headPosition = value;
-			}
+			get => headPosition;
+			set => headPosition = value;
 		}
 
 		public string CurrentSymbol {
-			get {
-				return this[headPosition];
-			}
-			set { this[headPosition] = value; }
+			get => this[headPosition];
+			set => this[headPosition] = value;
 		}
 
 		public string this[int index] {
-			get { return GetCell(index); }
-			set { SetCell(index, value); }
+			get => GetCell(index);
+			set => SetCell(index, value);
 		}
 		#endregion
 
@@ -92,12 +88,12 @@ namespace FEI.TuringCore.Simulation {
 			return max;
 		}
 
-		public int GetNextNonBlankCell(int From) {
+		public int GetNextNonBlankCell(int from) {
 			int min = int.MaxValue;
 			IDictionaryEnumerator en = this.cells.GetEnumerator();
 			en.Reset();
 			while (en.MoveNext()) {
-				if ((int)en.Key > From && (int)en.Key < min) {
+				if ((int)en.Key > from && (int)en.Key < min) {
 					min = (int)en.Key;
 				}
 			}
@@ -119,20 +115,19 @@ namespace FEI.TuringCore.Simulation {
 
 		//Vytvorí kópiu pásky
 		public InfiniteTape Clone() {
-			InfiniteTape NewInfiniteTape = new InfiniteTape();
+			InfiniteTape newInfiniteTape = new InfiniteTape();
 			{
-				NewInfiniteTape.cells = new Dictionary<int, string>(this.cells);
-				NewInfiniteTape.headPosition = this.headPosition;
+				newInfiniteTape.cells = new Dictionary<int, string>(this.cells);
+				newInfiniteTape.headPosition = this.headPosition;
 			}
-			return NewInfiniteTape;
+			return newInfiniteTape;
 		}
 
 		//Komprimuje pásku - vynechá prázdne miesta
 		public void Compress() {
-			int i, ni, li;
-			i = this.GetFirstNonBlankCell();
-			ni = i;
-			li = this.GetLastNonBlankCell();
+			int i = this.GetFirstNonBlankCell();
+			int ni = i;
+			int li = this.GetLastNonBlankCell();
 
 			while (ni != li) {
 				ni = this.GetNextNonBlankCell(i);
@@ -150,9 +145,8 @@ namespace FEI.TuringCore.Simulation {
 		//Vráti tabuľku s počtom použitých symbolov
 		public Dictionary<string, int> GetSymbolCounts() {
 			Dictionary<string, int> arr = new Dictionary<string, int>();
-			int ni, li;
-			ni = this.GetFirstNonBlankCell();
-			li = this.GetLastNonBlankCell();
+			int ni = this.GetFirstNonBlankCell();
+			int li = this.GetLastNonBlankCell();;
 
 			while (ni != int.MaxValue) {
 				if (arr.ContainsKey(this.cells[ni])) {
@@ -170,9 +164,8 @@ namespace FEI.TuringCore.Simulation {
 		//Vráti zoznam s použitými symbolmi
 		public List<string> GetUsedSymbols() {
 			List<string> retval = new List<string>();
-			int ni, li;
-			ni = this.GetFirstNonBlankCell();
-			li = this.GetLastNonBlankCell();
+			int ni = this.GetFirstNonBlankCell();
+			int li = this.GetLastNonBlankCell();
 
 			while (ni != int.MaxValue) {
 				if (!retval.Contains(this.cells[ni])) {

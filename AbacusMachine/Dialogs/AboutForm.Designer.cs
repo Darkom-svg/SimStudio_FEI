@@ -1,4 +1,4 @@
-﻿namespace FEI.AbacusMachine {
+﻿namespace FEI.AbacusMachine.Dialogs {
 	partial class AboutForm
     {
         /// <summary>

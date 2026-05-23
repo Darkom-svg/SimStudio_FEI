@@ -11,9 +11,9 @@ namespace FEI.RandomAccessMachine.Conversion {
         public ICCommand(ICCommandTypes type, params object[] param)
         {
             this.type = type;
-            for (int a = 0; a < param.Length; a++)
+            foreach (var par in param)
             {
-                this.param.Add(param[a]);
+                this.param.Add(par);
             }
         }
     }

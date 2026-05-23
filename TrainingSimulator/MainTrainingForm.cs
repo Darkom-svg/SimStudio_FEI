@@ -222,6 +222,12 @@ namespace FEI.TrainingSimulator {
                     frm.ShowDialog(this);
                     break;
                 }
+                case "TM":
+                {
+                    TmTrainingForm frm = new TmTrainingForm(task);
+                    frm.ShowDialog(this);
+                    break;
+                }
                 default:
                     throw new System.NotImplementedException();
             }

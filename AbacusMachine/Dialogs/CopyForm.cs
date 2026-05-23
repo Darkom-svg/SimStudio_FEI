@@ -5,9 +5,9 @@ using FEI.SimStudio.Components.Registers;
 namespace FEI.AbacusMachine.Dialogs {
 	public partial class CopyForm : Form
     {
-        public bool OKPressed = false;
-        public int srcRegIndex = 0;
-        public int dstRegIndex = 0;
+        public bool okPressed;
+        public int srcRegIndex;
+        public int dstRegIndex;
 
         public CopyForm()
         {
@@ -16,14 +16,14 @@ namespace FEI.AbacusMachine.Dialogs {
 
         public int SrcRegIndex
         {
-            get { return srcRegIndex; }
-            set { srcRegIndex = value; }
+            get => srcRegIndex;
+            set => srcRegIndex = value;
         }
 
         public int DstRegIndex
         {
-            get { return dstRegIndex; }
-            set { dstRegIndex = value; }
+            get => dstRegIndex;
+            set => dstRegIndex = value;
         }
 
         private void bCancel_Click(object sender, EventArgs e)
@@ -33,7 +33,7 @@ namespace FEI.AbacusMachine.Dialogs {
 
         private void bOK_Click(object sender, EventArgs e)
         {
-            OKPressed = true;
+            okPressed = true;
 
             SrcRegIndex = Functions.ToValue(txtSrcRegister.Text);
             DstRegIndex = Functions.ToValue(txtDstRegister.Text);

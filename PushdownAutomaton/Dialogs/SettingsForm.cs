@@ -5,7 +5,7 @@ using System.Windows.Forms;
 namespace FEI.PushdownAutomaton.Dialogs {
 	public partial class SettingsForm : Form
     {
-        public bool OKPressed = false;
+        public bool okPressed;
 
         public string initialState = "";
         public List<string> finalStates = new List<string>();
@@ -18,7 +18,7 @@ namespace FEI.PushdownAutomaton.Dialogs {
 
         private void bOK_Click(object sender, EventArgs e)
         {
-            OKPressed = true;
+            okPressed = true;
             finalStates.Clear();
             for (int a = 0; a < lblFinalStates.Items.Count; a++)
             {                

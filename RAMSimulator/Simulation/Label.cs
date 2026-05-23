@@ -5,22 +5,22 @@
         private string name;
         private int line;
 
-        public Label(string Name, int Line)
+        public Label(string name, int line)
         {
-            this.Name = Name;
-            this.Line = Line;
+            this.Name = name;
+            this.Line = line;
         }
 
         public string Name
         {
-            get { return name; }
-            set { name = value; }
+            get => name;
+            set => name = value;
         }
 
         public int Line
         {
-            get { return line; }
-            set { line = value; }
+            get => line;
+            set => line = value;
         }
         
     }

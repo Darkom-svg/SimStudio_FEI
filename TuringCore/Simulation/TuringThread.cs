@@ -20,43 +20,43 @@ namespace FEI.TuringCore.Simulation {
         private TuringMachineLog log = new TuringMachineLog();
         public TuringMachineLog Log
         {
-            get { return log; }
-            set { log = value; }
+            get => log;
+            set => log = value;
         }
 
         //Vlákno je/nie je ukončené
         public bool Terminated
         {
-            get { return terminated; }
-            set { terminated = value; }
+            get => terminated;
+            set => terminated = value;
         }
 
         //Aktuálny stav
         public string CurrentState
         {
-            get { return currentState; }
-            set { currentState = value; }
+            get => currentState;
+            set => currentState = value;
         }
 
         //Naposledy pouźitý prechod
         public Transition LastUsedTransition
         {
-            get { return lastUsedTransition; }
-            set { lastUsedTransition = value; }
+            get => lastUsedTransition;
+            set => lastUsedTransition = value;
         }
 
         private Stack<string> stack = new Stack<string>();
         public Stack<string> Stack
         {
-            get { return stack; }
-            set { stack = value; }
+            get => stack;
+            set => stack = value;
         }
 
         //Páska
         public List<InfiniteTape> Tapes
         {
-            get { return tapes; }
-            set { this.tapes = value; }
+            get => tapes;
+            set => tapes = value;
         }        
 
         public List<int> HeadPositions
@@ -80,11 +80,11 @@ namespace FEI.TuringCore.Simulation {
         }
         #endregion
 
-        public TuringThread(string CurrentState, List<InfiniteTape> Tapes, TuringMachineLog Log)
+        public TuringThread(string currentState, List<InfiniteTape> tapes, TuringMachineLog log)
         {
-            this.CurrentState = CurrentState;            
-            this.Tapes = Tapes;
-            this.log = Log;
+            this.CurrentState = currentState;            
+            this.Tapes = tapes;
+            this.log = log;
             this.stack.Push("Z");
         }        
 

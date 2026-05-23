@@ -8,14 +8,8 @@ namespace FEI.RandomAccessMachine.Simulation {
 
         public RAMRegister this[long index]
         {
-            get
-            {
-                return regs[index];
-            }
-            set
-            {
-                regs[index] = value;
-            }
+            get => regs[index];
+            set => regs[index] = value;
         }
     }
 }

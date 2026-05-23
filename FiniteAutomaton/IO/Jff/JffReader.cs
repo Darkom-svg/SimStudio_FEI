@@ -12,8 +12,8 @@ namespace FEI.FiniteAutomaton.IO.Jff {
         private string fileName;
         public string FileName
         {
-            get { return fileName; }
-            set { fileName = value; }
+            get => fileName;
+            set => fileName = value;
         }
 
         public JffReader(string filename)

@@ -11,15 +11,15 @@ namespace FEI.SimStudio.Components {
         // Poradie dat
         // Priklad: cislo = 123 104 401 401 891 193 104 131
         // Poradie v data: 193 104 139, 401 401 891, 123 104
-        private List<int> data = null;        
+        private List<int> data;        
 
-        private String stringValue = null;
+        private string stringValue;
 
-        public static readonly int maxDataValue = 999999999;
-        public static readonly int offset = 1000000000;
-        public static readonly InfiniteInteger zero = new InfiniteInteger();
-        public static readonly InfiniteInteger one = new InfiniteInteger(1);
-        public static readonly InfiniteInteger negativeOne = new InfiniteInteger(-1);
+        private static readonly int MaxDataValue = 999999999;
+        private static readonly int Offset = 1000000000;
+        public static readonly InfiniteInteger Zero = new InfiniteInteger();
+        public static readonly InfiniteInteger One = new InfiniteInteger(1);
+        public static readonly InfiniteInteger NegativeOne = new InfiniteInteger(-1);
 
         public InfiniteInteger()
         {
@@ -29,7 +29,7 @@ namespace FEI.SimStudio.Components {
 
         public InfiniteInteger(int i)
         {
-            if (i < offset)
+            if (i < Offset)
             {
                 SmallValue = i;                
             }
@@ -39,7 +39,7 @@ namespace FEI.SimStudio.Components {
 
         public InfiniteInteger(long l)
         {
-            if (l < (long)offset)
+            if (l < (long)Offset)
             {
                 SmallValue = (int)l;
             }
@@ -146,7 +146,7 @@ namespace FEI.SimStudio.Components {
 
         public static InfiniteInteger operator ++(InfiniteInteger n1)
         {
-            if (n1.data[0] < maxDataValue)
+            if (n1.data[0] < MaxDataValue)
             {
                 InfiniteInteger newInt = new InfiniteInteger(new List<int>(n1.data), n1.positive);
                 if (newInt.positive)
@@ -160,7 +160,7 @@ namespace FEI.SimStudio.Components {
             }
             else
             {
-                return n1 + InfiniteInteger.one;
+                return n1 + InfiniteInteger.One;
             }
             
         }
@@ -382,13 +382,13 @@ namespace FEI.SimStudio.Components {
                 c = 0;
                 reminder = tmp;
                 tmp = tmp - n2;
-                while (tmp > InfiniteInteger.zero)
+                while (tmp > InfiniteInteger.Zero)
                 {
                     reminder = tmp;
                     c++;
                     tmp = tmp - n2;
                 }
-                if (tmp == InfiniteInteger.zero)
+                if (tmp == InfiniteInteger.Zero)
                 {
                     reminder = tmp;
                     c++;
@@ -434,10 +434,10 @@ namespace FEI.SimStudio.Components {
                     sum += n2.data[i];
                 sum += carry;
 
-                if (sum > maxDataValue)
+                if (sum > MaxDataValue)
                 {
-                    carry = (int)(sum / offset);
-                    sum = (int)(sum - offset);
+                    carry = (int)(sum / Offset);
+                    sum = (int)(sum - Offset);
                 }
                 else
                 {
@@ -484,7 +484,7 @@ namespace FEI.SimStudio.Components {
 
                 if (sum < 0)
                 {
-                    sum = (offset + sum);
+                    sum = (Offset + sum);
                     carry = -1;
                 }
                 else

@@ -98,10 +98,10 @@ C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\Si
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\FEI.AbacusMachine.Dialogs.MoveForm.resources
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\FEI.AbacusMachine.Dialogs.SubstractValueForm.resources
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\FEI.AbacusMachine.AbacusMachineForm.resources
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\FEI.AbacusMachine.AboutForm.resources
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\FEI.AbacusMachine.Properties.Resources.resources
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\AbacusMachineSimulator.csproj.GenerateResource.cache
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\AbacusMachineSimulator.csproj.CoreCompileInputs.cache
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\AbacusMa.5B4D85DF.Up2Date
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\AbacusMachineSimulator.exe
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\AbacusMachineSimulator.pdb
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\FEI.AbacusMachine.Dialogs.AboutForm.resources

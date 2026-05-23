@@ -6,7 +6,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using FEI.PushdownAutomaton;
 using FEI.SimStudio.Components;
 using FEI.SimStudio.Components.Controls;
 using FEI.SimStudio.Components.Dialogs;
@@ -14,53 +13,68 @@ using FEI.SimStudio.Components.Registers;
 using FEI.TuringCore.Simulation;
 using AboutForm = FEI.TrainingSimulator.Dialogs.AboutForm;
 using System.Xml;
-using FEI.PushdownAutomaton.Dialogs;
-using FEI.PushdownAutomaton.IO.Jff;
+using FEI.TuringMachineSimulator.Dialogs;
+using FEI.TuringMachineSimulator.IO.Jff;
 
 namespace FEI.TrainingSimulator
 {
-    public partial class PdaTrainingForm : Form
+    public partial class TmTrainingForm : Form
     {
         private MainTrainingForm.TaskDef task;
         private string appTitle;
 
-        private bool codeChanged;        
-        //Formát prechodovej funkcie
-        private string transitionFormat = "\\sδ\\s(\\a,\\a,\\a)\\s=\\s(\\a,\\a)\\s";
-        //Formát 
-        private string wildCardFormat = "\\a=\\s{\\m,\\n}\\s"; 
-        // Vytvorí formálnu špecifikáciu
-        private string tmpFormalSpecFileName = null;
-        // Vytvorí špecifikáciu zadania
-        private string tmpTaskSpecFileName = null;
-        string openFileName = null;
-        private PushdownAutomaton.PushdownAutomaton pushdownAutomaton = new PushdownAutomaton.PushdownAutomaton() { AcceptType = AcceptType.FinalStateReachedAndWholeTapeRead };
+        //Zoznam menu položiek pre výber formátu
+        List<ToolStripMenuItem> miTFormatMenuItems;
 
-        public PdaTrainingForm(MainTrainingForm.TaskDef task)
+        //Formát prechodovej funkcie
+        string transitionFormat = "\\sδ\\s(\\a,\\a)\\s=\\s(\\a,\\a,\\a)\\s";
+        //Formát 
+        string wildCardFormat = "\\a=\\s{\\m,\\n}\\s"; 
+        // Vytvorí formálnu špecifikáciu
+        private string tmpFormalSpecFileName;
+        // Vytvorí špecifikáciu zadania
+        private string tmpTaskSpecFileName;
+        string openFileName;
+        private VirtualTuringMachine turingMachine =
+            new VirtualTuringMachine()
+            {
+                AcceptType = AcceptType.FinalStateReachedAndWholeTapeRead
+            };
+
+        public TmTrainingForm(MainTrainingForm.TaskDef task)
         {
             InitializeComponent();
             this.task = task;
             this.Text = "Trenažér (" + this.task.Id + ")";
-            appTitle = "Trenažér (" + this.task.Id + ")";
+            appTitle = Text;
             CreateTaskSpecification();
+            miTFormatMenuItems = new List<ToolStripMenuItem>(new[]
+            {
+                miTFormat1, miTFormat2, miTFormat3,
+                miTFormat4, miTFormat5, miTFormat6,
+                miTFormat7, miTFormat8, miTFormat9,
+                miTFormat10
+            });
+            
+            miTFormat10.PerformClick();
         }
 
-        private PushdownAutomaton.PushdownAutomaton PushdownAutomaton
+        private VirtualTuringMachine TuringMachine
         {
-            get => pushdownAutomaton;
+            get => turingMachine;
             set
-            {                
-                pushdownAutomaton = value;
-                stateDiagramControl.TuringMachine = pushdownAutomaton;
+            {
+                turingMachine = value;
+                stateDiagramControl.TuringMachine = turingMachine;
             }
-        } 
+        }
         
         private void frmTuringMachine_Load(object sender, System.EventArgs e)
         {
             if (MdiParent != null) menuStrip1.Visible = false;
-            this.Icon = ((System.Drawing.Icon)(new System.ComponentModel.ComponentResourceManager(this.GetType()).GetObject("$this.Icon"))); 
+            this.Icon = ((System.Drawing.Icon)(new System.ComponentModel.ComponentResourceManager(this.GetType()).GetObject("$this.Icon")));
 
-            stateDiagramControl.TuringMachine = PushdownAutomaton;
+            stateDiagramControl.TuringMachine = TuringMachine;
 			
             txtCode.SyntaxWords.Add(new SyntaxTextBox.SyntaxWord("δ", Color.Blue, true));
             txtCode.SyntaxWords.Add(new SyntaxTextBox.SyntaxWord("f", Color.Blue, true));
@@ -75,23 +89,7 @@ namespace FEI.TrainingSimulator
             txtCode.SyntaxWords.fStrings = new SyntaxTextBox.SyntaxFormat(Color.DarkRed, true);
             txtCode.SyntaxWords.fNumbers = new SyntaxTextBox.SyntaxFormat(Color.DarkBlue, true);
             txtCode.SyntaxWords.fComment = new SyntaxTextBox.SyntaxFormat(Color.DarkGreen);
-            //Todo
-            //cmbTape.SelectedIndex = 0;            
-            //infiniteTapeControl.Tapes = TuringMachine.OriginalTapes;
-
-            //AddSpeedPanel();
         }
-
-        // private void AddSpeedPanel()
-        // {
-        //     ToolStripControlHost host = new ToolStripControlHost(speedPanel);
-        //     host.Alignment = ToolStripItemAlignment.Right;
-        //     host.Width = 200;
-        //     host.AutoSize = false;
-        //     mainToolStrip.Items.Add(host);
-        // }
-        
-        
         
         private void bAddTFunction_Click(object sender, EventArgs e)
         {
@@ -101,10 +99,10 @@ namespace FEI.TrainingSimulator
         private void AddTransition(Transition defTf)
         {             
             AddTFunctionForm dlg = new AddTFunctionForm();
-            dlg.tm = this.PushdownAutomaton;
+            dlg.TM = this.TuringMachine;
             dlg.tFunction = defTf;
             dlg.ShowDialog(this);
-            if (dlg.okPressed)
+            if (dlg.OKPressed)
             {
                 Transition tf = dlg.tFunction;
                 txtCode.Text += Environment.NewLine;
@@ -115,64 +113,61 @@ namespace FEI.TrainingSimulator
             }
         }
 
-        private string WriteTransition(Transition tf, string tFormat)
-        {
-            string res="";
-            int pos=0;
+        private string WriteTransition(Transition tf, string tFormat) {
+            string res = "";
             int i = 0, l = 0;
             int n = 0; //Index vstupu
-            string arg="";
+            string arg = "";
 
-            //String step = "";
-            //switch (tf.Step)
-            //{
-            //    case Transition.Steps.Left:
-            //        step = "L";
-            //        break;
-            //    case Transition.Steps.Right:
-            //        step = "R";
-            //        break;
-            //    case Transition.Steps.NoMove:
-            //        step = "0";
-            //        break;
-            //}
+            String step = "";
+            switch (tf.Step) {
+                case Transition.Steps.Left:
+                    step = "L";
+                    break;
+                case Transition.Steps.Right:
+                    step = "R";
+                    break;
+                case Transition.Steps.NoMove:
+                    step = "0";
+                    break;
+            }
 
-            tFormat=tFormat.Replace("\\s", " ");
-			
-            while(true) {
+            tFormat = tFormat.Replace("\\s", " ");
+
+            while (true) {
                 i = tFormat.IndexOf("\\a", l);
-                if (i == -1)
-                {
+                if (i == -1) {
                     res += tFormat.Substring(l);
                     break;
                 }
 
                 if (n == 0) arg = tf.CurrentState;
                 else if (n == 1) arg = tf.ReadSymbol;
-                else if (n == 2) arg = tf.StackRead;
-                else if (n == 3) arg = tf.NewState;                
-                else if (n == 4) arg = tf.StackWrite;
+                else if (n == 2) arg = tf.NewState;
+                else if (n == 3) arg = tf.WriteSymbol;
+                else if (n == 4) arg = step;
 
                 res += tFormat.Substring(l, i - l) + arg;
 
                 l = i + 2;
                 n++;
 
-            }            
+            }
 
             return res;
-        }        
+        }      
         
         private bool ParseTFunctions(string sourceCodeText)
         {
-            PushdownAutomatonParser parser = new PushdownAutomatonParser(PushdownAutomaton, transitionFormat, wildCardFormat);
+            TuringMachineParser parser =
+                new TuringMachineParser(TuringMachine, transitionFormat, wildCardFormat);
+
             bool retval = parser.ParseTFunctions(sourceCodeText);
 
-            codeChanged = false;
             UpdateErrors(parser.Errors);
             Functions_SetScrollbar();
 
-            PushdownAutomaton.StateDiagram.UpdateForPA(PushdownAutomaton);
+            TuringMachine.StateDiagram.UpdateForTM(TuringMachine);
 
             return retval;
         }
@@ -197,7 +192,8 @@ namespace FEI.TrainingSimulator
             }
             else
             {
-                var max = PushdownAutomaton.FunctionCount; //-(int)Math.Floor((double)pFunctions.Height / 20);
+                int max;
+                max = turingMachine.FunctionCount; //-(int)Math.Floor((double)pFunctions.Height / 20);
                 if (max < 0)
                     max = 0;
 
@@ -215,7 +211,7 @@ namespace FEI.TrainingSimulator
             //Načíta prechodové funkcie z kódu
             ParseTFunctions(txtCode.Text);
 
-            PushdownAutomaton.StateDiagram.UpdateForPA(PushdownAutomaton);
+            TuringMachine.StateDiagram.UpdateForTM(TuringMachine);
         }          
         
         private void tcMain_SelectedIndexChanged(object sender, EventArgs e)
@@ -258,70 +254,65 @@ namespace FEI.TrainingSimulator
 			sb.AppendLine("<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"sk\" lang=\"sk\">");
 			//Hlavicka
 			sb.AppendLine("<head>");
-				sb.AppendLine("<title>Formálna špecifikácia</title>");
-				
-				sb.AppendLine("<style>");
-				sb.AppendLine("body { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; }");
-				sb.AppendLine("h1 {");
-				sb.AppendLine("font-family: Arial, Helvetica, sans-serif; font-size: 30px;");
-				sb.AppendLine("font-weight: bold; border-bottom-style: dotted;");
-				sb.AppendLine("border-bottom-width: 3px; border-bottom-color: #000066;");
-				sb.AppendLine("color: #000066; padding-bottom: 5px; margin-bottom: 10px;");
-				sb.AppendLine("}");
-				sb.AppendLine("h2 {");
-				sb.AppendLine("font-family: Arial, Helvetica, sans-serif; font-size: 16px;");
-				sb.AppendLine("font-weight: bold;");                
-				sb.AppendLine("color: #000066; margin-bottom: 5px;");
-				sb.AppendLine("}");
-				sb.AppendLine("</style>");
+			sb.AppendLine("<title>Formálna špecifikácia</title>");
+
+			sb.AppendLine("<style>");
+			sb.AppendLine("body { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; }");
+			sb.AppendLine("h1 {");
+			sb.AppendLine("font-family: Arial, Helvetica, sans-serif; font-size: 30px;");
+			sb.AppendLine("font-weight: bold; border-bottom-style: dotted;");
+			sb.AppendLine("border-bottom-width: 3px; border-bottom-color: #000066;");
+			sb.AppendLine("color: #000066; padding-bottom: 5px; margin-bottom: 10px;");
+			sb.AppendLine("}");
+			sb.AppendLine("h2 {");
+			sb.AppendLine("font-family: Arial, Helvetica, sans-serif; font-size: 16px;");
+			sb.AppendLine("font-weight: bold;");
+			sb.AppendLine("color: #000066; margin-bottom: 5px;");
+			sb.AppendLine("}");
+			sb.AppendLine("</style>");
 			sb.AppendLine("</head>");
-			
+
 			//Telo
 			sb.AppendLine("<body>");
-				//Nadpis
-				sb.AppendLine("<h1>Formálna špecifikácia</h1>");
+			//Nadpis
+			sb.AppendLine("<h1>Formálna špecifikácia</h1>");
 
-				sb.AppendLine("<div>");
-				sb.AppendLine("Zásobníkový automat <strong>ZA = (K, Σ, Γ, δ, " + PushdownAutomaton.StartState + ", Z, F)</strong>");
-				sb.AppendLine("</div>");
+			sb.AppendLine("<div>");
+			sb.AppendLine("Turingov stroj <strong>T = (K, Σ, Γ, δ, " + TuringMachine.StartState + ", F)</strong>");
+			sb.AppendLine("</div>");
 
-				// Množina stavov
-				sb.AppendLine("<div>");
-				sb.AppendLine("<strong>K</strong> = {" + PushdownAutomaton.GetUsedStatesAsString() + "}");
-				sb.AppendLine("</div>");
-				// Vstupná abeceda
-				sb.AppendLine("<div>");
-				sb.AppendLine("<strong>Σ</strong> = {" + PushdownAutomaton.GetUsedSymbolsAsString() + "}");
-				sb.AppendLine("</div>");
-				// Zásobniková abeceda
-				sb.AppendLine("<div>");
-				sb.AppendLine("<strong>Γ</strong> = {" + PushdownAutomaton.GetUsedStackSymbolsAsString() + "}");
-				sb.AppendLine("</div>");
-				// Počiatočný stav
-				sb.AppendLine("<div>");
-				sb.AppendLine("<strong>" + PushdownAutomaton.StartState + "</strong> - počiatočný stav");
-				sb.AppendLine("</div>");
-				// Symbol na dne zasobnika
-				sb.AppendLine("<div>");
-				sb.AppendLine("<strong>Z</strong> - symbol na dne zásobníka");
-				sb.AppendLine("</div>");            
-				// Množina koncových stavov
-				sb.AppendLine("<div>");
-				sb.AppendLine("<strong>F</strong> = {" + String.Join(", ", PushdownAutomaton.FinalStates.ToArray()) + "}");
-				sb.AppendLine("</div>");
+			// Množina stavov
+			sb.AppendLine("<div>");
+			sb.AppendLine("<strong>K</strong> = {" + TuringMachine.GetUsedStatesAsString() + "}");
+			sb.AppendLine("</div>");
+			// Vstupná abeceda
+			sb.AppendLine("<div>");
+			sb.AppendLine("<strong>Σ</strong> = {" + TuringMachine.GetUsedSymbolsAsString() + "}");
+			sb.AppendLine("</div>");
+			// Páskova abeceda
+			sb.AppendLine("<div>");
+			sb.AppendLine("<strong>Γ</strong> = {" + TuringMachine.GetUsedSymbolsAsString() + ", Blank}");
+			sb.AppendLine("</div>");
+			// Počiatočný stav
+			sb.AppendLine("<div>");
+			sb.AppendLine("<strong>" + TuringMachine.StartState + "</strong>  počiatočný stav");
+			sb.AppendLine("</div>");
+			// Množina koncových stavov
+			sb.AppendLine("<div>");
+			sb.AppendLine("<strong>F</strong> = {" + String.Join(", ", TuringMachine.FinalStates.ToArray()) + "}");
+			sb.AppendLine("</div>");
 
-				// Prechodové funkcie
+			// Prechodové funkcie
+			sb.AppendLine("<div>");
+			sb.AppendLine("<h2>Prechodová funkcia δ</h2>");
+			foreach (Transition f in TuringMachine.GetTFunctions()) {
 				sb.AppendLine("<div>");
-				sb.AppendLine("<h2>Prechodová funkcia δ</h2>");
-				foreach (Transition f in PushdownAutomaton.GetTFunctions())
-				{
-					sb.AppendLine("<div>");
-					sb.AppendLine("<strong>δ(</strong>" + f.CurrentState + ", " + f.ReadSymbol + ", " + f.StackRead + 
-						") = (" + f.NewState + ", "  + f.StackWrite + ")");
-					sb.AppendLine("</div>");
-				}
-				sb.AppendLine("</div>");                
-				
+				sb.AppendLine("<strong>δ(</strong>" + f.CurrentState + ", " + f.ReadSymbol +
+					") = (" + f.NewState + ", " + f.WriteSymbol + ", " + Transition.StepToString(f.Step) + ")");
+				sb.AppendLine("</div>");
+			}
+			sb.AppendLine("</div>");
+
 			sb.AppendLine("</body>");
 
 			sb.AppendLine("</html>");
@@ -399,7 +390,7 @@ namespace FEI.TrainingSimulator
                 sb.AppendLine("<h2>Parametre zadania</h2>");
                 // Typ zadania
                 sb.AppendLine("<div>");
-                sb.AppendLine("<strong>Typ zadania:</strong> Zásobníkový automat");
+                sb.AppendLine("<strong>Typ zadania:</strong> Túringov stroj");
                 sb.AppendLine("</div>");
 
                 // ID zadania
@@ -492,16 +483,14 @@ namespace FEI.TrainingSimulator
             AddTransition(new Transition());
         }
         
-        private void miSettings_Click(object sender, EventArgs e)
-        {             
+        private void miSettings_Click(object sender, EventArgs e) {
             SettingsForm frm = new SettingsForm();
-            frm.initialState = PushdownAutomaton.StartState;
-            frm.finalStates = new List<string>(PushdownAutomaton.FinalStates);
+            frm.initialState = TuringMachine.StartState;
+            frm.finalStates = new List<string>(TuringMachine.FinalStates);
             frm.ShowDialog(this);
-            if (frm.okPressed)
-            {
-                PushdownAutomaton.StartState = frm.initialState;
-                PushdownAutomaton.FinalStates = frm.finalStates;
+            if (frm.OKPressed) {
+                TuringMachine.StartState = frm.initialState;
+                TuringMachine.FinalStates = frm.finalStates;
                 UpdateStateDiagram();
             }
         }
@@ -535,8 +524,8 @@ namespace FEI.TrainingSimulator
         {                        
             if (!Functions.IsEmpty(fileName))
             {                
-                if (!fileName.EndsWith(".pa")) fileName += ".pa";
-                PushdownAutomaton.Save(fileName, txtCode.Text);
+                if (!fileName.EndsWith(".tm")) fileName += ".tm";
+                TuringMachine.Save(fileName, txtCode.Text);
 				
                 openFileName = fileName;
                 this.Text = openFileName.Substring(openFileName.LastIndexOf("\\") + 1) + " - " + appTitle;
@@ -556,7 +545,7 @@ namespace FEI.TrainingSimulator
             if (!Functions.IsEmpty(fileName))
             {
                 if (!fileName.EndsWith(".jff")) fileName += ".jff";
-                JffWriter writer = new JffWriter(pushdownAutomaton, fileName);
+                JffWriter writer = new JffWriter(TuringMachine, fileName);
                 writer.Save(); 
             }
         }
@@ -583,34 +572,50 @@ namespace FEI.TrainingSimulator
         
         public void OpenFile(string fileName)
         {
-            if (fileName.EndsWith(".pa"))
+            if (fileName.EndsWith(".tm", StringComparison.OrdinalIgnoreCase))
             {
-                PushdownAutomaton = new PushdownAutomaton.PushdownAutomaton() { AcceptType = AcceptType.FinalStateReachedAndWholeTapeRead }; 
-                txtCode.Text = PushdownAutomaton.Load(fileName);
+                TuringMachine = new VirtualTuringMachine
+                {
+                    AcceptType = AcceptType.FinalStateReachedAndWholeTapeRead
+                };
+
+                txtCode.Text = TuringMachine.Load(fileName);
                 ParseTFunctions(txtCode.Text);
-				
+
                 openFileName = fileName;
-                this.Text = openFileName.Substring(openFileName.LastIndexOf("\\") + 1) + " - " + appTitle;
+                this.Text = Path.GetFileName(openFileName) + " - " + appTitle;
             }
-            else if (fileName.EndsWith(".jff"))
+            else if (fileName.EndsWith(".jff", StringComparison.OrdinalIgnoreCase))
             {
                 JffReader reader = new JffReader(fileName);
-                PushdownAutomaton = reader.Read();
-                if (PushdownAutomaton == null)
+
+                TuringMachine = reader.Read();
+
+                if (TuringMachine == null)
                 {
-                    PushdownAutomaton = new PushdownAutomaton.PushdownAutomaton();
+                    TuringMachine = new VirtualTuringMachine
+                    {
+                        AcceptType = AcceptType.FinalStateReachedAndWholeTapeRead
+                    };
                 }
                 else
                 {
                     StringBuilder sb = new StringBuilder();
-                    foreach (var tf in PushdownAutomaton.GetTFunctions())
+
+                    foreach (var tf in TuringMachine.GetTFunctions())
                     {
                         sb.AppendLine(WriteTransition(tf, transitionFormat));
                     }
+
                     txtCode.Text = sb.ToString();
+                    ParseTFunctions(txtCode.Text);
                 }
-            }                       
-            this.Refresh();            
+
+                openFileName = fileName;
+                this.Text = Path.GetFileName(openFileName) + " - " + appTitle;
+            }
+
+            this.Refresh();
         }
         
         private sealed class CheckResult
@@ -621,7 +626,7 @@ namespace FEI.TrainingSimulator
 
         private void checkToolStripButton_Click(object sender, EventArgs e)
         {
-            CheckResult result = CheckCurrentPdaSolution();
+            CheckResult result = CheckCurrentTmSolution();
 
             if (result.IsCorrect)
             {
@@ -641,69 +646,82 @@ namespace FEI.TrainingSimulator
             }
         }
         
-        private PushdownAutomaton.PushdownAutomaton CreateReferencePda()
+        private VirtualTuringMachine CreateReferenceTm()
         {
             if (string.IsNullOrWhiteSpace(task.Verification))
                 throw new Exception("Zadanie neobsahuje referenčný model.");
 
             string tmpFile = Path.Combine(
                 Path.GetTempPath(),
-                "reference_pda_" + Guid.NewGuid().ToString("N") + ".pa");
+                "reference_tm_" + Guid.NewGuid().ToString("N") + ".tm");
 
             try
             {
                 File.WriteAllText(tmpFile, task.Verification, Encoding.UTF8);
 
-                var pda = new PushdownAutomaton.PushdownAutomaton
+                var tm = new VirtualTuringMachine
                 {
                     AcceptType = AcceptType.FinalStateReachedAndWholeTapeRead
                 };
 
-                string code = pda.Load(tmpFile);
+                string code = tm.Load(tmpFile);
 
-                var parser = new PushdownAutomatonParser(pda, transitionFormat, wildCardFormat);
+                var parser = new TuringMachineParser(
+                    tm,
+                    transitionFormat,
+                    wildCardFormat);
 
                 if (!parser.ParseTFunctions(code))
                     throw new Exception("Referenčný model obsahuje syntaktické chyby.");
 
-                pda.StateDiagram.UpdateForPA(pda);
+                tm.StateDiagram.UpdateForTM(tm);
 
-                return pda;
+                return tm;
             }
             finally
             {
-                if (File.Exists(tmpFile))
-                    File.Delete(tmpFile);
+                try
+                {
+                    if (File.Exists(tmpFile))
+                        File.Delete(tmpFile);
+                }
+                catch
+                {
+                    // ignored
+                }
             }
         }
         
-        private PushdownAutomaton.PushdownAutomaton CreateStudentPda()
+        private VirtualTuringMachine CreateStudentTm()
         {
-            var pda = new PushdownAutomaton.PushdownAutomaton
+            var tm = new VirtualTuringMachine
             {
                 AcceptType = AcceptType.FinalStateReachedAndWholeTapeRead
             };
 
-            var parser = new PushdownAutomatonParser(pda, transitionFormat, wildCardFormat);
+            var parser = new TuringMachineParser(
+                tm,
+                transitionFormat,
+                wildCardFormat);
 
             if (!parser.ParseTFunctions(txtCode.Text))
                 throw new Exception("Riešenie obsahuje syntaktické chyby.");
 
-            pda.StartState = PushdownAutomaton.StartState;
-            pda.FinalStates = new List<string>(PushdownAutomaton.FinalStates);
+            tm.StartState = TuringMachine.StartState;
+            tm.FinalStates = new List<string>(TuringMachine.FinalStates);
 
-            pda.StateDiagram.UpdateForPA(pda);
+            tm.StateDiagram.UpdateForTM(tm);
 
-            return pda;
+            return tm;
         }
         
-        private List<string> GetInputAlphabet(PushdownAutomaton.PushdownAutomaton pda)
+        private List<string> GetInputAlphabet(VirtualTuringMachine tm)
         {
             var alphabet = new HashSet<string>();
 
-            for (int i = 0; i < pda.FunctionCount; i++)
+            for (int i = 0; i < tm.FunctionCount; i++)
             {
-                string symbol = pda.Function(i).ReadSymbol;
+                string symbol = tm.Function(i).ReadSymbol;
 
                 if (!string.IsNullOrEmpty(symbol) && symbol != "Blank")
                     alphabet.Add(symbol);
@@ -774,16 +792,14 @@ namespace FEI.TrainingSimulator
             }
         }
         
-        private bool AcceptsByPda(
-            PushdownAutomaton.PushdownAutomaton pda,
-            string word)
+        private bool AcceptsByTm(VirtualTuringMachine tm, string word)
         {
-            pda.Reset();
-            pda.WriteLog = false;
-            pda.Log.Clear();
-            pda.RemoveAllThreads();
+            tm.Reset();
+            tm.WriteLog = false;
+            tm.Log.Clear();
+            tm.RemoveAllThreads();
 
-            pda.OriginalTapes = new List<InfiniteTape>();
+            tm.OriginalTapes = new List<InfiniteTape>();
 
             InfiniteTape tape = new InfiniteTape();
 
@@ -794,38 +810,38 @@ namespace FEI.TrainingSimulator
 
             tape.HeadPosition = 0;
 
-            pda.OriginalTapes.Add(tape);
-            pda.ActiveTapes = InfiniteTape.DeepCopyTapes(pda.OriginalTapes);
-            pda.CurrentState = pda.StartState;
+            tm.OriginalTapes.Add(tape);
+            tm.ActiveTapes = InfiniteTape.DeepCopyTapes(tm.OriginalTapes);
+            tm.CurrentState = tm.StartState;
 
-            int maxSteps = 200;
+            int maxSteps = 500;
 
             for (int step = 0; step < maxSteps; step++)
             {
-                if (pda.IsAccepted())
+                if (tm.IsFinalState(tm.CurrentState))
                     return true;
 
-                pda.NextStep(false);
+                tm.NextStep(false);
 
-                pda.Log.Clear();
+                tm.Log.Clear();
 
-                if (pda.IsAccepted())
+                if (tm.IsFinalState(tm.CurrentState))
                     return true;
 
-                if (pda.NoNextStep)
+                if (tm.NoNextStep)
                     return false;
             }
 
             return false;
         }
         
-        private CheckResult CheckCurrentPdaSolution()
+        private CheckResult CheckCurrentTmSolution()
         {
             if (task.Mode.Equals("Test_cases", StringComparison.OrdinalIgnoreCase))
-                return CheckPdaByTestCases();
+                return CheckTmByTestCases();
 
             if (task.Mode.Equals("Reference_model", StringComparison.OrdinalIgnoreCase))
-                return CheckPdaByReferenceModel();
+                return CheckTmByReferenceModel();
 
             return new CheckResult
             {
@@ -834,22 +850,13 @@ namespace FEI.TrainingSimulator
             };
         }
         
-        private CheckResult CheckPdaByReferenceModel()
+        private CheckResult CheckTmByReferenceModel()
         {
-            if (string.IsNullOrWhiteSpace(task.Verification))
-            {
-                return new CheckResult
-                {
-                    IsCorrect = false,
-                    Message = "Zadanie neobsahuje referenčný model."
-                };
-            }
-
-            PushdownAutomaton.PushdownAutomaton referenceForAlphabet;
+            VirtualTuringMachine referenceForAlphabet;
 
             try
             {
-                referenceForAlphabet = CreateReferencePda();
+                referenceForAlphabet = CreateReferenceTm();
             }
             catch (Exception ex)
             {
@@ -880,13 +887,13 @@ namespace FEI.TrainingSimulator
 
             foreach (string word in words)
             {
-                PushdownAutomaton.PushdownAutomaton reference;
-                PushdownAutomaton.PushdownAutomaton student;
+                VirtualTuringMachine reference;
+                VirtualTuringMachine student;
 
                 try
                 {
-                    reference = CreateReferencePda();
-                    student = CreateStudentPda();
+                    reference = CreateReferenceTm();
+                    student = CreateStudentTm();
                 }
                 catch (Exception ex)
                 {
@@ -897,8 +904,8 @@ namespace FEI.TrainingSimulator
                     };
                 }
 
-                bool expected = AcceptsByPda(reference, word);
-                bool actual = AcceptsByPda(student, word);
+                bool expected = AcceptsByTm(reference, word);
+                bool actual = AcceptsByTm(student, word);
 
                 AddTestResult(word, expected, actual);
 
@@ -910,9 +917,9 @@ namespace FEI.TrainingSimulator
                     {
                         IsCorrect = false,
                         Message =
-                            $"Automat nie je správny. Líši sa na slove '{shownWord}'.\n" +
+                            $"Turingov stroj nie je správny. Líši sa na slove '{shownWord}'.\n" +
                             $"Referenčný model: {(expected ? "prijať" : "odmietnuť")}.\n" +
-                            $"Študentov PA: {(actual ? "prijať" : "odmietnuť")}."
+                            $"Študentov TM: {(actual ? "prijať" : "odmietnuť")}."
                     };
                 }
             }
@@ -924,7 +931,7 @@ namespace FEI.TrainingSimulator
             };
         }
         
-        private CheckResult CheckPdaByTestCases()
+        private CheckResult CheckTmByTestCases()
         {
             Dictionary<string, bool> testCases;
 
@@ -948,11 +955,11 @@ namespace FEI.TrainingSimulator
 
             foreach (var testCase in testCases)
             {
-                PushdownAutomaton.PushdownAutomaton student;
+                VirtualTuringMachine student;
 
                 try
                 {
-                    student = CreateStudentPda();
+                    student = CreateStudentTm();
                 }
                 catch (Exception ex)
                 {
@@ -965,7 +972,7 @@ namespace FEI.TrainingSimulator
 
                 string word = testCase.Key;
                 bool expected = testCase.Value;
-                bool actual = AcceptsByPda(student, word);
+                bool actual = AcceptsByTm(student, word);
 
                 AddTestResult(word, expected, actual);
 
@@ -977,9 +984,9 @@ namespace FEI.TrainingSimulator
                     {
                         IsCorrect = false,
                         Message =
-                            $"Automat nie je správny. Líši sa na slove '{shownWord}'.\n" +
+                            $"Turingov stroj nie je správny. Líši sa na slove '{shownWord}'.\n" +
                             $"Očakávané: {(expected ? "prijať" : "odmietnuť")}.\n" +
-                            $"Študentov PA: {(actual ? "prijať" : "odmietnuť")}."
+                            $"Študentov TM: {(actual ? "prijať" : "odmietnuť")}."
                     };
                 }
             }
@@ -991,95 +998,60 @@ namespace FEI.TrainingSimulator
             };
         }
         
-        private void miTFormat1_Click(object sender, EventArgs e)
-		{
-			transitionFormat = "\\sf\\s(\\a,\\a,\\a)\\s=\\s(\\a,\\a)\\s";
-			miTFormat1.Checked = true; miTFormat2.Checked = false; miTFormat3.Checked = false; 
-			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false; 
-			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
-			miTFormat10.Checked = false;
-		}
+        private void miTFormat1_Click(object sender, EventArgs e) {
+            SetTFormat(sender, "\\sf\\s(\\a,\\a)\\s=\\s(\\a,\\a,\\a)\\s");
+        }
 
-		private void miTFormat2_Click(object sender, EventArgs e)
-		{
-			transitionFormat = "\\s(\\a,\\a,\\a)\\s=\\s(\\a,\\a)\\s";
-			miTFormat1.Checked = false; miTFormat2.Checked = true; miTFormat3.Checked = false; 
-			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false; 
-			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
-			miTFormat10.Checked = false;
-		}
+        private void miTFormat2_Click(object sender, EventArgs e) {
+            SetTFormat(sender, "\\s(\\a,\\a)\\s=\\s(\\a,\\a,\\a)\\s");
+        }
 
-		private void miTFormat3_Click(object sender, EventArgs e)
-		{
-			transitionFormat = "\\a,\\a,\\a,\\a,\\a";
-			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = true;
-			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
-			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
-			miTFormat10.Checked = false;
-		}
+        private void miTFormat3_Click(object sender, EventArgs e) {
+            SetTFormat(sender, "\\a,\\a,\\a,\\a,\\a");
+        }
 
-		private void miTFormat4_Click(object sender, EventArgs e)
-		{
-			transitionFormat = "\\s[\\a,\\a,\\a]\\s[\\a,\\a]\\s";
-			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
-			miTFormat4.Checked = true; miTFormat5.Checked = false; miTFormat6.Checked = false;
-			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
-			miTFormat10.Checked = false;
-		}
+        private void miTFormat4_Click(object sender, EventArgs e) {
+            SetTFormat(sender, "\\s[\\a,\\a]\\s[\\a,\\a,\\a]\\s");
+        }
 
-		private void miTFormat5_Click(object sender, EventArgs e)
-		{
-			transitionFormat = "\\s(\\a,\\a,\\a)\\s(\\a,\\a)\\s";
-			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
-			miTFormat4.Checked = false; miTFormat5.Checked = true; miTFormat6.Checked = false;
-			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
-			miTFormat10.Checked = false;
-		}
+        private void miTFormat5_Click(object sender, EventArgs e) {
+            SetTFormat(sender, "\\s(\\a,\\a)\\s(\\a,\\a,\\a)\\s");
+        }
 
-		private void miTFormat6_Click(object sender, EventArgs e)
-		{
-			transitionFormat = "\\s[\\a,\\a,\\a]\\s->\\s[\\a,\\a]\\s";
-			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
-			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = true;
-			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
-			miTFormat10.Checked = false;
-		}
+        private void miTFormat6_Click(object sender, EventArgs e) {
+            SetTFormat(sender, "\\s[\\a,\\a]\\s->\\s[\\a,\\a,\\a]\\s");
+        }
 
-		private void miTFormat7_Click(object sender, EventArgs e)
-		{
-			transitionFormat = "\\s(\\a,\\a,\\a)\\s->\\s(\\a,\\a)\\s";
-			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
-			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
-			miTFormat7.Checked = true; miTFormat8.Checked = false; miTFormat9.Checked = false;
-			miTFormat10.Checked = false;
-		}
+        private void miTFormat7_Click(object sender, EventArgs e) {
+            SetTFormat(sender, "\\s(\\a,\\a)\\s->\\s(\\a,\\a,\\a)\\s");
+        }
 
-		private void miTFormat8_Click(object sender, EventArgs e)
-		{
-			transitionFormat = "\\a,\\a,\\a->\\a,\\a";
-			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
-			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
-			miTFormat7.Checked = false; miTFormat8.Checked = true; miTFormat9.Checked = false;
-			miTFormat10.Checked = false;
-		}
+        private void miTFormat8_Click(object sender, EventArgs e) {
+            SetTFormat(sender, "\\a,\\a->\\a,\\a,\\a");
+        }
 
-		private void miTFormat9_Click(object sender, EventArgs e)
-		{
-			transitionFormat = "\\a,\\a,\\a>\\a,\\a";
-			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
-			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
-			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = true;
-			miTFormat10.Checked = false;
-		}
+        private void miTFormat9_Click(object sender, EventArgs e) {
+            SetTFormat(sender, "\\a,\\a>\\a,\\a,\\a");
+        }
 
-		private void miTFormat10_Click(object sender, EventArgs e)
-		{
-			transitionFormat = "\\sδ\\s(\\a,\\a,\\a)\\s=\\s(\\a,\\a)\\s";
-			miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
-			miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
-			miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = true;
-			miTFormat10.Checked = false;
-		}
+        private void miTFormat10_Click(object sender, EventArgs e) {
+            SetTFormat(sender, "\\sδ\\s(\\a,\\a)\\s=\\s(\\a,\\a,\\a)\\s");
+        }
+        
+        private void SetTFormat(object sender, string format)
+        {
+            var miTFormat = sender as ToolStripMenuItem;
+
+            if (miTFormat == null)
+                return;
+
+            transitionFormat = format;
+
+            foreach (var item in miTFormatMenuItems)
+                item.Checked = false;
+
+            miTFormat.Checked = true;
+        }
         
         private List<string> testedWords = new List<string>();
         private List<String> testedStates = new List<String>();

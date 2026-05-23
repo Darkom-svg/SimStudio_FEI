@@ -177,7 +177,7 @@
     <Content Include="Examples\PDA\DZA-wcwR.pa">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Examples\TM\DTM-aN_2bN.tm">
+    <Content Include="Examples\TM\DTM-aN_bN.tm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Examples\TM\DTM-sum.tm">

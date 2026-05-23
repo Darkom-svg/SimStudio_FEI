@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Globalization;
 using System.IO;
+using System.Text;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -10,7 +10,7 @@ namespace FEI.TrainingSimulator.Dialogs
 {
     public partial class AddTaskForm : Form
     {
-        public Dictionary<string,bool> testCases = new Dictionary<string, bool>();
+        private Dictionary<string,bool> testCases = new Dictionary<string, bool>();
         public AddTaskForm(string currentTaskSetFile)
         {
             InitializeComponent();
@@ -110,7 +110,7 @@ namespace FEI.TrainingSimulator.Dialogs
                     verification = txtRegex.Text.Trim();
                 else if (mode == "Referenčný automat")
                 {
-                    verification = File.ReadAllText(txtReferencePath.Text.Trim());
+                    verification = File.ReadAllText(txtReferencePath.Text.Trim(), Encoding.UTF8);;
                     mode = "Reference_model";
                 }
                 else if (mode == "Testovacie prípady")
@@ -291,7 +291,7 @@ namespace FEI.TrainingSimulator.Dialogs
             AddNode(doc, taskNode, "mode", mode);
             AddNode(doc, taskNode, "difficulty", difficulty);
             AddCDataNode(doc, taskNode, "specification", specification);
-            if (mode == "Referenčný automat" || mode == "Testovacie prípady")
+            if (mode == "Reference_model" || mode == "Test_cases")
                 AddCDataNode(doc, taskNode, "verification", verification);
             else
                 AddNode(doc, taskNode, "verification", verification);

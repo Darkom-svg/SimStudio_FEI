@@ -105,12 +105,6 @@
     <Compile Include="Dialogs\InstructionSetForm.Designer.cs">
       <DependentUpon>InstructionSetForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\RAMTypeSelectionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialogs\RAMTypeSelectionForm.Designer.cs">
-      <DependentUpon>RAMTypeSelectionForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="Simulation\CompilerException.cs" />
     <Compile Include="Simulation\InvalidInstructionException.cs" />
     <Compile Include="StackForm.cs">
@@ -228,9 +222,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\InstructionSetForm.resx">
       <DependentUpon>InstructionSetForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Dialogs\RAMTypeSelectionForm.resx">
-      <DependentUpon>RAMTypeSelectionForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RAMSimulatorForm.en.resx">
       <DependentUpon>RAMSimulatorForm.cs</DependentUpon>

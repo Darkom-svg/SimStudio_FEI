@@ -8,7 +8,7 @@ namespace FEI.TuringCore.Diagramming {
 	public class StateDiagram
     {                     
         //Ohraničenie diagramu
-        public Rectangle DefaultBounds = new Rectangle(0, 0, 800, 600);        
+        private Rectangle defaultBounds = new Rectangle(0, 0, 800, 600);        
 
         //Zoznam stavov
         public List<State> states = new List<State>();
@@ -22,8 +22,8 @@ namespace FEI.TuringCore.Diagramming {
         public Simulation.Transition activeTransition = null;        
 
         //Aktuálna pozícia, na ktorú sa vloží ďalší stav
-        public Point StartInsertPos = new Point(40, 40);
-        public Point CurInsertPos = new Point(40, 40);
+        private Point startInsertPos = new Point(40, 40);
+        private Point curInsertPos = new Point(40, 40);
 
         //Aktuálne vkladaný prechod
         public InsertingTransition insTransition = null;
@@ -31,26 +31,26 @@ namespace FEI.TuringCore.Diagramming {
         private DiagramStyle style = DiagramStyle.TuringMachine;
         public DiagramStyle Style
         {
-            get { return style; }
-            set { style = value; }
+            get => style;
+            set => style = value;
         }
 
 
         //Ohraničenie použitých stavov diagramu
         public Rectangle Bounds()
-        {            
-            int maxX,maxY;            
-            maxX=0;maxY=0;
+        {
+            int maxX = 0;
+            int maxY = 0;
 
-            for (int a = 0; a<states.Count; a++)
+            foreach (var state in states)
             {
-                if (states[a].Position.X > maxX)
+                if (state.Position.X > maxX)
                 {
-                    maxX = states[a].Position.X;
+                    maxX = state.Position.X;
                 }
-                if (states[a].Position.Y > maxY)
+                if (state.Position.Y > maxY)
                 {
-                    maxY = states[a].Position.Y;
+                    maxY = state.Position.Y;
                 }
             }
             return new Rectangle(0, 0, maxX + 60, maxY + 60);
@@ -73,7 +73,7 @@ namespace FEI.TuringCore.Diagramming {
         }
 
         //Vykreslí práve vkladaný prechod
-        public void DrawInsertingTransition(Graphics g, InsertingTransition trans, Point offset)
+        private void DrawInsertingTransition(Graphics g, InsertingTransition trans, Point offset)
         {
             if (trans == null) return;
 
@@ -83,17 +83,15 @@ namespace FEI.TuringCore.Diagramming {
             Pen penTo = new Pen(Color.FromArgb(180,Color.DarkBlue), 2);
             penTo.DashStyle = DashStyle.Dash;
             Pen penToArrow = new Pen(Color.FromArgb(180, Color.DarkBlue), 2);            
-            Pen penToB = new Pen(Color.FromArgb(45, Color.Blue), 8);            
+            Pen penToB = new Pen(Color.FromArgb(45, Color.Blue), 8);
 
-            int xc, yc;
-            int x, y;
-            int x1, y1, x_offset, y_offset;
+            int x1, y1;
             double angle, d, a1, a2;
-            
+
 
             //Začiatočná pozícia odsadená podľa aktuálneho nastavenia posuvníkov (offset)
-            xc = trans.FromState.Position.X - offset.X;
-            yc = trans.FromState.Position.Y - offset.Y;            
+            var xc = trans.FromState.Position.X - offset.X;
+            var yc = trans.FromState.Position.Y - offset.Y;
 
             //Koncová pozícia odsadená podľa aktuálneho nastavenia posuvníkov (offset)
             if (trans.ToState == null)
@@ -116,9 +114,9 @@ namespace FEI.TuringCore.Diagramming {
             x1 = (int)(Math.Sin(angle) * d) + xc;
             y1 = (int)(Math.Cos(angle) * d) + yc;
 
-            x_offset = (int)(Math.Sin(angle) * 25);
-            y_offset = (int)(Math.Cos(angle) * 25);
-            x = xc + x_offset; y = yc + y_offset;
+            var xOffset = (int)(Math.Sin(angle) * 25);
+            var yOffset = (int)(Math.Cos(angle) * 25);
+            var x = xc + xOffset; var y = yc + yOffset;
 
             //Čiara
             g.DrawLine(penToB, x1, y1, x, y);
@@ -127,13 +125,13 @@ namespace FEI.TuringCore.Diagramming {
             //Šípka
             a1 = Math.PI / 2 * 3 - (angle + Math.PI / 11);
             a2 = Math.PI / 2 * 3 - (angle - Math.PI / 11);
-            y_offset = (int)(Math.Sin(a1) * 15);
-            x_offset = (int)(Math.Cos(a1) * 15);
-            g.DrawLine(penToArrow, x1, y1, x1 + x_offset, y1 + y_offset);            
+            yOffset = (int)(Math.Sin(a1) * 15);
+            xOffset = (int)(Math.Cos(a1) * 15);
+            g.DrawLine(penToArrow, x1, y1, x1 + xOffset, y1 + yOffset);            
 
-            y_offset = (int)(Math.Sin(a2) * 15);
-            x_offset = (int)(Math.Cos(a2) * 15);
-            g.DrawLine(penToArrow, x1, y1, x1 + x_offset, y1 + y_offset);            
+            yOffset = (int)(Math.Sin(a2) * 15);
+            xOffset = (int)(Math.Cos(a2) * 15);
+            g.DrawLine(penToArrow, x1, y1, x1 + xOffset, y1 + yOffset);            
 
             penTo.Dispose(); penToArrow.Dispose(); penToB.Dispose();
         }
@@ -154,24 +152,24 @@ namespace FEI.TuringCore.Diagramming {
         //Pridá stav
         public void AddState(State state, bool autoPosition)
         {
-            if (autoPosition) state.Position = CurInsertPos;
+            if (autoPosition) state.Position = curInsertPos;
 
             states.Add(state);
             
             if (autoPosition)
             {
                 //Nastavenie nových vkladacích súradnic
-                CurInsertPos.X += 150;
-                if (CurInsertPos.X + 30 > DefaultBounds.Right)
+                curInsertPos.X += 150;
+                if (curInsertPos.X + 30 > defaultBounds.Right)
                 {
-                    CurInsertPos.X = 40;
-                    CurInsertPos.Y += 150;
+                    curInsertPos.X = 40;
+                    curInsertPos.Y += 150;
                 }
             }
         }
 
         //Pridá stav iba ak neexistuje stav s rovnakým menom
-        public void AddStateIfNotExists(State state)
+        private void AddStateIfNotExists(State state)
         {
             for (int i = 0; i < states.Count; i++)
             {
@@ -189,7 +187,7 @@ namespace FEI.TuringCore.Diagramming {
         }
 
         //Vráti stav s daným menom
-        public State GetState(string name)
+        private State GetState(string name)
         {
             for (int i = 0; i < states.Count; i++)
             {
@@ -205,7 +203,7 @@ namespace FEI.TuringCore.Diagramming {
         public void CreateForTM(VirtualTuringMachine tm)
         {                     
             //Vynuluje
-            this.CurInsertPos = this.StartInsertPos;
+            this.curInsertPos = this.startInsertPos;
             this.states.Clear();
 
             UpdateForTM(tm);
@@ -262,18 +260,18 @@ namespace FEI.TuringCore.Diagramming {
             }
 
             //Vytvorí prechody medzi stavmi
-            for (int t = 0; t < tm.TFunctionCount; t++)
+            for (int t = 0; t < tm.FunctionCount; t++)
             {
                 //Prechod ZO stavu
-                state = this.GetState(tm.TFunction(t).CurrentState);
+                state = this.GetState(tm.Function(t).CurrentState);
                 //Prechod DO stavu
-                toState = this.GetState(tm.TFunction(t).NewState);                
+                toState = this.GetState(tm.Function(t).NewState);                
 
                 if (state != null && toState != null)
                 {
                     state.AddTransitionTo(toState,
-                        tm.TFunction(t).GetReadWriteStepString(),
-                        tm.TFunction(t).Comment, false);
+                        tm.Function(t).GetReadWriteStepString(),
+                        tm.Function(t).Comment, false);
                     //state.to.Add(toState);
                 }
             }
@@ -329,18 +327,18 @@ namespace FEI.TuringCore.Diagramming {
             }
 
             //Vytvorí prechody medzi stavmi
-            for (int t = 0; t < fa.TFunctionCount; t++)
+            for (int t = 0; t < fa.FunctionCount; t++)
             {
                 //Prechod ZO stavu
-                state = this.GetState(fa.TFunction(t).CurrentState);
+                state = this.GetState(fa.Function(t).CurrentState);
                 //Prechod DO stavu
-                toState = this.GetState(fa.TFunction(t).NewState);
+                toState = this.GetState(fa.Function(t).NewState);
 
                 if (state != null && toState != null)
                 {
                     state.AddTransitionTo(toState,
-                        fa.TFunction(t).ReadSymbol + "," + fa.TFunction(t).StackRead + "," + fa.TFunction(t).StackWrite,
-                        fa.TFunction(t).Comment, true);
+                        fa.Function(t).ReadSymbol + "," + fa.Function(t).StackRead + "," + fa.Function(t).StackWrite,
+                        fa.Function(t).Comment, true);
                     //state.to.Add(toState);
                 }
             }
@@ -397,18 +395,18 @@ namespace FEI.TuringCore.Diagramming {
             }
 
             //Vytvorí prechody medzi stavmi
-            for (int t = 0; t < fa.TFunctionCount; t++)
+            for (int t = 0; t < fa.FunctionCount; t++)
             {
                 //Prechod ZO stavu
-                state = this.GetState(fa.TFunction(t).CurrentState);
+                state = this.GetState(fa.Function(t).CurrentState);
                 //Prechod DO stavu
-                toState = this.GetState(fa.TFunction(t).NewState);
+                toState = this.GetState(fa.Function(t).NewState);
 
                 if (state != null && toState != null)
                 {
                     state.AddTransitionTo(toState,
-                        fa.TFunction(t).ReadSymbol,
-                        fa.TFunction(t).Comment, true);
+                        fa.Function(t).ReadSymbol,
+                        fa.Function(t).Comment, true);
                     //state.to.Add(toState);
                 }
             }

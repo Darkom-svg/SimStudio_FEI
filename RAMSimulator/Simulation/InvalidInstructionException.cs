@@ -6,8 +6,8 @@ namespace FEI.RandomAccessMachine.Simulation {
         private InstructionType type;
         public InstructionType Type
         {
-            get { return type; }
-            set { type = value; }
+            get => type;
+            set => type = value;
         }
 
         public InvalidInstructionException(InstructionType type)

@@ -7,36 +7,36 @@ namespace FEI.TuringCore.Simulation {
         private List<InfiniteTape> itapes;  //Páska
         public List<InfiniteTape> Itapes
         {
-            get { return itapes; }
-            set { itapes = value; }
+            get => itapes;
+            set => itapes = value;
         }
 
         private List<int> positions = null;        //Pozícia v páske
         public List<int> Positions
         {
-            get { return positions; }
-            set { positions = value; }
+            get => positions;
+            set => positions = value;
         }
 
         private string state;        //Stav
         public string State
         {
-            get { return state; }
-            set { state = value; }
+            get => state;
+            set => state = value;
         }
 
         private string transition;   //Prechod
         public string Transition
         {
-            get { return transition; }
-            set { transition = value; }
+            get => transition;
+            set => transition = value;
         }
 
         private bool tapeChanged;    //Páska zmenená
         public bool TapeChanged
         {
-            get { return tapeChanged; }
-            set { tapeChanged = value; }
+            get => tapeChanged;
+            set => tapeChanged = value;
         }
 
         public LogItem(List<InfiniteTape> itapes, string state, string transition, bool tapeChanged)

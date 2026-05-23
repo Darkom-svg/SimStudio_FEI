@@ -5,9 +5,9 @@ using FEI.TuringCore.Simulation;
 namespace FEI.FiniteAutomaton.Dialogs {
 	public partial class AddTFunctionForm : Form
     {
-        public VirtualTuringMachine TM;
-        public Transition tfunction;        
-        public bool OKPressed = false;        
+        public VirtualTuringMachine tm;
+        public Transition tFunction;        
+        public bool okPressed;        
 
         public AddTFunctionForm()
         {
@@ -16,11 +16,11 @@ namespace FEI.FiniteAutomaton.Dialogs {
 
         private void bAdd_Click(object sender, EventArgs e)
         {
-            OKPressed = true;            
+            okPressed = true;            
 
-            tfunction = new Transition(
+            tFunction = new Transition(
                     cmbCurrentState.Text, txtReadSymbol.Text, cmbNewState.Text, txtReadSymbol.Text, Transition.Steps.Right);
-            tfunction.Comment = this.txtComment.Text;
+            tFunction.Comment = this.txtComment.Text;
             this.Close();
         }
 
@@ -31,11 +31,11 @@ namespace FEI.FiniteAutomaton.Dialogs {
 
         private void frmAddTFunction_Load(object sender, EventArgs e)
         {
-            cmbCurrentState.Text = tfunction.CurrentState;
-            cmbNewState.Text = tfunction.NewState;
-            txtReadSymbol.Text = tfunction.ReadSymbol;            
+            cmbCurrentState.Text = tFunction.CurrentState;
+            cmbNewState.Text = tFunction.NewState;
+            txtReadSymbol.Text = tFunction.ReadSymbol;            
 
-            string[] states = TM.GetUsedStates();
+            string[] states = tm.GetUsedStates();
             cmbCurrentState.Items.AddRange(states);
             cmbNewState.Items.AddRange(states);            
         }

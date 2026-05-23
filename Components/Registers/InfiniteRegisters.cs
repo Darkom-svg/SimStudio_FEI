@@ -208,7 +208,7 @@ namespace FEI.SimStudio.Components.Registers {
                 // pridanie registra
                 if (!regs.ContainsKey(regindex))
                 {
-                    regs.Add(regindex, new RegisterCell(InfiniteInteger.zero,
+                    regs.Add(regindex, new RegisterCell(InfiniteInteger.Zero,
                         string.Join(" ", parts, 1, parts.Length - 1), defValue));
                 }
                 else

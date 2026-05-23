@@ -9,29 +9,28 @@ namespace FEI.AbacusMachine.Simulation {
         public List<Instruction> program = new List<Instruction>();                
         
         public InfiniteRegisters regs = new InfiniteRegisters();
-        public int prgPointer=0;
+        public int prgPointer;
 
-        public bool noNextStep = false;
+        public bool noNextStep;
 
-        public void AddOp(AMOperation Operation, int RegisterIndex)
+        public void AddOp(AMOperation operation, int registerIndex)
         {
-            program.Add(new Instruction(Operation, RegisterIndex));            
+            program.Add(new Instruction(operation, registerIndex));            
         }
 
-        public void Parse(string Text)
+        public void Parse(string text)
         {
-            int start;
             //Zásobník na zapamätanie si vnorených zátvorkových blokov
-            Stack<int> BrStack = new Stack<int>();
+            Stack<int> brStack = new Stack<int>();
 
             this.program.Clear();            
 
             //Rozdelenie na riadky
-            string[] lines = Text.Split('\n');
+            string[] lines = text.Split('\n');
 
             for (int l = 0; l < lines.Length; l++)
             {
-                string comment = "";
+                string comment;
                 string line = lines[l].Trim();
                 int to = line.IndexOf("//");
 
@@ -54,6 +53,7 @@ namespace FEI.AbacusMachine.Simulation {
 
                 for (int a = 0; a < line.Length; a++)
                 {
+                    int start;
                     if (line[a] == 'a')
                     {
                         start = a + 1;
@@ -74,21 +74,21 @@ namespace FEI.AbacusMachine.Simulation {
                     }
                     else if (line[a] == '(')
                     {
-                        BrStack.Push(program.Count);
+                        brStack.Push(program.Count);
                         this.AddOp(AMOperation.CycleStart, 0);
                     }
-                    else if (line[a] == ')' && BrStack.Count > 0)
+                    else if (line[a] == ')' && brStack.Count > 0)
                     {
                         start = a + 1;
                         do a++;
                         while (a < line.Length && Char.IsDigit(line[a]));
 
-                        int v = BrStack.Peek();
+                        int v = brStack.Peek();
                         this.program[v] = new Instruction(this.program[v].operation,
                                 (int)(Functions.ToValue(line.Substring(start, a - start))));
-                        this.AddOp(AMOperation.CycleEnd, BrStack.Peek());
+                        this.AddOp(AMOperation.CycleEnd, brStack.Peek());
 
-                        BrStack.Pop();
+                        brStack.Pop();
                         a--;
                     } //Koniec podmienky
                 } //Koniec cyklu a
@@ -124,11 +124,11 @@ namespace FEI.AbacusMachine.Simulation {
             switch (this.program[prgPointer].operation)
             {
                 case AMOperation.Add:
-                    this.regs.IncrementValue(new InfiniteInteger(this.program[prgPointer].register), InfiniteInteger.one);
+                    this.regs.IncrementValue(new InfiniteInteger(this.program[prgPointer].register), InfiniteInteger.One);
                     //this.regs[this.Code[Pos].register].Value += 1;
                     break;
                 case AMOperation.CycleStart:
-                    if (this.regs[this.program[prgPointer].register].Value == InfiniteInteger.zero)
+                    if (this.regs[this.program[prgPointer].register].Value == InfiniteInteger.Zero)
                     {
                         for (int a = prgPointer; a < this.program.Count; a++)
                         {
@@ -144,10 +144,10 @@ namespace FEI.AbacusMachine.Simulation {
                     prgPointer = this.program[prgPointer].register - 1;
                     break;
                 case AMOperation.Sub:
-                    this.regs.IncrementValue(new InfiniteInteger(this.program[prgPointer].register), InfiniteInteger.negativeOne);
+                    this.regs.IncrementValue(new InfiniteInteger(this.program[prgPointer].register), InfiniteInteger.NegativeOne);
                     //this.regs[this.Code[Pos].register].Value -= 1;
-                    if (this.regs[this.program[prgPointer].register].Value < InfiniteInteger.zero) 
-                        this.regs[this.program[prgPointer].register].Value = InfiniteInteger.zero;
+                    if (this.regs[this.program[prgPointer].register].Value < InfiniteInteger.Zero) 
+                        this.regs[this.program[prgPointer].register].Value = InfiniteInteger.Zero;
                     break;
             }
 
@@ -173,7 +173,7 @@ namespace FEI.AbacusMachine.Simulation {
 
         public long GetFirstUnusedRegister()
         {
-            InfiniteInteger i = InfiniteInteger.zero;
+            InfiniteInteger i = InfiniteInteger.Zero;
             while(regs.regs.ContainsKey(i))
             {
                 i++;
@@ -183,7 +183,7 @@ namespace FEI.AbacusMachine.Simulation {
 
         public long GetFirstUnusedRegister(long reg1, long reg2)
         {
-            InfiniteInteger i = InfiniteInteger.zero;
+            InfiniteInteger i = InfiniteInteger.Zero;
             InfiniteInteger ireg1 = new InfiniteInteger(reg1);
             InfiniteInteger ireg2 = new InfiniteInteger(reg2);
 

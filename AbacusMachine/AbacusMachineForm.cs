@@ -15,16 +15,16 @@ using FEI.SimStudio.Components.Registers;
 namespace FEI.AbacusMachine {
 	public partial class AbacusMachineForm : Form
 	{
-		public static string AppTitle = "Počítadlový stroj (Abacus Machine)";
+		public static readonly string AppTitle = "Počítadlový stroj (Abacus Machine)";
 
-		private string openFileName = null;
+		private string openFileName;
 
-		private bool OpenFileOK, SaveFileOK;
+		private bool openFileOk, saveFileOk;
 
-		VirtualAbacusMachine AM = new VirtualAbacusMachine();        
+		private VirtualAbacusMachine am = new VirtualAbacusMachine();        
 		System.Timers.Timer timRun = new System.Timers.Timer();
 		System.Timers.Timer timReal = new System.Timers.Timer();
-		int delay = 100;
+		private int delay = 100;
 
 		public AbacusMachineForm()
 		{
@@ -69,7 +69,7 @@ namespace FEI.AbacusMachine {
 
 		private void Stop()
 		{
-			AM.noNextStep = true;
+			am.noNextStep = true;
 
 			timReal.Stop();
 			timRun.Stop();
@@ -82,13 +82,13 @@ namespace FEI.AbacusMachine {
 
 		private void Step()
 		{
-			if (AM.noNextStep) AM.Reset();
+			if (am.noNextStep) am.Reset();
 			stopToolStripButton.Enabled = true;
 
 			// AM.regs = lstRegisters.Regs;
-			lstRegisters.Regs = AM.regs;
-			AM.Parse(txtCode.Text);
-			AM.Step();
+			lstRegisters.Regs = am.regs;
+			am.Parse(txtCode.Text);
+			am.Step();
 
 			UpdateSimulation();
 		}
@@ -115,7 +115,7 @@ namespace FEI.AbacusMachine {
 			}
 			else
 			{
-				AM.Reset();
+				am.Reset();
 				stopToolStripButton.Enabled = true;
 				runToolStripButton.Visible = false;
 				breakToolStripButton.Visible = true;
@@ -130,7 +130,7 @@ namespace FEI.AbacusMachine {
 				else
 				{
 					timReal.Stop();
-					lstRegisters.Regs = AM.regs;
+					lstRegisters.Regs = am.regs;
 					timRun.Interval = delay;
 					timRun.Elapsed += new System.Timers.ElapsedEventHandler(timRun_Elapsed);
 					timRun.Start();
@@ -138,55 +138,55 @@ namespace FEI.AbacusMachine {
 			}
 		}
 
-		void timRun_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+		private void timRun_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
 		{
-			AM.Step();
+			am.Step();
 			UpdateSimulation();
 
-			if (AM.noNextStep)
-			{
-				timRun.Stop();
-				runToolStripButton.Visible = true;
-				breakToolStripButton.Visible = false;
-				stopToolStripButton.Enabled = false;
-				stepToolStripButton.Enabled = true;
-			}
+			if (!am.noNextStep) 
+				return;
+			
+			timRun.Stop();
+			runToolStripButton.Visible = true;
+			breakToolStripButton.Visible = false;
+			stopToolStripButton.Enabled = false;
+			stepToolStripButton.Enabled = true;
 		}
 
-		void timReal_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+		private void timReal_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
 		{
-			AM.Run();
+			am.Run();
 			UpdateSimulation();
 
-			if (AM.noNextStep)
-			{
-				timReal.Stop();
-				runToolStripButton.Visible = true;
-				breakToolStripButton.Visible = false;
-				stopToolStripButton.Enabled = false;
-				stepToolStripButton.Enabled = true;
-			}
+			if (!am.noNextStep) 
+				return;
+			
+			timReal.Stop();
+			runToolStripButton.Visible = true;
+			breakToolStripButton.Visible = false;
+			stopToolStripButton.Enabled = false;
+			stepToolStripButton.Enabled = true;
 		}        
 
 		private void UpdateSimulation()
 		{
-			verticalScroll.Value = Math.Min(Math.Max((AM.prgPointer * 70 / pSimulation.Width) * 50 - pSimulation.Height / 2, 0), verticalScroll.Maximum);
+			verticalScroll.Value = Math.Min(Math.Max((am.prgPointer * 70 / pSimulation.Width) * 50 - pSimulation.Height / 2, 0), verticalScroll.Maximum);
 
 			pSimulation.Refresh();
 
-			if (AM.prgPointer < AM.program.Count)
+			if (am.prgPointer < am.program.Count)
 			{
-				if (AM.program[AM.prgPointer].operation == AMOperation.Add || AM.program[AM.prgPointer].operation == AMOperation.Sub)
+				if (am.program[am.prgPointer].operation == AMOperation.Add || am.program[am.prgPointer].operation == AMOperation.Sub)
 				{
 					lstRegisters.Writing = true;
 					lstRegisters.Reading = false;
-					lstRegisters.WritingPos = AM.program[AM.prgPointer].register;
+					lstRegisters.WritingPos = am.program[am.prgPointer].register;
 				}
-				else if (AM.program[AM.prgPointer].operation == AMOperation.CycleEnd)
+				else if (am.program[am.prgPointer].operation == AMOperation.CycleEnd)
 				{
 					lstRegisters.Writing = false;
 					lstRegisters.Reading = true;
-					lstRegisters.ReadingPos = AM.program[AM.program[AM.prgPointer].register].register;
+					lstRegisters.ReadingPos = am.program[am.program[am.prgPointer].register].register;
 				}
 			}
 			lstRegisters.Refresh();
@@ -238,7 +238,7 @@ namespace FEI.AbacusMachine {
 
 			Rectangle panelBounds = new Rectangle(0, 0, pSimulation.Width, pSimulation.Height);
 			y = -verticalScroll.Value;
-			for (int i = 0; i < AM.program.Count;i++)
+			for (int i = 0; i < am.program.Count;i++)
 			{               
 				rect = new Rectangle(x, y, 60, 40);
 
@@ -246,16 +246,16 @@ namespace FEI.AbacusMachine {
 				{
 
 					//Typ operácie
-					switch (AM.program[i].operation)
+					switch (am.program[i].operation)
 					{
 						case AMOperation.Add:
 							txt = "add";
-							txt2 = AM.program[i].register.ToString();
+							txt2 = am.program[i].register.ToString();
 							bgColor = Color.FromArgb(60, Color.Green);
 							break;
 						case AMOperation.Sub:
 							txt = "sub";
-							txt2 = AM.program[i].register.ToString();
+							txt2 = am.program[i].register.ToString();
 							bgColor = Color.FromArgb(60, Color.Red);
 							break;
 						case AMOperation.CycleStart:
@@ -265,12 +265,12 @@ namespace FEI.AbacusMachine {
 							break;
 						case AMOperation.CycleEnd:
 							txt = ")";
-							txt2 = AM.program[AM.program[i].register].register.ToString();
+							txt2 = am.program[am.program[i].register].register.ToString();
 							bgColor = Color.FromArgb(60, Color.White);
 							break;
 					}                    
 
-					if (AM.prgPointer == i)
+					if (am.prgPointer == i)
 					{
 						Functions.FillRoundRectangle(g, new LinearGradientBrush(rect, Color.LightBlue, Color.DarkBlue, LinearGradientMode.Vertical), rect, 5);
 						Functions.DrawRoundRectangle(g, new Pen(Color.Black, 3), rect, 5);
@@ -301,7 +301,7 @@ namespace FEI.AbacusMachine {
 
 		private void SetScrollbar()
 		{
-			verticalScroll.Maximum = (AM.program.Count * 70 / pSimulation.Width) * 50;
+			verticalScroll.Maximum = (am.program.Count * 70 / pSimulation.Width) * 50;
 			verticalScroll.LargeChange = pSimulation.Width;
 		}
 
@@ -332,7 +332,7 @@ namespace FEI.AbacusMachine {
 			Dialogs.AddValueForm dlg = new AddValueForm();
 			dlg.ShowDialog(this);
 
-			if (dlg.OKPressed)
+			if (dlg.okPressed)
 			{
 				string res = "";
 				string cmd = "";                
@@ -357,7 +357,7 @@ namespace FEI.AbacusMachine {
 			Dialogs.SubstractValueForm dlg = new SubstractValueForm();
 			dlg.ShowDialog(this);
 
-			if (dlg.OKPressed)
+			if (dlg.okPressed)
 			{
 				string res = "";
 				string cmd = "";                
@@ -382,14 +382,14 @@ namespace FEI.AbacusMachine {
 			Dialogs.CopyForm dlg = new CopyForm();
 			dlg.ShowDialog(this);
 
-			if (dlg.OKPressed)
+			if (dlg.okPressed)
 			{                
 				//Skompilovanie
-				AM.Parse(txtCode.Text);
+				am.Parse(txtCode.Text);
 
 				string regSrc = dlg.SrcRegIndex.ToString().Trim();
 				string regDst = dlg.DstRegIndex.ToString().Trim();
-				string regTmp = AM.GetFirstUnusedRegister(dlg.SrcRegIndex, dlg.DstRegIndex).ToString().Trim();
+				string regTmp = am.GetFirstUnusedRegister(dlg.SrcRegIndex, dlg.DstRegIndex).ToString().Trim();
 				string cmd = "";
 				cmd += "//Kopírovanie registra R" + regSrc + " do registra " + regDst
 					+ " (cez pomocný register R" + regTmp + ")";
@@ -411,7 +411,7 @@ namespace FEI.AbacusMachine {
 			Dialogs.MoveForm dlg = new MoveForm();
 			dlg.ShowDialog(this);
 
-			if (dlg.OKPressed)
+			if (dlg.okPressed)
 			{
 				string regSrc = dlg.SrcRegIndex.ToString().Trim();
 				string regDst = dlg.DstRegIndex.ToString().Trim();
@@ -431,7 +431,7 @@ namespace FEI.AbacusMachine {
 			Dialogs.ClearForm dlg = new ClearForm();
 			dlg.ShowDialog(this);
 
-			if (dlg.OKPressed)
+			if (dlg.okPressed)
 			{
 				string reg = dlg.RegIndex.ToString().Trim();
 				string cmd = "";
@@ -447,7 +447,7 @@ namespace FEI.AbacusMachine {
 
 		private void txtCode_TextChanged(object sender, System.EventArgs e)
 		{
-			AM.Parse(txtCode.Text);
+			am.Parse(txtCode.Text);
 		}
 
 		private void miNewFile_Click(object sender, EventArgs e)
@@ -475,16 +475,16 @@ namespace FEI.AbacusMachine {
 			txtCode.Copy();
 		}
 
-		private string OpenTextFile(string FileName)
+		private string OpenTextFile(string fileName)
 		{
-			string functionReturnValue = System.IO.File.ReadAllText(FileName, Encoding.Default);
+			string functionReturnValue = System.IO.File.ReadAllText(fileName, Encoding.Default);
 			return functionReturnValue;
 		}
 
-		private void SaveTextFile(string FileName, string Text)
+		private void SaveTextFile(string fileName, string text)
 		{
-			System.IO.TextWriter f = System.IO.File.CreateText(FileName);
-			f.Write(Text);
+			System.IO.TextWriter f = System.IO.File.CreateText(fileName);
+			f.Write(text);
 			f.Close();
 		}
 
@@ -496,18 +496,17 @@ namespace FEI.AbacusMachine {
 
 		private void File_Open() {
 			if (MdiParent == null) {
-				OpenFileOK = false;
+				openFileOk = false;
 				openFileDialog1.Title = "Otvoriť súbor";
 				openFileDialog1.AddExtension = true;
 				openFileDialog1.DefaultExt = "ram";
 				openFileDialog1.Filter = "Súbor počítadlového stroja (*.am)|*.am|Textový súbor (*.txt)|*.txt|Všetky súbory|*.*";
 				openFileDialog1.ShowDialog(this);
-				if (OpenFileOK && this.openFileDialog1.FileName != "") {
+				if (openFileOk && this.openFileDialog1.FileName != "") {
 					AbacusMachineForm abacusMachineForm = new AbacusMachineForm();
 					abacusMachineForm.Show();
 					abacusMachineForm.File_Open(this.openFileDialog1.FileName);
 					abacusMachineForm.Activate();
-					return;
 				}
 			} else {
 				((IMainForm)MdiParent).OpenFile();
@@ -534,14 +533,14 @@ namespace FEI.AbacusMachine {
 
 		private void File_SaveAs()
 		{
-			SaveFileOK = false;
+			saveFileOk = false;
 			saveFileDialog1.Title = "Uložiť súbor";
 			saveFileDialog1.AddExtension = true;
 			saveFileDialog1.DefaultExt = "am";
 			saveFileDialog1.Filter = "Súbor počítadlového stroja|*.am|Všetky súbory|*.*";
 			saveFileDialog1.ShowDialog(this);
 
-			if (SaveFileOK && saveFileDialog1.FileName != "")
+			if (saveFileOk && saveFileDialog1.FileName != "")
 			{
 				openFileName = saveFileDialog1.FileName;
 				SaveTextFile(saveFileDialog1.FileName, txtCode.Text);
@@ -550,12 +549,12 @@ namespace FEI.AbacusMachine {
 
 		private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
 		{
-			OpenFileOK = true;
+			openFileOk = true;
 		}
 
 		private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
 		{
-			SaveFileOK = true;
+			saveFileOk = true;
 		}
 
 		private void lstRegisters_RegisterChanged(object sender, RegisterList.RegisterEventArgs arg)
@@ -563,14 +562,12 @@ namespace FEI.AbacusMachine {
 			string[] lines = txtCode.Text.Split('\n');
 			string regDef = "//#" + arg.index;
 			StringBuilder sb = new StringBuilder(txtCode.Text.Length + 100);
-			bool added = false;
 
 			foreach (string line in lines)
 			{
 				if (line.Trim().StartsWith(regDef))
 				{
 					sb.AppendLine("//#" + arg.index + " " + arg.register.Name + " = " + arg.register.Value);
-					added = false;
 				}
 				else
 				{
@@ -578,12 +575,8 @@ namespace FEI.AbacusMachine {
 				}
 			}
 
-			if (!added)
-			{
-				sb.Insert(0, "//#" + arg.index + " " + arg.register.Name + " = " + arg.register.Value + "\n");
-			}
-
-			AM.regs.regs[new InfiniteInteger(arg.index)].Value = arg.register.Value;
+			sb.Insert(0, "//#" + arg.index + " " + arg.register.Name + " = " + arg.register.Value + "\n");
+			am.regs.regs[new InfiniteInteger(arg.index)].Value = arg.register.Value;
 			txtCode.Text = sb.ToString();
 		}
 

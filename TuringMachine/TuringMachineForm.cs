@@ -26,7 +26,7 @@ namespace FEI.TuringMachineSimulator {
 		public TuringMachineForm() {
 			InitializeComponent();
 
-			AppTitle = this.Text;
+			appTitle = this.Text;
 
 			timMachine.SynchronizingObject = this;
 			timMachine.Elapsed += new System.Timers.ElapsedEventHandler(timMachine_Elapsed);
@@ -45,28 +45,29 @@ namespace FEI.TuringMachineSimulator {
 		}
 
 
-		string AppTitle;
+		string appTitle;
 		string openFileName = null;
 
 		private VirtualTuringMachine turingMachine = new VirtualTuringMachine();
-		public VirtualTuringMachine TuringMachine {
-			get { return turingMachine; }
+
+		private VirtualTuringMachine TuringMachine {
+			get => turingMachine;
 			set {
 				turingMachine = value;
 				stateDiagramControl.TuringMachine = turingMachine;
 			}
 		}
 
-		bool CodeChanged = false;
+		private bool codeChanged;
 
 		//Zoznam menu položiek pre výber formátu
 		List<ToolStripMenuItem> miTFormatMenuItems;
 
 		//Formát prechodovej funkcie
-		string TransitionFormat = "\\sδ\\s(\\a,\\a)\\s=\\s(\\a,\\a,\\a)\\s";
+		string transitionFormat = "\\sδ\\s(\\a,\\a)\\s=\\s(\\a,\\a,\\a)\\s";
 		
 		//Formát 
-		string WildCardFormat = "\\a=\\s{\\m,\\n}\\s";
+		string wildCardFormat = "\\a=\\s{\\m,\\n}\\s";
 
 		//Zdržanie pri vykonávaní programu
 		int delay = 10;
@@ -81,8 +82,8 @@ namespace FEI.TuringMachineSimulator {
 
 		AcceptanceStatus tapeAcceptance = AcceptanceStatus.None;
 
-		public bool PrgStop {
-			get { return prgStop; }
+		private bool PrgStop {
+			get => prgStop;
 			set {
 				prgStop = value;
 				if (prgStop) {
@@ -91,11 +92,9 @@ namespace FEI.TuringMachineSimulator {
 			}
 		}
 
-		public bool PrgReset {
-			get { return prgReset; }
-			set {
-				prgReset = value;
-			}
+		private bool PrgReset {
+			get => prgReset;
+			set => prgReset = value;
 		}
 
 		private void frmTuringMachine_Load(object sender, System.EventArgs e) {
@@ -144,7 +143,7 @@ namespace FEI.TuringMachineSimulator {
 		}
 
 		private void txtCode_TextChanged(object sender, System.EventArgs e) {
-			CodeChanged = true;
+			codeChanged = true;
 		}
 
 		//Spustí
@@ -166,7 +165,7 @@ namespace FEI.TuringMachineSimulator {
 					MessageBox.Show("Turingov stroj úspešne dokončil program. (Bol dosiahnutý koncový stav.)", "Turingov stroj", MessageBoxButtons.OK, MessageBoxIcon.Information);
 					tapeAcceptance = AcceptanceStatus.Accept;
 				} else //Program skončil v inom ako koncovom stave, neexistujú prechodové funkcie pre ďalší chod
-				  {
+				{
 					MessageBox.Show("Turingov stroj sa nemôže dostať do koncového stav. Neexistujú prechodové funkcie na prechod do ďalšieho stavu.", "Turingov stroj", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 					tapeAcceptance = AcceptanceStatus.Reject;
 				}
@@ -188,11 +187,11 @@ namespace FEI.TuringMachineSimulator {
 			}
 		}
 
-		private bool ParseTFunctions(string sourceCodeText) {
-			TuringMachineParser parser = new TuringMachineParser(TuringMachine, TransitionFormat, WildCardFormat);
-			bool retval = parser.ParseTFunctions(sourceCodeText);
+		private bool ParseTFunctions(string sourceCode) {
+			TuringMachineParser parser = new TuringMachineParser(TuringMachine, transitionFormat, wildCardFormat);
+			bool retval = parser.ParseTFunctions(sourceCode);
 
-			CodeChanged = false;
+			codeChanged = false;
 			UpdateErrors(parser.Errors);
 			Functions_SetScrollbar();
 
@@ -257,7 +256,7 @@ namespace FEI.TuringMachineSimulator {
 
 		//Ďalší krok
 		private void NextStep() {
-			if (CodeChanged) {
+			if (codeChanged) {
 				if (ParseTFunctions(txtCode.Text) == false) {
 					if (MessageBox.Show("Program obsahuje chyby. Chcete pokračovať?", "Chyba počas prekladu",
 						MessageBoxButtons.YesNo, MessageBoxIcon.Error) == DialogResult.No) return;
@@ -351,7 +350,7 @@ namespace FEI.TuringMachineSimulator {
 				MessageBox.Show("Turingov stroj úspešne dokončil program. (Bol dosiahnutý koncový stav.)", "Turingov stroj", MessageBoxButtons.OK, MessageBoxIcon.Information);
 				tapeAcceptance = AcceptanceStatus.Accept;
 			} else //Program skončil v inom ako koncovom stave, neexistujú prechodové funkcie pre ďalší chod
-			  {
+			{
 				MessageBox.Show("Turingov stroj sa nemôže dostať do koncového stav. Neexistujú prechodové funkcie na prechod do ďalšieho stavu.", "Turingov stroj", MessageBoxButtons.OK, MessageBoxIcon.Stop);
 				tapeAcceptance = AcceptanceStatus.Reject;
 			}
@@ -400,7 +399,7 @@ namespace FEI.TuringMachineSimulator {
 
 		private void OpenFileInNewWindow(string fileName) {
 			if (!string.IsNullOrEmpty(fileName)) {
-				this.Text = System.IO.Path.GetFileName(fileName) + " - " + AppTitle;
+				this.Text = System.IO.Path.GetFileName(fileName) + " - " + appTitle;
 
 				TuringMachineForm frm = new TuringMachineForm();
 				frm.MdiParent = this.MdiParent;
@@ -417,7 +416,7 @@ namespace FEI.TuringMachineSimulator {
 				ParseTFunctions(txtCode.Text);
 
 				openFileName = fileName;
-				this.Text = openFileName.Substring(openFileName.LastIndexOf("\\") + 1) + " - " + AppTitle;
+				this.Text = openFileName.Substring(openFileName.LastIndexOf("\\") + 1) + " - " + appTitle;
 			} else if (fileName.EndsWith(".jff")) {
 				JffReader reader = new JffReader(fileName);
 				TuringMachine = reader.Read();
@@ -426,7 +425,7 @@ namespace FEI.TuringMachineSimulator {
 				} else {
 					StringBuilder sb = new StringBuilder();
 					foreach (var tf in TuringMachine.GetTFunctions()) {
-						sb.AppendLine(WriteTransition(tf, TransitionFormat));
+						sb.AppendLine(WriteTransition(tf, transitionFormat));
 					}
 					txtCode.Text = sb.ToString();
 				}
@@ -443,7 +442,7 @@ namespace FEI.TuringMachineSimulator {
 				TuringMachine.Save(fileName, txtCode.Text);
 
 				openFileName = fileName;
-				this.Text = openFileName.Substring(openFileName.LastIndexOf("\\") + 1) + " - " + AppTitle;
+				this.Text = openFileName.Substring(openFileName.LastIndexOf("\\") + 1) + " - " + appTitle;
 			}
 		}
 
@@ -476,7 +475,7 @@ namespace FEI.TuringMachineSimulator {
 			int i = 0;
 			for (int a = 0; a <= (int)Math.Floor((double)pFunctions.Height / 20); a++) {
 				i = a + (int)sbyFunctions.Value;
-				if (i > TuringMachine.TFunctionCount - 1) break;
+				if (i > TuringMachine.FunctionCount - 1) break;
 
 				rect = new Rectangle(0, a * 20, pFunctions.Width, 20);
 				//Odlíšenie párnych a nepárnych riadkov
@@ -485,8 +484,8 @@ namespace FEI.TuringMachineSimulator {
 				}
 
 				//Funkcia, ktorá sa použije v nasledujúcom kroku
-				if (TuringMachine.CurrentState == TuringMachine.TFunction(i).CurrentState) {
-					if (TuringMachine.CurrentSymbols.Equals(TuringMachine.TFunction(i).ReadSymbol)) {
+				if (TuringMachine.CurrentState == TuringMachine.Function(i).CurrentState) {
+					if (TuringMachine.CurrentSymbols.Equals(TuringMachine.Function(i).ReadSymbol)) {
 						g.FillRectangle(new SolidBrush(Color.FromArgb(100, Color.Green)), rect);
 					} else {
 						g.FillRectangle(new SolidBrush(Color.FromArgb(100, Color.Yellow)), rect);
@@ -494,14 +493,14 @@ namespace FEI.TuringMachineSimulator {
 				}
 
 				//Text funkcie - aktuálny stav
-				txt = TuringMachine.TFunction(i).CurrentState + ", " + TuringMachine.TFunction(i).ReadSymbol + " -> ";
+				txt = TuringMachine.Function(i).CurrentState + ", " + TuringMachine.Function(i).ReadSymbol + " -> ";
 				g.DrawString(txt, fntBold, Brushes.Black, (RectangleF)(rect));
 
 				//Text funkcie - koncový stav
-				txt = TuringMachine.TFunction(i).NewState + ", " + TuringMachine.TFunction(i).WriteSymbol + ", ";
-				if (TuringMachine.TFunction(i).Step == Transition.Steps.Left) {
+				txt = TuringMachine.Function(i).NewState + ", " + TuringMachine.Function(i).WriteSymbol + ", ";
+				if (TuringMachine.Function(i).Step == Transition.Steps.Left) {
 					txt += " " + resMan.GetString("Left");
-				} else if (TuringMachine.TFunction(i).Step == Transition.Steps.Right) {
+				} else if (TuringMachine.Function(i).Step == Transition.Steps.Right) {
 					txt += " " + resMan.GetString("Right");
 				} else {
 					txt += " Stoj";
@@ -513,7 +512,7 @@ namespace FEI.TuringMachineSimulator {
 				if (sc == 0) {
 					txt = "0 %";
 				} else {
-					txt = Math.Round((double)TuringMachine.TFunction(i).UseCount / sc * 100, 2).ToString() + " %";
+					txt = Math.Round((double)TuringMachine.Function(i).UseCount / sc * 100, 2).ToString() + " %";
 				}
 				rect2 = rect; rect2.Offset(-25, 0);
 				g.DrawString(txt, fntItalic, new SolidBrush(Color.FromArgb(120, Color.Black)), (RectangleF)(rect2), sfRight);
@@ -527,8 +526,7 @@ namespace FEI.TuringMachineSimulator {
 			if (this.InvokeRequired) {
 				this.EndInvoke(this.BeginInvoke(new MethodInvoker(delegate { Functions_SetScrollbar(); })));
 			} else {
-				int max;
-				max = TuringMachine.TFunctionCount; //-(int)Math.Floor((double)pFunctions.Height / 20);
+				var max = TuringMachine.FunctionCount; //-(int)Math.Floor((double)pFunctions.Height / 20);
 				if (max < 0)
 					max = 0;
 
@@ -580,7 +578,7 @@ namespace FEI.TuringMachineSimulator {
 		}
 
 		private void lblCurrentState_Click(object sender, System.EventArgs e) {
-			if (CodeChanged)
+			if (codeChanged)
 				ParseTFunctions(txtCode.Text);
 
 			ContextMenu menu = new ContextMenu();
@@ -783,13 +781,11 @@ namespace FEI.TuringMachineSimulator {
 			int i = 0, a = 0;
 			int c = 0;
 			int n = 0;
-			int tapeFrom, tapeTo;
-			tapeFrom = sbxLog.Value - 10;
-			tapeTo = tapeFrom + (pLog.Width - 150) / 33;
+			int tapeFrom = sbxLog.Value - 10;
+			int tapeTo = tapeFrom + (pLog.Width - 150) / 33;
 
-			int logFrom, logTo;
-			logFrom = sbyLog.Value;
-			logTo = logFrom + pLog.Height / lineHeight + 1;
+			int logFrom = sbyLog.Value;
+			int logTo = logFrom + pLog.Height / lineHeight + 1;
 			if (logTo > TuringMachine.Log.Count) logTo = TuringMachine.Log.Count;
 
 			g.SmoothingMode = SmoothingMode.AntiAlias;
@@ -1187,7 +1183,7 @@ namespace FEI.TuringMachineSimulator {
 
 		private void setTFormat(object sender, String format) {
 			var miTFormat = (ToolStripMenuItem) sender;
-			TransitionFormat = format;
+			transitionFormat = format;
 
 			FEI.TuringMachineSimulator.Properties.Settings.Default.TransitionFormat = miTFormatMenuItems.IndexOf(miTFormat);
 			FEI.TuringMachineSimulator.Properties.Settings.Default.Save();
@@ -1267,11 +1263,11 @@ namespace FEI.TuringMachineSimulator {
 				TuringMachine.OriginalTapes[infiniteTapeControl.EditedTape].HeadPosition =
 					infiniteTapeControl.HeadPositions[infiniteTapeControl.EditedTape];
 			} else if (cmbTape.SelectedIndex == 1) //Aktuálna páska
-			  {
+			{
 				TuringMachine.ActiveTapes[infiniteTapeControl.EditedTape].HeadPosition =
 					infiniteTapeControl.HeadPositions[infiniteTapeControl.EditedTape];
 			} else //Pásky ostatných vlákien
-			  {
+			{
 				TuringMachine.Thread(cmbTape.SelectedIndex - 2)
 					.HeadPositions = infiniteTapeControl.HeadPositions;
 			}
@@ -1305,7 +1301,7 @@ namespace FEI.TuringMachineSimulator {
 					//infiniteTapeControl.HeadPosition = TM.StartPosition;
 					infiniteTapeControl.AcceptStatus = AcceptanceStatus.None;
 				} else if (cmbTape.SelectedIndex == 1) //Aktívna páska            
-				  {
+				{
 					infiniteTapeControl.Tapes = TuringMachine.ActiveTapes;
 					//infiniteTapeControl.HeadPosition = TM.Position;
 					infiniteTapeControl.AcceptStatus = tapeAcceptance;
@@ -1317,7 +1313,7 @@ namespace FEI.TuringMachineSimulator {
 						cmbTape.Items[1] = "Výsledná páska";
 					selectIndexNotChanged = false;
 				} else //Pásky ostatných vlákien
-				  {
+				{
 					infiniteTapeControl.Tapes = TuringMachine.Thread(cmbTape.SelectedIndex - 2).Tapes;
 					//infiniteTapeControl.HeadPosition = TM.Thread(cmbTape.SelectedIndex - 2).Position;
 					infiniteTapeControl.AcceptStatus = tapeAcceptance;
@@ -1342,15 +1338,15 @@ namespace FEI.TuringMachineSimulator {
 			AddTransition(new Transition());
 		}
 
-		private void AddTransition(Transition def_tf) {
+		private void AddTransition(Transition defTf) {
 			AddTFunctionForm dlg = new AddTFunctionForm();
 			dlg.TM = this.TuringMachine;
-			dlg.tfunction = def_tf;
+			dlg.tFunction = defTf;
 			dlg.ShowDialog(this);
 			if (dlg.OKPressed) {
-				Transition tf = dlg.tfunction;
+				Transition tf = dlg.tFunction;
 				txtCode.Text += Environment.NewLine;
-				txtCode.Text += WriteTransition(tf, TransitionFormat);
+				txtCode.Text += WriteTransition(tf, transitionFormat);
 				if (tf.Comment.Trim() != "") txtCode.Text += " //" + tf.Comment;
 				txtCode.Text += Environment.NewLine;
 				ParseTFunctions(txtCode.Text);
@@ -1434,7 +1430,7 @@ namespace FEI.TuringMachineSimulator {
 					timMachine.Interval = (delay == 0) ? 1 : delay;
 					timMachine.Start();
 				} else //Real-Time
-				  {
+				{
 					sourceCodeText = txtCode.Text;
 					thRealTime = new System.Threading.Thread(RunRealTime);
 					thRealTime.Start();

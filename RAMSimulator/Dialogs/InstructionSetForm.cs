@@ -10,8 +10,8 @@ namespace FEI.RandomAccessMachine.Dialogs {
         private List<InstructionType> allowedInstructions = new List<InstructionType>();
         public List<InstructionType> AllowedInstructions
         {
-            get { return allowedInstructions; }
-            set { allowedInstructions = value; }
+            get => allowedInstructions;
+            set => allowedInstructions = value;
         }
 
         public InstructionSetForm()

@@ -10,10 +10,10 @@ namespace FEI.RandomAccessMachine {
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
-            CultureInfo culture_info = new CultureInfo("en");
-            Thread.CurrentThread.CurrentUICulture = culture_info;            
+            CultureInfo cultureInfo = new CultureInfo("en");
+            Thread.CurrentThread.CurrentUICulture = cultureInfo;            
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

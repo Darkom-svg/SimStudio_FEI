@@ -8,7 +8,7 @@ namespace FEI.RandomAccessMachine.Conversion {
         public IntermediateCode ic;
 
         public string formula;
-        public List<string> parts = new List<string>();
+        private List<string> parts = new List<string>();
 
         public ICVariable resVariable;
 
@@ -83,31 +83,31 @@ namespace FEI.RandomAccessMachine.Conversion {
         {
             SplitFormula();
 
-            int ParMax = 0;
-            int ParLevel = 0;
+            int parMax = 0;
+            int parLevel = 0;
 
             string res = "";
             string tmp = "", lbl = "", lbl2 = "";
 
             //Spočítanie zátvoriek
-            for (int a = 0; a < parts.Count; a++)
+            foreach (var part in parts)
             {
-                if (parts[a] == "(") ParLevel++;
-                if (parts[a] == ")") ParLevel--;
-                if (ParLevel > ParMax) ParMax = ParLevel;
+                if (part == "(") parLevel++;
+                if (part == ")") parLevel--;
+                if (parLevel > parMax) parMax = parLevel;
             }
 
             //Konverzia
-            for (int b = ParMax; b >= 0; b--)
+            for (int b = parMax; b >= 0; b--)
             {
                 //Najväčšia priorita
-                ParLevel = 0;
+                parLevel = 0;
                 for (int a = 0; a < parts.Count; a++)
                 {
-                    if (parts[a] == "(") ParLevel++;
-                    if (parts[a] == ")") ParLevel--;
+                    if (parts[a] == "(") parLevel++;
+                    if (parts[a] == ")") parLevel--;
 
-                    if (ParLevel == b && a > 0 && a < parts.Count - 1)
+                    if (parLevel == b && a > 0 && a < parts.Count - 1)
                     {
                         //Negácia NOT
                         if (parts[a] == "!" && parts[a - 1] != ")" && parts[a + 1] != "(")
@@ -127,13 +127,13 @@ namespace FEI.RandomAccessMachine.Conversion {
                 }
 
                 //Väčšia priorita                                
-                ParLevel = 0;
+                parLevel = 0;
                 for (int a = 0; a < parts.Count; a++)
                 {
-                    if (parts[a] == "(") ParLevel++;
-                    if (parts[a] == ")") ParLevel--;
+                    if (parts[a] == "(") parLevel++;
+                    if (parts[a] == ")") parLevel--;
 
-                    if (ParLevel == b && a > 0 && a < parts.Count - 1)
+                    if (parLevel == b && a > 0 && a < parts.Count - 1)
                     {
                         //Väčšie >
                         if (parts[a] == ">" && parts[a - 1] != ")" && parts[a + 1] != "(")
@@ -280,13 +280,13 @@ namespace FEI.RandomAccessMachine.Conversion {
                 }
 
                 //Menšia priorita
-                ParLevel = 0;
+                parLevel = 0;
                 for (int a = 0; a < parts.Count; a++)
                 {
-                    if (parts[a] == "(") ParLevel++;
-                    if (parts[a] == ")") ParLevel--;
+                    if (parts[a] == "(") parLevel++;
+                    if (parts[a] == ")") parLevel--;
 
-                    if (ParLevel == b && a > 0 && a < parts.Count - 1)
+                    if (parLevel == b && a > 0 && a < parts.Count - 1)
                     {
                         //Logické AND
                         if (parts[a] == "&&" && parts[a - 1] != ")" && parts[a + 1] != "(")
@@ -330,18 +330,18 @@ namespace FEI.RandomAccessMachine.Conversion {
                 }
 
                 //Zátvorky
-                ParLevel = 0;
+                parLevel = 0;
                 for (int a = 0; a < parts.Count; a++)
                 {
-                    if (parts[a] == "(") ParLevel++;
+                    if (parts[a] == "(") parLevel++;
 
-                    if (ParLevel == b)
+                    if (parLevel == b)
                     {
                         if (parts[a] == "(" || parts[a] == ")")
                         {
                             if (a >= 0 && a <= parts.Count - 1)
                             {
-                                if (parts[a] == ")") ParLevel--;
+                                if (parts[a] == ")") parLevel--;
                             }
 
                             parts.RemoveAt(a);
@@ -352,7 +352,7 @@ namespace FEI.RandomAccessMachine.Conversion {
                     {
                         if (a >= 0 && a <= parts.Count - 1)
                         {
-                            if (parts[a] == ")") ParLevel--;
+                            if (parts[a] == ")") parLevel--;
                         }
                     }
                 }

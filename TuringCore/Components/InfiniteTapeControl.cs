@@ -18,10 +18,10 @@ namespace FEI.TuringCore.Components {
 		private bool changesAllowed = true;
 
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-		private List<List<Rectangle>> Cells = new List<List<Rectangle>>();
-		private int FirstIndex;
-		private int HoverCell = int.MinValue;
-		private int HoverTape = -1;
+		private List<List<Rectangle>> cells = new List<List<Rectangle>>();
+		private int firstIndex;
+		private int hoverCell = int.MinValue;
+		private int hoverTape = -1;
 
 		private int editedCell = int.MinValue;
 		private int editedTape = -1;
@@ -36,13 +36,13 @@ namespace FEI.TuringCore.Components {
 			InitializeComponent();
 
 			tapes.Add(new InfiniteTape());
-			Cells.Add(new List<Rectangle>());
+			cells.Add(new List<Rectangle>());
 		}
 
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
 		public List<InfiniteTape> Tapes
 		{
-			get { return tapes; }
+			get => tapes;
 			set 
 			{ 
 				tapes = value;
@@ -53,20 +53,20 @@ namespace FEI.TuringCore.Components {
 		private bool allowBlanks = true;
 		public bool AllowBlanks
 		{
-			get { return allowBlanks; }
-			set { allowBlanks = value; }
+			get => allowBlanks;
+			set => allowBlanks = value;
 		}
 
 		private bool isInfinite = true;
 		public bool IsInfinite
 		{
-			get { return isInfinite; }
-			set { isInfinite = value; }
+			get => isInfinite;
+			set => isInfinite = value;
 		}
 
 		public bool ChangesAllowed
 		{
-			get { return changesAllowed; }
+			get => changesAllowed;
 			set
 			{
 				changesAllowed = value;
@@ -76,7 +76,7 @@ namespace FEI.TuringCore.Components {
 
 		public AcceptanceStatus AcceptStatus
 		{
-			get { return acceptStatus; }
+			get => acceptStatus;
 			set 
 			{ 
 				acceptStatus = value;
@@ -145,36 +145,36 @@ namespace FEI.TuringCore.Components {
 
 			g.DrawRectangle(Pens.Black, 0, 0, pTape.Width - 1, pTape.Height - 1);
 
-			if (EditedTape >= 0 && editedCell - FirstIndex >= 0 && editedCell - FirstIndex < Cells[EditedTape].Count)
+			if (EditedTape >= 0 && editedCell - firstIndex >= 0 && editedCell - firstIndex < cells[EditedTape].Count)
 			{
-				txtSymbol.Left = Cells[EditedTape][editedCell - FirstIndex].Left;
-				txtSymbol.Width = Cells[EditedTape][editedCell - FirstIndex].Width;
-				txtSymbol.Top = Cells[EditedTape][editedCell - FirstIndex].Top +
-					(Cells[EditedTape][editedCell - FirstIndex].Height - txtSymbol.Height) / 2;
+				txtSymbol.Left = cells[EditedTape][editedCell - firstIndex].Left;
+				txtSymbol.Width = cells[EditedTape][editedCell - firstIndex].Width;
+				txtSymbol.Top = cells[EditedTape][editedCell - firstIndex].Top +
+					(cells[EditedTape][editedCell - firstIndex].Height - txtSymbol.Height) / 2;
 			}
 			else
 				txtSymbol.Left = pTape.Width + 200;            
 		}
 
-		private void DrawTapes(Graphics g, Rectangle bounds, AcceptanceStatus acceptStatus)
+		private void DrawTapes(Graphics g, Rectangle bounds, AcceptanceStatus acceptStat)
 		{
 			List<Rectangle> newCells;
-			Cells.Clear();
+			cells.Clear();
 
 			int h = bounds.Height / tapes.Count;
 			for (int i = 0; i < tapes.Count; i++)
 			{
 				Rectangle tapeBounds = new Rectangle(bounds.X, bounds.Y + h * i, bounds.Width, h);
 				newCells = InfiniteTapeControl.DrawTape(g, tapeBounds, tapes[i], 
-					acceptStatus, sbxTape.Value, HoverCell, isInfinite, 
-					out FirstIndex);
+					acceptStat, sbxTape.Value, hoverCell, isInfinite, 
+					out firstIndex);
 
-				Cells.Add(newCells);
+				cells.Add(newCells);
 			}
 		}
 
 		public static List<Rectangle> DrawTape(Graphics g, Rectangle bounds, InfiniteTape tape,
-			AcceptanceStatus acceptStatus, int scrollX, int HoverCell, bool isInfinite,
+			AcceptanceStatus acceptStatus, int scrollX, int hoverCell, bool isInfinite,
 			out int firstIndex)
 		{
 			if (tape == null)
@@ -262,13 +262,13 @@ namespace FEI.TuringCore.Components {
 					g.DrawPath(new Pen(Color.FromArgb(90, Color.White), 3), arrow2);
 					g.FillPath(Brushes.Black, arrow2);
 
-					if (HoverCell == index)
+					if (hoverCell == index)
 					{
 						Functions.DrawRoundRectangle(g, new Pen(Color.FromArgb(80, Color.Black), 3),
 							headBounds, 5);
 					}
 				}
-				else if (HoverCell == index)
+				else if (hoverCell == index)
 				{
 					g.FillRectangle(new SolidBrush(Color.FromArgb(100, Color.Orange)), new Rectangle(x - 2, bounds.Top, 39, bounds.Height));
 				}
@@ -453,13 +453,13 @@ namespace FEI.TuringCore.Components {
 		{
 			for (int tapeIndex = 0; tapeIndex <= Tapes.Count - 1; tapeIndex++)
 			{
-				for (int cellIndex = 0; cellIndex <= Cells[tapeIndex].Count - 1; cellIndex++)
+				for (int cellIndex = 0; cellIndex <= cells[tapeIndex].Count - 1; cellIndex++)
 				{
 					{
-						if (((Rectangle)Cells[tapeIndex][cellIndex]).Contains(e.X, e.Y))
+						if (((Rectangle)cells[tapeIndex][cellIndex]).Contains(e.X, e.Y))
 						{
-							HoverCell = FirstIndex + cellIndex;
-							HoverTape = tapeIndex;
+							hoverCell = firstIndex + cellIndex;
+							hoverTape = tapeIndex;
 
 							pTape.Invalidate();
 							pTape.Update();
@@ -471,20 +471,20 @@ namespace FEI.TuringCore.Components {
 			}
 
 			pTape.Cursor = Cursors.VSplit;
-			HoverCell = int.MinValue;
+			hoverCell = int.MinValue;
 			pTape.Invalidate();
 			pTape.Update();
 		}
 
 		private void pTape_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
 		{
-			if (HoverCell != int.MinValue)
+			if (hoverCell != int.MinValue)
 			{
-				EditedTape = HoverTape;
+				EditedTape = hoverTape;
 
 				if (changesAllowed)
 				{
-					Tapes[HoverTape].HeadPosition = HoverCell;
+					Tapes[hoverTape].HeadPosition = hoverCell;
 					if (HeadPositionChanged != null) HeadPositionChanged(this, new EventArgs());
 
 					txtSymbol.Visible = false;
@@ -497,10 +497,10 @@ namespace FEI.TuringCore.Components {
 				if (e.Button == MouseButtons.Right || e.Clicks == 2)
 				{
 
-					editedCell = HoverCell;
-					editedTape = HoverTape;
-					txtSymbol.Text = Tapes[HoverTape][HoverCell];
-					txtSymbol.Bounds = Cells[HoverTape][HoverCell - FirstIndex];
+					editedCell = hoverCell;
+					editedTape = hoverTape;
+					txtSymbol.Text = Tapes[hoverTape][hoverCell];
+					txtSymbol.Bounds = cells[hoverTape][hoverCell - firstIndex];
 					txtSymbol.SelectionStart = 0;
 					txtSymbol.SelectionLength = txtSymbol.Text.Length + 1;
 					txtSymbol.Visible = true;
@@ -559,8 +559,8 @@ namespace FEI.TuringCore.Components {
 			editedCell--;
 			txtSymbol.Text = Tapes[editedTape][editedCell];
 
-			if (editedCell - FirstIndex >= 0 && editedCell - FirstIndex < Cells.Count)
-				txtSymbol.Bounds = Cells[editedTape][editedCell - FirstIndex];
+			if (editedCell - firstIndex >= 0 && editedCell - firstIndex < cells.Count)
+				txtSymbol.Bounds = cells[editedTape][editedCell - firstIndex];
 			txtSymbol.SelectionStart = 0;
 			txtSymbol.SelectionLength = txtSymbol.Text.Length + 1;
 			txtSymbol.Visible = true;
@@ -574,8 +574,8 @@ namespace FEI.TuringCore.Components {
 			editedCell++;
 			txtSymbol.Text = Tapes[editedTape][editedCell];
 
-			if (editedCell - FirstIndex >= 0 && editedCell - FirstIndex < Cells.Count)
-				txtSymbol.Bounds = Cells[editedTape][editedCell - FirstIndex];
+			if (editedCell - firstIndex >= 0 && editedCell - firstIndex < cells.Count)
+				txtSymbol.Bounds = cells[editedTape][editedCell - firstIndex];
 			txtSymbol.SelectionStart = 0;
 			txtSymbol.SelectionLength = txtSymbol.Text.Length + 1;
 			txtSymbol.Visible = true;
@@ -595,10 +595,10 @@ namespace FEI.TuringCore.Components {
 			int firstCell = int.MaxValue;
 			int lastCell = int.MinValue;
 
-			for (int i = 0; i < tapes.Count; i++)
+			foreach (var tape in tapes)
 			{
-				int first = tapes[i].GetFirstNonBlankCell();
-				int last = tapes[i].GetLastNonBlankCell();
+				int first = tape.GetFirstNonBlankCell();
+				int last = tape.GetLastNonBlankCell();
 				if (first < firstCell) firstCell = first;
 				if (last > lastCell) lastCell = last;
 			}
@@ -659,14 +659,14 @@ namespace FEI.TuringCore.Components {
 
 		public int EditedTape
 		{
-			get { return editedTape; }
-			set { editedTape = value; }
+			get => editedTape;
+			set => editedTape = value;
 		}
 
 		public int EditedCell
 		{
-			get { return editedCell; }
-			set { editedCell = value; }
+			get => editedCell;
+			set => editedCell = value;
 		}
 	}
 }

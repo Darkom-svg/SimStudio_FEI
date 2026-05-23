@@ -25,7 +25,7 @@ namespace FEI.TrainingSimulator
         private MainTrainingForm.TaskDef task;
         private string appTitle;
         private VirtualTuringMachine turingMachine = new VirtualTuringMachine() { AcceptType = AcceptType.FinalStateReachedAndWholeTapeRead };
-        private bool codeChanged = false;        
+        private bool codeChanged;        
         //Formát prechodovej funkcie
         private string transitionFormat;
         //Formát 
@@ -86,12 +86,12 @@ namespace FEI.TrainingSimulator
         private void AddTransition(Transition defTf)
         {             
             AddTFunctionForm dlg = new AddTFunctionForm();
-            dlg.TM = this.TuringMachine;
-            dlg.tfunction = defTf;
+            dlg.tm = this.TuringMachine;
+            dlg.tFunction = defTf;
             dlg.ShowDialog(this);
-            if (dlg.OKPressed)
+            if (dlg.okPressed)
             {
-                Transition tf = dlg.tfunction;
+                Transition tf = dlg.tFunction;
                 txtCode.Text += Environment.NewLine;
                 txtCode.Text += WriteTransition(tf, transitionFormat);
                 if (tf.Comment.Trim() != "") txtCode.Text += " //" + tf.Comment;
@@ -100,7 +100,7 @@ namespace FEI.TrainingSimulator
             }
         }
 
-        private string WriteTransition(Transition tf, string transitionFormat)
+        private string WriteTransition(Transition tf, string tFormat)
         {
             string res="";
             int pos=0;
@@ -122,13 +122,13 @@ namespace FEI.TrainingSimulator
                     break;
             }
 
-            transitionFormat=transitionFormat.Replace("\\s", " ");
+            tFormat=tFormat.Replace("\\s", " ");
             
             while(true) {
-                i = transitionFormat.IndexOf("\\a", l);
+                i = tFormat.IndexOf("\\a", l);
                 if (i == -1)
                 {
-                    res += transitionFormat.Substring(l);
+                    res += tFormat.Substring(l);
                     break;
                 }
 
@@ -138,7 +138,7 @@ namespace FEI.TrainingSimulator
                 else if (n == 3) arg = tf.WriteSymbol;
                 else if (n == 4) arg = step;
 
-                res += transitionFormat.Substring(l, i - l) + arg;
+                res += tFormat.Substring(l, i - l) + arg;
 
                 l = i + 2;
                 n++;
@@ -182,7 +182,7 @@ namespace FEI.TrainingSimulator
             }
             else
             {
-                var max = TuringMachine.TFunctionCount; //-(int)Math.Floor((double)pFunctions.Height / 20);
+                var max = TuringMachine.FunctionCount; //-(int)Math.Floor((double)pFunctions.Height / 20);
                 if (max < 0)
                     max = 0;
 
@@ -473,7 +473,7 @@ namespace FEI.TrainingSimulator
             frm.initialState = TuringMachine.StartState;
             frm.finalStates = new List<string>(TuringMachine.FinalStates);
             frm.ShowDialog(this);
-            if (frm.OKPressed)
+            if (frm.okPressed)
             {
                 TuringMachine.StartState = frm.initialState;
                 TuringMachine.FinalStates = frm.finalStates;
@@ -821,9 +821,9 @@ namespace FEI.TrainingSimulator
             var seen = new HashSet<string>();
             var allowedSymbols = new HashSet<char>(alphabet);
 
-            for (int i = 0; i < TuringMachine.TFunctionCount; i++)
+            for (int i = 0; i < TuringMachine.FunctionCount; i++)
             {
-                var tf = TuringMachine.TFunction(i);
+                var tf = TuringMachine.Function(i);
 
                 if (string.IsNullOrEmpty(tf.ReadSymbol) || tf.ReadSymbol.Length != 1)
                     return $"Automat používa neplatný symbol '{tf.ReadSymbol}'.";
@@ -1043,9 +1043,9 @@ namespace FEI.TrainingSimulator
         {
             var alphabet = new HashSet<char>();
 
-            for (int i = 0; i < fa.TFunctionCount; i++)
+            for (int i = 0; i < fa.FunctionCount; i++)
             {
-                var tf = fa.TFunction(i);
+                var tf = fa.Function(i);
 
                 if (!string.IsNullOrEmpty(tf.ReadSymbol) && tf.ReadSymbol.Length == 1)
                     alphabet.Add(tf.ReadSymbol[0]);
@@ -1088,9 +1088,9 @@ namespace FEI.TrainingSimulator
                 string symbol = ch.ToString();
                 string nextState = null;
 
-                for (int i = 0; i < fa.TFunctionCount; i++)
+                for (int i = 0; i < fa.FunctionCount; i++)
                 {
-                    var tf = fa.TFunction(i);
+                    var tf = fa.Function(i);
 
                     if (tf.CurrentState == currentState && tf.ReadSymbol == symbol)
                     {

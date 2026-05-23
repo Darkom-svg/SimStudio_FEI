@@ -14,7 +14,7 @@
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AbacusMachineSimulator_002FDialogs_002FCopyForm/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AbacusMachineSimulator_002FDialogs_002FMoveForm/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AbacusMachineSimulator_002FDialogs_002FSubstractValueForm/@EntryIndexedValue">False</s:Boolean>
-	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AbacusMachineSimulator_002FProperties_002FResources/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=AbacusMachineSimulator_002FProperties_002FResources/@EntryIndexedValue">True</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Components_002FControls_002FInputOutputTape/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Components_002FControls_002FRegisterList_002FRegisterEditForm/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=Components_002FControls_002FRegisterList_002FRegisterList/@EntryIndexedValue">False</s:Boolean>
@@ -44,6 +44,7 @@
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=RandomAccessMachineSimulator_002FDialogs_002FComplexityForm/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=RandomAccessMachineSimulator_002FDialogs_002FInstructionSetForm/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=RandomAccessMachineSimulator_002FDialogs_002FRAMTypeSelectionForm/@EntryIndexedValue">False</s:Boolean>
+	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=RandomAccessMachineSimulator_002FDialogs_002FRAMTypeSelectionForm/@EntryIndexRemoved">True</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=RandomAccessMachineSimulator_002FProperties_002FResources/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=RandomAccessMachineSimulator_002FRAMSimulatorForm/@EntryIndexedValue">False</s:Boolean>
 	<s:Boolean x:Key="/Default/ResxEditorPersonal/CheckedGroups/=RandomAccessMachineSimulator_002FScreenForm/@EntryIndexedValue">False</s:Boolean>

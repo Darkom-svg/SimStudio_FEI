@@ -9,31 +9,31 @@ namespace FEI.TuringCore.Simulation {
         private string transitionFormat = "\\sδ\\s(\\a,\\a)\\s=\\s(\\a,\\a,\\a)\\s";
         public string TransitionFormat
         {
-            get { return transitionFormat; }
-            set { transitionFormat = value; }
+            get => transitionFormat;
+            set => transitionFormat = value;
         }
 
         //Formát 
         private string wildCardFormat = "\\a=\\s{\\m,\\n}\\s";
         public string WildCardFormat
         {
-            get { return wildCardFormat; }
-            set { wildCardFormat = value; }
+            get => wildCardFormat;
+            set => wildCardFormat = value;
         }
 
         private VirtualTuringMachine turingMachine;
         public VirtualTuringMachine TuringMachine
         {
-            get { return turingMachine; }
-            set { turingMachine = value; }
+            get => turingMachine;
+            set => turingMachine = value;
         }
 
         //Chyby
         private List<TMError> errors = new List<TMError>();
         public List<TMError> Errors
         {
-            get { return errors; }
-            set { errors = value; }
+            get => errors;
+            set => errors = value;
         }
         #endregion
 

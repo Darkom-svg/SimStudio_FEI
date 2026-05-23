@@ -7,8 +7,7 @@ namespace FEI.RandomAccessMachine.Conversion {
         {
             ICBlock bl = new ICBlock(blockname);
 
-            string[] parts;
-            parts = GetCodeParts(block);
+            var parts = GetCodeParts(block);
 
             for (int i = 0; i < parts.Length; i++)
             {
@@ -21,12 +20,11 @@ namespace FEI.RandomAccessMachine.Conversion {
 
                 if (parts[i].StartsWith("int ")) //Vloženie premennej
                 {
-                    string[] names;
-                    names = parts[i].Substring(4).Split(',');
+                    var names = parts[i].Substring(4).Split(',');
 
-                    for (int v = 0; v < names.Length; v++)
+                    foreach (var name in names)
                     {
-                        ic.vars.Add(new ICVariable(names[v].Trim(), ic.GetVarIndex()));
+                        ic.vars.Add(new ICVariable(name.Trim(), ic.GetVarIndex()));
                     }
                 }
                 else if (parts[i].StartsWith("if") && !char.IsLetterOrDigit(parts[i][2])) //Podmienka
@@ -88,10 +86,8 @@ namespace FEI.RandomAccessMachine.Conversion {
                 }
                 else if (parts[i].IndexOf('=') != -1 && parts[i].IndexOf("==") == -1) //Priradenie
                 {
-                    string[] aparts;
-                    string value;
-                    aparts = parts[i].Split('=');  //rozdelí na časti podľa rovná sa
-                    value = aparts[aparts.Length - 1];  //posledná z častí je hodnota, napr. pri a=b=2, je to 2
+                    var aparts = parts[i].Split('='); //rozdelí na časti podľa rovná sa
+                    var value = aparts[aparts.Length - 1]; //posledná z častí je hodnota, napr. pri a=b=2, je to 2
                     for (int a = 0; a < aparts.Length - 1; a++)
                     {
                         bl.program.Add(new ICCommand(ICCommandTypes.Assignment, aparts[a], value));

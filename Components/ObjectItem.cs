@@ -4,15 +4,15 @@
         private string name;
         public string Name
         {
-            get { return name; }
-            set { name = value; }
+            get => name;
+            set => name = value;
         }
 
         private object value;
         public object Value
         {
-            get { return this.value; }
-            set { this.value = value; }
+            get => this.value;
+            set => this.value = value;
         }
 
         public ObjectItem(string name, object value)

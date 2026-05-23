@@ -14,30 +14,30 @@ namespace FEI.TuringCore.Diagramming {
         private string name;
         public string Name
         {
-            get { return name; }
-            set { name = value; }
+            get => name;
+            set => name = value;
         }
 
         private string description;
         public string Description
         {
-            get { return description; }
-            set { description = value; }
+            get => description;
+            set => description = value;
         }
 
         private StateType type = StateType.Normal;
         public StateType Type
         {
-            get { return type; }
-            set { type = value; }
+            get => type;
+            set => type = value;
         }
 
         //Stavy, do ktorých sa dá dostať z tohto stavu
         private List<Transition> to = new List<Transition>();
         public List<Transition> To
         {
-            get { return to; }
-            set { to = value; }
+            get => to;
+            set => to = value;
         }
 
 #region Constructors
@@ -71,7 +71,7 @@ namespace FEI.TuringCore.Diagramming {
 
         public Point Position
         {
-            get { return position; }
+            get => position;
             set
             {
                 if (value.X < 0) value.X = 0;
@@ -81,15 +81,16 @@ namespace FEI.TuringCore.Diagramming {
         }
 
         //Vráť prechod do stavu
-        public Transition GetTransitionTo(State state)
+        private Transition GetTransitionTo(State state)
         {
-            for (int i = 0; i < to.Count; i++)
+            foreach (var t in to)
             {
-                if (to[i].State.name == state.name)
+                if (t.State.name == state.name)
                 {
-                    return to[i];
+                    return t;
                 }
             }
+
             return null;
         }
 
@@ -131,13 +132,12 @@ namespace FEI.TuringCore.Diagramming {
             Pen penToActive = new Pen(Color.FromArgb(150, Color.DodgerBlue), 5) { LineJoin = LineJoin.Round };
 
             //Vykreslenie prechodov                
-            int xc, yc;
             int x, y;
             float x_middle = 0, y_middle = 0;
             int x1, y1, x_offset, y_offset;
             double angle, d;
-            xc = this.position.X - offset.X;
-            yc = this.position.Y - offset.Y;
+            var xc = this.position.X - offset.X;
+            var yc = this.position.Y - offset.Y;
 
             if (this.type == StateType.Start || this.type == StateType.StartFinal)
             {
@@ -178,8 +178,7 @@ namespace FEI.TuringCore.Diagramming {
                     y_offset = (int)(Math.Cos(angle + Math.PI / 6) * 25);
                     x = xc + x_offset; y = yc + y_offset;
 
-                    int my;
-                    my = y1 - 80;                    
+                    var my = y1 - 80;                    
                     linePath.AddBezier (new Point(x, y),
                         new Point(x - 50, my), new Point(x1 + 50, my), new Point(x1, y1));
 
@@ -275,17 +274,15 @@ namespace FEI.TuringCore.Diagramming {
 
         private void AddArrow(GraphicsPath gp, int x1, int y1, double angle)
         {
-            int x_offset, y_offset;
-            double a1, a2;
             //Šípka
-            a1 = Math.PI / 2 * 3 - (angle + Math.PI / 11);
-            a2 = Math.PI / 2 * 3 - (angle - Math.PI / 11);            
-            y_offset = (int)(Math.Sin(a1) * 10);
-            x_offset = (int)(Math.Cos(a1) * 10);
-            gp.AddLine(x1, y1, x1 + x_offset, y1 + y_offset);
-            y_offset = (int)(Math.Sin(a2) * 10);
-            x_offset = (int)(Math.Cos(a2) * 10);
-            gp.AddLine(x1, y1, x1 + x_offset, y1 + y_offset);
+            var a1 = Math.PI / 2 * 3 - (angle + Math.PI / 11);
+            var a2 = Math.PI / 2 * 3 - (angle - Math.PI / 11);            
+            var yOffset = (int)(Math.Sin(a1) * 10);
+            var xOffset = (int)(Math.Cos(a1) * 10);
+            gp.AddLine(x1, y1, x1 + xOffset, y1 + yOffset);
+            yOffset = (int)(Math.Sin(a2) * 10);
+            xOffset = (int)(Math.Cos(a2) * 10);
+            gp.AddLine(x1, y1, x1 + xOffset, y1 + yOffset);
         }
 
 

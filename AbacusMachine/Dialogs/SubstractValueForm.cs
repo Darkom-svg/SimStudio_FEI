@@ -5,9 +5,9 @@ using FEI.SimStudio.Components.Registers;
 namespace FEI.AbacusMachine.Dialogs {
 	public partial class SubstractValueForm : Form
     {
-        public bool OKPressed = false;
-        public int regIndex = 0;
-        public int value = 0;
+        public bool okPressed;
+        public int regIndex;
+        public int value;
 
         public SubstractValueForm()
         {
@@ -16,14 +16,14 @@ namespace FEI.AbacusMachine.Dialogs {
 
         public int RegIndex
         {
-            get { return regIndex; }
-            set { regIndex = value; }
+            get => regIndex;
+            set => regIndex = value;
         }
 
         public int Value
         {
-            get { return value; }
-            set { this.value = value; }
+            get => value;
+            set => this.value = value;
         }
 
         private void frmSubstractValue_Load(object sender, EventArgs e)
@@ -38,7 +38,7 @@ namespace FEI.AbacusMachine.Dialogs {
 
         private void bOK_Click(object sender, EventArgs e)
         {
-            OKPressed = true;
+            okPressed = true;
 
             RegIndex = Functions.ToValue(txtRegIndex.Text);
             Value = Functions.ToValue(txtValue.Text);

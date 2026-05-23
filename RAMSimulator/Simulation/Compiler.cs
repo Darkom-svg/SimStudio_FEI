@@ -10,8 +10,8 @@ namespace FEI.RandomAccessMachine.Simulation {
         private List<InstructionType> allowedInstructions = new List<InstructionType>();
         public List<InstructionType> AllowedInstructions
         {
-            get { return allowedInstructions; }
-            set { allowedInstructions = value; }
+            get => allowedInstructions;
+            set => allowedInstructions = value;
         }
 
         public Compiler(List<InstructionType> allowedInstructions)
@@ -20,14 +20,14 @@ namespace FEI.RandomAccessMachine.Simulation {
         }
 
         //Kompilátor zdrojových kódov RAM simulátora
-        public Simulator Compile(string Code,Form ownerForm)
+        public Simulator Compile(string code,Form ownerForm)
         {
             Simulator newSim = new Simulator(ownerForm);
-            return CompileIn(newSim, Code);
+            return CompileIn(newSim, code);
         }
 
         //Kompilátor zdrojových kódov RAM simulátora
-        public Simulator CompileIn(Simulator simulator, string Code)
+        public Simulator CompileIn(Simulator simulator, string code)
         {
             int lineIndex = 0;
             try
@@ -39,14 +39,14 @@ namespace FEI.RandomAccessMachine.Simulation {
                 newSim.regs.Clear();
                 newSim.Labels.Clear();
 
-                string[] Lines = Code.Split('\n');
+                string[] lines = code.Split('\n');
                 int i;
                 string[] parts;
                 //List<Simulator.sRAMAtom> prg = new List<Simulator.sRAMAtom>();
                 string lastLabel = "";
 
                 //Meno nejakého registra bolo zmenené
-                bool RegNameChanged = false;
+                bool regNameChanged = false;
 
                 InstructionType previousInstruction = InstructionType.Nop;
 
@@ -57,24 +57,23 @@ namespace FEI.RandomAccessMachine.Simulation {
 
                 newSim.Labels.Clear();
 
-                for (lineIndex = 0; lineIndex <= Lines.GetUpperBound(0); lineIndex++)
+                for (lineIndex = 0; lineIndex <= lines.GetUpperBound(0); lineIndex++)
                 {
-                    Lines[lineIndex] = Functions.TrimEnters(Lines[lineIndex]);
+                    lines[lineIndex] = Functions.TrimEnters(lines[lineIndex]);
 
-                    i = Lines[lineIndex].IndexOf("//");
+                    i = lines[lineIndex].IndexOf("//");
                     if (i != -1)
                     {
 
                         //Pomenovanie registru
-                        int i2;
-                        i2 = Lines[lineIndex].IndexOf("//#");
+                        var i2 = lines[lineIndex].IndexOf("//#");
                         if (i2 != -1)
                         {
                             int i3 = 0;
-                            i3 = Lines[lineIndex].IndexOf("//#screen");
+                            i3 = lines[lineIndex].IndexOf("//#screen");
                             if (i3 != -1) //Obrazovka
                             {
-                                tmp = Functions.TrimEnters(Lines[lineIndex].Substring(i3 + 9));
+                                tmp = Functions.TrimEnters(lines[lineIndex].Substring(i3 + 9));
                                 tmpF = tmp.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
                                 if (tmpF.Length > 0)
                                 {
@@ -93,7 +92,7 @@ namespace FEI.RandomAccessMachine.Simulation {
                             }
                             else //Označenie registra/registrov
                             {
-                                tmp = Functions.TrimEnters(Lines[lineIndex].Substring(i2 + 3));
+                                tmp = Functions.TrimEnters(lines[lineIndex].Substring(i2 + 3));
                                 tmpF = tmp.Split(new char[] { '-', ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
                                 if (tmpF.Length == 2)
@@ -104,15 +103,15 @@ namespace FEI.RandomAccessMachine.Simulation {
                                         if (newSim.regs[ri].Name != tmpF[1].Trim())
                                         {
                                             newSim.regs[ri] = new RegisterCell(newSim.regs[ri].Value, tmpF[1].Trim());
-                                            RegNameChanged = true;
+                                            regNameChanged = true;
                                         }
                                     }
                                 }
                                 if (tmpF.Length >= 3) //Rozsah registrov
                                 {
-                                    int from, to;
-                                    from = Functions.ToValue(tmpF[0]);
-                                    to = Functions.ToValue(tmpF[1]);
+                                    int from = Functions.ToValue(tmpF[0]);
+                                    int to = Functions.ToValue(tmpF[1]);
+                                    
                                     if (to < from) to = from;
                                     if (to > 1000000) to = 1000000;
 
@@ -121,33 +120,33 @@ namespace FEI.RandomAccessMachine.Simulation {
                                         if (newSim.regs[r].Name != tmpF[2].Trim())
                                         {
                                             newSim.regs[r] = new RegisterCell(newSim.regs[r].Value, tmpF[2].Trim() + (r - from + 1).ToString());
-                                            RegNameChanged = true;
+                                            regNameChanged = true;
                                         }
                                     }
                                 }
                             }
 
-                            Lines[lineIndex] = Lines[lineIndex].Substring(0, i2);
+                            lines[lineIndex] = lines[lineIndex].Substring(0, i2);
                         }
                         else
                         {
                             //Typ rozšírenia simulátora
-                            if (Lines[lineIndex].Trim().StartsWith("//$"))
+                            if (lines[lineIndex].Trim().StartsWith("//$"))
                             {
                                 //Konzola
-                                if (Lines[lineIndex].Trim().ToLower().StartsWith("//$console"))
+                                if (lines[lineIndex].Trim().ToLower().StartsWith("//$console"))
                                 {
                                     newSim.RamConsole = true;
                                 }
                             }
 
-                            Lines[lineIndex] = Lines[lineIndex].Substring(0, i);
+                            lines[lineIndex] = lines[lineIndex].Substring(0, i);
                         }
                     }
 
-                    if (Lines[lineIndex] != "")
+                    if (lines[lineIndex] != "")
                     {  //Riadok nie je prázdny
-                        parts = ParseLine(Lines[lineIndex]); //Rozparsuje riadok
+                        parts = ParseLine(lines[lineIndex]); //Rozparsuje riadok
                         if (parts[0] != "")
                             lastLabel = parts[0];
 
@@ -157,19 +156,19 @@ namespace FEI.RandomAccessMachine.Simulation {
                         {
                             blockStack.Push(newSim.labeledProgram.Count - 1);
                             newSim.labeledProgram.Add(new LabeledRAMInstruction(
-                                InstructionType.IfBlockBegin, InfiniteInteger.zero, OperationType.Constant, "", " "));
+                                InstructionType.IfBlockBegin, InfiniteInteger.Zero, OperationType.Constant, "", " "));
                         }
                         else if (instruction == InstructionType.BlockBegin && previousInstruction == InstructionType.Do)
                         {
                             blockStack.Push(newSim.labeledProgram.Count - 1);
                             newSim.labeledProgram.Add(new LabeledRAMInstruction(
-                                InstructionType.DoWhileBlockBegin, InfiniteInteger.zero, OperationType.Constant, "", " "));
+                                InstructionType.DoWhileBlockBegin, InfiniteInteger.Zero, OperationType.Constant, "", " "));
                         }
                         else if (instruction == InstructionType.BlockBegin && previousInstruction == InstructionType.While)
                         {
                             blockStack.Push(newSim.labeledProgram.Count - 1);
                             newSim.labeledProgram.Add(new LabeledRAMInstruction(
-                                InstructionType.WhileBlockBegin, InfiniteInteger.zero, OperationType.Constant, "", " "));
+                                InstructionType.WhileBlockBegin, InfiniteInteger.Zero, OperationType.Constant, "", " "));
                         }
                         else if (instruction == InstructionType.BlockEnd && blockStack.Count > 0)
                         {
@@ -205,11 +204,11 @@ namespace FEI.RandomAccessMachine.Simulation {
                             {
                                 if (instruction == InstructionType.Print)
                                     newSim.labeledProgram.Add(new LabeledRAMInstruction(
-                                        instruction, InfiniteInteger.zero, GetOT(parts[2]), lastLabel,
+                                        instruction, InfiniteInteger.Zero, GetOT(parts[2]), lastLabel,
                                             parts[3]));
                                 else
                                     newSim.labeledProgram.Add(new LabeledRAMInstruction(
-                                        instruction, InfiniteInteger.zero, GetOT(parts[2]), lastLabel,
+                                        instruction, InfiniteInteger.Zero, GetOT(parts[2]), lastLabel,
                                             Utils.StringUtils.RemoveSpaces(parts[3].ToLower())));
                             }
                             else
@@ -256,83 +255,81 @@ namespace FEI.RandomAccessMachine.Simulation {
         }
 
         //Parser riadku zdrojového kódu RAM simulátora
-        private string[] ParseLine(string Line)
+        private string[] ParseLine(string line)
         {
-            string[] Parts = new string[4];
-            int i;
-
-            //Label
-            i = Line.IndexOf(":");
+            string[] parts = new string[4];
+            int i = line.IndexOf(":");
+            
             if (i != -1)
             {
-                Parts[0] = Functions.TrimEnters(Line.Substring(0, i).ToLower());
-                Line = Functions.TrimEnters(Line.Substring(i + 1));
+                parts[0] = Functions.TrimEnters(line.Substring(0, i).ToLower());
+                line = Functions.TrimEnters(line.Substring(i + 1));
             }
             else
             {
-                Parts[0] = "";
+                parts[0] = "";
             }
 
             //Príkaz
-            if (Line.Trim() != "")
+            if (line.Trim() != "")
             {
                 string c = "";
-                i = GetIndexOfSep(Line, 0, ref c);
+                i = GetIndexOfSep(line, 0, ref c);
                 if (i != -1)
                 {
-                    Parts[1] = Functions.TrimEnters(Line.Substring(0, i));
-                    Parts[2] = c.ToString();
-                    if (i + 1 < Line.Length)
-                        Parts[3] = Functions.TrimEnters(Line.Substring(i + c.ToString().Length));
+                    parts[1] = Functions.TrimEnters(line.Substring(0, i));
+                    parts[2] = c.ToString();
+                    if (i + 1 < line.Length)
+                        parts[3] = Functions.TrimEnters(line.Substring(i + c.ToString().Length));
                     else
-                        Parts[3] = "";
+                        parts[3] = "";
                 }
             }
 
-            return Parts;
+            return parts;
         }
 
         //Vráti pozíciu ďalšej oddelenej hodnoty
-        private int GetIndexOfSep(string Text)
+        private int GetIndexOfSep(string text)
         {
             string c = "";
-            return GetIndexOfSep(Text, 0, ref c);
+            return GetIndexOfSep(text, 0, ref c);
         }
 
         //Vráti pozíciu ďalšej oddelenej hodnoty
-        private int GetIndexOfSep(string Text, int Start)
+        private int GetIndexOfSep(string text, int start)
         {
             string c = "";
-            return GetIndexOfSep(Text, Start, ref c);
+            return GetIndexOfSep(text, start, ref c);
         }
 
         //Vráti pozíciu ďalšej oddelenej hodnoty
-        private int GetIndexOfSep(string Text, int Start, ref string Sign)
+        private int GetIndexOfSep(string text, int start, ref string sign)
         {
             bool isSpace = false;
-            for (int a = Start; a <= Text.Length - 1; a++)
+            for (int a = start; a <= text.Length - 1; a++)
             {
-                if (Text[a] == '=' || Text[a] == '*' )
+                if (text[a] == '=' || text[a] == '*' )
                 {
-                    Sign = Text[a].ToString();
+                    sign = text[a].ToString();
                     return a;
                 }
-                else if (Text[a] == ' ' || Text[a] == '\t')
+                else if (text[a] == ' ' || text[a] == '\t')
                 {
                     isSpace = true;
                 }
-                else if (isSpace && (Text[a] != ' ' && Text[a] != '\t'))
+                else if (isSpace && (text[a] != ' ' && text[a] != '\t'))
                 {
-                    Sign = " ";
+                    sign = " ";
                     return a - 1;
                 }
-                else if (Text[a] == '(')
+                else if (text[a] == '(')
                 {
-                    Sign = "";
+                    sign = "";
                     return a;
                 }
             }
-            return Text.Length;
+            return text.Length;
         }
 
         private InstructionType GetCommand(string name)
@@ -434,9 +431,9 @@ namespace FEI.RandomAccessMachine.Simulation {
             return InstructionType.Nop;
         }
 
-        public static string GetCommand(InstructionType Name)
+        public static string GetCommand(InstructionType name)
         {
-            switch (Name)
+            switch (name)
             {
                 case InstructionType.Do:
                     return "do";
@@ -493,11 +490,11 @@ namespace FEI.RandomAccessMachine.Simulation {
             return "";
         }
 
-        private OperationType GetOT(string Name)
+        private OperationType GetOT(string name)
         {
-            if (Name == null)
+            if (name == null)
                 return OperationType.Address;
-            switch (Name.ToLower().Trim())
+            switch (name.ToLower().Trim())
             {
                 case "=":
                     return OperationType.Constant;
@@ -510,9 +507,9 @@ namespace FEI.RandomAccessMachine.Simulation {
             }
         }
 
-        public static string GetOT(OperationType Name)
+        public static string GetOT(OperationType name)
         {
-            switch (Name)
+            switch (name)
             {
                 case OperationType.Constant:
                     return "=";

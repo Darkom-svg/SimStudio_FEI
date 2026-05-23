@@ -14,69 +14,69 @@
         private string currentState;
         public string CurrentState
         {
-            get { return currentState; }
-            set { currentState = value; }
+            get => currentState;
+            set => currentState = value;
         }
 
         //Prečítaný znak
         private string readSymbol = InfiniteTape.Blank;
         public string ReadSymbol
         {
-            get { return readSymbol; }
-            set { readSymbol = value; }
+            get => readSymbol;
+            set => readSymbol = value;
         }
 
         //Nový stav
         private string newState;
         public string NewState
         {
-            get { return newState; }
-            set { newState = value; }
+            get => newState;
+            set => newState = value;
         }
         //Znak, ktorý sa zapíše po prechode funkcie
         private string writeSymbol = InfiniteTape.Blank;
         public string WriteSymbol
         {
-            get { return writeSymbol; }
-            set { writeSymbol = value; }
+            get => writeSymbol;
+            set => writeSymbol = value;
         }
 
         //Krok - vľavo alebo vpravo
         private Steps step;
         public Steps Step
         {
-            get { return step; }
-            set { step = value; }
+            get => step;
+            set => step = value;
         }
 
         //Počet použití funkcie
         private int useCount;
         public int UseCount
         {
-            get { return useCount; }
-            set { useCount = value; }
+            get => useCount;
+            set => useCount = value;
         }
 
         //Komentár
         private string comment;
         public string Comment
         {
-            get { return comment; }
-            set { comment = value; }
+            get => comment;
+            set => comment = value;
         }
 
         private string stackRead;
         public string StackRead
         {
-            get { return stackRead; }
-            set { stackRead = value; }
+            get => stackRead;
+            set => stackRead = value;
         }
 
         private string stackWrite;
         public string StackWrite
         {
-            get { return stackWrite; }
-            set { stackWrite = value; }
+            get => stackWrite;
+            set => stackWrite = value;
         }
         #endregion
 
@@ -96,13 +96,13 @@
             this.comment = "";
         }
 
-        public Transition(string currentState, string readSymbol, string newState, string writeSymbol, string stackRead, string stackWrite, Steps Step)
+        public Transition(string currentState, string readSymbol, string newState, string writeSymbol, string stackRead, string stackWrite, Steps step)
         {
             this.currentState = currentState;
             this.readSymbol = readSymbol;
             this.newState = newState;
             this.writeSymbol = writeSymbol;
-            this.step = Step;
+            this.step = step;
             this.useCount = 0;
             this.comment = "";
             this.stackRead = stackRead;

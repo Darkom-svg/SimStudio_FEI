@@ -7,15 +7,15 @@ namespace FEI.TuringMachineSimulator.IO.Jff {
         private string fileName;
         public string FileName
         {
-            get { return fileName; }
-            set { fileName = value; }
+            get => fileName;
+            set => fileName = value;
         }
 
         private VirtualTuringMachine machine;
         public VirtualTuringMachine Machine
         {
-            get { return machine; }
-            set { machine = value; }
+            get => machine;
+            set => machine = value;
         }
 
         public JffWriter(VirtualTuringMachine machine, string fileName)
@@ -63,15 +63,15 @@ namespace FEI.TuringMachineSimulator.IO.Jff {
 
             //Prechody                
             xw.WriteComment("The list of transitions.");            
-            for (int i = 0; i < machine.TFunctionCount; i++)
+            for (int i = 0; i < machine.FunctionCount; i++)
             {
                 xw.WriteStartElement("transition");
-                xw.WriteElementString("from", machine.TFunction(i).CurrentState);
-                xw.WriteElementString("to", machine.TFunction(i).NewState);
+                xw.WriteElementString("from", machine.Function(i).CurrentState);
+                xw.WriteElementString("to", machine.Function(i).NewState);
 
-                xw.WriteElementString("read", ConvertSymbol(machine.TFunction(i).ReadSymbol));
-                xw.WriteElementString("write", ConvertSymbol(machine.TFunction(i).WriteSymbol));
-                xw.WriteElementString("move", StepToString(machine.TFunction(i).Step));
+                xw.WriteElementString("read", ConvertSymbol(machine.Function(i).ReadSymbol));
+                xw.WriteElementString("write", ConvertSymbol(machine.Function(i).WriteSymbol));
+                xw.WriteElementString("move", StepToString(machine.Function(i).Step));
                 
                 xw.WriteEndElement();
             }

@@ -11,7 +11,7 @@ namespace FEI.SimStudio {
     public partial class ExamplesForm : Form
     {
         private readonly List<ExampleFile> allExamples;
-        public static string AppTitle;
+        private static string AppTitle;
 
         public ExamplesForm()
         {

@@ -44,48 +44,48 @@ namespace FEI.TuringCore.Simulation {
 		//Počet vlákien turingovho  stroja
 		public int ThreadCount
 		{
-			get { return threads.Count; }
+			get => threads.Count;
 		}
 
 		//Naposledy použitý prechod
 		public Transition LastUsedTransition
 		{
-			get { return ActiveThread.LastUsedTransition; }
-			set { ActiveThread.LastUsedTransition = value; }
+			get => ActiveThread.LastUsedTransition;
+			set => ActiveThread.LastUsedTransition = value;
 		}
 
 		//Aktuálny stav
 		public string CurrentState
 		{
-			get { return ActiveThread.CurrentState; }
-			set { ActiveThread.CurrentState = value; }
+			get => ActiveThread.CurrentState;
+			set => ActiveThread.CurrentState = value;
 		}
 
 		//Páska aktuálneho vlákna
 		public List<InfiniteTape> ActiveTapes
 		{
-			get { return ActiveThread.Tapes; }
-			set { ActiveThread.Tapes = value; }
+			get => ActiveThread.Tapes;
+			set => ActiveThread.Tapes = value;
 		}
 
 		//Páska turingovho stroja    
 		public List<InfiniteTape> OriginalTapes
 		{
-			get { return this.originalTapes; }
-			set { this.originalTapes = value; }
+			get => this.originalTapes;
+			set => this.originalTapes = value;
 		}
 
 		//Pozícia na páske
 		public List<int> HeadPositions
 		{
-			get { return ActiveThread.HeadPositions; }
-			set { ActiveThread.HeadPositions = value; }
+			get => ActiveThread.HeadPositions;
+			set => ActiveThread.HeadPositions = value;
 		}
 
 		//Počet prechodových funkcií
-		public int TFunctionCount
+		public int FunctionCount
 		{
-			get { return this.transitionFunction.Count; }
+			get => this.transitionFunction.Count;
 		}
 
 		//Počet vykonaných krokov
@@ -94,9 +94,9 @@ namespace FEI.TuringCore.Simulation {
 			get
 			{
 				int steps = 0;
-				for (int a = 0; a <= this.TFunctionCount - 1; a++)
+				for (int a = 0; a <= this.FunctionCount - 1; a++)
 				{
-					steps += this.TFunction(a).UseCount;
+					steps += this.Function(a).UseCount;
 				}
 				return steps;
 			}
@@ -105,50 +105,50 @@ namespace FEI.TuringCore.Simulation {
 		//Index Aktívneho vlákna
 		public int ActiveThreadIndex
 		{
-			get { return activeThreadIndex; }
+			get => activeThreadIndex;
 		}
 
 		//Log aktívneho vlákna
 		public TuringMachineLog Log
 		{
-			get { return ActiveThread.Log; }
+			get => ActiveThread.Log; 
 		}
 
 		//Metadáta
 		private MetaData meta = new MetaData();
 		public MetaData Meta
 		{
-			get { return meta; }
-			set { meta = value; }
+			get => meta;
+			set => meta = value;
 		}
 
 		//Stavový diagram
 		private StateDiagram stateDiagram = new StateDiagram();
 		public StateDiagram StateDiagram
 		{
-			get { return stateDiagram; }
-			set { stateDiagram = value; }
+			get => stateDiagram;
+			set => stateDiagram = value;
 		}
 
 		//Nastavenia
 		private bool enableNondeterminism = true;
 		public bool EnableNondeterminism
 		{
-			get { return enableNondeterminism; }
-			set { enableNondeterminism = value; }
+			get => enableNondeterminism;
+			set => enableNondeterminism = value;
 		}
 
 		private bool writeLog = true;
 		public bool WriteLog
 		{
-			get { return writeLog; }
-			set { writeLog = value; }
+			get => writeLog;
+			set => writeLog = value;
 		}
 
 		private bool storeOriginalTape = true;              
 		public bool StoreOriginalTape
 		{
-			get { return storeOriginalTape; }
+			get => storeOriginalTape;
 			set
 			{
 				storeOriginalTape = value;
@@ -167,46 +167,46 @@ namespace FEI.TuringCore.Simulation {
 		private string startState = "q0";        
 		public string StartState
 		{
-			get { return startState; }
-			set { startState = value; }
+			get => startState;
+			set => startState = value;
 		}
 
 		//Koncové stavy
 		private List<string> finalStates = new List<string>();        
 		public List<string> FinalStates
 		{
-			get { return finalStates; }
-			set { finalStates = value; }
+			get => finalStates;
+			set => finalStates = value;
 		}
 
 		private AcceptType acceptType = AcceptType.FinalStateReached;
 		public AcceptType AcceptType
 		{
-			get { return acceptType; }
-			set { acceptType = value; }
+			get => acceptType;
+			set => acceptType = value;
 		}
 
 		//Prechodové funkcie
 		private List<Transition> transitionFunction = new List<Transition>();
 		public List<Transition> TransitionFunction
 		{
-			get { return transitionFunction; }
-			set { transitionFunction = value; }
+			get => transitionFunction;
+			set => transitionFunction = value;
 		}
 
 		//Zástupné znaky
 		private List<WildCard> wildCards = new List<WildCard>();
 		public List<WildCard> WildCards
 		{
-			get { return wildCards; }
-			set { wildCards = value; }
+			get => wildCards;
+			set => wildCards = value;
 		}
 	   
 		//Ďalší krok neexistuje
 		private bool noNextStep = false;        
 		public bool NoNextStep
 		{
-			get { return noNextStep; }
+			get => noNextStep;
 		}
 		
 		//V aktuálnom kroku bola zmenená páska
@@ -216,8 +216,8 @@ namespace FEI.TuringCore.Simulation {
 		private bool threadCountChanged = false;                
 		public bool ThreadCountChanged
 		{
-			get { return threadCountChanged; }
-			set { threadCountChanged = value; }
+			get => threadCountChanged;
+			set => threadCountChanged = value;
 		}
 
 		//Páska
@@ -258,7 +258,7 @@ namespace FEI.TuringCore.Simulation {
 
 		
 		//Aktivuje nasledujúce vlákno
-		public void ActivateNextThread()
+		private void ActivateNextThread()
 		{
 			activeThreadIndex += 1;
 			if (activeThreadIndex > ThreadCount - 1)
@@ -268,7 +268,7 @@ namespace FEI.TuringCore.Simulation {
 		}
 
 		//Zmaže neaktívne vlákna
-		public void RemoveInactiveThreads()
+		private void RemoveInactiveThreads()
 		{            
 			for (int i = ThreadCount - 1; i >= 0; i--)
 			{
@@ -305,13 +305,13 @@ namespace FEI.TuringCore.Simulation {
 		}        
 
 		//Aktuálny symbol
-		public string GetCurrentSymbol(int tapeIndex)
+		private string GetCurrentSymbol(int tapeIndex)
 		{
 			return ActiveThread.GetCurrentSymbol(tapeIndex);
 		}
 
 		//nasledujúci symbol
-		public string GetNextSymbol(int tapeIndex, bool toRight)
+		private string GetNextSymbol(int tapeIndex, bool toRight)
 		{
 			return ActiveThread.GetNextSymbol(tapeIndex, toRight);
 		}
@@ -329,21 +329,21 @@ namespace FEI.TuringCore.Simulation {
 		//}
 
 		//Pridá prechodovú funkciu
-		public void AddTFunction(Transition TFunction)
+		public void AddTFunction(Transition function)
 		{
-			this.transitionFunction.Add(TFunction);
+			this.transitionFunction.Add(function);
 		}
 
 		//Odstráni prechodovú funkciu
-		public void RemoveTFunction(Transition TFunction)
+		public void RemoveTFunction(Transition function)
 		{
-			this.transitionFunction.Remove(TFunction);
+			this.transitionFunction.Remove(function);
 		}
 
 		//Odstráni prechodovú funkciu s daným indexom
-		public void RemoveTFunctionAt(int Index)
+		public void RemoveTFunctionAt(int index)
 		{
-			this.transitionFunction.RemoveAt(Index);
+			this.transitionFunction.RemoveAt(index);
 		}
 
 		//Odstráni všetky prechodové funkcie
@@ -353,12 +353,12 @@ namespace FEI.TuringCore.Simulation {
 		}
 
 		//Prechodová funckia
-		public Transition TFunction(int index)
+		public Transition Function(int index)
 		{
 			return this.transitionFunction[index]; 
 		}
 
-		public void SetTFunction(int index, Transition value)
+		private void SetTFunction(int index, Transition value)
 		{
 			this.transitionFunction[index] = value;
 		}
@@ -367,7 +367,7 @@ namespace FEI.TuringCore.Simulation {
 		//Vykoná ďalší krok
 		//OnAllThreads = True    :: Ďalší krok na všetkých vláknach
 		//OnAllThreads = False   :: Ďalší krok na aktuálnom vlákne
-		public void NextStep(bool OnAllThreads)
+		public void NextStep(bool onAllThreads)
 		{
 			//Zapisovanie do logu - zapísanie počiatočného stavu
 			if (WriteLog && Log.Count == 0) {                
@@ -377,7 +377,7 @@ namespace FEI.TuringCore.Simulation {
 					false));
 			}
 
-			if (OnAllThreads) //Vykonanie 1 kroku na všetkých paralelných vláknach
+			if (onAllThreads) //Vykonanie 1 kroku na všetkých paralelných vláknach
 			{
 				int startIndex = activeThreadIndex;
 				do
@@ -460,7 +460,7 @@ namespace FEI.TuringCore.Simulation {
 			}
 		}
 
-		public void ActiveThreadNextStep()
+		private void ActiveThreadNextStep()
 		{
 			//Nájdenie vhodnej funkcie
 			Transition tf;
@@ -476,7 +476,7 @@ namespace FEI.TuringCore.Simulation {
 
 			for (int a = 0; a <= this.transitionFunction.Count - 1; a++)
 			{
-				tf = this.TFunction(a);
+				tf = this.Function(a);
 				if (IsTransitionSatisfied(tf, curState, curSymbol))
 				{
 					//Zaznamenanie použitia prechodovej funkcie
@@ -558,27 +558,29 @@ namespace FEI.TuringCore.Simulation {
 
 		//Vráti symbolu zástupného znaku s daným indexom
 		protected string GetWildCardSymbol(string wildcardName, int index)
-		{            
-			for (int i = 0; i < this.wildCards.Count; i++)
+		{
+			foreach (var wildCard in this.wildCards)
 			{
-				if (this.wildCards[i].Wildcard == wildcardName)
+				if (wildCard.Wildcard == wildcardName)
 				{
-					return this.wildCards[i].Symbols[index];
+					return wildCard.Symbols[index];
 				}
 			}
+
 			return "";
 		}
 
 		//Vráti index symbolu zástupného znaku
 		protected int GetWildCardSymbolIndex(string wildcardName,string symbol)
 		{
-			for (int i = 0; i < this.wildCards.Count; i++)
+			foreach (var wildCard in this.wildCards)
 			{
-				if (this.wildCards[i].Wildcard==wildcardName)
+				if (wildCard.Wildcard==wildcardName)
 				{ 
-					return this.wildCards[i].IndexOfSymbol(symbol);                                        
+					return wildCard.IndexOfSymbol(symbol);                                        
 				}
 			}
+
 			return -1;
 		}
 
@@ -597,7 +599,7 @@ namespace FEI.TuringCore.Simulation {
 
 			//Vynulovanie využitia funkcií
 			Transition tf;
-			for (int a=0;a<this.TFunctionCount;a++){
+			for (int a=0;a<this.FunctionCount;a++){
 				tf = this.transitionFunction[a];
 				tf.ResetUseCounter();
 				this.transitionFunction[a] = tf;
@@ -613,14 +615,14 @@ namespace FEI.TuringCore.Simulation {
 			ArrayList states = new ArrayList();
 			string state;
 
-			for (int a = 0; a <= this.TFunctionCount - 1; a++)
+			for (int a = 0; a <= this.FunctionCount - 1; a++)
 			{
-				state = this.TFunction(a).NewState;
+				state = this.Function(a).NewState;
 			   
 				if (!states.Contains(state))
 					states.Add(state);
 
-				state = this.TFunction(a).CurrentState;
+				state = this.Function(a).CurrentState;
 				if (!states.Contains(state))
 					states.Add(state);
 			}
@@ -629,9 +631,9 @@ namespace FEI.TuringCore.Simulation {
 			if (!states.Contains(state))
 				states.Add(state);
 
-			for (int a = 0; a < this.FinalStates.Count; a++)
+			foreach (var finalState in this.FinalStates)
 			{
-				state = this.FinalStates[a];
+				state = finalState;
 				if (!states.Contains(state))
 					states.Add(state);
 			}            
@@ -640,11 +642,11 @@ namespace FEI.TuringCore.Simulation {
 		}
 
 		//Načítanie súboru turingovho stroja
-		public string Load(string FileName)
+		public string Load(string fileName)
 		{
-			string Code="";
+			string code="";
 
-			XmlTextReader xr = new XmlTextReader(FileName);
+			XmlTextReader xr = new XmlTextReader(fileName);
 			string curElement = "";
 			string subElement = "";
 			bool elementCompleted = false;
@@ -811,7 +813,7 @@ namespace FEI.TuringCore.Simulation {
 									curTransition.Comment = xr.Value;
 									break;
 								case "machine.code":
-									Code = xr.Value;
+									code = xr.Value;
 									break;
 							}
 						}
@@ -822,13 +824,13 @@ namespace FEI.TuringCore.Simulation {
 
 			xr.Close();
 
-			return Code;
+			return code;
 		}
 
 		//Uloženie súboru turingovho stroja
-		public void Save(string FileName, string Code)
+		public void Save(string fileName, string code)
 		{
-			XmlTextWriter xw = new XmlTextWriter(FileName, System.Text.Encoding.UTF8);
+			XmlTextWriter xw = new XmlTextWriter(fileName, System.Text.Encoding.UTF8);
 			xw.Formatting = Formatting.Indented;
 			xw.Indentation = 1;
 			xw.IndentChar = '\t';
@@ -905,31 +907,31 @@ namespace FEI.TuringCore.Simulation {
 
 				//Prechody                
 				xw.WriteStartElement("transitions");
-				for (int i = 0; i < this.TFunctionCount; i++)
+				for (int i = 0; i < this.FunctionCount; i++)
 				{
 					xw.WriteStartElement("transition");
-						xw.WriteElementString("from", this.TFunction(i).CurrentState);
-						xw.WriteElementString("to", this.TFunction(i).NewState);
+						xw.WriteElementString("from", this.Function(i).CurrentState);
+						xw.WriteElementString("to", this.Function(i).NewState);
 
-						xw.WriteElementString("read", this.TFunction(i).ReadSymbol);
-						xw.WriteElementString("write", this.TFunction(i).WriteSymbol);
-						xw.WriteElementString("move", VirtualTuringMachine.StepToString(this.TFunction(i).Step));
+						xw.WriteElementString("read", this.Function(i).ReadSymbol);
+						xw.WriteElementString("write", this.Function(i).WriteSymbol);
+						xw.WriteElementString("move", VirtualTuringMachine.StepToString(this.Function(i).Step));
 						
-						xw.WriteElementString("comment", this.TFunction(i).Comment);                        
+						xw.WriteElementString("comment", this.Function(i).Comment);                        
 					xw.WriteEndElement();
 				}
 				xw.WriteEndElement();         
 
 				//Kód
 				xw.WriteStartElement("code");
-					xw.WriteString(Code);
+					xw.WriteString(code);
 				xw.WriteEndElement();
 
 			xw.WriteEndElement();
 			xw.Close();
 		}
 
-		public static string StepToString(Transition.Steps steps)
+		private static string StepToString(Transition.Steps steps)
 		{
 			switch (steps)
 			{
@@ -962,14 +964,15 @@ namespace FEI.TuringCore.Simulation {
 			}
 			else
 			{
-				for (int i=0;i<wildCards.Count;i++){
-					if (symbol1 == wildCards[i].Wildcard)
+				foreach (var wildCard in wildCards)
+				{
+					if (symbol1 == wildCard.Wildcard)
 					{
-						if (wildCards[i].ContainsSymbol(symbol2)) return true;
+						if (wildCard.ContainsSymbol(symbol2)) return true;
 					}
-					else if (symbol2 == wildCards[i].Wildcard)
+					else if (symbol2 == wildCard.Wildcard)
 					{
-						if (wildCards[i].ContainsSymbol(symbol1)) return true;
+						if (wildCard.ContainsSymbol(symbol1)) return true;
 					}
 				}
 			}
@@ -979,10 +982,11 @@ namespace FEI.TuringCore.Simulation {
 		//Zistí, či je definovaný zástupný znak
 		public bool ExistsWildCard(string wildcard)
 		{
-			for (int i = 0; i < wildCards.Count; i++)
+			foreach (var wildCard in wildCards)
 			{
-				if (wildCards[i].Wildcard == wildcard) return true;
+				if (wildCard.Wildcard == wildcard) return true;
 			}
+
 			return false;
 		}
 
