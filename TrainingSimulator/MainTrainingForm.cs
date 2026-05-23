@@ -208,19 +208,22 @@ namespace FEI.TrainingSimulator {
         
         private void OpenTask(TaskDef task)
         {
-            if (task.Category.Equals("FA"))
+            switch (task.Category)
             {
-                FaTrainingForm frm = new FaTrainingForm(task);
-                frm.ShowDialog(this);
-            }
-            else if (task.Category.Equals("PDA"))
-            {
-                PdaTrainingForm frm = new PdaTrainingForm(task);
-                frm.ShowDialog(this);
-            }
-            else
-            {
-                throw new System.NotImplementedException();
+                case "FA":
+                {
+                    FaTrainingForm frm = new FaTrainingForm(task);
+                    frm.ShowDialog(this);
+                    break;
+                }
+                case "PDA":
+                {
+                    PdaTrainingForm frm = new PdaTrainingForm(task);
+                    frm.ShowDialog(this);
+                    break;
+                }
+                default:
+                    throw new System.NotImplementedException();
             }
         }
 
@@ -305,8 +308,8 @@ namespace FEI.TrainingSimulator {
             if (selectedDir != null && !selectedDir.Equals(tasksDir, StringComparison.OrdinalIgnoreCase))
             {
                 DialogResult result = MessageBox.Show(
-                    "Vybraný súbor sa nenachádza v priečinku Tasks.\n\n" +
-                    "Chcete ho skopírovať do priečinka Tasks a používať odtiaľ?",
+                    "Vybraný súbor sa nenachádza v priečinku príkladov.\n\n" +
+                    "Chcete ho skopírovať do priečinka príkladov a používať odtiaľ?",
                     "Sada príkladov",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);

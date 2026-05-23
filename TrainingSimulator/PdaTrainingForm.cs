@@ -14,6 +14,7 @@ using FEI.SimStudio.Components.Registers;
 using FEI.TuringCore.Simulation;
 using AboutForm = FEI.TrainingSimulator.Dialogs.AboutForm;
 using System.Text.RegularExpressions;
+using System.Xml;
 using FEI.PushdownAutomaton.Dialogs;
 using FEI.PushdownAutomaton.IO.Jff;
 using FEI.TrainingSimulator.Dialogs;
@@ -740,6 +741,44 @@ namespace FEI.TrainingSimulator
             return alphabet.OrderBy(x => x).ToList();
         }
         
+        private Dictionary<string, bool> ParseTestCases(string verification)
+        {
+            if (string.IsNullOrWhiteSpace(verification))
+                throw new Exception("Pole verification je prázdne.");
+
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(verification);
+
+            XmlNodeList nodes = doc.SelectNodes("//test");
+
+            if (nodes == null || nodes.Count == 0)
+                throw new Exception("Neboli nájdené žiadne testovacie prípady.");
+
+            var result = new Dictionary<string, bool>();
+
+            foreach (XmlNode node in nodes)
+            {
+                string word = node.Attributes?["word"]?.Value ?? "";
+                string expectedText = node.Attributes?["expected"]?.Value ?? "";
+
+                if (word == "ε")
+                    word = "";
+
+                bool expected;
+
+                if (expectedText.Equals("accept", StringComparison.OrdinalIgnoreCase))
+                    expected = true;
+                else if (expectedText.Equals("reject", StringComparison.OrdinalIgnoreCase))
+                    expected = false;
+                else
+                    throw new Exception("Neplatná očakávaná hodnota pri slove '" + word + "'.");
+
+                result[word] = expected;
+            }
+
+            return result;
+        }
+        
         private List<string> GenerateWords(int maxLength, List<string> alphabet)
         {
             var words = new List<string>();
@@ -811,12 +850,27 @@ namespace FEI.TrainingSimulator
         
         private CheckResult CheckCurrentPdaSolution()
         {
+            if (task.Mode.Equals("Test_cases", StringComparison.OrdinalIgnoreCase))
+                return CheckPdaByTestCases();
+
+            if (task.Mode.Equals("Reference_model", StringComparison.OrdinalIgnoreCase))
+                return CheckPdaByReferenceModel();
+
+            return new CheckResult
+            {
+                IsCorrect = false,
+                Message = "Neznámy režim overovania: " + task.Mode
+            };
+        }
+        
+        private CheckResult CheckPdaByReferenceModel()
+        {
             if (string.IsNullOrWhiteSpace(task.Verification))
             {
                 return new CheckResult
                 {
                     IsCorrect = false,
-                    Message = "Zadanie neobsahuje cestu k referenčnému modelu."
+                    Message = "Zadanie neobsahuje referenčný model."
                 };
             }
 
@@ -875,23 +929,7 @@ namespace FEI.TrainingSimulator
                 bool expected = AcceptsByPda(reference, word);
                 bool actual = AcceptsByPda(student, word);
 
-                testedWords.Add(word);
-
-                if (expected != actual)
-                {
-                    testedStates.Add("Chyba");
-                }
-                else if (expected)
-                {
-                    testedStates.Add("Prijať");
-                }
-                else
-                {
-                    testedStates.Add("Odmietnuť");
-                }
-
-                Tests_SetScrollbar();
-                pTests.Refresh();
+                AddTestResult(word, expected, actual);
 
                 if (expected != actual)
                 {
@@ -903,6 +941,73 @@ namespace FEI.TrainingSimulator
                         Message =
                             $"Automat nie je správny. Líši sa na slove '{shownWord}'.\n" +
                             $"Referenčný model: {(expected ? "prijať" : "odmietnuť")}.\n" +
+                            $"Študentov PA: {(actual ? "prijať" : "odmietnuť")}."
+                    };
+                }
+            }
+
+            return new CheckResult
+            {
+                IsCorrect = true,
+                Message = "Riešenie je správne."
+            };
+        }
+        
+        private CheckResult CheckPdaByTestCases()
+        {
+            Dictionary<string, bool> testCases;
+
+            try
+            {
+                testCases = ParseTestCases(task.Verification);
+            }
+            catch (Exception ex)
+            {
+                return new CheckResult
+                {
+                    IsCorrect = false,
+                    Message = "Zadanie obsahuje neplatné testovacie prípady: " + ex.Message
+                };
+            }
+
+            testedWords.Clear();
+            testedStates.Clear();
+            Tests_SetScrollbar();
+            pTests.Refresh();
+
+            foreach (var testCase in testCases)
+            {
+                PushdownAutomaton.PushdownAutomaton student;
+
+                try
+                {
+                    student = CreateStudentPda();
+                }
+                catch (Exception ex)
+                {
+                    return new CheckResult
+                    {
+                        IsCorrect = false,
+                        Message = ex.Message
+                    };
+                }
+
+                string word = testCase.Key;
+                bool expected = testCase.Value;
+                bool actual = AcceptsByPda(student, word);
+
+                AddTestResult(word, expected, actual);
+
+                if (expected != actual)
+                {
+                    string shownWord = word == "" ? "ε" : word;
+
+                    return new CheckResult
+                    {
+                        IsCorrect = false,
+                        Message =
+                            $"Automat nie je správny. Líši sa na slove '{shownWord}'.\n" +
+                            $"Očakávané: {(expected ? "prijať" : "odmietnuť")}.\n" +
                             $"Študentov PA: {(actual ? "prijať" : "odmietnuť")}."
                     };
                 }
@@ -1112,6 +1217,21 @@ namespace FEI.TrainingSimulator
                 testsFirstIndex = sbyTests.Value;
             }
 
+            pTests.Refresh();
+        }
+        
+        private void AddTestResult(string word, bool expected, bool actual)
+        {
+            testedWords.Add(word);
+
+            if (expected != actual)
+                testedStates.Add("Chyba");
+            else if (expected)
+                testedStates.Add("Prijať");
+            else
+                testedStates.Add("Odmietnuť");
+
+            Tests_SetScrollbar();
             pTests.Refresh();
         }
     }

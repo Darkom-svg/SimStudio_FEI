@@ -14,6 +14,7 @@ using FEI.SimStudio.Components.Registers;
 using FEI.TuringCore.Simulation;
 using AboutForm = FEI.TrainingSimulator.Dialogs.AboutForm;
 using System.Text.RegularExpressions;
+using System.Xml;
 using FEI.FiniteAutomaton.Dialogs;
 using FEI.FiniteAutomaton.IO.Jff;
 
@@ -24,9 +25,9 @@ namespace FEI.TrainingSimulator
         private MainTrainingForm.TaskDef task;
         private string appTitle;
         private VirtualTuringMachine turingMachine = new VirtualTuringMachine() { AcceptType = AcceptType.FinalStateReachedAndWholeTapeRead };
-        bool codeChanged = false;        
+        private bool codeChanged = false;        
         //Formát prechodovej funkcie
-        string transitionFormat;
+        private string transitionFormat;
         //Formát 
         string wildCardFormat;
         // Vytvorí formálnu špecifikáciu
@@ -39,26 +40,12 @@ namespace FEI.TrainingSimulator
         {
             InitializeComponent();
             this.task = task;
-            this.Text = "Trenažér (" + this.task.Id + ")";
             appTitle = "Trenažér (" + this.task.Id + ")";
             transitionFormat = "\\sδ\\s(\\a,\\a)\\s=\\s(\\a)\\s";
             wildCardFormat = "\\a=\\s{\\m,\\n}\\s";
             this.Text = "FA";
             CreateTaskSpecification();
         }
-        
-        //Zdržanie pri vykonávaní programu
-        int delay = 10;
-
-        //Vlákno stroja        
-        System.Threading.Thread thRealTime;
-
-        System.Timers.Timer timMachine = new System.Timers.Timer();
-        bool pause = false;
-        bool prgStop = true;
-
-        AcceptanceStatus tapeAcceptance = AcceptanceStatus.None;
-
         public VirtualTuringMachine TuringMachine
         {
             get => turingMachine;
@@ -89,23 +76,7 @@ namespace FEI.TrainingSimulator
             txtCode.SyntaxWords.fStrings = new SyntaxTextBox.SyntaxFormat(Color.DarkRed, true);
             txtCode.SyntaxWords.fNumbers = new SyntaxTextBox.SyntaxFormat(Color.DarkBlue, true);
             txtCode.SyntaxWords.fComment = new SyntaxTextBox.SyntaxFormat(Color.DarkGreen);
-            //Todo
-            //cmbTape.SelectedIndex = 0;            
-            //infiniteTapeControl.Tapes = TuringMachine.OriginalTapes;
-
-            //AddSpeedPanel();
         }
-
-        // private void AddSpeedPanel()
-        // {
-        //     ToolStripControlHost host = new ToolStripControlHost(speedPanel);
-        //     host.Alignment = ToolStripItemAlignment.Right;
-        //     host.Width = 200;
-        //     host.AutoSize = false;
-        //     mainToolStrip.Items.Add(host);
-        // }
-        
-        
         
         private void bAddTFunction_Click(object sender, EventArgs e)
         {
@@ -575,17 +546,21 @@ namespace FEI.TrainingSimulator
         {
             FaCheckResult result;
 
-            if (task.Mode.Equals("Formula", StringComparison.OrdinalIgnoreCase))
+            if (task.Mode.Equals("Formula"))
             {
                 result = ValidateFaSolution_Formula();
             }
-            else if (task.Mode.Equals("Regex", StringComparison.OrdinalIgnoreCase))
+            else if (task.Mode.Equals("Regex"))
             {
                 result = ValidateFaSolution_Regex();
             }
-            else if (task.Mode.Equals("Reference_model", StringComparison.OrdinalIgnoreCase))
+            else if (task.Mode.Equals("Reference_model"))
             {
                 result = ValidateFaSolution_ReferenceModel();
+            }
+            else if (task.Mode.Equals("Test_cases"))
+            {
+                result = ValidateFaSolution_TestCases();
             }
             else
             {
@@ -614,9 +589,10 @@ namespace FEI.TrainingSimulator
             }
         }
         
-        private FaCheckResult ValidateFaSolution_Formula()
+        private FaCheckResult ValidateFaSolution(List<char> alphabet)
         {
             bool parsed = ParseTFunctions(txtCode.Text);
+
             if (!parsed)
             {
                 return new FaCheckResult
@@ -626,21 +602,13 @@ namespace FEI.TrainingSimulator
                 };
             }
 
-            ParsedFormula formula;
-            try
+            string formalError = null;
+
+            if (!task.Mode.Equals("Test_cases", StringComparison.OrdinalIgnoreCase))
             {
-                formula = ParseFormula(task.Verification);
-            }
-            catch (Exception ex)
-            {
-                return new FaCheckResult
-                {
-                    IsCorrect = false,
-                    Message = "Zadanie obsahuje neplatnú formulu: " + ex.Message
-                };
+                formalError = ValidateDeterministicFa(alphabet);
             }
 
-            string formalError = ValidateDeterministicFa(formula);
             if (formalError != null)
             {
                 return new FaCheckResult
@@ -649,49 +617,109 @@ namespace FEI.TrainingSimulator
                     Message = formalError
                 };
             }
+
+            ParsedFormula formula = null;
+            Regex regex = null;
+            VirtualTuringMachine reference = null;
+            Dictionary<string, bool> testCases = null;
             
+            try
+            {
+                switch (task.Mode)
+                {
+                    case "Formula":
+                        formula = ParseFormula(task.Verification);
+                        break;
+
+                    case "Regex":
+                        regex = new Regex("^(" + task.Verification + ")$");
+                        break;
+
+                    case "Reference_model":
+                        reference = CreateReferenceFa();
+                        break;
+                    
+                    case "Test_cases":
+                        testCases = ParseTestCases(task.Verification);
+                        break;
+
+                    default:
+                        return new FaCheckResult
+                        {
+                            IsCorrect = false,
+                            Message = "Neznámy režim overovania: " + task.Mode
+                        };
+                }
+            }
+            catch (Exception ex)
+            {
+                return new FaCheckResult
+                {
+                    IsCorrect = false,
+                    Message = "Zadanie obsahuje neplatné overovanie: " + ex.Message
+                };
+            }
+
             testedWords.Clear();
             testedStates.Clear();
+            Tests_SetScrollbar();
             pTests.Refresh();
-            
-            string[] words = GenerateWords(10, new List<char>(formula.Coefficients.Keys));
 
-            foreach (var word in words)
+            string[] words;
+
+            if (task.Mode.Equals("Test_cases", StringComparison.OrdinalIgnoreCase))
             {
-                bool expected = AcceptsByFormula(word, formula);
-                bool actual = AcceptsByAutomaton(this.turingMachine, word);
+                words = testCases.Keys.ToArray();
+            }
+            else
+            {
+                words = GenerateWords(10, alphabet);
+            }
 
-                testedWords.Add(word);
+            foreach (string word in words)
+            {
+                bool expected;
+
+                switch (task.Mode)
+                {
+                    case "Formula":
+                        expected = AcceptsByFormula(word, formula);
+                        break;
+
+                    case "Regex":
+                        expected = regex.IsMatch(word);
+                        break;
+
+                    case "Reference_model":
+                        expected = AcceptsByAutomaton(reference, word);
+                        break;
+                    case "Test_cases":
+                        expected = testCases[word];
+                        break;
+
+                    default:
+                        return new FaCheckResult
+                        {
+                            IsCorrect = false,
+                            Message = "Neznámy režim overovania: " + task.Mode
+                        };
+                }
+
+                bool actual = AcceptsByAutomaton(TuringMachine, word);
+
+                AddTestResult(word, expected, actual);
 
                 if (expected != actual)
                 {
-                    testedStates.Add("Chyba");
-                }
-                else if (expected)
-                {
-                    testedStates.Add("Prijať");
-                }
-                else
-                {
-                    testedStates.Add("Odmietnuť");
-                }
-                Tests_SetScrollbar();
-                pTests.Refresh();
-                
-                if (expected != actual)
-                {
-                    string diffWord;
-                    if (word == "")
-                        diffWord = "ε";
-                    else
-                        diffWord = word;
+                    string shownWord = word == "" ? "ε" : word;
 
                     return new FaCheckResult
                     {
                         IsCorrect = false,
-                        Message = $"Automat nie je správny. Líši sa na slove '{diffWord}'.\n" +
-                                  $"Očakávané: {(expected ? "prijať" : "odmietnuť")}.\n" +
-                                  $"Študentov automat: {(actual ? "prijať" : "odmietnuť")}."
+                        Message =
+                            $"Automat nie je správny. Líši sa na slove '{shownWord}'.\n" +
+                            $"Očakávané: {(expected ? "prijať" : "odmietnuť")}.\n" +
+                            $"Študentov automat: {(actual ? "prijať" : "odmietnuť")}."
                     };
                 }
             }
@@ -702,113 +730,29 @@ namespace FEI.TrainingSimulator
                 Message = "Riešenie je správne."
             };
         }
+        
+        private FaCheckResult ValidateFaSolution_Formula()
+        {
+            ParsedFormula formula = ParseFormula(task.Verification);
+            List<char> alphabet = new List<char>(formula.Coefficients.Keys);
+
+            return ValidateFaSolution(alphabet);
+        }
+        
         private FaCheckResult ValidateFaSolution_Regex()
         {
-            bool parsed = ParseTFunctions(txtCode.Text);
-            if (!parsed)
-            {
-                return new FaCheckResult
-                {
-                    IsCorrect = false,
-                    Message = "Riešenie obsahuje syntaktické chyby v prechodových funkciách."
-                };
-            }
-
-            string regexPattern = task.Verification;
-
-            if (string.IsNullOrWhiteSpace(regexPattern))
-            {
-                return new FaCheckResult
-                {
-                    IsCorrect = false,
-                    Message = "Zadanie neobsahuje regex výraz v poli Formula."
-                };
-            }
-
-            List<char> alphabet;
-            try
-            {
-                alphabet = ExtractAlphabetFromRegex(regexPattern);
-            }
-            catch (Exception ex)
-            {
-                return new FaCheckResult
-                {
-                    IsCorrect = false,
-                    Message = "Nepodarilo sa z regexu získať abecedu: " + ex.Message
-                };
-            }
-
-            string formalError = ValidateDeterministicFa(alphabet);
-            if (formalError != null)
-            {
-                return new FaCheckResult
-                {
-                    IsCorrect = false,
-                    Message = formalError
-                };
-            }
-
-            Regex regex;
-            try
-            {
-                regex = new Regex("^(" + regexPattern + ")$");
-            }
-            catch (Exception ex)
-            {
-                return new FaCheckResult
-                {
-                    IsCorrect = false,
-                    Message = "Zadanie obsahuje neplatný regex: " + ex.Message
-                };
-            }
-            
-            testedWords.Clear();
-            testedStates.Clear();
-            pTests.Refresh();
-
-            string[] words = GenerateWords(10, alphabet);
-            
-            foreach (string word in words)
-            {
-                bool expected = regex.IsMatch(word);
-                bool actual = AcceptsByAutomaton(this.turingMachine, word);
-                
-                testedWords.Add(word);
-
-                if (expected != actual)
-                {
-                    testedStates.Add("Chyba");
-                }
-                else if (expected)
-                {
-                    testedStates.Add("Prijať");
-                }
-                else
-                {
-                    testedStates.Add("Odmietnuť");
-                }
-                Tests_SetScrollbar();
-                pTests.Refresh();
-
-                if (expected != actual)
-                {
-                    string diffWord = word == "" ? "ε" : word;
-
-                    return new FaCheckResult
-                    {
-                        IsCorrect = false,
-                        Message = $"Automat nie je správny. Líši sa na slove '{diffWord}'.\n" +
-                                  $"Očakávané: {(expected ? "prijať" : "odmietnuť")}.\n" +
-                                  $"Študentov automat: {(actual ? "prijať" : "odmietnuť")}."
-                    };
-                }
-            }
-            return new FaCheckResult
-            {
-                IsCorrect = true,
-                Message = "Riešenie je správne."
-            };
+            return ValidateFaSolution(ExtractAlphabetFromRegex(task.Verification));
+        }
+        
+        private FaCheckResult ValidateFaSolution_ReferenceModel()
+        {
+            VirtualTuringMachine reference = CreateReferenceFa();
+            return ValidateFaSolution(GetAlphabetFromFa(reference));
+        }
+        
+        private FaCheckResult ValidateFaSolution_TestCases()
+        {
+            return ValidateFaSolution(new List<char>());
         }
         
         private VirtualTuringMachine CreateReferenceFa()
@@ -850,153 +794,18 @@ namespace FEI.TrainingSimulator
             }
         }
         
-        private FaCheckResult ValidateFaSolution_ReferenceModel()
-        {
-            bool parsed = ParseTFunctions(txtCode.Text);
-
-            if (!parsed)
-            {
-                return new FaCheckResult
-                {
-                    IsCorrect = false,
-                    Message = "Riešenie obsahuje syntaktické chyby v prechodových funkciách."
-                };
-            }
-
-            VirtualTuringMachine reference;
-
-            try
-            {
-                reference = CreateReferenceFa();
-            }
-            catch (Exception ex)
-            {
-                return new FaCheckResult
-                {
-                    IsCorrect = false,
-                    Message = "Nepodarilo sa načítať referenčný model: " + ex.Message
-                };
-            }
-
-            List<char> alphabet = GetAlphabetFromFa(reference);
-
-            testedWords.Clear();
-            testedStates.Clear();
-            Tests_SetScrollbar();
-            pTests.Refresh();
-
-            string[] words = GenerateWords(10, alphabet);
-
-            foreach (string word in words)
-            {
-                bool expected = AcceptsByAutomaton(reference, word);
-                bool actual = AcceptsByAutomaton(this.turingMachine,word);
-
-                testedWords.Add(word);
-
-                if (expected != actual)
-                    testedStates.Add("Chyba");
-                else if (expected)
-                    testedStates.Add("Prijať");
-                else
-                    testedStates.Add("Odmietnuť");
-
-                Tests_SetScrollbar();
-                pTests.Refresh();
-
-                if (expected != actual)
-                {
-                    string shownWord = word == "" ? "ε" : word;
-
-                    return new FaCheckResult
-                    {
-                        IsCorrect = false,
-                        Message =
-                            $"Automat nie je správny. Líši sa na slove '{shownWord}'.\n" +
-                            $"Referenčný model: {(expected ? "prijať" : "odmietnuť")}.\n" +
-                            $"Študentov FA: {(actual ? "prijať" : "odmietnuť")}."
-                    };
-                }
-            }
-
-            return new FaCheckResult
-            {
-                IsCorrect = true,
-                Message = "Riešenie je správne."
-            };
-        }
-        
-        private string ValidateDeterministicFa(ParsedFormula formula)
-        {
-            var usedStates = TuringMachine.GetUsedStates();
-            if (usedStates == null || usedStates.Length == 0)
-            {
-                return "Automat neobsahuje žiadne stavy.";
-            }
-
-            if (string.IsNullOrWhiteSpace(TuringMachine.StartState))
-            {
-                return "Automat nemá začiatočný stav.";
-            }
-
-            bool hasFinal = false;
-            foreach (var state in usedStates)
-            {
-                if (TuringMachine.IsFinalState(state))
-                {
-                    hasFinal = true;
-                    break;
-                }
-            }
-
-            if (!hasFinal)
-            {
-                return "Automat nemá žiadny koncový stav.";
-            }
-
-            var seen = new HashSet<string>();
-            var allowedSymbols = new HashSet<char>(formula.Coefficients.Keys);
-
-            for (int i = 0; i < TuringMachine.TFunctionCount; i++)
-            {
-                var tf = TuringMachine.TFunction(i);
-
-                if (string.IsNullOrEmpty(tf.ReadSymbol) || tf.ReadSymbol.Length != 1)
-                {
-                    return $"Automat používa neplatný symbol '{tf.ReadSymbol}'.";
-                }
-
-                char symbol = tf.ReadSymbol[0];
-
-                if (!allowedSymbols.Contains(symbol))
-                {
-                    return $"Automat používa nepovolený symbol '{tf.ReadSymbol}'.";
-                }
-
-                string key = tf.CurrentState + "|" + tf.ReadSymbol;
-                if (!seen.Add(key))
-                {
-                    return $"Automat nie je deterministický. Zo stavu '{tf.CurrentState}' existuje viac prechodov pre symbol '{tf.ReadSymbol}'.";
-                }
-            }
-
-            return null;
-        }
-        
         private string ValidateDeterministicFa(IEnumerable<char> alphabet)
         {
             var usedStates = TuringMachine.GetUsedStates();
+
             if (usedStates == null || usedStates.Length == 0)
-            {
                 return "Automat neobsahuje žiadne stavy.";
-            }
 
             if (string.IsNullOrWhiteSpace(TuringMachine.StartState))
-            {
                 return "Automat nemá začiatočný stav.";
-            }
 
             bool hasFinal = false;
+
             foreach (var state in usedStates)
             {
                 if (TuringMachine.IsFinalState(state))
@@ -1007,9 +816,7 @@ namespace FEI.TrainingSimulator
             }
 
             if (!hasFinal)
-            {
                 return "Automat nemá žiadny koncový stav.";
-            }
 
             var seen = new HashSet<string>();
             var allowedSymbols = new HashSet<char>(alphabet);
@@ -1019,22 +826,17 @@ namespace FEI.TrainingSimulator
                 var tf = TuringMachine.TFunction(i);
 
                 if (string.IsNullOrEmpty(tf.ReadSymbol) || tf.ReadSymbol.Length != 1)
-                {
                     return $"Automat používa neplatný symbol '{tf.ReadSymbol}'.";
-                }
 
                 char symbol = tf.ReadSymbol[0];
 
                 if (!allowedSymbols.Contains(symbol))
-                {
                     return $"Automat používa nepovolený symbol '{tf.ReadSymbol}'.";
-                }
 
                 string key = tf.CurrentState + "|" + tf.ReadSymbol;
+
                 if (!seen.Add(key))
-                {
                     return $"Automat nie je deterministický. Zo stavu '{tf.CurrentState}' existuje viac prechodov pre symbol '{tf.ReadSymbol}'.";
-                }
             }
 
             return null;
@@ -1197,6 +999,44 @@ namespace FEI.TrainingSimulator
             }
 
             return alphabet.OrderBy(c => c).ToList();
+        }
+        
+        private Dictionary<string, bool> ParseTestCases(string verification)
+        {
+            if (string.IsNullOrWhiteSpace(verification))
+                throw new Exception("Pole verification je prázdne.");
+
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(verification);
+
+            XmlNodeList nodes = doc.SelectNodes("//test");
+
+            if (nodes == null || nodes.Count == 0)
+                throw new Exception("Neboli nájdené žiadne testovacie prípady.");
+
+            var result = new Dictionary<string, bool>();
+
+            foreach (XmlNode node in nodes)
+            {
+                string word = node.Attributes?["word"]?.Value ?? "";
+                string expectedText = node.Attributes?["expected"]?.Value ?? "";
+
+                if (word == "ε")
+                    word = "";
+
+                bool expected;
+
+                if (expectedText.Equals("accept", StringComparison.OrdinalIgnoreCase))
+                    expected = true;
+                else if (expectedText.Equals("reject", StringComparison.OrdinalIgnoreCase))
+                    expected = false;
+                else
+                    throw new Exception("Neplatná očakávaná hodnota pri slove '" + word + "'.");
+
+                result[word] = expected;
+            }
+
+            return result;
         }
         
         private List<char> GetAlphabetFromFa(VirtualTuringMachine fa)
@@ -1448,6 +1288,27 @@ namespace FEI.TrainingSimulator
                 testsFirstIndex = sbyTests.Value;
             }
 
+            pTests.Refresh();
+        }
+        
+        private void AddTestResult(string word, bool expected, bool actual)
+        {
+            testedWords.Add(word);
+
+            if (expected != actual)
+            {
+                testedStates.Add("Chyba");
+            }
+            else if (expected)
+            {
+                testedStates.Add("Prijať");
+            }
+            else
+            {
+                testedStates.Add("Odmietnuť");
+            }
+
+            Tests_SetScrollbar();
             pTests.Refresh();
         }
 

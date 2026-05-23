@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Windows.Forms;
@@ -8,6 +10,7 @@ namespace FEI.TrainingSimulator.Dialogs
 {
     public partial class AddTaskForm : Form
     {
+        public Dictionary<string,bool> testCases = new Dictionary<string, bool>();
         public AddTaskForm(string currentTaskSetFile)
         {
             InitializeComponent();
@@ -15,7 +18,7 @@ namespace FEI.TrainingSimulator.Dialogs
             cmbModel.SelectedIndex = 0;
             cmbMode.SelectedIndex = 0;
             comboBox1.SelectedIndex = 0;
-
+            checkBoxAccept.Checked = true;
             UpdateVerificationPanels();
         }
         
@@ -28,11 +31,13 @@ namespace FEI.TrainingSimulator.Dialogs
                 cmbMode.Items.Add("Formula");
                 cmbMode.Items.Add("Regex");
                 cmbMode.Items.Add("Referenčný automat");
+                cmbMode.Items.Add("Testovacie prípady");
                 cmbMode.SelectedIndex = 0;
             }
             else 
             {
                 cmbMode.Items.Add("Referenčný automat");
+                cmbMode.Items.Add("Testovacie prípady");
                 cmbMode.SelectedIndex = 0;
             }
         }
@@ -49,6 +54,15 @@ namespace FEI.TrainingSimulator.Dialogs
             formulaPanel.Visible = mode == "Formula";
             regexPanel.Visible = mode == "Regex";
             referenceModelPanel.Visible = mode == "Referenčný automat";
+            testSetPanel.Visible = mode == "Testovacie prípady";
+            if(mode == "Testovacie prípady"){
+                Height = 650;
+                flowLayoutPanel1.Height = testSetPanel.Height+10;
+            } else
+            {
+                flowLayoutPanel1.Height = 60;
+                Height = 505;
+            }
         }
 
         private void taskSetPathButton_Click(object sender, EventArgs e)
@@ -95,7 +109,15 @@ namespace FEI.TrainingSimulator.Dialogs
                 else if (mode == "Regex")
                     verification = txtRegex.Text.Trim();
                 else if (mode == "Referenčný automat")
+                {
                     verification = File.ReadAllText(txtReferencePath.Text.Trim());
+                    mode = "Reference_model";
+                }
+                else if (mode == "Testovacie prípady")
+                {
+                    verification = CreateTestCasesXml();
+                    mode = "Test_cases";
+                }
                 
                 string category = "";
                 switch (cmbModel.SelectedIndex)
@@ -142,6 +164,31 @@ namespace FEI.TrainingSimulator.Dialogs
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
+        }
+        
+        private string CreateTestCasesXml()
+        {
+            XmlDocument doc = new XmlDocument();
+
+            XmlElement testsNode = doc.CreateElement("tests");
+            doc.AppendChild(testsNode);
+
+            foreach (var testCase in testCases)
+            {
+                XmlElement testNode = doc.CreateElement("test");
+
+                string word = testCase.Key;
+
+                if (word == "ε")
+                    word = "";
+
+                testNode.SetAttribute("word", word);
+                testNode.SetAttribute("expected", testCase.Value ? "accept" : "reject");
+
+                testsNode.AppendChild(testNode);
+            }
+
+            return doc.OuterXml;
         }
 
         private void ValidateForm()
@@ -192,7 +239,14 @@ namespace FEI.TrainingSimulator.Dialogs
                     throw new Exception("Model referenčného riešenia sa nezhoduje s modelom zadania.");
                 }
                 verification = File.ReadAllText(txtReferencePath.Text.Trim());
+            } else if (cmbMode.Text == "Testovacie prípady")
+            {
+                if (testCases.Count == 0)
+                    throw new Exception("Pridajte aspoň jeden testovací prípad.");
+
+                verification = CreateTestCasesXml();
             }
+            
             if (string.IsNullOrWhiteSpace(verification))
                 throw new Exception("Zadajte hodnotu pre overovanie príkladu.");
         }
@@ -237,7 +291,7 @@ namespace FEI.TrainingSimulator.Dialogs
             AddNode(doc, taskNode, "mode", mode);
             AddNode(doc, taskNode, "difficulty", difficulty);
             AddCDataNode(doc, taskNode, "specification", specification);
-            if (mode == "Referenčný automat")
+            if (mode == "Referenčný automat" || mode == "Testovacie prípady")
                 AddCDataNode(doc, taskNode, "verification", verification);
             else
                 AddNode(doc, taskNode, "verification", verification);
@@ -285,6 +339,58 @@ namespace FEI.TrainingSimulator.Dialogs
         private void toolTipLabel4_MouseHover(object sender, EventArgs e)
         {
             toolTip1.Show("Na zápis špecifikácie je možné použiť matematické výrazy. Zapisujú sa v MathJax syntaxi, podobnej LaTeXu.\n\nPodporované sú bežné matematické konštrukcie:\n- horné a dolné indexy\n- grécke symboly\n- množiny\n- matematické relácie a operátory\n- blokové výrazy pomocou $$ ... $$",toolTipLabel4);
+        }
+        private void toolTipLabel5_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show("Manuálne testovacie prípady pre overovanie riešenia.\n\nKaždé slovo je možné označiť ako:\n- Akceptovať\n- Odmietnuť\n\nTieto testy budú použité počas kontroly riešenia.\n\nPrázdne slovo je možné zadať ako ε alebo jednu medzeru.",toolTipLabel5);
+        }
+        
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (!testCases.ContainsKey(txtWord.Text))
+            {
+                if (txtWord.Text.Equals(" "))
+                    txtWord.Text = "ε";
+                    
+                if (checkBoxAccept.Checked)
+                {
+                    lblTestingCases.Items.Add(txtWord.Text.Trim()+" - "+"Akceptovať");
+                    testCases.Add(txtWord.Text.Trim(),true);
+                }
+
+                if (checkBoxFail.Checked)
+                {
+                    lblTestingCases.Items.Add(txtWord.Text.Trim()+" - "+"Odmietnuť");
+                    testCases.Add(txtWord.Text.Trim(),false);
+                }
+            }
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            if (lblTestingCases.SelectedIndex >= 0)
+            {
+                string word = lblTestingCases.Items[lblTestingCases.SelectedIndex].ToString();
+                word = word.Substring(0, word.IndexOf('-')-1);
+                testCases.Remove(word);
+                lblTestingCases.Items.RemoveAt(lblTestingCases.SelectedIndex);
+            }
+        }
+
+        private void checkBoxAccept_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxAccept.Checked == checkBoxFail.Checked)
+            {
+                checkBoxFail.Checked = !checkBoxAccept.Checked;
+            }
+        }
+
+        private void checkBoxFail_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxFail.Checked == checkBoxAccept.Checked)
+            {
+                checkBoxAccept.Checked = !checkBoxFail.Checked;
+            };
         }
     }
 }

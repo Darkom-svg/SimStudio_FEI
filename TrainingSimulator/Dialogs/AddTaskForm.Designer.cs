@@ -58,6 +58,16 @@
             this.toolTipLabel3 = new System.Windows.Forms.Label();
             this.txtReferencePath = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.testSetPanel = new System.Windows.Forms.Panel();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.lblTestingCases = new System.Windows.Forms.ListBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.toolTipLabel5 = new System.Windows.Forms.Label();
+            this.checkBoxFail = new System.Windows.Forms.CheckBox();
+            this.checkBoxAccept = new System.Windows.Forms.CheckBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtWord = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.taskSetPathButton = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -67,6 +77,7 @@
             this.formulaPanel.SuspendLayout();
             this.regexPanel.SuspendLayout();
             this.referenceModelPanel.SuspendLayout();
+            this.testSetPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -158,16 +169,17 @@
             // 
             resources.ApplyResources(this.cmbMode, "cmbMode");
             this.cmbMode.FormattingEnabled = true;
-            this.cmbMode.Items.AddRange(new object[] { resources.GetString("cmbMode.Items"), resources.GetString("cmbMode.Items1"), resources.GetString("cmbMode.Items2") });
+            this.cmbMode.Items.AddRange(new object[] { resources.GetString("cmbMode.Items"), resources.GetString("cmbMode.Items1"), resources.GetString("cmbMode.Items2"), resources.GetString("cmbMode.Items3") });
             this.cmbMode.Name = "cmbMode";
             this.cmbMode.SelectedIndexChanged += new System.EventHandler(this.cmbMode_SelectedIndexChanged);
             // 
             // flowLayoutPanel1
             // 
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
             this.flowLayoutPanel1.Controls.Add(this.formulaPanel);
             this.flowLayoutPanel1.Controls.Add(this.regexPanel);
             this.flowLayoutPanel1.Controls.Add(this.referenceModelPanel);
-            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
+            this.flowLayoutPanel1.Controls.Add(this.testSetPanel);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             // 
             // formulaPanel
@@ -243,6 +255,75 @@
             resources.ApplyResources(this.label10, "label10");
             this.label10.Name = "label10";
             // 
+            // testSetPanel
+            // 
+            this.testSetPanel.Controls.Add(this.btnRemove);
+            this.testSetPanel.Controls.Add(this.lblTestingCases);
+            this.testSetPanel.Controls.Add(this.btnAdd);
+            this.testSetPanel.Controls.Add(this.toolTipLabel5);
+            this.testSetPanel.Controls.Add(this.checkBoxFail);
+            this.testSetPanel.Controls.Add(this.checkBoxAccept);
+            this.testSetPanel.Controls.Add(this.label12);
+            this.testSetPanel.Controls.Add(this.txtWord);
+            this.testSetPanel.Controls.Add(this.label13);
+            resources.ApplyResources(this.testSetPanel, "testSetPanel");
+            this.testSetPanel.Name = "testSetPanel";
+            // 
+            // btnRemove
+            // 
+            resources.ApplyResources(this.btnRemove, "btnRemove");
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // lblTestingCases
+            // 
+            this.lblTestingCases.FormattingEnabled = true;
+            resources.ApplyResources(this.lblTestingCases, "lblTestingCases");
+            this.lblTestingCases.Name = "lblTestingCases";
+            // 
+            // btnAdd
+            // 
+            resources.ApplyResources(this.btnAdd, "btnAdd");
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // toolTipLabel5
+            // 
+            resources.ApplyResources(this.toolTipLabel5, "toolTipLabel5");
+            this.toolTipLabel5.Name = "toolTipLabel5";
+            this.toolTipLabel5.MouseHover += new System.EventHandler(this.toolTipLabel5_MouseHover);
+            // 
+            // checkBoxFail
+            // 
+            resources.ApplyResources(this.checkBoxFail, "checkBoxFail");
+            this.checkBoxFail.Name = "checkBoxFail";
+            this.checkBoxFail.UseVisualStyleBackColor = true;
+            this.checkBoxFail.CheckedChanged += new System.EventHandler(this.checkBoxFail_CheckedChanged);
+            // 
+            // checkBoxAccept
+            // 
+            resources.ApplyResources(this.checkBoxAccept, "checkBoxAccept");
+            this.checkBoxAccept.Name = "checkBoxAccept";
+            this.checkBoxAccept.UseVisualStyleBackColor = true;
+            this.checkBoxAccept.CheckedChanged += new System.EventHandler(this.checkBoxAccept_CheckedChanged);
+            // 
+            // label12
+            // 
+            resources.ApplyResources(this.label12, "label12");
+            this.label12.Name = "label12";
+            // 
+            // txtWord
+            // 
+            resources.ApplyResources(this.txtWord, "txtWord");
+            this.txtWord.Name = "txtWord";
+            // 
+            // label13
+            // 
+            resources.ApplyResources(this.label13, "label13");
+            this.label13.Name = "label13";
+            // 
             // taskSetPathButton
             // 
             resources.ApplyResources(this.taskSetPathButton, "taskSetPathButton");
@@ -310,9 +391,27 @@
             this.regexPanel.PerformLayout();
             this.referenceModelPanel.ResumeLayout(false);
             this.referenceModelPanel.PerformLayout();
+            this.testSetPanel.ResumeLayout(false);
+            this.testSetPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button btnRemove;
+
+        private System.Windows.Forms.ListBox lblTestingCases;
+
+        private System.Windows.Forms.Label toolTipLabel5;
+
+        private System.Windows.Forms.CheckBox checkBoxAccept;
+        private System.Windows.Forms.CheckBox checkBoxFail;
+        private System.Windows.Forms.Panel testSetPanel;
+
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtWord;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button btnAdd;
 
         private System.Windows.Forms.Label toolTipLabel4;
 
