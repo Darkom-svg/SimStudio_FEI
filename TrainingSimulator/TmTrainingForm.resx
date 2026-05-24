@@ -1429,13 +1429,13 @@
     <value>589, 17</value>
   </metadata>
   <data name="saveFileDialog1.Filter" xml:space="preserve">
-    <value>Súbor túringovho stroja|*.tm| Súbor JFLAP|*.jff</value>
+    <value>Súbor turingovho stroja|*.tm| Súbor JFLAP|*.jff</value>
   </data>
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>836, 17</value>
   </metadata>
   <data name="openFileDialog1.Filter" xml:space="preserve">
-    <value>Súbor túringovho stroja|*.tm|JFlap Turingov stroj|*.jff|Všetky súbory|*.*</value>
+    <value>Súbor turingovho stroja|*.tm|JFlap Turingov stroj|*.jff|Všetky súbory|*.*</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

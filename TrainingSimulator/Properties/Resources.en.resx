@@ -1,0 +1,80 @@
+﻿<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="AddTaskTitle" xml:space="preserve">
+        <value>Task was added successfully.</value>
+    </data>
+    <data name="TaskAddedMessage" xml:space="preserve">
+        <value>Add task</value>
+    </data>
+    <data name="AddTaskError" xml:space="preserve">
+        <value>Error while adding an example</value>
+    </data>
+    <data name="ValidationErrorTaskSetPath" xml:space="preserve">
+        <value>Select or enter the path to the task set.</value>
+    </data>
+    <data name="ValidationErrorTaskName" xml:space="preserve">
+        <value>Enter task name.</value>
+    </data>
+    <data name="ValidationErrorModelType" xml:space="preserve">
+        <value>Select machine type.</value>
+    </data>
+    <data name="ValidationErrorTaskValidationMethod" xml:space="preserve">
+        <value>Select verification method.</value>
+    </data>
+    <data name="ValidationErrorTaskDifficulty" xml:space="preserve">
+        <value>Select task difficulty.</value>
+    </data>
+    <data name="ValidationErrorTaskSpecification" xml:space="preserve">
+        <value>Enter task specification.</value>
+    </data>
+    <data name="ValidationErrorTaskModelMismatchWithReference" xml:space="preserve">
+        <value>The reference model does not match task model.</value>
+    </data>
+    <data name="ValidationErrorZeroTaskTest" xml:space="preserve">
+        <value>Add at least one test case.</value>
+    </data>
+    <data name="ValidationErrorVerfication" xml:space="preserve">
+        <value>Enter vrification value for task.</value>
+    </data>
+    <data name="XmlMissingRootTask" xml:space="preserve">
+        <value>The XML file does not have a &lt;tasks&gt; root element.</value>
+    </data>
+    <data name="ToolTipFormula" xml:space="preserve">
+        <value>Syntax:\nc1#symbol + c2#symbol + ... = kn + q\n\nExample:\n1#a+1#b=2n+0</value>
+    </data>
+    <data name="ToolTipRegex" xml:space="preserve">
+        <value>Supported:\n*  - repetition\n|  - alternative\n() - grouping\n[] - character set\n\nExamples:\na*b\n(a|b)*abb\n[0-9]+\n(a|b)*abba(a|b)*</value>
+    </data>
+    <data name="ToolTipReference" xml:space="preserve">
+        <value>Supported models:\n.fa  - finite automaton\n.pa  - pushdown automaton\n.tm  - Turing machine\n\nReference model must be the same as task model!</value>
+    </data>
+    <data name="ToolTipSpecification" xml:space="preserve">
+        <value>Mathematical expressions can be used to write specifications. They are written in MathJax syntax, similar to LaTeX.\n\nCommon mathematical constructs are supported:\n- superscripts and subscripts\n- Greek symbols\n- sets\n- mathematical relations and operators\n- block expressions using $$ ... $$</value>
+    </data>
+    <data name="ToolTipTestCases" xml:space="preserve">
+        <value>Manual test cases for verifying the solution.\n\nEach word can be marked as:\n- Accept\n- Reject\n\nThese tests will be used during the solution review.\n\nAn empty word can be entered as ε or a single space.</value>
+    </data>
+    <data name="Accept" xml:space="preserve">
+        <value>Accept</value>
+    </data>
+    <data name="Reject" xml:space="preserve">
+        <value>Reject</value>
+    </data>
+    <data name="ReferenceAutomaton" xml:space="preserve">
+        <value>Reference automaton</value>
+    </data>
+    <data name="TestCases" xml:space="preserve">
+        <value>Test cases</value>
+    </data>
+</root>

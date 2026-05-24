@@ -71,4 +71,70 @@
   <data name="Trainer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Trainer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="TaskAddedMessage" xml:space="preserve">
+    <value>Pridanie príkladu</value>
+  </data>
+  <data name="AddTaskTitle" xml:space="preserve">
+    <value>Príklad bol úspešne pridaný.</value>
+  </data>
+  <data name="AddTaskError" xml:space="preserve">
+    <value>Chyba pri pridávaní príkladu</value>
+  </data>
+  <data name="ValidationErrorTaskSetPath" xml:space="preserve">
+    <value>Vyberte alebo zadajte cestu k sade príkladov.</value>
+  </data>
+  <data name="ValidationErrorTaskName" xml:space="preserve">
+    <value>Zadajte názov príkladu.</value>
+  </data>
+  <data name="ValidationErrorModelType" xml:space="preserve">
+    <value>Vyberte typ automatu.</value>
+  </data>
+  <data name="ValidationErrorTaskValidationMethod" xml:space="preserve">
+    <value>Vyberte spôsob overovania.</value>
+  </data>
+  <data name="ValidationErrorTaskDifficulty" xml:space="preserve">
+    <value>Vyberte obtiažnosť príkladu.</value>
+  </data>
+  <data name="ValidationErrorTaskSpecification" xml:space="preserve">
+    <value>Zadajte popis zadania.</value>
+  </data>
+  <data name="ValidationErrorTaskModelMismatchWithReference" xml:space="preserve">
+    <value>Model referenčného riešenia sa nezhoduje s modelom zadania.</value>
+  </data>
+  <data name="ValidationErrorZeroTaskTest" xml:space="preserve">
+    <value>Pridajte aspoň jeden testovací prípad.</value>
+  </data>
+  <data name="ValidationErrorVerfication" xml:space="preserve">
+    <value>Zadajte hodnotu pre overovanie príkladu.</value>
+  </data>
+  <data name="XmlMissingRootTask" xml:space="preserve">
+    <value>XML súbor nemá koreňový element &lt;tasks&gt;.</value>
+  </data>
+  <data name="ToolTipFormula" xml:space="preserve">
+    <value>Syntax:\nc1#symbol + c2#symbol + ... = kn + q\n\nPríklad:\n1#a+1#b=2n+0</value>
+  </data>
+  <data name="ToolTipRegex" xml:space="preserve">
+    <value>Podporované:\n*  - opakovanie\n|  - alternatíva\n() - zoskupenie\n[] - množina symbolov\n\nPríklady:\na*b\n(a|b)*abb\n[0-9]+\n(a|b)*abba(a|b)*</value>
+  </data>
+  <data name="ToolTipReference" xml:space="preserve">
+    <value>Podporované modely:\n.fa  - konečný automat\n.pa  - zásobníkový automat\n.tm  - Turingov stroj\n\nReferenčný model musí byť rovnaký, ako model úlohy!</value>
+  </data>
+  <data name="ToolTipSpecification" xml:space="preserve">
+    <value>Na zápis špecifikácie je možné použiť matematické výrazy. Zapisujú sa v MathJax syntaxi, podobnej LaTeXu.\n\nPodporované sú bežné matematické konštrukcie:\n- horné a dolné indexy\n- grécke symboly\n- množiny\n- matematické relácie a operátory\n- blokové výrazy pomocou $$ ... $$</value>
+  </data>
+  <data name="ToolTipTestCases" xml:space="preserve">
+    <value>Manuálne testovacie prípady pre overovanie riešenia.\n\nKaždé slovo je možné označiť ako:\n- Akceptovať\n- Odmietnuť\n\nTieto testy budú použité počas kontroly riešenia.\n\nPrázdne slovo je možné zadať ako ε alebo jednu medzeru.</value>
+  </data>
+  <data name="Accept" xml:space="preserve">
+    <value>Akceptovať</value>
+  </data>
+  <data name="Reject" xml:space="preserve">
+    <value>Odmietnuť</value>
+  </data>
+  <data name="ReferenceAutomaton" xml:space="preserve">
+    <value>Referenčný automat</value>
+  </data>
+  <data name="TestCases" xml:space="preserve">
+    <value>Sada testov</value>
+  </data>
 </root>

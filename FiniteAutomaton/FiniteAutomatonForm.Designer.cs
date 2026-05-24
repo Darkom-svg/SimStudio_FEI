@@ -196,12 +196,14 @@ namespace FEI.FiniteAutomaton {
 	        // 
 	        // splitContainer1.Panel1
 	        // 
+	        resources.ApplyResources(this.splitContainer1.Panel1, "splitContainer1.Panel1");
 	        this.splitContainer1.Panel1.Controls.Add(this.bAddTFunction);
 	        this.splitContainer1.Panel1.Controls.Add(this.txtCode);
 	        this.splitContainer1.Panel1.Controls.Add(this.label5);
 	        // 
 	        // splitContainer1.Panel2
 	        // 
+	        resources.ApplyResources(this.splitContainer1.Panel2, "splitContainer1.Panel2");
 	        this.splitContainer1.Panel2.Controls.Add(this.pFunctions);
 	        this.splitContainer1.Panel2.Controls.Add(this.label6);
 	        this.splitContainer1.Panel2.Controls.Add(this.sbyFunctions);
@@ -249,12 +251,13 @@ namespace FEI.FiniteAutomaton {
 	        // 
 	        // splitContainer2
 	        // 
-	        this.splitContainer2.BackColor = System.Drawing.SystemColors.ControlDark;
 	        resources.ApplyResources(this.splitContainer2, "splitContainer2");
+	        this.splitContainer2.BackColor = System.Drawing.SystemColors.ControlDark;
 	        this.splitContainer2.Name = "splitContainer2";
 	        // 
 	        // splitContainer2.Panel1
 	        // 
+	        resources.ApplyResources(this.splitContainer2.Panel1, "splitContainer2.Panel1");
 	        this.splitContainer2.Panel1.BackColor = System.Drawing.SystemColors.Control;
 	        this.splitContainer2.Panel1.Controls.Add(this.tcMain);
 	        this.splitContainer2.Panel1.Controls.Add(this.speedPanel);
@@ -266,6 +269,7 @@ namespace FEI.FiniteAutomaton {
 	        // 
 	        // splitContainer2.Panel2
 	        // 
+	        resources.ApplyResources(this.splitContainer2.Panel2, "splitContainer2.Panel2");
 	        this.splitContainer2.Panel2.BackColor = System.Drawing.SystemColors.Control;
 	        this.splitContainer2.Panel2.Controls.Add(this.lstErrors);
 	        this.splitContainer2.Panel2.Controls.Add(this.label7);
@@ -285,16 +289,16 @@ namespace FEI.FiniteAutomaton {
 	        // 
 	        // functionsTab
 	        // 
-	        this.functionsTab.Controls.Add(this.splitContainer1);
 	        resources.ApplyResources(this.functionsTab, "functionsTab");
+	        this.functionsTab.Controls.Add(this.splitContainer1);
 	        this.functionsTab.Name = "functionsTab";
 	        this.functionsTab.UseVisualStyleBackColor = true;
 	        // 
 	        // statesTab
 	        // 
+	        resources.ApplyResources(this.statesTab, "statesTab");
 	        this.statesTab.Controls.Add(this.stateDiagramControl);
 	        this.statesTab.Controls.Add(this.bAddState);
-	        resources.ApplyResources(this.statesTab, "statesTab");
 	        this.statesTab.Name = "statesTab";
 	        this.statesTab.UseVisualStyleBackColor = true;
 	        // 
@@ -315,12 +319,12 @@ namespace FEI.FiniteAutomaton {
 	        // 
 	        // processTab
 	        // 
+	        resources.ApplyResources(this.processTab, "processTab");
 	        this.processTab.Controls.Add(this.sbxThreads);
 	        this.processTab.Controls.Add(this.sbyThreads);
 	        this.processTab.Controls.Add(this.lblThreadCount);
 	        this.processTab.Controls.Add(this.label4);
 	        this.processTab.Controls.Add(this.pThreads);
-	        resources.ApplyResources(this.processTab, "processTab");
 	        this.processTab.Name = "processTab";
 	        this.processTab.UseVisualStyleBackColor = true;
 	        // 
@@ -359,10 +363,10 @@ namespace FEI.FiniteAutomaton {
 	        // 
 	        // logTab
 	        // 
+	        resources.ApplyResources(this.logTab, "logTab");
 	        this.logTab.Controls.Add(this.sbxLog);
 	        this.logTab.Controls.Add(this.sbyLog);
 	        this.logTab.Controls.Add(this.pLog);
-	        resources.ApplyResources(this.logTab, "logTab");
 	        this.logTab.Name = "logTab";
 	        this.logTab.UseVisualStyleBackColor = true;
 	        // 
@@ -392,44 +396,44 @@ namespace FEI.FiniteAutomaton {
 	        // 
 	        // formalSpecificationTab
 	        // 
-	        this.formalSpecificationTab.Controls.Add(this.formalSpecifiaction);
 	        resources.ApplyResources(this.formalSpecificationTab, "formalSpecificationTab");
+	        this.formalSpecificationTab.Controls.Add(this.formalSpecifiaction);
 	        this.formalSpecificationTab.Name = "formalSpecificationTab";
 	        this.formalSpecificationTab.UseVisualStyleBackColor = true;
 	        // 
 	        // formalSpecifiaction
 	        // 
+	        resources.ApplyResources(this.formalSpecifiaction, "formalSpecifiaction");
 	        this.formalSpecifiaction.AllowWebBrowserDrop = false;
 	        this.formalSpecifiaction.ContextMenuStrip = this.formalSpecificationMenu;
-	        resources.ApplyResources(this.formalSpecifiaction, "formalSpecifiaction");
 	        this.formalSpecifiaction.Name = "formalSpecifiaction";
 	        this.formalSpecifiaction.WebBrowserShortcutsEnabled = false;
 	        // 
 	        // formalSpecificationMenu
 	        // 
+	        resources.ApplyResources(this.formalSpecificationMenu, "formalSpecificationMenu");
 	        this.formalSpecificationMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.formalSpecSaveAs, this.formalSpecPrint });
 	        this.formalSpecificationMenu.Name = "formalSpecificationMenu";
-	        resources.ApplyResources(this.formalSpecificationMenu, "formalSpecificationMenu");
 	        // 
 	        // formalSpecSaveAs
 	        // 
-	        this.formalSpecSaveAs.Name = "formalSpecSaveAs";
 	        resources.ApplyResources(this.formalSpecSaveAs, "formalSpecSaveAs");
+	        this.formalSpecSaveAs.Name = "formalSpecSaveAs";
 	        this.formalSpecSaveAs.Click += new System.EventHandler(this.formalSpecSaveAs_Click);
 	        // 
 	        // formalSpecPrint
 	        // 
-	        this.formalSpecPrint.Name = "formalSpecPrint";
 	        resources.ApplyResources(this.formalSpecPrint, "formalSpecPrint");
+	        this.formalSpecPrint.Name = "formalSpecPrint";
 	        this.formalSpecPrint.Click += new System.EventHandler(this.formalSpecPrint_Click);
 	        // 
 	        // speedPanel
 	        // 
+	        resources.ApplyResources(this.speedPanel, "speedPanel");
 	        this.speedPanel.BackColor = System.Drawing.Color.White;
 	        this.speedPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 	        this.speedPanel.Controls.Add(this.tbSpeed);
 	        this.speedPanel.Controls.Add(this.label3);
-	        resources.ApplyResources(this.speedPanel, "speedPanel");
 	        this.speedPanel.Name = "speedPanel";
 	        // 
 	        // tbSpeed
@@ -449,8 +453,8 @@ namespace FEI.FiniteAutomaton {
 	        // infiniteTapeControl
 	        // 
 	        this.infiniteTapeControl.AcceptStatus = FEI.TuringCore.Simulation.AcceptanceStatus.None;
-	        this.infiniteTapeControl.AllowBlanks = false;
 	        resources.ApplyResources(this.infiniteTapeControl, "infiniteTapeControl");
+	        this.infiniteTapeControl.AllowBlanks = false;
 	        this.infiniteTapeControl.ChangesAllowed = true;
 	        this.infiniteTapeControl.CurrentSymbols = ((System.Collections.Generic.List<string>)(resources.GetObject("infiniteTapeControl.CurrentSymbols")));
 	        this.infiniteTapeControl.EditedCell = -2147483648;
@@ -501,26 +505,26 @@ namespace FEI.FiniteAutomaton {
 	        // 
 	        // statusStrip
 	        // 
+	        resources.ApplyResources(this.statusStrip, "statusStrip");
 	        this.statusStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
 	        this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.statusLabel, this.lblStepCount });
-	        resources.ApplyResources(this.statusStrip, "statusStrip");
 	        this.statusStrip.Name = "statusStrip";
 	        // 
 	        // statusLabel
 	        // 
+	        resources.ApplyResources(this.statusLabel, "statusLabel");
 	        this.statusLabel.Margin = new System.Windows.Forms.Padding(0, 3, 10, 2);
 	        this.statusLabel.MergeAction = System.Windows.Forms.MergeAction.Replace;
 	        this.statusLabel.MergeIndex = 0;
 	        this.statusLabel.Name = "statusLabel";
-	        resources.ApplyResources(this.statusLabel, "statusLabel");
 	        // 
 	        // lblStepCount
 	        // 
+	        resources.ApplyResources(this.lblStepCount, "lblStepCount");
 	        this.lblStepCount.Margin = new System.Windows.Forms.Padding(10, 3, 0, 2);
 	        this.lblStepCount.MergeAction = System.Windows.Forms.MergeAction.Insert;
 	        this.lblStepCount.MergeIndex = 1;
 	        this.lblStepCount.Name = "lblStepCount";
-	        resources.ApplyResources(this.lblStepCount, "lblStepCount");
 	        // 
 	        // openFileDialog1
 	        // 
@@ -534,395 +538,400 @@ namespace FEI.FiniteAutomaton {
 	        // 
 	        // miFile
 	        // 
+	        resources.ApplyResources(this.miFile, "miFile");
 	        this.miFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miNewFile, this.miOpenFile, this.toolStripMenuItem1, this.miSaveFile, this.miSaveAsFile, this.toolStripMenuItem2, this.miExitmiExitmiExit });
 	        this.miFile.MergeAction = System.Windows.Forms.MergeAction.Insert;
 	        this.miFile.MergeIndex = 1;
 	        this.miFile.Name = "miFile";
-	        resources.ApplyResources(this.miFile, "miFile");
 	        // 
 	        // miNewFile
 	        // 
-	        this.miNewFile.Image = global::FEI.FiniteAutomaton.Properties.Resources._new;
 	        resources.ApplyResources(this.miNewFile, "miNewFile");
+	        this.miNewFile.Image = global::FEI.FiniteAutomaton.Properties.Resources._new;
 	        this.miNewFile.Name = "miNewFile";
 	        this.miNewFile.Click += new System.EventHandler(this.miNewFile_Click);
 	        // 
 	        // miOpenFile
 	        // 
-	        this.miOpenFile.Image = global::FEI.FiniteAutomaton.Properties.Resources.open;
 	        resources.ApplyResources(this.miOpenFile, "miOpenFile");
+	        this.miOpenFile.Image = global::FEI.FiniteAutomaton.Properties.Resources.open;
 	        this.miOpenFile.Name = "miOpenFile";
 	        this.miOpenFile.Click += new System.EventHandler(this.miOpenFile_Click);
 	        // 
 	        // toolStripMenuItem1
 	        // 
-	        this.toolStripMenuItem1.Name = "toolStripMenuItem1";
 	        resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+	        this.toolStripMenuItem1.Name = "toolStripMenuItem1";
 	        // 
 	        // miSaveFile
 	        // 
-	        this.miSaveFile.Image = global::FEI.FiniteAutomaton.Properties.Resources.save;
 	        resources.ApplyResources(this.miSaveFile, "miSaveFile");
+	        this.miSaveFile.Image = global::FEI.FiniteAutomaton.Properties.Resources.save;
 	        this.miSaveFile.Name = "miSaveFile";
 	        this.miSaveFile.Click += new System.EventHandler(this.miSaveFile_Click);
 	        // 
 	        // miSaveAsFile
 	        // 
-	        this.miSaveAsFile.Name = "miSaveAsFile";
 	        resources.ApplyResources(this.miSaveAsFile, "miSaveAsFile");
+	        this.miSaveAsFile.Image = global::FEI.FiniteAutomaton.Properties.Resources.save;
+	        this.miSaveAsFile.Name = "miSaveAsFile";
 	        this.miSaveAsFile.Click += new System.EventHandler(this.miSaveAsFile_Click);
 	        // 
 	        // toolStripMenuItem2
 	        // 
-	        this.toolStripMenuItem2.Name = "toolStripMenuItem2";
 	        resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+	        this.toolStripMenuItem2.Name = "toolStripMenuItem2";
 	        // 
 	        // miExitmiExitmiExit
 	        // 
-	        this.miExitmiExitmiExit.Name = "miExitmiExitmiExit";
 	        resources.ApplyResources(this.miExitmiExitmiExit, "miExitmiExitmiExit");
+	        this.miExitmiExitmiExit.Name = "miExitmiExitmiExit";
 	        this.miExitmiExitmiExit.Click += new System.EventHandler(this.miExit_Click);
 	        // 
 	        // miEdit
 	        // 
+	        resources.ApplyResources(this.miEdit, "miEdit");
 	        this.miEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miCut, this.miCopy, this.miPaste, this.miDelete, this.toolStripMenuItem10, this.miSelectAll, this.toolStripMenuItem4, this.miFind, this.miReplace });
 	        this.miEdit.MergeAction = System.Windows.Forms.MergeAction.Insert;
 	        this.miEdit.MergeIndex = 2;
 	        this.miEdit.Name = "miEdit";
-	        resources.ApplyResources(this.miEdit, "miEdit");
 	        // 
 	        // miCut
 	        // 
-	        this.miCut.Image = global::FEI.FiniteAutomaton.Properties.Resources.small_cut;
 	        resources.ApplyResources(this.miCut, "miCut");
+	        this.miCut.Image = global::FEI.FiniteAutomaton.Properties.Resources.small_cut;
 	        this.miCut.Name = "miCut";
 	        this.miCut.Click += new System.EventHandler(this.miCut_Click);
 	        // 
 	        // miCopy
 	        // 
-	        this.miCopy.Image = global::FEI.FiniteAutomaton.Properties.Resources.small_copy;
 	        resources.ApplyResources(this.miCopy, "miCopy");
+	        this.miCopy.Image = global::FEI.FiniteAutomaton.Properties.Resources.small_copy;
 	        this.miCopy.Name = "miCopy";
 	        this.miCopy.Click += new System.EventHandler(this.miCopy_Click);
 	        // 
 	        // miPaste
 	        // 
-	        this.miPaste.Image = global::FEI.FiniteAutomaton.Properties.Resources.small_paste;
 	        resources.ApplyResources(this.miPaste, "miPaste");
+	        this.miPaste.Image = global::FEI.FiniteAutomaton.Properties.Resources.small_paste;
 	        this.miPaste.Name = "miPaste";
 	        this.miPaste.Click += new System.EventHandler(this.miPaste_Click);
 	        // 
 	        // miDelete
 	        // 
-	        this.miDelete.Name = "miDelete";
 	        resources.ApplyResources(this.miDelete, "miDelete");
+	        this.miDelete.Name = "miDelete";
 	        this.miDelete.Click += new System.EventHandler(this.miDelete_Click);
 	        // 
 	        // toolStripMenuItem10
 	        // 
-	        this.toolStripMenuItem10.Name = "toolStripMenuItem10";
 	        resources.ApplyResources(this.toolStripMenuItem10, "toolStripMenuItem10");
+	        this.toolStripMenuItem10.Name = "toolStripMenuItem10";
 	        // 
 	        // miSelectAll
 	        // 
-	        this.miSelectAll.Name = "miSelectAll";
 	        resources.ApplyResources(this.miSelectAll, "miSelectAll");
+	        this.miSelectAll.Name = "miSelectAll";
 	        this.miSelectAll.Click += new System.EventHandler(this.miSelectAll_Click);
 	        // 
 	        // toolStripMenuItem4
 	        // 
-	        this.toolStripMenuItem4.Name = "toolStripMenuItem4";
 	        resources.ApplyResources(this.toolStripMenuItem4, "toolStripMenuItem4");
+	        this.toolStripMenuItem4.Name = "toolStripMenuItem4";
 	        // 
 	        // miFind
 	        // 
-	        this.miFind.Name = "miFind";
 	        resources.ApplyResources(this.miFind, "miFind");
+	        this.miFind.Name = "miFind";
 	        this.miFind.Click += new System.EventHandler(this.miFind_Click);
 	        // 
 	        // miReplace
 	        // 
-	        this.miReplace.Name = "miReplace";
 	        resources.ApplyResources(this.miReplace, "miReplace");
+	        this.miReplace.Name = "miReplace";
 	        this.miReplace.Click += new System.EventHandler(this.miReplace_Click);
 	        // 
 	        // miMachine
 	        // 
+	        resources.ApplyResources(this.miMachine, "miMachine");
 	        this.miMachine.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miTransitions, this.miTape, this.toolStripMenuItem14, this.miSettings });
 	        this.miMachine.MergeAction = System.Windows.Forms.MergeAction.Insert;
 	        this.miMachine.MergeIndex = 3;
 	        this.miMachine.Name = "miMachine";
-	        resources.ApplyResources(this.miMachine, "miMachine");
 	        // 
 	        // miTransitions
 	        // 
+	        resources.ApplyResources(this.miTransitions, "miTransitions");
 	        this.miTransitions.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miAddTransition, this.toolStripMenuItem12, this.miTransitionFormat });
 	        this.miTransitions.Name = "miTransitions";
-	        resources.ApplyResources(this.miTransitions, "miTransitions");
 	        // 
 	        // miAddTransition
 	        // 
-	        this.miAddTransition.Name = "miAddTransition";
 	        resources.ApplyResources(this.miAddTransition, "miAddTransition");
+	        this.miAddTransition.Name = "miAddTransition";
 	        this.miAddTransition.Click += new System.EventHandler(this.miAddTransition_Click);
 	        // 
 	        // toolStripMenuItem12
 	        // 
-	        this.toolStripMenuItem12.Name = "toolStripMenuItem12";
 	        resources.ApplyResources(this.toolStripMenuItem12, "toolStripMenuItem12");
+	        this.toolStripMenuItem12.Name = "toolStripMenuItem12";
 	        // 
 	        // miTransitionFormat
 	        // 
+	        resources.ApplyResources(this.miTransitionFormat, "miTransitionFormat");
 	        this.miTransitionFormat.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miTFormat10, this.toolStripSeparator2, this.miTFormat1, this.miTFormat2, this.miTFormat3, this.toolStripMenuItem13, this.miTFormat4, this.miTFormat5, this.miTFormat6, this.miTFormat7, this.miTFormat8, this.miTFormat9 });
 	        this.miTransitionFormat.Name = "miTransitionFormat";
-	        resources.ApplyResources(this.miTransitionFormat, "miTransitionFormat");
 	        // 
 	        // miTFormat10
 	        // 
+	        resources.ApplyResources(this.miTFormat10, "miTFormat10");
 	        this.miTFormat10.Checked = true;
 	        this.miTFormat10.CheckState = System.Windows.Forms.CheckState.Checked;
 	        this.miTFormat10.Name = "miTFormat10";
-	        resources.ApplyResources(this.miTFormat10, "miTFormat10");
 	        this.miTFormat10.Click += new System.EventHandler(this.miTFormat10_Click);
 	        // 
 	        // toolStripSeparator2
 	        // 
-	        this.toolStripSeparator2.Name = "toolStripSeparator2";
 	        resources.ApplyResources(this.toolStripSeparator2, "toolStripSeparator2");
+	        this.toolStripSeparator2.Name = "toolStripSeparator2";
 	        // 
 	        // miTFormat1
 	        // 
-	        this.miTFormat1.Name = "miTFormat1";
 	        resources.ApplyResources(this.miTFormat1, "miTFormat1");
+	        this.miTFormat1.Name = "miTFormat1";
 	        this.miTFormat1.Click += new System.EventHandler(this.miTFormat1_Click);
 	        // 
 	        // miTFormat2
 	        // 
-	        this.miTFormat2.Name = "miTFormat2";
 	        resources.ApplyResources(this.miTFormat2, "miTFormat2");
+	        this.miTFormat2.Name = "miTFormat2";
 	        this.miTFormat2.Click += new System.EventHandler(this.miTFormat2_Click);
 	        // 
 	        // miTFormat3
 	        // 
-	        this.miTFormat3.Name = "miTFormat3";
 	        resources.ApplyResources(this.miTFormat3, "miTFormat3");
+	        this.miTFormat3.Name = "miTFormat3";
 	        this.miTFormat3.Click += new System.EventHandler(this.miTFormat3_Click);
 	        // 
 	        // toolStripMenuItem13
 	        // 
-	        this.toolStripMenuItem13.Name = "toolStripMenuItem13";
 	        resources.ApplyResources(this.toolStripMenuItem13, "toolStripMenuItem13");
+	        this.toolStripMenuItem13.Name = "toolStripMenuItem13";
 	        // 
 	        // miTFormat4
 	        // 
-	        this.miTFormat4.Name = "miTFormat4";
 	        resources.ApplyResources(this.miTFormat4, "miTFormat4");
+	        this.miTFormat4.Name = "miTFormat4";
 	        this.miTFormat4.Click += new System.EventHandler(this.miTFormat4_Click);
 	        // 
 	        // miTFormat5
 	        // 
-	        this.miTFormat5.Name = "miTFormat5";
 	        resources.ApplyResources(this.miTFormat5, "miTFormat5");
+	        this.miTFormat5.Name = "miTFormat5";
 	        this.miTFormat5.Click += new System.EventHandler(this.miTFormat5_Click);
 	        // 
 	        // miTFormat6
 	        // 
-	        this.miTFormat6.Name = "miTFormat6";
 	        resources.ApplyResources(this.miTFormat6, "miTFormat6");
+	        this.miTFormat6.Name = "miTFormat6";
 	        this.miTFormat6.Click += new System.EventHandler(this.miTFormat6_Click);
 	        // 
 	        // miTFormat7
 	        // 
-	        this.miTFormat7.Name = "miTFormat7";
 	        resources.ApplyResources(this.miTFormat7, "miTFormat7");
+	        this.miTFormat7.Name = "miTFormat7";
 	        this.miTFormat7.Click += new System.EventHandler(this.miTFormat7_Click);
 	        // 
 	        // miTFormat8
 	        // 
-	        this.miTFormat8.Name = "miTFormat8";
 	        resources.ApplyResources(this.miTFormat8, "miTFormat8");
+	        this.miTFormat8.Name = "miTFormat8";
 	        this.miTFormat8.Click += new System.EventHandler(this.miTFormat8_Click);
 	        // 
 	        // miTFormat9
 	        // 
-	        this.miTFormat9.Name = "miTFormat9";
 	        resources.ApplyResources(this.miTFormat9, "miTFormat9");
+	        this.miTFormat9.Name = "miTFormat9";
 	        this.miTFormat9.Click += new System.EventHandler(this.miTFormat9_Click);
 	        // 
 	        // miTape
 	        // 
+	        resources.ApplyResources(this.miTape, "miTape");
 	        this.miTape.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miInsertSymbols, this.toolStripSeparator1, this.miClearTape, this.toolStripMenuItem5, this.miExportTape, this.miImportTape, this.toolStripMenuItem6, this.miTapeStatistics });
 	        this.miTape.Name = "miTape";
-	        resources.ApplyResources(this.miTape, "miTape");
 	        // 
 	        // miInsertSymbols
 	        // 
-	        this.miInsertSymbols.Name = "miInsertSymbols";
 	        resources.ApplyResources(this.miInsertSymbols, "miInsertSymbols");
+	        this.miInsertSymbols.Name = "miInsertSymbols";
 	        this.miInsertSymbols.Click += new System.EventHandler(this.miInsertSymbols_Click);
 	        // 
 	        // toolStripSeparator1
 	        // 
-	        this.toolStripSeparator1.Name = "toolStripSeparator1";
 	        resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+	        this.toolStripSeparator1.Name = "toolStripSeparator1";
 	        // 
 	        // miClearTape
 	        // 
-	        this.miClearTape.Name = "miClearTape";
 	        resources.ApplyResources(this.miClearTape, "miClearTape");
+	        this.miClearTape.Name = "miClearTape";
 	        this.miClearTape.Click += new System.EventHandler(this.miClearTape_Click);
 	        // 
 	        // toolStripMenuItem5
 	        // 
-	        this.toolStripMenuItem5.Name = "toolStripMenuItem5";
 	        resources.ApplyResources(this.toolStripMenuItem5, "toolStripMenuItem5");
+	        this.toolStripMenuItem5.Name = "toolStripMenuItem5";
 	        // 
 	        // miExportTape
 	        // 
-	        this.miExportTape.Name = "miExportTape";
 	        resources.ApplyResources(this.miExportTape, "miExportTape");
+	        this.miExportTape.Name = "miExportTape";
 	        this.miExportTape.Click += new System.EventHandler(this.miExportTape_Click);
 	        // 
 	        // miImportTape
 	        // 
-	        this.miImportTape.Name = "miImportTape";
 	        resources.ApplyResources(this.miImportTape, "miImportTape");
+	        this.miImportTape.Name = "miImportTape";
 	        this.miImportTape.Click += new System.EventHandler(this.miImportTape_Click);
 	        // 
 	        // toolStripMenuItem6
 	        // 
-	        this.toolStripMenuItem6.Name = "toolStripMenuItem6";
 	        resources.ApplyResources(this.toolStripMenuItem6, "toolStripMenuItem6");
+	        this.toolStripMenuItem6.Name = "toolStripMenuItem6";
 	        // 
 	        // miTapeStatistics
 	        // 
-	        this.miTapeStatistics.Name = "miTapeStatistics";
 	        resources.ApplyResources(this.miTapeStatistics, "miTapeStatistics");
+	        this.miTapeStatistics.Name = "miTapeStatistics";
 	        this.miTapeStatistics.Click += new System.EventHandler(this.miTapeStatistics_Click);
 	        // 
 	        // toolStripMenuItem14
 	        // 
-	        this.toolStripMenuItem14.Name = "toolStripMenuItem14";
 	        resources.ApplyResources(this.toolStripMenuItem14, "toolStripMenuItem14");
+	        this.toolStripMenuItem14.Name = "toolStripMenuItem14";
 	        // 
 	        // miSettings
 	        // 
-	        this.miSettings.Name = "miSettings";
 	        resources.ApplyResources(this.miSettings, "miSettings");
+	        this.miSettings.Name = "miSettings";
 	        this.miSettings.Click += new System.EventHandler(this.miSettings_Click);
 	        // 
 	        // miSimulation
 	        // 
+	        resources.ApplyResources(this.miSimulation, "miSimulation");
 	        this.miSimulation.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miRun, this.miPause, this.miStep, this.miStop, this.toolStripMenuItem9, this.miBreaks, this.toolStripMenuItem11, this.miWriteLog, this.miStoreOriginalTape });
 	        this.miSimulation.MergeAction = System.Windows.Forms.MergeAction.Insert;
 	        this.miSimulation.MergeIndex = 4;
 	        this.miSimulation.Name = "miSimulation";
-	        resources.ApplyResources(this.miSimulation, "miSimulation");
 	        // 
 	        // miRun
 	        // 
 	        resources.ApplyResources(this.miRun, "miRun");
+	        this.miRun.Image = global::FEI.FiniteAutomaton.Properties.Resources.run;
 	        this.miRun.Name = "miRun";
 	        this.miRun.Click += new System.EventHandler(this.miRun_Click);
 	        // 
 	        // miPause
 	        // 
 	        resources.ApplyResources(this.miPause, "miPause");
+	        this.miPause.Image = global::FEI.FiniteAutomaton.Properties.Resources.pause;
 	        this.miPause.Name = "miPause";
 	        this.miPause.Click += new System.EventHandler(this.miPause_Click);
 	        // 
 	        // miStep
 	        // 
-	        this.miStep.Name = "miStep";
 	        resources.ApplyResources(this.miStep, "miStep");
+	        this.miStep.Image = global::FEI.FiniteAutomaton.Properties.Resources.next;
+	        this.miStep.Name = "miStep";
 	        this.miStep.Click += new System.EventHandler(this.miStep_Click);
 	        // 
 	        // miStop
 	        // 
 	        resources.ApplyResources(this.miStop, "miStop");
+	        this.miStop.Image = global::FEI.FiniteAutomaton.Properties.Resources.stop;
 	        this.miStop.Name = "miStop";
 	        this.miStop.Click += new System.EventHandler(this.miStop_Click);
 	        // 
 	        // toolStripMenuItem9
 	        // 
-	        this.toolStripMenuItem9.Name = "toolStripMenuItem9";
 	        resources.ApplyResources(this.toolStripMenuItem9, "toolStripMenuItem9");
+	        this.toolStripMenuItem9.Name = "toolStripMenuItem9";
 	        // 
 	        // miBreaks
 	        // 
-	        this.miBreaks.Name = "miBreaks";
 	        resources.ApplyResources(this.miBreaks, "miBreaks");
+	        this.miBreaks.Name = "miBreaks";
 	        // 
 	        // toolStripMenuItem11
 	        // 
-	        this.toolStripMenuItem11.Name = "toolStripMenuItem11";
 	        resources.ApplyResources(this.toolStripMenuItem11, "toolStripMenuItem11");
+	        this.toolStripMenuItem11.Name = "toolStripMenuItem11";
 	        // 
 	        // miWriteLog
 	        // 
+	        resources.ApplyResources(this.miWriteLog, "miWriteLog");
 	        this.miWriteLog.Checked = true;
 	        this.miWriteLog.CheckOnClick = true;
 	        this.miWriteLog.CheckState = System.Windows.Forms.CheckState.Checked;
 	        this.miWriteLog.Name = "miWriteLog";
-	        resources.ApplyResources(this.miWriteLog, "miWriteLog");
 	        this.miWriteLog.Click += new System.EventHandler(this.miWriteLog_Click);
 	        // 
 	        // miStoreOriginalTape
 	        // 
+	        resources.ApplyResources(this.miStoreOriginalTape, "miStoreOriginalTape");
 	        this.miStoreOriginalTape.Checked = true;
 	        this.miStoreOriginalTape.CheckOnClick = true;
 	        this.miStoreOriginalTape.CheckState = System.Windows.Forms.CheckState.Checked;
 	        this.miStoreOriginalTape.Name = "miStoreOriginalTape";
-	        resources.ApplyResources(this.miStoreOriginalTape, "miStoreOriginalTape");
 	        this.miStoreOriginalTape.Click += new System.EventHandler(this.miStoreOriginalTape_Click);
 	        // 
 	        // txtFind
 	        // 
+	        resources.ApplyResources(this.txtFind, "txtFind");
 	        this.txtFind.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
 	        this.txtFind.Name = "txtFind";
-	        resources.ApplyResources(this.txtFind, "txtFind");
 	        this.txtFind.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtFind_KeyDown);
 	        this.txtFind.Click += new System.EventHandler(this.txtFind_Click);
 	        // 
 	        // helpToolStripMenuItem
 	        // 
+	        resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
 	        this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miAbout });
 	        this.helpToolStripMenuItem.MergeAction = System.Windows.Forms.MergeAction.MatchOnly;
 	        this.helpToolStripMenuItem.MergeIndex = 10;
 	        this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-	        resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
 	        // 
 	        // miAbout
 	        // 
+	        resources.ApplyResources(this.miAbout, "miAbout");
 	        this.miAbout.MergeAction = System.Windows.Forms.MergeAction.Replace;
 	        this.miAbout.Name = "miAbout";
-	        resources.ApplyResources(this.miAbout, "miAbout");
 	        this.miAbout.Click += new System.EventHandler(this.miAbout_Click);
 	        // 
 	        // kopírovaťToolStripMenuItem
 	        // 
-	        this.kopírovaťToolStripMenuItem.Name = "kopírovaťToolStripMenuItem";
 	        resources.ApplyResources(this.kopírovaťToolStripMenuItem, "kopírovaťToolStripMenuItem");
+	        this.kopírovaťToolStripMenuItem.Name = "kopírovaťToolStripMenuItem";
 	        // 
 	        // toolStripMenuItem3
 	        // 
-	        this.toolStripMenuItem3.Name = "toolStripMenuItem3";
 	        resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
+	        this.toolStripMenuItem3.Name = "toolStripMenuItem3";
 	        // 
 	        // označiťVšetkoToolStripMenuItem
 	        // 
-	        this.označiťVšetkoToolStripMenuItem.Name = "označiťVšetkoToolStripMenuItem";
 	        resources.ApplyResources(this.označiťVšetkoToolStripMenuItem, "označiťVšetkoToolStripMenuItem");
+	        this.označiťVšetkoToolStripMenuItem.Name = "označiťVšetkoToolStripMenuItem";
 	        // 
 	        // toolStripMenuItem7
 	        // 
-	        this.toolStripMenuItem7.Name = "toolStripMenuItem7";
 	        resources.ApplyResources(this.toolStripMenuItem7, "toolStripMenuItem7");
+	        this.toolStripMenuItem7.Name = "toolStripMenuItem7";
 	        // 
 	        // toolStripMenuItem8
 	        // 
-	        this.toolStripMenuItem8.Name = "toolStripMenuItem8";
 	        resources.ApplyResources(this.toolStripMenuItem8, "toolStripMenuItem8");
+	        this.toolStripMenuItem8.Name = "toolStripMenuItem8";
 	        // 
 	        // saveFileDialog1
 	        // 
@@ -932,9 +941,9 @@ namespace FEI.FiniteAutomaton {
 	        // 
 	        // toolStripPanel1
 	        // 
+	        resources.ApplyResources(this.toolStripPanel1, "toolStripPanel1");
 	        this.toolStripPanel1.Controls.Add(this.menuStrip1);
 	        this.toolStripPanel1.Controls.Add(this.mainToolStrip);
-	        resources.ApplyResources(this.toolStripPanel1, "toolStripPanel1");
 	        this.toolStripPanel1.Name = "toolStripPanel1";
 	        this.toolStripPanel1.Orientation = System.Windows.Forms.Orientation.Horizontal;
 	        this.toolStripPanel1.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
@@ -947,70 +956,70 @@ namespace FEI.FiniteAutomaton {
 	        // 
 	        // newStripButton
 	        // 
+	        resources.ApplyResources(this.newStripButton, "newStripButton");
 	        this.newStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
 	        this.newStripButton.Image = global::FEI.FiniteAutomaton.Properties.Resources._new;
-	        resources.ApplyResources(this.newStripButton, "newStripButton");
 	        this.newStripButton.Name = "newStripButton";
 	        this.newStripButton.Click += new System.EventHandler(this.newStripButton_Click);
 	        // 
 	        // openToolStripButton
 	        // 
+	        resources.ApplyResources(this.openToolStripButton, "openToolStripButton");
 	        this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
 	        this.openToolStripButton.Image = global::FEI.FiniteAutomaton.Properties.Resources.open;
-	        resources.ApplyResources(this.openToolStripButton, "openToolStripButton");
 	        this.openToolStripButton.Name = "openToolStripButton";
 	        this.openToolStripButton.Click += new System.EventHandler(this.openToolStripButton_Click);
 	        // 
 	        // saveToolStripButton
 	        // 
+	        resources.ApplyResources(this.saveToolStripButton, "saveToolStripButton");
 	        this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
 	        this.saveToolStripButton.Image = global::FEI.FiniteAutomaton.Properties.Resources.save;
-	        resources.ApplyResources(this.saveToolStripButton, "saveToolStripButton");
 	        this.saveToolStripButton.Name = "saveToolStripButton";
 	        this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
 	        // 
 	        // toolStripSeparator3
 	        // 
-	        this.toolStripSeparator3.Name = "toolStripSeparator3";
 	        resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
+	        this.toolStripSeparator3.Name = "toolStripSeparator3";
 	        // 
 	        // runToolStripButton
 	        // 
-	        this.runToolStripButton.Image = global::FEI.FiniteAutomaton.Properties.Resources.run;
 	        resources.ApplyResources(this.runToolStripButton, "runToolStripButton");
+	        this.runToolStripButton.Image = global::FEI.FiniteAutomaton.Properties.Resources.run;
 	        this.runToolStripButton.Name = "runToolStripButton";
 	        this.runToolStripButton.Click += new System.EventHandler(this.runToolStripButton_Click);
 	        // 
 	        // breakToolStripButton
 	        // 
-	        this.breakToolStripButton.Image = global::FEI.FiniteAutomaton.Properties.Resources.pause;
 	        resources.ApplyResources(this.breakToolStripButton, "breakToolStripButton");
+	        this.breakToolStripButton.Image = global::FEI.FiniteAutomaton.Properties.Resources.pause;
 	        this.breakToolStripButton.Name = "breakToolStripButton";
 	        this.breakToolStripButton.Click += new System.EventHandler(this.breakToolStripButton_Click);
 	        // 
 	        // stopToolStripButton
 	        // 
-	        this.stopToolStripButton.Image = global::FEI.FiniteAutomaton.Properties.Resources.stop;
 	        resources.ApplyResources(this.stopToolStripButton, "stopToolStripButton");
+	        this.stopToolStripButton.Image = global::FEI.FiniteAutomaton.Properties.Resources.stop;
 	        this.stopToolStripButton.Name = "stopToolStripButton";
 	        this.stopToolStripButton.Click += new System.EventHandler(this.stopToolStripButton_Click);
 	        // 
 	        // toolStripSeparator4
 	        // 
-	        this.toolStripSeparator4.Name = "toolStripSeparator4";
 	        resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+	        this.toolStripSeparator4.Name = "toolStripSeparator4";
 	        // 
 	        // stepToolStripButton
 	        // 
-	        this.stepToolStripButton.Image = global::FEI.FiniteAutomaton.Properties.Resources.next;
 	        resources.ApplyResources(this.stepToolStripButton, "stepToolStripButton");
+	        this.stepToolStripButton.Image = global::FEI.FiniteAutomaton.Properties.Resources.next;
 	        this.stepToolStripButton.Name = "stepToolStripButton";
 	        this.stepToolStripButton.Click += new System.EventHandler(this.stepToolStripButton_Click);
 	        // 
 	        // FiniteAutomatonForm
 	        // 
-	        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 	        resources.ApplyResources(this, "$this");
+	        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 	        this.Controls.Add(this.splitContainer2);
 	        this.Controls.Add(this.toolStripPanel1);
 	        this.Controls.Add(this.statusStrip);
@@ -1170,9 +1179,9 @@ namespace FEI.FiniteAutomaton {
         private System.Windows.Forms.ToolStripButton openToolStripButton;
         private System.Windows.Forms.ToolStripButton saveToolStripButton;
         private ToolStripSeparator toolStripSeparator3;
-        private ToolStripButton runToolStripButton;
-        private ToolStripButton breakToolStripButton;
-        private ToolStripButton stopToolStripButton;
+        private System.Windows.Forms.ToolStripButton runToolStripButton;
+        private System.Windows.Forms.ToolStripButton breakToolStripButton;
+        private System.Windows.Forms.ToolStripButton stopToolStripButton;
         private ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton stepToolStripButton;
         private System.Windows.Forms.Panel speedPanel;

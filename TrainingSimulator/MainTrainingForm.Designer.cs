@@ -33,23 +33,6 @@ namespace FEI.TrainingSimulator
         {
             System.Windows.Forms.Button TuringTrain;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainTrainingForm));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.miFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.miNewFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.miOpenFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.miSaveFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.miSaveAsFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.miExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtFind = new System.Windows.Forms.ToolStripTextBox();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.miAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.taskSetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.setsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addTaskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.miniToolStrip = new System.Windows.Forms.StatusStrip();
-            this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.roundedPanel1 = new FEI.SimStudio.Components.RoundedPanel();
@@ -68,10 +51,25 @@ namespace FEI.TrainingSimulator
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.roundedPanel7 = new FEI.SimStudio.Components.RoundedPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.miFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.miNewFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.miOpenFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.miSaveFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.miSaveAsFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.miExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtFind = new System.Windows.Forms.ToolStripTextBox();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.taskSetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.setsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.addTaskToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miniToolStrip = new System.Windows.Forms.StatusStrip();
+            this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             TuringTrain = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
-            this.miniToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -84,6 +82,8 @@ namespace FEI.TrainingSimulator
             this.roundedPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.roundedPanel7.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.miniToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // TuringTrain
@@ -92,6 +92,143 @@ namespace FEI.TrainingSimulator
             TuringTrain.Name = "TuringTrain";
             TuringTrain.UseVisualStyleBackColor = true;
             TuringTrain.Click += new System.EventHandler(this.TuringTrain_Click);
+            // 
+            // splitContainer1
+            // 
+            resources.ApplyResources(this.splitContainer1, "splitContainer1");
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.flowLayoutPanel1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.roundedPanel7);
+            resources.ApplyResources(this.splitContainer1.Panel2, "splitContainer1.Panel2");
+            // 
+            // flowLayoutPanel1
+            // 
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
+            this.flowLayoutPanel1.Controls.Add(this.roundedPanel1);
+            this.flowLayoutPanel1.Controls.Add(this.roundedPanel3);
+            this.flowLayoutPanel1.Controls.Add(this.roundedPanel5);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            // 
+            // roundedPanel1
+            // 
+            this.roundedPanel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.roundedPanel1.Controls.Add(this.label7);
+            this.roundedPanel1.Controls.Add(this.FaTrain);
+            this.roundedPanel1.Controls.Add(this.label1);
+            this.roundedPanel1.Controls.Add(this.pictureBox1);
+            this.roundedPanel1.CornerRadius = 5;
+            resources.ApplyResources(this.roundedPanel1, "roundedPanel1");
+            this.roundedPanel1.Name = "roundedPanel1";
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Name = "label7";
+            // 
+            // FaTrain
+            // 
+            resources.ApplyResources(this.FaTrain, "FaTrain");
+            this.FaTrain.Name = "FaTrain";
+            this.FaTrain.UseVisualStyleBackColor = true;
+            this.FaTrain.Click += new System.EventHandler(this.FaTrain_Click);
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Name = "label1";
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
+            // roundedPanel3
+            // 
+            this.roundedPanel3.BackColor = System.Drawing.Color.Gainsboro;
+            this.roundedPanel3.Controls.Add(this.label8);
+            this.roundedPanel3.Controls.Add(this.PdaTrain);
+            this.roundedPanel3.Controls.Add(this.label4);
+            this.roundedPanel3.Controls.Add(this.pictureBox2);
+            this.roundedPanel3.CornerRadius = 5;
+            resources.ApplyResources(this.roundedPanel3, "roundedPanel3");
+            this.roundedPanel3.Name = "roundedPanel3";
+            // 
+            // label8
+            // 
+            resources.ApplyResources(this.label8, "label8");
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Name = "label8";
+            // 
+            // PdaTrain
+            // 
+            resources.ApplyResources(this.PdaTrain, "PdaTrain");
+            this.PdaTrain.Name = "PdaTrain";
+            this.PdaTrain.UseVisualStyleBackColor = true;
+            this.PdaTrain.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Name = "label4";
+            // 
+            // pictureBox2
+            // 
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.TabStop = false;
+            // 
+            // roundedPanel5
+            // 
+            this.roundedPanel5.BackColor = System.Drawing.Color.Gainsboro;
+            this.roundedPanel5.Controls.Add(this.label9);
+            this.roundedPanel5.Controls.Add(TuringTrain);
+            this.roundedPanel5.Controls.Add(this.label6);
+            this.roundedPanel5.Controls.Add(this.pictureBox3);
+            this.roundedPanel5.CornerRadius = 5;
+            resources.ApplyResources(this.roundedPanel5, "roundedPanel5");
+            this.roundedPanel5.Name = "roundedPanel5";
+            // 
+            // label9
+            // 
+            resources.ApplyResources(this.label9, "label9");
+            this.label9.BackColor = System.Drawing.Color.Transparent;
+            this.label9.Name = "label9";
+            // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Name = "label6";
+            // 
+            // pictureBox3
+            // 
+            resources.ApplyResources(this.pictureBox3, "pictureBox3");
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.TabStop = false;
+            // 
+            // roundedPanel7
+            // 
+            resources.ApplyResources(this.roundedPanel7, "roundedPanel7");
+            this.roundedPanel7.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.roundedPanel7.Controls.Add(this.flowLayoutPanel2);
+            this.roundedPanel7.CornerRadius = 5;
+            this.roundedPanel7.Name = "roundedPanel7";
+            // 
+            // flowLayoutPanel2
+            // 
+            resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
+            this.flowLayoutPanel2.CausesValidation = false;
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             // 
             // menuStrip1
             // 
@@ -197,146 +334,6 @@ namespace FEI.TrainingSimulator
             this.lblStatus.Name = "lblStatus";
             resources.ApplyResources(this.lblStatus, "lblStatus");
             // 
-            // splitContainer1
-            // 
-            resources.ApplyResources(this.splitContainer1, "splitContainer1");
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.flowLayoutPanel1);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.roundedPanel7);
-            resources.ApplyResources(this.splitContainer1.Panel2, "splitContainer1.Panel2");
-            // 
-            // flowLayoutPanel1
-            // 
-            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
-            this.flowLayoutPanel1.Controls.Add(this.roundedPanel1);
-            this.flowLayoutPanel1.Controls.Add(this.roundedPanel3);
-            this.flowLayoutPanel1.Controls.Add(this.roundedPanel5);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            // 
-            // roundedPanel1
-            // 
-            this.roundedPanel1.BackColor = System.Drawing.Color.Gainsboro;
-            this.roundedPanel1.Controls.Add(this.label7);
-            this.roundedPanel1.Controls.Add(this.FaTrain);
-            this.roundedPanel1.Controls.Add(this.label1);
-            this.roundedPanel1.Controls.Add(this.pictureBox1);
-            this.roundedPanel1.CornerRadius = 5;
-            resources.ApplyResources(this.roundedPanel1, "roundedPanel1");
-            this.roundedPanel1.Name = "roundedPanel1";
-            // 
-            // label7
-            // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Name = "label7";
-            // 
-            // FaTrain
-            // 
-            resources.ApplyResources(this.FaTrain, "FaTrain");
-            this.FaTrain.Name = "FaTrain";
-            this.FaTrain.UseVisualStyleBackColor = true;
-            this.FaTrain.Click += new System.EventHandler(this.FaTrain_Click);
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Name = "label1";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::FEI.TrainingSimulator.Properties.Resources.Turing;
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
-            // 
-            // roundedPanel3
-            // 
-            this.roundedPanel3.BackColor = System.Drawing.Color.Gainsboro;
-            this.roundedPanel3.Controls.Add(this.label8);
-            this.roundedPanel3.Controls.Add(this.PdaTrain);
-            this.roundedPanel3.Controls.Add(this.label4);
-            this.roundedPanel3.Controls.Add(this.pictureBox2);
-            this.roundedPanel3.CornerRadius = 5;
-            resources.ApplyResources(this.roundedPanel3, "roundedPanel3");
-            this.roundedPanel3.Name = "roundedPanel3";
-            // 
-            // label8
-            // 
-            resources.ApplyResources(this.label8, "label8");
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Name = "label8";
-            // 
-            // PdaTrain
-            // 
-            resources.ApplyResources(this.PdaTrain, "PdaTrain");
-            this.PdaTrain.Name = "PdaTrain";
-            this.PdaTrain.UseVisualStyleBackColor = true;
-            this.PdaTrain.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // label4
-            // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Name = "label4";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::FEI.TrainingSimulator.Properties.Resources.Turing;
-            resources.ApplyResources(this.pictureBox2, "pictureBox2");
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.TabStop = false;
-            // 
-            // roundedPanel5
-            // 
-            this.roundedPanel5.BackColor = System.Drawing.Color.Gainsboro;
-            this.roundedPanel5.Controls.Add(this.label9);
-            this.roundedPanel5.Controls.Add(TuringTrain);
-            this.roundedPanel5.Controls.Add(this.label6);
-            this.roundedPanel5.Controls.Add(this.pictureBox3);
-            this.roundedPanel5.CornerRadius = 5;
-            resources.ApplyResources(this.roundedPanel5, "roundedPanel5");
-            this.roundedPanel5.Name = "roundedPanel5";
-            // 
-            // label9
-            // 
-            resources.ApplyResources(this.label9, "label9");
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Name = "label9";
-            // 
-            // label6
-            // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Name = "label6";
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::FEI.TrainingSimulator.Properties.Resources.Turing;
-            resources.ApplyResources(this.pictureBox3, "pictureBox3");
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.TabStop = false;
-            // 
-            // roundedPanel7
-            // 
-            resources.ApplyResources(this.roundedPanel7, "roundedPanel7");
-            this.roundedPanel7.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.roundedPanel7.Controls.Add(this.flowLayoutPanel2);
-            this.roundedPanel7.CornerRadius = 5;
-            this.roundedPanel7.Name = "roundedPanel7";
-            // 
-            // flowLayoutPanel2
-            // 
-            resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
-            this.flowLayoutPanel2.CausesValidation = false;
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -350,10 +347,6 @@ namespace FEI.TrainingSimulator
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.splitContainer1);
             this.Name = "MainTrainingForm";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.miniToolStrip.ResumeLayout(false);
-            this.miniToolStrip.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -370,6 +363,10 @@ namespace FEI.TrainingSimulator
             this.roundedPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.roundedPanel7.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.miniToolStrip.ResumeLayout(false);
+            this.miniToolStrip.PerformLayout();
             this.ResumeLayout(false);
         }
 

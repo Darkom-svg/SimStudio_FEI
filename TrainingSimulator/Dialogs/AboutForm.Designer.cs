@@ -65,7 +65,6 @@
             // pIcon
             // 
             resources.ApplyResources(this.pIcon, "pIcon");
-            this.pIcon.Image = global::FEI.TrainingSimulator.Properties.Resources.Trainer;
             this.pIcon.Name = "pIcon";
             this.pIcon.TabStop = false;
             // 

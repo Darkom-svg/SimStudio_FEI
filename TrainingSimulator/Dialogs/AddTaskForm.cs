@@ -5,6 +5,7 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using System.Xml;
+using FEI.TrainingSimulator.Properties;
 
 namespace FEI.TrainingSimulator.Dialogs
 {
@@ -14,11 +15,12 @@ namespace FEI.TrainingSimulator.Dialogs
         public AddTaskForm(string currentTaskSetFile)
         {
             InitializeComponent();
-            txtTaskSetPath.Text = currentTaskSetFile;
+            txtTaskSetPathtxtTaskSetPath.Text = currentTaskSetFile;
             cmbModel.SelectedIndex = 0;
             cmbMode.SelectedIndex = 0;
-            comboBox1.SelectedIndex = 0;
+            cmbDifficulty.SelectedIndex = 0;
             checkBoxAccept.Checked = true;
+            cmbDifficulty.SelectedIndex = 0;
             UpdateVerificationPanels();
         }
         
@@ -26,20 +28,20 @@ namespace FEI.TrainingSimulator.Dialogs
         {
             cmbMode.Items.Clear();
 
-            if (cmbModel.SelectedIndex == 0) 
+            if (cmbModel.SelectedIndex == 0)
             {
                 cmbMode.Items.Add("Formula");
                 cmbMode.Items.Add("Regex");
-                cmbMode.Items.Add("Referenčný automat");
-                cmbMode.Items.Add("Testovacie prípady");
-                cmbMode.SelectedIndex = 0;
+                cmbMode.Items.Add(Resources.ReferenceAutomaton);
+                cmbMode.Items.Add(Resources.TestCases);
             }
-            else 
+            else
             {
-                cmbMode.Items.Add("Referenčný automat");
-                cmbMode.Items.Add("Testovacie prípady");
-                cmbMode.SelectedIndex = 0;
+                cmbMode.Items.Add(Resources.ReferenceAutomaton);
+                cmbMode.Items.Add(Resources.TestCases);
             }
+
+            cmbMode.SelectedIndex = 0;
         }
 
         private void cmbMode_SelectedIndexChanged(object sender, EventArgs e)
@@ -49,16 +51,19 @@ namespace FEI.TrainingSimulator.Dialogs
 
         private void UpdateVerificationPanels()
         {
-            string mode = cmbMode.Text;
+            string mode = GetSelectedMode();
 
             formulaPanel.Visible = mode == "Formula";
             regexPanel.Visible = mode == "Regex";
-            referenceModelPanel.Visible = mode == "Referenčný automat";
-            testSetPanel.Visible = mode == "Testovacie prípady";
-            if(mode == "Testovacie prípady"){
+            referenceModelPanel.Visible = mode == "Reference_model";
+            testSetPanel.Visible = mode == "Test_cases";
+
+            if (mode == "Test_cases")
+            {
                 Height = 650;
-                flowLayoutPanel1.Height = testSetPanel.Height+10;
-            } else
+                flowLayoutPanel1.Height = testSetPanel.Height + 10;
+            }
+            else
             {
                 flowLayoutPanel1.Height = 60;
                 Height = 505;
@@ -72,27 +77,20 @@ namespace FEI.TrainingSimulator.Dialogs
                 "Tasks");
 
             Directory.CreateDirectory(tasksDir);
+            
+            saveFileDialog1.InitialDirectory = tasksDir;
 
-            SaveFileDialog dialog = new SaveFileDialog();
-            dialog.InitialDirectory = tasksDir;
-            dialog.Filter = "XML súbory (*.xml)|*.xml";
-            dialog.DefaultExt = "xml";
-            dialog.OverwritePrompt = false;
-
-            if (dialog.ShowDialog(this) == DialogResult.OK)
+            if (saveFileDialog1.ShowDialog(this) == DialogResult.OK)
             {
-                txtTaskSetPath.Text = dialog.FileName;
+                txtTaskSetPathtxtTaskSetPath.Text = saveFileDialog1.FileName;
             }
         }
 
         private void referencePathButton_Click(object sender, EventArgs e)
         {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Filter = "Modely automatov |*.fa;*.pa;*.tm|JFlap Turingov stroj|*.jff|Všetky súbory |*.*";
-
-            if (dialog.ShowDialog(this) == DialogResult.OK)
+            if (openFileDialog1.ShowDialog(this) == DialogResult.OK)
             {
-                txtReferencePath.Text = dialog.FileName;
+                txtReferencePath.Text = openFileDialog1.FileName;
             }
         }
 
@@ -101,23 +99,17 @@ namespace FEI.TrainingSimulator.Dialogs
             try
             {
                 ValidateForm();
-                string mode = cmbMode.Text;
+                string mode = GetSelectedMode();
                 string verification = "";
 
                 if (mode == "Formula")
                     verification = txtFormula.Text.Trim();
                 else if (mode == "Regex")
                     verification = txtRegex.Text.Trim();
-                else if (mode == "Referenčný automat")
-                {
-                    verification = File.ReadAllText(txtReferencePath.Text.Trim(), Encoding.UTF8);;
-                    mode = "Reference_model";
-                }
-                else if (mode == "Testovacie prípady")
-                {
+                else if (mode == "Reference_model")
+                    verification = File.ReadAllText(txtReferencePath.Text.Trim(), Encoding.UTF8);
+                else if (mode == "Test_cases")
                     verification = CreateTestCasesXml();
-                    mode = "Test_cases";
-                }
                 
                 string category = "";
                 switch (cmbModel.SelectedIndex)
@@ -139,18 +131,18 @@ namespace FEI.TrainingSimulator.Dialogs
                 }
 
                 AddTaskToXml(
-                    txtTaskSetPath.Text.Trim(),
+                    txtTaskSetPathtxtTaskSetPath.Text.Trim(),
                     txtId.Text.Trim(),
                     txtTitle.Text.Trim(),
                     category,
                     mode,
-                    comboBox1.Text.Trim(),
+                    cmbDifficulty.Text.Trim(),
                     txtSpecification.Text,
                     verification);
 
                 MessageBox.Show(
-                    "Príklad bol úspešne pridaný.",
-                    "Pridanie príkladu",
+                    Resources.AddTaskTitle,
+                    Resources.TaskAddedMessage,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
 
@@ -160,7 +152,7 @@ namespace FEI.TrainingSimulator.Dialogs
             {
                 MessageBox.Show(
                     ex.Message,
-                    "Chyba pri pridávaní príkladu",
+                    Resources.AddTaskError,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
@@ -193,14 +185,14 @@ namespace FEI.TrainingSimulator.Dialogs
 
         private void ValidateForm()
         {
-            if (string.IsNullOrWhiteSpace(txtTaskSetPath.Text))
-                throw new Exception("Vyberte alebo zadajte cestu k sade príkladov.");
+            if (string.IsNullOrWhiteSpace(txtTaskSetPathtxtTaskSetPath.Text))
+                throw new Exception(Resources.ValidationErrorTaskSetPath);
 
             if (string.IsNullOrWhiteSpace(txtTitle.Text))
-                throw new Exception("Zadajte názov príkladu.");
+                throw new Exception(Resources.ValidationErrorTaskName);
 
             if (string.IsNullOrWhiteSpace(cmbModel.Text))
-                throw new Exception("Vyberte typ automatu.");
+                throw new Exception(Resources.ValidationErrorModelType);
             string category = "";
             switch (cmbModel.SelectedIndex)
             {
@@ -216,39 +208,42 @@ namespace FEI.TrainingSimulator.Dialogs
             }
             
             if (string.IsNullOrWhiteSpace(cmbMode.Text))
-                throw new Exception("Vyberte spôsob overovania.");
-
-            if (string.IsNullOrWhiteSpace(comboBox1.Text))
-                throw new Exception("Vyberte obtiažnosť príkladu.");
+                throw new Exception(Resources.ValidationErrorTaskValidationMethod);
+            
+            if (string.IsNullOrWhiteSpace(cmbDifficulty.Text))
+                throw new Exception(Resources.ValidationErrorTaskDifficulty);
 
             if (string.IsNullOrWhiteSpace(txtSpecification.Text))
-                throw new Exception("Zadajte popis zadania.");
+                throw new Exception(Resources.ValidationErrorTaskSpecification);
 
+            string mode = GetSelectedMode();
             string verification = "";
-            if (cmbMode.Text == "Formula")
+            if (mode == "Formula")
                 verification = txtFormula.Text.Trim();
-            else if (cmbMode.Text == "Regex")
+            else if (mode == "Regex")
                 verification = txtRegex.Text.Trim();
-            else if (cmbMode.Text == "Referenčný automat")
+            else if (mode == "Reference_model")
             {
                 if (!string.Equals(
                         Path.GetExtension(txtReferencePath.Text.Trim()),
-                        "."+category,
+                        "." + category,
                         StringComparison.OrdinalIgnoreCase))
                 {
-                    throw new Exception("Model referenčného riešenia sa nezhoduje s modelom zadania.");
+                    throw new Exception(Resources.ValidationErrorTaskModelMismatchWithReference);
                 }
-                verification = File.ReadAllText(txtReferencePath.Text.Trim());
-            } else if (cmbMode.Text == "Testovacie prípady")
+
+                verification = File.ReadAllText(txtReferencePath.Text.Trim(), Encoding.UTF8);
+            }
+            else if (mode == "Test_cases")
             {
                 if (testCases.Count == 0)
-                    throw new Exception("Pridajte aspoň jeden testovací prípad.");
+                    throw new Exception(Resources.ValidationErrorZeroTaskTest);
 
                 verification = CreateTestCasesXml();
             }
             
             if (string.IsNullOrWhiteSpace(verification))
-                throw new Exception("Zadajte hodnotu pre overovanie príkladu.");
+                throw new Exception(Resources.ValidationErrorVerfication);
         }
 
         private void AddTaskToXml(
@@ -281,7 +276,7 @@ namespace FEI.TrainingSimulator.Dialogs
             XmlNode rootNode = doc.SelectSingleNode("/tasks");
 
             if (rootNode == null)
-                throw new Exception("XML súbor nemá koreňový element <tasks>.");
+                throw new Exception(Resources.XmlMissingRootTask);
 
             XmlElement taskNode = doc.CreateElement("task");
 
@@ -323,26 +318,26 @@ namespace FEI.TrainingSimulator.Dialogs
 
         private void toolTipLabel1_MouseHover(object sender, EventArgs e)
         {
-            toolTip1.Show("Syntax:\nc1#symbol + c2#symbol + ... = kn + q\n\nPríklad:\n1#a+1#b=2n+0",toolTipLabel1);
+            toolTip1.Show(Resources.ToolTipFormula,toolTipLabel1);
         }
         
         private void toolTipLabel2_MouseHover(object sender, EventArgs e)
         {
-            toolTip1.Show("Podporované:\n*  - opakovanie\n|  - alternatíva\n() - zoskupenie\n[] - množina symbolov\n\nPríklady:\na*b\n(a|b)*abb\n[0-9]+\n(a|b)*abba(a|b)*",toolTipLabel2);
+            toolTip1.Show(Resources.ToolTipRegex,toolTipLabel2);
         }
         
         private void toolTipLabel3_MouseHover(object sender, EventArgs e)
         {
-            toolTip1.Show("Podporované formáty:\n.fa  - konečný automat\n.pa  - zásobníkový automat\n.tm  - Turingov stroj\n\nFormát musí byť rovnaký, ako model úlohy!",toolTipLabel3);
+            toolTip1.Show(Resources.ToolTipReference,toolTipLabel3);
         }
         
         private void toolTipLabel4_MouseHover(object sender, EventArgs e)
         {
-            toolTip1.Show("Na zápis špecifikácie je možné použiť matematické výrazy. Zapisujú sa v MathJax syntaxi, podobnej LaTeXu.\n\nPodporované sú bežné matematické konštrukcie:\n- horné a dolné indexy\n- grécke symboly\n- množiny\n- matematické relácie a operátory\n- blokové výrazy pomocou $$ ... $$",toolTipLabel4);
+            toolTip1.Show(Resources.ToolTipSpecification,toolTipLabel4);
         }
         private void toolTipLabel5_MouseHover(object sender, EventArgs e)
         {
-            toolTip1.Show("Manuálne testovacie prípady pre overovanie riešenia.\n\nKaždé slovo je možné označiť ako:\n- Akceptovať\n- Odmietnuť\n\nTieto testy budú použité počas kontroly riešenia.\n\nPrázdne slovo je možné zadať ako ε alebo jednu medzeru.",toolTipLabel5);
+            toolTip1.Show(Resources.ToolTipTestCases,toolTipLabel5);
         }
         
         private void btnAdd_Click(object sender, EventArgs e)
@@ -354,13 +349,13 @@ namespace FEI.TrainingSimulator.Dialogs
                     
                 if (checkBoxAccept.Checked)
                 {
-                    lblTestingCases.Items.Add(txtWord.Text.Trim()+" - "+"Akceptovať");
+                    lblTestingCases.Items.Add(txtWord.Text.Trim()+" - "+Resources.Accept);
                     testCases.Add(txtWord.Text.Trim(),true);
                 }
 
                 if (checkBoxFail.Checked)
                 {
-                    lblTestingCases.Items.Add(txtWord.Text.Trim()+" - "+"Odmietnuť");
+                    lblTestingCases.Items.Add(txtWord.Text.Trim()+" - "+Resources.Reject);
                     testCases.Add(txtWord.Text.Trim(),false);
                 }
             }
@@ -391,6 +386,23 @@ namespace FEI.TrainingSimulator.Dialogs
             {
                 checkBoxAccept.Checked = !checkBoxFail.Checked;
             };
+        }
+        
+        private string GetSelectedMode()
+        {
+            if (cmbMode.Text == "Formula")
+                return "Formula";
+
+            if (cmbMode.Text == "Regex")
+                return "Regex";
+
+            if (cmbMode.Text == Resources.ReferenceAutomaton)
+                return "Reference_model";
+
+            if (cmbMode.Text == Resources.TestCases)
+                return "Test_cases";
+
+            return "";
         }
     }
 }

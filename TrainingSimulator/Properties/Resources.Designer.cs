@@ -60,12 +60,120 @@ namespace FEI.TrainingSimulator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Akceptovať.
+        /// </summary>
+        internal static string Accept {
+            get {
+                return ResourceManager.GetString("Accept", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chyba pri pridávaní príkladu.
+        /// </summary>
+        internal static string AddTaskError {
+            get {
+                return ResourceManager.GetString("AddTaskError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Príklad bol úspešne pridaný..
+        /// </summary>
+        internal static string AddTaskTitle {
+            get {
+                return ResourceManager.GetString("AddTaskTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Referenčný automat.
+        /// </summary>
+        internal static string ReferenceAutomaton {
+            get {
+                return ResourceManager.GetString("ReferenceAutomaton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Odmietnuť.
+        /// </summary>
+        internal static string Reject {
+            get {
+                return ResourceManager.GetString("Reject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap small_open {
             get {
                 object obj = ResourceManager.GetObject("small_open", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pridanie príkladu.
+        /// </summary>
+        internal static string TaskAddedMessage {
+            get {
+                return ResourceManager.GetString("TaskAddedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sada testov.
+        /// </summary>
+        internal static string TestCases {
+            get {
+                return ResourceManager.GetString("TestCases", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Syntax:\nc1#symbol + c2#symbol + ... = kn + q\n\nPríklad:\n1#a+1#b=2n+0.
+        /// </summary>
+        internal static string ToolTipFormula {
+            get {
+                return ResourceManager.GetString("ToolTipFormula", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Podporované modely:\n.fa  - konečný automat\n.pa  - zásobníkový automat\n.tm  - Turingov stroj\n\nReferenčný model musí byť rovnaký, ako model úlohy!.
+        /// </summary>
+        internal static string ToolTipReference {
+            get {
+                return ResourceManager.GetString("ToolTipReference", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Podporované:\n*  - opakovanie\n|  - alternatíva\n() - zoskupenie\n[] - množina symbolov\n\nPríklady:\na*b\n(a|b)*abb\n[0-9]+\n(a|b)*abba(a|b)*.
+        /// </summary>
+        internal static string ToolTipRegex {
+            get {
+                return ResourceManager.GetString("ToolTipRegex", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Na zápis špecifikácie je možné použiť matematické výrazy. Zapisujú sa v MathJax syntaxi, podobnej LaTeXu.\n\nPodporované sú bežné matematické konštrukcie:\n- horné a dolné indexy\n- grécke symboly\n- množiny\n- matematické relácie a operátory\n- blokové výrazy pomocou $$ ... $$.
+        /// </summary>
+        internal static string ToolTipSpecification {
+            get {
+                return ResourceManager.GetString("ToolTipSpecification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Manuálne testovacie prípady pre overovanie riešenia.\n\nKaždé slovo je možné označiť ako:\n- Akceptovať\n- Odmietnuť\n\nTieto testy budú použité počas kontroly riešenia.\n\nPrázdne slovo je možné zadať ako ε alebo jednu medzeru..
+        /// </summary>
+        internal static string ToolTipTestCases {
+            get {
+                return ResourceManager.GetString("ToolTipTestCases", resourceCulture);
             }
         }
         
@@ -96,6 +204,96 @@ namespace FEI.TrainingSimulator.Properties {
             get {
                 object obj = ResourceManager.GetObject("validated", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vyberte typ automatu..
+        /// </summary>
+        internal static string ValidationErrorModelType {
+            get {
+                return ResourceManager.GetString("ValidationErrorModelType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vyberte obtiažnosť príkladu..
+        /// </summary>
+        internal static string ValidationErrorTaskDifficulty {
+            get {
+                return ResourceManager.GetString("ValidationErrorTaskDifficulty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Model referenčného riešenia sa nezhoduje s modelom zadania..
+        /// </summary>
+        internal static string ValidationErrorTaskModelMismatchWithReference {
+            get {
+                return ResourceManager.GetString("ValidationErrorTaskModelMismatchWithReference", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zadajte názov príkladu..
+        /// </summary>
+        internal static string ValidationErrorTaskName {
+            get {
+                return ResourceManager.GetString("ValidationErrorTaskName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vyberte alebo zadajte cestu k sade príkladov..
+        /// </summary>
+        internal static string ValidationErrorTaskSetPath {
+            get {
+                return ResourceManager.GetString("ValidationErrorTaskSetPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zadajte popis zadania..
+        /// </summary>
+        internal static string ValidationErrorTaskSpecification {
+            get {
+                return ResourceManager.GetString("ValidationErrorTaskSpecification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Vyberte spôsob overovania..
+        /// </summary>
+        internal static string ValidationErrorTaskValidationMethod {
+            get {
+                return ResourceManager.GetString("ValidationErrorTaskValidationMethod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zadajte hodnotu pre overovanie príkladu..
+        /// </summary>
+        internal static string ValidationErrorVerfication {
+            get {
+                return ResourceManager.GetString("ValidationErrorVerfication", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pridajte aspoň jeden testovací prípad..
+        /// </summary>
+        internal static string ValidationErrorZeroTaskTest {
+            get {
+                return ResourceManager.GetString("ValidationErrorZeroTaskTest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to XML súbor nemá koreňový element &lt;tasks&gt;..
+        /// </summary>
+        internal static string XmlMissingRootTask {
+            get {
+                return ResourceManager.GetString("XmlMissingRootTask", resourceCulture);
             }
         }
     }

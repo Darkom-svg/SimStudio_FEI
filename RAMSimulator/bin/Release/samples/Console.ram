@@ -1,9 +1,0 @@
-//$Console
-PRINT Zadaj cislo A
-READ 1
-PRINT Zadaj cislo B
-READ 2
-LOAD 1
-ADD 2
-PRINT Vysledok A+B=
-WRITE 0

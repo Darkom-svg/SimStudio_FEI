@@ -37,9 +37,23 @@ namespace FEI.RandomAccessMachine {
         {
 	        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RamSimulatorForm));
 	        FEI.SimStudio.Components.Registers.InfiniteRegisters infiniteRegisters1 = new FEI.SimStudio.Components.Registers.InfiniteRegisters();
+	        this.mainSplitContainer = new System.Windows.Forms.SplitContainer();
+	        this.panel1 = new System.Windows.Forms.Panel();
+	        this.speedPanel = new System.Windows.Forms.Panel();
+	        this.tbSpeed = new System.Windows.Forms.TrackBar();
+	        this.label2 = new System.Windows.Forms.Label();
+	        this.lstRegs = new FEI.SimStudio.Components.Controls.RegisterList.RegisterList();
+	        this.ftInputTape = new FEI.SimStudio.Components.Controls.InputOutputTape();
+	        this.ftOutputTape = new FEI.SimStudio.Components.Controls.InputOutputTape();
 	        this.lblInputTape = new System.Windows.Forms.Label();
 	        this.lblOutputTape = new System.Windows.Forms.Label();
+	        this.txtProgram = new FEI.SimStudio.Components.Controls.SyntaxTextBox();
+	        this.pProc = new System.Windows.Forms.PictureBox();
+	        this.picProgram = new System.Windows.Forms.PictureBox();
 	        this.sbyProgram = new System.Windows.Forms.VScrollBar();
+	        this.errorTitleLabel = new System.Windows.Forms.Label();
+	        this.errorTextBox = new System.Windows.Forms.TextBox();
+	        this.closeErrorsButton = new System.Windows.Forms.Button();
 	        this.statusStrip = new System.Windows.Forms.StatusStrip();
 	        this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
 	        this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -115,35 +129,110 @@ namespace FEI.RandomAccessMachine {
 	        this.stopToolStripButton = new System.Windows.Forms.ToolStripButton();
 	        this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
 	        this.stepToolStripButton = new System.Windows.Forms.ToolStripButton();
-	        this.panel1 = new System.Windows.Forms.Panel();
-	        this.speedPanel = new System.Windows.Forms.Panel();
-	        this.tbSpeed = new System.Windows.Forms.TrackBar();
-	        this.label2 = new System.Windows.Forms.Label();
-	        this.lstRegs = new FEI.SimStudio.Components.Controls.RegisterList.RegisterList();
-	        this.ftInputTape = new FEI.SimStudio.Components.Controls.InputOutputTape();
-	        this.ftOutputTape = new FEI.SimStudio.Components.Controls.InputOutputTape();
-	        this.txtProgram = new FEI.SimStudio.Components.Controls.SyntaxTextBox();
-	        this.pProc = new System.Windows.Forms.PictureBox();
-	        this.picProgram = new System.Windows.Forms.PictureBox();
 	        this.label3 = new System.Windows.Forms.Label();
-	        this.mainSplitContainer = new System.Windows.Forms.SplitContainer();
-	        this.errorTitleLabel = new System.Windows.Forms.Label();
-	        this.errorTextBox = new System.Windows.Forms.TextBox();
-	        this.closeErrorsButton = new System.Windows.Forms.Button();
-	        this.statusStrip.SuspendLayout();
-	        this.menuStrip1.SuspendLayout();
-	        this.toolStripPanel1.SuspendLayout();
-	        this.mainToolStrip.SuspendLayout();
+	        ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).BeginInit();
+	        this.mainSplitContainer.Panel1.SuspendLayout();
+	        this.mainSplitContainer.Panel2.SuspendLayout();
+	        this.mainSplitContainer.SuspendLayout();
 	        this.panel1.SuspendLayout();
 	        this.speedPanel.SuspendLayout();
 	        ((System.ComponentModel.ISupportInitialize)(this.tbSpeed)).BeginInit();
 	        ((System.ComponentModel.ISupportInitialize)(this.pProc)).BeginInit();
 	        ((System.ComponentModel.ISupportInitialize)(this.picProgram)).BeginInit();
-	        ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).BeginInit();
-	        this.mainSplitContainer.Panel1.SuspendLayout();
-	        this.mainSplitContainer.Panel2.SuspendLayout();
-	        this.mainSplitContainer.SuspendLayout();
+	        this.statusStrip.SuspendLayout();
+	        this.menuStrip1.SuspendLayout();
+	        this.toolStripPanel1.SuspendLayout();
+	        this.mainToolStrip.SuspendLayout();
 	        this.SuspendLayout();
+	        // 
+	        // mainSplitContainer
+	        // 
+	        resources.ApplyResources(this.mainSplitContainer, "mainSplitContainer");
+	        this.mainSplitContainer.Name = "mainSplitContainer";
+	        // 
+	        // mainSplitContainer.Panel1
+	        // 
+	        this.mainSplitContainer.Panel1.Controls.Add(this.panel1);
+	        // 
+	        // mainSplitContainer.Panel2
+	        // 
+	        this.mainSplitContainer.Panel2.Controls.Add(this.errorTitleLabel);
+	        this.mainSplitContainer.Panel2.Controls.Add(this.errorTextBox);
+	        this.mainSplitContainer.Panel2.Controls.Add(this.closeErrorsButton);
+	        this.mainSplitContainer.Panel2Collapsed = true;
+	        // 
+	        // panel1
+	        // 
+	        this.panel1.Controls.Add(this.speedPanel);
+	        this.panel1.Controls.Add(this.lstRegs);
+	        this.panel1.Controls.Add(this.ftInputTape);
+	        this.panel1.Controls.Add(this.ftOutputTape);
+	        this.panel1.Controls.Add(this.lblInputTape);
+	        this.panel1.Controls.Add(this.lblOutputTape);
+	        this.panel1.Controls.Add(this.txtProgram);
+	        this.panel1.Controls.Add(this.pProc);
+	        this.panel1.Controls.Add(this.picProgram);
+	        this.panel1.Controls.Add(this.sbyProgram);
+	        resources.ApplyResources(this.panel1, "panel1");
+	        this.panel1.Name = "panel1";
+	        // 
+	        // speedPanel
+	        // 
+	        this.speedPanel.BackColor = System.Drawing.Color.White;
+	        this.speedPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+	        this.speedPanel.Controls.Add(this.tbSpeed);
+	        this.speedPanel.Controls.Add(this.label2);
+	        resources.ApplyResources(this.speedPanel, "speedPanel");
+	        this.speedPanel.Name = "speedPanel";
+	        // 
+	        // tbSpeed
+	        // 
+	        resources.ApplyResources(this.tbSpeed, "tbSpeed");
+	        this.tbSpeed.BackColor = System.Drawing.Color.White;
+	        this.tbSpeed.Maximum = 20;
+	        this.tbSpeed.Name = "tbSpeed";
+	        this.tbSpeed.Value = 19;
+	        this.tbSpeed.Scroll += new System.EventHandler(this.tbSpeed_Scroll);
+	        // 
+	        // label2
+	        // 
+	        resources.ApplyResources(this.label2, "label2");
+	        this.label2.BackColor = System.Drawing.Color.Transparent;
+	        this.label2.Name = "label2";
+	        // 
+	        // lstRegs
+	        // 
+	        resources.ApplyResources(this.lstRegs, "lstRegs");
+	        this.lstRegs.MaximalCount = 10000;
+	        this.lstRegs.Name = "lstRegs";
+	        this.lstRegs.Reading = false;
+	        this.lstRegs.ReadingPos = 0;
+	        this.lstRegs.Regs = infiniteRegisters1;
+	        this.lstRegs.ScrollValue = 0;
+	        this.lstRegs.Writing = false;
+	        this.lstRegs.WritingPos = 0;
+	        this.lstRegs.ViewPositionChange += new System.EventHandler(this.lstRegs_ViewPositionChange);
+	        this.lstRegs.RegisterChanged += new FEI.SimStudio.Components.Controls.RegisterList.RegisterList.RegisterChangedEventHandler(this.lstRegs_RegisterChanged);
+	        // 
+	        // ftInputTape
+	        // 
+	        this.ftInputTape.AddRecordButton = true;
+	        resources.ApplyResources(this.ftInputTape, "ftInputTape");
+	        this.ftInputTape.CellWidth = 80;
+	        this.ftInputTape.Name = "ftInputTape";
+	        this.ftInputTape.Records = new string[0];
+	        this.ftInputTape.Rewritable = true;
+	        this.ftInputTape.RecordAdded += new System.EventHandler(this.ftInputTape_RecordAdded);
+	        this.ftInputTape.RecordChanged += new System.EventHandler(this.ftInputTape_RecordChanged);
+	        // 
+	        // ftOutputTape
+	        // 
+	        this.ftOutputTape.AddRecordButton = false;
+	        resources.ApplyResources(this.ftOutputTape, "ftOutputTape");
+	        this.ftOutputTape.CellWidth = 80;
+	        this.ftOutputTape.Name = "ftOutputTape";
+	        this.ftOutputTape.Records = new string[0];
+	        this.ftOutputTape.Rewritable = false;
 	        // 
 	        // lblInputTape
 	        // 
@@ -155,11 +244,60 @@ namespace FEI.RandomAccessMachine {
 	        resources.ApplyResources(this.lblOutputTape, "lblOutputTape");
 	        this.lblOutputTape.Name = "lblOutputTape";
 	        // 
+	        // txtProgram
+	        // 
+	        resources.ApplyResources(this.txtProgram, "txtProgram");
+	        this.txtProgram.HideSelection = false;
+	        this.txtProgram.Name = "txtProgram";
+	        this.txtProgram.SelectedText = "";
+	        this.txtProgram.SelectionLength = 0;
+	        this.txtProgram.SelectionStart = 0;
+	        this.txtProgram.TextChanged += new FEI.SimStudio.Components.Controls.SyntaxTextBox.TextChangedEventHandler(this.txtProgram_TextChanged);
+	        // 
+	        // pProc
+	        // 
+	        resources.ApplyResources(this.pProc, "pProc");
+	        this.pProc.Name = "pProc";
+	        this.pProc.TabStop = false;
+	        this.pProc.Paint += new System.Windows.Forms.PaintEventHandler(this.pProc_Paint);
+	        this.pProc.Resize += new System.EventHandler(this.pProc_Resize);
+	        // 
+	        // picProgram
+	        // 
+	        resources.ApplyResources(this.picProgram, "picProgram");
+	        this.picProgram.Name = "picProgram";
+	        this.picProgram.TabStop = false;
+	        this.picProgram.Paint += new System.Windows.Forms.PaintEventHandler(this.picProgram_Paint);
+	        this.picProgram.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picProgram_MouseDown);
+	        this.picProgram.Resize += new System.EventHandler(this.picProgram_Resize);
+	        // 
 	        // sbyProgram
 	        // 
 	        resources.ApplyResources(this.sbyProgram, "sbyProgram");
 	        this.sbyProgram.Name = "sbyProgram";
 	        this.sbyProgram.Scroll += new System.Windows.Forms.ScrollEventHandler(this.sbyProgram_Scroll);
+	        // 
+	        // errorTitleLabel
+	        // 
+	        resources.ApplyResources(this.errorTitleLabel, "errorTitleLabel");
+	        this.errorTitleLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+	        this.errorTitleLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+	        this.errorTitleLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+	        this.errorTitleLabel.Name = "errorTitleLabel";
+	        // 
+	        // errorTextBox
+	        // 
+	        resources.ApplyResources(this.errorTextBox, "errorTextBox");
+	        this.errorTextBox.BackColor = System.Drawing.SystemColors.Window;
+	        this.errorTextBox.Name = "errorTextBox";
+	        this.errorTextBox.ReadOnly = true;
+	        // 
+	        // closeErrorsButton
+	        // 
+	        resources.ApplyResources(this.closeErrorsButton, "closeErrorsButton");
+	        this.closeErrorsButton.Name = "closeErrorsButton";
+	        this.closeErrorsButton.UseVisualStyleBackColor = true;
+	        this.closeErrorsButton.Click += new System.EventHandler(this.closeErrorsButton_Click);
 	        // 
 	        // statusStrip
 	        // 
@@ -198,14 +336,12 @@ namespace FEI.RandomAccessMachine {
 	        // 
 	        // miNew
 	        // 
-	        this.miNew.Image = global::FEI.RandomAccessMachine.Properties.Resources.small_new;
 	        resources.ApplyResources(this.miNew, "miNew");
 	        this.miNew.Name = "miNew";
 	        this.miNew.Click += new System.EventHandler(this.miNew_Click);
 	        // 
 	        // miOpen
 	        // 
-	        this.miOpen.Image = global::FEI.RandomAccessMachine.Properties.Resources.open;
 	        resources.ApplyResources(this.miOpen, "miOpen");
 	        this.miOpen.Name = "miOpen";
 	        this.miOpen.Click += new System.EventHandler(this.miOpen_Click);
@@ -217,7 +353,6 @@ namespace FEI.RandomAccessMachine {
 	        // 
 	        // miSave
 	        // 
-	        this.miSave.Image = global::FEI.RandomAccessMachine.Properties.Resources.save;
 	        resources.ApplyResources(this.miSave, "miSave");
 	        this.miSave.Name = "miSave";
 	        this.miSave.Click += new System.EventHandler(this.miSave_Click);
@@ -249,21 +384,18 @@ namespace FEI.RandomAccessMachine {
 	        // 
 	        // miCut
 	        // 
-	        this.miCut.Image = global::FEI.RandomAccessMachine.Properties.Resources.small_cut;
 	        resources.ApplyResources(this.miCut, "miCut");
 	        this.miCut.Name = "miCut";
 	        this.miCut.Click += new System.EventHandler(this.miCut_Click);
 	        // 
 	        // miCopy
 	        // 
-	        this.miCopy.Image = global::FEI.RandomAccessMachine.Properties.Resources.copy;
 	        resources.ApplyResources(this.miCopy, "miCopy");
 	        this.miCopy.Name = "miCopy";
 	        this.miCopy.Click += new System.EventHandler(this.miCopy_Click);
 	        // 
 	        // miPaste
 	        // 
-	        this.miPaste.Image = global::FEI.RandomAccessMachine.Properties.Resources.small_paste;
 	        resources.ApplyResources(this.miPaste, "miPaste");
 	        this.miPaste.Name = "miPaste";
 	        this.miPaste.Click += new System.EventHandler(this.miPaste_Click);
@@ -368,7 +500,6 @@ namespace FEI.RandomAccessMachine {
 	        // 
 	        // miRun
 	        // 
-	        this.miRun.Image = global::FEI.RandomAccessMachine.Properties.Resources.run;
 	        resources.ApplyResources(this.miRun, "miRun");
 	        this.miRun.Name = "miRun";
 	        this.miRun.Click += new System.EventHandler(this.miRun_Click);
@@ -381,7 +512,6 @@ namespace FEI.RandomAccessMachine {
 	        // 
 	        // miPause
 	        // 
-	        this.miPause.Image = global::FEI.RandomAccessMachine.Properties.Resources.pause;
 	        resources.ApplyResources(this.miPause, "miPause");
 	        this.miPause.Name = "miPause";
 	        this.miPause.Click += new System.EventHandler(this.miPause_Click);
@@ -394,7 +524,6 @@ namespace FEI.RandomAccessMachine {
 	        // 
 	        // miStop
 	        // 
-	        this.miStop.Image = global::FEI.RandomAccessMachine.Properties.Resources.stop;
 	        resources.ApplyResources(this.miStop, "miStop");
 	        this.miStop.Name = "miStop";
 	        this.miStop.Click += new System.EventHandler(this.miStop_Click);
@@ -569,7 +698,6 @@ namespace FEI.RandomAccessMachine {
 	        // newStripButton
 	        // 
 	        this.newStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-	        this.newStripButton.Image = global::FEI.RandomAccessMachine.Properties.Resources.small_new;
 	        resources.ApplyResources(this.newStripButton, "newStripButton");
 	        this.newStripButton.Name = "newStripButton";
 	        this.newStripButton.Click += new System.EventHandler(this.newStripButton_Click);
@@ -577,7 +705,6 @@ namespace FEI.RandomAccessMachine {
 	        // openToolStripButton
 	        // 
 	        this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-	        this.openToolStripButton.Image = global::FEI.RandomAccessMachine.Properties.Resources.open;
 	        resources.ApplyResources(this.openToolStripButton, "openToolStripButton");
 	        this.openToolStripButton.Name = "openToolStripButton";
 	        this.openToolStripButton.Click += new System.EventHandler(this.openToolStripButton_Click);
@@ -585,7 +712,6 @@ namespace FEI.RandomAccessMachine {
 	        // saveToolStripButton
 	        // 
 	        this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-	        this.saveToolStripButton.Image = global::FEI.RandomAccessMachine.Properties.Resources.save;
 	        resources.ApplyResources(this.saveToolStripButton, "saveToolStripButton");
 	        this.saveToolStripButton.Name = "saveToolStripButton";
 	        this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
@@ -597,14 +723,12 @@ namespace FEI.RandomAccessMachine {
 	        // 
 	        // runToolStripButton
 	        // 
-	        this.runToolStripButton.Image = global::FEI.RandomAccessMachine.Properties.Resources.run;
 	        resources.ApplyResources(this.runToolStripButton, "runToolStripButton");
 	        this.runToolStripButton.Name = "runToolStripButton";
 	        this.runToolStripButton.Click += new System.EventHandler(this.runToolStripButton_Click);
 	        // 
 	        // breakToolStripButton
 	        // 
-	        this.breakToolStripButton.Image = global::FEI.RandomAccessMachine.Properties.Resources.pause;
 	        resources.ApplyResources(this.breakToolStripButton, "breakToolStripButton");
 	        this.breakToolStripButton.Name = "breakToolStripButton";
 	        this.breakToolStripButton.Click += new System.EventHandler(this.breakToolStripButton_Click);
@@ -612,7 +736,6 @@ namespace FEI.RandomAccessMachine {
 	        // stopToolStripButton
 	        // 
 	        resources.ApplyResources(this.stopToolStripButton, "stopToolStripButton");
-	        this.stopToolStripButton.Image = global::FEI.RandomAccessMachine.Properties.Resources.stop;
 	        this.stopToolStripButton.Name = "stopToolStripButton";
 	        this.stopToolStripButton.Click += new System.EventHandler(this.stopToolStripButton_Click);
 	        // 
@@ -623,155 +746,15 @@ namespace FEI.RandomAccessMachine {
 	        // 
 	        // stepToolStripButton
 	        // 
-	        this.stepToolStripButton.Image = global::FEI.RandomAccessMachine.Properties.Resources.next;
 	        resources.ApplyResources(this.stepToolStripButton, "stepToolStripButton");
 	        this.stepToolStripButton.Name = "stepToolStripButton";
 	        this.stepToolStripButton.Click += new System.EventHandler(this.stepToolStripButton_Click);
-	        // 
-	        // panel1
-	        // 
-	        this.panel1.Controls.Add(this.speedPanel);
-	        this.panel1.Controls.Add(this.lstRegs);
-	        this.panel1.Controls.Add(this.ftInputTape);
-	        this.panel1.Controls.Add(this.ftOutputTape);
-	        this.panel1.Controls.Add(this.lblInputTape);
-	        this.panel1.Controls.Add(this.lblOutputTape);
-	        this.panel1.Controls.Add(this.txtProgram);
-	        this.panel1.Controls.Add(this.pProc);
-	        this.panel1.Controls.Add(this.picProgram);
-	        this.panel1.Controls.Add(this.sbyProgram);
-	        resources.ApplyResources(this.panel1, "panel1");
-	        this.panel1.Name = "panel1";
-	        // 
-	        // speedPanel
-	        // 
-	        this.speedPanel.BackColor = System.Drawing.Color.White;
-	        this.speedPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-	        this.speedPanel.Controls.Add(this.tbSpeed);
-	        this.speedPanel.Controls.Add(this.label2);
-	        resources.ApplyResources(this.speedPanel, "speedPanel");
-	        this.speedPanel.Name = "speedPanel";
-	        // 
-	        // tbSpeed
-	        // 
-	        resources.ApplyResources(this.tbSpeed, "tbSpeed");
-	        this.tbSpeed.BackColor = System.Drawing.Color.White;
-	        this.tbSpeed.Maximum = 20;
-	        this.tbSpeed.Name = "tbSpeed";
-	        this.tbSpeed.Value = 19;
-	        this.tbSpeed.Scroll += new System.EventHandler(this.tbSpeed_Scroll);
-	        // 
-	        // label2
-	        // 
-	        resources.ApplyResources(this.label2, "label2");
-	        this.label2.BackColor = System.Drawing.Color.Transparent;
-	        this.label2.Name = "label2";
-	        // 
-	        // lstRegs
-	        // 
-	        resources.ApplyResources(this.lstRegs, "lstRegs");
-	        this.lstRegs.MaximalCount = 10000;
-	        this.lstRegs.Name = "lstRegs";
-	        this.lstRegs.Reading = false;
-	        this.lstRegs.ReadingPos = 0;
-	        this.lstRegs.Regs = infiniteRegisters1;
-	        this.lstRegs.ScrollValue = 0;
-	        this.lstRegs.Writing = false;
-	        this.lstRegs.WritingPos = 0;
-	        this.lstRegs.ViewPositionChange += new System.EventHandler(this.lstRegs_ViewPositionChange);
-	        this.lstRegs.RegisterChanged += new FEI.SimStudio.Components.Controls.RegisterList.RegisterList.RegisterChangedEventHandler(this.lstRegs_RegisterChanged);
-	        // 
-	        // ftInputTape
-	        // 
-	        this.ftInputTape.AddRecordButton = true;
-	        resources.ApplyResources(this.ftInputTape, "ftInputTape");
-	        this.ftInputTape.CellWidth = 80;
-	        this.ftInputTape.Name = "ftInputTape";
-	        this.ftInputTape.Records = new string[0];
-	        this.ftInputTape.Rewritable = true;
-	        this.ftInputTape.RecordAdded += new System.EventHandler(this.ftInputTape_RecordAdded);
-	        this.ftInputTape.RecordChanged += new System.EventHandler(this.ftInputTape_RecordChanged);
-	        // 
-	        // ftOutputTape
-	        // 
-	        this.ftOutputTape.AddRecordButton = false;
-	        resources.ApplyResources(this.ftOutputTape, "ftOutputTape");
-	        this.ftOutputTape.CellWidth = 80;
-	        this.ftOutputTape.Name = "ftOutputTape";
-	        this.ftOutputTape.Records = new string[0];
-	        this.ftOutputTape.Rewritable = false;
-	        // 
-	        // txtProgram
-	        // 
-	        resources.ApplyResources(this.txtProgram, "txtProgram");
-	        this.txtProgram.HideSelection = false;
-	        this.txtProgram.Name = "txtProgram";
-	        this.txtProgram.SelectedText = "";
-	        this.txtProgram.SelectionLength = 0;
-	        this.txtProgram.SelectionStart = 0;
-	        this.txtProgram.TextChanged += new FEI.SimStudio.Components.Controls.SyntaxTextBox.TextChangedEventHandler(this.txtProgram_TextChanged);
-	        // 
-	        // pProc
-	        // 
-	        resources.ApplyResources(this.pProc, "pProc");
-	        this.pProc.Name = "pProc";
-	        this.pProc.TabStop = false;
-	        this.pProc.Paint += new System.Windows.Forms.PaintEventHandler(this.pProc_Paint);
-	        this.pProc.Resize += new System.EventHandler(this.pProc_Resize);
-	        // 
-	        // picProgram
-	        // 
-	        resources.ApplyResources(this.picProgram, "picProgram");
-	        this.picProgram.Name = "picProgram";
-	        this.picProgram.TabStop = false;
-	        this.picProgram.Paint += new System.Windows.Forms.PaintEventHandler(this.picProgram_Paint);
-	        this.picProgram.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picProgram_MouseDown);
-	        this.picProgram.Resize += new System.EventHandler(this.picProgram_Resize);
 	        // 
 	        // label3
 	        // 
 	        resources.ApplyResources(this.label3, "label3");
 	        this.label3.BackColor = System.Drawing.Color.Transparent;
 	        this.label3.Name = "label3";
-	        // 
-	        // mainSplitContainer
-	        // 
-	        resources.ApplyResources(this.mainSplitContainer, "mainSplitContainer");
-	        this.mainSplitContainer.Name = "mainSplitContainer";
-	        // 
-	        // mainSplitContainer.Panel1
-	        // 
-	        this.mainSplitContainer.Panel1.Controls.Add(this.panel1);
-	        // 
-	        // mainSplitContainer.Panel2
-	        // 
-	        this.mainSplitContainer.Panel2.Controls.Add(this.errorTitleLabel);
-	        this.mainSplitContainer.Panel2.Controls.Add(this.errorTextBox);
-	        this.mainSplitContainer.Panel2.Controls.Add(this.closeErrorsButton);
-	        this.mainSplitContainer.Panel2Collapsed = true;
-	        // 
-	        // errorTitleLabel
-	        // 
-	        resources.ApplyResources(this.errorTitleLabel, "errorTitleLabel");
-	        this.errorTitleLabel.BackColor = System.Drawing.SystemColors.ActiveCaption;
-	        this.errorTitleLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-	        this.errorTitleLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-	        this.errorTitleLabel.Name = "errorTitleLabel";
-	        // 
-	        // errorTextBox
-	        // 
-	        resources.ApplyResources(this.errorTextBox, "errorTextBox");
-	        this.errorTextBox.BackColor = System.Drawing.SystemColors.Window;
-	        this.errorTextBox.Name = "errorTextBox";
-	        this.errorTextBox.ReadOnly = true;
-	        // 
-	        // closeErrorsButton
-	        // 
-	        resources.ApplyResources(this.closeErrorsButton, "closeErrorsButton");
-	        this.closeErrorsButton.Image = global::FEI.RandomAccessMachine.Properties.Resources.close;
-	        this.closeErrorsButton.Name = "closeErrorsButton";
-	        this.closeErrorsButton.UseVisualStyleBackColor = true;
-	        this.closeErrorsButton.Click += new System.EventHandler(this.closeErrorsButton_Click);
 	        // 
 	        // RamSimulatorForm
 	        // 
@@ -786,6 +769,18 @@ namespace FEI.RandomAccessMachine {
 	        this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.RAMSimulatorForm_FormClosed);
 	        this.Load += new System.EventHandler(this.RAMSimulatorForm_Load);
 	        this.Disposed += new System.EventHandler(this.RAMSimulatorForm_Disposed);
+	        this.mainSplitContainer.Panel1.ResumeLayout(false);
+	        this.mainSplitContainer.Panel2.ResumeLayout(false);
+	        this.mainSplitContainer.Panel2.PerformLayout();
+	        ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).EndInit();
+	        this.mainSplitContainer.ResumeLayout(false);
+	        this.panel1.ResumeLayout(false);
+	        this.panel1.PerformLayout();
+	        this.speedPanel.ResumeLayout(false);
+	        this.speedPanel.PerformLayout();
+	        ((System.ComponentModel.ISupportInitialize)(this.tbSpeed)).EndInit();
+	        ((System.ComponentModel.ISupportInitialize)(this.pProc)).EndInit();
+	        ((System.ComponentModel.ISupportInitialize)(this.picProgram)).EndInit();
 	        this.statusStrip.ResumeLayout(false);
 	        this.statusStrip.PerformLayout();
 	        this.menuStrip1.ResumeLayout(false);
@@ -794,18 +789,6 @@ namespace FEI.RandomAccessMachine {
 	        this.toolStripPanel1.PerformLayout();
 	        this.mainToolStrip.ResumeLayout(false);
 	        this.mainToolStrip.PerformLayout();
-	        this.panel1.ResumeLayout(false);
-	        this.panel1.PerformLayout();
-	        this.speedPanel.ResumeLayout(false);
-	        this.speedPanel.PerformLayout();
-	        ((System.ComponentModel.ISupportInitialize)(this.tbSpeed)).EndInit();
-	        ((System.ComponentModel.ISupportInitialize)(this.pProc)).EndInit();
-	        ((System.ComponentModel.ISupportInitialize)(this.picProgram)).EndInit();
-	        this.mainSplitContainer.Panel1.ResumeLayout(false);
-	        this.mainSplitContainer.Panel2.ResumeLayout(false);
-	        this.mainSplitContainer.Panel2.PerformLayout();
-	        ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).EndInit();
-	        this.mainSplitContainer.ResumeLayout(false);
 	        this.ResumeLayout(false);
 	        this.PerformLayout();
         }
@@ -878,7 +861,7 @@ namespace FEI.RandomAccessMachine {
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem9;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem10;
         private System.Windows.Forms.ToolStripMenuItem miScreen;
-        private ToolStripMenuItem miRunMaxSpeed;
+        private System.Windows.Forms.ToolStripMenuItem miRunMaxSpeed;
         private ToolStripSeparator toolStripMenuItem11;
         private ToolStripMenuItem miAutoClearOutput;
         private ToolStripMenuItem miStack;
@@ -886,13 +869,13 @@ namespace FEI.RandomAccessMachine {
         private ToolStripMenuItem miConsole;
         private ToolStripPanel toolStripPanel1;
         private ToolStrip mainToolStrip;
-        private ToolStripButton newStripButton;
-        private ToolStripButton openToolStripButton;
-        private ToolStripButton saveToolStripButton;
+        private System.Windows.Forms.ToolStripButton newStripButton;
+        private System.Windows.Forms.ToolStripButton openToolStripButton;
+        private System.Windows.Forms.ToolStripButton saveToolStripButton;
         private ToolStripSeparator toolStripSeparator3;
-        private ToolStripButton runToolStripButton;
-        private ToolStripButton breakToolStripButton;
-        private ToolStripButton stopToolStripButton;
+        private System.Windows.Forms.ToolStripButton runToolStripButton;
+        private System.Windows.Forms.ToolStripButton breakToolStripButton;
+        private System.Windows.Forms.ToolStripButton stopToolStripButton;
         private ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripButton stepToolStripButton;
         private Panel panel1;

@@ -124,232 +124,234 @@ namespace FEI.AbacusMachine {
 	        // 
 	        // miFile
 	        // 
+	        resources.ApplyResources(this.miFile, "miFile");
 	        this.miFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miNewFile, this.miOpenFile, this.toolStripMenuItem2, this.miSaveFile, this.miSaveAsFile, this.toolStripMenuItem1, this.miExit });
 	        this.miFile.MergeAction = System.Windows.Forms.MergeAction.Insert;
 	        this.miFile.MergeIndex = 1;
 	        this.miFile.Name = "miFile";
-	        resources.ApplyResources(this.miFile, "miFile");
 	        // 
 	        // miNewFile
 	        // 
-	        this.miNewFile.Image = global::FEI.AbacusMachine.Properties.Resources.small_new;
 	        resources.ApplyResources(this.miNewFile, "miNewFile");
+	        this.miNewFile.Image = global::FEI.AbacusMachine.Properties.Resources.small_new;
 	        this.miNewFile.Name = "miNewFile";
 	        this.miNewFile.Click += new System.EventHandler(this.miNewFile_Click);
 	        // 
 	        // miOpenFile
 	        // 
-	        this.miOpenFile.Image = global::FEI.AbacusMachine.Properties.Resources.open;
 	        resources.ApplyResources(this.miOpenFile, "miOpenFile");
+	        this.miOpenFile.Image = global::FEI.AbacusMachine.Properties.Resources.open;
 	        this.miOpenFile.Name = "miOpenFile";
 	        this.miOpenFile.Click += new System.EventHandler(this.miOpenFile_Click);
 	        // 
 	        // toolStripMenuItem2
 	        // 
-	        this.toolStripMenuItem2.Name = "toolStripMenuItem2";
 	        resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+	        this.toolStripMenuItem2.Name = "toolStripMenuItem2";
 	        // 
 	        // miSaveFile
 	        // 
-	        this.miSaveFile.Image = global::FEI.AbacusMachine.Properties.Resources.save;
 	        resources.ApplyResources(this.miSaveFile, "miSaveFile");
+	        this.miSaveFile.Image = global::FEI.AbacusMachine.Properties.Resources.save;
 	        this.miSaveFile.Name = "miSaveFile";
 	        this.miSaveFile.Click += new System.EventHandler(this.miSaveFile_Click);
 	        // 
 	        // miSaveAsFile
 	        // 
-	        this.miSaveAsFile.Name = "miSaveAsFile";
 	        resources.ApplyResources(this.miSaveAsFile, "miSaveAsFile");
+	        this.miSaveAsFile.Image = global::FEI.AbacusMachine.Properties.Resources.save;
+	        this.miSaveAsFile.Name = "miSaveAsFile";
 	        this.miSaveAsFile.Click += new System.EventHandler(this.miSaveAsFile_Click);
 	        // 
 	        // toolStripMenuItem1
 	        // 
-	        this.toolStripMenuItem1.Name = "toolStripMenuItem1";
 	        resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+	        this.toolStripMenuItem1.Name = "toolStripMenuItem1";
 	        // 
 	        // miExit
 	        // 
-	        this.miExit.Name = "miExit";
 	        resources.ApplyResources(this.miExit, "miExit");
+	        this.miExit.Name = "miExit";
 	        this.miExit.Click += new System.EventHandler(this.miExit_Click);
 	        // 
 	        // miEdit
 	        // 
+	        resources.ApplyResources(this.miEdit, "miEdit");
 	        this.miEdit.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miCut, this.miCopy, this.miPaste, this.miDelete, this.toolStripMenuItem4, this.miSelectAll, this.toolStripMenuItem3, this.miFind, this.miReplace });
 	        this.miEdit.MergeAction = System.Windows.Forms.MergeAction.Insert;
 	        this.miEdit.MergeIndex = 2;
 	        this.miEdit.Name = "miEdit";
-	        resources.ApplyResources(this.miEdit, "miEdit");
 	        // 
 	        // miCut
 	        // 
-	        this.miCut.Image = global::FEI.AbacusMachine.Properties.Resources.small_cut;
 	        resources.ApplyResources(this.miCut, "miCut");
+	        this.miCut.Image = global::FEI.AbacusMachine.Properties.Resources.small_cut;
 	        this.miCut.Name = "miCut";
 	        this.miCut.Click += new System.EventHandler(this.miCut_Click);
 	        // 
 	        // miCopy
 	        // 
-	        this.miCopy.Image = global::FEI.AbacusMachine.Properties.Resources.copy;
 	        resources.ApplyResources(this.miCopy, "miCopy");
+	        this.miCopy.Image = global::FEI.AbacusMachine.Properties.Resources.copy;
 	        this.miCopy.Name = "miCopy";
 	        this.miCopy.Click += new System.EventHandler(this.miCopy_Click);
 	        // 
 	        // miPaste
 	        // 
-	        this.miPaste.Image = global::FEI.AbacusMachine.Properties.Resources.small_paste;
 	        resources.ApplyResources(this.miPaste, "miPaste");
+	        this.miPaste.Image = global::FEI.AbacusMachine.Properties.Resources.small_paste;
 	        this.miPaste.Name = "miPaste";
 	        this.miPaste.Click += new System.EventHandler(this.miPaste_Click);
 	        // 
 	        // miDelete
 	        // 
-	        this.miDelete.Name = "miDelete";
 	        resources.ApplyResources(this.miDelete, "miDelete");
+	        this.miDelete.Name = "miDelete";
 	        this.miDelete.Click += new System.EventHandler(this.miDelete_Click);
 	        // 
 	        // toolStripMenuItem4
 	        // 
-	        this.toolStripMenuItem4.Name = "toolStripMenuItem4";
 	        resources.ApplyResources(this.toolStripMenuItem4, "toolStripMenuItem4");
+	        this.toolStripMenuItem4.Name = "toolStripMenuItem4";
 	        // 
 	        // miSelectAll
 	        // 
-	        this.miSelectAll.Name = "miSelectAll";
 	        resources.ApplyResources(this.miSelectAll, "miSelectAll");
+	        this.miSelectAll.Name = "miSelectAll";
 	        this.miSelectAll.Click += new System.EventHandler(this.miSelectAll_Click);
 	        // 
 	        // toolStripMenuItem3
 	        // 
-	        this.toolStripMenuItem3.Name = "toolStripMenuItem3";
 	        resources.ApplyResources(this.toolStripMenuItem3, "toolStripMenuItem3");
+	        this.toolStripMenuItem3.Name = "toolStripMenuItem3";
 	        // 
 	        // miFind
 	        // 
-	        this.miFind.Name = "miFind";
 	        resources.ApplyResources(this.miFind, "miFind");
+	        this.miFind.Name = "miFind";
 	        this.miFind.Click += new System.EventHandler(this.miFind_Click);
 	        // 
 	        // miReplace
 	        // 
-	        this.miReplace.Name = "miReplace";
 	        resources.ApplyResources(this.miReplace, "miReplace");
+	        this.miReplace.Name = "miReplace";
 	        this.miReplace.Click += new System.EventHandler(this.miReplace_Click);
 	        // 
 	        // autokódToolStripMenuItem
 	        // 
+	        resources.ApplyResources(this.autokódToolStripMenuItem, "autokódToolStripMenuItem");
 	        this.autokódToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miAddValue, this.miSubstractValue, this.toolStripMenuItem6, this.miCopyRegister, this.miMoveRegister, this.miClearRegister });
 	        this.autokódToolStripMenuItem.MergeAction = System.Windows.Forms.MergeAction.Insert;
 	        this.autokódToolStripMenuItem.MergeIndex = 3;
 	        this.autokódToolStripMenuItem.Name = "autokódToolStripMenuItem";
-	        resources.ApplyResources(this.autokódToolStripMenuItem, "autokódToolStripMenuItem");
 	        // 
 	        // miAddValue
 	        // 
-	        this.miAddValue.Name = "miAddValue";
 	        resources.ApplyResources(this.miAddValue, "miAddValue");
+	        this.miAddValue.Name = "miAddValue";
 	        this.miAddValue.Click += new System.EventHandler(this.miAddValue_Click);
 	        // 
 	        // miSubstractValue
 	        // 
-	        this.miSubstractValue.Name = "miSubstractValue";
 	        resources.ApplyResources(this.miSubstractValue, "miSubstractValue");
+	        this.miSubstractValue.Name = "miSubstractValue";
 	        this.miSubstractValue.Click += new System.EventHandler(this.miSubstractValue_Click);
 	        // 
 	        // toolStripMenuItem6
 	        // 
-	        this.toolStripMenuItem6.Name = "toolStripMenuItem6";
 	        resources.ApplyResources(this.toolStripMenuItem6, "toolStripMenuItem6");
+	        this.toolStripMenuItem6.Name = "toolStripMenuItem6";
 	        // 
 	        // miCopyRegister
 	        // 
-	        this.miCopyRegister.Name = "miCopyRegister";
 	        resources.ApplyResources(this.miCopyRegister, "miCopyRegister");
+	        this.miCopyRegister.Name = "miCopyRegister";
 	        this.miCopyRegister.Click += new System.EventHandler(this.miCopyRegister_Click);
 	        // 
 	        // miMoveRegister
 	        // 
-	        this.miMoveRegister.Name = "miMoveRegister";
 	        resources.ApplyResources(this.miMoveRegister, "miMoveRegister");
+	        this.miMoveRegister.Name = "miMoveRegister";
 	        this.miMoveRegister.Click += new System.EventHandler(this.miMoveRegister_Click);
 	        // 
 	        // miClearRegister
 	        // 
-	        this.miClearRegister.Name = "miClearRegister";
 	        resources.ApplyResources(this.miClearRegister, "miClearRegister");
+	        this.miClearRegister.Name = "miClearRegister";
 	        this.miClearRegister.Click += new System.EventHandler(this.miClearRegister_Click);
 	        // 
 	        // miSimulation
 	        // 
+	        resources.ApplyResources(this.miSimulation, "miSimulation");
 	        this.miSimulation.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miRun, this.miPause, this.miStep, this.miStop, this.toolStripMenuItem5, this.miBreaks, this.resetToolStripMenuItem });
 	        this.miSimulation.MergeAction = System.Windows.Forms.MergeAction.Insert;
 	        this.miSimulation.MergeIndex = 4;
 	        this.miSimulation.Name = "miSimulation";
-	        resources.ApplyResources(this.miSimulation, "miSimulation");
 	        // 
 	        // miRun
 	        // 
-	        this.miRun.Image = global::FEI.AbacusMachine.Properties.Resources.run;
 	        resources.ApplyResources(this.miRun, "miRun");
+	        this.miRun.Image = global::FEI.AbacusMachine.Properties.Resources.run;
 	        this.miRun.Name = "miRun";
 	        this.miRun.Click += new System.EventHandler(this.miRun_Click);
 	        // 
 	        // miPause
 	        // 
-	        this.miPause.Image = global::FEI.AbacusMachine.Properties.Resources.pause;
 	        resources.ApplyResources(this.miPause, "miPause");
+	        this.miPause.Image = global::FEI.AbacusMachine.Properties.Resources.pause;
 	        this.miPause.Name = "miPause";
 	        this.miPause.Click += new System.EventHandler(this.miPause_Click);
 	        // 
 	        // miStep
 	        // 
-	        this.miStep.Name = "miStep";
 	        resources.ApplyResources(this.miStep, "miStep");
+	        this.miStep.Image = global::FEI.AbacusMachine.Properties.Resources.next;
+	        this.miStep.Name = "miStep";
 	        this.miStep.Click += new System.EventHandler(this.miStep_Click);
 	        // 
 	        // miStop
 	        // 
-	        this.miStop.Image = global::FEI.AbacusMachine.Properties.Resources.stop;
 	        resources.ApplyResources(this.miStop, "miStop");
+	        this.miStop.Image = global::FEI.AbacusMachine.Properties.Resources.stop;
 	        this.miStop.Name = "miStop";
 	        this.miStop.Click += new System.EventHandler(this.miStop_Click);
 	        // 
 	        // toolStripMenuItem5
 	        // 
-	        this.toolStripMenuItem5.Name = "toolStripMenuItem5";
 	        resources.ApplyResources(this.toolStripMenuItem5, "toolStripMenuItem5");
+	        this.toolStripMenuItem5.Name = "toolStripMenuItem5";
 	        // 
 	        // miBreaks
 	        // 
-	        this.miBreaks.Name = "miBreaks";
 	        resources.ApplyResources(this.miBreaks, "miBreaks");
+	        this.miBreaks.Name = "miBreaks";
 	        // 
 	        // resetToolStripMenuItem
 	        // 
-	        this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
 	        resources.ApplyResources(this.resetToolStripMenuItem, "resetToolStripMenuItem");
+	        this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
 	        this.resetToolStripMenuItem.Click += new System.EventHandler(this.resetToolStripMenuItem_Click);
 	        // 
 	        // miTools
 	        // 
+	        resources.ApplyResources(this.miTools, "miTools");
 	        this.miTools.MergeAction = System.Windows.Forms.MergeAction.Insert;
 	        this.miTools.MergeIndex = 5;
 	        this.miTools.Name = "miTools";
-	        resources.ApplyResources(this.miTools, "miTools");
 	        // 
 	        // miHelp
 	        // 
+	        resources.ApplyResources(this.miHelp, "miHelp");
 	        this.miHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miAbout });
 	        this.miHelp.MergeAction = System.Windows.Forms.MergeAction.MatchOnly;
 	        this.miHelp.MergeIndex = 10;
 	        this.miHelp.Name = "miHelp";
-	        resources.ApplyResources(this.miHelp, "miHelp");
 	        // 
 	        // miAbout
 	        // 
+	        resources.ApplyResources(this.miAbout, "miAbout");
 	        this.miAbout.MergeAction = System.Windows.Forms.MergeAction.Replace;
 	        this.miAbout.Name = "miAbout";
-	        resources.ApplyResources(this.miAbout, "miAbout");
 	        this.miAbout.Click += new System.EventHandler(this.miAbout_Click);
 	        // 
 	        // tabControl1
@@ -363,19 +365,19 @@ namespace FEI.AbacusMachine {
 	        // 
 	        // tabCode
 	        // 
+	        resources.ApplyResources(this.tabCode, "tabCode");
 	        this.tabCode.Controls.Add(this.speedPanel);
 	        this.tabCode.Controls.Add(this.txtCode);
-	        resources.ApplyResources(this.tabCode, "tabCode");
 	        this.tabCode.Name = "tabCode";
 	        this.tabCode.UseVisualStyleBackColor = true;
 	        // 
 	        // speedPanel
 	        // 
+	        resources.ApplyResources(this.speedPanel, "speedPanel");
 	        this.speedPanel.BackColor = System.Drawing.Color.White;
 	        this.speedPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 	        this.speedPanel.Controls.Add(this.tbSpeed);
 	        this.speedPanel.Controls.Add(this.label3);
-	        resources.ApplyResources(this.speedPanel, "speedPanel");
 	        this.speedPanel.Name = "speedPanel";
 	        // 
 	        // tbSpeed
@@ -404,9 +406,9 @@ namespace FEI.AbacusMachine {
 	        // 
 	        // tabSimulation
 	        // 
+	        resources.ApplyResources(this.tabSimulation, "tabSimulation");
 	        this.tabSimulation.Controls.Add(this.pSimulation);
 	        this.tabSimulation.Controls.Add(this.verticalScroll);
-	        resources.ApplyResources(this.tabSimulation, "tabSimulation");
 	        this.tabSimulation.Name = "tabSimulation";
 	        this.tabSimulation.UseVisualStyleBackColor = true;
 	        // 
@@ -427,17 +429,19 @@ namespace FEI.AbacusMachine {
 	        // 
 	        // openFileDialog1
 	        // 
+	        resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
 	        this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk);
 	        // 
 	        // saveFileDialog1
 	        // 
+	        resources.ApplyResources(this.saveFileDialog1, "saveFileDialog1");
 	        this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
 	        // 
 	        // toolStripPanel1
 	        // 
+	        resources.ApplyResources(this.toolStripPanel1, "toolStripPanel1");
 	        this.toolStripPanel1.Controls.Add(this.mainToolStrip);
 	        this.toolStripPanel1.Controls.Add(this.menuStrip1);
-	        resources.ApplyResources(this.toolStripPanel1, "toolStripPanel1");
 	        this.toolStripPanel1.Name = "toolStripPanel1";
 	        this.toolStripPanel1.Orientation = System.Windows.Forms.Orientation.Horizontal;
 	        this.toolStripPanel1.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
@@ -450,44 +454,44 @@ namespace FEI.AbacusMachine {
 	        // 
 	        // newStripButton
 	        // 
+	        resources.ApplyResources(this.newStripButton, "newStripButton");
 	        this.newStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
 	        this.newStripButton.Image = global::FEI.AbacusMachine.Properties.Resources.small_new;
-	        resources.ApplyResources(this.newStripButton, "newStripButton");
 	        this.newStripButton.Name = "newStripButton";
 	        this.newStripButton.Click += new System.EventHandler(this.newStripButton_Click);
 	        // 
 	        // openToolStripButton
 	        // 
+	        resources.ApplyResources(this.openToolStripButton, "openToolStripButton");
 	        this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
 	        this.openToolStripButton.Image = global::FEI.AbacusMachine.Properties.Resources.open;
-	        resources.ApplyResources(this.openToolStripButton, "openToolStripButton");
 	        this.openToolStripButton.Name = "openToolStripButton";
 	        this.openToolStripButton.Click += new System.EventHandler(this.openToolStripButton_Click);
 	        // 
 	        // saveToolStripButton
 	        // 
+	        resources.ApplyResources(this.saveToolStripButton, "saveToolStripButton");
 	        this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
 	        this.saveToolStripButton.Image = global::FEI.AbacusMachine.Properties.Resources.save;
-	        resources.ApplyResources(this.saveToolStripButton, "saveToolStripButton");
 	        this.saveToolStripButton.Name = "saveToolStripButton";
 	        this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
 	        // 
 	        // toolStripSeparator3
 	        // 
-	        this.toolStripSeparator3.Name = "toolStripSeparator3";
 	        resources.ApplyResources(this.toolStripSeparator3, "toolStripSeparator3");
+	        this.toolStripSeparator3.Name = "toolStripSeparator3";
 	        // 
 	        // runToolStripButton
 	        // 
-	        this.runToolStripButton.Image = global::FEI.AbacusMachine.Properties.Resources.run;
 	        resources.ApplyResources(this.runToolStripButton, "runToolStripButton");
+	        this.runToolStripButton.Image = global::FEI.AbacusMachine.Properties.Resources.run;
 	        this.runToolStripButton.Name = "runToolStripButton";
 	        this.runToolStripButton.Click += new System.EventHandler(this.runToolStripButton_Click);
 	        // 
 	        // breakToolStripButton
 	        // 
-	        this.breakToolStripButton.Image = global::FEI.AbacusMachine.Properties.Resources.pause;
 	        resources.ApplyResources(this.breakToolStripButton, "breakToolStripButton");
+	        this.breakToolStripButton.Image = global::FEI.AbacusMachine.Properties.Resources.pause;
 	        this.breakToolStripButton.Name = "breakToolStripButton";
 	        this.breakToolStripButton.Click += new System.EventHandler(this.breakToolStripButton_Click);
 	        // 
@@ -500,13 +504,13 @@ namespace FEI.AbacusMachine {
 	        // 
 	        // toolStripSeparator4
 	        // 
-	        this.toolStripSeparator4.Name = "toolStripSeparator4";
 	        resources.ApplyResources(this.toolStripSeparator4, "toolStripSeparator4");
+	        this.toolStripSeparator4.Name = "toolStripSeparator4";
 	        // 
 	        // stepToolStripButton
 	        // 
-	        this.stepToolStripButton.Image = global::FEI.AbacusMachine.Properties.Resources.next;
 	        resources.ApplyResources(this.stepToolStripButton, "stepToolStripButton");
+	        this.stepToolStripButton.Image = global::FEI.AbacusMachine.Properties.Resources.next;
 	        this.stepToolStripButton.Name = "stepToolStripButton";
 	        this.stepToolStripButton.Click += new System.EventHandler(this.stepToolStripButton_Click);
 	        // 
@@ -517,10 +521,12 @@ namespace FEI.AbacusMachine {
 	        // 
 	        // splitContainer1.Panel1
 	        // 
+	        resources.ApplyResources(this.splitContainer1.Panel1, "splitContainer1.Panel1");
 	        this.splitContainer1.Panel1.Controls.Add(this.tabControl1);
 	        // 
 	        // splitContainer1.Panel2
 	        // 
+	        resources.ApplyResources(this.splitContainer1.Panel2, "splitContainer1.Panel2");
 	        this.splitContainer1.Panel2.Controls.Add(this.lstRegisters);
 	        // 
 	        // lstRegisters
@@ -538,18 +544,18 @@ namespace FEI.AbacusMachine {
 	        // 
 	        // statusStrip
 	        // 
+	        resources.ApplyResources(this.statusStrip, "statusStrip");
 	        this.statusStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
 	        this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.lblStatus });
-	        resources.ApplyResources(this.statusStrip, "statusStrip");
 	        this.statusStrip.Name = "statusStrip";
 	        // 
 	        // lblStatus
 	        // 
+	        resources.ApplyResources(this.lblStatus, "lblStatus");
 	        this.lblStatus.Margin = new System.Windows.Forms.Padding(0, 3, 10, 2);
 	        this.lblStatus.MergeAction = System.Windows.Forms.MergeAction.Replace;
 	        this.lblStatus.MergeIndex = 0;
 	        this.lblStatus.Name = "lblStatus";
-	        resources.ApplyResources(this.lblStatus, "lblStatus");
 	        // 
 	        // AbacusMachineForm
 	        // 

@@ -361,7 +361,7 @@
     <value>61, 3</value>
   </data>
   <data name="tbSpeed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>134, 45</value>
+    <value>132, 45</value>
   </data>
   <data name="tbSpeed.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>
@@ -496,6 +496,9 @@
   </data>
   <data name="stateDiagramControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="stateDiagramControl.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="stateDiagramControl.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>
@@ -1254,7 +1257,7 @@
     <value>132, 6</value>
   </metadata>
   <data name="openFileDialog1.Filter" xml:space="preserve">
-    <value>Súbor Turingovho stroja|*.tm|JFlap Turingov stroj|*.jff|Všetky súbory|*.*</value>
+    <value>Súbor turingovho stroja|*.tm|JFlap Turingov stroj|*.jff|Všetky súbory|*.*</value>
   </data>
   <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>0, 0</value>
@@ -1769,7 +1772,7 @@
     <value>387, 6</value>
   </metadata>
   <data name="saveFileDialog1.Filter" xml:space="preserve">
-    <value>Súbor Turingovho stroja|*.tm|Súbor JFLAP|*.jff</value>
+    <value>Súbor turingovho stroja|*.tm|Súbor JFLAP|*.jff</value>
   </data>
   <metadata name="mainToolStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>3, 27</value>
@@ -1820,7 +1823,7 @@
     <value>Magenta</value>
   </data>
   <data name="runToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 22</value>
+    <value>48, 22</value>
   </data>
   <data name="runToolStripButton.Text" xml:space="preserve">
     <value>Spustiť</value>
@@ -1832,7 +1835,7 @@
     <value>Magenta</value>
   </data>
   <data name="breakToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>68, 22</value>
+    <value>52, 22</value>
   </data>
   <data name="breakToolStripButton.Text" xml:space="preserve">
     <value>Prerušiť</value>
@@ -1850,7 +1853,7 @@
     <value>Magenta</value>
   </data>
   <data name="stopToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>69, 22</value>
+    <value>53, 22</value>
   </data>
   <data name="stopToolStripButton.Text" xml:space="preserve">
     <value>Zastaviť</value>
@@ -1862,7 +1865,7 @@
     <value>Magenta</value>
   </data>
   <data name="stepToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 22</value>
+    <value>35, 22</value>
   </data>
   <data name="stepToolStripButton.Text" xml:space="preserve">
     <value>Krok</value>
@@ -1874,7 +1877,7 @@
     <value>3, 27</value>
   </data>
   <data name="mainToolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>283, 25</value>
+    <value>235, 25</value>
   </data>
   <data name="mainToolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -4135,23 +4138,5 @@
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="bNew.Text" xml:space="preserve">
-    <value>Nový</value>
-  </data>
-  <data name="bOpen.Text" xml:space="preserve">
-    <value>Otvoriť</value>
-  </data>
-  <data name="bRun.Text" xml:space="preserve">
-    <value>Spustiť</value>
-  </data>
-  <data name="bSave.Text" xml:space="preserve">
-    <value>Uložiť</value>
-  </data>
-  <data name="bStep.Text" xml:space="preserve">
-    <value>Krok</value>
-  </data>
-  <data name="bStop.Text" xml:space="preserve">
-    <value>ZastavIť</value>
   </data>
 </root>
