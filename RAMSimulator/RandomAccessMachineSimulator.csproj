@@ -136,13 +136,25 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dialogs\AboutForm.en.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\CConversionForm.en.resx">
+      <DependentUpon>CConversionForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\CConversionForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>CConversionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ComplexityForm.en.resx">
+      <DependentUpon>ComplexityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\InstructionSetForm.en.resx">
+      <DependentUpon>InstructionSetForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="RAMSimulatorForm.resx">
       <SubType>Designer</SubType>
@@ -228,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ScreenForm.en.resx">
       <DependentUpon>ScreenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StackForm.en.resx">
+      <DependentUpon>StackForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StackForm.resx">
       <DependentUpon>StackForm.cs</DependentUpon>

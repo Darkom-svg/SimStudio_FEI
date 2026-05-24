@@ -1,0 +1,65 @@
+﻿<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="FaTrain.Text" xml:space="preserve">
+        <value>Open</value>
+    </data>
+    <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+        <value>Help</value>
+    </data>
+    <data name="label7.Text" xml:space="preserve">
+        <value>Finite automaton</value>
+    </data>
+    <data name="label8.Text" xml:space="preserve">
+        <value>Pushdown automaton</value>
+    </data>
+    <data name="label9.Text" xml:space="preserve">
+        <value>Turing machine</value>
+    </data>
+    <data name="lblStatus.Text" xml:space="preserve">
+        <value>Trainer, Copyright (C) 2026 FEI STU</value>
+    </data>
+    <data name="miAbout.Text" xml:space="preserve">
+        <value>About</value>
+    </data>
+    <data name="miExit.Text" xml:space="preserve">
+        <value>Exit</value>
+    </data>
+    <data name="miFile.Text" xml:space="preserve">
+        <value>File</value>
+    </data>
+    <data name="miNewFile.Text" xml:space="preserve">
+        <value>New</value>
+    </data>
+    <data name="miNewFile.ToolTipText" xml:space="preserve">
+        <value>Creates a new file</value>
+    </data>
+    <data name="miOpenFile.Text" xml:space="preserve">
+        <value>Open</value>
+    </data>
+    <data name="miSaveAsFile.Text" xml:space="preserve">
+        <value>Save as</value>
+    </data>
+    <data name="miSaveFile.Text" xml:space="preserve">
+        <value>Save</value>
+    </data>
+    <data name="PdaTrain.Text" xml:space="preserve">
+        <value>Open</value>
+    </data>
+    <data name="TuringTrain.Text" xml:space="preserve">
+        <value>Open</value>
+    </data>
+    <data name="txtFind.Text" xml:space="preserve">
+        <value>Enter the text you want to find </value>
+    </data>
+</root>

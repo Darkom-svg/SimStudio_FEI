@@ -79,12 +79,24 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutForm.en.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="ExamplesForm.en.resx">
+      <DependentUpon>ExamplesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ExamplesForm.resx">
       <DependentUpon>ExamplesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.en.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimulatorsForm.en.resx">
+      <DependentUpon>SimulatorsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SimulatorsForm.resx">
       <DependentUpon>SimulatorsForm.cs</DependentUpon>

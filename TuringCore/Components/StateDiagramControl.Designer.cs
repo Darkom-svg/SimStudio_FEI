@@ -21,8 +21,8 @@
 
         #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
@@ -45,8 +45,8 @@
             this.sbyStates.Name = "sbyStates";
             this.sbyStates.Size = new System.Drawing.Size(16, 304);
             this.sbyStates.TabIndex = 5;
-            this.sbyStates.ValueChanged += new System.EventHandler(this.sbyStates_ValueChanged);
             this.sbyStates.Scroll += new System.Windows.Forms.ScrollEventHandler(this.sbyStates_Scroll);
+            this.sbyStates.ValueChanged += new System.EventHandler(this.sbyStates_ValueChanged);
             // 
             // pStates
             // 
@@ -57,12 +57,12 @@
             this.pStates.Size = new System.Drawing.Size(439, 304);
             this.pStates.TabIndex = 4;
             this.pStates.TabStop = false;
-            this.pStates.DoubleClick += new System.EventHandler(this.pStates_DoubleClick);
-            this.pStates.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pStates_MouseMove);
-            this.pStates.Resize += new System.EventHandler(this.pStates_Resize);
-            this.pStates.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pStates_MouseDown);
             this.pStates.Paint += new System.Windows.Forms.PaintEventHandler(this.pStates_Paint);
+            this.pStates.DoubleClick += new System.EventHandler(this.pStates_DoubleClick);
+            this.pStates.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pStates_MouseDown);
+            this.pStates.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pStates_MouseMove);
             this.pStates.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pStates_MouseUp);
+            this.pStates.Resize += new System.EventHandler(this.pStates_Resize);
             // 
             // panel1
             // 
@@ -83,8 +83,8 @@
             this.sbxStates.Name = "sbxStates";
             this.sbxStates.Size = new System.Drawing.Size(439, 16);
             this.sbxStates.TabIndex = 7;
-            this.sbxStates.ValueChanged += new System.EventHandler(this.sbxStates_ValueChanged);
             this.sbxStates.Scroll += new System.Windows.Forms.ScrollEventHandler(this.sbxStates_Scroll);
+            this.sbxStates.ValueChanged += new System.EventHandler(this.sbxStates_ValueChanged);
             // 
             // placeholderButton
             // 
@@ -103,12 +103,12 @@
             this.Controls.Add(this.pStates);
             this.Controls.Add(this.sbyStates);
             this.Controls.Add(this.panel1);
+            this.Enabled = false;
             this.Name = "StateDiagramControl";
             this.Size = new System.Drawing.Size(455, 320);
             ((System.ComponentModel.ISupportInitialize)(this.pStates)).EndInit();
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
-
         }
 
         #endregion

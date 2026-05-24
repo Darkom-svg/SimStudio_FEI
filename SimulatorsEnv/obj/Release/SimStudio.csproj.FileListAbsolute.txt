@@ -314,6 +314,13 @@ C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\Si
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\Examples\FA\DKA-aN.fa
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\Examples\PDA\DZA-aNbN.pa
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\Examples\PDA\DZA-wcwR.pa
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\Examples\TM\DTM-aN_2bN.tm
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\Examples\TM\DTM-sum.tm
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\obj\Release\FEI.SimStudio.ExamplesForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\TmTrainingForm.resx
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\Examples\TM\DTM-aN_bN.tm
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\en\SimStudio.resources.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\obj\Release\FEI.SimStudio.AboutForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\obj\Release\FEI.SimStudio.ExamplesForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\obj\Release\FEI.SimStudio.MainForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\obj\Release\FEI.SimStudio.SimulatorsForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\SimulatorsEnv\obj\Release\en\SimStudio.resources.dll

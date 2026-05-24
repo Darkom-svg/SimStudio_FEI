@@ -228,8 +228,7 @@ namespace FEI.TrainingSimulator {
                     frm.ShowDialog(this);
                     break;
                 }
-                default:
-                    throw new System.NotImplementedException();
+                
             }
         }
 

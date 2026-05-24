@@ -27,6 +27,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReplaceForm));
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.rbUp = new System.Windows.Forms.RadioButton();
             this.rbDown = new System.Windows.Forms.RadioButton();
@@ -46,147 +47,91 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.rbUp);
             this.groupBox2.Controls.Add(this.rbDown);
-            this.groupBox2.Location = new System.Drawing.Point(201, 72);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(148, 77);
-            this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Smer vyhľadávania";
             // 
             // rbUp
             // 
-            this.rbUp.AutoSize = true;
-            this.rbUp.Location = new System.Drawing.Point(6, 41);
+            resources.ApplyResources(this.rbUp, "rbUp");
             this.rbUp.Name = "rbUp";
-            this.rbUp.Size = new System.Drawing.Size(54, 17);
-            this.rbUp.TabIndex = 1;
-            this.rbUp.Text = "Nahor";
             this.rbUp.UseVisualStyleBackColor = true;
             // 
             // rbDown
             // 
-            this.rbDown.AutoSize = true;
+            resources.ApplyResources(this.rbDown, "rbDown");
             this.rbDown.Checked = true;
-            this.rbDown.Location = new System.Drawing.Point(6, 18);
             this.rbDown.Name = "rbDown";
-            this.rbDown.Size = new System.Drawing.Size(53, 17);
-            this.rbDown.TabIndex = 0;
             this.rbDown.TabStop = true;
-            this.rbDown.Text = "Nadol";
             this.rbDown.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.chWholeWords);
             this.groupBox1.Controls.Add(this.chIgnoreCase);
-            this.groupBox1.Location = new System.Drawing.Point(12, 72);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(183, 77);
-            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Nastavenia";
             // 
             // chWholeWords
             // 
-            this.chWholeWords.AutoSize = true;
-            this.chWholeWords.Location = new System.Drawing.Point(6, 42);
+            resources.ApplyResources(this.chWholeWords, "chWholeWords");
             this.chWholeWords.Name = "chWholeWords";
-            this.chWholeWords.Size = new System.Drawing.Size(128, 17);
-            this.chWholeWords.TabIndex = 1;
-            this.chWholeWords.Text = "Hľadať iba celé slová";
             this.chWholeWords.UseVisualStyleBackColor = true;
             // 
             // chIgnoreCase
             // 
-            this.chIgnoreCase.AutoSize = true;
-            this.chIgnoreCase.Location = new System.Drawing.Point(6, 19);
+            resources.ApplyResources(this.chIgnoreCase, "chIgnoreCase");
             this.chIgnoreCase.Name = "chIgnoreCase";
-            this.chIgnoreCase.Size = new System.Drawing.Size(150, 17);
-            this.chIgnoreCase.TabIndex = 0;
-            this.chIgnoreCase.Text = "Ignorovať veľkosť písmen";
             this.chIgnoreCase.UseVisualStyleBackColor = true;
             // 
             // txtFind
             // 
-            this.txtFind.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFind.Location = new System.Drawing.Point(74, 18);
+            resources.ApplyResources(this.txtFind, "txtFind");
             this.txtFind.Name = "txtFind";
-            this.txtFind.Size = new System.Drawing.Size(276, 20);
-            this.txtFind.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 21);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Hľadať:";
             // 
             // bFind
             // 
-            this.bFind.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bFind.Location = new System.Drawing.Point(366, 12);
+            resources.ApplyResources(this.bFind, "bFind");
             this.bFind.Name = "bFind";
-            this.bFind.Size = new System.Drawing.Size(101, 28);
-            this.bFind.TabIndex = 4;
-            this.bFind.Text = "Hľadať ďalej";
             this.bFind.UseVisualStyleBackColor = true;
             this.bFind.Click += new System.EventHandler(this.bFind_Click);
             // 
             // cancelButton
             // 
-            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelButton.Location = new System.Drawing.Point(366, 80);
+            resources.ApplyResources(this.cancelButton, "cancelButton");
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(101, 28);
-            this.cancelButton.TabIndex = 6;
-            this.cancelButton.Text = "Zrušiť";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.bCancel_Click);
             // 
             // txtReplaceWith
             // 
-            this.txtReplaceWith.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtReplaceWith.Location = new System.Drawing.Point(74, 46);
+            resources.ApplyResources(this.txtReplaceWith, "txtReplaceWith");
             this.txtReplaceWith.Name = "txtReplaceWith";
-            this.txtReplaceWith.Size = new System.Drawing.Size(276, 20);
-            this.txtReplaceWith.TabIndex = 1;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 49);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 13);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Nahradiť s:";
             // 
             // bReplace
             // 
-            this.bReplace.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bReplace.Location = new System.Drawing.Point(366, 46);
+            resources.ApplyResources(this.bReplace, "bReplace");
             this.bReplace.Name = "bReplace";
-            this.bReplace.Size = new System.Drawing.Size(101, 28);
-            this.bReplace.TabIndex = 5;
-            this.bReplace.Text = "Nahradiť";
             this.bReplace.UseVisualStyleBackColor = true;
             this.bReplace.Click += new System.EventHandler(this.bReplace_Click);
             // 
-            // frmReplace
+            // ReplaceForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(479, 161);
             this.Controls.Add(this.bReplace);
             this.Controls.Add(this.txtReplaceWith);
             this.Controls.Add(this.label2);
@@ -199,18 +144,15 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmReplace";
+            this.Name = "ReplaceForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Nahradiť";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

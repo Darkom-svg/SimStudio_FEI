@@ -81,14 +81,11 @@
             // 
             this.cmbType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbType.FormattingEnabled = true;
-            this.cmbType.Items.AddRange(new object[] {
-            resources.GetString("cmbType.Items"),
-            resources.GetString("cmbType.Items1"),
-            resources.GetString("cmbType.Items2")});
+            this.cmbType.Items.AddRange(new object[] { resources.GetString("cmbType.Items"), resources.GetString("cmbType.Items1"), resources.GetString("cmbType.Items2") });
             resources.ApplyResources(this.cmbType, "cmbType");
             this.cmbType.Name = "cmbType";
             // 
-            // frmNewState
+            // NewStateForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -103,12 +100,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmNewState";
+            this.Name = "NewStateForm";
             this.ShowInTaskbar = false;
             this.Load += new System.EventHandler(this.frmNewState_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

@@ -92,9 +92,15 @@
       <DependentUpon>RegisterEditForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\FindForm.en.resx">
+      <DependentUpon>FindForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\FindForm.resx">
       <DependentUpon>FindForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ReplaceForm.en.resx">
+      <DependentUpon>ReplaceForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\ReplaceForm.resx">
       <SubType>Designer</SubType>

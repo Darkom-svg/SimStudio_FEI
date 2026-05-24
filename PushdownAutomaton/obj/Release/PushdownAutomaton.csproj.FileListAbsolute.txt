@@ -92,3 +92,6 @@ C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\Si
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Release\en\PushdownAutomaton.resources.dll
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Release\Pushdown.43007AFF.Up2Date
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Release\PushdownAutomaton.exe
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Release\FEI.PushdownAutomaton.Dialogs.AboutForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Release\FEI.PushdownAutomaton.Dialogs.SettingsForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\PushdownAutomaton\obj\Release\FEI.PushdownAutomaton.Dialogs.TapeStatisticsForm.en.resources

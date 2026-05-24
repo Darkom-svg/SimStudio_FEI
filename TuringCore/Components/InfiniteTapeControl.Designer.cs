@@ -21,12 +21,13 @@
 
         #region Component Designer generated code
 
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
+        /// <summary>
+        /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InfiniteTapeControl));
             this.sbxTape = new System.Windows.Forms.HScrollBar();
             this.txtSymbol = new System.Windows.Forms.TextBox();
             this.pTape = new System.Windows.Forms.PictureBox();
@@ -35,72 +36,47 @@
             // 
             // sbxTape
             // 
-            this.sbxTape.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.sbxTape.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.sbxTape.Location = new System.Drawing.Point(0, 78);
+            resources.ApplyResources(this.sbxTape, "sbxTape");
             this.sbxTape.Minimum = -100;
             this.sbxTape.Name = "sbxTape";
-            this.sbxTape.Size = new System.Drawing.Size(607, 19);
-            this.sbxTape.TabIndex = 12;
-            this.sbxTape.ValueChanged += new System.EventHandler(this.sbxTape_ValueChanged);
             this.sbxTape.Scroll += new System.Windows.Forms.ScrollEventHandler(this.sbxTape_Scroll);
+            this.sbxTape.ValueChanged += new System.EventHandler(this.sbxTape_ValueChanged);
             // 
             // txtSymbol
             // 
             this.txtSymbol.AcceptsReturn = true;
-            this.txtSymbol.AutoCompleteCustomSource.AddRange(new string[] {
-            "Blank",
-            "Black",
-            "Blue",
-            "Red",
-            "Green",
-            "Yellow",
-            "Orange"});
+            this.txtSymbol.AutoCompleteCustomSource.AddRange(new string[] { resources.GetString("txtSymbol.AutoCompleteCustomSource"), resources.GetString("txtSymbol.AutoCompleteCustomSource1"), resources.GetString("txtSymbol.AutoCompleteCustomSource2"), resources.GetString("txtSymbol.AutoCompleteCustomSource3"), resources.GetString("txtSymbol.AutoCompleteCustomSource4"), resources.GetString("txtSymbol.AutoCompleteCustomSource5"), resources.GetString("txtSymbol.AutoCompleteCustomSource6") });
             this.txtSymbol.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.txtSymbol.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.txtSymbol.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSymbol.Font = new System.Drawing.Font("Arial", 12F);
-            this.txtSymbol.Location = new System.Drawing.Point(180, 29);
+            resources.ApplyResources(this.txtSymbol, "txtSymbol");
             this.txtSymbol.Name = "txtSymbol";
-            this.txtSymbol.Size = new System.Drawing.Size(46, 26);
-            this.txtSymbol.TabIndex = 13;
-            this.txtSymbol.Visible = false;
             this.txtSymbol.TextChanged += new System.EventHandler(this.txtSymbol_TextChanged);
             this.txtSymbol.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSymbol_KeyDown);
             this.txtSymbol.LostFocus += new System.EventHandler(this.txtSymbol_LostFocus);
             // 
             // pTape
             // 
-            this.pTape.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.pTape, "pTape");
             this.pTape.BackColor = System.Drawing.Color.White;
-            this.pTape.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pTape.Location = new System.Drawing.Point(0, 0);
-            this.pTape.Margin = new System.Windows.Forms.Padding(0);
             this.pTape.Name = "pTape";
-            this.pTape.Size = new System.Drawing.Size(607, 78);
-            this.pTape.TabIndex = 14;
             this.pTape.TabStop = false;
+            this.pTape.Paint += new System.Windows.Forms.PaintEventHandler(this.pTape_Paint);
+            this.pTape.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pTape_MouseDown);
             this.pTape.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pTape_MouseMove);
             this.pTape.Resize += new System.EventHandler(this.pTape_Resize);
-            this.pTape.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pTape_MouseDown);
-            this.pTape.Paint += new System.Windows.Forms.PaintEventHandler(this.pTape_Paint);
             // 
             // InfiniteTapeControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.sbxTape);
             this.Controls.Add(this.txtSymbol);
             this.Controls.Add(this.pTape);
             this.Name = "InfiniteTapeControl";
-            this.Size = new System.Drawing.Size(607, 97);
             ((System.ComponentModel.ISupportInitialize)(this.pTape)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

@@ -66,173 +66,141 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.simulatorsToolStripMenuItem1, this.placeholderToolStripMenuItem, this.windowsToolStripMenuItem1, this.helpToolStripMenuItem1 });
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.MdiWindowListItem = this.windowsToolStripMenuItem;
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1184, 24);
-            this.menuStrip1.TabIndex = 1;
             // 
             // simulatorsToolStripMenuItem1
             // 
             this.simulatorsToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.openFileToolStripMenuItem, this.toolStripMenuItem1, this.finiteAutomatonToolStripMenuItem1, this.pushdownAutomatonToolStripMenuItem, this.turingMachineToolStripMenuItem1, this.rAMSimulatorToolStripMenuItem, this.abacusMachineToolStripMenuItem1, this.trianerToolStripMenuItem });
             this.simulatorsToolStripMenuItem1.Name = "simulatorsToolStripMenuItem1";
-            this.simulatorsToolStripMenuItem1.Size = new System.Drawing.Size(76, 20);
-            this.simulatorsToolStripMenuItem1.Text = "Simulátory";
+            resources.ApplyResources(this.simulatorsToolStripMenuItem1, "simulatorsToolStripMenuItem1");
             this.simulatorsToolStripMenuItem1.Paint += new System.Windows.Forms.PaintEventHandler(this.simulatorsToolStripMenuItem_Paint);
             // 
             // openFileToolStripMenuItem
             // 
-            this.openFileToolStripMenuItem.Image = global::FEI.SimStudio.Properties.Resources.small_open;
             this.openFileToolStripMenuItem.Name = "openFileToolStripMenuItem";
-            this.openFileToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.openFileToolStripMenuItem.Text = "Otvoriť";
+            resources.ApplyResources(this.openFileToolStripMenuItem, "openFileToolStripMenuItem");
             this.openFileToolStripMenuItem.Click += new System.EventHandler(this.openFileToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(186, 6);
+            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
             // 
             // finiteAutomatonToolStripMenuItem1
             // 
-            this.finiteAutomatonToolStripMenuItem1.Image = global::FEI.SimStudio.Properties.Resources.Turing;
             this.finiteAutomatonToolStripMenuItem1.Name = "finiteAutomatonToolStripMenuItem1";
-            this.finiteAutomatonToolStripMenuItem1.Size = new System.Drawing.Size(189, 22);
-            this.finiteAutomatonToolStripMenuItem1.Text = "Konečný automat";
+            resources.ApplyResources(this.finiteAutomatonToolStripMenuItem1, "finiteAutomatonToolStripMenuItem1");
             this.finiteAutomatonToolStripMenuItem1.Click += new System.EventHandler(this.finiteAutomatonToolStripMenuItem_Click);
             // 
             // pushdownAutomatonToolStripMenuItem
             // 
-            this.pushdownAutomatonToolStripMenuItem.Image = global::FEI.SimStudio.Properties.Resources.Turing;
             this.pushdownAutomatonToolStripMenuItem.Name = "pushdownAutomatonToolStripMenuItem";
-            this.pushdownAutomatonToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.pushdownAutomatonToolStripMenuItem.Text = "Zásobníkový automat";
+            resources.ApplyResources(this.pushdownAutomatonToolStripMenuItem, "pushdownAutomatonToolStripMenuItem");
             this.pushdownAutomatonToolStripMenuItem.Click += new System.EventHandler(this.pushdownAutomatonToolStripMenuItem_Click);
             // 
             // turingMachineToolStripMenuItem1
             // 
-            this.turingMachineToolStripMenuItem1.Image = global::FEI.SimStudio.Properties.Resources.Turing;
             this.turingMachineToolStripMenuItem1.Name = "turingMachineToolStripMenuItem1";
-            this.turingMachineToolStripMenuItem1.Size = new System.Drawing.Size(189, 22);
-            this.turingMachineToolStripMenuItem1.Text = "Turingov stroj";
+            resources.ApplyResources(this.turingMachineToolStripMenuItem1, "turingMachineToolStripMenuItem1");
             this.turingMachineToolStripMenuItem1.Click += new System.EventHandler(this.turingMachineToolStripMenuItem_Click);
             // 
             // rAMSimulatorToolStripMenuItem
             // 
-            this.rAMSimulatorToolStripMenuItem.Image = global::FEI.SimStudio.Properties.Resources.RAM;
             this.rAMSimulatorToolStripMenuItem.Name = "rAMSimulatorToolStripMenuItem";
-            this.rAMSimulatorToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.rAMSimulatorToolStripMenuItem.Text = "RAM";
+            resources.ApplyResources(this.rAMSimulatorToolStripMenuItem, "rAMSimulatorToolStripMenuItem");
             this.rAMSimulatorToolStripMenuItem.Click += new System.EventHandler(this.ramToolStripMenuItem_Click);
             // 
             // abacusMachineToolStripMenuItem1
             // 
-            this.abacusMachineToolStripMenuItem1.Image = global::FEI.SimStudio.Properties.Resources.Abacus;
             this.abacusMachineToolStripMenuItem1.Name = "abacusMachineToolStripMenuItem1";
-            this.abacusMachineToolStripMenuItem1.Size = new System.Drawing.Size(189, 22);
-            this.abacusMachineToolStripMenuItem1.Text = "Počítadlový stroj";
+            resources.ApplyResources(this.abacusMachineToolStripMenuItem1, "abacusMachineToolStripMenuItem1");
             this.abacusMachineToolStripMenuItem1.Click += new System.EventHandler(this.abacusMachineToolStripMenuItem_Click);
             // 
             // trianerToolStripMenuItem
             // 
-            this.trianerToolStripMenuItem.Image = global::FEI.SimStudio.Properties.Resources.Trainer;
             this.trianerToolStripMenuItem.Name = "trianerToolStripMenuItem";
-            this.trianerToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.trianerToolStripMenuItem.Text = "Trenažér";
+            resources.ApplyResources(this.trianerToolStripMenuItem, "trianerToolStripMenuItem");
             this.trianerToolStripMenuItem.Click += new System.EventHandler(this.trainerToolStripMenuItem_Click);
             // 
             // placeholderToolStripMenuItem
             // 
             this.placeholderToolStripMenuItem.MergeIndex = 1;
             this.placeholderToolStripMenuItem.Name = "placeholderToolStripMenuItem";
-            this.placeholderToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
-            this.placeholderToolStripMenuItem.Text = "Placeholder";
-            this.placeholderToolStripMenuItem.Visible = false;
+            resources.ApplyResources(this.placeholderToolStripMenuItem, "placeholderToolStripMenuItem");
             // 
             // windowsToolStripMenuItem1
             // 
             this.windowsToolStripMenuItem1.MergeAction = System.Windows.Forms.MergeAction.Insert;
             this.windowsToolStripMenuItem1.MergeIndex = 9;
             this.windowsToolStripMenuItem1.Name = "windowsToolStripMenuItem1";
-            this.windowsToolStripMenuItem1.Size = new System.Drawing.Size(47, 20);
-            this.windowsToolStripMenuItem1.Text = "Okná";
+            resources.ApplyResources(this.windowsToolStripMenuItem1, "windowsToolStripMenuItem1");
             // 
             // helpToolStripMenuItem1
             // 
             this.helpToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.aboutToolStripMenuItem1 });
             this.helpToolStripMenuItem1.MergeIndex = 10;
             this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(73, 20);
-            this.helpToolStripMenuItem1.Text = "Pomocník";
+            resources.ApplyResources(this.helpToolStripMenuItem1, "helpToolStripMenuItem1");
             // 
             // aboutToolStripMenuItem1
             // 
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(138, 22);
-            this.aboutToolStripMenuItem1.Text = "O programe";
+            resources.ApplyResources(this.aboutToolStripMenuItem1, "aboutToolStripMenuItem1");
             this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // windowsToolStripMenuItem
             // 
             this.windowsToolStripMenuItem.MergeIndex = 9;
             this.windowsToolStripMenuItem.Name = "windowsToolStripMenuItem";
-            this.windowsToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-            this.windowsToolStripMenuItem.Text = "Okná";
+            resources.ApplyResources(this.windowsToolStripMenuItem, "windowsToolStripMenuItem");
             // 
             // openToolStripButton
             // 
-            this.openToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripButton.Image")));
-            this.openToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            resources.ApplyResources(this.openToolStripButton, "openToolStripButton");
             this.openToolStripButton.Name = "openToolStripButton";
-            this.openToolStripButton.Size = new System.Drawing.Size(65, 22);
-            this.openToolStripButton.Text = "Otvoriť";
             this.openToolStripButton.Click += new System.EventHandler(this.openToolStripButton_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
             // 
             // simulatorsToolStripMenuItem
             // 
             this.simulatorsToolStripMenuItem.MergeIndex = 0;
             this.simulatorsToolStripMenuItem.Name = "simulatorsToolStripMenuItem";
-            this.simulatorsToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
-            this.simulatorsToolStripMenuItem.Text = "Simulátory";
+            resources.ApplyResources(this.simulatorsToolStripMenuItem, "simulatorsToolStripMenuItem");
             this.simulatorsToolStripMenuItem.Paint += new System.Windows.Forms.PaintEventHandler(this.simulatorsToolStripMenuItem_Paint);
             // 
             // finiteAutomatonToolStripMenuItem
             // 
             this.finiteAutomatonToolStripMenuItem.Name = "finiteAutomatonToolStripMenuItem";
-            this.finiteAutomatonToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.finiteAutomatonToolStripMenuItem.Text = "Konečný automat";
+            resources.ApplyResources(this.finiteAutomatonToolStripMenuItem, "finiteAutomatonToolStripMenuItem");
             this.finiteAutomatonToolStripMenuItem.Click += new System.EventHandler(this.finiteAutomatonToolStripMenuItem_Click);
             // 
             // stackAutomatonToolStripMenuItem
             // 
             this.stackAutomatonToolStripMenuItem.Name = "stackAutomatonToolStripMenuItem";
-            this.stackAutomatonToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.stackAutomatonToolStripMenuItem.Text = "Zásobníkový automat";
+            resources.ApplyResources(this.stackAutomatonToolStripMenuItem, "stackAutomatonToolStripMenuItem");
             // 
             // turingMachineToolStripMenuItem
             // 
             this.turingMachineToolStripMenuItem.Name = "turingMachineToolStripMenuItem";
-            this.turingMachineToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.turingMachineToolStripMenuItem.Text = "Turingov stroj";
+            resources.ApplyResources(this.turingMachineToolStripMenuItem, "turingMachineToolStripMenuItem");
             this.turingMachineToolStripMenuItem.Click += new System.EventHandler(this.turingMachineToolStripMenuItem_Click);
             // 
             // ramToolStripMenuItem
             // 
             this.ramToolStripMenuItem.Name = "ramToolStripMenuItem";
-            this.ramToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.ramToolStripMenuItem.Text = "RAM";
+            resources.ApplyResources(this.ramToolStripMenuItem, "ramToolStripMenuItem");
             this.ramToolStripMenuItem.Click += new System.EventHandler(this.ramToolStripMenuItem_Click);
             // 
             // abacusMachineToolStripMenuItem
             // 
             this.abacusMachineToolStripMenuItem.Name = "abacusMachineToolStripMenuItem";
-            this.abacusMachineToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.abacusMachineToolStripMenuItem.Text = "Počítadlový stroj";
+            resources.ApplyResources(this.abacusMachineToolStripMenuItem, "abacusMachineToolStripMenuItem");
             this.abacusMachineToolStripMenuItem.Click += new System.EventHandler(this.abacusMachineToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
@@ -240,65 +208,51 @@
             this.helpToolStripMenuItem.MergeAction = System.Windows.Forms.MergeAction.Replace;
             this.helpToolStripMenuItem.MergeIndex = 10;
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
-            this.helpToolStripMenuItem.Text = "Pomocník";
+            resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.aboutToolStripMenuItem.Text = "O programe";
+            resources.ApplyResources(this.aboutToolStripMenuItem, "aboutToolStripMenuItem");
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // topToolStripPanel
             // 
             this.topToolStripPanel.Controls.Add(this.mainToolStrip);
-            this.topToolStripPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.topToolStripPanel.Location = new System.Drawing.Point(0, 24);
+            resources.ApplyResources(this.topToolStripPanel, "topToolStripPanel");
             this.topToolStripPanel.Name = "topToolStripPanel";
             this.topToolStripPanel.Orientation = System.Windows.Forms.Orientation.Horizontal;
             this.topToolStripPanel.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.topToolStripPanel.Size = new System.Drawing.Size(1184, 25);
             // 
             // mainToolStrip
             // 
-            this.mainToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            resources.ApplyResources(this.mainToolStrip, "mainToolStrip");
             this.mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.openToolStripButton, this.toolStripSeparator1 });
-            this.mainToolStrip.Location = new System.Drawing.Point(3, 0);
             this.mainToolStrip.Name = "mainToolStrip";
-            this.mainToolStrip.Size = new System.Drawing.Size(83, 25);
-            this.mainToolStrip.TabIndex = 5;
             // 
             // statusStrip
             // 
             this.statusStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.statusLabel });
-            this.statusStrip.Location = new System.Drawing.Point(0, 671);
+            resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(1184, 22);
-            this.statusStrip.TabIndex = 25;
             // 
             // statusLabel
             // 
             this.statusLabel.Margin = new System.Windows.Forms.Padding(0, 3, 10, 2);
             this.statusLabel.Name = "statusLabel";
-            this.statusLabel.Size = new System.Drawing.Size(210, 17);
-            this.statusLabel.Text = "Sim Studio, Copyright (C) 2026 FEI STU";
+            resources.ApplyResources(this.statusLabel, "statusLabel");
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 693);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.topToolStripPanel);
             this.Controls.Add(this.menuStrip1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sim Studio";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.MdiChildActivate += new System.EventHandler(this.MainForm_MdiChildActivate);
             this.menuStrip1.ResumeLayout(false);

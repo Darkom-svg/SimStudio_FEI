@@ -1,0 +1,50 @@
+﻿<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="label1.Text" xml:space="preserve">
+        <value>Help</value>
+    </data>
+    <data name="label10.Text" xml:space="preserve">
+        <value>Finite automaton</value>
+    </data>
+    <data name="label11.Text" xml:space="preserve">
+        <value>Pushdown automaton</value>
+    </data>
+    <data name="label12.Text" xml:space="preserve">
+        <value>Trainer</value>
+    </data>
+    <data name="label3.Text" xml:space="preserve">
+        <value>(C) 2025 - 2026 Marco Dzurilla</value>
+    </data>
+    <data name="label4.Text" xml:space="preserve">
+        <value>Version 1.0 (24.5.2026)</value>
+    </data>
+    <data name="label5.Text" xml:space="preserve">
+        <value>Sim Studio includes:</value>
+    </data>
+    <data name="label6.Text" xml:space="preserve">
+        <value>Turing machine</value>
+    </data>
+    <data name="label7.Text" xml:space="preserve">
+        <value>Random Access Machine</value>
+    </data>
+    <data name="label8.Text" xml:space="preserve">
+        <value>Abacus machine</value>
+    </data>
+    <data name="label9.Text" xml:space="preserve">
+        <value>Trainer</value>
+    </data>
+    <data name="okButton.Text" xml:space="preserve">
+        <value>OK</value>
+    </data>
+</root>

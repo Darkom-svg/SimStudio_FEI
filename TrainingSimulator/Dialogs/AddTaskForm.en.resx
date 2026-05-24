@@ -131,7 +131,7 @@
     <value>Add</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
-    <value>Head Move:</value>
+    <value>Formula*:</value>
   </data>
   <data name="cmbStep.Location" type="System.Drawing.Point, System.Drawing">
     <value>109, 174</value>
@@ -328,7 +328,7 @@
     <value>True</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>Comments:</value>
+    <value>Task specifications*:</value>
   </data>
   <data name="txtWriteSymbol.Size" type="System.Drawing.Size, System.Drawing">
     <value>210, 20</value>
@@ -353,5 +353,71 @@
   </data>
   <data name="$this.Language" type="System.Globalization.CultureInfo, mscorlib">
     <value>English</value>
+  </data>
+  <data name="btnAdd.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="btnRemove.Text" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="checkBoxAccept.Text" xml:space="preserve">
+    <value>Accept</value>
+  </data>
+  <data name="checkBoxFail.Text" xml:space="preserve">
+    <value>Decline</value>
+  </data>
+  <data name="cmbMode.Items" xml:space="preserve">
+    <value>Formula</value>
+  </data>
+  <data name="cmbMode.Items1" xml:space="preserve">
+    <value>Regex</value>
+  </data>
+  <data name="cmbMode.Items2" xml:space="preserve">
+    <value>Reference automaton</value>
+  </data>
+  <data name="cmbMode.Items3" xml:space="preserve">
+    <value>Test set</value>
+  </data>
+  <data name="cmbModel.Items" xml:space="preserve">
+    <value>Finite automaton</value>
+  </data>
+  <data name="cmbModel.Items1" xml:space="preserve">
+    <value>Pushdown automaton</value>
+  </data>
+  <data name="cmbModel.Items2" xml:space="preserve">
+    <value>Turing machine</value>
+  </data>
+  <data name="comboBox1.Items" xml:space="preserve">
+    <value>Easy</value>
+  </data>
+  <data name="comboBox1.Items1" xml:space="preserve">
+    <value>Medium</value>
+  </data>
+  <data name="comboBox1.Items2" xml:space="preserve">
+    <value>Hard</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Reference automaton*:</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>Difficulty*:</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>Word*:</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>Test set*:</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>Regex*:</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>Task set*:</value>
+  </data>
+  <data name="taskSetPathButton.Text" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="referencePathButton.Text" xml:space="preserve">
+    <value>Browse</value>
   </data>
 </root>

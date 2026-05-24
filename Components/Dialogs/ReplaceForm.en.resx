@@ -1,0 +1,50 @@
+﻿<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="$this.Text" xml:space="preserve">
+        <value>Replace</value>
+    </data>
+    <data name="bFind.Text" xml:space="preserve">
+        <value>Search further</value>
+    </data>
+    <data name="bReplace.Text" xml:space="preserve">
+        <value>Replace</value>
+    </data>
+    <data name="cancelButton.Text" xml:space="preserve">
+        <value>Cancel</value>
+    </data>
+    <data name="chIgnoreCase.Text" xml:space="preserve">
+        <value>Ignore case</value>
+    </data>
+    <data name="chWholeWords.Text" xml:space="preserve">
+        <value>Search whole words only</value>
+    </data>
+    <data name="groupBox1.Text" xml:space="preserve">
+        <value>Settings</value>
+    </data>
+    <data name="groupBox2.Text" xml:space="preserve">
+        <value>Search direction</value>
+    </data>
+    <data name="label1.Text" xml:space="preserve">
+        <value>Search:</value>
+    </data>
+    <data name="label2.Text" xml:space="preserve">
+        <value>Replace with:</value>
+    </data>
+    <data name="rbDown.Text" xml:space="preserve">
+        <value>Down</value>
+    </data>
+    <data name="rbUp.Text" xml:space="preserve">
+        <value>Up</value>
+    </data>
+</root>

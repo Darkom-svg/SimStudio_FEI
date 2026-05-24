@@ -92,3 +92,5 @@ C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\Si
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Components\obj\Release\Components.csproj.CoreCompileInputs.cache
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Components\obj\Release\en\Components.resources.dll
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Components\obj\Release\Components.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Components\obj\Release\FEI.SimStudio.Components.Dialogs.FindForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Components\obj\Release\FEI.SimStudio.Components.Dialogs.ReplaceForm.en.resources

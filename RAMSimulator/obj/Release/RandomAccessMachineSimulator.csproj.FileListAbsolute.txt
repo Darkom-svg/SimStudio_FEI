@@ -204,7 +204,6 @@ C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\Si
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\obj\Release\FEI.RandomAccessMachine.ConsoleForm.resources
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\obj\Release\FEI.RandomAccessMachine.Dialogs.ComplexityForm.resources
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\obj\Release\FEI.RandomAccessMachine.Dialogs.InstructionSetForm.resources
-C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\obj\Release\FEI.RandomAccessMachine.Dialogs.RAMTypeSelectionForm.resources
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\obj\Release\FEI.RandomAccessMachine.StackForm.resources
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\obj\Release\FEI.RandomAccessMachine.ConsoleForm.en.resources
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\obj\Release\FEI.RandomAccessMachine.RAMSimulatorForm.en.resources
@@ -221,3 +220,8 @@ C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\Si
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\graphics\ReadPOff.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\graphics\Write.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\Release\graphics\WriteOff.png
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\obj\Release\FEI.RandomAccessMachine.Dialogs.AboutForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\obj\Release\FEI.RandomAccessMachine.Dialogs.CConversionForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\obj\Release\FEI.RandomAccessMachine.Dialogs.ComplexityForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\obj\Release\FEI.RandomAccessMachine.Dialogs.InstructionSetForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\obj\Release\FEI.RandomAccessMachine.StackForm.en.resources

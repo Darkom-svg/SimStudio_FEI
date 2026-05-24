@@ -119,6 +119,9 @@
         <Compile Include="TmTrainingForm.Designer.cs">
           <DependentUpon>TmTrainingForm.cs</DependentUpon>
         </Compile>
+        <EmbeddedResource Include="Dialogs\AboutForm.en.resx">
+          <DependentUpon>AboutForm.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Dialogs\AboutForm.resx" />
         <EmbeddedResource Include="Dialogs\AddTaskForm.en.resx">
           <DependentUpon>AddTaskForm.cs</DependentUpon>
@@ -128,8 +131,17 @@
           <DependentUpon>AddTaskForm.cs</DependentUpon>
           <SubType>Designer</SubType>
         </EmbeddedResource>
+        <EmbeddedResource Include="FaTrainingForm.en.resx">
+          <DependentUpon>FaTrainingForm.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="MainTrainingForm.en.resx">
+          <DependentUpon>MainTrainingForm.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="MainTrainingForm.resx">
           <DependentUpon>MainTrainingForm.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="PdaTrainingForm.en.resx">
+          <DependentUpon>PdaTrainingForm.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="PdaTrainingForm.resx">
           <DependentUpon>PdaTrainingForm.cs</DependentUpon>
@@ -147,6 +159,9 @@
         <EmbeddedResource Include="FaTrainingForm.resx">
           <DependentUpon>FaTrainingForm.cs</DependentUpon>
           <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </EmbeddedResource>
+        <EmbeddedResource Include="TmTrainingForm.en.resx">
+          <DependentUpon>TmTrainingForm.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="TmTrainingForm.resx">
           <DependentUpon>TmTrainingForm.cs</DependentUpon>

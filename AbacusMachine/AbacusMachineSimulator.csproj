@@ -103,25 +103,43 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AbacusMachineForm.en.resx">
+      <DependentUpon>AbacusMachineForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\AddValueForm.en.resx">
+      <DependentUpon>AddValueForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\AddValueForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>AddValueForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ClearForm.en.resx">
+      <DependentUpon>ClearForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\ClearForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>ClearForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\CopyForm.en.resx">
+      <DependentUpon>CopyForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\CopyForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>CopyForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\MoveForm.en.resx">
+      <DependentUpon>MoveForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\MoveForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>MoveForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SubstractValueForm.en.resx">
+      <DependentUpon>SubstractValueForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\SubstractValueForm.resx">
       <SubType>Designer</SubType>

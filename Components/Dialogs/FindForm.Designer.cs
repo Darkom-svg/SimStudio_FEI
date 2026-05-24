@@ -27,6 +27,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FindForm));
             this.bFind = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.txtFind = new System.Windows.Forms.TextBox();
@@ -43,118 +44,74 @@
             // 
             // bFind
             // 
-            this.bFind.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bFind.Location = new System.Drawing.Point(360, 12);
+            resources.ApplyResources(this.bFind, "bFind");
             this.bFind.Name = "bFind";
-            this.bFind.Size = new System.Drawing.Size(101, 28);
-            this.bFind.TabIndex = 3;
-            this.bFind.Text = "Hľadať";
             this.bFind.UseVisualStyleBackColor = true;
             this.bFind.Click += new System.EventHandler(this.bFind_Click);
             // 
             // cancelButton
             // 
-            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelButton.Location = new System.Drawing.Point(360, 46);
+            resources.ApplyResources(this.cancelButton, "cancelButton");
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(101, 28);
-            this.cancelButton.TabIndex = 4;
-            this.cancelButton.Text = "Zrušiť";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.bCancel_Click);
             // 
             // txtFind
             // 
-            this.txtFind.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtFind.Location = new System.Drawing.Point(59, 18);
+            resources.ApplyResources(this.txtFind, "txtFind");
             this.txtFind.Name = "txtFind";
-            this.txtFind.Size = new System.Drawing.Size(285, 20);
-            this.txtFind.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 21);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Hľadať:";
             // 
             // chIgnoreCase
             // 
-            this.chIgnoreCase.AutoSize = true;
-            this.chIgnoreCase.Location = new System.Drawing.Point(6, 19);
+            resources.ApplyResources(this.chIgnoreCase, "chIgnoreCase");
             this.chIgnoreCase.Name = "chIgnoreCase";
-            this.chIgnoreCase.Size = new System.Drawing.Size(150, 17);
-            this.chIgnoreCase.TabIndex = 0;
-            this.chIgnoreCase.Text = "Ignorovať veľkosť písmen";
             this.chIgnoreCase.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.chWholeWords);
             this.groupBox1.Controls.Add(this.chIgnoreCase);
-            this.groupBox1.Location = new System.Drawing.Point(12, 49);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(178, 77);
-            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Nastavenia";
             // 
             // chWholeWords
             // 
-            this.chWholeWords.AutoSize = true;
-            this.chWholeWords.Location = new System.Drawing.Point(6, 42);
+            resources.ApplyResources(this.chWholeWords, "chWholeWords");
             this.chWholeWords.Name = "chWholeWords";
-            this.chWholeWords.Size = new System.Drawing.Size(128, 17);
-            this.chWholeWords.TabIndex = 1;
-            this.chWholeWords.Text = "Hľadať iba celé slová";
             this.chWholeWords.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.rbUp);
             this.groupBox2.Controls.Add(this.rbDown);
-            this.groupBox2.Location = new System.Drawing.Point(196, 49);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(148, 77);
-            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Smer vyhľadávania";
             // 
             // rbUp
             // 
-            this.rbUp.AutoSize = true;
-            this.rbUp.Location = new System.Drawing.Point(6, 41);
+            resources.ApplyResources(this.rbUp, "rbUp");
             this.rbUp.Name = "rbUp";
-            this.rbUp.Size = new System.Drawing.Size(54, 17);
-            this.rbUp.TabIndex = 1;
-            this.rbUp.Text = "Nahor";
             this.rbUp.UseVisualStyleBackColor = true;
             // 
             // rbDown
             // 
-            this.rbDown.AutoSize = true;
+            resources.ApplyResources(this.rbDown, "rbDown");
             this.rbDown.Checked = true;
-            this.rbDown.Location = new System.Drawing.Point(6, 18);
             this.rbDown.Name = "rbDown";
-            this.rbDown.Size = new System.Drawing.Size(53, 17);
-            this.rbDown.TabIndex = 0;
             this.rbDown.TabStop = true;
-            this.rbDown.Text = "Nadol";
             this.rbDown.UseVisualStyleBackColor = true;
             // 
-            // frmFind
+            // FindForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 138);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtFind);
@@ -164,16 +121,14 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmFind";
+            this.Name = "FindForm";
             this.ShowInTaskbar = false;
-            this.Text = "Hľadať";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

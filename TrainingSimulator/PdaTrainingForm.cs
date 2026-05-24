@@ -75,23 +75,7 @@ namespace FEI.TrainingSimulator
             txtCode.SyntaxWords.fStrings = new SyntaxTextBox.SyntaxFormat(Color.DarkRed, true);
             txtCode.SyntaxWords.fNumbers = new SyntaxTextBox.SyntaxFormat(Color.DarkBlue, true);
             txtCode.SyntaxWords.fComment = new SyntaxTextBox.SyntaxFormat(Color.DarkGreen);
-            //Todo
-            //cmbTape.SelectedIndex = 0;            
-            //infiniteTapeControl.Tapes = TuringMachine.OriginalTapes;
-
-            //AddSpeedPanel();
         }
-
-        // private void AddSpeedPanel()
-        // {
-        //     ToolStripControlHost host = new ToolStripControlHost(speedPanel);
-        //     host.Alignment = ToolStripItemAlignment.Right;
-        //     host.Width = 200;
-        //     host.AutoSize = false;
-        //     mainToolStrip.Items.Add(host);
-        // }
-        
-        
         
         private void bAddTFunction_Click(object sender, EventArgs e)
         {
@@ -220,11 +204,7 @@ namespace FEI.TrainingSimulator
         
         private void tcMain_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			if (tcMain.SelectedTab == logTab)
-			{
-				//Log_SetScrollbars();
-			}
-			else if (tcMain.SelectedTab == statesTab)
+            if (tcMain.SelectedTab == statesTab)
 			{                                
 				UpdateStateDiagram();
 			}

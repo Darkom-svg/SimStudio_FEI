@@ -216,11 +216,7 @@ namespace FEI.TrainingSimulator
         
         private void tcMain_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			if (tcMain.SelectedTab == logTab)
-			{
-				//Log_SetScrollbars();
-			}
-			else if (tcMain.SelectedTab == statesTab)
+			if (tcMain.SelectedTab == statesTab)
 			{                                
 				UpdateStateDiagram();
 			}

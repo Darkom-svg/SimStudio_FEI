@@ -123,3 +123,6 @@ C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\Si
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Debug\FiniteAu.1278EA6E.Up2Date
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Debug\FiniteAutomaton.exe
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Debug\FiniteAutomaton.pdb
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Debug\FEI.FiniteAutomaton.Dialogs.AboutForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Debug\FEI.FiniteAutomaton.Dialogs.SettingsForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\FiniteAutomaton\obj\Debug\FEI.FiniteAutomaton.Dialogs.TapeStatisticsForm.en.resources

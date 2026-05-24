@@ -29,56 +29,44 @@ namespace FEI.RandomAccessMachine.Dialogs {
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtCode = new SyntaxTextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CConversionForm));
+            this.txtCode = new FEI.SimStudio.Components.Controls.SyntaxTextBox();
             this.okButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtCode
             // 
-            this.txtCode.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtCode.Font = new System.Drawing.Font("Courier New", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            resources.ApplyResources(this.txtCode, "txtCode");
             this.txtCode.HideSelection = true;
-            this.txtCode.Location = new System.Drawing.Point(12, 7);
             this.txtCode.Name = "txtCode";
             this.txtCode.SelectedText = "";
             this.txtCode.SelectionLength = 0;
             this.txtCode.SelectionStart = 0;
-            this.txtCode.Size = new System.Drawing.Size(494, 316);
-            this.txtCode.TabIndex = 0;
             // 
             // okButton
             // 
-            this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.okButton.Location = new System.Drawing.Point(379, 329);
+            resources.ApplyResources(this.okButton, "okButton");
             this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(126, 34);
-            this.okButton.TabIndex = 1;
-            this.okButton.Text = "Vložiť";
             this.okButton.UseVisualStyleBackColor = true;
             this.okButton.Click += new System.EventHandler(this.bOK_Click);
             // 
             // CConversionForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(518, 372);
+            resources.ApplyResources(this, "$this");
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.txtCode);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CConversionForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Konverzia z jazyka C";
             this.Load += new System.EventHandler(this.frmCConversion_Load);
             this.ResumeLayout(false);
-
         }
 
         #endregion
 
-        private SyntaxTextBox txtCode;
+        private FEI.SimStudio.Components.Controls.SyntaxTextBox txtCode;
         private System.Windows.Forms.Button okButton;
     }
 }

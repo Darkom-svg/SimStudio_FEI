@@ -985,13 +985,13 @@
     <value>Console</value>
   </data>
   <data name="miConvertFromBasic.Text" xml:space="preserve">
-    <value>Konvertovavať z jazyka Basic</value>
+    <value>Convert from Basic</value>
   </data>
   <data name="miConvertFromC.Text" xml:space="preserve">
     <value>Translate from C</value>
   </data>
   <data name="miConvertFromPascal.Text" xml:space="preserve">
-    <value>Konvertovať z jazyka Pascal</value>
+    <value>Convert from Pascal</value>
   </data>
   <data name="miCopy.Text" xml:space="preserve">
     <value>Copy</value>
@@ -1109,5 +1109,44 @@
   </data>
   <data name="txtFind.Text" xml:space="preserve">
     <value>Type searched text</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>RAM - Random Access Machine</value>
+  </data>
+  <data name="breakToolStripButton.Text" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="closeErrorsButton.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="errorTitleLabel.Text" xml:space="preserve">
+    <value>Error messages</value>
+  </data>
+  <data name="instructionSetToolStripMenuItem.Text" xml:space="preserve">
+    <value>Instruction set</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Speed:</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Speed:</value>
+  </data>
+  <data name="newStripButton.Text" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="openToolStripButton.Text" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="runToolStripButton.Text" xml:space="preserve">
+    <value>Run</value>
+  </data>
+  <data name="saveToolStripButton.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="stepToolStripButton.Text" xml:space="preserve">
+    <value>Step</value>
+  </data>
+  <data name="stopToolStripButton.Text" xml:space="preserve">
+    <value>Stop</value>
   </data>
 </root>

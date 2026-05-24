@@ -203,3 +203,8 @@ C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\Si
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\bin\Debug\graphics\ReadPOff.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\bin\Debug\graphics\Write.png
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\bin\Debug\graphics\WriteOff.png
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\obj\Debug\FEI.RandomAccessMachine.Dialogs.AboutForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\obj\Debug\FEI.RandomAccessMachine.Dialogs.CConversionForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\obj\Debug\FEI.RandomAccessMachine.Dialogs.ComplexityForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\obj\Debug\FEI.RandomAccessMachine.Dialogs.InstructionSetForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\RAMSimulator\obj\Debug\FEI.RandomAccessMachine.StackForm.en.resources

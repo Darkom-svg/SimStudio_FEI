@@ -27,6 +27,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsForm));
             this.okButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,122 +43,78 @@
             // 
             // okButton
             // 
-            this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.okButton.Location = new System.Drawing.Point(160, 222);
+            resources.ApplyResources(this.okButton, "okButton");
             this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(101, 23);
-            this.okButton.TabIndex = 5;
-            this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = true;
             this.okButton.Click += new System.EventHandler(this.bOK_Click);
             // 
             // cancelButton
             // 
-            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.cancelButton, "cancelButton");
             this.cancelButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.cancelButton.Location = new System.Drawing.Point(267, 222);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(101, 23);
-            this.cancelButton.TabIndex = 6;
-            this.cancelButton.Text = "Zrušiť";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.bCancel_Click);
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 9);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 13);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "Počiatočný stav:";
             // 
             // txtInitialState
             // 
-            this.txtInitialState.Location = new System.Drawing.Point(110, 6);
+            resources.ApplyResources(this.txtInitialState, "txtInitialState");
             this.txtInitialState.Name = "txtInitialState";
-            this.txtInitialState.Size = new System.Drawing.Size(151, 20);
-            this.txtInitialState.TabIndex = 12;
             // 
             // txtFinalState
             // 
-            this.txtFinalState.Location = new System.Drawing.Point(110, 32);
+            resources.ApplyResources(this.txtFinalState, "txtFinalState");
             this.txtFinalState.Name = "txtFinalState";
-            this.txtFinalState.Size = new System.Drawing.Size(151, 20);
-            this.txtFinalState.TabIndex = 14;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 35);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(81, 13);
-            this.label4.TabIndex = 13;
-            this.label4.Text = "Koncové stavy:";
             // 
             // lblFinalStates
             // 
             this.lblFinalStates.FormattingEnabled = true;
-            this.lblFinalStates.Location = new System.Drawing.Point(110, 58);
+            resources.ApplyResources(this.lblFinalStates, "lblFinalStates");
             this.lblFinalStates.Name = "lblFinalStates";
-            this.lblFinalStates.Size = new System.Drawing.Size(151, 95);
-            this.lblFinalStates.TabIndex = 15;
             // 
             // bAdd
             // 
-            this.bAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bAdd.Location = new System.Drawing.Point(267, 30);
+            resources.ApplyResources(this.bAdd, "bAdd");
             this.bAdd.Name = "bAdd";
-            this.bAdd.Size = new System.Drawing.Size(101, 23);
-            this.bAdd.TabIndex = 16;
-            this.bAdd.Text = "Pridať";
             this.bAdd.UseVisualStyleBackColor = true;
             this.bAdd.Click += new System.EventHandler(this.bAdd_Click);
             // 
             // bRemove
             // 
-            this.bRemove.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.bRemove.Location = new System.Drawing.Point(267, 59);
+            resources.ApplyResources(this.bRemove, "bRemove");
             this.bRemove.Name = "bRemove";
-            this.bRemove.Size = new System.Drawing.Size(101, 23);
-            this.bRemove.TabIndex = 17;
-            this.bRemove.Text = "Odobrať";
             this.bRemove.UseVisualStyleBackColor = true;
             this.bRemove.Click += new System.EventHandler(this.bRemove_Click);
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 164);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 13);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Počet pások:";
-            this.label1.Visible = false;
             // 
             // tapesCountCombo
             // 
             this.tapesCountCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tapesCountCombo.FormattingEnabled = true;
-            this.tapesCountCombo.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.tapesCountCombo.Location = new System.Drawing.Point(110, 161);
+            this.tapesCountCombo.Items.AddRange(new object[] { resources.GetString("tapesCountCombo.Items"), resources.GetString("tapesCountCombo.Items1"), resources.GetString("tapesCountCombo.Items2"), resources.GetString("tapesCountCombo.Items3"), resources.GetString("tapesCountCombo.Items4") });
+            resources.ApplyResources(this.tapesCountCombo, "tapesCountCombo");
             this.tapesCountCombo.Name = "tapesCountCombo";
-            this.tapesCountCombo.Size = new System.Drawing.Size(151, 21);
-            this.tapesCountCombo.TabIndex = 19;
-            this.tapesCountCombo.Visible = false;
             // 
             // SettingsForm
             // 
             this.AcceptButton = this.okButton;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.cancelButton;
-            this.ClientSize = new System.Drawing.Size(380, 257);
             this.Controls.Add(this.tapesCountCombo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bRemove);
@@ -174,11 +131,9 @@
             this.MinimizeBox = false;
             this.Name = "SettingsForm";
             this.ShowInTaskbar = false;
-            this.Text = "Nastavenia";
             this.Load += new System.EventHandler(this.frmSettings_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

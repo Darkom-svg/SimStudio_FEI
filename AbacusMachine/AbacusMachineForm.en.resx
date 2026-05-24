@@ -1,0 +1,146 @@
+﻿<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="$this.Text" xml:space="preserve">
+        <value>Abacus machine</value>
+    </data>
+    <data name="autokódToolStripMenuItem.Text" xml:space="preserve">
+        <value>AutoCode</value>
+    </data>
+    <data name="breakToolStripButton.Text" xml:space="preserve">
+        <value>Pause</value>
+    </data>
+    <data name="label3.Text" xml:space="preserve">
+        <value>Speed:</value>
+    </data>
+    <data name="lblStatus.Text" xml:space="preserve">
+        <value>Abacus machine , Copyright (C) 2026 FEI STU</value>
+    </data>
+    <data name="miAbout.Text" xml:space="preserve">
+        <value>About</value>
+    </data>
+    <data name="miAddValue.Text" xml:space="preserve">
+        <value>Add value:</value>
+    </data>
+    <data name="miBreaks.Text" xml:space="preserve">
+        <value>Interrupts</value>
+    </data>
+    <data name="miClearRegister.Text" xml:space="preserve">
+        <value>Clear registr</value>
+    </data>
+    <data name="miCopy.Text" xml:space="preserve">
+        <value>Copy</value>
+    </data>
+    <data name="miCopyRegister.Text" xml:space="preserve">
+        <value>Copy from registry to registry</value>
+    </data>
+    <data name="miCut.Text" xml:space="preserve">
+        <value>Cut</value>
+    </data>
+    <data name="miDelete.Text" xml:space="preserve">
+        <value>Delete</value>
+    </data>
+    <data name="miEdit.Text" xml:space="preserve">
+        <value>Edits</value>
+    </data>
+    <data name="miExit.Text" xml:space="preserve">
+        <value>Exit</value>
+    </data>
+    <data name="miFile.Text" xml:space="preserve">
+        <value>File</value>
+    </data>
+    <data name="miFind.Text" xml:space="preserve">
+        <value>Search</value>
+    </data>
+    <data name="miHelp.Text" xml:space="preserve">
+        <value>Help</value>
+    </data>
+    <data name="miMoveRegister.Text" xml:space="preserve">
+        <value>Move from one registry to another</value>
+    </data>
+    <data name="miNewFile.Text" xml:space="preserve">
+        <value>New</value>
+    </data>
+    <data name="miOpenFile.Text" xml:space="preserve">
+        <value>Open</value>
+    </data>
+    <data name="miPaste.Text" xml:space="preserve">
+        <value>Paste</value>
+    </data>
+    <data name="miPause.Text" xml:space="preserve">
+        <value>Pause</value>
+    </data>
+    <data name="miReplace.Text" xml:space="preserve">
+        <value>Replace</value>
+    </data>
+    <data name="miRun.ShortcutKeyDisplayString" xml:space="preserve">
+        <value>F5</value>
+    </data>
+    <data name="miRun.Text" xml:space="preserve">
+        <value>Run</value>
+    </data>
+    <data name="miSaveAsFile.Text" xml:space="preserve">
+        <value>Save as</value>
+    </data>
+    <data name="miSaveFile.ShortcutKeyDisplayString" xml:space="preserve">
+        <value>Ctrl+S</value>
+    </data>
+    <data name="miSaveFile.Text" xml:space="preserve">
+        <value>Save</value>
+    </data>
+    <data name="miSelectAll.Text" xml:space="preserve">
+        <value>Select all</value>
+    </data>
+    <data name="miSimulation.Text" xml:space="preserve">
+        <value>Simulation</value>
+    </data>
+    <data name="miStep.Text" xml:space="preserve">
+        <value>Step</value>
+    </data>
+    <data name="miStop.Text" xml:space="preserve">
+        <value>Stop</value>
+    </data>
+    <data name="miSubstractValue.Text" xml:space="preserve">
+        <value>Subtract value</value>
+    </data>
+    <data name="miTools.Text" xml:space="preserve">
+        <value>Tools</value>
+    </data>
+    <data name="newStripButton.Text" xml:space="preserve">
+        <value>New</value>
+    </data>
+    <data name="openToolStripButton.Text" xml:space="preserve">
+        <value>Open</value>
+    </data>
+    <data name="resetToolStripMenuItem.Text" xml:space="preserve">
+        <value>Reset</value>
+    </data>
+    <data name="runToolStripButton.Text" xml:space="preserve">
+        <value>Run</value>
+    </data>
+    <data name="saveToolStripButton.Text" xml:space="preserve">
+        <value>Save</value>
+    </data>
+    <data name="stepToolStripButton.Text" xml:space="preserve">
+        <value>Step</value>
+    </data>
+    <data name="stopToolStripButton.Text" xml:space="preserve">
+        <value>Stop</value>
+    </data>
+    <data name="tabCode.Text" xml:space="preserve">
+        <value>Source code</value>
+    </data>
+    <data name="tabSimulation.Text" xml:space="preserve">
+        <value>Simulation</value>
+    </data>
+</root>

@@ -27,24 +27,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StackForm));
             this.stackList = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // stackList
             // 
-            this.stackList.Dock = System.Windows.Forms.DockStyle.Fill;
+            resources.ApplyResources(this.stackList, "stackList");
             this.stackList.FormattingEnabled = true;
-            this.stackList.IntegralHeight = false;
-            this.stackList.Location = new System.Drawing.Point(0, 0);
             this.stackList.Name = "stackList";
-            this.stackList.Size = new System.Drawing.Size(313, 334);
-            this.stackList.TabIndex = 0;
             // 
             // StackForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(313, 334);
             this.Controls.Add(this.stackList);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MaximizeBox = false;
@@ -52,11 +48,8 @@
             this.Name = "StackForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Zásobník";
             this.Load += new System.EventHandler(this.StackForm_Load);
             this.ResumeLayout(false);
-
         }
 
         #endregion

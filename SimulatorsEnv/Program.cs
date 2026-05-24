@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Globalization;
-using System.Threading;
 using System.Windows.Forms;
+
 
 namespace FEI.SimStudio {
 	static class Program
@@ -13,8 +12,6 @@ namespace FEI.SimStudio {
         private static void Main()
         {
             //System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = false;
-            CultureInfo culture_info = new CultureInfo("sk");
-            Thread.CurrentThread.CurrentUICulture = culture_info;            
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);           

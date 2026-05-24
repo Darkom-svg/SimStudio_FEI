@@ -104,114 +104,90 @@
             // 
             this.miFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miNew, this.miOpen, this.toolStripMenuItem1, this.miExit });
             this.miFile.Name = "miFile";
-            this.miFile.Size = new System.Drawing.Size(50, 20);
-            this.miFile.Text = "Súbor";
+            resources.ApplyResources(this.miFile, "miFile");
             // 
             // miNew
             // 
             this.miNew.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miNewTM, this.miNewRAM, this.miNewAM });
             this.miNew.Name = "miNew";
-            this.miNew.Size = new System.Drawing.Size(155, 22);
-            this.miNew.Text = "Nový";
+            resources.ApplyResources(this.miNew, "miNew");
             // 
             // miNewTM
             // 
             this.miNewTM.Name = "miNewTM";
-            this.miNewTM.Size = new System.Drawing.Size(162, 22);
-            this.miNewTM.Text = "Turingov stroj";
+            resources.ApplyResources(this.miNewTM, "miNewTM");
             this.miNewTM.Click += new System.EventHandler(this.miNewTM_Click);
             // 
             // miNewRAM
             // 
             this.miNewRAM.Name = "miNewRAM";
-            this.miNewRAM.Size = new System.Drawing.Size(162, 22);
-            this.miNewRAM.Text = "RAM";
+            resources.ApplyResources(this.miNewRAM, "miNewRAM");
             this.miNewRAM.Click += new System.EventHandler(this.miNewRAM_Click);
             // 
             // miNewAM
             // 
             this.miNewAM.Name = "miNewAM";
-            this.miNewAM.Size = new System.Drawing.Size(162, 22);
-            this.miNewAM.Text = "Počítadlový stroj";
+            resources.ApplyResources(this.miNewAM, "miNewAM");
             this.miNewAM.Click += new System.EventHandler(this.miNewAM_Click);
             // 
             // miOpen
             // 
             this.miOpen.Name = "miOpen";
-            this.miOpen.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.miOpen.Size = new System.Drawing.Size(155, 22);
-            this.miOpen.Text = "Otvoriť";
-            this.miOpen.Visible = false;
+            resources.ApplyResources(this.miOpen, "miOpen");
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 6);
+            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
             // 
             // miExit
             // 
             this.miExit.Name = "miExit";
-            this.miExit.Size = new System.Drawing.Size(155, 22);
-            this.miExit.Text = "Skončiť";
+            resources.ApplyResources(this.miExit, "miExit");
             this.miExit.Click += new System.EventHandler(this.miExit_Click);
             // 
             // miWindow
             // 
             this.miWindow.Name = "miWindow";
-            this.miWindow.Size = new System.Drawing.Size(48, 20);
-            this.miWindow.Text = "Okno";
-            this.miWindow.Visible = false;
+            resources.ApplyResources(this.miWindow, "miWindow");
             // 
             // miHelp
             // 
             this.miHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miAbout });
             this.miHelp.Name = "miHelp";
-            this.miHelp.Size = new System.Drawing.Size(73, 20);
-            this.miHelp.Text = "Pomocník";
+            resources.ApplyResources(this.miHelp, "miHelp");
             // 
             // miAbout
             // 
             this.miAbout.Name = "miAbout";
-            this.miAbout.Size = new System.Drawing.Size(138, 22);
-            this.miAbout.Text = "O programe";
+            resources.ApplyResources(this.miAbout, "miAbout");
             this.miAbout.Click += new System.EventHandler(this.oProgrameToolStripMenuItem_Click);
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.pictureBox5, "pictureBox5");
             this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.Location = new System.Drawing.Point(476, 3);
-            this.pictureBox5.MaximumSize = new System.Drawing.Size(480, 240);
-            this.pictureBox5.MinimumSize = new System.Drawing.Size(240, 120);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(467, 240);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 22;
             this.pictureBox5.TabStop = false;
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            resources.ApplyResources(this.splitContainer1, "splitContainer1");
             this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
-            this.splitContainer1.IsSplitterFixed = true;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.AutoScroll = true;
+            resources.ApplyResources(this.splitContainer1.Panel1, "splitContainer1.Panel1");
             this.splitContainer1.Panel1.Controls.Add(this.flowLayoutPanel1);
             // 
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.pictureBox7);
-            this.splitContainer1.Size = new System.Drawing.Size(1184, 637);
-            this.splitContainer1.SplitterDistance = 430;
-            this.splitContainer1.TabIndex = 22;
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
             this.flowLayoutPanel1.Controls.Add(this.roundedPanel6);
             this.flowLayoutPanel1.Controls.Add(this.roundedPanel5);
             this.flowLayoutPanel1.Controls.Add(this.roundedPanel4);
@@ -219,475 +195,269 @@
             this.flowLayoutPanel1.Controls.Add(this.roundedPanel2);
             this.flowLayoutPanel1.Controls.Add(this.roundedPanel1);
             this.flowLayoutPanel1.Controls.Add(this.roundedPanel7);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(16);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(430, 637);
-            this.flowLayoutPanel1.TabIndex = 0;
-            this.flowLayoutPanel1.WrapContents = false;
             // 
             // roundedPanel6
             // 
-            this.roundedPanel6.AutoSize = true;
-            this.roundedPanel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            resources.ApplyResources(this.roundedPanel6, "roundedPanel6");
             this.roundedPanel6.BackColor = System.Drawing.Color.Gainsboro;
             this.roundedPanel6.Controls.Add(this.finiteAutomatonButton);
             this.roundedPanel6.Controls.Add(this.pictureBox3);
             this.roundedPanel6.Controls.Add(this.label1);
             this.roundedPanel6.CornerRadius = 5;
-            this.roundedPanel6.Location = new System.Drawing.Point(19, 36);
-            this.roundedPanel6.Margin = new System.Windows.Forms.Padding(3, 20, 3, 20);
-            this.roundedPanel6.MaximumSize = new System.Drawing.Size(430, 0);
-            this.roundedPanel6.MinimumSize = new System.Drawing.Size(370, 67);
             this.roundedPanel6.Name = "roundedPanel6";
-            this.roundedPanel6.Padding = new System.Windows.Forms.Padding(5);
-            this.roundedPanel6.Size = new System.Drawing.Size(370, 67);
-            this.roundedPanel6.TabIndex = 0;
             // 
             // finiteAutomatonButton
             // 
-            this.finiteAutomatonButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.finiteAutomatonButton.Location = new System.Drawing.Point(75, 37);
+            resources.ApplyResources(this.finiteAutomatonButton, "finiteAutomatonButton");
             this.finiteAutomatonButton.Name = "finiteAutomatonButton";
-            this.finiteAutomatonButton.Size = new System.Drawing.Size(110, 22);
-            this.finiteAutomatonButton.TabIndex = 16;
-            this.finiteAutomatonButton.Text = "Spustiť";
             this.finiteAutomatonButton.UseVisualStyleBackColor = true;
             this.finiteAutomatonButton.Click += new System.EventHandler(this.finiteAutomatonButton_Click);
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            resources.ApplyResources(this.pictureBox3, "pictureBox3");
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pictureBox3.Image = global::FEI.SimStudio.Properties.Resources.Turing;
-            this.pictureBox3.Location = new System.Drawing.Point(6, 6);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(55, 55);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox3.TabIndex = 18;
             this.pictureBox3.TabStop = false;
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.AutoSize = true;
+            resources.ApplyResources(this.label1, "label1");
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(75, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(164, 26);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Konečný automat";
             // 
             // roundedPanel5
             // 
-            this.roundedPanel5.AutoSize = true;
-            this.roundedPanel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            resources.ApplyResources(this.roundedPanel5, "roundedPanel5");
             this.roundedPanel5.BackColor = System.Drawing.Color.Gainsboro;
             this.roundedPanel5.Controls.Add(this.pushDownAutomatonButton2);
             this.roundedPanel5.Controls.Add(this.pictureBox4);
             this.roundedPanel5.Controls.Add(this.label4);
             this.roundedPanel5.CornerRadius = 5;
-            this.roundedPanel5.Location = new System.Drawing.Point(19, 123);
-            this.roundedPanel5.Margin = new System.Windows.Forms.Padding(3, 0, 3, 20);
-            this.roundedPanel5.MaximumSize = new System.Drawing.Size(430, 0);
-            this.roundedPanel5.MinimumSize = new System.Drawing.Size(370, 67);
             this.roundedPanel5.Name = "roundedPanel5";
-            this.roundedPanel5.Padding = new System.Windows.Forms.Padding(5);
-            this.roundedPanel5.Size = new System.Drawing.Size(370, 67);
-            this.roundedPanel5.TabIndex = 19;
             // 
             // pushDownAutomatonButton2
             // 
-            this.pushDownAutomatonButton2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pushDownAutomatonButton2.Location = new System.Drawing.Point(73, 34);
+            resources.ApplyResources(this.pushDownAutomatonButton2, "pushDownAutomatonButton2");
             this.pushDownAutomatonButton2.Name = "pushDownAutomatonButton2";
-            this.pushDownAutomatonButton2.Size = new System.Drawing.Size(110, 22);
-            this.pushDownAutomatonButton2.TabIndex = 19;
-            this.pushDownAutomatonButton2.Text = "Spustiť";
             this.pushDownAutomatonButton2.UseVisualStyleBackColor = true;
             this.pushDownAutomatonButton2.Click += new System.EventHandler(this.pushDownAutomatonButton2_Click);
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            resources.ApplyResources(this.pictureBox4, "pictureBox4");
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox4.Image = global::FEI.SimStudio.Properties.Resources.Turing;
-            this.pictureBox4.Location = new System.Drawing.Point(6, 6);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(55, 55);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox4.TabIndex = 21;
             this.pictureBox4.TabStop = false;
             // 
             // label4
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label4.AutoSize = true;
+            resources.ApplyResources(this.label4, "label4");
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(73, 8);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(196, 26);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Zásobníkový automat";
             // 
             // roundedPanel4
             // 
-            this.roundedPanel4.AutoSize = true;
-            this.roundedPanel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            resources.ApplyResources(this.roundedPanel4, "roundedPanel4");
             this.roundedPanel4.BackColor = System.Drawing.Color.Gainsboro;
             this.roundedPanel4.Controls.Add(this.bTuring);
             this.roundedPanel4.Controls.Add(this.pIcon);
             this.roundedPanel4.Controls.Add(this.label2);
             this.roundedPanel4.CornerRadius = 5;
-            this.roundedPanel4.Location = new System.Drawing.Point(19, 210);
-            this.roundedPanel4.Margin = new System.Windows.Forms.Padding(3, 0, 3, 20);
-            this.roundedPanel4.MaximumSize = new System.Drawing.Size(430, 0);
-            this.roundedPanel4.MinimumSize = new System.Drawing.Size(370, 67);
             this.roundedPanel4.Name = "roundedPanel4";
-            this.roundedPanel4.Padding = new System.Windows.Forms.Padding(5);
-            this.roundedPanel4.Size = new System.Drawing.Size(370, 67);
-            this.roundedPanel4.TabIndex = 22;
             // 
             // bTuring
             // 
-            this.bTuring.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.bTuring.Location = new System.Drawing.Point(73, 33);
+            resources.ApplyResources(this.bTuring, "bTuring");
             this.bTuring.Name = "bTuring";
-            this.bTuring.Size = new System.Drawing.Size(110, 22);
-            this.bTuring.TabIndex = 1;
-            this.bTuring.Text = "Spustiť";
             this.bTuring.UseVisualStyleBackColor = true;
             this.bTuring.Click += new System.EventHandler(this.bTuring_Click);
             // 
             // pIcon
             // 
-            this.pIcon.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            resources.ApplyResources(this.pIcon, "pIcon");
             this.pIcon.BackColor = System.Drawing.Color.Transparent;
-            this.pIcon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pIcon.Image = global::FEI.SimStudio.Properties.Resources.Turing;
-            this.pIcon.Location = new System.Drawing.Point(6, 6);
-            this.pIcon.Margin = new System.Windows.Forms.Padding(1);
             this.pIcon.Name = "pIcon";
-            this.pIcon.Size = new System.Drawing.Size(55, 55);
-            this.pIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pIcon.TabIndex = 11;
             this.pIcon.TabStop = false;
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label2.AutoSize = true;
+            resources.ApplyResources(this.label2, "label2");
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(73, 7);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(129, 26);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Turingov stroj";
             // 
             // roundedPanel3
             // 
-            this.roundedPanel3.AutoSize = true;
-            this.roundedPanel3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            resources.ApplyResources(this.roundedPanel3, "roundedPanel3");
             this.roundedPanel3.BackColor = System.Drawing.Color.Gainsboro;
             this.roundedPanel3.Controls.Add(this.bRAM);
             this.roundedPanel3.Controls.Add(this.pictureBox1);
             this.roundedPanel3.Controls.Add(this.label3);
             this.roundedPanel3.CornerRadius = 5;
-            this.roundedPanel3.Location = new System.Drawing.Point(19, 297);
-            this.roundedPanel3.Margin = new System.Windows.Forms.Padding(3, 0, 3, 20);
-            this.roundedPanel3.MaximumSize = new System.Drawing.Size(430, 0);
-            this.roundedPanel3.MinimumSize = new System.Drawing.Size(370, 67);
             this.roundedPanel3.Name = "roundedPanel3";
-            this.roundedPanel3.Padding = new System.Windows.Forms.Padding(5);
-            this.roundedPanel3.Size = new System.Drawing.Size(370, 67);
-            this.roundedPanel3.TabIndex = 23;
             // 
             // bRAM
             // 
-            this.bRAM.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.bRAM.Location = new System.Drawing.Point(75, 35);
+            resources.ApplyResources(this.bRAM, "bRAM");
             this.bRAM.Name = "bRAM";
-            this.bRAM.Size = new System.Drawing.Size(110, 22);
-            this.bRAM.TabIndex = 4;
-            this.bRAM.Text = "Spustiť";
             this.bRAM.UseVisualStyleBackColor = true;
             this.bRAM.Click += new System.EventHandler(this.bRAM_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Image = global::FEI.SimStudio.Properties.Resources.RAM;
-            this.pictureBox1.InitialImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 4);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(55, 55);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label3.AutoSize = true;
+            resources.ApplyResources(this.label3, "label3");
             this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(74, 9);
-            this.label3.MaximumSize = new System.Drawing.Size(0, 40);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(286, 26);
-            this.label3.TabIndex = 14;
-            this.label3.Text = "RAM - Random Access Machine";
             // 
             // roundedPanel2
             // 
-            this.roundedPanel2.AutoSize = true;
-            this.roundedPanel2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            resources.ApplyResources(this.roundedPanel2, "roundedPanel2");
             this.roundedPanel2.BackColor = System.Drawing.Color.Gainsboro;
             this.roundedPanel2.Controls.Add(this.bAbacusMachine);
             this.roundedPanel2.Controls.Add(this.pictureBox8);
             this.roundedPanel2.Controls.Add(this.label8);
             this.roundedPanel2.CornerRadius = 5;
-            this.roundedPanel2.Location = new System.Drawing.Point(19, 384);
-            this.roundedPanel2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 20);
-            this.roundedPanel2.MaximumSize = new System.Drawing.Size(430, 0);
-            this.roundedPanel2.MinimumSize = new System.Drawing.Size(370, 67);
             this.roundedPanel2.Name = "roundedPanel2";
-            this.roundedPanel2.Padding = new System.Windows.Forms.Padding(5);
-            this.roundedPanel2.Size = new System.Drawing.Size(370, 67);
-            this.roundedPanel2.TabIndex = 24;
             // 
             // bAbacusMachine
             // 
-            this.bAbacusMachine.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.bAbacusMachine.Location = new System.Drawing.Point(75, 35);
+            resources.ApplyResources(this.bAbacusMachine, "bAbacusMachine");
             this.bAbacusMachine.Name = "bAbacusMachine";
-            this.bAbacusMachine.Size = new System.Drawing.Size(110, 22);
-            this.bAbacusMachine.TabIndex = 5;
-            this.bAbacusMachine.Text = "Spustiť";
             this.bAbacusMachine.UseVisualStyleBackColor = true;
             this.bAbacusMachine.Click += new System.EventHandler(this.bAbacusMachine_Click);
             // 
             // pictureBox8
             // 
-            this.pictureBox8.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            resources.ApplyResources(this.pictureBox8, "pictureBox8");
             this.pictureBox8.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox8.Image = global::FEI.SimStudio.Properties.Resources.Abacus;
-            this.pictureBox8.Location = new System.Drawing.Point(8, 6);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(55, 55);
-            this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox8.TabIndex = 13;
             this.pictureBox8.TabStop = false;
             // 
             // label8
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label8.AutoSize = true;
+            resources.ApplyResources(this.label8, "label8");
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.Location = new System.Drawing.Point(75, 9);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(155, 26);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Počítadlový stroj";
             // 
             // roundedPanel1
             // 
-            this.roundedPanel1.AutoSize = true;
-            this.roundedPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            resources.ApplyResources(this.roundedPanel1, "roundedPanel1");
             this.roundedPanel1.BackColor = System.Drawing.Color.Gainsboro;
             this.roundedPanel1.Controls.Add(this.bTrainer);
             this.roundedPanel1.Controls.Add(this.pictureBox2);
             this.roundedPanel1.Controls.Add(this.label7);
             this.roundedPanel1.CornerRadius = 5;
-            this.roundedPanel1.Location = new System.Drawing.Point(19, 471);
-            this.roundedPanel1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 20);
-            this.roundedPanel1.MaximumSize = new System.Drawing.Size(430, 0);
-            this.roundedPanel1.MinimumSize = new System.Drawing.Size(370, 67);
             this.roundedPanel1.Name = "roundedPanel1";
-            this.roundedPanel1.Padding = new System.Windows.Forms.Padding(5);
-            this.roundedPanel1.Size = new System.Drawing.Size(370, 67);
-            this.roundedPanel1.TabIndex = 26;
             // 
             // bTrainer
             // 
-            this.bTrainer.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.bTrainer.Location = new System.Drawing.Point(74, 34);
+            resources.ApplyResources(this.bTrainer, "bTrainer");
             this.bTrainer.Name = "bTrainer";
-            this.bTrainer.Size = new System.Drawing.Size(110, 22);
-            this.bTrainer.TabIndex = 5;
-            this.bTrainer.Text = "Spustiť";
             this.bTrainer.UseVisualStyleBackColor = true;
             this.bTrainer.Click += new System.EventHandler(this.bTrainer_Click);
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox2.Image = global::FEI.SimStudio.Properties.Resources.Trainer;
-            this.pictureBox2.Location = new System.Drawing.Point(6, 5);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(55, 55);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 13;
             this.pictureBox2.TabStop = false;
             // 
             // label7
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label7.AutoSize = true;
+            resources.ApplyResources(this.label7, "label7");
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(75, 5);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 26);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Trenažer";
             // 
             // roundedPanel7
             // 
-            this.roundedPanel7.AutoSize = true;
-            this.roundedPanel7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            resources.ApplyResources(this.roundedPanel7, "roundedPanel7");
             this.roundedPanel7.BackColor = System.Drawing.Color.Gainsboro;
             this.roundedPanel7.Controls.Add(this.button2);
             this.roundedPanel7.Controls.Add(this.pictureBox9);
             this.roundedPanel7.Controls.Add(this.label9);
             this.roundedPanel7.CornerRadius = 5;
-            this.roundedPanel7.Location = new System.Drawing.Point(19, 558);
-            this.roundedPanel7.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
-            this.roundedPanel7.MaximumSize = new System.Drawing.Size(430, 0);
-            this.roundedPanel7.MinimumSize = new System.Drawing.Size(370, 67);
             this.roundedPanel7.Name = "roundedPanel7";
-            this.roundedPanel7.Padding = new System.Windows.Forms.Padding(5);
-            this.roundedPanel7.Size = new System.Drawing.Size(370, 67);
-            this.roundedPanel7.TabIndex = 27;
             // 
             // button2
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button2.Location = new System.Drawing.Point(74, 34);
+            resources.ApplyResources(this.button2, "button2");
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(110, 22);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Spustiť";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.bExample_Click);
             // 
             // pictureBox9
             // 
-            this.pictureBox9.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            resources.ApplyResources(this.pictureBox9, "pictureBox9");
             this.pictureBox9.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox9.Image = global::FEI.SimStudio.Properties.Resources.SimStudio;
-            this.pictureBox9.Location = new System.Drawing.Point(6, 5);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(1);
             this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(55, 55);
-            this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox9.TabIndex = 13;
             this.pictureBox9.TabStop = false;
             // 
             // label9
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label9.AutoSize = true;
+            resources.ApplyResources(this.label9, "label9");
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.Location = new System.Drawing.Point(75, 5);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(155, 26);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Riešené príklady";
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.pictureBox7, "pictureBox7");
             this.pictureBox7.Image = global::FEI.SimStudio.Properties.Resources.SimStudio_logo;
-            this.pictureBox7.Location = new System.Drawing.Point(86, 124);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(8, 16, 8, 0);
-            this.pictureBox7.MaximumSize = new System.Drawing.Size(1250, 500);
-            this.pictureBox7.MinimumSize = new System.Drawing.Size(500, 200);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(600, 240);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 1;
             this.pictureBox7.TabStop = false;
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(19, 73);
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(223, 48);
-            this.panel2.TabIndex = 19;
             // 
             // panel3
             // 
-            this.panel3.Location = new System.Drawing.Point(8, 8);
+            resources.ApplyResources(this.panel3, "panel3");
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(223, 48);
-            this.panel3.TabIndex = 22;
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            resources.ApplyResources(this.pictureBox6, "pictureBox6");
             this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox6.Location = new System.Drawing.Point(0, 0);
             this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(48, 48);
-            this.pictureBox6.TabIndex = 21;
             this.pictureBox6.TabStop = false;
             // 
             // label5
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label5.AutoSize = true;
+            resources.ApplyResources(this.label5, "label5");
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label5.Location = new System.Drawing.Point(70, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(196, 26);
-            this.label5.TabIndex = 20;
             // 
             // button1
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.button1.Location = new System.Drawing.Point(70, 23);
+            resources.ApplyResources(this.button1, "button1");
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 22);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Spustiť";
             this.button1.UseVisualStyleBackColor = true;
             // 
             // SimulatorsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1184, 637);
             this.ControlBox = false;
             this.Controls.Add(this.splitContainer1);
             this.DoubleBuffered = true;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Location = new System.Drawing.Point(15, 15);
-            this.MinimumSize = new System.Drawing.Size(999, 653);
             this.Name = "SimulatorsForm";
             this.Load += new System.EventHandler(this.SimulatorsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();

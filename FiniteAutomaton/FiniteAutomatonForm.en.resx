@@ -1524,4 +1524,40 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Turing Machine</value>
   </data>
+  <data name="breakToolStripButton.Text" xml:space="preserve">
+    <value>Pause</value>
+  </data>
+  <data name="formalSpecificationMenu.Text" xml:space="preserve">
+    <value>Specifications</value>
+  </data>
+  <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="lblCurrentState.Text" xml:space="preserve">
+    <value>q0</value>
+  </data>
+  <data name="lblThreadCount.Text" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="newStripButton.Text" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="openToolStripButton.Text" xml:space="preserve">
+    <value>Open</value>
+  </data>
+  <data name="runToolStripButton.Text" xml:space="preserve">
+    <value>Run</value>
+  </data>
+  <data name="saveToolStripButton.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="statusLabel.Text" xml:space="preserve">
+    <value>Finite automaton, Copyright (C) 2026 FEI STU</value>
+  </data>
+  <data name="stepToolStripButton.Text" xml:space="preserve">
+    <value>Step</value>
+  </data>
+  <data name="stopToolStripButton.Text" xml:space="preserve">
+    <value>Stop</value>
+  </data>
 </root>

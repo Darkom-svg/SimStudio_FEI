@@ -534,4 +534,13 @@
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="cmbStep.Items" xml:space="preserve">
+    <value>Vľavo</value>
+  </data>
+  <data name="cmbStep.Items1" xml:space="preserve">
+    <value>Vpravo</value>
+  </data>
+  <data name="cmbStep.Items2" xml:space="preserve">
+    <value>Žiadny pohyb</value>
+  </data>
 </root>

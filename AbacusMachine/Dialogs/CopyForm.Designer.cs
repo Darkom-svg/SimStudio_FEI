@@ -27,6 +27,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CopyForm));
             this.okButton = new System.Windows.Forms.Button();
             this.txtDstRegister = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,78 +39,47 @@
             // 
             // okButton
             // 
-            this.okButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.okButton.Location = new System.Drawing.Point(138, 102);
+            resources.ApplyResources(this.okButton, "okButton");
             this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(110, 26);
-            this.okButton.TabIndex = 27;
-            this.okButton.Text = "OK";
             this.okButton.UseVisualStyleBackColor = true;
             this.okButton.Click += new System.EventHandler(this.bOK_Click);
             // 
             // txtDstRegister
             // 
-            this.txtDstRegister.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtDstRegister.Location = new System.Drawing.Point(146, 63);
+            resources.ApplyResources(this.txtDstRegister, "txtDstRegister");
             this.txtDstRegister.Name = "txtDstRegister";
-            this.txtDstRegister.Size = new System.Drawing.Size(218, 20);
-            this.txtDstRegister.TabIndex = 26;
-            this.txtDstRegister.Text = "1";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 66);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 13);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "Index cieľového registra:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 40);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(128, 13);
-            this.label2.TabIndex = 24;
-            this.label2.Text = "Index zdrojového registra:";
             // 
             // txtSrcRegister
             // 
-            this.txtSrcRegister.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSrcRegister.Location = new System.Drawing.Point(146, 37);
+            resources.ApplyResources(this.txtSrcRegister, "txtSrcRegister");
             this.txtSrcRegister.Name = "txtSrcRegister";
-            this.txtSrcRegister.Size = new System.Drawing.Size(218, 20);
-            this.txtSrcRegister.TabIndex = 23;
-            this.txtSrcRegister.Text = "0";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(241, 13);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "Skopíruje hodnotu z jedného registra do druhého.";
             // 
             // cancelButton
             // 
-            this.cancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.cancelButton.Location = new System.Drawing.Point(254, 102);
+            resources.ApplyResources(this.cancelButton, "cancelButton");
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(110, 26);
-            this.cancelButton.TabIndex = 21;
-            this.cancelButton.Text = "Zrušiť";
             this.cancelButton.UseVisualStyleBackColor = true;
             this.cancelButton.Click += new System.EventHandler(this.bCancel_Click);
             // 
-            // frmCopy
+            // CopyForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 140);
             this.Controls.Add(this.okButton);
             this.Controls.Add(this.txtDstRegister);
             this.Controls.Add(this.label3);
@@ -120,14 +90,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmCopy";
+            this.Name = "CopyForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Kopírovať hodnotu registra";
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

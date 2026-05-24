@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Globalization;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace FEI.TuringMachineSimulator {
@@ -12,8 +10,6 @@ namespace FEI.TuringMachineSimulator {
 		[STAThread]
 		static void Main()
 		{
-			CultureInfo culture_info = new CultureInfo("sk");
-			Thread.CurrentThread.CurrentUICulture = culture_info;            
 
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);

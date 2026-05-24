@@ -105,3 +105,11 @@ C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\Si
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\AbacusMachineSimulator.exe
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\AbacusMachineSimulator.pdb
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\FEI.AbacusMachine.Dialogs.AboutForm.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\bin\Debug\en\AbacusMachineSimulator.resources.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\FEI.AbacusMachine.AbacusMachineForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\FEI.AbacusMachine.Dialogs.AddValueForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\FEI.AbacusMachine.Dialogs.ClearForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\FEI.AbacusMachine.Dialogs.CopyForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\FEI.AbacusMachine.Dialogs.MoveForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\FEI.AbacusMachine.Dialogs.SubstractValueForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\en\AbacusMachineSimulator.resources.dll

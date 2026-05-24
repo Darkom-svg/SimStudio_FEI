@@ -1,0 +1,164 @@
+﻿<root>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="bAddState.Text" xml:space="preserve">
+        <value>Add &amp;state</value>
+    </data>
+    <data name="bAddTFunction.Text" xml:space="preserve">
+        <value>Add &amp;transition</value>
+    </data>
+    <data name="checkToolStripButton.Text" xml:space="preserve">
+        <value>Verify solution</value>
+    </data>
+    <data name="formalSpecificationTab.Text" xml:space="preserve">
+        <value>Formal Specification</value>
+    </data>
+    <data name="functionsTab.Text" xml:space="preserve">
+        <value>Transition functions</value>
+    </data>
+    <data name="helpToolStripMenuItem.Text" xml:space="preserve">
+        <value>Help</value>
+    </data>
+    <data name="label5.Text" xml:space="preserve">
+        <value>Adds new transition function</value>
+    </data>
+    <data name="label6.Text" xml:space="preserve">
+        <value>Test list:</value>
+    </data>
+    <data name="label7.Text" xml:space="preserve">
+        <value>Error list:</value>
+    </data>
+    <data name="miAbout.Text" xml:space="preserve">
+        <value>About</value>
+    </data>
+    <data name="miAddTransition.Text" xml:space="preserve">
+        <value>Add a transition function</value>
+    </data>
+    <data name="miBreaks.Text" xml:space="preserve">
+        <value>Interrupts</value>
+    </data>
+    <data name="miClearTape.Text" xml:space="preserve">
+        <value>Delete tape</value>
+    </data>
+    <data name="miCopy.Text" xml:space="preserve">
+        <value>Copy</value>
+    </data>
+    <data name="miCut.Text" xml:space="preserve">
+        <value>Cut</value>
+    </data>
+    <data name="miDelete.Text" xml:space="preserve">
+        <value>Remove</value>
+    </data>
+    <data name="miEdit.Text" xml:space="preserve">
+        <value>Edits</value>
+    </data>
+    <data name="miExit.Text" xml:space="preserve">
+        <value>Exit</value>
+    </data>
+    <data name="miExportTape.Text" xml:space="preserve">
+        <value>Export tape</value>
+    </data>
+    <data name="miFile.Text" xml:space="preserve">
+        <value>File</value>
+    </data>
+    <data name="miFind.Text" xml:space="preserve">
+        <value>Search</value>
+    </data>
+    <data name="miImportTape.Text" xml:space="preserve">
+        <value>Import tape</value>
+    </data>
+    <data name="miInsertSymbols.Text" xml:space="preserve">
+        <value>Insert symbols</value>
+    </data>
+    <data name="miMachine.Text" xml:space="preserve">
+        <value>Machine</value>
+    </data>
+    <data name="miOpenFile.Text" xml:space="preserve">
+        <value>Open</value>
+    </data>
+    <data name="miPaste.Text" xml:space="preserve">
+        <value>Paste</value>
+    </data>
+    <data name="miPause.Text" xml:space="preserve">
+        <value>Pause</value>
+    </data>
+    <data name="miReplace.Text" xml:space="preserve">
+        <value>Replace</value>
+    </data>
+    <data name="miRun.Text" xml:space="preserve">
+        <value>Run</value>
+    </data>
+    <data name="miSaveAsFile.Text" xml:space="preserve">
+        <value>Save as</value>
+    </data>
+    <data name="miSaveFile.Text" xml:space="preserve">
+        <value>Save</value>
+    </data>
+    <data name="miSelectAll.Text" xml:space="preserve">
+        <value>Select all</value>
+    </data>
+    <data name="miSettings.Text" xml:space="preserve">
+        <value>Settings</value>
+    </data>
+    <data name="miSimulation.Text" xml:space="preserve">
+        <value>Simulation</value>
+    </data>
+    <data name="miStep.Text" xml:space="preserve">
+        <value>Step</value>
+    </data>
+    <data name="miStop.Text" xml:space="preserve">
+        <value>Stop</value>
+    </data>
+    <data name="miStoreOriginalTape.Text" xml:space="preserve">
+        <value>Remember original tape</value>
+    </data>
+    <data name="miTape.Text" xml:space="preserve">
+        <value>Tape</value>
+    </data>
+    <data name="miTapeStatistics.Text" xml:space="preserve">
+        <value>Tape statistics</value>
+    </data>
+    <data name="miTransitionFormat.Text" xml:space="preserve">
+        <value>Transfer function form</value>
+    </data>
+    <data name="miTransitions.Text" xml:space="preserve">
+        <value>Transitions</value>
+    </data>
+    <data name="miWriteLog.Text" xml:space="preserve">
+        <value>Record the process</value>
+    </data>
+    <data name="openFileDialog1.Filter" xml:space="preserve">
+        <value>Finite automaton file|*.fa|JFlap Turing machine|*.jff|All files|*.*</value>
+    </data>
+    <data name="openToolStripButton.Text" xml:space="preserve">
+        <value>Open</value>
+    </data>
+    <data name="saveFileDialog1.Filter" xml:space="preserve">
+        <value>Finite automaton file|*.fa|JFlap Turing machine|*.jff|</value>
+    </data>
+    <data name="saveToolStripButton.Text" xml:space="preserve">
+        <value>Save</value>
+    </data>
+    <data name="statesTab.Text" xml:space="preserve">
+        <value>State diagram</value>
+    </data>
+    <data name="statusLabel.Text" xml:space="preserve">
+        <value>Trainer, Copyright (C) 2026 FEI STU</value>
+    </data>
+    <data name="taskSpecificationTab.Text" xml:space="preserve">
+        <value>Task</value>
+    </data>
+    <data name="txtFind.Text" xml:space="preserve">
+        <value>Enter text you want to find </value>
+    </data>
+</root>

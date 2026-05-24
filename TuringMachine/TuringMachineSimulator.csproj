@@ -107,9 +107,15 @@
       <SubType>Designer</SubType>
       <DependentUpon>AddTFunctionForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SettingsForm.en.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\SettingsForm.resx">
       <SubType>Designer</SubType>
       <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\TapeStatisticsForm.en.resx">
+      <DependentUpon>TapeStatisticsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\TapeStatisticsForm.resx">
       <SubType>Designer</SubType>

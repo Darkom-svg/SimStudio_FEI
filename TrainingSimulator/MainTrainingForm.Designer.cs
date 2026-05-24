@@ -88,28 +88,17 @@ namespace FEI.TrainingSimulator
             // 
             // TuringTrain
             // 
-            TuringTrain.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            TuringTrain.Location = new System.Drawing.Point(75, 35);
+            resources.ApplyResources(TuringTrain, "TuringTrain");
             TuringTrain.Name = "TuringTrain";
-            TuringTrain.Size = new System.Drawing.Size(110, 22);
-            TuringTrain.TabIndex = 19;
-            TuringTrain.Text = "Otvoriť";
             TuringTrain.UseVisualStyleBackColor = true;
             TuringTrain.Click += new System.EventHandler(this.TuringTrain_Click);
             // 
             // menuStrip1
             // 
-            this.menuStrip1.AutoSize = false;
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miFile, this.txtFind, this.helpToolStripMenuItem, this.taskSetToolStripMenuItem });
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.menuStrip1.Size = new System.Drawing.Size(884, 19);
-            this.menuStrip1.TabIndex = 0;
             this.menuStrip1.TabStop = true;
-            this.menuStrip1.Text = "miniToolStrip";
-            this.menuStrip1.Visible = false;
             // 
             // miFile
             // 
@@ -117,63 +106,48 @@ namespace FEI.TrainingSimulator
             this.miFile.MergeAction = System.Windows.Forms.MergeAction.Insert;
             this.miFile.MergeIndex = 1;
             this.miFile.Name = "miFile";
-            this.miFile.Size = new System.Drawing.Size(50, 15);
-            this.miFile.Text = "Súbor";
+            resources.ApplyResources(this.miFile, "miFile");
             // 
             // miNewFile
             // 
-            this.miNewFile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            resources.ApplyResources(this.miNewFile, "miNewFile");
             this.miNewFile.Name = "miNewFile";
-            this.miNewFile.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.miNewFile.Size = new System.Drawing.Size(155, 22);
-            this.miNewFile.Text = "Nový";
-            this.miNewFile.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.miNewFile.ToolTipText = "Vytvorí nový súbor";
             // 
             // miOpenFile
             // 
-            this.miOpenFile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            resources.ApplyResources(this.miOpenFile, "miOpenFile");
             this.miOpenFile.Name = "miOpenFile";
-            this.miOpenFile.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.miOpenFile.Size = new System.Drawing.Size(155, 22);
-            this.miOpenFile.Text = "Otvoriť";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(152, 6);
+            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
             // 
             // miSaveFile
             // 
-            this.miSaveFile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            resources.ApplyResources(this.miSaveFile, "miSaveFile");
             this.miSaveFile.Name = "miSaveFile";
-            this.miSaveFile.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.miSaveFile.Size = new System.Drawing.Size(155, 22);
-            this.miSaveFile.Text = "Uložiť";
             // 
             // miSaveAsFile
             // 
             this.miSaveAsFile.Name = "miSaveAsFile";
-            this.miSaveAsFile.Size = new System.Drawing.Size(155, 22);
-            this.miSaveAsFile.Text = "Uložiť ako...";
+            resources.ApplyResources(this.miSaveAsFile, "miSaveAsFile");
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(152, 6);
+            resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
             // 
             // miExit
             // 
             this.miExit.Name = "miExit";
-            this.miExit.Size = new System.Drawing.Size(155, 22);
-            this.miExit.Text = "Skončiť";
+            resources.ApplyResources(this.miExit, "miExit");
             // 
             // txtFind
             // 
             this.txtFind.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.txtFind.Name = "txtFind";
-            this.txtFind.Size = new System.Drawing.Size(170, 15);
-            this.txtFind.Text = "Zadajte text, ktorý chcete nájsť ";
+            resources.ApplyResources(this.txtFind, "txtFind");
             // 
             // helpToolStripMenuItem
             // 
@@ -181,51 +155,39 @@ namespace FEI.TrainingSimulator
             this.helpToolStripMenuItem.MergeAction = System.Windows.Forms.MergeAction.MatchOnly;
             this.helpToolStripMenuItem.MergeIndex = 10;
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(73, 15);
-            this.helpToolStripMenuItem.Text = "Pomocník";
+            resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
             // 
             // miAbout
             // 
             this.miAbout.MergeAction = System.Windows.Forms.MergeAction.Replace;
             this.miAbout.Name = "miAbout";
-            this.miAbout.Size = new System.Drawing.Size(138, 22);
-            this.miAbout.Text = "O programe";
+            resources.ApplyResources(this.miAbout, "miAbout");
             this.miAbout.Click += new System.EventHandler(this.miAbout_Click);
             // 
             // taskSetToolStripMenuItem
             // 
             this.taskSetToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.setsToolStripMenuItem, this.addTaskToolStripMenuItem });
             this.taskSetToolStripMenuItem.Name = "taskSetToolStripMenuItem";
-            this.taskSetToolStripMenuItem.Size = new System.Drawing.Size(96, 15);
-            this.taskSetToolStripMenuItem.Text = "Sada príkladov";
+            resources.ApplyResources(this.taskSetToolStripMenuItem, "taskSetToolStripMenuItem");
             // 
             // setsToolStripMenuItem
             // 
             this.setsToolStripMenuItem.Name = "setsToolStripMenuItem";
-            this.setsToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.setsToolStripMenuItem.Text = "Sady";
+            resources.ApplyResources(this.setsToolStripMenuItem, "setsToolStripMenuItem");
             this.setsToolStripMenuItem.Click += new System.EventHandler(this.sadyToolStripMenuItem_Click);
             // 
             // addTaskToolStripMenuItem
             // 
             this.addTaskToolStripMenuItem.Name = "addTaskToolStripMenuItem";
-            this.addTaskToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.addTaskToolStripMenuItem.Text = "Pridať príklad";
+            resources.ApplyResources(this.addTaskToolStripMenuItem, "addTaskToolStripMenuItem");
             this.addTaskToolStripMenuItem.Click += new System.EventHandler(this.addTaskToolStripMenuItem_Click);
             // 
             // miniToolStrip
             // 
-            this.miniToolStrip.AutoSize = false;
-            this.miniToolStrip.Dock = System.Windows.Forms.DockStyle.None;
+            resources.ApplyResources(this.miniToolStrip, "miniToolStrip");
             this.miniToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.lblStatus });
-            this.miniToolStrip.Location = new System.Drawing.Point(886, 23);
             this.miniToolStrip.Name = "miniToolStrip";
-            this.miniToolStrip.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.miniToolStrip.Size = new System.Drawing.Size(31, 19);
-            this.miniToolStrip.TabIndex = 0;
             this.miniToolStrip.TabStop = true;
-            this.miniToolStrip.Text = "miniToolStrip";
-            this.miniToolStrip.Visible = false;
             // 
             // lblStatus
             // 
@@ -233,13 +195,11 @@ namespace FEI.TrainingSimulator
             this.lblStatus.MergeAction = System.Windows.Forms.MergeAction.Replace;
             this.lblStatus.MergeIndex = 0;
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(196, 14);
-            this.lblStatus.Text = "Trenážér, Copyright (C) 2026 FEI STU";
+            resources.ApplyResources(this.lblStatus, "lblStatus");
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            resources.ApplyResources(this.splitContainer1, "splitContainer1");
             this.splitContainer1.Name = "splitContainer1";
             // 
             // splitContainer1.Panel1
@@ -249,28 +209,15 @@ namespace FEI.TrainingSimulator
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.roundedPanel7);
-            this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(15);
-            this.splitContainer1.Size = new System.Drawing.Size(884, 461);
-            this.splitContainer1.SplitterDistance = 442;
-            this.splitContainer1.TabIndex = 18;
+            resources.ApplyResources(this.splitContainer1.Panel2, "splitContainer1.Panel2");
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            resources.ApplyResources(this.flowLayoutPanel1, "flowLayoutPanel1");
             this.flowLayoutPanel1.Controls.Add(this.roundedPanel1);
             this.flowLayoutPanel1.Controls.Add(this.roundedPanel3);
             this.flowLayoutPanel1.Controls.Add(this.roundedPanel5);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 15);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(16);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(442, 461);
-            this.flowLayoutPanel1.TabIndex = 0;
-            this.flowLayoutPanel1.WrapContents = false;
             // 
             // roundedPanel1
             // 
@@ -280,57 +227,33 @@ namespace FEI.TrainingSimulator
             this.roundedPanel1.Controls.Add(this.label1);
             this.roundedPanel1.Controls.Add(this.pictureBox1);
             this.roundedPanel1.CornerRadius = 5;
-            this.roundedPanel1.Location = new System.Drawing.Point(19, 31);
-            this.roundedPanel1.Margin = new System.Windows.Forms.Padding(3, 15, 3, 15);
-            this.roundedPanel1.MaximumSize = new System.Drawing.Size(430, 0);
-            this.roundedPanel1.MinimumSize = new System.Drawing.Size(370, 67);
+            resources.ApplyResources(this.roundedPanel1, "roundedPanel1");
             this.roundedPanel1.Name = "roundedPanel1";
-            this.roundedPanel1.Size = new System.Drawing.Size(370, 67);
-            this.roundedPanel1.TabIndex = 0;
             // 
             // label7
             // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label7.AutoSize = true;
+            resources.ApplyResources(this.label7, "label7");
             this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.Location = new System.Drawing.Point(75, 6);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(164, 26);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "Konečný automat";
             // 
             // FaTrain
             // 
-            this.FaTrain.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.FaTrain.Location = new System.Drawing.Point(75, 35);
+            resources.ApplyResources(this.FaTrain, "FaTrain");
             this.FaTrain.Name = "FaTrain";
-            this.FaTrain.Size = new System.Drawing.Size(110, 22);
-            this.FaTrain.TabIndex = 19;
-            this.FaTrain.Text = "Otvoriť";
             this.FaTrain.UseVisualStyleBackColor = true;
             this.FaTrain.Click += new System.EventHandler(this.FaTrain_Click);
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.AutoSize = true;
+            resources.ApplyResources(this.label1, "label1");
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(75, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 26);
-            this.label1.TabIndex = 18;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::FEI.TrainingSimulator.Properties.Resources.Turing;
-            this.pictureBox1.Location = new System.Drawing.Point(8, 6);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(1);
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(55, 55);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // roundedPanel3
@@ -341,57 +264,33 @@ namespace FEI.TrainingSimulator
             this.roundedPanel3.Controls.Add(this.label4);
             this.roundedPanel3.Controls.Add(this.pictureBox2);
             this.roundedPanel3.CornerRadius = 5;
-            this.roundedPanel3.Location = new System.Drawing.Point(19, 113);
-            this.roundedPanel3.Margin = new System.Windows.Forms.Padding(3, 0, 3, 15);
-            this.roundedPanel3.MaximumSize = new System.Drawing.Size(430, 0);
-            this.roundedPanel3.MinimumSize = new System.Drawing.Size(370, 67);
+            resources.ApplyResources(this.roundedPanel3, "roundedPanel3");
             this.roundedPanel3.Name = "roundedPanel3";
-            this.roundedPanel3.Size = new System.Drawing.Size(370, 67);
-            this.roundedPanel3.TabIndex = 21;
             // 
             // label8
             // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label8.AutoSize = true;
+            resources.ApplyResources(this.label8, "label8");
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.Location = new System.Drawing.Point(75, 6);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(196, 26);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "Zásobníkový automat";
             // 
             // PdaTrain
             // 
-            this.PdaTrain.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.PdaTrain.Location = new System.Drawing.Point(75, 35);
+            resources.ApplyResources(this.PdaTrain, "PdaTrain");
             this.PdaTrain.Name = "PdaTrain";
-            this.PdaTrain.Size = new System.Drawing.Size(110, 22);
-            this.PdaTrain.TabIndex = 19;
-            this.PdaTrain.Text = "Otvoriť";
             this.PdaTrain.UseVisualStyleBackColor = true;
             this.PdaTrain.Click += new System.EventHandler(this.button2_Click);
             // 
             // label4
             // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label4.AutoSize = true;
+            resources.ApplyResources(this.label4, "label4");
             this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(75, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 26);
-            this.label4.TabIndex = 18;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::FEI.TrainingSimulator.Properties.Resources.Turing;
-            this.pictureBox2.Location = new System.Drawing.Point(8, 6);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(1);
+            resources.ApplyResources(this.pictureBox2, "pictureBox2");
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(55, 55);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
             // roundedPanel5
@@ -402,89 +301,54 @@ namespace FEI.TrainingSimulator
             this.roundedPanel5.Controls.Add(this.label6);
             this.roundedPanel5.Controls.Add(this.pictureBox3);
             this.roundedPanel5.CornerRadius = 5;
-            this.roundedPanel5.Location = new System.Drawing.Point(19, 198);
-            this.roundedPanel5.MaximumSize = new System.Drawing.Size(430, 0);
-            this.roundedPanel5.MinimumSize = new System.Drawing.Size(370, 67);
+            resources.ApplyResources(this.roundedPanel5, "roundedPanel5");
             this.roundedPanel5.Name = "roundedPanel5";
-            this.roundedPanel5.Size = new System.Drawing.Size(370, 67);
-            this.roundedPanel5.TabIndex = 22;
             // 
             // label9
             // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label9.AutoSize = true;
+            resources.ApplyResources(this.label9, "label9");
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.Location = new System.Drawing.Point(75, 6);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(129, 26);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "Turingov stroj";
             // 
             // label6
             // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label6.AutoSize = true;
+            resources.ApplyResources(this.label6, "label6");
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(75, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(0, 26);
-            this.label6.TabIndex = 18;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::FEI.TrainingSimulator.Properties.Resources.Turing;
-            this.pictureBox3.Location = new System.Drawing.Point(8, 6);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(1);
+            resources.ApplyResources(this.pictureBox3, "pictureBox3");
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(55, 55);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
             // 
             // roundedPanel7
             // 
-            this.roundedPanel7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            resources.ApplyResources(this.roundedPanel7, "roundedPanel7");
             this.roundedPanel7.BackColor = System.Drawing.Color.WhiteSmoke;
             this.roundedPanel7.Controls.Add(this.flowLayoutPanel2);
             this.roundedPanel7.CornerRadius = 5;
-            this.roundedPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.roundedPanel7.Location = new System.Drawing.Point(15, 15);
             this.roundedPanel7.Name = "roundedPanel7";
-            this.roundedPanel7.Size = new System.Drawing.Size(408, 431);
-            this.roundedPanel7.TabIndex = 0;
             // 
             // flowLayoutPanel2
             // 
-            this.flowLayoutPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanel2.AutoScroll = true;
+            resources.ApplyResources(this.flowLayoutPanel2, "flowLayoutPanel2");
             this.flowLayoutPanel2.CausesValidation = false;
-            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Padding = new System.Windows.Forms.Padding(16);
-            this.flowLayoutPanel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(408, 431);
-            this.flowLayoutPanel2.TabIndex = 0;
-            this.flowLayoutPanel2.WrapContents = false;
             // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.Filter = "XML súbory (*.xml)|*.xml";
-            this.openFileDialog1.Title = "Sada príkladov";
+            resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
             // 
             // MainTrainingForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(884, 461);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.splitContainer1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Location = new System.Drawing.Point(15, 15);
             this.Name = "MainTrainingForm";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -524,7 +388,7 @@ namespace FEI.TrainingSimulator
 
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
 
-        private RoundedPanel roundedPanel7;
+        private FEI.SimStudio.Components.RoundedPanel roundedPanel7;
 
         private FEI.SimStudio.Components.RoundedPanel roundedPanel5;
         private System.Windows.Forms.Label label6;
