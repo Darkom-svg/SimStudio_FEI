@@ -41,13 +41,13 @@
     <data name="label9.Text" xml:space="preserve">
         <value>Turing machine</value>
     </data>
-    <data name="label1.Text" xml:space="preserve">
-        <value>Sim Studio</value>
-    </data>
     <data name="label5.Text" xml:space="preserve">
         <value>Sim Studio includes:</value>
     </data>
     <data name="label6.Text" xml:space="preserve">
         <value>Turing machine</value>
+    </data>
+    <data name="okButton.Text" xml:space="preserve">
+        <value>OK</value>
     </data>
 </root>

@@ -133,6 +133,9 @@
   <data name="label6.Text" xml:space="preserve">
     <value>Transition list:</value>
   </data>
+  <data name="tbSpeed.Size" type="System.Drawing.Size, System.Drawing">
+    <value>130, 45</value>
+  </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>41, 13</value>
   </data>
@@ -210,6 +213,12 @@
   <data name="label7.Text" xml:space="preserve">
     <value>Error list:</value>
   </data>
+  <data name="stackLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>38, 13</value>
+  </data>
+  <data name="stackLabel.Text" xml:space="preserve">
+    <value>Stack:</value>
+  </data>
   <data name="lblStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>271, 17</value>
   </data>
@@ -226,7 +235,7 @@
     <value>Turing machine File|*.tm|All Files|*.*</value>
   </data>
   <data name="miNewFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>146, 22</value>
   </data>
   <data name="miNewFile.Text" xml:space="preserve">
     <value>New</value>
@@ -235,31 +244,31 @@
     <value>Creates New File</value>
   </data>
   <data name="miOpenFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>146, 22</value>
   </data>
   <data name="miOpenFile.Text" xml:space="preserve">
     <value>Open</value>
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 6</value>
+    <value>143, 6</value>
   </data>
   <data name="miSaveFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>146, 22</value>
   </data>
   <data name="miSaveFile.Text" xml:space="preserve">
     <value>Save</value>
   </data>
   <data name="miSaveAsFile.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>146, 22</value>
   </data>
   <data name="miSaveAsFile.Text" xml:space="preserve">
     <value>Save as...</value>
   </data>
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 6</value>
+    <value>143, 6</value>
   </data>
   <data name="miExit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>146, 22</value>
   </data>
   <data name="miExit.Text" xml:space="preserve">
     <value>Exit</value>
@@ -325,22 +334,22 @@
     <value>Edit</value>
   </data>
   <data name="miAddTransition.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 22</value>
+    <value>154, 22</value>
   </data>
   <data name="miAddTransition.Text" xml:space="preserve">
     <value>Add Transition</value>
   </data>
   <data name="toolStripMenuItem12.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 6</value>
+    <value>151, 6</value>
   </data>
   <data name="miTransitionFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 22</value>
+    <value>154, 22</value>
   </data>
   <data name="miTransitionFormat.Text" xml:space="preserve">
     <value>Transition form</value>
   </data>
   <data name="miTransitions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>130, 22</value>
   </data>
   <data name="miTransitions.Text" xml:space="preserve">
     <value>Transitions</value>
@@ -385,16 +394,16 @@
     <value>Tape Statistics</value>
   </data>
   <data name="miTape.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>130, 22</value>
   </data>
   <data name="miTape.Text" xml:space="preserve">
     <value>Tape</value>
   </data>
   <data name="toolStripMenuItem14.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 6</value>
+    <value>127, 6</value>
   </data>
   <data name="miSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>130, 22</value>
   </data>
   <data name="miSettings.Text" xml:space="preserve">
     <value>Settings</value>
@@ -406,49 +415,49 @@
     <value>Machine</value>
   </data>
   <data name="miRun.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
+    <value>170, 22</value>
   </data>
   <data name="miRun.Text" xml:space="preserve">
     <value>Run</value>
   </data>
   <data name="miPause.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
+    <value>170, 22</value>
   </data>
   <data name="miPause.Text" xml:space="preserve">
     <value>Break</value>
   </data>
   <data name="miStep.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
+    <value>170, 22</value>
   </data>
   <data name="miStep.Text" xml:space="preserve">
     <value>Step</value>
   </data>
   <data name="miStop.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
+    <value>170, 22</value>
   </data>
   <data name="miStop.Text" xml:space="preserve">
     <value>Stop</value>
   </data>
   <data name="toolStripMenuItem9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 6</value>
+    <value>167, 6</value>
   </data>
   <data name="miBreaks.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
+    <value>170, 22</value>
   </data>
   <data name="miBreaks.Text" xml:space="preserve">
     <value>Breaks</value>
   </data>
   <data name="toolStripMenuItem11.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 6</value>
+    <value>167, 6</value>
   </data>
   <data name="miWriteLog.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
+    <value>170, 22</value>
   </data>
   <data name="miWriteLog.Text" xml:space="preserve">
     <value>Record simulation</value>
   </data>
   <data name="miStoreOriginalTape.Size" type="System.Drawing.Size, System.Drawing">
-    <value>171, 22</value>
+    <value>170, 22</value>
   </data>
   <data name="miStoreOriginalTape.Text" xml:space="preserve">
     <value>Save Original Tape</value>
@@ -463,7 +472,7 @@
     <value>Enter the text you want to find </value>
   </data>
   <data name="miAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>107, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="miAbout.Text" xml:space="preserve">
     <value>About</value>
@@ -482,12 +491,6 @@
   </data>
   <data name="saveFileDialog1.Filter" xml:space="preserve">
     <value>Turing machine File|*.tm</value>
-  </data>
-  <data name="stackLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>38, 13</value>
-  </data>
-  <data name="stackLabel.Text" xml:space="preserve">
-    <value>Stack:</value>
   </data>
   <data name="newStripButton.Text" xml:space="preserve">
     <value>New</value>
@@ -2238,5 +2241,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Pushdown automaton</value>
+  </data>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Language</value>
   </data>
 </root>

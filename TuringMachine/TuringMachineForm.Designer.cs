@@ -166,6 +166,7 @@ namespace FEI.TuringMachineSimulator {
 			this.stepToolStripButton = new System.Windows.Forms.ToolStripButton();
 			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
 			this.toolStripPanel1 = new System.Windows.Forms.ToolStripPanel();
+			this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 			this.splitContainer1.Panel1.SuspendLayout();
 			this.splitContainer1.Panel2.SuspendLayout();
@@ -545,12 +546,14 @@ namespace FEI.TuringMachineSimulator {
 			// 
 			// miNewFile
 			// 
+			this.miNewFile.Image = global::FEI.TuringMachineSimulator.Properties.Resources.small_new;
 			resources.ApplyResources(this.miNewFile, "miNewFile");
 			this.miNewFile.Name = "miNewFile";
 			this.miNewFile.Click += new System.EventHandler(this.miNewFile_Click);
 			// 
 			// miOpenFile
 			// 
+			this.miOpenFile.Image = global::FEI.TuringMachineSimulator.Properties.Resources.open;
 			resources.ApplyResources(this.miOpenFile, "miOpenFile");
 			this.miOpenFile.Name = "miOpenFile";
 			this.miOpenFile.Click += new System.EventHandler(this.miOpenFile_Click);
@@ -562,12 +565,14 @@ namespace FEI.TuringMachineSimulator {
 			// 
 			// miSaveFile
 			// 
+			this.miSaveFile.Image = global::FEI.TuringMachineSimulator.Properties.Resources.save;
 			resources.ApplyResources(this.miSaveFile, "miSaveFile");
 			this.miSaveFile.Name = "miSaveFile";
 			this.miSaveFile.Click += new System.EventHandler(this.miSaveFile_Click);
 			// 
 			// miSaveAsFile
 			// 
+			this.miSaveAsFile.Image = global::FEI.TuringMachineSimulator.Properties.Resources.save;
 			this.miSaveAsFile.Name = "miSaveAsFile";
 			resources.ApplyResources(this.miSaveAsFile, "miSaveAsFile");
 			this.miSaveAsFile.Click += new System.EventHandler(this.miSaveAsFile_Click);
@@ -593,18 +598,21 @@ namespace FEI.TuringMachineSimulator {
 			// 
 			// miCut
 			// 
+			this.miCut.Image = global::FEI.TuringMachineSimulator.Properties.Resources.small_cut;
 			resources.ApplyResources(this.miCut, "miCut");
 			this.miCut.Name = "miCut";
 			this.miCut.Click += new System.EventHandler(this.miCut_Click);
 			// 
 			// miCopy
 			// 
+			this.miCopy.Image = global::FEI.TuringMachineSimulator.Properties.Resources.copy;
 			resources.ApplyResources(this.miCopy, "miCopy");
 			this.miCopy.Name = "miCopy";
 			this.miCopy.Click += new System.EventHandler(this.miCopy_Click);
 			// 
 			// miPaste
 			// 
+			this.miPaste.Image = global::FEI.TuringMachineSimulator.Properties.Resources.small_paste;
 			resources.ApplyResources(this.miPaste, "miPaste");
 			this.miPaste.Name = "miPaste";
 			this.miPaste.Click += new System.EventHandler(this.miPaste_Click);
@@ -824,24 +832,28 @@ namespace FEI.TuringMachineSimulator {
 			// 
 			// miRun
 			// 
+			this.miRun.Image = global::FEI.TuringMachineSimulator.Properties.Resources.run;
 			resources.ApplyResources(this.miRun, "miRun");
 			this.miRun.Name = "miRun";
 			this.miRun.Click += new System.EventHandler(this.miRun_Click);
 			// 
 			// miPause
 			// 
+			this.miPause.Image = global::FEI.TuringMachineSimulator.Properties.Resources.pause;
 			resources.ApplyResources(this.miPause, "miPause");
 			this.miPause.Name = "miPause";
 			this.miPause.Click += new System.EventHandler(this.miPause_Click);
 			// 
 			// miStep
 			// 
+			this.miStep.Image = global::FEI.TuringMachineSimulator.Properties.Resources.next;
 			this.miStep.Name = "miStep";
 			resources.ApplyResources(this.miStep, "miStep");
 			this.miStep.Click += new System.EventHandler(this.miStep_Click);
 			// 
 			// miStop
 			// 
+			this.miStop.Image = global::FEI.TuringMachineSimulator.Properties.Resources.stop;
 			resources.ApplyResources(this.miStop, "miStop");
 			this.miStop.Name = "miStop";
 			this.miStop.Click += new System.EventHandler(this.miStop_Click);
@@ -898,7 +910,7 @@ namespace FEI.TuringMachineSimulator {
 			// 
 			// pomocníkToolStripMenuItem
 			// 
-			this.pomocníkToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miAbout });
+			this.pomocníkToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miAbout, this.languageToolStripMenuItem });
 			this.pomocníkToolStripMenuItem.MergeAction = System.Windows.Forms.MergeAction.MatchOnly;
 			this.pomocníkToolStripMenuItem.MergeIndex = 10;
 			this.pomocníkToolStripMenuItem.Name = "pomocníkToolStripMenuItem";
@@ -951,6 +963,7 @@ namespace FEI.TuringMachineSimulator {
 			// newStripButton
 			// 
 			this.newStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.newStripButton.Image = global::FEI.TuringMachineSimulator.Properties.Resources.small_new;
 			resources.ApplyResources(this.newStripButton, "newStripButton");
 			this.newStripButton.Name = "newStripButton";
 			this.newStripButton.Click += new System.EventHandler(this.newStripButton_Click);
@@ -958,6 +971,7 @@ namespace FEI.TuringMachineSimulator {
 			// openToolStripButton
 			// 
 			this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.openToolStripButton.Image = global::FEI.TuringMachineSimulator.Properties.Resources.open;
 			resources.ApplyResources(this.openToolStripButton, "openToolStripButton");
 			this.openToolStripButton.Name = "openToolStripButton";
 			this.openToolStripButton.Click += new System.EventHandler(this.openToolStripButton_Click);
@@ -965,6 +979,7 @@ namespace FEI.TuringMachineSimulator {
 			// saveToolStripButton
 			// 
 			this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.saveToolStripButton.Image = global::FEI.TuringMachineSimulator.Properties.Resources.save;
 			resources.ApplyResources(this.saveToolStripButton, "saveToolStripButton");
 			this.saveToolStripButton.Name = "saveToolStripButton";
 			this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
@@ -976,12 +991,14 @@ namespace FEI.TuringMachineSimulator {
 			// 
 			// runToolStripButton
 			// 
+			this.runToolStripButton.Image = global::FEI.TuringMachineSimulator.Properties.Resources.run;
 			resources.ApplyResources(this.runToolStripButton, "runToolStripButton");
 			this.runToolStripButton.Name = "runToolStripButton";
 			this.runToolStripButton.Click += new System.EventHandler(this.runToolStripButton_Click);
 			// 
 			// breakToolStripButton
 			// 
+			this.breakToolStripButton.Image = global::FEI.TuringMachineSimulator.Properties.Resources.pause;
 			resources.ApplyResources(this.breakToolStripButton, "breakToolStripButton");
 			this.breakToolStripButton.Name = "breakToolStripButton";
 			this.breakToolStripButton.Click += new System.EventHandler(this.breakToolStripButton_Click);
@@ -989,6 +1006,7 @@ namespace FEI.TuringMachineSimulator {
 			// stopToolStripButton
 			// 
 			resources.ApplyResources(this.stopToolStripButton, "stopToolStripButton");
+			this.stopToolStripButton.Image = global::FEI.TuringMachineSimulator.Properties.Resources.stop;
 			this.stopToolStripButton.Name = "stopToolStripButton";
 			this.stopToolStripButton.Click += new System.EventHandler(this.stopToolStripButton_Click);
 			// 
@@ -999,6 +1017,7 @@ namespace FEI.TuringMachineSimulator {
 			// 
 			// stepToolStripButton
 			// 
+			this.stepToolStripButton.Image = global::FEI.TuringMachineSimulator.Properties.Resources.next;
 			resources.ApplyResources(this.stepToolStripButton, "stepToolStripButton");
 			this.stepToolStripButton.Name = "stepToolStripButton";
 			this.stepToolStripButton.Click += new System.EventHandler(this.stepToolStripButton_Click);
@@ -1016,6 +1035,12 @@ namespace FEI.TuringMachineSimulator {
 			this.toolStripPanel1.Name = "toolStripPanel1";
 			this.toolStripPanel1.Orientation = System.Windows.Forms.Orientation.Horizontal;
 			this.toolStripPanel1.RowMargin = new System.Windows.Forms.Padding(3, 0, 0, 0);
+			// 
+			// languageToolStripMenuItem
+			// 
+			this.languageToolStripMenuItem.MergeAction = System.Windows.Forms.MergeAction.Remove;
+			this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
+			resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
 			// 
 			// TuringMachineForm
 			// 
@@ -1066,6 +1091,8 @@ namespace FEI.TuringMachineSimulator {
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+
+		private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
 
 		#endregion
 

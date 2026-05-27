@@ -2101,4 +2101,13 @@
         AElFTkSuQmCC
 </value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>RAM - Random Access Machine</value>
+  </data>
+  <data name="lblStatus.Text" xml:space="preserve">
+    <value>RAM simulator, Copyright (C) 2026 FEI STU</value>
+  </data>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
 </root>

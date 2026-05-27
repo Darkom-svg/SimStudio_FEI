@@ -29,9 +29,6 @@
     <data name="label3.Text" xml:space="preserve">
         <value>Tape:</value>
     </data>
-    <data name="lblCells.Text" xml:space="preserve">
-        <value>0</value>
-    </data>
     <data name="okButton.Text" xml:space="preserve">
         <value>OK</value>
     </data>

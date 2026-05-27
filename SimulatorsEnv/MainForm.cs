@@ -17,6 +17,10 @@ namespace FEI.SimStudio {
 		public MainForm()
 		{
 			InitializeComponent();
+			string language = Properties.Settings.Default.Language;
+
+			miLanguageSk.Checked = language != "en";
+			miLanguageEn.Checked = language == "en";
 		}
 
 		private void MainForm_Load(object sender, EventArgs e)
@@ -242,6 +246,27 @@ namespace FEI.SimStudio {
 
 		private void openFileToolStripMenuItem_Click(object sender, EventArgs e) {
 			OpenFile();
+		}
+		
+		private void miLanguageSk_Click_Click(object sender, EventArgs e)
+		{
+			ChangeLanguage("sk");
+		}
+
+		private void miLanguageEn_Click_Click(object sender, EventArgs e)
+		{
+			ChangeLanguage("en");
+		}
+		
+		private void ChangeLanguage(string language)
+		{
+			if (Properties.Settings.Default.Language == language)
+				return;
+
+			Properties.Settings.Default.Language = language;
+			Properties.Settings.Default.Save();
+
+			Application.Restart();
 		}
 	}
 }

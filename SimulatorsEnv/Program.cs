@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
-
+using System.Globalization;
+using System.Threading;
 
 namespace FEI.SimStudio {
 	static class Program
@@ -14,7 +15,19 @@ namespace FEI.SimStudio {
             //System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = false;
 
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);           
+            Application.SetCompatibleTextRenderingDefault(false);   
+            
+            string language = Properties.Settings.Default.Language;
+
+            if (string.IsNullOrWhiteSpace(language))
+                    language = "sk";
+
+            Thread.CurrentThread.CurrentUICulture =
+                new CultureInfo(language);
+
+            Thread.CurrentThread.CurrentCulture =
+                new CultureInfo(language);
+            
             Application.Run(new MainForm());
         }
     }

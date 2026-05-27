@@ -121,9 +121,6 @@
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>46, 20</value>
   </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Sim Studio</value>
-  </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 25</value>
   </data>
@@ -238,5 +235,11 @@
   </data>
   <data name="label4.Text" xml:space="preserve">
     <value>Version 1.0 (24.5.2026)</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Random Access Machine</value>
+  </data>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>OK</value>
   </data>
 </root>

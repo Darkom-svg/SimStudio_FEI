@@ -160,4 +160,7 @@
   <data name="label12.Text" xml:space="preserve">
     <value>Trainer</value>
   </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>Random Access Machine</value>
+  </data>
 </root>

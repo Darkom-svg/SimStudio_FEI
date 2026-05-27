@@ -35,4 +35,7 @@
     <data name="label8.Text" xml:space="preserve">
         <value>Abacus machine</value>
     </data>
+    <data name="okButton.Text" xml:space="preserve">
+        <value>OK</value>
+    </data>
 </root>

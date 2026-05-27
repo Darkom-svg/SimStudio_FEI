@@ -51,19 +51,52 @@
         <value>The XML file does not have a &lt;tasks&gt; root element.</value>
     </data>
     <data name="ToolTipFormula" xml:space="preserve">
-        <value>Syntax:\nc1#symbol + c2#symbol + ... = kn + q\n\nExample:\n1#a+1#b=2n+0</value>
+        <value>Syntax:
+c1#symbol + c2#symbol + ... = kn + q
+            
+Example:
+1#a+1#b=2n+0</value>
     </data>
     <data name="ToolTipRegex" xml:space="preserve">
-        <value>Supported:\n*  - repetition\n|  - alternative\n() - grouping\n[] - character set\n\nExamples:\na*b\n(a|b)*abb\n[0-9]+\n(a|b)*abba(a|b)*</value>
+        <value>Supported:
+*  - repetition
+|  - alternative
+() - grouping
+[] - character set
+
+Examples:
+a*b
+(a|b)*abb
+[0-9]+
+(a|b)*abba(a|b)*</value>
     </data>
     <data name="ToolTipReference" xml:space="preserve">
-        <value>Supported models:\n.fa  - finite automaton\n.pa  - pushdown automaton\n.tm  - Turing machine\n\nReference model must be the same as task model!</value>
+        <value>Supported models:
+.fa  - finite automaton
+.pa  - pushdown automaton
+.tm  - Turing machine
+
+Reference model must be the same as task model!</value>
     </data>
     <data name="ToolTipSpecification" xml:space="preserve">
-        <value>Mathematical expressions can be used to write specifications. They are written in MathJax syntax, similar to LaTeX.\n\nCommon mathematical constructs are supported:\n- superscripts and subscripts\n- Greek symbols\n- sets\n- mathematical relations and operators\n- block expressions using $$ ... $$</value>
+        <value>Mathematical expressions can be used to write specifications. They are written in MathJax syntax, similar to LaTeX.
+
+Common mathematical constructs are supported:
+- superscripts and subscripts
+- Greek symbols
+- sets
+- mathematical relations and operators
+- block expressions using $$ ... $$</value>
     </data>
     <data name="ToolTipTestCases" xml:space="preserve">
-        <value>Manual test cases for verifying the solution.\n\nEach word can be marked as:\n- Accept\n- Reject\n\nThese tests will be used during the solution review.\n\nAn empty word can be entered as ε or a single space.</value>
+        <value>Manual test cases for verifying the solution.
+
+Each word can be marked as:
+- Accept
+- Reject
+
+These tests will be used during the solution review.
+An empty word can be entered as ε or a single space.</value>
     </data>
     <data name="Accept" xml:space="preserve">
         <value>Accept</value>
@@ -76,5 +109,55 @@
     </data>
     <data name="TestCases" xml:space="preserve">
         <value>Test cases</value>
+    </data>
+    <data name="FormalSpecification" xml:space="preserve">
+        <value>Formal specification</value>
+    </data>
+    <data name="FinalAutomaton" xml:space="preserve">
+        <value>Finite automaton</value>
+    </data>
+    <data name="InitialState" xml:space="preserve">
+        <value>initial state</value>
+    </data>
+    <data name="TransitionFunction" xml:space="preserve">
+        <value>Transition function</value>
+    </data>
+    <data name="TaskParameters" xml:space="preserve">
+        <value>Task parameters</value>
+    </data>
+    <data name="TaskType" xml:space="preserve">
+        <value>Task type:</value>
+    </data>
+    <data name="TaskDifficulty" xml:space="preserve">
+        <value>Task difficulty:</value>
+    </data>
+    <data name="TaskSpecification" xml:space="preserve">
+        <value>Task specification</value>
+    </data>
+    <data name="UnknownModeError" xml:space="preserve">
+        <value>Unknown mode: {0}.
+Contact the person who assigned the task—your lecturer or teaching assistant.</value>
+    </data>
+    <data name="Correct" xml:space="preserve">
+        <value>The solution is correct</value>
+    </data>
+    <data name="TransitionSyntaxError" xml:space="preserve">
+        <value>The solution contains syntax errors in transition functions.</value>
+    </data>
+    <data name="AutomatonMismatchError" xml:space="preserve">
+        <value>The automaton is incorrect. It differs on the word '{0}'.
+Expected: {1}.
+Student automaton: {2}.</value>
+    </data>
+    <data name="MissingReferenceModel" xml:space="preserve">
+        <value>Task does not contain a reference model.
+Contact the person who assigned the task—your lecturer or teaching assistant.</value>
+    </data>
+    <data name="ReferenceModelSyntaxError" xml:space="preserve">
+        <value>Reference model contains syntax errors.
+Contact the person who assigned the task—your lecturer or teaching assistant.</value>
+    </data>
+    <data name="Error" xml:space="preserve">
+        <value>Error</value>
     </data>
 </root>

@@ -36,16 +36,19 @@ namespace FEI.TrainingSimulator
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.roundedPanel1 = new FEI.SimStudio.Components.RoundedPanel();
+            this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.FaTrain = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.roundedPanel3 = new FEI.SimStudio.Components.RoundedPanel();
+            this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.PdaTrain = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.roundedPanel5 = new FEI.SimStudio.Components.RoundedPanel();
+            this.label5 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -69,6 +72,7 @@ namespace FEI.TrainingSimulator
             this.miniToolStrip = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             TuringTrain = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -118,6 +122,7 @@ namespace FEI.TrainingSimulator
             // roundedPanel1
             // 
             this.roundedPanel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.roundedPanel1.Controls.Add(this.label2);
             this.roundedPanel1.Controls.Add(this.label7);
             this.roundedPanel1.Controls.Add(this.FaTrain);
             this.roundedPanel1.Controls.Add(this.label1);
@@ -125,6 +130,12 @@ namespace FEI.TrainingSimulator
             this.roundedPanel1.CornerRadius = 5;
             resources.ApplyResources(this.roundedPanel1, "roundedPanel1");
             this.roundedPanel1.Name = "roundedPanel1";
+            // 
+            // label2
+            // 
+            resources.ApplyResources(this.label2, "label2");
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Name = "label2";
             // 
             // label7
             // 
@@ -154,6 +165,7 @@ namespace FEI.TrainingSimulator
             // roundedPanel3
             // 
             this.roundedPanel3.BackColor = System.Drawing.Color.Gainsboro;
+            this.roundedPanel3.Controls.Add(this.label3);
             this.roundedPanel3.Controls.Add(this.label8);
             this.roundedPanel3.Controls.Add(this.PdaTrain);
             this.roundedPanel3.Controls.Add(this.label4);
@@ -161,6 +173,12 @@ namespace FEI.TrainingSimulator
             this.roundedPanel3.CornerRadius = 5;
             resources.ApplyResources(this.roundedPanel3, "roundedPanel3");
             this.roundedPanel3.Name = "roundedPanel3";
+            // 
+            // label3
+            // 
+            resources.ApplyResources(this.label3, "label3");
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Name = "label3";
             // 
             // label8
             // 
@@ -190,6 +208,7 @@ namespace FEI.TrainingSimulator
             // roundedPanel5
             // 
             this.roundedPanel5.BackColor = System.Drawing.Color.Gainsboro;
+            this.roundedPanel5.Controls.Add(this.label5);
             this.roundedPanel5.Controls.Add(this.label9);
             this.roundedPanel5.Controls.Add(TuringTrain);
             this.roundedPanel5.Controls.Add(this.label6);
@@ -197,6 +216,12 @@ namespace FEI.TrainingSimulator
             this.roundedPanel5.CornerRadius = 5;
             resources.ApplyResources(this.roundedPanel5, "roundedPanel5");
             this.roundedPanel5.Name = "roundedPanel5";
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Name = "label5";
             // 
             // label9
             // 
@@ -288,7 +313,7 @@ namespace FEI.TrainingSimulator
             // 
             // helpToolStripMenuItem
             // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miAbout });
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miAbout, this.languageToolStripMenuItem });
             this.helpToolStripMenuItem.MergeAction = System.Windows.Forms.MergeAction.MatchOnly;
             this.helpToolStripMenuItem.MergeIndex = 10;
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
@@ -339,6 +364,12 @@ namespace FEI.TrainingSimulator
             this.openFileDialog1.FileName = "openFileDialog1";
             resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
             // 
+            // languageToolStripMenuItem
+            // 
+            this.languageToolStripMenuItem.MergeAction = System.Windows.Forms.MergeAction.Remove;
+            this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
+            resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
+            // 
             // MainTrainingForm
             // 
             resources.ApplyResources(this, "$this");
@@ -369,6 +400,14 @@ namespace FEI.TrainingSimulator
             this.miniToolStrip.PerformLayout();
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
+
+        private System.Windows.Forms.Label label5;
+
+        private System.Windows.Forms.Label label3;
+
+        private System.Windows.Forms.Label label2;
 
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
 

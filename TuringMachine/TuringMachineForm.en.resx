@@ -2248,4 +2248,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Turing Machine</value>
   </data>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
 </root>

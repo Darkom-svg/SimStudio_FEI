@@ -111,19 +111,52 @@
     <value>XML súbor nemá koreňový element &lt;tasks&gt;.</value>
   </data>
   <data name="ToolTipFormula" xml:space="preserve">
-    <value>Syntax:\nc1#symbol + c2#symbol + ... = kn + q\n\nPríklad:\n1#a+1#b=2n+0</value>
+    <value>Syntax:
+c1#symbol + c2#symbol + ... = kn + q
+
+Príklad:
+1#a+1#b=2n+0</value>
   </data>
   <data name="ToolTipRegex" xml:space="preserve">
-    <value>Podporované:\n*  - opakovanie\n|  - alternatíva\n() - zoskupenie\n[] - množina symbolov\n\nPríklady:\na*b\n(a|b)*abb\n[0-9]+\n(a|b)*abba(a|b)*</value>
+<value>Podporované:
+*  - opakovanie
+|  - alternatíva
+() - zoskupenie
+[] - množina symbolov
+
+Príklady:
+a*b
+(a|b)*abb
+[0-9]+
+(a|b)*abba(a|b)*</value>
   </data>
   <data name="ToolTipReference" xml:space="preserve">
-    <value>Podporované modely:\n.fa  - konečný automat\n.pa  - zásobníkový automat\n.tm  - Turingov stroj\n\nReferenčný model musí byť rovnaký, ako model úlohy!</value>
+<value>Podporované modely:
+.fa  - konečný automat
+.pa  - zásobníkový automat
+.tm  - Turingov stroj
+
+Referenčný model musí byť rovnaký, ako model úlohy!</value>
   </data>
   <data name="ToolTipSpecification" xml:space="preserve">
-    <value>Na zápis špecifikácie je možné použiť matematické výrazy. Zapisujú sa v MathJax syntaxi, podobnej LaTeXu.\n\nPodporované sú bežné matematické konštrukcie:\n- horné a dolné indexy\n- grécke symboly\n- množiny\n- matematické relácie a operátory\n- blokové výrazy pomocou $$ ... $$</value>
+<value>Na zápis špecifikácie je možné použiť matematické výrazy. Zapisujú sa v MathJax syntaxi, podobnej LaTeXu.
+
+Podporované sú bežné matematické konštrukcie:
+- horné a dolné indexy
+- grécke symboly
+- množiny
+- matematické relácie a operátory
+- blokové výrazy pomocou $$ ... $$</value>
   </data>
   <data name="ToolTipTestCases" xml:space="preserve">
-    <value>Manuálne testovacie prípady pre overovanie riešenia.\n\nKaždé slovo je možné označiť ako:\n- Akceptovať\n- Odmietnuť\n\nTieto testy budú použité počas kontroly riešenia.\n\nPrázdne slovo je možné zadať ako ε alebo jednu medzeru.</value>
+<value>Manuálne testovacie prípady pre overovanie riešenia.
+
+Každé slovo je možné označiť ako:
+- Akceptovať
+- Odmietnuť
+
+Tieto testy budú použité počas kontroly riešenia.
+Prázdne slovo je možné zadať ako ε alebo jednu medzeru.</value>
   </data>
   <data name="Accept" xml:space="preserve">
     <value>Akceptovať</value>
@@ -136,5 +169,55 @@
   </data>
   <data name="TestCases" xml:space="preserve">
     <value>Sada testov</value>
+  </data>
+  <data name="FormalSpecification" xml:space="preserve">
+    <value>Formálna špecifikácia</value>
+  </data>
+  <data name="FinalAutomaton" xml:space="preserve">
+    <value>Konečný stroj</value>
+  </data>
+  <data name="InitialState" xml:space="preserve">
+    <value>počiatočný stav</value>
+  </data>
+  <data name="TransitionFunction" xml:space="preserve">
+    <value>Prechodová funkcia</value>
+  </data>
+  <data name="TaskParameters" xml:space="preserve">
+    <value>Parametre zadania</value>
+  </data>
+  <data name="TaskType" xml:space="preserve">
+    <value>Typ zadania:</value>
+  </data>
+  <data name="TaskDifficulty" xml:space="preserve">
+    <value>Obtiažnosť zadania:</value>
+  </data>
+  <data name="TaskSpecification" xml:space="preserve">
+    <value>Špecifikácia zadania</value>
+  </data>
+  <data name="UnknownModeError" xml:space="preserve">
+    <value>Neznámy režim: {0}.
+Kontaktujte tvoru úlohy - Vášho prednášajúceho alebo cvičiaceho.</value>
+  </data>
+  <data name="Correct" xml:space="preserve">
+    <value>Riešenie je správne</value>
+  </data>
+  <data name="TransitionSyntaxError" xml:space="preserve">
+    <value>Riešenie obsahuje syntaktické chyby v prechodových funkciách.</value>
+  </data>
+  <data name="AutomatonMismatchError" xml:space="preserve">
+<value>Automat nie je správny. Líši sa na slove '{0}'.
+Očakávané: {1}.
+Študentov automat: {2}.</value>
+  </data>
+  <data name="MissingReferenceModel" xml:space="preserve">
+    <value>Zadanie neobsahuje referenčný model.
+Kontaktujte tvoru úlohy - Vášho prednášajúceho alebo cvičiaceho.</value>
+  </data>
+  <data name="ReferenceModelSyntaxError" xml:space="preserve">
+    <value>Referenčný model obsahuje syntaktické chyby.
+Kontaktujte tvoru úlohy - Vášho prednášajúceho alebo cvičiaceho.</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Chyba</value>
   </data>
 </root>

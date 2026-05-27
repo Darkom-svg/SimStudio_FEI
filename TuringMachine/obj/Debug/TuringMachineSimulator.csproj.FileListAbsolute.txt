@@ -186,3 +186,4 @@ C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\Si
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Debug\TuringMachineSimulator.pdb
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Debug\FEI.TuringMachineSimulator.Dialogs.SettingsForm.en.resources
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Debug\FEI.TuringMachineSimulator.Dialogs.TapeStatisticsForm.en.resources
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\TuringMachine\obj\Debug\FEI.TuringMachineSimulator.Dialogs.AboutForm.en.resources

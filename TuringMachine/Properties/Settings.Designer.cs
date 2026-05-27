@@ -24,7 +24,7 @@ namespace FEI.TuringMachineSimulator.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("9")]
         public int TransitionFormat {
             get {
                 return ((int)(this["TransitionFormat"]));

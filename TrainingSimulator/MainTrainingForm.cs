@@ -13,7 +13,7 @@ namespace FEI.TrainingSimulator {
     public partial class MainTrainingForm : Form
     {
         private List<TaskDef> allTasks;
-        private string currentTaskSetFile = "Tasks/tasks.xml";
+        private string currentTaskSetFile;
 
         public MainTrainingForm()
         {
@@ -25,6 +25,8 @@ namespace FEI.TrainingSimulator {
                 flowLayoutPanel2.WrapContents = false;
                 flowLayoutPanel2.FlowDirection = FlowDirection.TopDown;
             }
+
+            currentTaskSetFile = Properties.Settings.Default.TaskSetPath;
 
             try
             {
@@ -65,7 +67,7 @@ namespace FEI.TrainingSimulator {
                 var path = Path.Combine(baseDir, fileName);
 
                 if (!File.Exists(path))
-                    throw new FileNotFoundException("Nenašiel som " + fileName + " v " + baseDir);
+                    throw new FileNotFoundException("Nenašiel sa " + fileName + " v " + baseDir);
 
                 XmlDocument doc = new XmlDocument();
                 doc.Load(path);
@@ -331,6 +333,8 @@ namespace FEI.TrainingSimulator {
                 currentTaskSetFile = targetFile;
                 allTasks = TaskStore.Load(currentTaskSetFile);
                 ShowCategory("FA");
+                Properties.Settings.Default.TaskSetPath = currentTaskSetFile;
+                Properties.Settings.Default.Save();
             }
             catch (Exception ex)
             {

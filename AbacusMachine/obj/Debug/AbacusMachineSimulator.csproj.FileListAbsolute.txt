@@ -113,3 +113,4 @@ C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\Si
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\FEI.AbacusMachine.Dialogs.MoveForm.en.resources
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\FEI.AbacusMachine.Dialogs.SubstractValueForm.en.resources
 C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\en\AbacusMachineSimulator.resources.dll
+C:\Users\dzuri\OneDrive\Počítač\Bakárska práca\SimStudio_v20170922oprava\SimStudio\AbacusMachine\obj\Debug\FEI.AbacusMachine.Dialogs.AboutForm.en.resources

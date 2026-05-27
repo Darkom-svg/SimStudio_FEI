@@ -130,6 +130,7 @@ namespace FEI.RandomAccessMachine {
 	        this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
 	        this.stepToolStripButton = new System.Windows.Forms.ToolStripButton();
 	        this.label3 = new System.Windows.Forms.Label();
+	        this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 	        ((System.ComponentModel.ISupportInitialize)(this.mainSplitContainer)).BeginInit();
 	        this.mainSplitContainer.Panel1.SuspendLayout();
 	        this.mainSplitContainer.Panel2.SuspendLayout();
@@ -336,12 +337,14 @@ namespace FEI.RandomAccessMachine {
 	        // 
 	        // miNew
 	        // 
+	        this.miNew.Image = global::FEI.RandomAccessMachine.Properties.Resources.small_new;
 	        resources.ApplyResources(this.miNew, "miNew");
 	        this.miNew.Name = "miNew";
 	        this.miNew.Click += new System.EventHandler(this.miNew_Click);
 	        // 
 	        // miOpen
 	        // 
+	        this.miOpen.Image = global::FEI.RandomAccessMachine.Properties.Resources.open;
 	        resources.ApplyResources(this.miOpen, "miOpen");
 	        this.miOpen.Name = "miOpen";
 	        this.miOpen.Click += new System.EventHandler(this.miOpen_Click);
@@ -353,12 +356,14 @@ namespace FEI.RandomAccessMachine {
 	        // 
 	        // miSave
 	        // 
+	        this.miSave.Image = global::FEI.RandomAccessMachine.Properties.Resources.save;
 	        resources.ApplyResources(this.miSave, "miSave");
 	        this.miSave.Name = "miSave";
 	        this.miSave.Click += new System.EventHandler(this.miSave_Click);
 	        // 
 	        // miSaveAs
 	        // 
+	        this.miSaveAs.Image = global::FEI.RandomAccessMachine.Properties.Resources.save;
 	        this.miSaveAs.Name = "miSaveAs";
 	        resources.ApplyResources(this.miSaveAs, "miSaveAs");
 	        this.miSaveAs.Click += new System.EventHandler(this.miSaveAs_Click);
@@ -384,18 +389,21 @@ namespace FEI.RandomAccessMachine {
 	        // 
 	        // miCut
 	        // 
+	        this.miCut.Image = global::FEI.RandomAccessMachine.Properties.Resources.small_cut;
 	        resources.ApplyResources(this.miCut, "miCut");
 	        this.miCut.Name = "miCut";
 	        this.miCut.Click += new System.EventHandler(this.miCut_Click);
 	        // 
 	        // miCopy
 	        // 
+	        this.miCopy.Image = global::FEI.RandomAccessMachine.Properties.Resources.copy;
 	        resources.ApplyResources(this.miCopy, "miCopy");
 	        this.miCopy.Name = "miCopy";
 	        this.miCopy.Click += new System.EventHandler(this.miCopy_Click);
 	        // 
 	        // miPaste
 	        // 
+	        this.miPaste.Image = global::FEI.RandomAccessMachine.Properties.Resources.small_paste;
 	        resources.ApplyResources(this.miPaste, "miPaste");
 	        this.miPaste.Name = "miPaste";
 	        this.miPaste.Click += new System.EventHandler(this.miPaste_Click);
@@ -500,30 +508,35 @@ namespace FEI.RandomAccessMachine {
 	        // 
 	        // miRun
 	        // 
+	        this.miRun.Image = global::FEI.RandomAccessMachine.Properties.Resources.run;
 	        resources.ApplyResources(this.miRun, "miRun");
 	        this.miRun.Name = "miRun";
 	        this.miRun.Click += new System.EventHandler(this.miRun_Click);
 	        // 
 	        // miRunMaxSpeed
 	        // 
+	        this.miRunMaxSpeed.Image = global::FEI.RandomAccessMachine.Properties.Resources.run;
 	        this.miRunMaxSpeed.Name = "miRunMaxSpeed";
 	        resources.ApplyResources(this.miRunMaxSpeed, "miRunMaxSpeed");
 	        this.miRunMaxSpeed.Click += new System.EventHandler(this.miRunMaxSpeed_Click);
 	        // 
 	        // miPause
 	        // 
+	        this.miPause.Image = global::FEI.RandomAccessMachine.Properties.Resources.pause;
 	        resources.ApplyResources(this.miPause, "miPause");
 	        this.miPause.Name = "miPause";
 	        this.miPause.Click += new System.EventHandler(this.miPause_Click);
 	        // 
 	        // miStep
 	        // 
+	        this.miStep.Image = global::FEI.RandomAccessMachine.Properties.Resources.next;
 	        this.miStep.Name = "miStep";
 	        resources.ApplyResources(this.miStep, "miStep");
 	        this.miStep.Click += new System.EventHandler(this.miStep_Click);
 	        // 
 	        // miStop
 	        // 
+	        this.miStop.Image = global::FEI.RandomAccessMachine.Properties.Resources.stop;
 	        resources.ApplyResources(this.miStop, "miStop");
 	        this.miStop.Name = "miStop";
 	        this.miStop.Click += new System.EventHandler(this.miStop_Click);
@@ -659,7 +672,7 @@ namespace FEI.RandomAccessMachine {
 	        // 
 	        // miHelp
 	        // 
-	        this.miHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miAbout });
+	        this.miHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miAbout, this.languageToolStripMenuItem });
 	        this.miHelp.MergeAction = System.Windows.Forms.MergeAction.MatchOnly;
 	        this.miHelp.MergeIndex = 10;
 	        this.miHelp.Name = "miHelp";
@@ -698,6 +711,7 @@ namespace FEI.RandomAccessMachine {
 	        // newStripButton
 	        // 
 	        this.newStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+	        this.newStripButton.Image = global::FEI.RandomAccessMachine.Properties.Resources.small_new;
 	        resources.ApplyResources(this.newStripButton, "newStripButton");
 	        this.newStripButton.Name = "newStripButton";
 	        this.newStripButton.Click += new System.EventHandler(this.newStripButton_Click);
@@ -705,6 +719,7 @@ namespace FEI.RandomAccessMachine {
 	        // openToolStripButton
 	        // 
 	        this.openToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+	        this.openToolStripButton.Image = global::FEI.RandomAccessMachine.Properties.Resources.open;
 	        resources.ApplyResources(this.openToolStripButton, "openToolStripButton");
 	        this.openToolStripButton.Name = "openToolStripButton";
 	        this.openToolStripButton.Click += new System.EventHandler(this.openToolStripButton_Click);
@@ -712,6 +727,7 @@ namespace FEI.RandomAccessMachine {
 	        // saveToolStripButton
 	        // 
 	        this.saveToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+	        this.saveToolStripButton.Image = global::FEI.RandomAccessMachine.Properties.Resources.save;
 	        resources.ApplyResources(this.saveToolStripButton, "saveToolStripButton");
 	        this.saveToolStripButton.Name = "saveToolStripButton";
 	        this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
@@ -723,12 +739,14 @@ namespace FEI.RandomAccessMachine {
 	        // 
 	        // runToolStripButton
 	        // 
+	        this.runToolStripButton.Image = global::FEI.RandomAccessMachine.Properties.Resources.run;
 	        resources.ApplyResources(this.runToolStripButton, "runToolStripButton");
 	        this.runToolStripButton.Name = "runToolStripButton";
 	        this.runToolStripButton.Click += new System.EventHandler(this.runToolStripButton_Click);
 	        // 
 	        // breakToolStripButton
 	        // 
+	        this.breakToolStripButton.Image = global::FEI.RandomAccessMachine.Properties.Resources.pause;
 	        resources.ApplyResources(this.breakToolStripButton, "breakToolStripButton");
 	        this.breakToolStripButton.Name = "breakToolStripButton";
 	        this.breakToolStripButton.Click += new System.EventHandler(this.breakToolStripButton_Click);
@@ -736,6 +754,7 @@ namespace FEI.RandomAccessMachine {
 	        // stopToolStripButton
 	        // 
 	        resources.ApplyResources(this.stopToolStripButton, "stopToolStripButton");
+	        this.stopToolStripButton.Image = global::FEI.RandomAccessMachine.Properties.Resources.stop;
 	        this.stopToolStripButton.Name = "stopToolStripButton";
 	        this.stopToolStripButton.Click += new System.EventHandler(this.stopToolStripButton_Click);
 	        // 
@@ -746,6 +765,7 @@ namespace FEI.RandomAccessMachine {
 	        // 
 	        // stepToolStripButton
 	        // 
+	        this.stepToolStripButton.Image = global::FEI.RandomAccessMachine.Properties.Resources.next;
 	        resources.ApplyResources(this.stepToolStripButton, "stepToolStripButton");
 	        this.stepToolStripButton.Name = "stepToolStripButton";
 	        this.stepToolStripButton.Click += new System.EventHandler(this.stepToolStripButton_Click);
@@ -755,6 +775,12 @@ namespace FEI.RandomAccessMachine {
 	        resources.ApplyResources(this.label3, "label3");
 	        this.label3.BackColor = System.Drawing.Color.Transparent;
 	        this.label3.Name = "label3";
+	        // 
+	        // languageToolStripMenuItem
+	        // 
+	        this.languageToolStripMenuItem.MergeAction = System.Windows.Forms.MergeAction.Remove;
+	        this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
+	        resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
 	        // 
 	        // RamSimulatorForm
 	        // 
@@ -792,6 +818,8 @@ namespace FEI.RandomAccessMachine {
 	        this.ResumeLayout(false);
 	        this.PerformLayout();
         }
+
+        private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
 
         #endregion
 

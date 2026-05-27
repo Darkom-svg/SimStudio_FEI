@@ -23,6 +23,7 @@ namespace FEI.FiniteAutomaton {
              System.Reflection.Assembly.GetExecutingAssembly());
 
         private string sourceCodeText = null;
+        private List<ToolStripMenuItem> miTFormatMenuItems;
 
         public FiniteAutomatonForm()
         { 
@@ -33,7 +34,17 @@ namespace FEI.FiniteAutomaton {
             timMachine.SynchronizingObject = this;
             timMachine.Elapsed += new System.Timers.ElapsedEventHandler(timMachine_Elapsed);
             timMachine.AutoReset = false;
-            timMachine.Enabled = false;            
+            timMachine.Enabled = false;       
+            
+            miTFormatMenuItems = new List<ToolStripMenuItem>(new[]
+            {
+                miTFormat1, miTFormat2, miTFormat3,
+                miTFormat4, miTFormat5, miTFormat6,
+                miTFormat7, miTFormat8, miTFormat9,
+                miTFormat10
+            });
+            int index = Properties.Settings.Default.TransitionFormat;
+            miTFormatMenuItems[index].PerformClick();
         }
 
 
@@ -55,7 +66,7 @@ namespace FEI.FiniteAutomaton {
         private bool codeChanged;        
 
         //Formát prechodovej funkcie
-        private string transitionFormat = "\\sδ\\s(\\a,\\a)\\s=\\s(\\a)\\s";
+        private string transitionFormat = "\\\\sδ\\\\s(\\\\a,\\\\a)\\\\s=\\\\s(\\\\a)\\\\s";
         //Formát 
         private string wildCardFormat = "\\a=\\s{\\m,\\n}\\s";        
 
@@ -1297,92 +1308,52 @@ namespace FEI.FiniteAutomaton {
 
         private void miTFormat1_Click(object sender, EventArgs e)
         {
-            transitionFormat = "\\sf\\s(\\a,\\a)\\s=\\s(\\a)\\s";
-            miTFormat1.Checked = true; miTFormat2.Checked = false; miTFormat3.Checked = false; 
-            miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false; 
-            miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
-            miTFormat10.Checked = false;
+            SetTFormat(sender, "\\sf\\s(\\a,\\a)\\s=\\s(\\a)\\s");
         }
 
         private void miTFormat2_Click(object sender, EventArgs e)
         {
-            transitionFormat = "\\s(\\a,\\a)\\s=\\s(\\a)\\s";
-            miTFormat1.Checked = false; miTFormat2.Checked = true; miTFormat3.Checked = false; 
-            miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false; 
-            miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
-            miTFormat10.Checked = false;
+            SetTFormat(sender, "\\s(\\a,\\a)\\s=\\s(\\a)\\s");
         }
 
         private void miTFormat3_Click(object sender, EventArgs e)
         {
-            transitionFormat = "\\a,\\a,\\a";
-            miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = true;
-            miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
-            miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
-            miTFormat10.Checked = false;
+            SetTFormat(sender, "\\a,\\a,\\a");
         }
 
         private void miTFormat4_Click(object sender, EventArgs e)
         {
-            transitionFormat = "\\s[\\a,\\a]\\s[\\a]\\s";
-            miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
-            miTFormat4.Checked = true; miTFormat5.Checked = false; miTFormat6.Checked = false;
-            miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
-            miTFormat10.Checked = false;
+            SetTFormat(sender, "\\s[\\a,\\a]\\s[\\a]\\s");
         }
 
         private void miTFormat5_Click(object sender, EventArgs e)
         {
-            transitionFormat = "\\s(\\a,\\a)\\s(\\a)\\s";
-            miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
-            miTFormat4.Checked = false; miTFormat5.Checked = true; miTFormat6.Checked = false;
-            miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
-            miTFormat10.Checked = false;
+            SetTFormat(sender, "\\s(\\a,\\a)\\s(\\a)\\s");
         }
 
         private void miTFormat6_Click(object sender, EventArgs e)
         {
-            transitionFormat = "\\s[\\a,\\a]\\s->\\s[\\a]\\s";
-            miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
-            miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = true;
-            miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = false;
-            miTFormat10.Checked = false;
+            SetTFormat(sender, "\\s[\\a,\\a]\\s->\\s[\\a]\\s");
         }
 
         private void miTFormat7_Click(object sender, EventArgs e)
         {
-            transitionFormat = "\\s(\\a,\\a)\\s->\\s(\\a)\\s";
-            miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
-            miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
-            miTFormat7.Checked = true; miTFormat8.Checked = false; miTFormat9.Checked = false;
-            miTFormat10.Checked = false;
+            SetTFormat(sender, "\\s(\\a,\\a)\\s->\\s(\\a)\\s");
         }
 
         private void miTFormat8_Click(object sender, EventArgs e)
         {
-            transitionFormat = "\\a,\\a->\\a";
-            miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
-            miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
-            miTFormat7.Checked = false; miTFormat8.Checked = true; miTFormat9.Checked = false;
-            miTFormat10.Checked = false;
+            SetTFormat(sender, "\\a,\\a->\\a");
         }
 
         private void miTFormat9_Click(object sender, EventArgs e)
         {
-            transitionFormat = "\\a,\\a>\\a";
-            miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
-            miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
-            miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = true;
-            miTFormat10.Checked = false;
+            SetTFormat(sender, "\\a,\\a>\\a");
         }
 
         private void miTFormat10_Click(object sender, EventArgs e)
         {            
-            transitionFormat = "\\sδ\\s(\\a,\\a)\\s=\\s(\\a)\\s";
-            miTFormat1.Checked = false; miTFormat2.Checked = false; miTFormat3.Checked = false;
-            miTFormat4.Checked = false; miTFormat5.Checked = false; miTFormat6.Checked = false;
-            miTFormat7.Checked = false; miTFormat8.Checked = false; miTFormat9.Checked = true;
-            miTFormat10.Checked = false;
+            SetTFormat(sender, "\\sδ\\s(\\a,\\a)\\s=\\s(\\a)\\s");
         }
 
         private void miAddTransition_Click(object sender, EventArgs e)
@@ -1660,7 +1631,25 @@ namespace FEI.FiniteAutomaton {
         {
             Save();           
         }
-        
+
+        private void SetTFormat(object sender, string format)
+        {
+            var item = sender as ToolStripMenuItem;
+
+            if (item == null)
+                return;
+
+            transitionFormat = format;
+
+            foreach (var menuItem in miTFormatMenuItems)
+                menuItem.Checked = false;
+
+            item.Checked = true;
+            Properties.Settings.Default.TransitionFormat =
+                miTFormatMenuItems.IndexOf(item);
+
+            Properties.Settings.Default.Save();
+        }
     }          
 
 }

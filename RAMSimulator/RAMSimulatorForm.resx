@@ -1075,10 +1075,16 @@
     <value>Nástroje</value>
   </data>
   <data name="miAbout.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="miAbout.Text" xml:space="preserve">
     <value>O programe</value>
+  </data>
+  <data name="languageToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>152, 22</value>
+  </data>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Jayzk</value>
   </data>
   <data name="miHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>73, 23</value>
@@ -1162,7 +1168,7 @@
     <value>Magenta</value>
   </data>
   <data name="runToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 22</value>
+    <value>64, 22</value>
   </data>
   <data name="runToolStripButton.Text" xml:space="preserve">
     <value>Spustiť</value>
@@ -1174,7 +1180,7 @@
     <value>Magenta</value>
   </data>
   <data name="breakToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>52, 22</value>
+    <value>68, 22</value>
   </data>
   <data name="breakToolStripButton.Text" xml:space="preserve">
     <value>Prerušiť</value>
@@ -1192,7 +1198,7 @@
     <value>Magenta</value>
   </data>
   <data name="stopToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 22</value>
+    <value>69, 22</value>
   </data>
   <data name="stopToolStripButton.Text" xml:space="preserve">
     <value>Zastaviť</value>
@@ -1204,7 +1210,7 @@
     <value>Magenta</value>
   </data>
   <data name="stepToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 22</value>
+    <value>51, 22</value>
   </data>
   <data name="stepToolStripButton.Text" xml:space="preserve">
     <value>Krok</value>
@@ -1213,7 +1219,7 @@
     <value>3, 27</value>
   </data>
   <data name="mainToolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>229, 25</value>
+    <value>277, 25</value>
   </data>
   <data name="mainToolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -3329,6 +3335,12 @@
   </data>
   <data name="&gt;&gt;stepToolStripButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;languageToolStripMenuItem.Name" xml:space="preserve">
+    <value>languageToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;languageToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>RamSimulatorForm</value>

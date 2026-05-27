@@ -55,8 +55,8 @@ namespace FEI.TrainingSimulator
                 miTFormat7, miTFormat8, miTFormat9,
                 miTFormat10
             });
-            
-            miTFormat10.PerformClick();
+            int index = Properties.Settings.Default.TransitionFormatFa;
+            miTFormatMenuItems[index].PerformClick();
         }
 
         private VirtualTuringMachine TuringMachine
@@ -1036,17 +1036,21 @@ namespace FEI.TrainingSimulator
         
         private void SetTFormat(object sender, string format)
         {
-            var miTFormat = sender as ToolStripMenuItem;
+            var item = sender as ToolStripMenuItem;
 
-            if (miTFormat == null)
+            if (item == null)
                 return;
 
             transitionFormat = format;
 
-            foreach (var item in miTFormatMenuItems)
-                item.Checked = false;
+            foreach (var menuItem in miTFormatMenuItems)
+                menuItem.Checked = false;
 
-            miTFormat.Checked = true;
+            item.Checked = true;
+            Properties.Settings.Default.TransitionFormatTm =
+                miTFormatMenuItems.IndexOf(item);
+
+            Properties.Settings.Default.Save();
         }
         
         private List<string> testedWords = new List<string>();

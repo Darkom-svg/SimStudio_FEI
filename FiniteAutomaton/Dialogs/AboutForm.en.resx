@@ -166,4 +166,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>About Sim Studio Program: Finite automaton</value>
   </data>
+  <data name="okButton.Text" xml:space="preserve">
+    <value>OK</value>
+  </data>
 </root>

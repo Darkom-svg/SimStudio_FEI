@@ -87,11 +87,87 @@ namespace FEI.TrainingSimulator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Automat nie je správny. Líši sa na slove &apos;{0}&apos;.
+        ///Očakávané: {1}.
+        ///Študentov automat: {2}..
+        /// </summary>
+        internal static string AutomatonMismatchError {
+            get {
+                return ResourceManager.GetString("AutomatonMismatchError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Riešenie je správne.
+        /// </summary>
+        internal static string Correct {
+            get {
+                return ResourceManager.GetString("Correct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Chyba.
+        /// </summary>
+        internal static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Konečný stroj.
+        /// </summary>
+        internal static string FinalAutomaton {
+            get {
+                return ResourceManager.GetString("FinalAutomaton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Formálna špecifikácia.
+        /// </summary>
+        internal static string FormalSpecification {
+            get {
+                return ResourceManager.GetString("FormalSpecification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to počiatočný stav.
+        /// </summary>
+        internal static string InitialState {
+            get {
+                return ResourceManager.GetString("InitialState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zadanie neobsahuje referenčný model.
+        ///Kontaktujte tvoru úlohy - Vášho prednášajúceho alebo cvičiaceho..
+        /// </summary>
+        internal static string MissingReferenceModel {
+            get {
+                return ResourceManager.GetString("MissingReferenceModel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Referenčný automat.
         /// </summary>
         internal static string ReferenceAutomaton {
             get {
                 return ResourceManager.GetString("ReferenceAutomaton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Referenčný model obsahuje syntaktické chyby.
+        ///Kontaktujte tvoru úlohy - Vášho prednášajúceho alebo cvičiaceho..
+        /// </summary>
+        internal static string ReferenceModelSyntaxError {
+            get {
+                return ResourceManager.GetString("ReferenceModelSyntaxError", resourceCulture);
             }
         }
         
@@ -124,6 +200,42 @@ namespace FEI.TrainingSimulator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Obtiažnosť zadania:.
+        /// </summary>
+        internal static string TaskDifficulty {
+            get {
+                return ResourceManager.GetString("TaskDifficulty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Parametre zadania.
+        /// </summary>
+        internal static string TaskParameters {
+            get {
+                return ResourceManager.GetString("TaskParameters", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Špecifikácia zadania.
+        /// </summary>
+        internal static string TaskSpecification {
+            get {
+                return ResourceManager.GetString("TaskSpecification", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Typ zadania:.
+        /// </summary>
+        internal static string TaskType {
+            get {
+                return ResourceManager.GetString("TaskType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sada testov.
         /// </summary>
         internal static string TestCases {
@@ -133,7 +245,11 @@ namespace FEI.TrainingSimulator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Syntax:\nc1#symbol + c2#symbol + ... = kn + q\n\nPríklad:\n1#a+1#b=2n+0.
+        ///   Looks up a localized string similar to Syntax:
+        ///c1#symbol + c2#symbol + ... = kn + q
+        ///
+        ///Príklad:
+        ///1#a+1#b=2n+0.
         /// </summary>
         internal static string ToolTipFormula {
             get {
@@ -142,7 +258,12 @@ namespace FEI.TrainingSimulator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Podporované modely:\n.fa  - konečný automat\n.pa  - zásobníkový automat\n.tm  - Turingov stroj\n\nReferenčný model musí byť rovnaký, ako model úlohy!.
+        ///   Looks up a localized string similar to Podporované modely:
+        ///.fa  - konečný automat
+        ///.pa  - zásobníkový automat
+        ///.tm  - Turingov stroj
+        ///
+        ///Referenčný model musí byť rovnaký, ako model úlohy!.
         /// </summary>
         internal static string ToolTipReference {
             get {
@@ -151,7 +272,17 @@ namespace FEI.TrainingSimulator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Podporované:\n*  - opakovanie\n|  - alternatíva\n() - zoskupenie\n[] - množina symbolov\n\nPríklady:\na*b\n(a|b)*abb\n[0-9]+\n(a|b)*abba(a|b)*.
+        ///   Looks up a localized string similar to Podporované:
+        ///*  - opakovanie
+        ///|  - alternatíva
+        ///() - zoskupenie
+        ///[] - množina symbolov
+        ///
+        ///Príklady:
+        ///a*b
+        ///(a|b)*abb
+        ///[0-9]+
+        ///(a|b)*abba(a|b)*.
         /// </summary>
         internal static string ToolTipRegex {
             get {
@@ -160,7 +291,14 @@ namespace FEI.TrainingSimulator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Na zápis špecifikácie je možné použiť matematické výrazy. Zapisujú sa v MathJax syntaxi, podobnej LaTeXu.\n\nPodporované sú bežné matematické konštrukcie:\n- horné a dolné indexy\n- grécke symboly\n- množiny\n- matematické relácie a operátory\n- blokové výrazy pomocou $$ ... $$.
+        ///   Looks up a localized string similar to Na zápis špecifikácie je možné použiť matematické výrazy. Zapisujú sa v MathJax syntaxi, podobnej LaTeXu.
+        ///
+        ///Podporované sú bežné matematické konštrukcie:
+        ///- horné a dolné indexy
+        ///- grécke symboly
+        ///- množiny
+        ///- matematické relácie a operátory
+        ///- blokové výrazy pomocou $$ ... $$.
         /// </summary>
         internal static string ToolTipSpecification {
             get {
@@ -169,7 +307,14 @@ namespace FEI.TrainingSimulator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Manuálne testovacie prípady pre overovanie riešenia.\n\nKaždé slovo je možné označiť ako:\n- Akceptovať\n- Odmietnuť\n\nTieto testy budú použité počas kontroly riešenia.\n\nPrázdne slovo je možné zadať ako ε alebo jednu medzeru..
+        ///   Looks up a localized string similar to Manuálne testovacie prípady pre overovanie riešenia.
+        ///
+        ///Každé slovo je možné označiť ako:
+        ///- Akceptovať
+        ///- Odmietnuť
+        ///
+        ///Tieto testy budú použité počas kontroly riešenia.
+        ///Prázdne slovo je možné zadať ako ε alebo jednu medzeru..
         /// </summary>
         internal static string ToolTipTestCases {
             get {
@@ -188,12 +333,40 @@ namespace FEI.TrainingSimulator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Prechodová funkcia.
+        /// </summary>
+        internal static string TransitionFunction {
+            get {
+                return ResourceManager.GetString("TransitionFunction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Riešenie obsahuje syntaktické chyby v prechodových funkciách..
+        /// </summary>
+        internal static string TransitionSyntaxError {
+            get {
+                return ResourceManager.GetString("TransitionSyntaxError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Turing {
             get {
                 object obj = ResourceManager.GetObject("Turing", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Neznámy režim: {0}.
+        ///Kontaktujte tvoru úlohy - Vášho prednášajúceho alebo cvičiaceho..
+        /// </summary>
+        internal static string UnknownModeError {
+            get {
+                return ResourceManager.GetString("UnknownModeError", resourceCulture);
             }
         }
         

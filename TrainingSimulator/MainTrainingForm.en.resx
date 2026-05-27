@@ -120,16 +120,10 @@
   <data name="TuringTrain.Text" xml:space="preserve">
     <value>Open</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 26</value>
-  </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Finite automaton</value>
-  </data>
   <data name="FaTrain.Text" xml:space="preserve">
     <value>Open</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADcAAAA3CAYAAACo29JGAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -220,12 +214,6 @@
         0NCw3dTUtED1PHNwqX9LjCAGvkPy0MzIyCiAGB/5Jpqbm4fr6Og4q3KYzJUTBtf49wdpZKrfCP72JpIQ
         Vf2W8P8Kqlz5M/nyZz//Fm/xFsMKFus/Ac7WVTTEMJmRAAAAAElFTkSuQmCC
 </value>
-  </data>
-  <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
-    <value>202, 26</value>
-  </data>
-  <data name="label8.Text" xml:space="preserve">
-    <value>Pushdown automaton</value>
   </data>
   <data name="PdaTrain.Text" xml:space="preserve">
     <value>Open</value>
@@ -320,12 +308,6 @@
         0NCw3dTUtED1PHNwqX9LjCAGvkPy0MzIyCiAGB/5Jpqbm4fr6Og4q3KYzJUTBtf49wdpZKrfCP72JpIQ
         Vf2W8P8Kqlz5M/nyZz//Fm/xFsMKFus/Ac7WVTTEMJmRAAAAAElFTkSuQmCC
 </value>
-  </data>
-  <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>144, 26</value>
-  </data>
-  <data name="label9.Text" xml:space="preserve">
-    <value>Turing machine</value>
   </data>
   <data name="pictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -446,7 +428,7 @@
     <value>146, 22</value>
   </data>
   <data name="miSaveAsFile.Text" xml:space="preserve">
-    <value>Save as...</value>
+    <value>Save as</value>
   </data>
   <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
     <value>143, 6</value>
@@ -491,10 +473,10 @@
     <value>Add task</value>
   </data>
   <data name="taskSetToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 15</value>
+    <value>60, 15</value>
   </data>
   <data name="taskSetToolStripMenuItem.Text" xml:space="preserve">
-    <value>Task set</value>
+    <value>Task Set</value>
   </data>
   <data name="lblStatus.Size" type="System.Drawing.Size, System.Drawing">
     <value>188, 14</value>
@@ -2169,5 +2151,17 @@
         5MwikLNDYexCLZCbvjBsI4gxm82pFSbD609BeHt3oVKBt/am537HU8/8zu4PAAAA//8LtaKRAAAABklE
         QVQDAHLkdTCtLsYaAAAAAElFTkSuQmCC
 </value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Finite automaton</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>Pushdown automaton</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>Turing machine</value>
+  </data>
+  <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+    <value>Language</value>
   </data>
 </root>

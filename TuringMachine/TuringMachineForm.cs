@@ -40,7 +40,7 @@ namespace FEI.TuringMachineSimulator {
 				miTFormat7, miTFormat8, miTFormat9,
 				miTFormat10});
 
-			int TFindex = FEI.TuringMachineSimulator.Properties.Settings.Default.TransitionFormat;
+			int TFindex = Properties.Settings.Default.TransitionFormat;
 			miTFormatMenuItems[TFindex].PerformClick();
 		}
 
@@ -1142,56 +1142,62 @@ namespace FEI.TuringMachineSimulator {
 		
 
 		private void miTFormat1_Click(object sender, EventArgs e) {
-			setTFormat(sender, "\\sf\\s(\\a,\\a)\\s=\\s(\\a,\\a,\\a)\\s");
+			SetTFormat(sender, "\\sf\\s(\\a,\\a)\\s=\\s(\\a,\\a,\\a)\\s");
 		}
 
 		private void miTFormat2_Click(object sender, EventArgs e) {
-			setTFormat(sender, "\\s(\\a,\\a)\\s=\\s(\\a,\\a,\\a)\\s");
+			SetTFormat(sender, "\\s(\\a,\\a)\\s=\\s(\\a,\\a,\\a)\\s");
 		}
 
 		private void miTFormat3_Click(object sender, EventArgs e) {
-			setTFormat(sender, "\\a,\\a,\\a,\\a,\\a");
+			SetTFormat(sender, "\\a,\\a,\\a,\\a,\\a");
 		}
 
 		private void miTFormat4_Click(object sender, EventArgs e) {
-			setTFormat(sender, "\\s[\\a,\\a]\\s[\\a,\\a,\\a]\\s");
+			SetTFormat(sender, "\\s[\\a,\\a]\\s[\\a,\\a,\\a]\\s");
 		}
 
 		private void miTFormat5_Click(object sender, EventArgs e) {
-			setTFormat(sender, "\\s(\\a,\\a)\\s(\\a,\\a,\\a)\\s");
+			SetTFormat(sender, "\\s(\\a,\\a)\\s(\\a,\\a,\\a)\\s");
 		}
 
 		private void miTFormat6_Click(object sender, EventArgs e) {
-			setTFormat(sender, "\\s[\\a,\\a]\\s->\\s[\\a,\\a,\\a]\\s");
+			SetTFormat(sender, "\\s[\\a,\\a]\\s->\\s[\\a,\\a,\\a]\\s");
 		}
 
 		private void miTFormat7_Click(object sender, EventArgs e) {
-			setTFormat(sender, "\\s(\\a,\\a)\\s->\\s(\\a,\\a,\\a)\\s");
+			SetTFormat(sender, "\\s(\\a,\\a)\\s->\\s(\\a,\\a,\\a)\\s");
 		}
 
 		private void miTFormat8_Click(object sender, EventArgs e) {
-			setTFormat(sender, "\\a,\\a->\\a,\\a,\\a");
+			SetTFormat(sender, "\\a,\\a->\\a,\\a,\\a");
 		}
 
 		private void miTFormat9_Click(object sender, EventArgs e) {
-			setTFormat(sender, "\\a,\\a>\\a,\\a,\\a");
+			SetTFormat(sender, "\\a,\\a>\\a,\\a,\\a");
 		}
 
 		private void miTFormat10_Click(object sender, EventArgs e) {
-			setTFormat(sender, "\\sδ\\s(\\a,\\a)\\s=\\s(\\a,\\a,\\a)\\s");
+			SetTFormat(sender, "\\sδ\\s(\\a,\\a)\\s=\\s(\\a,\\a,\\a)\\s");
 		}
 
-		private void setTFormat(object sender, String format) {
-			var miTFormat = (ToolStripMenuItem) sender;
+		private void SetTFormat(object sender, string format)
+		{
+			var item = sender as ToolStripMenuItem;
+
+			if (item == null)
+				return;
+
 			transitionFormat = format;
 
-			FEI.TuringMachineSimulator.Properties.Settings.Default.TransitionFormat = miTFormatMenuItems.IndexOf(miTFormat);
-			FEI.TuringMachineSimulator.Properties.Settings.Default.Save();
+			foreach (var menuItem in miTFormatMenuItems)
+				menuItem.Checked = false;
 
-			foreach (var miTFitem in miTFormatMenuItems)
-				miTFitem.Checked = false;
-			miTFormat.Checked = true;
+			item.Checked = true;
+			Properties.Settings.Default.TransitionFormat =
+				miTFormatMenuItems.IndexOf(item);
 
+			Properties.Settings.Default.Save();
 		}
 
 		private void miAddTransition_Click(object sender, EventArgs e) {

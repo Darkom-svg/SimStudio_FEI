@@ -35,7 +35,7 @@
     <data name="helpToolStripMenuItem.Text" xml:space="preserve">
         <value>Help</value>
     </data>
-    <data name="helpToolStripMenuItem1.Text" xml:space="preserve">
+    <data name="cmbLanguage.Text" xml:space="preserve">
         <value>Help</value>
     </data>
     <data name="openFileToolStripMenuItem.Text" xml:space="preserve">
@@ -82,5 +82,14 @@
     </data>
     <data name="placeholderToolStripMenuItem.Text" xml:space="preserve">
         <value>Placeholder</value>
+    </data>
+    <data name="languageToolStripMenuItem.Text" xml:space="preserve">
+        <value>Language</value>
+    </data>
+    <data name="miLanguageEn.Text" xml:space="preserve">
+        <value>English</value>
+    </data>
+    <data name="miLanguageSk.Text" xml:space="preserve">
+        <value>Slovak</value>
     </data>
 </root>

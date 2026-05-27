@@ -40,8 +40,11 @@
             this.trianerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.placeholderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmbLanguage = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miLanguageSk = new System.Windows.Forms.ToolStripMenuItem();
+            this.miLanguageEn = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -65,7 +68,7 @@
             // 
             // menuStrip1
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.simulatorsToolStripMenuItem1, this.placeholderToolStripMenuItem, this.windowsToolStripMenuItem1, this.helpToolStripMenuItem1 });
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.simulatorsToolStripMenuItem1, this.placeholderToolStripMenuItem, this.cmbLanguage, this.windowsToolStripMenuItem1 });
             resources.ApplyResources(this.menuStrip1, "menuStrip1");
             this.menuStrip1.MdiWindowListItem = this.windowsToolStripMenuItem;
             this.menuStrip1.Name = "menuStrip1";
@@ -137,18 +140,37 @@
             this.windowsToolStripMenuItem1.Name = "windowsToolStripMenuItem1";
             resources.ApplyResources(this.windowsToolStripMenuItem1, "windowsToolStripMenuItem1");
             // 
-            // helpToolStripMenuItem1
+            // cmbLanguage
             // 
-            this.helpToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.aboutToolStripMenuItem1 });
-            this.helpToolStripMenuItem1.MergeIndex = 10;
-            this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-            resources.ApplyResources(this.helpToolStripMenuItem1, "helpToolStripMenuItem1");
+            this.cmbLanguage.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.aboutToolStripMenuItem1, this.languageToolStripMenuItem });
+            this.cmbLanguage.MergeIndex = 10;
+            this.cmbLanguage.Name = "cmbLanguage";
+            resources.ApplyResources(this.cmbLanguage, "cmbLanguage");
             // 
             // aboutToolStripMenuItem1
             // 
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
             resources.ApplyResources(this.aboutToolStripMenuItem1, "aboutToolStripMenuItem1");
             this.aboutToolStripMenuItem1.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
+            // 
+            // languageToolStripMenuItem
+            // 
+            this.languageToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miLanguageSk, this.miLanguageEn });
+            this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
+            resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
+            // 
+            // miLanguageSk
+            // 
+            this.miLanguageSk.Name = "miLanguageSk";
+            resources.ApplyResources(this.miLanguageSk, "miLanguageSk");
+            this.miLanguageSk.Click += new System.EventHandler(this.miLanguageSk_Click_Click);
+            // 
+            // miLanguageEn
+            // 
+            this.miLanguageEn.MergeAction = System.Windows.Forms.MergeAction.Remove;
+            this.miLanguageEn.Name = "miLanguageEn";
+            resources.ApplyResources(this.miLanguageEn, "miLanguageEn");
+            this.miLanguageEn.Click += new System.EventHandler(this.miLanguageEn_Click_Click);
             // 
             // windowsToolStripMenuItem
             // 
@@ -267,6 +289,12 @@
             this.PerformLayout();
         }
 
+        private System.Windows.Forms.ToolStripMenuItem miLanguageEn;
+
+        private System.Windows.Forms.ToolStripMenuItem miLanguageSk;
+
+        private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
+
         private System.Windows.Forms.ToolStripMenuItem trianerToolStripMenuItem;
 
         private System.Windows.Forms.StatusStrip statusStrip;
@@ -293,7 +321,7 @@
         private System.Windows.Forms.ToolStripMenuItem rAMSimulatorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem abacusMachineToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem windowsToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem cmbLanguage;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem placeholderToolStripMenuItem;
 		private System.Windows.Forms.ToolStripButton openToolStripButton;

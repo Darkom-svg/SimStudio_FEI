@@ -119,10 +119,10 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>146, 13</value>
+    <value>113, 13</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
-    <value>Type parameters of transition.</value>
+    <value>Enter task parameters:</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 13</value>
@@ -164,11 +164,12 @@
   <data name="label5.Text" xml:space="preserve">
     <value>Computational model*:</value>
   </data>
-  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 400</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtTaskSetPathtxtTaskSetPath.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Bottom, Left, Right</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 13</value>
+    <value>55, 13</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Task set*:</value>
@@ -249,7 +250,7 @@
     <value>Add</value>
   </data>
   <data name="checkBoxFail.Text" xml:space="preserve">
-    <value>Decline</value>
+    <value>Reject</value>
   </data>
   <data name="checkBoxAccept.Text" xml:space="preserve">
     <value>Accept</value>
@@ -278,14 +279,17 @@
   <data name="label11.Text" xml:space="preserve">
     <value>Difficulty*:</value>
   </data>
+  <data name="cmbDifficulty.Items" xml:space="preserve">
+    <value>Easy</value>
+  </data>
+  <data name="cmbDifficulty.Items1" xml:space="preserve">
+    <value>Normal</value>
+  </data>
+  <data name="cmbDifficulty.Items2" xml:space="preserve">
+    <value>Hard</value>
+  </data>
   <data name="cmbDifficulty.Location" type="System.Drawing.Point, System.Drawing">
     <value>105, 113</value>
-  </data>
-  <data name="taskSetPathButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>428, 398</value>
-  </data>
-  <data name="taskSetPathButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 21</value>
   </data>
   <data name="taskSetPathButton.Text" xml:space="preserve">
     <value>Browse</value>
@@ -297,6 +301,6 @@
     <value>Automata models |*.fa;*.pa;*.tm|JFlap Turing machine|*.jff|All files |*.*</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Addd new transition of transition function</value>
+    <value>Add task</value>
   </data>
 </root>
