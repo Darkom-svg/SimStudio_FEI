@@ -87,6 +87,15 @@ namespace FEI.TrainingSimulator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Automat používa neplatný alebo nepovolený symbol &apos;{0}&apos;..
+        /// </summary>
+        internal static string AutomatonInvalidSymbol {
+            get {
+                return ResourceManager.GetString("AutomatonInvalidSymbol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Automat nie je správny. Líši sa na slove &apos;{0}&apos;.
         ///Očakávané: {1}.
         ///Študentov automat: {2}..
@@ -94,6 +103,42 @@ namespace FEI.TrainingSimulator.Properties {
         internal static string AutomatonMismatchError {
             get {
                 return ResourceManager.GetString("AutomatonMismatchError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Automat nemá žiadny koncový stav..
+        /// </summary>
+        internal static string AutomatonNoFinalState {
+            get {
+                return ResourceManager.GetString("AutomatonNoFinalState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Automat nemá začiatočný stav..
+        /// </summary>
+        internal static string AutomatonNoStartState {
+            get {
+                return ResourceManager.GetString("AutomatonNoStartState", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Automat neobsahuje žiadne stavy..
+        /// </summary>
+        internal static string AutomatonNoStates {
+            get {
+                return ResourceManager.GetString("AutomatonNoStates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Automat nie je deterministický. Zo stavu &apos;{0}&apos; existuje viac prechodov pre symbol &apos;{1}&apos;..
+        /// </summary>
+        internal static string AutomatonNotDeterministic {
+            get {
+                return ResourceManager.GetString("AutomatonNotDeterministic", resourceCulture);
             }
         }
         
@@ -143,12 +188,39 @@ namespace FEI.TrainingSimulator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Neplatná očakávaná hodnota pri slove &apos;{0}&apos;..
+        /// </summary>
+        internal static string InvalidExpectedValue {
+            get {
+                return ResourceManager.GetString("InvalidExpectedValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Zadanie neobsahuje referenčný model.
         ///Kontaktujte tvoru úlohy - Vášho prednášajúceho alebo cvičiaceho..
         /// </summary>
         internal static string MissingReferenceModel {
             get {
                 return ResourceManager.GetString("MissingReferenceModel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Neboli nájdené žiadne testovacie prípady..
+        /// </summary>
+        internal static string NoTestCasesFound {
+            get {
+                return ResourceManager.GetString("NoTestCasesFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zásobníkový automat.
+        /// </summary>
+        internal static string PushdownAutomaton {
+            get {
+                return ResourceManager.GetString("PushdownAutomaton", resourceCulture);
             }
         }
         
@@ -172,6 +244,24 @@ namespace FEI.TrainingSimulator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Regex neobsahuje žiadne symboly abecedy..
+        /// </summary>
+        internal static string RegexNoAlphabetSymbols {
+            get {
+                return ResourceManager.GetString("RegexNoAlphabetSymbols", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Regex obsahuje neuzavretú množinu []..
+        /// </summary>
+        internal static string RegexUnclosedSet {
+            get {
+                return ResourceManager.GetString("RegexUnclosedSet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Odmietnuť.
         /// </summary>
         internal static string Reject {
@@ -187,6 +277,24 @@ namespace FEI.TrainingSimulator.Properties {
             get {
                 object obj = ResourceManager.GetObject("small_open", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to symbol na dne zásobníka.
+        /// </summary>
+        internal static string StackIntialSymbol {
+            get {
+                return ResourceManager.GetString("StackIntialSymbol", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Váš model obsahuje syntaktické chyby..
+        /// </summary>
+        internal static string StudentModelSynatxError {
+            get {
+                return ResourceManager.GetString("StudentModelSynatxError", resourceCulture);
             }
         }
         
@@ -333,6 +441,15 @@ namespace FEI.TrainingSimulator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Trenažér ( {0} ).
+        /// </summary>
+        internal static string TrainerWindowText {
+            get {
+                return ResourceManager.GetString("TrainerWindowText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Prechodová funkcia.
         /// </summary>
         internal static string TransitionFunction {
@@ -357,6 +474,15 @@ namespace FEI.TrainingSimulator.Properties {
             get {
                 object obj = ResourceManager.GetObject("Turing", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turingov stroj.
+        /// </summary>
+        internal static string TuringMachine {
+            get {
+                return ResourceManager.GetString("TuringMachine", resourceCulture);
             }
         }
         

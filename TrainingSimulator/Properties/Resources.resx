@@ -220,4 +220,46 @@ Kontaktujte tvoru úlohy - Vášho prednášajúceho alebo cvičiaceho.</value>
   <data name="Error" xml:space="preserve">
     <value>Chyba</value>
   </data>
+  <data name="AutomatonNoStates" xml:space="preserve">
+    <value>Automat neobsahuje žiadne stavy.</value>
+  </data>
+  <data name="AutomatonNoStartState" xml:space="preserve">
+    <value>Automat nemá začiatočný stav.</value>
+  </data>
+  <data name="AutomatonNoFinalState" xml:space="preserve">
+    <value>Automat nemá žiadny koncový stav.</value>
+  </data>
+  <data name="AutomatonInvalidSymbol" xml:space="preserve">
+    <value>Automat používa neplatný alebo nepovolený symbol '{0}'.</value>
+  </data>
+  <data name="AutomatonNotDeterministic" xml:space="preserve">
+    <value>Automat nie je deterministický. Zo stavu '{0}' existuje viac prechodov pre symbol '{1}'.</value>
+  </data>
+  <data name="RegexUnclosedSet" xml:space="preserve">
+    <value>Regex obsahuje neuzavretú množinu [].</value>
+  </data>
+  <data name="RegexNoAlphabetSymbols" xml:space="preserve">
+    <value>Regex neobsahuje žiadne symboly abecedy.</value>
+  </data>
+  <data name="NoTestCasesFound" xml:space="preserve">
+    <value>Neboli nájdené žiadne testovacie prípady.</value>
+  </data>
+  <data name="InvalidExpectedValue" xml:space="preserve">
+    <value>Neplatná očakávaná hodnota pri slove '{0}'.</value>
+  </data>
+  <data name="TrainerWindowText" xml:space="preserve">
+    <value>Trenažér ( {0} )</value>
+  </data>
+  <data name="PushdownAutomaton" xml:space="preserve">
+    <value>Zásobníkový automat</value>
+  </data>
+  <data name="StackIntialSymbol" xml:space="preserve">
+    <value>symbol na dne zásobníka</value>
+  </data>
+  <data name="TuringMachine" xml:space="preserve">
+    <value>Turingov stroj</value>
+  </data>
+  <data name="StudentModelSynatxError" xml:space="preserve">
+    <value>Váš model obsahuje syntaktické chyby.</value>
+  </data>
 </root>

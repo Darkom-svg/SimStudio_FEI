@@ -13,6 +13,7 @@ using FEI.SimStudio.Components.Registers;
 using FEI.TuringCore.Simulation;
 using AboutForm = FEI.TrainingSimulator.Dialogs.AboutForm;
 using System.Xml;
+using FEI.TrainingSimulator.Properties;
 using FEI.TuringMachineSimulator.Dialogs;
 using FEI.TuringMachineSimulator.IO.Jff;
 
@@ -21,8 +22,6 @@ namespace FEI.TrainingSimulator
     public partial class TmTrainingForm : Form
     {
         private MainTrainingForm.TaskDef task;
-        private string appTitle;
-
         //Zoznam menu položiek pre výber formátu
         List<ToolStripMenuItem> miTFormatMenuItems;
 
@@ -45,8 +44,7 @@ namespace FEI.TrainingSimulator
         {
             InitializeComponent();
             this.task = task;
-            this.Text = "Trenažér (" + this.task.Id + ")";
-            appTitle = Text;
+            this.Text = string.Format(Resources.TrainerWindowText,  this.task.Id);
             CreateTaskSpecification();
             miTFormatMenuItems = new List<ToolStripMenuItem>(new[]
             {
@@ -250,31 +248,31 @@ namespace FEI.TrainingSimulator
 			sb.AppendLine("<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"sk\" lang=\"sk\">");
 			//Hlavicka
 			sb.AppendLine("<head>");
-			sb.AppendLine("<title>Formálna špecifikácia</title>");
+                sb.AppendLine("<title>"+Resources.FormalSpecification+"</title>");
 
-			sb.AppendLine("<style>");
-			sb.AppendLine("body { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; }");
-			sb.AppendLine("h1 {");
-			sb.AppendLine("font-family: Arial, Helvetica, sans-serif; font-size: 30px;");
-			sb.AppendLine("font-weight: bold; border-bottom-style: dotted;");
-			sb.AppendLine("border-bottom-width: 3px; border-bottom-color: #000066;");
-			sb.AppendLine("color: #000066; padding-bottom: 5px; margin-bottom: 10px;");
-			sb.AppendLine("}");
-			sb.AppendLine("h2 {");
-			sb.AppendLine("font-family: Arial, Helvetica, sans-serif; font-size: 16px;");
-			sb.AppendLine("font-weight: bold;");
-			sb.AppendLine("color: #000066; margin-bottom: 5px;");
-			sb.AppendLine("}");
-			sb.AppendLine("</style>");
+			    sb.AppendLine("<style>");
+			        sb.AppendLine("body { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; }");
+			        sb.AppendLine("h1 {");
+			        sb.AppendLine("font-family: Arial, Helvetica, sans-serif; font-size: 30px;");
+			        sb.AppendLine("font-weight: bold; border-bottom-style: dotted;");
+			        sb.AppendLine("border-bottom-width: 3px; border-bottom-color: #000066;");
+			        sb.AppendLine("color: #000066; padding-bottom: 5px; margin-bottom: 10px;");
+			        sb.AppendLine("}");
+			        sb.AppendLine("h2 {");
+			        sb.AppendLine("font-family: Arial, Helvetica, sans-serif; font-size: 16px;");
+			        sb.AppendLine("font-weight: bold;");
+			        sb.AppendLine("color: #000066; margin-bottom: 5px;");
+			        sb.AppendLine("}");
+			    sb.AppendLine("</style>");
 			sb.AppendLine("</head>");
 
 			//Telo
 			sb.AppendLine("<body>");
 			//Nadpis
-			sb.AppendLine("<h1>Formálna špecifikácia</h1>");
+            sb.AppendLine("<h1>"+Resources.FormalSpecification+"</h1>");
 
 			sb.AppendLine("<div>");
-			sb.AppendLine("Turingov stroj <strong>T = (K, Σ, Γ, δ, " + TuringMachine.StartState + ", F)</strong>");
+			sb.AppendLine(Resources.TuringMachine + " <strong>T = (K, Σ, Γ, δ, " + TuringMachine.StartState + ", F)</strong>");
 			sb.AppendLine("</div>");
 
 			// Množina stavov
@@ -291,7 +289,7 @@ namespace FEI.TrainingSimulator
 			sb.AppendLine("</div>");
 			// Počiatočný stav
 			sb.AppendLine("<div>");
-			sb.AppendLine("<strong>" + TuringMachine.StartState + "</strong>  počiatočný stav");
+			sb.AppendLine("<strong>" + TuringMachine.StartState + "</strong>  " + Resources.InitialState);
 			sb.AppendLine("</div>");
 			// Množina koncových stavov
 			sb.AppendLine("<div>");
@@ -300,7 +298,7 @@ namespace FEI.TrainingSimulator
 
 			// Prechodové funkcie
 			sb.AppendLine("<div>");
-			sb.AppendLine("<h2>Prechodová funkcia δ</h2>");
+            sb.AppendLine("<h2>"+ Resources.TransitionFunction +" δ</h2>");
 			foreach (Transition f in TuringMachine.GetTFunctions()) {
 				sb.AppendLine("<div>");
 				sb.AppendLine("<strong>δ(</strong>" + f.CurrentState + ", " + f.ReadSymbol +
@@ -383,23 +381,23 @@ namespace FEI.TrainingSimulator
                 //Nadpis
                 sb.AppendLine("<h1>" + task.Title + "</h1>");
                 //Parametre zadania
-                sb.AppendLine("<h2>Parametre zadania</h2>");
+                sb.AppendLine("<h2>" + Resources.TaskParameters + "</h2>");
                 // Typ zadania
                 sb.AppendLine("<div>");
-                sb.AppendLine("<strong>Typ zadania:</strong> Túringov stroj");
+                sb.AppendLine("<strong>" + Resources.TaskType + "</strong> " + Resources.PushdownAutomaton);
                 sb.AppendLine("</div>");
 
                 // ID zadania
                 sb.AppendLine("<div>");
-                sb.AppendLine("<strong>Id zadania:</strong> " + task.Id);
+                sb.AppendLine("<strong>Id:</strong> " + task.Id);
                 sb.AppendLine("</div>");
                 // Obtiažnosť zadania
                 sb.AppendLine("<div>");
-                sb.AppendLine("<strong>Obtiažnosť zadania:</strong> " + task.Difficulty);
+                sb.AppendLine("<strong>" + Resources.TaskDifficulty + "</strong> " + task.Difficulty);
                 sb.AppendLine("</div>");           
                 
                 // Popis zadania
-                sb.AppendLine("<h2>Popis zadania</h2>");
+                sb.AppendLine("<h2>" + Resources.TaskSpecification + "</h2>");
                 sb.AppendLine("<div id='math'>");
                 sb.AppendLine((task.Specification ?? "")
                     .Replace("&", "&amp;")
@@ -524,7 +522,7 @@ namespace FEI.TrainingSimulator
                 TuringMachine.Save(fileName, txtCode.Text);
 				
                 openFileName = fileName;
-                this.Text = openFileName.Substring(openFileName.LastIndexOf("\\") + 1) + " - " + appTitle;
+                this.Text = openFileName.Substring(openFileName.LastIndexOf("\\") + 1) + " - " + this.Text;
             }
         }
         
@@ -579,7 +577,7 @@ namespace FEI.TrainingSimulator
                 ParseTFunctions(txtCode.Text);
 
                 openFileName = fileName;
-                this.Text = Path.GetFileName(openFileName) + " - " + appTitle;
+                this.Text = Path.GetFileName(openFileName) + " - " + this.Text;
             }
             else if (fileName.EndsWith(".jff", StringComparison.OrdinalIgnoreCase))
             {
@@ -608,7 +606,7 @@ namespace FEI.TrainingSimulator
                 }
 
                 openFileName = fileName;
-                this.Text = Path.GetFileName(openFileName) + " - " + appTitle;
+                this.Text = Path.GetFileName(openFileName) + " - " + this.Text;
             }
 
             this.Refresh();
@@ -622,13 +620,32 @@ namespace FEI.TrainingSimulator
 
         private void checkToolStripButton_Click(object sender, EventArgs e)
         {
-            CheckResult result = CheckCurrentTmSolution();
+            CheckResult result;
+
+            if (task.Mode.Equals("Test_cases", StringComparison.OrdinalIgnoreCase))
+            {
+                result = CheckTmByTestCases();
+            }
+            else if (task.Mode.Equals("Reference_model", StringComparison.OrdinalIgnoreCase))
+            {
+                result = CheckTmByReferenceModel();
+            }
+            else
+            {
+                result = new CheckResult
+                {
+                    IsCorrect = false,
+                    Message = string.Format(
+                        Resources.UnknownModeError,
+                        task.Mode)
+                };
+            }
 
             if (result.IsCorrect)
             {
                 MessageBox.Show(
-                    "Riešenie je správne.",
-                    appTitle,
+                    Resources.Correct,
+                    this.Text,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             }
@@ -636,7 +653,7 @@ namespace FEI.TrainingSimulator
             {
                 MessageBox.Show(
                     result.Message,
-                    appTitle,
+                    this.Text,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
@@ -645,7 +662,7 @@ namespace FEI.TrainingSimulator
         private VirtualTuringMachine CreateReferenceTm()
         {
             if (string.IsNullOrWhiteSpace(task.Verification))
-                throw new Exception("Zadanie neobsahuje referenčný model.");
+                throw new Exception(Resources.MissingReferenceModel);
 
             string tmpFile = Path.Combine(
                 Path.GetTempPath(),
@@ -668,7 +685,7 @@ namespace FEI.TrainingSimulator
                     wildCardFormat);
 
                 if (!parser.ParseTFunctions(code))
-                    throw new Exception("Referenčný model obsahuje syntaktické chyby.");
+                    throw new Exception(Resources.ReferenceModelSyntaxError);
 
                 tm.StateDiagram.UpdateForTM(tm);
 
@@ -701,7 +718,7 @@ namespace FEI.TrainingSimulator
                 wildCardFormat);
 
             if (!parser.ParseTFunctions(txtCode.Text))
-                throw new Exception("Riešenie obsahuje syntaktické chyby.");
+                throw new Exception(Resources.StudentModelSynatxError);
 
             tm.StartState = TuringMachine.StartState;
             tm.FinalStates = new List<string>(TuringMachine.FinalStates);
@@ -728,16 +745,13 @@ namespace FEI.TrainingSimulator
         
         private Dictionary<string, bool> ParseTestCases(string verification)
         {
-            if (string.IsNullOrWhiteSpace(verification))
-                throw new Exception("Pole verification je prázdne.");
-
             XmlDocument doc = new XmlDocument();
             doc.LoadXml(verification);
 
             XmlNodeList nodes = doc.SelectNodes("//test");
 
             if (nodes == null || nodes.Count == 0)
-                throw new Exception("Neboli nájdené žiadne testovacie prípady.");
+                throw new Exception(Resources.NoTestCasesFound);
 
             var result = new Dictionary<string, bool>();
 
@@ -756,7 +770,7 @@ namespace FEI.TrainingSimulator
                 else if (expectedText.Equals("reject", StringComparison.OrdinalIgnoreCase))
                     expected = false;
                 else
-                    throw new Exception("Neplatná očakávaná hodnota pri slove '" + word + "'.");
+                    throw new Exception(string.Format(Resources.InvalidExpectedValue, word));
 
                 result[word] = expected;
             }
@@ -831,49 +845,20 @@ namespace FEI.TrainingSimulator
             return false;
         }
         
-        private CheckResult CheckCurrentTmSolution()
-        {
-            if (task.Mode.Equals("Test_cases", StringComparison.OrdinalIgnoreCase))
-                return CheckTmByTestCases();
-
-            if (task.Mode.Equals("Reference_model", StringComparison.OrdinalIgnoreCase))
-                return CheckTmByReferenceModel();
-
-            return new CheckResult
-            {
-                IsCorrect = false,
-                Message = "Neznámy režim overovania: " + task.Mode
-            };
-        }
-        
         private CheckResult CheckTmByReferenceModel()
         {
-            VirtualTuringMachine referenceForAlphabet;
-
-            try
-            {
-                referenceForAlphabet = CreateReferenceTm();
-            }
-            catch (Exception ex)
+            if (string.IsNullOrWhiteSpace(task.Verification))
             {
                 return new CheckResult
                 {
                     IsCorrect = false,
-                    Message = "Nepodarilo sa pripraviť referenčný model: " + ex.Message
+                    Message = Resources.MissingReferenceModel
+
                 };
             }
-
+            
+            VirtualTuringMachine referenceForAlphabet = CreateReferenceTm();
             List<string> alphabet = GetInputAlphabet(referenceForAlphabet);
-
-            if (alphabet.Count == 0)
-            {
-                return new CheckResult
-                {
-                    IsCorrect = false,
-                    Message = "Referenčný model nemá vstupnú abecedu."
-                };
-            }
-
             List<string> words = GenerateWords(6, alphabet);
 
             testedWords.Clear();
@@ -912,10 +897,11 @@ namespace FEI.TrainingSimulator
                     return new CheckResult
                     {
                         IsCorrect = false,
-                        Message =
-                            $"Turingov stroj nie je správny. Líši sa na slove '{shownWord}'.\n" +
-                            $"Referenčný model: {(expected ? "prijať" : "odmietnuť")}.\n" +
-                            $"Študentov TM: {(actual ? "prijať" : "odmietnuť")}."
+                        Message =string.Format(
+                            Resources.AutomatonMismatchError,
+                            shownWord,
+                            expected ? Resources.Accept : Resources.Reject,
+                            actual ? Resources.Accept : Resources.Reject)
                     };
                 }
             }
@@ -923,26 +909,13 @@ namespace FEI.TrainingSimulator
             return new CheckResult
             {
                 IsCorrect = true,
-                Message = "Riešenie je správne."
+                Message = Resources.Correct
             };
         }
         
         private CheckResult CheckTmByTestCases()
         {
-            Dictionary<string, bool> testCases;
-
-            try
-            {
-                testCases = ParseTestCases(task.Verification);
-            }
-            catch (Exception ex)
-            {
-                return new CheckResult
-                {
-                    IsCorrect = false,
-                    Message = "Zadanie obsahuje neplatné testovacie prípady: " + ex.Message
-                };
-            }
+            Dictionary<string, bool> testCases = ParseTestCases(task.Verification);
 
             testedWords.Clear();
             testedStates.Clear();
@@ -979,10 +952,11 @@ namespace FEI.TrainingSimulator
                     return new CheckResult
                     {
                         IsCorrect = false,
-                        Message =
-                            $"Turingov stroj nie je správny. Líši sa na slove '{shownWord}'.\n" +
-                            $"Očakávané: {(expected ? "prijať" : "odmietnuť")}.\n" +
-                            $"Študentov TM: {(actual ? "prijať" : "odmietnuť")}."
+                        Message =string.Format(
+                            Resources.AutomatonMismatchError,
+                            shownWord,
+                            expected ? Resources.Accept : Resources.Reject,
+                            actual ? Resources.Accept : Resources.Reject)
                     };
                 }
             }
@@ -990,7 +964,7 @@ namespace FEI.TrainingSimulator
             return new CheckResult
             {
                 IsCorrect = true,
-                Message = "Riešenie je správne."
+                Message = Resources.Correct
             };
         }
         
@@ -1168,11 +1142,11 @@ namespace FEI.TrainingSimulator
             testedWords.Add(word);
 
             if (expected != actual)
-                testedStates.Add("Chyba");
+                testedStates.Add(Resources.Error);
             else if (expected)
-                testedStates.Add("Prijať");
+                testedStates.Add(Resources.Accept);
             else
-                testedStates.Add("Odmietnuť");
+                testedStates.Add(Resources.Reject);
 
             Tests_SetScrollbar();
             pTests.Refresh();

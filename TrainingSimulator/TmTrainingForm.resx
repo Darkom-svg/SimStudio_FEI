@@ -686,7 +686,7 @@
         0b79f7cdu/IHqK4cqgUVuPZ8PwY04L969o3//s03/j97/gKOj195/t+48sH/BTvv/wepsW9+uRSqDQFI
         McCs/sUrqDYEwGfAuZvP/gd13v2/7QgRBtg0vvnv1vri/+SNj/9P2YSKu9Y9IWwAMRivAaduf/t/5zkE
         3wbii/c//z9/D4Iv3HxB2ICnb779//jpE1Z89+FTOhjw4OUXrJpBGK8Bji0fzplWPvt/59lnrJpBGGQA
-        SI15+ZP3UG0IYN30ZoNJ/Yt39Q1d/+qbO7HjhrZ/1vVPP9g0vdwH1TbggIEBALoauRU6U/9qAAAAAElF
+        SI15+ZP3UG0IYN30ZoNJ/Yt39fWd/+qbOrDj+tZ/1vVPP9g0vdwH1TbggIEBAK/yuQVHirsTAAAAAElF
         TkSuQmCC
 </value>
   </data>
@@ -706,7 +706,7 @@
     <value>Magenta</value>
   </data>
   <data name="checkToolStripButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 22</value>
+    <value>87, 22</value>
   </data>
   <data name="checkToolStripButton.Text" xml:space="preserve">
     <value>Overiť riešenie</value>
@@ -718,7 +718,7 @@
     <value>3, 27</value>
   </data>
   <data name="mainToolStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 25</value>
+    <value>157, 25</value>
   </data>
   <data name="mainToolStrip.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -988,7 +988,7 @@
     <value>3, 3, 0, 3</value>
   </data>
   <data name="pTests.Size" type="System.Drawing.Size, System.Drawing">
-    <value>280, 390</value>
+    <value>279, 390</value>
   </data>
   <data name="pTests.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -1042,7 +1042,7 @@
     <value>NoControl</value>
   </data>
   <data name="sbyTests.Location" type="System.Drawing.Point, System.Drawing">
-    <value>283, 47</value>
+    <value>282, 47</value>
   </data>
   <data name="sbyTests.Size" type="System.Drawing.Size, System.Drawing">
     <value>18, 390</value>
@@ -1166,6 +1166,9 @@
   </data>
   <data name="stateDiagramControl.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="stateDiagramControl.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="stateDiagramControl.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -1327,7 +1330,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="lstErrors.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 29</value>
+    <value>1172, 202</value>
   </data>
   <data name="lstErrors.TabIndex" type="System.Int32, mscorlib">
     <value>16</value>

@@ -160,4 +160,46 @@ Contact the person who assigned the task—your lecturer or teaching assistant.<
     <data name="Error" xml:space="preserve">
         <value>Error</value>
     </data>
+    <data name="AutomatonNoStates" xml:space="preserve">
+        <value>Automaton does not contain any states.</value>
+    </data>
+    <data name="AutomatonNoStartState" xml:space="preserve">
+        <value>Automaton does not have an initial state.</value>
+    </data>
+    <data name="AutomatonInvalidSymbol" xml:space="preserve">
+        <value>Automaton uses an invalid or forbidden symbol '{0}'.</value>
+    </data>
+    <data name="AutomatonNoFinalState" xml:space="preserve">
+        <value>Automaton does not have any final state.</value>
+    </data>
+    <data name="AutomatonNotDeterministic" xml:space="preserve">
+        <value>Automaton is not deterministic. State '{0}' has multiple transitions for symbol '{1}'.</value>
+    </data>
+    <data name="RegexUnclosedSet" xml:space="preserve">
+        <value>Regex contains an unclosed character set [].</value>
+    </data>
+    <data name="RegexNoAlphabetSymbols" xml:space="preserve">
+        <value>Regex does not contain any alphabet symbols.</value>
+    </data>
+    <data name="NoTestCasesFound" xml:space="preserve">
+        <value>No test cases were found.</value>
+    </data>
+    <data name="InvalidExpectedValue" xml:space="preserve">
+        <value>Invalid expected value for word '{0}'.</value>
+    </data>
+    <data name="TrainerWindowText" xml:space="preserve">
+        <value>Trainer ( {0} )</value>
+    </data>
+    <data name="PushdownAutomaton" xml:space="preserve">
+        <value>Pushdown automaton</value>
+    </data>
+    <data name="StackIntialSymbol" xml:space="preserve">
+        <value>initila stack symbol</value>
+    </data>
+    <data name="TuringMachine" xml:space="preserve">
+        <value>Turing machine</value>
+    </data>
+    <data name="StudentModelSynatxError" xml:space="preserve">
+        <value>Your model contains syntax errors.</value>
+    </data>
 </root>

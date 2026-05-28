@@ -24,28 +24,25 @@ namespace FEI.TrainingSimulator
     public partial class FaTrainingForm : Form
     {
         private MainTrainingForm.TaskDef task;
-        private string appTitle;
         private VirtualTuringMachine turingMachine = new VirtualTuringMachine() { AcceptType = AcceptType.FinalStateReachedAndWholeTapeRead };
-        private bool codeChanged;        
         //Formát prechodovej funkcie
         private string transitionFormat;
         //Formát 
         string wildCardFormat;
         // Vytvorí formálnu špecifikáciu
-        private string tmpFormalSpecFileName = null;
+        private string tmpFormalSpecFileName;
         // Vytvorí špecifikáciu zadania
-        private string tmpTaskSpecFileName = null;
-        string openFileName = null;
+        private string tmpTaskSpecFileName;
+        string openFileName;
         private List<ToolStripMenuItem> miTFormatMenuItems;
 
         public FaTrainingForm(MainTrainingForm.TaskDef task)
         {
             InitializeComponent();
             this.task = task;
-            appTitle = "Trenažér (" + this.task.Id + ")";
             transitionFormat = "\\sδ\\s(\\a,\\a)\\s=\\s(\\a)\\s";
             wildCardFormat = "\\a=\\s{\\m,\\n}\\s";
-            this.Text = "FA";
+            this.Text = string.Format(Resources.TrainerWindowText,  this.task.Id);
             CreateTaskSpecification();
             miTFormatMenuItems = new List<ToolStripMenuItem>(new[]
             {
@@ -115,7 +112,6 @@ namespace FEI.TrainingSimulator
         private string WriteTransition(Transition tf, string tFormat)
         {
             string res="";
-            int pos=0;
             int i = 0, l = 0;
             int n = 0; //Index vstupu
             string arg="";
@@ -165,7 +161,6 @@ namespace FEI.TrainingSimulator
             FiniteAutomatonParser parser = new FiniteAutomatonParser(TuringMachine, transitionFormat, wildCardFormat);
             bool retval = parser.ParseTFunctions(sourceCodeText);
 
-            codeChanged = false;
             UpdateErrors(parser.Errors);
             Functions_SetScrollbar();
 
@@ -240,39 +235,42 @@ namespace FEI.TrainingSimulator
                 File.Delete(tmpFormalSpecFileName);
             }
 
-            string tmpDirPath = new FileInfo(Application.ExecutablePath).Directory.FullName + "\\tmp\\";
-            tmpFormalSpecFileName = tmpDirPath + (new Random()).Next(1000000) + ".html";
-            StringBuilder sb = new StringBuilder();
-
-            if (!Directory.Exists(tmpDirPath))
+            var directoryInfo = new FileInfo(Application.ExecutablePath).Directory;
+            if (directoryInfo != null)
             {
-                Directory.CreateDirectory(tmpDirPath);
-            }
+                string tmpDirPath = directoryInfo.FullName + "\\tmp\\";
+                tmpFormalSpecFileName = tmpDirPath + (new Random()).Next(1000000) + ".html";
+                StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">");
-            sb.AppendLine("<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"sk\" lang=\"sk\">");
-            //Hlavicka
-            sb.AppendLine("<head>");
-                sb.AppendLine("<title>Formálna špecifikácia</title>");
-                
-                sb.AppendLine("<style>");
-                sb.AppendLine("body { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; }");
-                sb.AppendLine("h1 {");
-                sb.AppendLine("font-family: Arial, Helvetica, sans-serif; font-size: 30px;");
-                sb.AppendLine("font-weight: bold; border-bottom-style: dotted;");
-                sb.AppendLine("border-bottom-width: 3px; border-bottom-color: #000066;");
-                sb.AppendLine("color: #000066; padding-bottom: 5px; margin-bottom: 10px;");
-                sb.AppendLine("}");
-                sb.AppendLine("h2 {");
-                sb.AppendLine("font-family: Arial, Helvetica, sans-serif; font-size: 16px;");
-                sb.AppendLine("font-weight: bold;");                
-                sb.AppendLine("color: #000066; margin-bottom: 5px;");
-                sb.AppendLine("}");
-                sb.AppendLine("</style>");
-            sb.AppendLine("</head>");
+                if (!Directory.Exists(tmpDirPath))
+                {
+                    Directory.CreateDirectory(tmpDirPath);
+                }
+
+                sb.AppendLine("<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">");
+                sb.AppendLine("<html xmlns=\"http://www.w3.org/1999/xhtml\" xml:lang=\"sk\" lang=\"sk\">");
+                //Hlavicka
+                sb.AppendLine("<head>");
+                    sb.AppendLine("<title>"+Resources.FormalSpecification+"</title>");
+                    
+                    sb.AppendLine("<style>");
+                        sb.AppendLine("body { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; }");
+                        sb.AppendLine("h1 {");
+                        sb.AppendLine("font-family: Arial, Helvetica, sans-serif; font-size: 30px;");
+                        sb.AppendLine("font-weight: bold; border-bottom-style: dotted;");
+                        sb.AppendLine("border-bottom-width: 3px; border-bottom-color: #000066;");
+                        sb.AppendLine("color: #000066; padding-bottom: 5px; margin-bottom: 10px;");
+                        sb.AppendLine("}");
+                        sb.AppendLine("h2 {");
+                        sb.AppendLine("font-family: Arial, Helvetica, sans-serif; font-size: 16px;");
+                        sb.AppendLine("font-weight: bold;");                
+                        sb.AppendLine("color: #000066; margin-bottom: 5px;");
+                        sb.AppendLine("}");
+                    sb.AppendLine("</style>");
+                sb.AppendLine("</head>");
             
-            //Telo
-            sb.AppendLine("<body>");
+                //Telo
+                sb.AppendLine("<body>");
                 //Nadpis
                 sb.AppendLine("<h1>"+Resources.FormalSpecification+"</h1>");
 
@@ -311,12 +309,13 @@ namespace FEI.TrainingSimulator
                 
                 sb.AppendLine("</body>");
             
-            sb.AppendLine("</html>");
+                sb.AppendLine("</html>");
 
-            TextWriter tw = new StreamWriter(
-                new FileStream(tmpFormalSpecFileName, FileMode.Create, FileAccess.Write), Encoding.UTF8);
-            tw.Write(sb.ToString());
-            tw.Close();
+                TextWriter tw = new StreamWriter(
+                    new FileStream(tmpFormalSpecFileName, FileMode.Create, FileAccess.Write), Encoding.UTF8);
+                tw.Write(sb.ToString());
+                tw.Close();
+            }
 
             formalSpecifiaction.Navigate(tmpFormalSpecFileName);            
         }
@@ -328,20 +327,23 @@ namespace FEI.TrainingSimulator
                 File.Delete(tmpTaskSpecFileName);
             }
 
-            string tmpDirPath = new FileInfo(Application.ExecutablePath).Directory.FullName + "\\tmp\\";
-            tmpTaskSpecFileName = tmpDirPath + (new Random()).Next(1000000) + ".html";
-            StringBuilder sb = new StringBuilder();
-
-            if (!Directory.Exists(tmpDirPath))
+            var directoryInfo = new FileInfo(Application.ExecutablePath).Directory;
+            if (directoryInfo != null)
             {
-                Directory.CreateDirectory(tmpDirPath);
-            }
+                string tmpDirPath = directoryInfo.FullName + "\\tmp\\";
+                tmpTaskSpecFileName = tmpDirPath + (new Random()).Next(1000000) + ".html";
+                StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine("<!DOCTYPE html>");
-            sb.AppendLine("<html>");
+                if (!Directory.Exists(tmpDirPath))
+                {
+                    Directory.CreateDirectory(tmpDirPath);
+                }
 
-            //Hlavicka
-            sb.AppendLine("<head>");
+                sb.AppendLine("<!DOCTYPE html>");
+                sb.AppendLine("<html>");
+
+                //Hlavicka
+                sb.AppendLine("<head>");
                 sb.AppendLine("<meta http-equiv='X-UA-Compatible' content='IE=edge' />");
                 sb.AppendLine("<meta charset='utf-8' />");
                 sb.AppendLine("<title>" + task.Title + "</title>");
@@ -376,10 +378,10 @@ namespace FEI.TrainingSimulator
                 sb.AppendLine("src='https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML'>");
                 sb.AppendLine("</script>");
                 
-            sb.AppendLine("</head>");
+                sb.AppendLine("</head>");
             
-            //Telo
-            sb.AppendLine("<body>");
+                //Telo
+                sb.AppendLine("<body>");
                 //Nadpis
                 sb.AppendLine("<h1>" + task.Title + "</h1>");
                 //Parametre zadania
@@ -408,13 +410,14 @@ namespace FEI.TrainingSimulator
                     .Replace("\n", "<br>"));
                 sb.AppendLine("</div>");
                 
-            sb.AppendLine("</body>");
-            sb.AppendLine("</html>");
+                sb.AppendLine("</body>");
+                sb.AppendLine("</html>");
 
-            TextWriter tw = new System.IO.StreamWriter(
-                new FileStream(tmpTaskSpecFileName, FileMode.Create, FileAccess.Write), Encoding.UTF8);
-            tw.Write(sb.ToString());
-            tw.Close();
+                TextWriter tw = new System.IO.StreamWriter(
+                    new FileStream(tmpTaskSpecFileName, FileMode.Create, FileAccess.Write), Encoding.UTF8);
+                tw.Write(sb.ToString());
+                tw.Close();
+            }
 
             taskSpecification.Navigate(tmpTaskSpecFileName);            
         }
@@ -526,7 +529,7 @@ namespace FEI.TrainingSimulator
                 TuringMachine.Save(fileName, txtCode.Text);
                 
                 openFileName = fileName;
-                this.Text = openFileName.Substring(openFileName.LastIndexOf("\\") + 1) + " - " + appTitle;
+                this.Text = openFileName.Substring(openFileName.LastIndexOf("\\") + 1) + " - " + this.Text;
             }
         }
         
@@ -587,7 +590,7 @@ namespace FEI.TrainingSimulator
             {
                 MessageBox.Show(
                     Resources.Correct,
-                    appTitle,
+                    this.Text,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
             }
@@ -595,7 +598,7 @@ namespace FEI.TrainingSimulator
             {
                 MessageBox.Show(
                     result.Message,
-                    appTitle,
+                    this.Text,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
@@ -771,10 +774,7 @@ namespace FEI.TrainingSimulator
 
                 string code = fa.Load(tmpFile);
 
-                var parser = new FiniteAutomatonParser(
-                    fa,
-                    transitionFormat,
-                    wildCardFormat);
+                var parser = new FiniteAutomatonParser(fa, transitionFormat, wildCardFormat);
 
                 if (!parser.ParseTFunctions(code))
                     throw new Exception(Resources.ReferenceModelSyntaxError);
@@ -795,10 +795,10 @@ namespace FEI.TrainingSimulator
             var usedStates = TuringMachine.GetUsedStates();
 
             if (usedStates == null || usedStates.Length == 0)
-                return "Automat neobsahuje žiadne stavy.";
+                return Resources.AutomatonNoStates;
 
             if (string.IsNullOrWhiteSpace(TuringMachine.StartState))
-                return "Automat nemá začiatočný stav.";
+                return Resources.AutomatonNoStartState;
 
             bool hasFinal = false;
 
@@ -812,7 +812,7 @@ namespace FEI.TrainingSimulator
             }
 
             if (!hasFinal)
-                return "Automat nemá žiadny koncový stav.";
+                return Resources.AutomatonNoFinalState;
 
             var seen = new HashSet<string>();
             var allowedSymbols = new HashSet<char>(alphabet);
@@ -820,19 +820,18 @@ namespace FEI.TrainingSimulator
             for (int i = 0; i < TuringMachine.FunctionCount; i++)
             {
                 var tf = TuringMachine.Function(i);
-
-                if (string.IsNullOrEmpty(tf.ReadSymbol) || tf.ReadSymbol.Length != 1)
-                    return $"Automat používa neplatný symbol '{tf.ReadSymbol}'.";
-
                 char symbol = tf.ReadSymbol[0];
-
-                if (!allowedSymbols.Contains(symbol))
-                    return $"Automat používa nepovolený symbol '{tf.ReadSymbol}'.";
+                
+                if (string.IsNullOrEmpty(tf.ReadSymbol) || tf.ReadSymbol.Length != 1 || !allowedSymbols.Contains(symbol))
+                    return string.Format(Resources.AutomatonInvalidSymbol, tf.ReadSymbol);;
 
                 string key = tf.CurrentState + "|" + tf.ReadSymbol;
 
                 if (!seen.Add(key))
-                    return $"Automat nie je deterministický. Zo stavu '{tf.CurrentState}' existuje viac prechodov pre symbol '{tf.ReadSymbol}'.";
+                    return string.Format(
+                        Resources.AutomatonNotDeterministic,
+                        tf.CurrentState,
+                        tf.ReadSymbol);;
             }
 
             return null;
@@ -921,7 +920,7 @@ namespace FEI.TrainingSimulator
                     int end = regexPattern.IndexOf(']', i);
 
                     if (end == -1)
-                        throw new Exception("Regex obsahuje neuzavretú množinu [].");
+                        throw new Exception(Resources.RegexUnclosedSet);
 
                     string content = regexPattern.Substring(i + 1, end - i - 1);
 
@@ -991,7 +990,7 @@ namespace FEI.TrainingSimulator
 
             if (alphabet.Count == 0)
             {
-                throw new Exception("Regex neobsahuje žiadne symboly abecedy.");
+                throw new Exception(Resources.RegexNoAlphabetSymbols);
             }
 
             return alphabet.OrderBy(c => c).ToList();
@@ -999,16 +998,13 @@ namespace FEI.TrainingSimulator
         
         private Dictionary<string, bool> ParseTestCases(string verification)
         {
-            if (string.IsNullOrWhiteSpace(verification))
-                throw new Exception("Pole verification je prázdne.");
-
             XmlDocument doc = new XmlDocument();
             doc.LoadXml(verification);
 
             XmlNodeList nodes = doc.SelectNodes("//test");
 
             if (nodes == null || nodes.Count == 0)
-                throw new Exception("Neboli nájdené žiadne testovacie prípady.");
+                throw new Exception(Resources.NoTestCasesFound);
 
             var result = new Dictionary<string, bool>();
 
@@ -1027,7 +1023,7 @@ namespace FEI.TrainingSimulator
                 else if (expectedText.Equals("reject", StringComparison.OrdinalIgnoreCase))
                     expected = false;
                 else
-                    throw new Exception("Neplatná očakávaná hodnota pri slove '" + word + "'.");
+                    throw new Exception(string.Format(Resources.InvalidExpectedValue, word));
 
                 result[word] = expected;
             }
@@ -1145,7 +1141,7 @@ namespace FEI.TrainingSimulator
         
         public void OpenFile(string fileName)
         {
-            this.Text = System.IO.Path.GetFileName(fileName) + " - " + appTitle;
+            this.Text = System.IO.Path.GetFileName(fileName) + " - " + this.Text;
 
             if (fileName.EndsWith(".fa"))
             {
@@ -1154,7 +1150,7 @@ namespace FEI.TrainingSimulator
                 ParseTFunctions(txtCode.Text);
                 
                 openFileName = fileName;
-                this.Text = openFileName.Substring(openFileName.LastIndexOf("\\") + 1) + " - " + appTitle;
+                this.Text = openFileName.Substring(openFileName.LastIndexOf("\\") + 1) + " - " + this.Text;
             }
             else if (fileName.EndsWith(".jff"))
             {
@@ -1292,17 +1288,11 @@ namespace FEI.TrainingSimulator
             testedWords.Add(word);
 
             if (expected != actual)
-            {
                 testedStates.Add(Resources.Error);
-            }
             else if (expected)
-            {
                 testedStates.Add(Resources.Accept);
-            }
             else
-            {
                 testedStates.Add(Resources.Reject);
-            }
 
             Tests_SetScrollbar();
             pTests.Refresh();
