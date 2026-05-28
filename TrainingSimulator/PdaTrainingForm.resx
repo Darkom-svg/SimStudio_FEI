@@ -1164,6 +1164,9 @@
   <data name="stateDiagramControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="stateDiagramControl.Enabled" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="stateDiagramControl.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>

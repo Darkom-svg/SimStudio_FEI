@@ -498,7 +498,7 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="stateDiagramControl.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+    <value>True</value>
   </data>
   <data name="stateDiagramControl.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 6</value>

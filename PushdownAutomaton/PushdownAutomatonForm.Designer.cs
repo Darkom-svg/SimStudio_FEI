@@ -149,6 +149,7 @@ namespace FEI.PushdownAutomaton {
 	        this.txtFind = new System.Windows.Forms.ToolStripTextBox();
 	        this.pomocníkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 	        this.miAbout = new System.Windows.Forms.ToolStripMenuItem();
+	        this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 	        this.kopírovaťToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 	        this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
 	        this.označiťVšetkoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -166,7 +167,6 @@ namespace FEI.PushdownAutomaton {
 	        this.stopToolStripButton = new System.Windows.Forms.ToolStripButton();
 	        this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
 	        this.stepToolStripButton = new System.Windows.Forms.ToolStripButton();
-	        this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 	        ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
 	        this.splitContainer1.Panel1.SuspendLayout();
 	        this.splitContainer1.Panel2.SuspendLayout();
@@ -938,6 +938,12 @@ namespace FEI.PushdownAutomaton {
 	        resources.ApplyResources(this.miAbout, "miAbout");
 	        this.miAbout.Click += new System.EventHandler(this.miAbout_Click);
 	        // 
+	        // languageToolStripMenuItem
+	        // 
+	        this.languageToolStripMenuItem.MergeAction = System.Windows.Forms.MergeAction.Remove;
+	        this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
+	        resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
+	        // 
 	        // kopírovaťToolStripMenuItem
 	        // 
 	        this.kopírovaťToolStripMenuItem.Name = "kopírovaťToolStripMenuItem";
@@ -1045,12 +1051,6 @@ namespace FEI.PushdownAutomaton {
 	        resources.ApplyResources(this.stepToolStripButton, "stepToolStripButton");
 	        this.stepToolStripButton.Name = "stepToolStripButton";
 	        this.stepToolStripButton.Click += new System.EventHandler(this.stepToolStripButton_Click);
-	        // 
-	        // languageToolStripMenuItem
-	        // 
-	        this.languageToolStripMenuItem.MergeAction = System.Windows.Forms.MergeAction.Remove;
-	        this.languageToolStripMenuItem.Name = "languageToolStripMenuItem";
-	        resources.ApplyResources(this.languageToolStripMenuItem, "languageToolStripMenuItem");
 	        // 
 	        // PushdownAutomatonForm
 	        // 
@@ -1214,7 +1214,7 @@ namespace FEI.PushdownAutomaton {
         private System.Windows.Forms.Label label7;
         private ListBox lstErrors;        
         private HScrollBar sbxThreads;
-        private StateDiagramControl stateDiagramControl;
+        private FEI.TuringCore.Components.StateDiagramControl stateDiagramControl;
         private InfiniteTapeControl infiniteTapeControl;
         private SplitContainer splitContainer3;
         private Label stackLabel;

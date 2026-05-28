@@ -1176,7 +1176,7 @@ namespace FEI.FiniteAutomaton {
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ListBox lstErrors;        
         private HScrollBar sbxThreads;
-        private StateDiagramControl stateDiagramControl;
+        private FEI.TuringCore.Components.StateDiagramControl stateDiagramControl;
         private InfiniteTapeControl infiniteTapeControl;
         private System.Windows.Forms.ToolStripPanel toolStripPanel1;
         private System.Windows.Forms.ToolStrip mainToolStrip;
