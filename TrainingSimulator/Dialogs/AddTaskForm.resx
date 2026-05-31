@@ -144,7 +144,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>19</value>
+    <value>23</value>
   </data>
   <data name="label2.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -171,7 +171,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>18</value>
+    <value>22</value>
   </data>
   <data name="label3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -198,7 +198,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>21</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="txtTitle.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
@@ -223,13 +223,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtTitle.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>20</value>
   </data>
   <data name="cancelButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
   <data name="cancelButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>401, 436</value>
+    <value>401, 481</value>
   </data>
   <data name="cancelButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>101, 28</value>
@@ -250,13 +250,13 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cancelButton.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>19</value>
   </data>
   <data name="bAdd.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Right</value>
   </data>
   <data name="bAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>294, 436</value>
+    <value>294, 481</value>
   </data>
   <data name="bAdd.Size" type="System.Drawing.Size, System.Drawing">
     <value>101, 28</value>
@@ -277,7 +277,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;bAdd.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>18</value>
   </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -307,7 +307,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>16</value>
   </data>
   <data name="txtTaskSetPathtxtTaskSetPath.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -316,7 +316,7 @@
     <value>False</value>
   </data>
   <data name="txtTaskSetPathtxtTaskSetPath.Location" type="System.Drawing.Point, System.Drawing">
-    <value>126, 398</value>
+    <value>126, 443</value>
   </data>
   <data name="txtTaskSetPathtxtTaskSetPath.Size" type="System.Drawing.Size, System.Drawing">
     <value>297, 20</value>
@@ -334,7 +334,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtTaskSetPathtxtTaskSetPath.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>14</value>
   </data>
   <data name="label9.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -346,7 +346,7 @@
     <value>NoControl</value>
   </data>
   <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 400</value>
+    <value>15, 445</value>
   </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>87, 13</value>
@@ -367,7 +367,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label9.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>15</value>
   </data>
   <data name="txtId.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -391,7 +391,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtId.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>13</value>
   </data>
   <data name="cmbModel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -424,7 +424,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cmbModel.ZOrder" xml:space="preserve">
-    <value>13</value>
+    <value>17</value>
   </data>
   <data name="referencePathButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>412, 22</value>
@@ -475,7 +475,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;txtSpecification.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>11</value>
   </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -505,7 +505,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>12</value>
   </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -535,7 +535,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>10</value>
   </data>
   <data name="cmbMode.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -553,10 +553,10 @@
     <value>Sada testov</value>
   </data>
   <data name="cmbMode.Location" type="System.Drawing.Point, System.Drawing">
-    <value>124, 298</value>
+    <value>152, 298</value>
   </data>
   <data name="cmbMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>154, 21</value>
+    <value>150, 21</value>
   </data>
   <data name="cmbMode.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
@@ -571,7 +571,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cmbMode.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>9</value>
   </data>
   <data name="flowLayoutPanel1.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
     <value>GrowAndShrink</value>
@@ -1147,7 +1147,7 @@
     <value>3, 171</value>
   </data>
   <data name="testSetPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>491, 185</value>
+    <value>491, 183</value>
   </data>
   <data name="testSetPanel.TabIndex" type="System.Int32, mscorlib">
     <value>40</value>
@@ -1164,11 +1164,224 @@
   <data name="&gt;&gt;testSetPanel.ZOrder" xml:space="preserve">
     <value>3</value>
   </data>
+  <data name="btnRemoveTestWord.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnRemoveTestWord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>412, 87</value>
+  </data>
+  <data name="btnRemoveTestWord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 21</value>
+  </data>
+  <data name="btnRemoveTestWord.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="btnRemoveTestWord.Text" xml:space="preserve">
+    <value>Odobrať</value>
+  </data>
+  <data name="&gt;&gt;btnRemoveTestWord.Name" xml:space="preserve">
+    <value>btnRemoveTestWord</value>
+  </data>
+  <data name="&gt;&gt;btnRemoveTestWord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnRemoveTestWord.Parent" xml:space="preserve">
+    <value>testWordsPanel</value>
+  </data>
+  <data name="&gt;&gt;btnRemoveTestWord.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblTestWords.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 87</value>
+  </data>
+  <data name="lblTestWords.Size" type="System.Drawing.Size, System.Drawing">
+    <value>339, 95</value>
+  </data>
+  <data name="lblTestWords.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="&gt;&gt;lblTestWords.Name" xml:space="preserve">
+    <value>lblTestWords</value>
+  </data>
+  <data name="&gt;&gt;lblTestWords.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblTestWords.Parent" xml:space="preserve">
+    <value>testWordsPanel</value>
+  </data>
+  <data name="&gt;&gt;lblTestWords.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnAddTestWord.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnAddTestWord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>412, 30</value>
+  </data>
+  <data name="btnAddTestWord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 21</value>
+  </data>
+  <data name="btnAddTestWord.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="btnAddTestWord.Text" xml:space="preserve">
+    <value>Pridať</value>
+  </data>
+  <data name="&gt;&gt;btnAddTestWord.Name" xml:space="preserve">
+    <value>btnAddTestWord</value>
+  </data>
+  <data name="&gt;&gt;btnAddTestWord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAddTestWord.Parent" xml:space="preserve">
+    <value>testWordsPanel</value>
+  </data>
+  <data name="&gt;&gt;btnAddTestWord.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="toolTipLabel8.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="toolTipLabel8.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Underline</value>
+  </data>
+  <data name="toolTipLabel8.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="toolTipLabel8.Location" type="System.Drawing.Point, System.Drawing">
+    <value>472, 5</value>
+  </data>
+  <data name="toolTipLabel8.Size" type="System.Drawing.Size, System.Drawing">
+    <value>13, 13</value>
+  </data>
+  <data name="toolTipLabel8.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="toolTipLabel8.Text" xml:space="preserve">
+    <value>?</value>
+  </data>
+  <data name="&gt;&gt;toolTipLabel8.Name" xml:space="preserve">
+    <value>toolTipLabel8</value>
+  </data>
+  <data name="&gt;&gt;toolTipLabel8.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;toolTipLabel8.Parent" xml:space="preserve">
+    <value>testWordsPanel</value>
+  </data>
+  <data name="&gt;&gt;toolTipLabel8.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="label16.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label16.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label16.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 33</value>
+  </data>
+  <data name="label16.Size" type="System.Drawing.Size, System.Drawing">
+    <value>41, 13</value>
+  </data>
+  <data name="label16.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Slovo*:</value>
+  </data>
+  <data name="&gt;&gt;label16.Name" xml:space="preserve">
+    <value>label16</value>
+  </data>
+  <data name="&gt;&gt;label16.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label16.Parent" xml:space="preserve">
+    <value>testWordsPanel</value>
+  </data>
+  <data name="&gt;&gt;label16.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="txtTestWord.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="txtTestWord.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 30</value>
+  </data>
+  <data name="txtTestWord.Size" type="System.Drawing.Size, System.Drawing">
+    <value>340, 20</value>
+  </data>
+  <data name="txtTestWord.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="&gt;&gt;txtTestWord.Name" xml:space="preserve">
+    <value>txtTestWord</value>
+  </data>
+  <data name="&gt;&gt;txtTestWord.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtTestWord.Parent" xml:space="preserve">
+    <value>testWordsPanel</value>
+  </data>
+  <data name="&gt;&gt;txtTestWord.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="label17.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label17.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label17.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 5</value>
+  </data>
+  <data name="label17.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 13</value>
+  </data>
+  <data name="label17.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Sada testovacích slov*:</value>
+  </data>
+  <data name="&gt;&gt;label17.Name" xml:space="preserve">
+    <value>label17</value>
+  </data>
+  <data name="&gt;&gt;label17.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label17.Parent" xml:space="preserve">
+    <value>testWordsPanel</value>
+  </data>
+  <data name="&gt;&gt;label17.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="testWordsPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 360</value>
+  </data>
+  <data name="testWordsPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>491, 183</value>
+  </data>
+  <data name="testWordsPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="&gt;&gt;testWordsPanel.Name" xml:space="preserve">
+    <value>testWordsPanel</value>
+  </data>
+  <data name="&gt;&gt;testWordsPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;testWordsPanel.Parent" xml:space="preserve">
+    <value>flowLayoutPanel1</value>
+  </data>
+  <data name="&gt;&gt;testWordsPanel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="flowLayoutPanel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 325</value>
+    <value>15, 360</value>
   </data>
   <data name="flowLayoutPanel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>492, 60</value>
+    <value>492, 59</value>
   </data>
   <data name="flowLayoutPanel1.TabIndex" type="System.Int32, mscorlib">
     <value>35</value>
@@ -1183,7 +1396,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;flowLayoutPanel1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>7</value>
   </data>
   <data name="label11.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -1213,7 +1426,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label11.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>5</value>
   </data>
   <data name="cmbDifficulty.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -1246,11 +1459,38 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;cmbDifficulty.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>6</value>
   </data>
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="txtRecursionDepth.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="txtRecursionDepth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>401, 333</value>
+  </data>
+  <data name="txtRecursionDepth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 20</value>
+  </data>
+  <data name="txtRecursionDepth.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="txtRecursionDepth.ToolTip" xml:space="preserve">
+    <value>txtRecursionDepth.txtRecursionDepth.</value>
+  </data>
+  <data name="&gt;&gt;txtRecursionDepth.Name" xml:space="preserve">
+    <value>txtRecursionDepth</value>
+  </data>
+  <data name="&gt;&gt;txtRecursionDepth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtRecursionDepth.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtRecursionDepth.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="toolTipLabel4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -1282,7 +1522,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;toolTipLabel4.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>4</value>
   </data>
   <data name="taskSetPathButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Bottom, Left, Right</value>
@@ -1291,7 +1531,7 @@
     <value>NoControl</value>
   </data>
   <data name="taskSetPathButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>428, 398</value>
+    <value>428, 443</value>
   </data>
   <data name="taskSetPathButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 21</value>
@@ -1312,7 +1552,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;taskSetPathButton.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>8</value>
   </data>
   <metadata name="saveFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>109, 17</value>
@@ -1326,6 +1566,96 @@
   <data name="openFileDialog1.Filter" xml:space="preserve">
     <value>Modely automatov |*.fa;*.pa;*.tm|JFlap Turingov stroj|*.jff|Všetky súbory |*.*</value>
   </data>
+  <data name="cmbTestWords.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="cmbTestWords.Items" xml:space="preserve">
+    <value>Rekurzívna</value>
+  </data>
+  <data name="cmbTestWords.Items1" xml:space="preserve">
+    <value>Definovaná</value>
+  </data>
+  <data name="cmbTestWords.Location" type="System.Drawing.Point, System.Drawing">
+    <value>152, 333</value>
+  </data>
+  <data name="cmbTestWords.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 21</value>
+  </data>
+  <data name="cmbTestWords.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="&gt;&gt;cmbTestWords.Name" xml:space="preserve">
+    <value>cmbTestWords</value>
+  </data>
+  <data name="&gt;&gt;cmbTestWords.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cmbTestWords.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cmbTestWords.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="label14.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label14.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label14.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 336</value>
+  </data>
+  <data name="label14.Size" type="System.Drawing.Size, System.Drawing">
+    <value>134, 13</value>
+  </data>
+  <data name="label14.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Metóda generovania slov*:</value>
+  </data>
+  <data name="&gt;&gt;label14.Name" xml:space="preserve">
+    <value>label14</value>
+  </data>
+  <data name="&gt;&gt;label14.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label14.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label14.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="labelRecursionDepth.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelRecursionDepth.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelRecursionDepth.Location" type="System.Drawing.Point, System.Drawing">
+    <value>316, 336</value>
+  </data>
+  <data name="labelRecursionDepth.Size" type="System.Drawing.Size, System.Drawing">
+    <value>79, 13</value>
+  </data>
+  <data name="labelRecursionDepth.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="labelRecursionDepth.Text" xml:space="preserve">
+    <value>Hĺbka rekurzie:</value>
+  </data>
+  <data name="&gt;&gt;labelRecursionDepth.Name" xml:space="preserve">
+    <value>labelRecursionDepth</value>
+  </data>
+  <data name="&gt;&gt;labelRecursionDepth.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelRecursionDepth.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelRecursionDepth.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -1336,7 +1666,7 @@
     <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>514, 476</value>
+    <value>514, 521</value>
   </data>
   <data name="$this.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 15</value>

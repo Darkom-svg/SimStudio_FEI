@@ -675,9 +675,15 @@ namespace FEI.TrainingSimulator
             {
                 words = testCases.Keys.ToArray();
             }
+            else if (task.InputTestingMode == "Selected_words")
+            {
+                words = task.InputTestingWords.ToArray();
+            }
             else
             {
-                words = GenerateWords(10, alphabet);
+                words = GenerateWords(
+                    task.InputTestingMaxLength,
+                    alphabet);
             }
 
             foreach (string word in words)
@@ -706,19 +712,28 @@ namespace FEI.TrainingSimulator
                 bool actual = AcceptsByAutomaton(TuringMachine, word);
 
                 AddTestResult(word, expected, actual);
-
+                
                 if (expected != actual)
                 {
                     string shownWord = word == "" ? "ε" : word;
+                    string expectedText =
+                        expected
+                            ? Resources.Accept
+                            : Resources.Reject;
 
+                    string actualText =
+                        actual
+                            ? Resources.Accept
+                            : Resources.Reject;
+                    
                     return new FaCheckResult
                     {
                         IsCorrect = false,
                         Message =string.Format(
                             Resources.AutomatonMismatchError,
                             shownWord,
-                            expected,
-                            actual)
+                            expectedText,
+                            actualText)
                     };
                 }
             }

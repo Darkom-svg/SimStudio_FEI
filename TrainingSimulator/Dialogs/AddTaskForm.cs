@@ -12,6 +12,8 @@ namespace FEI.TrainingSimulator.Dialogs
     public partial class AddTaskForm : Form
     {
         private Dictionary<string,bool> testCases = new Dictionary<string, bool>();
+        private List<string> testWords = new List<string>();
+
         public AddTaskForm(string currentTaskSetFile)
         {
             InitializeComponent();
@@ -21,6 +23,7 @@ namespace FEI.TrainingSimulator.Dialogs
             cmbDifficulty.SelectedIndex = 0;
             checkBoxAccept.Checked = true;
             cmbDifficulty.SelectedIndex = 0;
+            cmbTestWords.SelectedIndex = 0;
             UpdateVerificationPanels();
         }
         
@@ -48,6 +51,23 @@ namespace FEI.TrainingSimulator.Dialogs
         {
             UpdateVerificationPanels();
         }
+        
+        private void cmbTestWords_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbTestWords.SelectedIndex == 0)
+            {
+                txtRecursionDepth.Visible = true;
+                txtRecursionDepth.Text = 10.ToString();
+                labelRecursionDepth.Visible = true;
+            }
+            else
+            {
+                txtRecursionDepth.Visible = false;
+                labelRecursionDepth.Visible = false;
+                txtRecursionDepth.Text = "";
+            }
+            UpdateVerificationPanels();
+        }
 
         private void UpdateVerificationPanels()
         {
@@ -57,16 +77,25 @@ namespace FEI.TrainingSimulator.Dialogs
             regexPanel.Visible = mode == "Regex";
             referenceModelPanel.Visible = mode == "Reference_model";
             testSetPanel.Visible = mode == "Test_cases";
-
+            testWordsPanel.Visible = cmbTestWords.SelectedIndex == 1;
+            cmbTestWords.Enabled = true;
+            
             if (mode == "Test_cases")
             {
-                Height = 650;
+                Height = 695;
                 flowLayoutPanel1.Height = testSetPanel.Height + 10;
+                cmbTestWords.SelectedIndex = 1;
+                cmbTestWords.Enabled = false;
+            }
+            else if (mode != "Test_cases" && cmbTestWords.SelectedIndex == 1)
+            {
+                Height = 735;
+                flowLayoutPanel1.Height = testSetPanel.Height + 60;
             }
             else
             {
                 flowLayoutPanel1.Height = 60;
-                Height = 505;
+                Height = 550;
             }
         }
 
@@ -130,6 +159,11 @@ namespace FEI.TrainingSimulator.Dialogs
                     txtId.Text = category + " [" + DateTime.Now.ToString(CultureInfo.InvariantCulture)+ "]";
                 }
 
+                string tests = "";
+                if (cmbTestWords.SelectedIndex == 0)
+                    tests = txtRecursionDepth.Text;
+                
+
                 AddTaskToXml(
                     txtTaskSetPathtxtTaskSetPath.Text.Trim(),
                     txtId.Text.Trim(),
@@ -138,7 +172,8 @@ namespace FEI.TrainingSimulator.Dialogs
                     mode,
                     cmbDifficulty.Text.Trim(),
                     txtSpecification.Text,
-                    verification);
+                    verification,
+                    tests);
 
                 MessageBox.Show(
                     Resources.AddTaskTitle,
@@ -185,14 +220,6 @@ namespace FEI.TrainingSimulator.Dialogs
 
         private void ValidateForm()
         {
-            if (string.IsNullOrWhiteSpace(txtTaskSetPathtxtTaskSetPath.Text))
-                throw new Exception(Resources.ValidationErrorTaskSetPath);
-
-            if (string.IsNullOrWhiteSpace(txtTitle.Text))
-                throw new Exception(Resources.ValidationErrorTaskName);
-
-            if (string.IsNullOrWhiteSpace(cmbModel.Text))
-                throw new Exception(Resources.ValidationErrorModelType);
             string category = "";
             switch (cmbModel.SelectedIndex)
             {
@@ -200,50 +227,77 @@ namespace FEI.TrainingSimulator.Dialogs
                     category = "FA";
                     break;
                 case 1:
-                    category = "PDA";
+                    category = "PA";
                     break;
                 case 2:
                     category = "TM";
                     break;
             }
             
-            if (string.IsNullOrWhiteSpace(cmbMode.Text))
+            string mode = GetSelectedMode();
+
+            if (string.IsNullOrWhiteSpace(txtTaskSetPathtxtTaskSetPath.Text))
+                throw new Exception(Resources.ValidationErrorTaskSetPath);
+
+            if (string.IsNullOrWhiteSpace(txtTitle.Text))
+                throw new Exception(Resources.ValidationErrorTaskName);
+
+            if (string.IsNullOrWhiteSpace(category))
+                throw new Exception(Resources.ValidationErrorModelType);
+
+            if (string.IsNullOrWhiteSpace(mode))
                 throw new Exception(Resources.ValidationErrorTaskValidationMethod);
-            
+
             if (string.IsNullOrWhiteSpace(cmbDifficulty.Text))
                 throw new Exception(Resources.ValidationErrorTaskDifficulty);
 
             if (string.IsNullOrWhiteSpace(txtSpecification.Text))
                 throw new Exception(Resources.ValidationErrorTaskSpecification);
 
-            string mode = GetSelectedMode();
-            string verification = "";
-            if (mode == "Formula")
-                verification = txtFormula.Text.Trim();
-            else if (mode == "Regex")
-                verification = txtRegex.Text.Trim();
-            else if (mode == "Reference_model")
+            switch (mode)
             {
-                if (!string.Equals(
-                        Path.GetExtension(txtReferencePath.Text.Trim()),
-                        "." + category,
-                        StringComparison.OrdinalIgnoreCase))
-                {
-                    throw new Exception(Resources.ValidationErrorTaskModelMismatchWithReference);
-                }
+                case "Formula":
+                    if (string.IsNullOrWhiteSpace(txtFormula.Text))
+                        throw new Exception(Resources.ValidationErrorVerfication);
+                    break;
 
-                verification = File.ReadAllText(txtReferencePath.Text.Trim(), Encoding.UTF8);
-            }
-            else if (mode == "Test_cases")
-            {
-                if (testCases.Count == 0)
-                    throw new Exception(Resources.ValidationErrorZeroTaskTest);
+                case "Regex":
+                    if (string.IsNullOrWhiteSpace(txtRegex.Text))
+                        throw new Exception(Resources.ValidationErrorVerfication);
+                    break;
 
-                verification = CreateTestCasesXml();
+                case "Reference_model":
+                    string path = txtReferencePath.Text.Trim();
+
+                    if (string.IsNullOrWhiteSpace(path))
+                        throw new Exception(Resources.ValidationErrorVerfication);
+
+                    if (!File.Exists(path))
+                        throw new Exception(Resources.ValidationErrorVerfication);
+
+                    if (!string.Equals(
+                            Path.GetExtension(path),
+                            "." + category,
+                            StringComparison.OrdinalIgnoreCase))
+                    {
+                        throw new Exception(Resources.ValidationErrorTaskModelMismatchWithReference);
+                    }
+                    break;
+
+                case "Test_cases":
+                    if (testCases.Count == 0)
+                        throw new Exception(Resources.ValidationErrorZeroTaskTest);
+                    break;
+
+                default:
+                    throw new Exception(string.Format(Resources.UnknownModeError, mode));
             }
-            
-            if (string.IsNullOrWhiteSpace(verification))
-                throw new Exception(Resources.ValidationErrorVerfication);
+
+            int maxLength = 0;
+            if (cmbTestWords.SelectedIndex == 0 && !int.TryParse(txtRecursionDepth.Text.Trim(), out maxLength) || maxLength < 0)
+                throw new Exception(Resources.ValidationErrorRecursionDepth);
+            else if (cmbTestWords.SelectedIndex == 1 && testWords.Count == 0 && mode != "Test_cases")
+                throw new Exception(Resources.ValidationErrorZeroTaskTest);
         }
 
         private void AddTaskToXml(
@@ -254,7 +308,8 @@ namespace FEI.TrainingSimulator.Dialogs
             string mode,
             string difficulty,
             string specification,
-            string verification)
+            string verification,
+            string tests)
         {
             XmlDocument doc = new XmlDocument();
 
@@ -291,6 +346,32 @@ namespace FEI.TrainingSimulator.Dialogs
             else
                 AddNode(doc, taskNode, "verification", verification);
 
+            XmlElement inputTestingNode = doc.CreateElement("inputTesting");
+
+            if (cmbTestWords.SelectedIndex == 1)
+            {
+                inputTestingNode.SetAttribute("mode", "Selected_words");
+
+                XmlElement wordsNode = doc.CreateElement("words");
+
+                foreach (string testWord in testWords)
+                {
+                    XmlElement wordNode = doc.CreateElement("word");
+                    wordNode.SetAttribute("value", testWord == "ε" ? "" : testWord);
+
+                    wordsNode.AppendChild(wordNode);
+                }
+
+                inputTestingNode.AppendChild(wordsNode);
+            }
+            else
+            {
+                inputTestingNode.SetAttribute("mode", "Recursive");
+                AddNode(doc, inputTestingNode, "maxLength", tests);
+            }
+            
+            taskNode.AppendChild(inputTestingNode);
+            
             rootNode.AppendChild(taskNode);
 
             doc.Save(fileName);
@@ -338,6 +419,10 @@ namespace FEI.TrainingSimulator.Dialogs
         private void toolTipLabel5_MouseHover(object sender, EventArgs e)
         {
             toolTip1.Show(Resources.ToolTipTestCases,toolTipLabel5);
+        }
+        private void toolTipLabel8_MouseHover(object sender, EventArgs e)
+        {
+            toolTip1.Show(Resources.ToolTipTestWords,toolTipLabel8);
         }
         
         private void btnAdd_Click(object sender, EventArgs e)
@@ -404,5 +489,28 @@ namespace FEI.TrainingSimulator.Dialogs
 
             return "";
         }
+        
+        private void btnAddTestWord_Click(object sender, EventArgs e)
+        {
+            if (!testWords.Contains(txtTestWord.Text))
+            {
+                if (txtTestWord.Text.Equals(" "))
+                    txtTestWord.Text = "ε";
+                
+                lblTestWords.Items.Add(txtTestWord.Text.Trim());
+                testWords.Add(txtTestWord.Text.Trim());
+            }
+        }
+
+        private void btnRemoveTestWord_Click(object sender, EventArgs e)
+        {
+            if (lblTestWords.SelectedIndex >= 0)
+            {
+                string word = lblTestWords.Items[lblTestWords.SelectedIndex].ToString();
+                testWords.Remove(word);
+                lblTestWords.Items.RemoveAt(lblTestWords.SelectedIndex);
+            }
+        }
+        
     }
 }

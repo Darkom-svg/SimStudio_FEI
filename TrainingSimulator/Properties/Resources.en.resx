@@ -202,4 +202,13 @@ Contact the person who assigned the task—your lecturer or teaching assistant.<
     <data name="StudentModelSynatxError" xml:space="preserve">
         <value>Your model contains syntax errors.</value>
     </data>
+    <data name="ToolTipTestWords" xml:space="preserve">
+        <value>Manual test words for verifying the solution.
+
+These tests will be used during the solution review.
+An empty word can be entered as ε or a single space.</value>
+    </data>
+    <data name="ValidationErrorRecursionDepth" xml:space="preserve">
+        <value>Recursion depth is in the wrong format or is empty.</value>
+    </data>
 </root>

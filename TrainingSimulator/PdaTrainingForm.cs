@@ -844,7 +844,18 @@ namespace FEI.TrainingSimulator
             PushdownAutomaton.PushdownAutomaton referenceForAlphabet = CreateReferencePda();
                 
             List<string> alphabet = GetInputAlphabet(referenceForAlphabet);
-            List<string> words = GenerateWords(6, alphabet);
+            List<string> words;
+            
+             if (task.InputTestingMode == "Selected_words")
+            {
+                words = task.InputTestingWords.ToList();
+            }
+            else
+            {
+                words = GenerateWords(
+                    task.InputTestingMaxLength,
+                    alphabet);
+            }
 
             testedWords.Clear();
             testedStates.Clear();

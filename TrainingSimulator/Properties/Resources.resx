@@ -262,4 +262,13 @@ Kontaktujte tvoru úlohy - Vášho prednášajúceho alebo cvičiaceho.</value>
   <data name="StudentModelSynatxError" xml:space="preserve">
     <value>Váš model obsahuje syntaktické chyby.</value>
   </data>
+  <data name="ToolTipTestWords" xml:space="preserve">
+    <value>Manuálne testovacie slová pre overovanie riešenia.
+
+Tieto testy budú použité počas kontroly riešenia.
+Prázdne slovo je možné zadať ako ε alebo jednu medzeru.</value>
+  </data>
+  <data name="ValidationErrorRecursionDepth" xml:space="preserve">
+    <value>Hĺbka rekurzie má nesprávny formát alebo je prázdne.</value>
+  </data>
 </root>

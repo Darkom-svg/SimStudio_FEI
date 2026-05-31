@@ -56,6 +56,9 @@ namespace FEI.TrainingSimulator {
             public string Difficulty { get; set; } = "";
             public string Specification { get; set; } = "";
             public string Verification { get; set; } = "";
+            public string InputTestingMode { get; set; }
+            public int InputTestingMaxLength { get; set; }
+            public List<string> InputTestingWords { get; set; } = new List<string>();
 
         }
 
@@ -78,7 +81,7 @@ namespace FEI.TrainingSimulator {
 
                 foreach (XmlNode taskNode in taskNodes)
                 {
-                    result.Add(new TaskDef
+                    TaskDef task = new TaskDef
                     {
                         Id = ReadNode(taskNode, "id"),
                         Title = ReadNode(taskNode, "title"),
@@ -86,9 +89,42 @@ namespace FEI.TrainingSimulator {
                         Mode = ReadNode(taskNode, "mode"),
                         Difficulty = ReadNode(taskNode, "difficulty"),
                         Specification = ReadNode(taskNode, "specification"),
-                        Verification = ReadNode(taskNode, "verification")
-                    });
+                        Verification = ReadNode(taskNode, "verification"),
+                        InputTestingMode = "Recursive",
+                        InputTestingMaxLength = 7,
+                        InputTestingWords = new List<string>()
+                    };
+
+                    XmlNode inputTestingNode = taskNode.SelectSingleNode("inputTesting");
+
+                    if (inputTestingNode != null)
+                    {
+                        string inputMode =
+                            inputTestingNode.Attributes?["mode"]?.Value ?? "Recursive";
+
+                        task.InputTestingMode = inputMode;
+
+                        if (inputMode == "Recursive")
+                        {
+                            task.InputTestingMaxLength = Convert.ToInt32(inputTestingNode.SelectSingleNode("maxLength")?.InnerText);;
+                        }
+                        else if (inputMode == "Selected_words")
+                        {
+                            XmlNodeList wordNodes =
+                                inputTestingNode.SelectNodes("words/word");
+
+                            foreach (XmlNode wordNode in wordNodes)
+                            {
+                                string word =
+                                    wordNode.Attributes?["value"]?.Value ?? "";
+
+                                task.InputTestingWords.Add(word);
+                            }
+                        }
+                    }
+                    result.Add(task);
                 }
+
                 return result;
             }
 
@@ -350,6 +386,8 @@ namespace FEI.TrainingSimulator {
         {
             var frm = new AddTaskForm(currentTaskSetFile);
             frm.ShowDialog(this);
+            allTasks = TaskStore.Load(currentTaskSetFile);
+            ShowCategory("FA");
         }
     }
 }

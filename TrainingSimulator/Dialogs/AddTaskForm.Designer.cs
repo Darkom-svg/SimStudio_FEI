@@ -68,18 +68,31 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txtWord = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.testWordsPanel = new System.Windows.Forms.Panel();
+            this.btnRemoveTestWord = new System.Windows.Forms.Button();
+            this.lblTestWords = new System.Windows.Forms.ListBox();
+            this.btnAddTestWord = new System.Windows.Forms.Button();
+            this.toolTipLabel8 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtTestWord = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.cmbDifficulty = new System.Windows.Forms.ComboBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.txtRecursionDepth = new System.Windows.Forms.TextBox();
             this.toolTipLabel4 = new System.Windows.Forms.Label();
             this.taskSetPathButton = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.cmbTestWords = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.labelRecursionDepth = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.formulaPanel.SuspendLayout();
             this.regexPanel.SuspendLayout();
             this.referenceModelPanel.SuspendLayout();
             this.testSetPanel.SuspendLayout();
+            this.testWordsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -182,6 +195,7 @@
             this.flowLayoutPanel1.Controls.Add(this.regexPanel);
             this.flowLayoutPanel1.Controls.Add(this.referenceModelPanel);
             this.flowLayoutPanel1.Controls.Add(this.testSetPanel);
+            this.flowLayoutPanel1.Controls.Add(this.testWordsPanel);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             // 
             // formulaPanel
@@ -326,6 +340,59 @@
             resources.ApplyResources(this.label13, "label13");
             this.label13.Name = "label13";
             // 
+            // testWordsPanel
+            // 
+            this.testWordsPanel.Controls.Add(this.btnRemoveTestWord);
+            this.testWordsPanel.Controls.Add(this.lblTestWords);
+            this.testWordsPanel.Controls.Add(this.btnAddTestWord);
+            this.testWordsPanel.Controls.Add(this.toolTipLabel8);
+            this.testWordsPanel.Controls.Add(this.label16);
+            this.testWordsPanel.Controls.Add(this.txtTestWord);
+            this.testWordsPanel.Controls.Add(this.label17);
+            resources.ApplyResources(this.testWordsPanel, "testWordsPanel");
+            this.testWordsPanel.Name = "testWordsPanel";
+            // 
+            // btnRemoveTestWord
+            // 
+            resources.ApplyResources(this.btnRemoveTestWord, "btnRemoveTestWord");
+            this.btnRemoveTestWord.Name = "btnRemoveTestWord";
+            this.btnRemoveTestWord.UseVisualStyleBackColor = true;
+            this.btnRemoveTestWord.Click += new System.EventHandler(this.btnRemoveTestWord_Click);
+            // 
+            // lblTestWords
+            // 
+            this.lblTestWords.FormattingEnabled = true;
+            resources.ApplyResources(this.lblTestWords, "lblTestWords");
+            this.lblTestWords.Name = "lblTestWords";
+            // 
+            // btnAddTestWord
+            // 
+            resources.ApplyResources(this.btnAddTestWord, "btnAddTestWord");
+            this.btnAddTestWord.Name = "btnAddTestWord";
+            this.btnAddTestWord.UseVisualStyleBackColor = true;
+            this.btnAddTestWord.Click += new System.EventHandler(this.btnAddTestWord_Click);
+            // 
+            // toolTipLabel8
+            // 
+            resources.ApplyResources(this.toolTipLabel8, "toolTipLabel8");
+            this.toolTipLabel8.Name = "toolTipLabel8";
+            this.toolTipLabel8.MouseHover += new System.EventHandler(this.toolTipLabel8_MouseHover);
+            // 
+            // label16
+            // 
+            resources.ApplyResources(this.label16, "label16");
+            this.label16.Name = "label16";
+            // 
+            // txtTestWord
+            // 
+            resources.ApplyResources(this.txtTestWord, "txtTestWord");
+            this.txtTestWord.Name = "txtTestWord";
+            // 
+            // label17
+            // 
+            resources.ApplyResources(this.label17, "label17");
+            this.label17.Name = "label17";
+            // 
             // label11
             // 
             resources.ApplyResources(this.label11, "label11");
@@ -341,6 +408,12 @@
             // toolTip1
             // 
             this.toolTip1.BackColor = System.Drawing.SystemColors.HighlightText;
+            // 
+            // txtRecursionDepth
+            // 
+            resources.ApplyResources(this.txtRecursionDepth, "txtRecursionDepth");
+            this.txtRecursionDepth.Name = "txtRecursionDepth";
+            this.toolTip1.SetToolTip(this.txtRecursionDepth, resources.GetString("txtRecursionDepth.ToolTip"));
             // 
             // toolTipLabel4
             // 
@@ -366,11 +439,33 @@
             this.openFileDialog1.FileName = "openFileDialog1";
             resources.ApplyResources(this.openFileDialog1, "openFileDialog1");
             // 
+            // cmbTestWords
+            // 
+            resources.ApplyResources(this.cmbTestWords, "cmbTestWords");
+            this.cmbTestWords.FormattingEnabled = true;
+            this.cmbTestWords.Items.AddRange(new object[] { resources.GetString("cmbTestWords.Items"), resources.GetString("cmbTestWords.Items1") });
+            this.cmbTestWords.Name = "cmbTestWords";
+            this.cmbTestWords.SelectedIndexChanged += new System.EventHandler(this.cmbTestWords_SelectedIndexChanged);
+            // 
+            // label14
+            // 
+            resources.ApplyResources(this.label14, "label14");
+            this.label14.Name = "label14";
+            // 
+            // labelRecursionDepth
+            // 
+            resources.ApplyResources(this.labelRecursionDepth, "labelRecursionDepth");
+            this.labelRecursionDepth.Name = "labelRecursionDepth";
+            // 
             // AddTaskForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
+            this.Controls.Add(this.txtRecursionDepth);
+            this.Controls.Add(this.labelRecursionDepth);
+            this.Controls.Add(this.cmbTestWords);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.toolTipLabel4);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.cmbDifficulty);
@@ -406,9 +501,25 @@
             this.referenceModelPanel.PerformLayout();
             this.testSetPanel.ResumeLayout(false);
             this.testSetPanel.PerformLayout();
+            this.testWordsPanel.ResumeLayout(false);
+            this.testWordsPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Button btnRemoveTestWord;
+        private System.Windows.Forms.ListBox lblTestWords;
+        private System.Windows.Forms.Button btnAddTestWord;
+        private System.Windows.Forms.Label toolTipLabel8;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtTestWord;
+        private System.Windows.Forms.Label label17;
+
+        private System.Windows.Forms.TextBox txtRecursionDepth;
+        private System.Windows.Forms.Label labelRecursionDepth;
+
+        private System.Windows.Forms.ComboBox cmbTestWords;
+        private System.Windows.Forms.Label label14;
 
         private System.Windows.Forms.Button taskSetPathButton;
 
@@ -426,7 +537,7 @@
         private System.Windows.Forms.CheckBox checkBoxFail;
         private System.Windows.Forms.Panel testSetPanel;
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel testWordsPanel;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtWord;
         private System.Windows.Forms.Label label13;

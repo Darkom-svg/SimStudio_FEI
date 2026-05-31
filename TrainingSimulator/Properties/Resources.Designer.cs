@@ -431,6 +431,18 @@ namespace FEI.TrainingSimulator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Manuálne testovacie slová pre overovanie riešenia.
+        ///
+        ///Tieto testy budú použité počas kontroly riešenia.
+        ///Prázdne slovo je možné zadať ako ε alebo jednu medzeru..
+        /// </summary>
+        internal static string ToolTipTestWords {
+            get {
+                return ResourceManager.GetString("ToolTipTestWords", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Trainer {
@@ -512,6 +524,15 @@ namespace FEI.TrainingSimulator.Properties {
         internal static string ValidationErrorModelType {
             get {
                 return ResourceManager.GetString("ValidationErrorModelType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hĺbka rekurzie má nesprávny formát alebo je prázdne..
+        /// </summary>
+        internal static string ValidationErrorRecursionDepth {
+            get {
+                return ResourceManager.GetString("ValidationErrorRecursionDepth", resourceCulture);
             }
         }
         

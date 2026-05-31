@@ -14,9 +14,6 @@
     <data name="$this.Text" xml:space="preserve">
         <value>About Sim Studio program: Random Access Machine</value>
     </data>
-    <data name="bAddTFunction.Text" xml:space="preserve">
-        <value>OK</value>
-    </data>
     <data name="label10.Text" xml:space="preserve">
         <value>Finite Automaton</value>
     </data>
