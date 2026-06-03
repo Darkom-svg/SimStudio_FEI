@@ -303,4 +303,28 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Add task</value>
   </data>
+  <data name="btnAddTestWord.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="btnRemoveTestWord.Text" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+  <data name="cmbTestWords.Items" xml:space="preserve">
+    <value>Recursive</value>
+  </data>
+  <data name="cmbTestWords.Items1" xml:space="preserve">
+    <value>Defined</value>
+  </data>
+  <data name="labelRecursionDepth.Text" xml:space="preserve">
+    <value>Recursion depth*:</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>Word generation method*:</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>Word*:</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>Test words set*:</value>
+  </data>
 </root>

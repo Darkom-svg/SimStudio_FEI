@@ -236,10 +236,4 @@
   <data name="label4.Text" xml:space="preserve">
     <value>Version 1.0 (24.5.2026)</value>
   </data>
-  <data name="label7.Text" xml:space="preserve">
-    <value>Random Access Machine</value>
-  </data>
-  <data name="okButton.Text" xml:space="preserve">
-    <value>OK</value>
-  </data>
 </root>

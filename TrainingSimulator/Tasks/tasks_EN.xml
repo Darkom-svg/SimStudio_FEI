@@ -1,20 +1,16 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='UTF-8'?>
 <tasks>
   <task>
     <id>FA1</id>
-    <title>Párny počet symbolov a</title>
+    <title>Even number of a symbols</title>
     <category>FA</category>
     <mode>Formula</mode>
-    <difficulty>Ľahká</difficulty>
-    <specification><![CDATA[Navrhnite deterministický konečný automat, ktorý rozpoznáva jazyk slov nad abecedou $\{a,b\}$, v ktorých je počet symbolov $a$ párny.
-
-
+    <difficulty>Easy</difficulty>
+    <specification><![CDATA[Design a deterministic finite automaton that recognizes the language of words over the alphabet $\{a,b\}$ in which the number of symbols $a$ is even.
 
 $$L = \{ w \in \{a,b\}^* \mid \#_a(w) = 2n,\ n \in \mathbb{N}_0 \}$$
 
-
-
-To znamená, že slovo môže obsahovať ľubovoľný počet symbolov $b$, ale počet symbolov $a$ musí byť deliteľný číslom 2.]]></specification>
+This means that the word may contain any number of symbols $b$, but the number of symbols $a$ must be divisible by 2.]]></specification>
     <verification>1#a=2n+0</verification>
     <inputTesting mode="Recursive">
       <maxLength>6</maxLength>
@@ -22,19 +18,15 @@ To znamená, že slovo môže obsahovať ľubovoľný počet symbolov $b$, ale p
   </task>
   <task>
     <id>FA2</id>
-    <title>Nepárna dĺžka slova nad {a,b}</title>
+    <title>Odd length words over {a,b}</title>
     <category>FA</category>
     <mode>Formula</mode>
-    <difficulty>Ľahká</difficulty>
-    <specification><![CDATA[Navrhnite deterministický konečný automat, ktorý rozpoznáva jazyk všetkých slov nepárnej dĺžky nad abecedou $\{a,b\}$.
-
-
+    <difficulty>Easy</difficulty>
+    <specification><![CDATA[Design a deterministic finite automaton that recognizes all words of odd length over the alphabet $\{a,b\}$.
 
 $$L = \{ w \in \{a,b\}^* \mid \#_a(w) + \#_b(w) = 2n + 1,\ n \in \mathbb{N}_0 \}$$
 
-
-
-To znamená, že automat prijíma práve tie slová, ktoré majú nepárny počet symbolov.]]></specification>
+This means that the automaton accepts exactly those words that contain an odd number of symbols.]]></specification>
     <verification>#a+#b=2n+1</verification>
     <inputTesting mode="Recursive">
       <maxLength>7</maxLength>
@@ -42,19 +34,15 @@ To znamená, že automat prijíma práve tie slová, ktoré majú nepárny poče
   </task>
   <task>
     <id>FA3</id>
-    <title>Rozdiel počtu a a b deliteľný štyrmi</title>
+    <title>Difference between the number of a and b divisible by four</title>
     <category>FA</category>
     <mode>Formula</mode>
-    <difficulty>Stredná</difficulty>
-    <specification><![CDATA[Navrhnite deterministický konečný automat, ktorý rozpoznáva jazyk slov nad abecedou $\{a,b\}$, v ktorých je rozdiel počtu symbolov $a$ a $b$ deliteľný štyrmi.
-
-
+    <difficulty>Medium</difficulty>
+    <specification><![CDATA[Design a deterministic finite automaton that recognizes the language of words over the alphabet $\{a,b\}$ in which the difference between the number of symbols $a$ and $b$ is divisible by four.
 
 $$L = \{ w \in \{a,b\}^* \mid \#_a(w) - \#_b(w) = 4n,\ n \in \mathbb{Z} \}$$
 
-
-
-Automat teda sleduje rozdiel počtov symbolov $a$ a $b$ modulo 4.]]></specification>
+The automaton therefore tracks the difference between the number of symbols $a$ and $b$ modulo 4.]]></specification>
     <verification>#a-#b=4n</verification>
     <inputTesting mode="Recursive">
       <maxLength>7</maxLength>
@@ -62,13 +50,15 @@ Automat teda sleduje rozdiel počtov symbolov $a$ a $b$ modulo 4.]]></specificat
   </task>
   <task>
     <id>FA4</id>
-    <title>Párne 0 a 1</title>
+    <title>Even number of 0s and 1s</title>
     <category>FA</category>
     <mode>Formula</mode>
-    <difficulty>Ľahká</difficulty>
-    <specification><![CDATA[Navrhnite deterministický konečný automat, príp. jeho stavový diagram, ktorý rozpoznáva jazyk $L_A$
+    <difficulty>Easy</difficulty>
+    <specification><![CDATA[Design a deterministic finite automaton, or its state diagram, that recognizes the language $L_A$.
 
-$$L_A = \{{ w \in \{{0,1\}}^* \mid \#_0 w +\#_1 w = 2n,\; n \in \mathbb{{Z}} \}}$$]]></specification>
+$$L_A = \{ w \in \{0,1\}^* \mid \#_0(w) + \#_1(w) = 2n,\ n \in \mathbb{Z} \}$$
+
+This means that the automaton accepts words of even length over the alphabet $\{0,1\}$.]]></specification>
     <verification>1#0+1#1=2n</verification>
     <inputTesting mode="Recursive">
       <maxLength>6</maxLength>
@@ -76,19 +66,15 @@ $$L_A = \{{ w \in \{{0,1\}}^* \mid \#_0 w +\#_1 w = 2n,\; n \in \mathbb{{Z}} \}}
   </task>
   <task>
     <id>FA5</id>
-    <title>Slová tvaru (ab)*</title>
+    <title>Words of the form (ab)*</title>
     <category>FA</category>
     <mode>Regex</mode>
-    <difficulty>Ľahká</difficulty>
-    <specification><![CDATA[Navrhnite deterministický konečný automat, ktorý rozpoznáva jazyk definovaný regulárnym výrazom $(ab)^*$.
+    <difficulty>Easy</difficulty>
+    <specification><![CDATA[Design a deterministic finite automaton that recognizes the language defined by the regular expression $(ab)^*$.
 
+$$L = \{ w \in \{a,b\}^* \mid w \text{ matches the regular expression } (ab)^* \}$$
 
-
-$$L = \{ w \in \{a,b\}^* \mid w \text{ zodpovedá regulárnemu výrazu } (ab)^* \}$$
-
-
-
-To znamená, že slovo pozostáva z ľubovoľného počtu opakovaní dvojice symbolov $ab$. Prázdne slovo $\varepsilon$ patrí do jazyka.]]></specification>
+This means that the word consists of any number of repetitions of the pair $ab$. The empty word $\varepsilon$ belongs to the language.]]></specification>
     <verification>(ab)*</verification>
     <inputTesting mode="Recursive">
       <maxLength>6</maxLength>
@@ -96,19 +82,15 @@ To znamená, že slovo pozostáva z ľubovoľného počtu opakovaní dvojice sym
   </task>
   <task>
     <id>FA6</id>
-    <title>a*b*</title>
+    <title>Words of the form a*b*</title>
     <category>FA</category>
     <mode>Regex</mode>
-    <difficulty>Ľahká</difficulty>
-    <specification><![CDATA[Navrhnite deterministický konečný automat, ktorý rozpoznáva jazyk definovaný regulárnym výrazom $a^*b^*$.
+    <difficulty>Easy</difficulty>
+    <specification><![CDATA[Design a deterministic finite automaton that recognizes the language defined by the regular expression $a^*b^*$.
 
+$$L = \{ w \in \{a,b\}^* \mid w \text{ matches the regular expression } a^*b^* \}$$
 
-
-$$L = \{ w \in \{a,b\}^* \mid w \text{ zodpovedá regulárnemu výrazu } a^*b^* \}$$
-
-
-
-To znamená, že slovo pozostáva z ľubovoľného počtu symbolov $a$, za ktorými nasleduje ľubovoľný počet symbolov $b$.]]></specification>
+This means that the word consists of any number of symbols $a$ followed by any number of symbols $b$.]]></specification>
     <verification>a*b*</verification>
     <inputTesting mode="Recursive">
       <maxLength>6</maxLength>
@@ -116,19 +98,15 @@ To znamená, že slovo pozostáva z ľubovoľného počtu symbolov $a$, za ktor�
   </task>
   <task>
     <id>FA7</id>
-    <title>Slová končiace na abb</title>
+    <title>Words ending with abb</title>
     <category>FA</category>
     <mode>Regex</mode>
-    <difficulty>Stredná</difficulty>
-    <specification><![CDATA[Navrhnite deterministický konečný automat, ktorý rozpoznáva jazyk všetkých slov nad abecedou $\{a,b\}$ končiacich podslovom $abb$.
+    <difficulty>Medium</difficulty>
+    <specification><![CDATA[Design a deterministic finite automaton that recognizes all words over the alphabet $\{a,b\}$ ending with the substring $abb$.
 
+$$L = \{ w \in \{a,b\}^* \mid w \text{ ends with } abb \}$$
 
-
-$$L = \{ w \in \{a,b\}^* \mid w \text{ končí na } abb \}$$
-
-
-
-Príklady slov patriacich do jazyka: $abb$, $aabb$, $bababb$.]]></specification>
+Examples of words belonging to the language: $abb$, $aabb$, $bababb$.]]></specification>
     <verification>(a|b)*abb</verification>
     <inputTesting mode="Recursive">
       <maxLength>7</maxLength>
@@ -136,19 +114,15 @@ Príklady slov patriacich do jazyka: $abb$, $aabb$, $bababb$.]]></specification>
   </task>
   <task>
     <id>FA8</id>
-    <title>Slová neobsahujúce aaa</title>
+    <title>Words not containing aaa</title>
     <category>FA</category>
     <mode>Reference_model</mode>
-    <difficulty>Tažká</difficulty>
-    <specification><![CDATA[Navrhnite deterministický konečný automat, ktorý rozpoznáva jazyk slov nad abecedou $\{a,b\}$, ktoré neobsahujú podslovo $aaa$.
+    <difficulty>Hard</difficulty>
+    <specification><![CDATA[Design a deterministic finite automaton that recognizes the language of words over the alphabet $\{a,b\}$ that do not contain the substring $aaa$.
 
+$$L = \{ w \in \{a,b\}^* \mid aaa \text{ is not a substring of } w \}$$
 
-
-$$L = \{ w \in \{a,b\}^* \mid aaa \text{ nie je podslovom } w \}$$
-
-
-
-Automat má odmietnuť každé slovo, v ktorom sa nachádzajú aspoň tri po sebe idúce symboly $a$.]]></specification>
+The automaton must reject every word containing at least three consecutive symbols $a$.]]></specification>
     <verification><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <turingmachine>
 	<meta>
@@ -290,19 +264,15 @@ Automat má odmietnuť každé slovo, v ktorom sa nachádzajú aspoň tri po seb
   </task>
   <task>
     <id>FA9</id>
-    <title>Slová neobsahuje aa ani bbb</title>
+    <title>Words not containing aa or bbb</title>
     <category>FA</category>
     <mode>Reference_model</mode>
-    <difficulty>Tažká</difficulty>
-    <specification><![CDATA[Navrhnite deterministický konečný automat, ktorý rozpoznáva jazyk všetkých slov nad abecedou {a,b}, ktoré neobsahujú podslová aa ani bbb.
-
-
+    <difficulty>Hard</difficulty>
+    <specification><![CDATA[Design a deterministic finite automaton that recognizes all words over the alphabet $\{a,b\}$ that do not contain the substrings $aa$ or $bbb$.
 
 $$L = \{ w \in \{a,b\}^* \mid aa \not\subseteq w \land bbb \not\subseteq w \}$$
 
-
-
-To znamená, že slovo nesmie obsahovať dva po sebe idúce symboly a ani tri po sebe idúce symboly b.]]></specification>
+This means that the word must not contain two consecutive symbols $a$ or three consecutive symbols $b$.]]></specification>
     <verification><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <turingmachine>
 	<meta>
@@ -470,19 +440,15 @@ To znamená, že slovo nesmie obsahovať dva po sebe idúce symboly a ani tri po
   </task>
   <task>
     <id>FA10</id>
-    <title>Podslovo abba</title>
+    <title>Substring abba</title>
     <category>FA</category>
     <mode>Reference_model</mode>
-    <difficulty>Stredná</difficulty>
-    <specification><![CDATA[Navrhnite deterministický konečný automat, ktorý rozpoznáva jazyk všetkých slov nad abecedou {a,b}, ktoré obsahujú aspoň jedno podslovo abba.
+    <difficulty>Medium</difficulty>
+    <specification><![CDATA[Design a deterministic finite automaton that recognizes all words over the alphabet $\{a,b\}$ that contain at least one occurrence of the substring $abba$.
 
+$$L = \{ w \in \{a,b\}^* \mid w \text{ contains the substring } abba \}$$
 
-
-$$L = \{ w \in \{a,b\}^* \mid w \text{ obsahuje podslovo } abba \}$$
-
-
-
-To znamená, že podslovo abba sa v slove nachádza aspoň raz.]]></specification>
+This means that the substring $abba$ appears in the word at least once.]]></specification>
     <verification><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <turingmachine>
 	<meta>
@@ -643,19 +609,15 @@ To znamená, že podslovo abba sa v slove nachádza aspoň raz.]]></specificatio
   </task>
   <task>
     <id>FA11</id>
-    <title>Každé a je nasledované symbolom b</title>
+    <title>Every a is followed by b</title>
     <category>FA</category>
     <mode>Regex</mode>
-    <difficulty>Stredná</difficulty>
-    <specification><![CDATA[Navrhnite deterministický konečný automat, ktorý rozpoznáva jazyk všetkých slov nad abecedou {a,b}, v ktorých po každom symbole a bezprostredne nasleduje symbol b.
+    <difficulty>Medium</difficulty>
+    <specification><![CDATA[Design a deterministic finite automaton that recognizes all words over the alphabet $\{a,b\}$ in which every symbol $a$ is immediately followed by the symbol $b$.
 
+$$L = \{ w \in \{a,b\}^* \mid \forall a \text{ in } w \text{, the following symbol is } b \}$$
 
-
-$$L = \{ w \in \{a,b\}^* \mid \forall a \text{ v } w \text{ platí, že nasledujúci symbol je } b \}$$
-
-
-
-Žiadny symbol a sa nesmie nachádzať na konci slova ani pred ďalším symbolom a.]]></specification>
+No symbol $a$ may appear at the end of the word or immediately before another symbol $a$.]]></specification>
     <verification>(b|ab)*</verification>
     <inputTesting mode="Recursive">
       <maxLength>6</maxLength>
@@ -663,25 +625,21 @@ $$L = \{ w \in \{a,b\}^* \mid \forall a \text{ v } w \text{ platí, že nasleduj
   </task>
   <task>
     <id>PA1</id>
-    <title>Slová tvaru aⁿbⁿ</title>
+    <title>Words of the form a^n b^n</title>
     <category>PDA</category>
     <mode>Reference_model</mode>
-    <difficulty>Ľahká</difficulty>
-    <specification><![CDATA[Navrhnite zásobníkový automat, ktorý rozpoznáva jazyk slov tvaru $a^n b^n$.
-
-
+    <difficulty>Easy</difficulty>
+    <specification><![CDATA[Design a pushdown automaton that recognizes the language of words of the form $a^n b^n$.
 
 $$L = \{ a^n b^n \mid n \geq 0 \}$$
 
-
-
-To znamená, že počet symbolov $a$ musí byť rovnaký ako počet symbolov $b$ a zároveń všetky symboly $a$ musia byť pred symbolmi $b$.]]></specification>
+This means that the number of symbols $a$ must be equal to the number of symbols $b$, and all symbols $a$ must appear before the symbols $b$.]]></specification>
     <verification><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <turingmachine>
 	<meta>
 		<author />
-		<title>1. Slová tvaru a^n b^n</title>
-        <description>Rozpoznávanie slov tvaru a^n b^n, kde n ≥ 0</description>
+		<title>1. Words of the form a^n b^n</title>
+        <description>Recognition of words of the form a^n b^n, where n ≥ 0</description>
 		<created>8. 5. 2026 21:16:22</created>
 		<modified>8. 5. 2026 21:16:22</modified>
 	</meta>
@@ -776,19 +734,15 @@ To znamená, že počet symbolov $a$ musí byť rovnaký ako počet symbolov $b$
   </task>
   <task>
     <id>PA2</id>
-    <title>Slová tvaru aⁿbⁿc*</title>
+    <title>Words of the form a^n b^n c*</title>
     <category>PDA</category>
     <mode>Reference_model</mode>
-    <difficulty>Stredná</difficulty>
-    <specification><![CDATA[Navrhnite zásobníkový automat, ktorý rozpoznáva jazyk slov tvaru $a^n b^n c^k$.
-
-
+    <difficulty>Medium</difficulty>
+    <specification><![CDATA[Design a pushdown automaton that recognizes the language of words of the form $a^n b^n c^k$.
 
 $$L = \{ a^n b^n c^k \mid n,k \geq 0 \}$$
 
-
-
-Počet symbolov $a$ a $b$ musí byť rovnaký. Za nimi môže nasledovať ľubovoľný počet symbolov $c$.]]></specification>
+The number of symbols $a$ and $b$ must be equal. They may be followed by any number of symbols $c$.]]></specification>
     <verification><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <turingmachine>
 	<meta>
@@ -936,18 +890,15 @@ Počet symbolov $a$ a $b$ musí byť rovnaký. Za nimi môže nasledovať ľubov
   </task>
   <task>
     <id>PA3</id>
-    <title>Vyvážené zátvorky ( )</title>
+    <title>Balanced parentheses ( )</title>
     <category>PDA</category>
     <mode>Reference_model</mode>
-    <difficulty>Stredná</difficulty>
-    <specification><![CDATA[Navrhnite zásobníkový automat, ktorý rozpoznáva jazyk správne uzátvorkovaných výrazov.
+    <difficulty>Medium</difficulty>
+    <specification><![CDATA[Design a pushdown automaton that recognizes the language of correctly balanced parenthesized expressions.
 
+$$L = \{ w \in \{(,)\}^* \mid w \text{ is correctly balanced} \}$$
 
-$$L = \{ w \in \{(,)\}^* \mid w \text{ je správne uzátvorkované} \}$$
-
-
-
-Každá otváracia zátvorka musí mať zodpovedajúcu zatváraciu zátvorku.]]></specification>
+Every opening parenthesis must have a corresponding closing parenthesis.]]></specification>
     <verification><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <turingmachine>
 	<meta>
@@ -1031,43 +982,37 @@ Každá otváracia zátvorka musí mať zodpovedajúcu zatváraciu zátvorku.]]>
 </turingmachine>]]></verification>
     <inputTesting mode="Selected_words">
       <words>
-        <word value="" />
-        <word value="(" />
-        <word value="()" />
-        <word value="(())" />
-        <word value="()()" />
-        <word value="((()))" />
-        <word value="(()())" />
-        <word value=")" />
-        <word value="(()" />
-        <word value="())" />
-        <word value="())(" />
-        <word value="(()))((" />
-        <word value="(()(()()))()" />
+        <word value=""/>
+        <word value="("/>
+        <word value="()"/>
+        <word value="(())"/>
+        <word value="()()"/>
+        <word value="((()))"/>
+        <word value="(()())"/>
+        <word value=")"/>
+        <word value="(()"/>
+        <word value="())"/>
+        <word value="())("/>
+        <word value="(()))(("/>
+        <word value="(()(()()))()"/>
       </words>
     </inputTesting>
   </task>
   <task>
     <id>PA4</id>
-    <title>Vyvážene ( ) a [ ] zátvorky</title>
+    <title>Balanced parentheses ( ) and [ ]</title>
     <category>PDA</category>
     <mode>Reference_model</mode>
-    <difficulty>Tažká</difficulty>
-    <specification><![CDATA[Navrhnite zásobníkový automat, ktorý rozpoznáva jazyk správne uzátvorkovaných výrazov nad abecedou obsahujúcou zátvorky () a [].
-
-
+    <difficulty>Hard</difficulty>
+    <specification><![CDATA[Design a pushdown automaton that recognizes the language of correctly balanced expressions over the alphabet containing the brackets () and [].
 
 $$
-L = \{ w \in \{(,),[,]\}^* \mid w \text{ je správne uzátvorkované} \}
+L = \{ w \in \{(,),[,]\}^* \mid w \text{ is correctly balanced} \}
 $$
 
+Every opening bracket must have a corresponding closing bracket of the same type, and the brackets must be correctly nested.
 
-
-Každá otváracia zátvorka musí mať zodpovedajúcu zatváraciu zátvorku rovnakého typu a zároveń musia byť zátvorky správne vnorené.
-
-
-
-Príklady slov patriacich do jazyka:
+Examples of words belonging to the language:
 
 $$
 \varepsilon,\ (),\ [],\ ([]),\ [()],\ (()[])
@@ -1210,66 +1155,61 @@ $$]]></specification>
 </turingmachine>]]></verification>
     <inputTesting mode="Selected_words">
       <words>
-        <word value="" />
-        <word value="(" />
-        <word value="((" />
-        <word value="(()" />
-        <word value="(())" />
-        <word value="[" />
-        <word value="]" />
-        <word value="[]" />
-        <word value="[[][]]" />
-        <word value="[()()]" />
-        <word value="(()]" />
-        <word value="[](" />
-        <word value="(()[])" />
-        <word value="[[]]" />
-        <word value="([)]" />
-        <word value="((([[][]][])())[])" />
-        <word value="((([])()))" />
+        <word value=""/>
+        <word value="("/>
+        <word value="(("/>
+        <word value="(()"/>
+        <word value="(())"/>
+        <word value="["/>
+        <word value="]"/>
+        <word value="[]"/>
+        <word value="[[][]]"/>
+        <word value="[()()]"/>
+        <word value="(()]"/>
+        <word value="[]("/>
+        <word value="(()[])"/>
+        <word value="[[]]"/>
+        <word value="([)]"/>
+        <word value="((([[][]][])())[])"/>
+        <word value="((([])()))"/>
       </words>
     </inputTesting>
   </task>
   <task>
     <id>PA5</id>
-    <title>Palindrómy z množiny {a,b}*</title>
+    <title>Palindromes over {a,b}*</title>
     <category>PDA</category>
     <mode>Test_cases</mode>
-    <difficulty>Tažká</difficulty>
-    <specification><![CDATA[avrhnite zásobníkový automat, ktorý rozpoznáva jazyk všetkých palindrómov párnej dĺžky nad abecedou {a,b}.
-
-
+    <difficulty>Hard</difficulty>
+    <specification><![CDATA[Design a pushdown automaton that recognizes the language of all even-length palindromes over the alphabet $\{a,b\}$.
 
 $$
 L = \{ ww^R \mid w \in \{a,b\}^* \}
 $$
 
+This means that the second half of the word is the reverse of the first half.
 
-
-To znamená, že druhá polovica slova je zrkadlovým obrazom prvej polovice.
-
-
-
-Príklady slov patriacich do jazyka:
+Examples of words belonging to the language:
 
 $$
-\varepsilon,\ aa,\ bb,\ abba,\ baab,\ aabbaa]]></specification>
+\varepsilon,\ aa,\ bb,\ abba,\ baab,\ aabbaa
+$$]]></specification>
     <verification><![CDATA[<tests><test word="" expected="accept" /><test word="aa" expected="accept" /><test word="abba" expected="accept" /><test word="bb" expected="accept" /><test word="baab" expected="accept" /><test word="aabbaa" expected="accept" /><test word="abaaba" expected="accept" /><test word="abbaabba" expected="accept" /><test word="aaabbbbaaa" expected="accept" /><test word="baaabbbbaaab" expected="accept" /><test word="a" expected="reject" /><test word="b" expected="reject" /><test word="ab" expected="reject" /><test word="ba" expected="reject" /><test word="bba" expected="reject" /><test word="aab" expected="reject" /><test word="aba" expected="reject" /><test word="bab" expected="reject" /><test word="bbaa" expected="reject" /><test word="aabb" expected="reject" /><test word="aabab" expected="reject" /><test word="aaba" expected="reject" /><test word="bbab" expected="reject" /><test word="bbabb" expected="reject" /><test word="bbba" expected="reject" /></tests>]]></verification>
     <inputTesting mode="Selected_words">
-      <words />
+      <words/>
     </inputTesting>
   </task>
   <task>
     <id>TM1</id>
-    <title>Slová tvaru aⁿb²ⁿ</title>
+    <title>Words of the form a^n b^{2n}</title>
     <category>TM</category>
     <mode>Reference_model</mode>
-    <difficulty>Ľahká</difficulty>
-    <specification><![CDATA[Navrhnite Turingov stroj, ktorý rozpoznáva jazyk slov tvaru $a^n b^{2n}$.
+    <difficulty>Easy</difficulty>
+    <specification><![CDATA[Design a Turing machine that recognizes the language of words of the form $a^n b^{2n}$.
 
-$$L = \{ a^n b^{2n} \mid n \geq 0 \}$$ 
+$$L = \{ a^n b^{2n} \mid n \geq 0 \}$$
 
-To znamená, že za každý symbol $a$ musia byť práve dva symboly $b$.]]></specification>
+This means that for each symbol $a$ there must be exactly two symbols $b$.]]></specification>
     <verification><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <turingmachine>
 	<meta>
@@ -1446,34 +1386,34 @@ To znamená, že za každý symbol $a$ musia byť práve dva symboly $b$.]]></sp
 				<comment />
 			</transition>
 		</transitions>
-		<code>// Označ prvé neoznačené a
+		<code>// Mark the first unmarked a
 δ(q0,a) = (q1,a_,R)
 
-// Preskoč všetky neoznačené a
+// Skip all unmarked a symbols
 δ(q1,a) = (q1,a,R)
 
-// Nájdi prvé neoznačené b a označ ho
+// Find the first unmarked b and mark it
 δ(q1,b_) = (q1,b_,R)
 δ(q1,b) = (q2,b_,R)
 
-// Nájdi druhé neoznačené b a označ ho
+// Find the second unmarked b and mark it
 δ(q2,b_) = (q2,b_,R)
 δ(q2,b) = (q3,b_,L)
 
-// Vráť sa naspäť doľava k označenému a
+// Return left to the marked a
 δ(q3,b_) = (q3,b_,L)
 δ(q3,b) = (q3,b,L)
 δ(q3,a) = (q3,a,L)
 δ(q3,a_) = (q0,a_,R)
 
-// Ak už nie je žiadne a, skontroluj, či ostali iba označené b
+// If there is no unmarked a left, check that only marked b symbols remain
 δ(q0,b_) = (q4,b_,R)
 δ(q4,b_) = (q4,b_,R)
 
-// Ak narazíme na koniec pásky, prijímame
+// If the end of the tape is reached, accept
 δ(q4,Blank) = (qf,Blank,R)
 
-// Prázdne slovo
+// Empty word
 δ(q0,Blank) = (qf,Blank,R)</code>
 	</machine>
 </turingmachine>]]></verification>
@@ -1483,28 +1423,22 @@ To znamená, že za každý symbol $a$ musia byť práve dva symboly $b$.]]></sp
   </task>
   <task>
     <id>TM2</id>
-    <title>Násobenie unárnych čísel</title>
+    <title>Unary number multiplication</title>
     <category>TM</category>
     <mode>Reference_model</mode>
-    <difficulty>Tažká</difficulty>
-    <specification><![CDATA[Navrhnite Turingov stroj, ktorý realizuje násobenie dvoch unárne zapísaných čísel.
-
-
+    <difficulty>Hard</difficulty>
+    <specification><![CDATA[Design a Turing machine that performs multiplication of two unary numbers.
 
 $$
 L = \{ 1^m * 1^n = 1^{m \cdot n} \mid m,n \geq 0 \}
 $$
 
+The input is written in the form $1^m * 1^n =$.
 
+The Turing machine must write the multiplication result in unary form after the symbol $=$.
 
-Vstup je zapísaný v tvare $1^m * 1^n =$.
+Examples:
 
-
-Turingov stroj má za znak $=$ dopísať výsledok násobenia v unárnom tvare.
-
-
-
-Príklady:
 $
 1*1= \rightarrow 1*1=1
 $
@@ -1514,7 +1448,7 @@ $
 $
 
 $
-111*11= \rightarrow 111*111=111111111
+111*11= \rightarrow 111*11=111111
 $]]></specification>
     <verification><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <turingmachine>
@@ -1822,55 +1756,55 @@ $]]></specification>
 				<comment />
 			</transition>
 		</transitions>
-		<code>// Nájdeme ešte nespracovanú jednotku z ľavého čísla
+		<code>// Find the next unprocessed unary symbol of the left number
 δ(q0,1) = (q1,X,R)
 δ(q0,X) = (q0,X,R)
 δ(q0,*) = (qClean,*,L)
 
 
-// Prejdeme k pravému číslu
+// Move to the right number
 δ(q1,1) = (q1,1,R)
 δ(q1,X) = (q1,X,R)
 δ(q1,*) = (q2,*,R)
 
 
-// Hľadáme jednotku v pravom čísle
+// Find a unary symbol in the right number
 δ(q2,Y) = (q2,Y,R)
 δ(q2,1) = (q3,Y,R)
 δ(q2,=) = (q5,=,L)
 
 
-// Prejdeme za znak =
+// Move past the = symbol
 δ(q3,1) = (q3,1,R)
 δ(q3,Y) = (q3,Y,R)
 δ(q3,=) = (q4,=,R)
 
 
-// Nájdeme koniec výsledku a pripíšeme 1
+// Find the end of the result and append 1
 δ(q4,1) = (q4,1,R)
 δ(q4,Blank) = (qBack,1,L)
 
 
-// Vrátime sa k začiatku pravého čísla
+// Return to the beginning of the right number
 δ(qBack,1) = (qBack,1,L)
 δ(qBack,Y) = (qBack,Y,L)
 δ(qBack,=) = (qBack,=,L)
 δ(qBack,*) = (q2,*,R)
 
 
-// Obnovíme pravé číslo: Y -&gt; 1
+// Restore the right number: Y -> 1
 δ(q5,Y) = (q5,1,L)
 δ(q5,1) = (q5,1,L)
 δ(q5,*) = (q6,*,L)
 
 
-// Vrátime sa na začiatok ľavého čísla
+// Return to the beginning of the left number
 δ(q6,X) = (q6,X,L)
 δ(q6,1) = (q6,1,L)
 δ(q6,Blank) = (q0,Blank,R)
 
 
-// Upratovanie: X -&gt; 1
+// Cleanup: X -> 1
 δ(qClean,X) = (qClean,1,L)
 δ(qClean,1) = (qClean,1,L)
 δ(qClean,Blank) = (qf,Blank,R)</code>
@@ -1878,50 +1812,53 @@ $]]></specification>
 </turingmachine>]]></verification>
     <inputTesting mode="Selected_words">
       <words>
-        <word value="1*1=" />
-        <word value="11*1=" />
-        <word value="1*11=" />
-        <word value="11*11=" />
-        <word value="111*11=" />
-        <word value="11*111=" />
-        <word value="111*111=" />
-        <word value="1111*1=" />
-        <word value="1111*11=" />
-        <word value="1111*11111=" />
-        <word value="1=" />
-        <word value="11=" />
-        <word value="111*11" />
-        <word value="1*1" />
+        <word value="1*1="/>
+        <word value="11*1="/>
+        <word value="1*11="/>
+        <word value="11*11="/>
+        <word value="111*11="/>
+        <word value="11*111="/>
+        <word value="111*111="/>
+        <word value="1111*1="/>
+        <word value="1111*11="/>
+        <word value="1111*11111="/>
+        <word value="1="/>
+        <word value="11="/>
+        <word value="111*11"/>
+        <word value="1*1"/>
       </words>
     </inputTesting>
   </task>
   <task>
     <id>TM3</id>
-    <title>Odčítanie unárnych čísel</title>
+    <title>Unary number subtraction</title>
     <category>TM</category>
     <mode>Reference_model</mode>
-    <difficulty>Stredná</difficulty>
-    <specification><![CDATA[Navrhnite Turingov stroj, ktorý realizuje odčítanie dvoch unárne zapísaných čísel.
+    <difficulty>Medium</difficulty>
+    <specification><![CDATA[Design a Turing machine that performs subtraction of two unary numbers.
 
 $$
 L = \{ 1^m - 1^n = 1^{m-n} \mid m,n \geq 0 \land m \geq n \}
 $$
 
-Vstup je zapísaný v tvare $1^m - 1^n =$.
-Turingov stroj má za znak $=$ dopísať výsledok odčítania v unárnom tvare.
+The input is written in the form $1^m - 1^n =$.
+The Turing machine must write the subtraction result in unary form after the symbol $=$.
 
-Príklady:
+Examples:
+
 $
 111-1= \rightarrow 111-1=11
 $
+
 $
 11111-11= \rightarrow 11111-11=111
 $
+
 $
 111-111= \rightarrow 111-111=
 $
 
-Predpokladáme, že prvé číslo je väčšie alebo rovné druhému číslu.]]></specification>
+We assume that the first number is greater than or equal to the second number.]]></specification>
     <verification><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <turingmachine>
 	<meta>
@@ -2304,7 +2241,7 @@ Predpokladáme, že prvé číslo je väčšie alebo rovné druhému číslu.]]>
 				<comment />
 			</transition>
 		</transitions>
-		<code>// Nájdeme jednotku v druhom čísle
+		<code>// Find a unary symbol in the second number
 δ(q0,1) = (q0,1,R)
 δ(q0,-) = (q1,-,R)
 
@@ -2313,36 +2250,36 @@ Predpokladáme, že prvé číslo je väčšie alebo rovné druhému číslu.]]>
 δ(q1,=) = (qCopy,=,L)
 
 
-// Vrátime sa doľava k prvému číslu
+// Return left to the first number
 δ(q2,Y) = (q2,Y,L)
 δ(q2,1) = (q2,1,L)
 δ(q2,-) = (q3,-,L)
 
 
-// Nájdeme neoznačenú jednotku v prvom čísle a označíme ju
+// Find an unmarked unary symbol in the first number and mark it
 δ(q3,X) = (q3,X,L)
 δ(q3,1) = (q4,X,R)
 
 
-// Vrátime sa späť k druhému číslu
+// Return to the second number
 δ(q4,X) = (q4,X,R)
 δ(q4,1) = (q4,1,R)
 δ(q4,-) = (q1,-,R)
 
 
-// Kopírovanie zvyšných jednotiek prvého čísla za =
+// Copy the remaining unary symbols of the first number after =
 δ(qCopy,Y) = (qCopy,Y,L)
 δ(qCopy,1) = (qCopy,1,L)
 δ(qCopy,-) = (qFindLeft,-,L)
 
 
-// Hľadáme zvyšnú neoznačenú 1 v prvom čísle
+// Find the remaining unmarked 1 in the first number
 δ(qFindLeft,X) = (qFindLeft,X,L)
 δ(qFindLeft,1) = (qMarkCopy,X,R)
 δ(qFindLeft,Blank) = (qClean,Blank,R)
 
 
-// Prejdeme za = a pripíšeme výsledkovú 1
+// Move past = and append a result 1
 δ(qMarkCopy,X) = (qMarkCopy,X,R)
 δ(qMarkCopy,1) = (qMarkCopy,1,R)
 δ(qMarkCopy,-) = (qMarkCopy,-,R)
@@ -2353,14 +2290,14 @@ Predpokladáme, že prvé číslo je väčšie alebo rovné druhému číslu.]]>
 δ(qWriteResult,Blank) = (qReturnLeft,1,L)
 
 
-// Návrat na začiatok pre ďalšie kopírovanie
+// Return to the beginning for further copying
 δ(qReturnLeft,1) = (qReturnLeft,1,L)
 δ(qReturnLeft,=) = (qReturnLeft,=,L)
 δ(qReturnLeft,Y) = (qReturnLeft,Y,L)
 δ(qReturnLeft,-) = (qFindLeft,-,L)
 
 
-// Upratovanie: X a Y obnovíme na 1
+// Cleanup: X a Y restore na 1
 δ(qClean,X) = (qClean,1,R)
 δ(qClean,1) = (qClean,1,R)
 δ(qClean,-) = (qClean,-,R)
@@ -2370,50 +2307,44 @@ Predpokladáme, že prvé číslo je väčšie alebo rovné druhému číslu.]]>
 </turingmachine>]]></verification>
     <inputTesting mode="Selected_words">
       <words>
-        <word value="1-1=" />
-        <word value="11-1=" />
-        <word value="111-1=" />
-        <word value="111-11=" />
-        <word value="111-111=" />
-        <word value="1111-11=" />
-        <word value="11111-11=" />
-        <word value="11111-111=" />
-        <word value="1" />
-        <word value="1=" />
-        <word value="1-11=" />
-        <word value="11-11" />
-        <word value="11-111" />
-        <word value="11-111=" />
+        <word value="1-1="/>
+        <word value="11-1="/>
+        <word value="111-1="/>
+        <word value="111-11="/>
+        <word value="111-111="/>
+        <word value="1111-11="/>
+        <word value="11111-11="/>
+        <word value="11111-111="/>
+        <word value="1"/>
+        <word value="1="/>
+        <word value="1-11="/>
+        <word value="11-11"/>
+        <word value="11-111"/>
+        <word value="11-111="/>
       </words>
     </inputTesting>
   </task>
   <task>
     <id>TM4</id>
-    <title>Slová tvaru a^n b^n c^n</title>
+    <title>Words of the form a^n b^n c^n</title>
     <category>TM</category>
     <mode>Reference_model</mode>
-    <difficulty>Stredná</difficulty>
-    <specification><![CDATA[Navrhnite Turingov stroj, ktorý rozpoznáva jazyk slov tvaru $a^n b^n c^n$.
-
-
+    <difficulty>Medium</difficulty>
+    <specification><![CDATA[Design a Turing machine that recognizes the language of words of the form $a^n b^n c^n$.
 
 $$
 L = \{ a^n b^n c^n \mid n \geq 0 \}
 $$
 
+This means that the word consists of the same number of symbols $a$, $b$ and $c$, where all symbols $a$ come first, followed by all symbols $b$, and finally all symbols $c$.
 
-
-To znamená, že slovo pozostáva z rovnakého počtu symbolov $a$, $b$ a $c$, pričom najskôr sa nachádzajú všetky symboly $a$, potom všetky symboly $b$ a nakoniec všetky symboly $c$.
-
-
-
-Príklady slov patriacich do jazyka:
+Examples of words belonging to the language:
 
 $$
 \varepsilon,\ abc,\ aabbcc,\ aaabbbccc
 $$
 
-Príklady slov nepatriacich do jazyka:
+Examples of words not belonging to the language:
 
 $$
 ab,\ abbcc,\ aabcc,\ abcc,\ acb
@@ -2709,19 +2640,19 @@ $$]]></specification>
 </turingmachine>]]></verification>
     <inputTesting mode="Selected_words">
   	<words>
-    	   <word value="" />
-    	   <word value="abc" />
-   	   <word value="aabbcc" />
-  	   <word value="aaabbbccc" />
-  	   <word value="aaaabbbbcccc" />
-       	   <word value="ab" />
-           <word value="abbcc" />
-    	   <word value="aabcc" />
-    	   <word value="abcc" />
-    	   <word value="acb" />
-    	   <word value="aaabbccc" />
-    	   <word value="aabbc" />
-    	   <word value="aabbbcc" />
+    	   <word value=""/>
+    	   <word value="abc"/>
+   	   <word value="aabbcc"/>
+  	   <word value="aaabbbccc"/>
+  	   <word value="aaaabbbbcccc"/>
+       	   <word value="ab"/>
+           <word value="abbcc"/>
+    	   <word value="aabcc"/>
+    	   <word value="abcc"/>
+    	   <word value="acb"/>
+    	   <word value="aaabbccc"/>
+    	   <word value="aabbc"/>
+    	   <word value="aabbbcc"/>
   	</words>
      </inputTesting>
   </task>

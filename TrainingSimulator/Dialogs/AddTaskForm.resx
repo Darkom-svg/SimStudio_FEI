@@ -1642,7 +1642,7 @@
     <value>42</value>
   </data>
   <data name="labelRecursionDepth.Text" xml:space="preserve">
-    <value>Hĺbka rekurzie:</value>
+    <value>Hĺbka rekurzi*e:</value>
   </data>
   <data name="&gt;&gt;labelRecursionDepth.Name" xml:space="preserve">
     <value>labelRecursionDepth</value>

@@ -4,10 +4,12 @@ using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Xml;
 using System.Windows.Forms;
 using FEI.SimStudio.Components;
 using FEI.TrainingSimulator.Dialogs;
+using FEI.TrainingSimulator.Properties;
 
 namespace FEI.TrainingSimulator {
     public partial class MainTrainingForm : Form
@@ -25,9 +27,13 @@ namespace FEI.TrainingSimulator {
                 flowLayoutPanel2.WrapContents = false;
                 flowLayoutPanel2.FlowDirection = FlowDirection.TopDown;
             }
+            string language =
+                Thread.CurrentThread.CurrentUICulture.TwoLetterISOLanguageName;
 
-            currentTaskSetFile = Properties.Settings.Default.TaskSetPath;
-
+            currentTaskSetFile = language == "en"
+                ? "Tasks/tasks_EN.xml"
+                : "Tasks/tasks.xml";
+            
             try
             {
                 allTasks = TaskStore.Load(currentTaskSetFile);
@@ -35,7 +41,7 @@ namespace FEI.TrainingSimulator {
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    "Nepodarilo sa načítať tasks.xml.\n\n" + ex.Message,
+                    Resources.LoadErrorTaskSet + ex.Message,
                     appTitle,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -146,8 +152,8 @@ namespace FEI.TrainingSimulator {
                 Id = category + "_Random",
                 Mode = "Formula",
                 Category = category,
-                Title = "Nahodný príklad",
-                Difficulty = "stredná"
+                Title = Resources.RandomTask,
+                Difficulty = Resources.Medium
             };
 
             if (category.Equals("FA"))
@@ -160,7 +166,7 @@ namespace FEI.TrainingSimulator {
                 String y = rnd.Next(1, modulo).ToString();
 
                 randTask.Specification = $@"
-                Navrhnite deterministický konečný automat, príp. jeho stavový diagram, ktorý rozpoznáva jazyk $L_A$
+                {Resources.RandomTaskSpecMedium}
 
                 $$L_A = \{{ w \in \{{a,b,c\}}^* \mid {i}\#_a w {j}\#_b w {k}\#_c w = {modulo}n + {y},\; n \in \mathbb{{Z}} \}}$$
                 ";
@@ -181,7 +187,8 @@ namespace FEI.TrainingSimulator {
 
                 var tasks = allTasks
                     .Where(t => string.Equals(t.Category, category, StringComparison.OrdinalIgnoreCase))
-                    .OrderBy(t => t.Id)
+                    .OrderBy(t => SortByODifficulty(t.Difficulty))
+                    .ThenBy(t => t.Id)
                     .ThenBy(t => t.Title);
 
                 foreach (var task in tasks)
@@ -195,6 +202,23 @@ namespace FEI.TrainingSimulator {
                 flowLayoutPanel2.ResumeLayout(true);
             }
             ResizeCardsInFlowPanel(flowLayoutPanel2);
+        }
+        
+        private int SortByODifficulty(string difficulty)
+        {
+            if (string.Equals(difficulty, "Ľahká", StringComparison.OrdinalIgnoreCase) ||
+                string.Equals(difficulty, "Easy", StringComparison.OrdinalIgnoreCase))
+                return 1;
+
+            if (string.Equals(difficulty, "Stredná", StringComparison.OrdinalIgnoreCase) ||
+                string.Equals(difficulty, "Medium", StringComparison.OrdinalIgnoreCase))
+                return 2;
+
+            if (string.Equals(difficulty, "Ťažká", StringComparison.OrdinalIgnoreCase) ||
+                string.Equals(difficulty, "Hard", StringComparison.OrdinalIgnoreCase))
+                return 3;
+
+            return 10;
         }
 
         private Control CreateTaskCard(TaskDef task)
@@ -216,12 +240,13 @@ namespace FEI.TrainingSimulator {
                 Location = new Point(15, 10),
                 Size = new Size(200, 22),
                 Font = new Font("Calibri", 14F, FontStyle.Bold),
-                AutoEllipsis = true
+                AutoEllipsis = true,
+                Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right
             };
 
             var lblMeta = new Label
             {
-                Text = $"Obtiažnosť: {task.Difficulty}",
+                Text = $@"{Resources.Difficulty}: {task.Difficulty}",
                 Location = new Point(15, 40),
                 Size = new Size(200, 22),
                 AutoEllipsis = true
@@ -232,7 +257,7 @@ namespace FEI.TrainingSimulator {
                 Anchor = AnchorStyles.Top | AnchorStyles.Right,
                 Location = new Point(260, 40),
                 Size = new Size(110, 22),
-                Text = "Začať",
+                Text = Resources.Begin,
                 UseVisualStyleBackColor = true,
             };
             btnOpen.Click += (_, __) => OpenTask(task);
@@ -351,9 +376,8 @@ namespace FEI.TrainingSimulator {
             if (selectedDir != null && !selectedDir.Equals(tasksDir, StringComparison.OrdinalIgnoreCase))
             {
                 DialogResult result = MessageBox.Show(
-                    "Vybraný súbor sa nenachádza v priečinku príkladov.\n\n" +
-                    "Chcete ho skopírovať do priečinka príkladov a používať odtiaľ?",
-                    "Sada príkladov",
+                    Resources.TaskSetCopyFile,
+                    Resources.TestSet,
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question);
 
@@ -375,7 +399,7 @@ namespace FEI.TrainingSimulator {
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    "Nepodarilo sa načítať vybranú sadu príkladov.\n\n" + ex.Message,
+                    Resources.LoadErrorTaskSet + ex.Message,
                     Text,
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);

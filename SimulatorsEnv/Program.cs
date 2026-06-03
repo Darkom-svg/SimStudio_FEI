@@ -19,14 +19,16 @@ namespace FEI.SimStudio {
             
             string language = Properties.Settings.Default.Language;
 
-            if (string.IsNullOrWhiteSpace(language))
-                    language = "sk";
-
-            Thread.CurrentThread.CurrentUICulture =
-                new CultureInfo(language);
-
-            Thread.CurrentThread.CurrentCulture =
-                new CultureInfo(language);
+            if (language == "en")
+            {
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
+                Thread.CurrentThread.CurrentCulture = new CultureInfo("en");
+            }
+            else
+            {
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("sk");
+                Thread.CurrentThread.CurrentCulture = new CultureInfo("sk");
+            }
             
             Application.Run(new MainForm());
         }

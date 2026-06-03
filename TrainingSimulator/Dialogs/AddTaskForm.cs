@@ -132,7 +132,7 @@ namespace FEI.TrainingSimulator.Dialogs
                 string verification = "";
 
                 if (mode == "Formula")
-                    verification = txtFormula.Text.Trim();
+                    verification = txtFormula.Text.Trim().Replace(" ","");
                 else if (mode == "Regex")
                     verification = txtRegex.Text.Trim();
                 else if (mode == "Reference_model")

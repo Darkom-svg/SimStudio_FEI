@@ -143,11 +143,38 @@ namespace FEI.TrainingSimulator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Začať.
+        /// </summary>
+        internal static string Begin {
+            get {
+                return ResourceManager.GetString("Begin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Riešenie je správne.
         /// </summary>
         internal static string Correct {
             get {
                 return ResourceManager.GetString("Correct", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Obtiažnosť.
+        /// </summary>
+        internal static string Difficulty {
+            get {
+                return ResourceManager.GetString("Difficulty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ľahká.
+        /// </summary>
+        internal static string Easy {
+            get {
+                return ResourceManager.GetString("Easy", resourceCulture);
             }
         }
         
@@ -179,6 +206,15 @@ namespace FEI.TrainingSimulator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Tažká.
+        /// </summary>
+        internal static string Hard {
+            get {
+                return ResourceManager.GetString("Hard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to počiatočný stav.
         /// </summary>
         internal static string InitialState {
@@ -193,6 +229,24 @@ namespace FEI.TrainingSimulator.Properties {
         internal static string InvalidExpectedValue {
             get {
                 return ResourceManager.GetString("InvalidExpectedValue", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nepodarilo sa načítať vybranú sadu príkladov..
+        /// </summary>
+        internal static string LoadErrorTaskSet {
+            get {
+                return ResourceManager.GetString("LoadErrorTaskSet", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Stredná.
+        /// </summary>
+        internal static string Medium {
+            get {
+                return ResourceManager.GetString("Medium", resourceCulture);
             }
         }
         
@@ -221,6 +275,24 @@ namespace FEI.TrainingSimulator.Properties {
         internal static string PushdownAutomaton {
             get {
                 return ResourceManager.GetString("PushdownAutomaton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Náhodný príkad.
+        /// </summary>
+        internal static string RandomTask {
+            get {
+                return ResourceManager.GetString("RandomTask", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Navrhnite deterministický konečný automat, príp. jeho stavový diagram, ktorý rozpoznáva jazyk $L_A$.
+        /// </summary>
+        internal static string RandomTaskSpecMedium {
+            get {
+                return ResourceManager.GetString("RandomTaskSpecMedium", resourceCulture);
             }
         }
         
@@ -326,6 +398,19 @@ namespace FEI.TrainingSimulator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 
+        ///Vybraný súbor sa nenachádza v priečinku príkladov.
+        ///
+        ///Chcete ho skopírovať do priečinka príkladov a používať odtiaľ?
+        ///    .
+        /// </summary>
+        internal static string TaskSetCopyFile {
+            get {
+                return ResourceManager.GetString("TaskSetCopyFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Špecifikácia zadania.
         /// </summary>
         internal static string TaskSpecification {
@@ -349,6 +434,15 @@ namespace FEI.TrainingSimulator.Properties {
         internal static string TestCases {
             get {
                 return ResourceManager.GetString("TestCases", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Sada príkladov.
+        /// </summary>
+        internal static string TestSet {
+            get {
+                return ResourceManager.GetString("TestSet", resourceCulture);
             }
         }
         

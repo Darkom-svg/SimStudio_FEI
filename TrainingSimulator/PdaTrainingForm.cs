@@ -533,7 +533,6 @@ namespace FEI.TrainingSimulator
                 PushdownAutomaton.Save(fileName, txtCode.Text);
 				
                 openFileName = fileName;
-                this.Text = openFileName.Substring(openFileName.LastIndexOf("\\") + 1) + " - " + this.Text;
             }
         }
         
@@ -584,7 +583,6 @@ namespace FEI.TrainingSimulator
                 ParseTFunctions(txtCode.Text);
 				
                 openFileName = fileName;
-                this.Text = openFileName.Substring(openFileName.LastIndexOf("\\") + 1) + " - " + this.Text;
             }
             else if (fileName.EndsWith(".jff"))
             {
@@ -1058,12 +1056,22 @@ namespace FEI.TrainingSimulator
                     pTests.Width - 14,
                     rowHeight - 6);
 
-                Color borderColor;
+                Color textColor = Color.Black;
+                Color borderColor = Color.Gray;
 
-                if (testedStates[i] == "Chyba")
-                    borderColor = Color.Red;
+                if (testedStates[i] == Resources.Accept)
+                {
+                    textColor = Color.Green;
+                }
+                else if (testedStates[i] == Resources.Reject)
+                {
+                    textColor = Color.Red;
+                }
                 else
-                    borderColor = Color.Green;
+                {
+                    textColor = Color.Red;
+                    borderColor = Color.Red;
+                }
 
                 using (Pen pen = new Pen(borderColor, 2))
                 {
@@ -1077,7 +1085,6 @@ namespace FEI.TrainingSimulator
                 else
                     wordText = testedWords[i];
 
-                // ľavý text
                 g.DrawString(
                     wordText,
                     Font,
@@ -1085,15 +1092,17 @@ namespace FEI.TrainingSimulator
                     rect.X + 8,
                     rect.Y + 7);
 
-                // pravý text
                 SizeF stateSize = g.MeasureString(testedStates[i], Font);
 
-                g.DrawString(
-                    testedStates[i],
-                    Font,
-                    Brushes.Black,
-                    rect.Right - stateSize.Width - 8,
-                    rect.Y + 7);
+                using (Brush brush = new SolidBrush(textColor))
+                {
+                    g.DrawString(
+                        testedStates[i],
+                        Font,
+                        brush,
+                        rect.Right - stateSize.Width - 8,
+                        rect.Y + 7);
+                }
 
                 y += rowHeight;
             }

@@ -271,4 +271,38 @@ Prázdne slovo je možné zadať ako ε alebo jednu medzeru.</value>
   <data name="ValidationErrorRecursionDepth" xml:space="preserve">
     <value>Hĺbka rekurzie má nesprávny formát alebo je prázdne.</value>
   </data>
+  <data name="Difficulty" xml:space="preserve">
+    <value>Obtiažnosť</value>
+  </data>
+  <data name="Begin" xml:space="preserve">
+    <value>Začať</value>
+  </data>
+  <data name="TestSet" xml:space="preserve">
+    <value>Sada príkladov</value>
+  </data>
+  <data name="TaskSetCopyFile" xml:space="preserve">
+    <value>
+Vybraný súbor sa nenachádza v priečinku príkladov.
+
+Chcete ho skopírovať do priečinka príkladov a používať odtiaľ?
+    </value>
+  </data>
+  <data name="LoadErrorTaskSet" xml:space="preserve">
+    <value>Nepodarilo sa načítať vybranú sadu príkladov.</value>
+  </data>
+  <data name="RandomTaskSpecMedium" xml:space="preserve">
+    <value>Navrhnite deterministický konečný automat, príp. jeho stavový diagram, ktorý rozpoznáva jazyk $L_A$</value>
+  </data>
+  <data name="RandomTask" xml:space="preserve">
+    <value>Náhodný príkad</value>
+  </data>
+  <data name="Easy" xml:space="preserve">
+    <value>Ľahká</value>
+  </data>
+  <data name="Medium" xml:space="preserve">
+    <value>Stredná</value>
+  </data>
+  <data name="Hard" xml:space="preserve">
+    <value>Tažká</value>
+  </data>
 </root>

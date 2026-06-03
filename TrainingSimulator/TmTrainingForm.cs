@@ -522,7 +522,6 @@ namespace FEI.TrainingSimulator
                 TuringMachine.Save(fileName, txtCode.Text);
 				
                 openFileName = fileName;
-                this.Text = openFileName.Substring(openFileName.LastIndexOf("\\") + 1) + " - " + this.Text;
             }
         }
         
@@ -577,7 +576,6 @@ namespace FEI.TrainingSimulator
                 ParseTFunctions(txtCode.Text);
 
                 openFileName = fileName;
-                this.Text = Path.GetFileName(openFileName) + " - " + this.Text;
             }
             else if (fileName.EndsWith(".jff", StringComparison.OrdinalIgnoreCase))
             {
@@ -735,9 +733,16 @@ namespace FEI.TrainingSimulator
             for (int i = 0; i < tm.FunctionCount; i++)
             {
                 string symbol = tm.Function(i).ReadSymbol;
+                if (string.IsNullOrWhiteSpace(symbol))
+                    continue;
 
-                if (!string.IsNullOrEmpty(symbol) && symbol != "Blank")
-                    alphabet.Add(symbol);
+                if (symbol == "Blank")
+                    continue;
+
+                if (symbol.Length != 1)
+                    continue;
+
+                alphabet.Add(symbol);
             }
 
             return alphabet.OrderBy(x => x).ToList();
@@ -824,7 +829,7 @@ namespace FEI.TrainingSimulator
             tm.ActiveTapes = InfiniteTape.DeepCopyTapes(tm.OriginalTapes);
             tm.CurrentState = tm.StartState;
 
-            int maxSteps = 500;
+            int maxSteps = Math.Max(1000, word.Length * word.Length * 100);;
 
             for (int step = 0; step < maxSteps; step++)
             {
@@ -1061,13 +1066,23 @@ namespace FEI.TrainingSimulator
                     y,
                     pTests.Width - 14,
                     rowHeight - 6);
+                
+                Color textColor = Color.Black;
+                Color borderColor = Color.Gray;
 
-                Color borderColor;
-
-                if (testedStates[i] == "Chyba")
-                    borderColor = Color.Red;
+                if (testedStates[i] == Resources.Accept)
+                {
+                    textColor = Color.Green;
+                }
+                else if (testedStates[i] == Resources.Reject)
+                {
+                    textColor = Color.Red;
+                }
                 else
-                    borderColor = Color.Green;
+                {
+                    textColor = Color.Red;
+                    borderColor = Color.Red;
+                }
 
                 using (Pen pen = new Pen(borderColor, 2))
                 {
@@ -1081,7 +1096,6 @@ namespace FEI.TrainingSimulator
                 else
                     wordText = testedWords[i];
 
-                // ľavý text
                 g.DrawString(
                     wordText,
                     Font,
@@ -1089,15 +1103,17 @@ namespace FEI.TrainingSimulator
                     rect.X + 8,
                     rect.Y + 7);
 
-                // pravý text
                 SizeF stateSize = g.MeasureString(testedStates[i], Font);
 
-                g.DrawString(
-                    testedStates[i],
-                    Font,
-                    Brushes.Black,
-                    rect.Right - stateSize.Width - 8,
-                    rect.Y + 7);
+                using (Brush brush = new SolidBrush(textColor))
+                {
+                    g.DrawString(
+                        testedStates[i],
+                        Font,
+                        brush,
+                        rect.Right - stateSize.Width - 8,
+                        rect.Y + 7);
+                }
 
                 y += rowHeight;
             }

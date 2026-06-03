@@ -211,4 +211,36 @@ An empty word can be entered as ε or a single space.</value>
     <data name="ValidationErrorRecursionDepth" xml:space="preserve">
         <value>Recursion depth is in the wrong format or is empty.</value>
     </data>
+    <data name="Difficulty" xml:space="preserve">
+        <value>Difficulty</value>
+    </data>
+    <data name="Begin" xml:space="preserve">
+        <value>Begin</value>
+    </data>
+    <data name="TestSet" xml:space="preserve">
+        <value>Test set</value>
+    </data>
+    <data name="TaskSetCopyFile" xml:space="preserve">
+        <value>Selected file is not located in the tasks folder.
+
+Would you like to copy it to tasks folder and use it from there?</value>
+    </data>
+    <data name="LoadErrorTaskSet" xml:space="preserve">
+        <value>The selected tasks set could not be loaded.</value>
+    </data>
+    <data name="RandomTaskSpecMedium" xml:space="preserve">
+        <value>Design a deterministic finite automaton, or its state diagram, that recognizes the language $L_A$</value>
+    </data>
+    <data name="RandomTask" xml:space="preserve">
+        <value>Random task</value>
+    </data>
+    <data name="Medium" xml:space="preserve">
+        <value>Medium</value>
+    </data>
+    <data name="Easy" xml:space="preserve">
+        <value>Easy</value>
+    </data>
+    <data name="Hard" xml:space="preserve">
+        <value>Hard</value>
+    </data>
 </root>

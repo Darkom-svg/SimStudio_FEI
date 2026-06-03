@@ -34,6 +34,25 @@ namespace FEI.TrainingSimulator
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TmTrainingForm));
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.tcMain = new System.Windows.Forms.TabControl();
+            this.taskSpecificationTab = new System.Windows.Forms.TabPage();
+            this.taskSpecification = new System.Windows.Forms.WebBrowser();
+            this.functionsTab = new System.Windows.Forms.TabPage();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.bAddTFunction = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtCode = new FEI.SimStudio.Components.Controls.SyntaxTextBox();
+            this.pTests = new System.Windows.Forms.PictureBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.sbyTests = new System.Windows.Forms.VScrollBar();
+            this.statesTab = new System.Windows.Forms.TabPage();
+            this.bAddState = new System.Windows.Forms.Button();
+            this.stateDiagramControl = new FEI.TuringCore.Components.StateDiagramControl();
+            this.formalSpecificationTab = new System.Windows.Forms.TabPage();
+            this.formalSpecifiaction = new System.Windows.Forms.WebBrowser();
+            this.lstErrors = new System.Windows.Forms.ListBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.toolStripPanel1 = new System.Windows.Forms.ToolStripPanel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.miFile = new System.Windows.Forms.ToolStripMenuItem();
@@ -102,31 +121,8 @@ namespace FEI.TrainingSimulator
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.statusLabel = new System.Windows.Forms.ToolStripStatusLabel();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.tcMain = new System.Windows.Forms.TabControl();
-            this.taskSpecificationTab = new System.Windows.Forms.TabPage();
-            this.taskSpecification = new System.Windows.Forms.WebBrowser();
-            this.functionsTab = new System.Windows.Forms.TabPage();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.bAddTFunction = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtCode = new FEI.SimStudio.Components.Controls.SyntaxTextBox();
-            this.pTests = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.sbyTests = new System.Windows.Forms.VScrollBar();
-            this.statesTab = new System.Windows.Forms.TabPage();
-            this.bAddState = new System.Windows.Forms.Button();
-            this.stateDiagramControl = new FEI.TuringCore.Components.StateDiagramControl();
-            this.formalSpecificationTab = new System.Windows.Forms.TabPage();
-            this.formalSpecifiaction = new System.Windows.Forms.WebBrowser();
-            this.lstErrors = new System.Windows.Forms.ListBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.toolStripPanel1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            this.mainToolStrip.SuspendLayout();
-            this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -141,7 +137,161 @@ namespace FEI.TrainingSimulator
             ((System.ComponentModel.ISupportInitialize)(this.pTests)).BeginInit();
             this.statesTab.SuspendLayout();
             this.formalSpecificationTab.SuspendLayout();
+            this.toolStripPanel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.mainToolStrip.SuspendLayout();
+            this.statusStrip.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // splitContainer2
+            // 
+            resources.ApplyResources(this.splitContainer2, "splitContainer2");
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.tcMain);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.lstErrors);
+            this.splitContainer2.Panel2.Controls.Add(this.label7);
+            this.splitContainer2.Panel2Collapsed = true;
+            // 
+            // tcMain
+            // 
+            resources.ApplyResources(this.tcMain, "tcMain");
+            this.tcMain.Controls.Add(this.taskSpecificationTab);
+            this.tcMain.Controls.Add(this.functionsTab);
+            this.tcMain.Controls.Add(this.statesTab);
+            this.tcMain.Controls.Add(this.formalSpecificationTab);
+            this.tcMain.Name = "tcMain";
+            this.tcMain.SelectedIndex = 0;
+            this.tcMain.SelectedIndexChanged += new System.EventHandler(this.tcMain_SelectedIndexChanged);
+            // 
+            // taskSpecificationTab
+            // 
+            this.taskSpecificationTab.Controls.Add(this.taskSpecification);
+            resources.ApplyResources(this.taskSpecificationTab, "taskSpecificationTab");
+            this.taskSpecificationTab.Name = "taskSpecificationTab";
+            this.taskSpecificationTab.UseVisualStyleBackColor = true;
+            // 
+            // taskSpecification
+            // 
+            this.taskSpecification.AllowWebBrowserDrop = false;
+            resources.ApplyResources(this.taskSpecification, "taskSpecification");
+            this.taskSpecification.Name = "taskSpecification";
+            this.taskSpecification.WebBrowserShortcutsEnabled = false;
+            // 
+            // functionsTab
+            // 
+            this.functionsTab.Controls.Add(this.splitContainer1);
+            resources.ApplyResources(this.functionsTab, "functionsTab");
+            this.functionsTab.Name = "functionsTab";
+            this.functionsTab.UseVisualStyleBackColor = true;
+            // 
+            // splitContainer1
+            // 
+            resources.ApplyResources(this.splitContainer1, "splitContainer1");
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.bAddTFunction);
+            this.splitContainer1.Panel1.Controls.Add(this.label5);
+            this.splitContainer1.Panel1.Controls.Add(this.txtCode);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.pTests);
+            this.splitContainer1.Panel2.Controls.Add(this.label6);
+            this.splitContainer1.Panel2.Controls.Add(this.sbyTests);
+            // 
+            // bAddTFunction
+            // 
+            resources.ApplyResources(this.bAddTFunction, "bAddTFunction");
+            this.bAddTFunction.Name = "bAddTFunction";
+            this.bAddTFunction.UseVisualStyleBackColor = true;
+            this.bAddTFunction.Click += new System.EventHandler(this.bAddTFunction_Click);
+            // 
+            // label5
+            // 
+            resources.ApplyResources(this.label5, "label5");
+            this.label5.Name = "label5";
+            // 
+            // txtCode
+            // 
+            resources.ApplyResources(this.txtCode, "txtCode");
+            this.txtCode.HideSelection = true;
+            this.txtCode.Name = "txtCode";
+            this.txtCode.SelectedText = "";
+            this.txtCode.SelectionLength = 0;
+            this.txtCode.SelectionStart = 0;
+            // 
+            // pTests
+            // 
+            resources.ApplyResources(this.pTests, "pTests");
+            this.pTests.Name = "pTests";
+            this.pTests.TabStop = false;
+            this.pTests.Paint += new System.Windows.Forms.PaintEventHandler(this.pTests_Paint);
+            this.pTests.Resize += new System.EventHandler(this.pTests_Resize);
+            // 
+            // label6
+            // 
+            resources.ApplyResources(this.label6, "label6");
+            this.label6.Name = "label6";
+            // 
+            // sbyTests
+            // 
+            resources.ApplyResources(this.sbyTests, "sbyTests");
+            this.sbyTests.Name = "sbyTests";
+            this.sbyTests.Scroll += new System.Windows.Forms.ScrollEventHandler(this.sbyTests_Scroll);
+            // 
+            // statesTab
+            // 
+            this.statesTab.Controls.Add(this.bAddState);
+            this.statesTab.Controls.Add(this.stateDiagramControl);
+            resources.ApplyResources(this.statesTab, "statesTab");
+            this.statesTab.Name = "statesTab";
+            this.statesTab.UseVisualStyleBackColor = true;
+            // 
+            // bAddState
+            // 
+            resources.ApplyResources(this.bAddState, "bAddState");
+            this.bAddState.Name = "bAddState";
+            this.bAddState.UseVisualStyleBackColor = true;
+            this.bAddState.Click += new System.EventHandler(this.bAddState_Click);
+            // 
+            // stateDiagramControl
+            // 
+            resources.ApplyResources(this.stateDiagramControl, "stateDiagramControl");
+            this.stateDiagramControl.Name = "stateDiagramControl";
+            this.stateDiagramControl.TuringMachine = null;
+            // 
+            // formalSpecificationTab
+            // 
+            this.formalSpecificationTab.Controls.Add(this.formalSpecifiaction);
+            resources.ApplyResources(this.formalSpecificationTab, "formalSpecificationTab");
+            this.formalSpecificationTab.Name = "formalSpecificationTab";
+            this.formalSpecificationTab.UseVisualStyleBackColor = true;
+            // 
+            // formalSpecifiaction
+            // 
+            this.formalSpecifiaction.AllowWebBrowserDrop = false;
+            resources.ApplyResources(this.formalSpecifiaction, "formalSpecifiaction");
+            this.formalSpecifiaction.Name = "formalSpecifiaction";
+            this.formalSpecifiaction.WebBrowserShortcutsEnabled = false;
+            // 
+            // lstErrors
+            // 
+            resources.ApplyResources(this.lstErrors, "lstErrors");
+            this.lstErrors.FormattingEnabled = true;
+            this.lstErrors.Name = "lstErrors";
+            // 
+            // label7
+            // 
+            resources.ApplyResources(this.label7, "label7");
+            this.label7.Name = "label7";
             // 
             // toolStripPanel1
             // 
@@ -550,156 +700,6 @@ namespace FEI.TrainingSimulator
             this.statusLabel.Name = "statusLabel";
             resources.ApplyResources(this.statusLabel, "statusLabel");
             // 
-            // splitContainer2
-            // 
-            resources.ApplyResources(this.splitContainer2, "splitContainer2");
-            this.splitContainer2.Name = "splitContainer2";
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.tcMain);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.lstErrors);
-            this.splitContainer2.Panel2.Controls.Add(this.label7);
-            this.splitContainer2.Panel2Collapsed = true;
-            // 
-            // tcMain
-            // 
-            resources.ApplyResources(this.tcMain, "tcMain");
-            this.tcMain.Controls.Add(this.taskSpecificationTab);
-            this.tcMain.Controls.Add(this.functionsTab);
-            this.tcMain.Controls.Add(this.statesTab);
-            this.tcMain.Controls.Add(this.formalSpecificationTab);
-            this.tcMain.Name = "tcMain";
-            this.tcMain.SelectedIndex = 0;
-            this.tcMain.SelectedIndexChanged += new System.EventHandler(this.tcMain_SelectedIndexChanged);
-            // 
-            // taskSpecificationTab
-            // 
-            this.taskSpecificationTab.Controls.Add(this.taskSpecification);
-            resources.ApplyResources(this.taskSpecificationTab, "taskSpecificationTab");
-            this.taskSpecificationTab.Name = "taskSpecificationTab";
-            this.taskSpecificationTab.UseVisualStyleBackColor = true;
-            // 
-            // taskSpecification
-            // 
-            this.taskSpecification.AllowWebBrowserDrop = false;
-            resources.ApplyResources(this.taskSpecification, "taskSpecification");
-            this.taskSpecification.Name = "taskSpecification";
-            this.taskSpecification.WebBrowserShortcutsEnabled = false;
-            // 
-            // functionsTab
-            // 
-            this.functionsTab.Controls.Add(this.splitContainer1);
-            resources.ApplyResources(this.functionsTab, "functionsTab");
-            this.functionsTab.Name = "functionsTab";
-            this.functionsTab.UseVisualStyleBackColor = true;
-            // 
-            // splitContainer1
-            // 
-            resources.ApplyResources(this.splitContainer1, "splitContainer1");
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.bAddTFunction);
-            this.splitContainer1.Panel1.Controls.Add(this.label5);
-            this.splitContainer1.Panel1.Controls.Add(this.txtCode);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.pTests);
-            this.splitContainer1.Panel2.Controls.Add(this.label6);
-            this.splitContainer1.Panel2.Controls.Add(this.sbyTests);
-            // 
-            // bAddTFunction
-            // 
-            resources.ApplyResources(this.bAddTFunction, "bAddTFunction");
-            this.bAddTFunction.Name = "bAddTFunction";
-            this.bAddTFunction.UseVisualStyleBackColor = true;
-            this.bAddTFunction.Click += new System.EventHandler(this.bAddTFunction_Click);
-            // 
-            // label5
-            // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.Name = "label5";
-            // 
-            // txtCode
-            // 
-            resources.ApplyResources(this.txtCode, "txtCode");
-            this.txtCode.HideSelection = true;
-            this.txtCode.Name = "txtCode";
-            this.txtCode.SelectedText = "";
-            this.txtCode.SelectionLength = 0;
-            this.txtCode.SelectionStart = 0;
-            // 
-            // pTests
-            // 
-            resources.ApplyResources(this.pTests, "pTests");
-            this.pTests.Name = "pTests";
-            this.pTests.TabStop = false;
-            this.pTests.Paint += new System.Windows.Forms.PaintEventHandler(this.pTests_Paint);
-            this.pTests.Resize += new System.EventHandler(this.pTests_Resize);
-            // 
-            // label6
-            // 
-            resources.ApplyResources(this.label6, "label6");
-            this.label6.Name = "label6";
-            // 
-            // sbyTests
-            // 
-            resources.ApplyResources(this.sbyTests, "sbyTests");
-            this.sbyTests.Name = "sbyTests";
-            this.sbyTests.Scroll += new System.Windows.Forms.ScrollEventHandler(this.sbyTests_Scroll);
-            // 
-            // statesTab
-            // 
-            this.statesTab.Controls.Add(this.bAddState);
-            this.statesTab.Controls.Add(this.stateDiagramControl);
-            resources.ApplyResources(this.statesTab, "statesTab");
-            this.statesTab.Name = "statesTab";
-            this.statesTab.UseVisualStyleBackColor = true;
-            // 
-            // bAddState
-            // 
-            resources.ApplyResources(this.bAddState, "bAddState");
-            this.bAddState.Name = "bAddState";
-            this.bAddState.UseVisualStyleBackColor = true;
-            this.bAddState.Click += new System.EventHandler(this.bAddState_Click);
-            // 
-            // stateDiagramControl
-            // 
-            resources.ApplyResources(this.stateDiagramControl, "stateDiagramControl");
-            this.stateDiagramControl.Name = "stateDiagramControl";
-            this.stateDiagramControl.TuringMachine = null;
-            // 
-            // formalSpecificationTab
-            // 
-            this.formalSpecificationTab.Controls.Add(this.formalSpecifiaction);
-            resources.ApplyResources(this.formalSpecificationTab, "formalSpecificationTab");
-            this.formalSpecificationTab.Name = "formalSpecificationTab";
-            this.formalSpecificationTab.UseVisualStyleBackColor = true;
-            // 
-            // formalSpecifiaction
-            // 
-            this.formalSpecifiaction.AllowWebBrowserDrop = false;
-            resources.ApplyResources(this.formalSpecifiaction, "formalSpecifiaction");
-            this.formalSpecifiaction.Name = "formalSpecifiaction";
-            this.formalSpecifiaction.WebBrowserShortcutsEnabled = false;
-            // 
-            // lstErrors
-            // 
-            resources.ApplyResources(this.lstErrors, "lstErrors");
-            this.lstErrors.FormattingEnabled = true;
-            this.lstErrors.Name = "lstErrors";
-            // 
-            // label7
-            // 
-            resources.ApplyResources(this.label7, "label7");
-            this.label7.Name = "label7";
-            // 
             // saveFileDialog1
             // 
             this.saveFileDialog1.DefaultExt = "tm";
@@ -719,14 +719,6 @@ namespace FEI.TrainingSimulator
             this.Controls.Add(this.statusStrip);
             this.Name = "TmTrainingForm";
             this.Load += new System.EventHandler(this.frmTuringMachine_Load);
-            this.toolStripPanel1.ResumeLayout(false);
-            this.toolStripPanel1.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.mainToolStrip.ResumeLayout(false);
-            this.mainToolStrip.PerformLayout();
-            this.statusStrip.ResumeLayout(false);
-            this.statusStrip.PerformLayout();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
             this.splitContainer2.Panel2.PerformLayout();
@@ -744,6 +736,14 @@ namespace FEI.TrainingSimulator
             ((System.ComponentModel.ISupportInitialize)(this.pTests)).EndInit();
             this.statesTab.ResumeLayout(false);
             this.formalSpecificationTab.ResumeLayout(false);
+            this.toolStripPanel1.ResumeLayout(false);
+            this.toolStripPanel1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.mainToolStrip.ResumeLayout(false);
+            this.mainToolStrip.PerformLayout();
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
         }
