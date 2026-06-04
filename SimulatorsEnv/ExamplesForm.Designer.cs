@@ -31,20 +31,6 @@
         {
             System.Windows.Forms.Button TuringTrain;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ExamplesForm));
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.miFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.miNewFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.miOpenFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
-            this.miSaveFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.miSaveAsFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.miExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtFind = new System.Windows.Forms.ToolStripTextBox();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.miAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.miniToolStrip = new System.Windows.Forms.StatusStrip();
-            this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.roundedPanel1 = new FEI.SimStudio.Components.RoundedPanel();
@@ -63,9 +49,21 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.roundedPanel7 = new FEI.SimStudio.Components.RoundedPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.miFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.miNewFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.miOpenFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.miSaveFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.miSaveAsFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
+            this.miExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtFind = new System.Windows.Forms.ToolStripTextBox();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.miniToolStrip = new System.Windows.Forms.StatusStrip();
+            this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             TuringTrain = new System.Windows.Forms.Button();
-            this.menuStrip1.SuspendLayout();
-            this.miniToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -78,6 +76,8 @@
             this.roundedPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.roundedPanel7.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
+            this.miniToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // TuringTrain
@@ -86,92 +86,6 @@
             TuringTrain.Name = "TuringTrain";
             TuringTrain.UseVisualStyleBackColor = true;
             TuringTrain.Click += new System.EventHandler(this.TuringTrain_Click);
-            // 
-            // menuStrip1
-            // 
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miFile, this.txtFind, this.helpToolStripMenuItem });
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.TabStop = true;
-            // 
-            // miFile
-            // 
-            this.miFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miNewFile, this.miOpenFile, this.toolStripMenuItem1, this.miSaveFile, this.miSaveAsFile, this.toolStripMenuItem2, this.miExit });
-            this.miFile.MergeAction = System.Windows.Forms.MergeAction.Insert;
-            this.miFile.MergeIndex = 1;
-            this.miFile.Name = "miFile";
-            resources.ApplyResources(this.miFile, "miFile");
-            // 
-            // miNewFile
-            // 
-            resources.ApplyResources(this.miNewFile, "miNewFile");
-            this.miNewFile.Name = "miNewFile";
-            // 
-            // miOpenFile
-            // 
-            resources.ApplyResources(this.miOpenFile, "miOpenFile");
-            this.miOpenFile.Name = "miOpenFile";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
-            // 
-            // miSaveFile
-            // 
-            resources.ApplyResources(this.miSaveFile, "miSaveFile");
-            this.miSaveFile.Name = "miSaveFile";
-            // 
-            // miSaveAsFile
-            // 
-            this.miSaveAsFile.Name = "miSaveAsFile";
-            resources.ApplyResources(this.miSaveAsFile, "miSaveAsFile");
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
-            // 
-            // miExit
-            // 
-            this.miExit.Name = "miExit";
-            resources.ApplyResources(this.miExit, "miExit");
-            // 
-            // txtFind
-            // 
-            this.txtFind.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.txtFind.Name = "txtFind";
-            resources.ApplyResources(this.txtFind, "txtFind");
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miAbout });
-            this.helpToolStripMenuItem.MergeAction = System.Windows.Forms.MergeAction.MatchOnly;
-            this.helpToolStripMenuItem.MergeIndex = 10;
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
-            // 
-            // miAbout
-            // 
-            this.miAbout.MergeAction = System.Windows.Forms.MergeAction.Replace;
-            this.miAbout.Name = "miAbout";
-            resources.ApplyResources(this.miAbout, "miAbout");
-            this.miAbout.Click += new System.EventHandler(this.miAbout_Click);
-            // 
-            // miniToolStrip
-            // 
-            resources.ApplyResources(this.miniToolStrip, "miniToolStrip");
-            this.miniToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.lblStatus });
-            this.miniToolStrip.Name = "miniToolStrip";
-            this.miniToolStrip.TabStop = true;
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.Margin = new System.Windows.Forms.Padding(0, 3, 10, 2);
-            this.lblStatus.MergeAction = System.Windows.Forms.MergeAction.Replace;
-            this.lblStatus.MergeIndex = 0;
-            this.lblStatus.Name = "lblStatus";
-            resources.ApplyResources(this.lblStatus, "lblStatus");
             // 
             // splitContainer1
             // 
@@ -313,6 +227,92 @@
             this.flowLayoutPanel2.CausesValidation = false;
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             // 
+            // menuStrip1
+            // 
+            resources.ApplyResources(this.menuStrip1, "menuStrip1");
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miFile, this.txtFind, this.helpToolStripMenuItem });
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.TabStop = true;
+            // 
+            // miFile
+            // 
+            this.miFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miNewFile, this.miOpenFile, this.toolStripMenuItem1, this.miSaveFile, this.miSaveAsFile, this.toolStripMenuItem2, this.miExit });
+            this.miFile.MergeAction = System.Windows.Forms.MergeAction.Insert;
+            this.miFile.MergeIndex = 1;
+            this.miFile.Name = "miFile";
+            resources.ApplyResources(this.miFile, "miFile");
+            // 
+            // miNewFile
+            // 
+            resources.ApplyResources(this.miNewFile, "miNewFile");
+            this.miNewFile.Name = "miNewFile";
+            // 
+            // miOpenFile
+            // 
+            resources.ApplyResources(this.miOpenFile, "miOpenFile");
+            this.miOpenFile.Name = "miOpenFile";
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            resources.ApplyResources(this.toolStripMenuItem1, "toolStripMenuItem1");
+            // 
+            // miSaveFile
+            // 
+            resources.ApplyResources(this.miSaveFile, "miSaveFile");
+            this.miSaveFile.Name = "miSaveFile";
+            // 
+            // miSaveAsFile
+            // 
+            this.miSaveAsFile.Name = "miSaveAsFile";
+            resources.ApplyResources(this.miSaveAsFile, "miSaveAsFile");
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            resources.ApplyResources(this.toolStripMenuItem2, "toolStripMenuItem2");
+            // 
+            // miExit
+            // 
+            this.miExit.Name = "miExit";
+            resources.ApplyResources(this.miExit, "miExit");
+            // 
+            // txtFind
+            // 
+            this.txtFind.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.txtFind.Name = "txtFind";
+            resources.ApplyResources(this.txtFind, "txtFind");
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.miAbout });
+            this.helpToolStripMenuItem.MergeAction = System.Windows.Forms.MergeAction.MatchOnly;
+            this.helpToolStripMenuItem.MergeIndex = 10;
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            resources.ApplyResources(this.helpToolStripMenuItem, "helpToolStripMenuItem");
+            // 
+            // miAbout
+            // 
+            this.miAbout.MergeAction = System.Windows.Forms.MergeAction.Replace;
+            this.miAbout.Name = "miAbout";
+            resources.ApplyResources(this.miAbout, "miAbout");
+            this.miAbout.Click += new System.EventHandler(this.miAbout_Click);
+            // 
+            // miniToolStrip
+            // 
+            resources.ApplyResources(this.miniToolStrip, "miniToolStrip");
+            this.miniToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] { this.lblStatus });
+            this.miniToolStrip.Name = "miniToolStrip";
+            this.miniToolStrip.TabStop = true;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Margin = new System.Windows.Forms.Padding(0, 3, 10, 2);
+            this.lblStatus.MergeAction = System.Windows.Forms.MergeAction.Replace;
+            this.lblStatus.MergeIndex = 0;
+            this.lblStatus.Name = "lblStatus";
+            resources.ApplyResources(this.lblStatus, "lblStatus");
+            // 
             // ExamplesForm
             // 
             resources.ApplyResources(this, "$this");
@@ -321,10 +321,6 @@
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
             this.Name = "ExamplesForm";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.miniToolStrip.ResumeLayout(false);
-            this.miniToolStrip.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -341,6 +337,10 @@
             this.roundedPanel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.roundedPanel7.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.miniToolStrip.ResumeLayout(false);
+            this.miniToolStrip.PerformLayout();
             this.ResumeLayout(false);
         }
 
